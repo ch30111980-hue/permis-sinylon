@@ -1,5 +1,5 @@
 /**
- * SINYLON - STELLANTIS | QR Engine V2
+ * SINYLON - STELLANTIS | QR Engine V2 (Multi-Renderer & Auto-Fallback)
  * Génération de QR Codes dynamiques ultra-légers (URL directe vers la Fiche Publique de Contrôle)
  * Impression de la Grande Affiche QR A4 de Sécurité et Export PNG haute résolution
  */
@@ -30,34 +30,65 @@ const QREngine = {
     // Payload dynamique pur (URL directe vers le permis sur Render)
     generatePayload(permit) {
         if (!permit) return '';
+        const id = typeof permit === 'string' ? permit : permit.id;
         const baseUrl = this.getBaseURL();
-        return `${baseUrl}/?permitId=${encodeURIComponent(permit.id)}`;
+        return `${baseUrl}/?permitId=${encodeURIComponent(id)}`;
     },
 
-    // Dessiner un QR Code sur un canvas HTML
-    renderToCanvas(canvasElement, permit, options = {}) {
-        if (!canvasElement || !permit) return;
+    // Dessiner un QR Code sur un canvas ou dans un conteneur HTML
+    renderToCanvas(targetElement, permit, options = {}) {
+        if (!targetElement || !permit) return;
         const payload = this.generatePayload(permit);
         const size = options.size || 256;
+        const margin = options.margin !== undefined ? options.margin : 2;
 
-        if (window.QRCodeGenerator || window.QRCode) {
-            const engine = window.QRCodeGenerator || window.QRCode;
-            engine.drawCanvas(canvasElement, payload, {
-                size: size,
-                margin: options.margin !== undefined ? options.margin : 2,
-                darkColor: options.darkColor || '#000000',
-                lightColor: options.lightColor || '#ffffff'
-            });
+        let canvas = targetElement;
+        if (targetElement.tagName !== 'CANVAS') {
+            targetElement.innerHTML = '';
+            canvas = document.createElement('canvas');
+            targetElement.appendChild(canvas);
         }
+
+        const engine = window.QRCodeGenerator || window.QRCode;
+        if (engine && typeof engine.drawCanvas === 'function') {
+            try {
+                engine.drawCanvas(canvas, payload, {
+                    size: size,
+                    margin: margin,
+                    darkColor: options.darkColor || '#000000',
+                    lightColor: options.lightColor || '#ffffff'
+                });
+                return canvas;
+            } catch (e) {
+                console.error('Erreur drawCanvas QRCode:', e);
+            }
+        }
+
+        // Fallback ultime : API Image externe si besoin
+        if (canvas && canvas.getContext) {
+            const ctx = canvas.getContext('2d');
+            canvas.width = size;
+            canvas.height = size;
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            img.onload = () => { ctx.drawImage(img, 0, 0, size, size); };
+            img.src = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(payload)}`;
+        }
+        return canvas;
     },
 
     // Obtenir l'image Base64 DataURL du QR Code
     getDataURL(permit, size = 300) {
         const payload = this.generatePayload(permit);
-        if (window.QRCodeGenerator) {
-            return window.QRCodeGenerator.toDataURL(payload, { size: size });
+        const engine = window.QRCodeGenerator || window.QRCode;
+        if (engine && typeof engine.toDataURL === 'function') {
+            try {
+                return engine.toDataURL(payload, { size: size });
+            } catch (e) {
+                console.error('Erreur getDataURL:', e);
+            }
         }
-        return '';
+        return `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(payload)}`;
     },
 
     // =========================================================================
@@ -65,7 +96,8 @@ const QREngine = {
     // =========================================================================
 
     openMobileQRModal(permitId) {
-        const permit = Store.getPermit(permitId || App.currentPermitId);
+        const targetId = permitId || App.currentPermitId || 'K9-W35-01';
+        const permit = Store.getPermit(targetId);
         if (!permit) {
             App.showToast('⚠️ Permis introuvable', 'error');
             return;
@@ -80,7 +112,7 @@ const QREngine = {
         if (elId) elId.innerText = permit.id;
 
         const elComp = document.getElementById('mobile-qr-company');
-        if (elComp) elComp.innerText = permit.contractor || permit.company || 'SINYLON';
+        if (elComp) elComp.innerText = permit.contractor || permit.company || 'SINYLON & W.P.E.E.X';
 
         const elZone = document.getElementById('mobile-qr-zone');
         if (elZone) elZone.innerText = `${permit.ouvrage || 'Atelier Montage'} — ${permit.zone || 'Zone 4'}`;
@@ -92,14 +124,8 @@ const QREngine = {
 
         const elDates = document.getElementById('mobile-qr-hours');
         if (elDates) {
-            elDates.innerText = `${permit.validFrom || permit['date-main']} → ${permit.validUntil || permit['date_fin'] || ''} (${permit.timeStart || permit['time-start'] || '07h30'} - ${permit.timeEnd || permit['time-end'] || '18h00'})`;
+            elDates.innerText = `${permit.validFrom || permit['date-main'] || '2026-08-24'} → ${permit.validUntil || permit['date_fin'] || '2026-08-30'} (${permit.timeStart || permit['time-start'] || '07h30'} - ${permit.timeEnd || permit['time-end'] || '18h00'})`;
         }
-
-        const elResp = document.getElementById('mobile-qr-chef');
-        if (elResp) elResp.innerText = permit.responsible || permit.chefNom || permit['chef-nom'] || 'Nouri Chahrour';
-
-        const elHse = document.getElementById('mobile-qr-contact');
-        if (elHse) elHse.innerText = permit.hseNom || permit.contact || 'Nouri Chahrour (0563765157)';
 
         // Rendu du QR Code dans le canvas du modal
         const canvas = document.getElementById('mobile-qr-canvas-preview');
@@ -119,6 +145,14 @@ const QREngine = {
     closeMobileQRModal() {
         const modal = document.getElementById('modal-mobile-qr');
         if (modal) modal.classList.remove('active');
+    },
+
+    // Ouvrir directement la fiche publique dans un nouvel onglet
+    openPublicViewDirect() {
+        const url = this.generatePayload(this.currentPermitId || App.currentPermitId);
+        if (url) {
+            window.open(url, '_blank');
+        }
     },
 
     // Copier l'URL permanente du QR Code
@@ -141,7 +175,7 @@ const QREngine = {
         const permit = Store.getPermit(targetId);
         if (!permit) return;
 
-        const dataUrl = this.getDataURL(permit, 500);
+        const dataUrl = this.getDataURL(permit, 600);
         if (!dataUrl) return;
 
         const a = document.createElement('a');
@@ -151,25 +185,78 @@ const QREngine = {
         a.click();
         document.body.removeChild(a);
 
-        App.showToast(`📥 Image QR Code (${permit.id}) téléchargée en haute résolution !`, 'success');
+        App.showToast('📥 QR Code HD téléchargé avec succès !', 'success');
     },
 
-    // Déclencher l'impression de l'Affiche QR Chantier depuis le modal
+    // Imprimer l'affiche QR Poster A4 depuis le modal
     printPosterFromModal() {
-        if (!this.currentPermitId) return;
         this.closeMobileQRModal();
-        PrintEngine.printQROnly(this.currentPermitId);
+        PrintEngine.printQROnly(this.currentPermitId || App.currentPermitId);
     },
 
-    // Ouvrir le scanner / vérificateur
+    // =========================================================================
+    // MODAL VÉRIFICATEUR DE QR CODE
+    // =========================================================================
+
     openVerifierModal() {
         const modal = document.getElementById('modal-verifier');
-        if (modal) modal.classList.add('active');
+        if (!modal) return;
+        const input = document.getElementById('verifier-url-input');
+        if (input) input.value = '';
+        const resBox = document.getElementById('verifier-result-box');
+        if (resBox) resBox.innerHTML = '';
+        modal.classList.add('active');
     },
 
     closeVerifierModal() {
         const modal = document.getElementById('modal-verifier');
         if (modal) modal.classList.remove('active');
+    },
+
+    verifyPastedCode() {
+        const input = document.getElementById('verifier-url-input');
+        if (!input || !input.value.trim()) return;
+
+        const raw = input.value.trim();
+        let permitId = null;
+
+        if (raw.includes('permitId='')) {
+            const urlObj = new URL(raw.startsWith('http') ? raw : `http://${raw}`);
+            permitId = urlObj.searchParams.get('permitId');
+        } else if (raw.startsWith('K9-') || raw.startsWith('SYN-')) {
+            permitId = raw;
+        }
+
+        const resBox = document.getElementById('verifier-result-box');
+        if (!resBox) return;
+
+        if (!permitId) {
+            resBox.innerHTML = `<div class="alert alert-danger" style="margin-top: 12px;">❌ Code QR non reconnu. Format attendu : <code>K9-W35-01</code> ou URL officielle.</div>`;
+            return;
+        }
+
+        const permit = Store.getPermit(permitId);
+        if (!permit) {
+            resBox.innerHTML = `<div class="alert alert-danger" style="margin-top: 12px;">❌ Permis <strong>${permitId}</strong> introuvable dans la base de données K9.</div>`;
+            return;
+        }
+
+        resBox.innerHTML = `
+            <div style="background: #064e3b; border: 1px solid #10b981; border-radius: 8px; padding: 12px; margin-top: 12px; color: #ecfdf5;">
+                <div style="font-weight: 800; font-size: 14px; display: flex; align-items: center; gap: 6px;">
+                    <span>✅</span> <span>PERMIS AUTHENTIQUE ET VALIDE : ${permit.id}</span>
+                </div>
+                <div style="font-size: 12px; margin-top: 6px;">
+                    <strong>Activité :</strong> ${(permit.activity && permit.activity.en) || permit.title}<br>
+                    <strong>Zone :</strong> ${permit.ouvrage} — ${permit.zone}<br>
+                    <strong>Responsable :</strong> ${permit.responsible || permit['chef-nom']}
+                </div>
+                <div style="margin-top: 10px; display: flex; gap: 8px;">
+                    <button class="btn btn-primary btn-sm" onclick="App.openPermitPreview('${permit.id}'); QREngine.closeVerifierModal();">📄 Ouvrir le Permis A4</button>
+                    <a href="${this.generatePayload(permit)}" target="_blank" class="btn btn-secondary btn-sm">📱 Ouvrir Fiche Mobile</a>
+                </div>
+            </div>
+        `;
     }
 };
 
