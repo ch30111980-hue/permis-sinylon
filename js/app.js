@@ -38,23 +38,28 @@ const App = {
             }
         });
 
-        // 5. Détection de scan QR direct dans l'URL (?permitId=... ou #K9-W35-01) -> Mode Fiche de Contrôle Publique
+        // 5. Détection de scan QR direct dans l'URL (?permitId=... ou #K9-W35-01)
         const urlParams = new URLSearchParams(window.location.search);
         const queryPermitId = urlParams.get('permitId') || (window.location.hash ? window.location.hash.substring(1).trim() : null);
+        const isMobileDevice = typeof window !== 'undefined' && (window.innerWidth <= 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
 
-        if (queryPermitId) {
+        if (queryPermitId && isMobileDevice) {
             this.currentPermitId = queryPermitId;
             await this.showPublicClientView(queryPermitId);
             return;
         }
 
-        // 6. Initialisation normale du Dashboard sur la semaine active
+        // 6. Initialisation normale du Dashboard sur la semaine active (CURRENT WEEK)
         this.renderDashboard();
         this.renderSidebarWeekIndex();
 
+        if (queryPermitId) {
+            this.openPermitPreview(queryPermitId);
+        }
+
         // 7. Alerte Caisse Weekend le Mercredi
         const dates = WeekendCaisseModule.getWeekendDates();
-        if (dates.isWednesday) {
+        if (dates && dates.isWednesday) {
             this.showToast('🔔 WEDNESDAY : Preparation of Weekend Dossier for STELLANTIS Presentation!', 'warning', 8000);
         }
 
@@ -65,6 +70,18 @@ const App = {
                 await this.showPublicClientView(targetId);
             }
         });
+    },
+
+    exitToDashboard() {
+        const clientView = document.getElementById('client-public-view');
+        if (clientView) clientView.style.display = 'none';
+        const layout = document.querySelector('.app-layout');
+        if (layout) layout.style.display = 'grid';
+        if (typeof window !== 'undefined' && window.history && window.history.replaceState) {
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+        this.switchView('dashboard');
+        this.renderDashboard();
     },
 
     // =========================================================================
@@ -122,15 +139,18 @@ const App = {
             clientView.innerHTML = `
                 <div style="max-width: 680px; margin: 0 auto; padding: 20px 16px; color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
                     <!-- En-tête Langues & Logos -->
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                        <div style="display: flex; gap: 8px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; gap: 8px; flex-wrap: wrap;">
+                        <div style="display: flex; gap: 8px; align-items: center;">
                             <span style="background: #ffffff; color: #000; padding: 4px 10px; font-weight: 900; font-size: 14px; border-radius: 4px;">SINYLON</span>
                             <span style="border: 2px solid #ffffff; color: #ffffff; padding: 3px 10px; font-weight: 900; font-size: 14px; border-radius: 4px;">STELLANTIS</span>
                         </div>
-                        <div class="lang-switch-group">
-                            <button class="lang-btn ${currentLang === 'fr' ? 'active' : ''}" onclick="Translator.setLang('fr'); App.showPublicClientView('${p.id}');">FR</button>
-                            <button class="lang-btn ${currentLang === 'en' ? 'active' : ''}" onclick="Translator.setLang('en'); App.showPublicClientView('${p.id}');">EN</button>
-                            <button class="lang-btn ${currentLang === 'zh' ? 'active' : ''}" onclick="Translator.setLang('zh'); App.showPublicClientView('${p.id}');">中文</button>
+                        <div style="display: flex; gap: 6px; align-items: center;">
+                            <button onclick="App.exitToDashboard()" class="btn btn-secondary btn-sm" style="font-size: 11px; padding: 4px 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff;">📋 Current Week</button>
+                            <div class="lang-switch-group">
+                                <button class="lang-btn ${currentLang === 'fr' ? 'active' : ''}" onclick="Translator.setLang('fr'); App.showPublicClientView('${p.id}');">FR</button>
+                                <button class="lang-btn ${currentLang === 'en' ? 'active' : ''}" onclick="Translator.setLang('en'); App.showPublicClientView('${p.id}');">EN</button>
+                                <button class="lang-btn ${currentLang === 'zh' ? 'active' : ''}" onclick="Translator.setLang('zh'); App.showPublicClientView('${p.id}');">中文</button>
+                            </div>
                         </div>
                     </div>
 
