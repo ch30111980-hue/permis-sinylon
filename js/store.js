@@ -1,8 +1,7 @@
 /**
- * SINYLON - STELLANTIS | Data Store & State Management V2
+ * SINYLON - STELLANTIS | Data Store & State Management V2 (Hybrid Server Sync & Offline LocalStorage)
  * Projet : Algeria K9 CKD0 (Installation & Commissioning)
- * Architecture centrée sur l'objet Permis et Semaine Active (KW25 à KW53)
- * Responsables : Chef de Projet : Xie Xian | Receveur : Xie Xian | Suivi : W.P.E.E.X | HSE : Nouri Chahrour
+ * Synchronisation bidirectionnelle : PC modifie → Serveur enregistre → Smartphone scanne en direct
  */
 
 const Store = {
@@ -68,20 +67,16 @@ const Store = {
     // MOTEUR DE SEMAINE ACTIVE (AUTO WEEK ENGINE)
     // =========================================================================
 
-    // Calcul automatique de la semaine ISO actuelle
     getCurrentWeekNumber(targetDate = new Date()) {
         const d = new Date(Date.UTC(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate()));
         d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
         const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
         const weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
         
-        // Si on est dans la plage K9 (KW25-53)
         if (weekNo >= 25 && weekNo <= 53) return weekNo;
-        // Par défaut pour la phase active (Août 2026) -> W35
         return 35;
     },
 
-    // Plage de dates formatée d'une semaine
     getWeekRange(weekNum) {
         const calendar = {
             25: "15 Jun → 21 Jun 2026",
@@ -117,7 +112,6 @@ const Store = {
         return calendar[weekNum] || `Semaine ${weekNum}`;
     },
 
-    // Liste triée des semaines disponibles
     getAvailableWeeks() {
         const weeks = [];
         for (let w = 25; w <= 53; w++) {
@@ -126,7 +120,6 @@ const Store = {
         return weeks;
     },
 
-    // Récupérer tous les permis d'une semaine spécifique sans doublons
     getPermitsByWeek(weekNum) {
         const permits = this.getAllPermits();
         const num = parseInt(weekNum, 10);
@@ -142,10 +135,46 @@ const Store = {
     },
 
     // =========================================================================
-    // ACCÈS ET GESTION DES PERMIS
+    // SYNCHRONISATION SERVEUR & LOCALSTORAGE
     // =========================================================================
 
-    // Obtenir tous les permis actifs
+    // Synchronisation en arrière-plan avec l'API serveur
+    async syncWithServer() {
+        if (typeof fetch === 'undefined') return;
+        try {
+            const res = await fetch('/api/permits', { cache: 'no-cache' });
+            if (res.ok) {
+                const serverPermits = await res.json();
+                if (serverPermits && Object.keys(serverPermits).length > 0) {
+                    this.saveAllPermits(serverPermits);
+                    console.log('🔄 Données synchronisées avec le serveur Render en direct.');
+                }
+            }
+        } catch (e) {
+            console.log('Mode hors-ligne / LocalStorage actif.');
+        }
+    },
+
+    // Obtenir un permis avec rafraîchissement temps réel
+    async getPermitAsync(id) {
+        if (!id) return null;
+        if (typeof fetch !== 'undefined') {
+            try {
+                const res = await fetch(`/api/permits/${encodeURIComponent(id)}`, { cache: 'no-cache' });
+                if (res.ok) {
+                    const freshPermit = await res.json();
+                    if (freshPermit && freshPermit.id) {
+                        const local = this.getAllPermits();
+                        local[freshPermit.id] = freshPermit;
+                        this.saveAllPermits(local);
+                        return freshPermit;
+                    }
+                }
+            } catch (e) {}
+        }
+        return this.getPermit(id);
+    },
+
     getAllPermits() {
         const raw = typeof localStorage !== 'undefined' ? localStorage.getItem(this.STORAGE_KEY) : null;
         if (!raw) {
@@ -163,14 +192,12 @@ const Store = {
         }
     },
 
-    // Sauvegarder l'ensemble des permis
     saveAllPermits(permits) {
         if (typeof localStorage !== 'undefined') {
             localStorage.setItem(this.STORAGE_KEY, JSON.stringify(permits));
         }
     },
 
-    // Obtenir un permis par son ID (supporte K9-W35-01, SYN-K9-KW35, etc.)
     getPermit(id) {
         if (!id) return null;
         const permits = this.getAllPermits();
@@ -183,7 +210,7 @@ const Store = {
         return null;
     },
 
-    // Créer ou mettre à jour un permis
+    // Sauvegarde double : LocalStorage + Envoi immédiat à l'API Serveur
     savePermit(permit) {
         if (!permit) return null;
         const permits = this.getAllPermits();
@@ -205,10 +232,23 @@ const Store = {
 
         permits[permit.id] = permit;
         this.saveAllPermits(permits);
+
+        // Envoi asynchrone au serveur Render pour synchronisation mondiale instantanée
+        if (typeof fetch !== 'undefined') {
+            fetch(`/api/permits/${encodeURIComponent(permit.id)}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(permit)
+            }).then(r => r.json()).then(data => {
+                console.log(`📡 Permis ${permit.id} synchronisé sur le serveur :`, data);
+            }).catch(err => {
+                console.log('Enregistré en local (serveur injoignable).');
+            });
+        }
+
         return permit;
     },
 
-    // Supprimer un permis
     deletePermit(id) {
         const permits = this.getAllPermits();
         if (permits[id]) {
@@ -219,7 +259,6 @@ const Store = {
         return false;
     },
 
-    // Réinitialiser les permis
     resetCleanPermits() {
         if (typeof localStorage !== 'undefined') {
             localStorage.removeItem(this.STORAGE_KEY);
@@ -229,13 +268,11 @@ const Store = {
         return initial;
     },
 
-    // Générer un identifiant officiel
     generateId(weekNum = 35) {
         const randNum = Math.floor(10 + Math.random() * 90);
         return `K9-W${weekNum}-${randNum}`;
     },
 
-    // Données initiales certifiées V2
     getSeedData() {
         return {
   "K9-W25-01": {

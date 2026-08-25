@@ -10,7 +10,7 @@ const App = {
     previewPage: 'p1',
 
     // Initialisation
-    init() {
+    async init() {
         // 1. Détection de la semaine courante
         this.currentWeek = Store.getCurrentWeekNumber();
 
@@ -24,35 +24,38 @@ const App = {
         // 3. Liaison des événements
         this.bindEvents();
 
-        // 4. Détection de scan QR direct dans l'URL (?permitId=... ou #K9-W35-01) -> Mode Fiche de Contrôle Publique
+        // 4. Synchronisation en arrière-plan avec le serveur Render
+        Store.syncWithServer().then(() => {
+            if (this.currentView === 'dashboard') {
+                this.renderDashboard();
+            }
+        });
+
+        // 5. Détection de scan QR direct dans l'URL (?permitId=... ou #K9-W35-01) -> Mode Fiche de Contrôle Publique
         const urlParams = new URLSearchParams(window.location.search);
         const queryPermitId = urlParams.get('permitId') || (window.location.hash ? window.location.hash.substring(1).trim() : null);
 
         if (queryPermitId) {
-            const found = Store.getPermit(queryPermitId);
-            if (found) {
-                this.currentPermitId = found.id;
-                this.showPublicClientView(found.id);
-                return;
-            }
+            this.currentPermitId = queryPermitId;
+            await this.showPublicClientView(queryPermitId);
+            return;
         }
 
-        // 5. Initialisation normale du Dashboard sur la semaine active
+        // 6. Initialisation normale du Dashboard sur la semaine active
         this.renderDashboard();
         this.renderSidebarWeekIndex();
 
-        // 6. Alerte Caisse Weekend le Mercredi
+        // 7. Alerte Caisse Weekend le Mercredi
         const dates = WeekendCaisseModule.getWeekendDates();
         if (dates.isWednesday) {
             this.showToast('🔔 WEDNESDAY : Preparation of Weekend Dossier for STELLANTIS Presentation!', 'warning', 8000);
         }
 
-        // 7. Écouteur de changement de hash
-        window.addEventListener('hashchange', () => {
+        // 8. Écouteur de changement de hash
+        window.addEventListener('hashchange', async () => {
             if (window.location.hash && window.location.hash.length > 1) {
                 const targetId = window.location.hash.substring(1).trim();
-                const p = Store.getPermit(targetId);
-                if (p) this.showPublicClientView(p.id);
+                await this.showPublicClientView(targetId);
             }
         });
     },
@@ -61,8 +64,9 @@ const App = {
     // VUE PUBLIQUE DE CONTRÔLE CHANTIER (100% SÉCURISÉE & CONFIDENTIELLE)
     // =========================================================================
 
-    showPublicClientView(permitId) {
-        const permit = Store.getPermit(permitId);
+    async showPublicClientView(permitId) {
+        let permit = await Store.getPermitAsync(permitId);
+        if (!permit) permit = Store.getPermit(permitId);
         if (!permit) return;
 
         const layout = document.querySelector('.app-layout');

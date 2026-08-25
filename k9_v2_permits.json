@@ -5990,7 +5990,7 @@
     "location": "Hall Montage — Lignes Principales",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
+    "responsible": "Nouri Chahrour (Chef HSE Certifié)",
     "tel": "0563765157",
     "contact": "Nouri Chahrour (HSE Sinylon)",
     "chefNom": "XIE XIAN (Chef de Projet)",
@@ -6099,7 +6099,8 @@
     "qr": {
       "enabled": true,
       "url": "https://permis-sinylon.onrender.com/?permitId=K9-W35-01"
-    }
+    },
+    "updatedAt": "2026-08-25T22:08:41.037Z"
   },
   "K9-W35-02": {
     "id": "K9-W35-02",
