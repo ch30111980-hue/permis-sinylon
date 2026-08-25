@@ -4,9 +4,10 @@
  */
 
 .preview-container {
-    padding: 20px;
+    padding: 24px 20px;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     background: #060911;
     overflow-y: auto;
 }
@@ -14,16 +15,20 @@
 .a4-document {
     width: 210mm;
     min-height: 297mm;
-    padding: 10mm 12mm;
+    max-width: 210mm;
+    padding: 6mm 10mm 5mm 10mm;
     background: #ffffff !important;
     color: #000000 !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 9.5px;
+    font-size: 9px;
     line-height: 1.25;
     position: relative;
     box-sizing: border-box;
-    margin-bottom: 25px;
+    margin: 0 auto 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     page-break-after: always;
 }
 
@@ -311,17 +316,29 @@
     visibility: hidden !important;
 }
 
+@page {
+    size: 210mm 297mm;
+    margin: 0mm;
+}
+
 /* =========================================================================
    RÈGLES D'IMPRESSION PHYSIQUE ET PDF PARFAITES (@MEDIA PRINT)
    ========================================================================= */
 
 @media print {
-    /* Masquer impérativement toute l'interface de l'application */
-    body {
+    *, *:before, *:after {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    html, body {
+        width: 210mm !important;
+        min-width: 210mm !important;
+        max-width: 210mm !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
         background: #ffffff !important;
         color: #000000 !important;
-        margin: 0 !important;
-        padding: 0 !important;
     }
 
     .app-layout, .sidebar, .top-navbar, #toast-container, .modal-backdrop, .no-print, .preview-toolbar {
@@ -332,11 +349,9 @@
     #print-container {
         display: block !important;
         visibility: visible !important;
-        position: absolute !important;
-        left: 0 !important;
-        top: 0 !important;
-        width: 100% !important;
-        margin: 0 !important;
+        position: relative !important;
+        width: 210mm !important;
+        margin: 0 auto !important;
         padding: 0 !important;
         background: #ffffff !important;
     }
@@ -347,11 +362,27 @@
 
     .a4-document {
         box-shadow: none !important;
-        margin: 0 !important;
-        padding: 8mm 10mm !important;
-        width: 100% !important;
-        min-height: 280mm !important;
+        margin: 0 auto !important;
+        padding: 6mm 10mm 5mm 10mm !important;
+        width: 210mm !important;
+        max-width: 210mm !important;
+        min-height: 297mm !important;
+        height: 297mm !important;
+        max-height: 297mm !important;
+        page-break-before: auto !important;
         page-break-after: always !important;
         break-after: page !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        overflow: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        box-sizing: border-box !important;
+    }
+
+    .a4-document:last-child {
+        page-break-after: auto !important;
+        break-after: auto !important;
     }
 }
