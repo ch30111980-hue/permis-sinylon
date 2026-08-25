@@ -124,7 +124,7 @@ const QREngine = {
 
         const elDates = document.getElementById('mobile-qr-hours');
         if (elDates) {
-            elDates.innerText = `${permit.validFrom || permit['date-main'] || '2026-08-24'} → ${permit.validUntil || permit['date_fin'] || '2026-08-30'} (${permit.timeStart || permit['time-start'] || '07h30'} - ${permit.timeEnd || permit['time-end'] || '18h00'})`;
+            elDates.innerText = `${permit.validFrom || permit['date-main'] || '2026-08-24'} → ${permit.validUntil || permit['date_fin'] || '2026-08-30'} (${permit.timeStart || permit['time-start'] || '08h00'} - ${permit.timeEnd || permit['time-end'] || '17h30'})`;
         }
 
         // Rendu du QR Code dans le canvas du modal

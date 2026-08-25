@@ -158,7 +158,7 @@ const App = {
                         <div>📌 <strong>Location :</strong> ${permit.location || 'Main Assembly Line'}</div>
                         <div>👨‍💼 <strong>Responsible Person :</strong> ${permit.responsible || permit.chefNom || 'XIE XIAN'}</div>
                         <div>📞 <strong>HSE Supervisor :</strong> ${permit.hseNom || 'Nouri Chahrour'} (0563765157)</div>
-                        <div style="grid-column: span 2;">⏰ <strong>Validity Period :</strong> ${permit.validFrom || permit['date-main']} → ${permit.validUntil || permit['date_fin'] || ''} (07h30 → 18h00)</div>
+                        <div style="grid-column: span 2;">⏰ <strong>Validity Period :</strong> ${permit.validFrom || permit['date-main']} → ${permit.validUntil || permit['date_fin'] || ''} (${permit.timeStart || '08h00'} → ${permit.timeEnd || '17h30'})</div>
                     </div>
                 </div>
 

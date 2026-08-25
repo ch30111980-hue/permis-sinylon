@@ -5,6 +5,14 @@ import datetime
 with open('/Users/nourine/.gemini/antigravity-ide/scratch/permis-sinylon/k9_weekly_permits.json', 'r', encoding='utf-8') as f:
     raw_permits = json.load(f)
 
+# Update raw_permits hours
+for pid, p in raw_permits.items():
+    p['time-start'] = '08h00'
+    p['time-end'] = '17h30'
+
+with open('/Users/nourine/.gemini/antigravity-ide/scratch/permis-sinylon/k9_weekly_permits.json', 'w', encoding='utf-8') as f:
+    json.dump(raw_permits, f, indent=2, ensure_ascii=False)
+
 # Worker catalog for Sinylon (Xie + Nouri Chahrour)
 official_workers = [
     {"id": "T-1", "nom": "Xie", "role": "Chef de Projet / Receveur", "badge": "SYN-001"},
@@ -98,8 +106,8 @@ for w_num in range(25, 54):
         "hseNom": "Nouri Chahrour (HSE Sinylon)",
         "validFrom": d_start,
         "validUntil": d_end,
-        "timeStart": "07h30",
-        "timeEnd": "18h00",
+        "timeStart": "08h00",
+        "timeEnd": "17h30",
         "status": status,
         "weekend": False,
         "dangers": {
@@ -167,8 +175,8 @@ for w_num in range(25, 54):
         "hseNom": "Nouri Chahrour (HSE Sinylon)",
         "validFrom": d_start,
         "validUntil": d_end,
-        "timeStart": "07h30",
-        "timeEnd": "18h00",
+        "timeStart": "08h00",
+        "timeEnd": "17h30",
         "status": status,
         "weekend": False,
         "dangers": {
@@ -237,8 +245,8 @@ for w_num in range(25, 54):
         "hseNom": "Nouri Chahrour (HSE Sinylon)",
         "validFrom": d_start,
         "validUntil": d_end,
-        "timeStart": "07h30",
-        "timeEnd": "18h00",
+        "timeStart": "08h00",
+        "timeEnd": "17h30",
         "status": status,
         "weekend": False,
         "dangers": {
@@ -307,8 +315,8 @@ for w_num in range(25, 54):
         "hseNom": "Nouri Chahrour (HSE Sinylon)",
         "validFrom": fri_date,
         "validUntil": sat_date,
-        "timeStart": "07h30",
-        "timeEnd": "18h00",
+        "timeStart": "08h00",
+        "timeEnd": "17h30",
         "status": "VALIDE" if w_num == 35 else ("CLOTURE" if w_num < 35 else "PLANIFIE"),
         "weekend": True,
         "isWeekendWork": True,
@@ -345,4 +353,4 @@ for w_num in range(25, 54):
 with open('/Users/nourine/.gemini/antigravity-ide/scratch/permis-sinylon/k9_v2_permits.json', 'w', encoding='utf-8') as f:
     json.dump(v2_permits, f, indent=2, ensure_ascii=False)
 
-print(f"Generated {len(v2_permits)} permits in k9_v2_permits.json successfully!")
+print(f"Generated {len(v2_permits)} permits in k9_v2_permits.json with 08h00 → 17h30 schedule successfully!")

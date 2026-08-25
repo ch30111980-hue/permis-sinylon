@@ -195,8 +195,8 @@ const Templates = {
                     </div>
                     <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 4px; font-size: 9px;">
                         <div>Date initiale : <span style="border-bottom: 1px solid #000; font-weight: bold; padding: 0 8px;" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'date-main', this.innerText)">${permit.validFrom || permit['date-main'] || '2026-08-24'}</span></div>
-                        <div>heure début : <span style="border-bottom: 1px solid #000; font-weight: bold; padding: 0 8px;">07h30</span></div>
-                        <div>heure fin : <span style="border-bottom: 1px solid #000; font-weight: bold; padding: 0 8px;">18h00</span></div>
+                        <div>heure début : <span style="border-bottom: 1px solid #000; font-weight: bold; padding: 0 8px;" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'time-start', this.innerText)">${permit.timeStart || permit['time-start'] || '08h00'}</span></div>
+                        <div>heure fin : <span style="border-bottom: 1px solid #000; font-weight: bold; padding: 0 8px;" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'time-end', this.innerText)">${permit.timeEnd || permit['time-end'] || '17h30'}</span></div>
                     </div>
 
                     <!-- Signatures Officielles -->
