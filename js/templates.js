@@ -12,9 +12,14 @@ const Templates = {
             : `https://permis-sinylon.onrender.com/?permitId=${permit.id}`;
         
         let svgQr = '';
-        const engine = window.QRCodeGenerator || window.QRCode;
+        const engine = typeof window !== 'undefined' ? (window.QRCodeGenerator || window.QRCode) : (typeof QRCodeGenerator !== 'undefined' ? QRCodeGenerator : null);
         if (engine && typeof engine.toSVG === 'function') {
-            svgQr = engine.toSVG(payload, { size: 44, margin: 1 });
+            try {
+                svgQr = engine.toSVG(payload, { size: 44, margin: 1 });
+            } catch(e) {}
+        }
+        if (!svgQr || svgQr.length < 50) {
+            svgQr = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(payload)}" style="width:100%;height:100%;object-fit:contain;" alt="QR Code">`;
         }
 
         return `

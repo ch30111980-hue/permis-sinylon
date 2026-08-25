@@ -130,17 +130,23 @@ const QREngine = {
         // Rendu immédiat du QR Code Vectoriel SVG dans la boîte de prévisualisation
         const payload = this.generatePayload(permit);
         const previewBox = document.getElementById('mobile-qr-preview-box');
-        const engine = window.QRCodeGenerator || window.QRCode;
+        const engine = typeof window !== 'undefined' ? (window.QRCodeGenerator || window.QRCode) : (typeof QRCodeGenerator !== 'undefined' ? QRCodeGenerator : null);
         
-        if (previewBox && engine && typeof engine.toSVG === 'function') {
-            previewBox.innerHTML = engine.toSVG(payload, { size: 280, margin: 2 });
-        } else {
-            const canvas = document.getElementById('mobile-qr-canvas-preview') || document.createElement('canvas');
-            if (previewBox && !previewBox.contains(canvas)) {
-                previewBox.innerHTML = '';
-                previewBox.appendChild(canvas);
+        let svg = '';
+        if (engine && typeof engine.toSVG === 'function') {
+            try {
+                svg = engine.toSVG(payload, { size: 280, margin: 2 });
+            } catch (e) {
+                console.error('Erreur toSVG:', e);
             }
-            this.renderToCanvas(canvas, permit, { size: 280, margin: 2 });
+        }
+        
+        if (previewBox) {
+            if (svg && svg.length > 50) {
+                previewBox.innerHTML = svg;
+            } else {
+                previewBox.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=${encodeURIComponent(payload)}" style="width:100%;height:100%;object-fit:contain;" alt="QR Code">`;
+            }
         }
 
         const urlText = document.getElementById('mobile-qr-link-url');
