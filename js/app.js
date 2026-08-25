@@ -3,13 +3,6 @@
  * Moteur de Semaine Active, Gestion des Permis de Travail, Édition Rapide & Fiche de Contrôle Publique
  */
 
-var Store = typeof window !== 'undefined' && window.Store ? window.Store : (typeof global !== 'undefined' && global.Store ? global.Store : null);
-var Templates = typeof window !== 'undefined' && window.Templates ? window.Templates : (typeof global !== 'undefined' && global.Templates ? global.Templates : null);
-var Translator = typeof window !== 'undefined' && window.Translator ? window.Translator : (typeof global !== 'undefined' && global.Translator ? global.Translator : null);
-var PrintEngine = typeof window !== 'undefined' && window.PrintEngine ? window.PrintEngine : (typeof global !== 'undefined' && global.PrintEngine ? global.PrintEngine : null);
-var QREngine = typeof window !== 'undefined' && window.QREngine ? window.QREngine : (typeof global !== 'undefined' && global.QREngine ? global.QREngine : null);
-var WeekendCaisseModule = typeof window !== 'undefined' && window.WeekendCaisseModule ? window.WeekendCaisseModule : (typeof global !== 'undefined' && global.WeekendCaisseModule ? global.WeekendCaisseModule : null);
-
 const App = {
     currentView: 'dashboard',
     currentWeek: 35,
