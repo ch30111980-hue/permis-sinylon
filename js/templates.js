@@ -7,8 +7,8 @@
 const Templates = {
     // Helper pour le bandeau QR en bas de page (Rendu Vectoriel SVG direct et infaillible)
     renderFooterQR(permit) {
-        const payload = (window.QREngine && typeof QREngine.generatePayload === 'function') 
-            ? QREngine.generatePayload(permit) 
+        const payload = (typeof window !== 'undefined' && window.QREngine && typeof window.QREngine.generatePayload === 'function') 
+            ? window.QREngine.generatePayload(permit) 
             : `https://permis-sinylon.onrender.com/?permitId=${permit.id}`;
         
         let svgQr = '';
@@ -43,16 +43,13 @@ const Templates = {
         const isY = (val) => val ? 'check-active' : '';
         const isN = (val) => !val ? 'check-active' : '';
 
-        const descFr = (permit.activity && permit.activity.fr) || permit['work-desc'] || permit.title || '';
-        const descEn = (permit.activity && permit.activity.en) || permit['work-desc-en'] || permit.title_en || Translator.localDictionaryTranslate(descFr);
-        const workers = permit.workers && permit.workers.length > 0 ? permit.workers : ['Xie (Chef de Projet)', 'Nouri Chahrour (HSE Sinylon)'];
         const descFr = permit.activite_detaillee_fr || (permit.activity && (permit.activity.fr || permit.activity.en)) || permit['work-desc'] || permit.title || 'Installation Mécanique et Montage';
         const descEn = permit.activite_detaillee_en || (permit.activity && permit.activity.en) || permit.title_en || 'Mechanical and Assembly Installation';
         const descZh = permit.activite_detaillee_zh || (permit.activity && permit.activity.zh) || permit.title_zh || '机械装配与设备安装';
         const equipementsStr = Array.isArray(permit.equipements_a_installer) ? permit.equipements_a_installer.join(', ') : (permit.equipements_a_installer || 'Nacelles ciseaux (x6), Palans DEMAG KBK, Outillages certifiés');
 
         // Générer les vignettes d'intervenants
-        const workers = permit.travailleurs || permit.workers || [];
+        const workers = permit.travailleurs || permit.workers || ['Xie (Chef de Projet)', 'Nouri Chahrour (HSE Sinylon)'];
         const workersHtml = workers.map(w => {
             const nom = typeof w === 'object' ? w.nom : w;
             const role = typeof w === 'object' ? w.role : 'Intervenant';
@@ -122,7 +119,6 @@ const Templates = {
                         <strong>Équipements à installer :</strong><br>
                         <span style="color: #0f172a; font-weight: 600;">${equipementsStr}</span>
                     </div>
-                </div>       </div>
                 </div>
 
                 <!-- Entreprise Intervenante & Contacts -->

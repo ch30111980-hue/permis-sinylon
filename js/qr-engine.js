@@ -230,7 +230,7 @@ const QREngine = {
         const raw = input.value.trim();
         let permitId = null;
 
-        if (raw.includes('permitId='')) {
+        if (raw.includes('permitId=')) {
             const urlObj = new URL(raw.startsWith('http') ? raw : `http://${raw}`);
             permitId = urlObj.searchParams.get('permitId');
         } else if (raw.startsWith('K9-') || raw.startsWith('SYN-')) {
