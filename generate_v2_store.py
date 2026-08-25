@@ -1,21 +1,14 @@
 import json
-import os
 import datetime
 
 # Load existing JSON
 with open('/Users/nourine/.gemini/antigravity-ide/scratch/permis-sinylon/k9_weekly_permits.json', 'r', encoding='utf-8') as f:
     raw_permits = json.load(f)
 
-# Worker catalog for Sinylon & W.P.E.E.X
-default_workers = [
-    {"id": "T-1", "nom": "XIE XIAN", "role": "Chef de Projet / Receveur", "badge": "SYN-001"},
-    {"id": "T-2", "nom": "ZHOULIN", "role": "Chef d'Équipe Montage", "badge": "SYN-002"},
-    {"id": "T-3", "nom": "Nouri Chahrour", "role": "Superviseur HSE Sinylon", "badge": "SYN-003", "tel": "0563765157"},
-    {"id": "T-4", "nom": "Karim Belkacem", "role": "Opérateur Nacelle PEMP (CACES)", "badge": "SYN-004"},
-    {"id": "T-5", "nom": "Yacine Amrani", "role": "Monteur / Échafaudeur", "badge": "SYN-005"},
-    {"id": "T-6", "nom": "Sofiane Meziane", "role": "Électricien Habilité B2V / BR", "badge": "SYN-006"},
-    {"id": "T-7", "nom": "Mohamed Brahimi", "role": "Soudeur / Chaudronnier (Qualifié)", "badge": "SYN-007"},
-    {"id": "T-8", "nom": "Reda Benali", "role": "Technicien Instrumentation", "badge": "SYN-008"}
+# Worker catalog for Sinylon (Xie + Nouri Chahrour)
+official_workers = [
+    {"id": "T-1", "nom": "Xie", "role": "Chef de Projet / Receveur", "badge": "SYN-001"},
+    {"id": "T-2", "nom": "Nouri Chahrour", "role": "Superviseur HSE Sinylon", "badge": "SYN-003", "tel": "+213 550 12 34 56"}
 ]
 
 v2_permits = {}
@@ -71,10 +64,6 @@ for w_num in range(25, 54):
     fri_date, sat_date = get_friday_saturday(d_start)
     range_lbl = format_date_range_label(d_start, d_end)
     
-    # Extract work items
-    work_desc_fr = old_data.get("work-desc", f"Travaux de montage et mise en service Semaine {w_num}")
-    work_desc_en = old_data.get("work-desc-en", f"Installation and commissioning work Week {w_num}")
-    
     status = "VALIDE" if w_num == 35 else ("CLOTURE" if w_num < 35 else "PLANIFIE")
 
     # 1. Main General / Mechanical Permit: K9-Wxx-01
@@ -97,16 +86,16 @@ for w_num in range(25, 54):
         "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "ouvrage": "Ligne de Montage K9",
         "zone": "Zones FUSA / UAR / UB",
-        "location": "Hall Montage — Lignes Principales",
+        "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
-        "responsible": "Nouri Chahrour",
-        "tel": "0563765157",
+        "responsible": "Xie (Chef de Projet)",
+        "tel": "+213 550 12 34 56",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "chefNom": "XIE XIAN (Chef de Projet)",
-        "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+        "chefNom": "Xie (Chef de Projet)",
+        "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-        "hseNom": "Nouri Chahrour (0563765157)",
+        "hseNom": "Nouri Chahrour (HSE Sinylon)",
         "validFrom": d_start,
         "validUntil": d_end,
         "timeStart": "07h30",
@@ -120,17 +109,26 @@ for w_num in range(25, 54):
             "confined": False,
             "lifting": True,
             "tension": True,
+            "emergencyPlan": False,
             "ppe": True
         },
         "annexes": ["height"],
         "ppe": ["Casque de sécurité", "Chaussures S3", "Gilet haute visibilité", "Gants de protection", "Harnais antichute"],
+        "heightDetails": {
+            "platform": True,
+            "scissorLiftsCount": 6,
+            "manliftCount": 1,
+            "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+            "harnessChecked": True,
+            "operatorTrained": True
+        },
         "visas": {
             "moex": {"name": "STELLANTIS MOEX", "status": "VALIDATED", "date": d_start},
-            "wpeex": {"name": "W.P.E.E.X Supervision", "status": "VALIDATED", "date": d_start},
+            "wpeex": {"name": "M. W.P.E.E.X", "status": "VALIDATED", "date": d_start},
             "hse": {"name": "Nouri Chahrour (HSE)", "status": "VALIDATED", "date": d_start}
         },
-        "workers": ["XIE XIAN (Chef de Projet)", "ZHOULIN (Chef d'Équipe)", "Nouri Chahrour (HSE - 0563765157)", "Yacine Amrani (Monteur)", "Karim Belkacem (Nacelle)"],
-        "travailleurs": default_workers[:5],
+        "workers": ["Xie (Chef de Projet)", "Nouri Chahrour (HSE Sinylon)"],
+        "travailleurs": official_workers,
         "revalidations": old_data.get("revalidations", []),
         "qr": {
             "enabled": True,
@@ -157,16 +155,16 @@ for w_num in range(25, 54):
         "area": "Atelier Assemblage Stellantis",
         "ouvrage": "Lignes de Soudage & Pinces",
         "zone": "Zone UB / Postes de Soudure",
-        "location": "Hall Montage — Îlots Robotisés",
+        "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
-        "responsible": "Nouri Chahrour",
-        "tel": "0563765157",
+        "responsible": "Xie (Chef de Projet)",
+        "tel": "+213 550 12 34 56",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "chefNom": "XIE XIAN (Chef de Projet)",
-        "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+        "chefNom": "Xie (Chef de Projet)",
+        "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-        "hseNom": "Nouri Chahrour (0563765157)",
+        "hseNom": "Nouri Chahrour (HSE Sinylon)",
         "validFrom": d_start,
         "validUntil": d_end,
         "timeStart": "07h30",
@@ -180,17 +178,27 @@ for w_num in range(25, 54):
             "confined": False,
             "lifting": False,
             "tension": True,
+            "emergencyPlan": False,
             "ppe": True
         },
         "annexes": ["hot"],
         "ppe": ["Masque à souder", "Tablier cuir / manchettes", "Chaussures S3", "Extincteur CO2/Poudre à proximité", "Gants soudeur"],
+        "hotDetails": {
+            "inflammablesClear10m": True,
+            "fireproofTarps": True,
+            "extinguisherWater": True,
+            "extinguisherPowder": True,
+            "extinguisherCO2": True,
+            "detectorBypass": False,
+            "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+        },
         "visas": {
             "moex": {"name": "STELLANTIS MOEX", "status": "VALIDATED", "date": d_start},
-            "wpeex": {"name": "W.P.E.E.X Supervision", "status": "VALIDATED", "date": d_start},
+            "wpeex": {"name": "M. W.P.E.E.X", "status": "VALIDATED", "date": d_start},
             "hse": {"name": "Nouri Chahrour (HSE)", "status": "VALIDATED", "date": d_start}
         },
-        "workers": ["XIE XIAN", "Mohamed Brahimi (Soudeur Qualifié)", "ZHOULIN", "Nouri Chahrour (HSE)"],
-        "travailleurs": [default_workers[0], default_workers[6], default_workers[1], default_workers[2]],
+        "workers": ["Xie (Chef de Projet)", "Nouri Chahrour (HSE Sinylon)"],
+        "travailleurs": official_workers,
         "revalidations": [],
         "qr": {
             "enabled": True,
@@ -210,23 +218,23 @@ for w_num in range(25, 54):
         "title_en": f"Electrical Cabling & Power Connection — Week {w_num}",
         "title_zh": f"电气接线与通电测试许可证 — 第 {w_num} 周",
         "activity": {
-            "fr": f"Câblage armoires, raccordement puissance et tests d'isolement (W{w_num})",
-            "en": f"Control cabinet wiring, power hookup and insulation testing (W{w_num})",
-            "zh": f"控制柜接线、动力接电与绝缘测试（第 {w_num} 周）"
+            "fr": f"Câblage armoires, tirage câbles, raccordement moteurs et équipements (W{w_num})",
+            "en": f"Control cabinet wiring, cable pulling, motors and equipment hookup (W{w_num})",
+            "zh": f"控制柜接线、电缆敷设、电机与设备安装（第 {w_num} 周）"
         },
         "area": "Atelier Assemblage Stellantis",
         "ouvrage": "Armoires Électriques & TGBT",
-        "zone": "Zone FUSA / Armoires Principales",
-        "location": "Hall Montage — Baies Automates",
+        "zone": "Zones FUSA / UAR / UB",
+        "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
-        "responsible": "Sofiane Meziane",
-        "tel": "0563765157",
+        "responsible": "Xie (Chef de Projet)",
+        "tel": "+213 550 12 34 56",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "chefNom": "XIE XIAN (Chef de Projet)",
-        "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+        "chefNom": "Xie (Chef de Projet)",
+        "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-        "hseNom": "Nouri Chahrour (0563765157)",
+        "hseNom": "Nouri Chahrour (HSE Sinylon)",
         "validFrom": d_start,
         "validUntil": d_end,
         "timeStart": "07h30",
@@ -240,17 +248,27 @@ for w_num in range(25, 54):
             "confined": False,
             "lifting": False,
             "tension": True,
+            "emergencyPlan": False,
             "ppe": True
         },
         "annexes": ["electric"],
         "ppe": ["Gants isolants 1000V", "Écran facial anti-flash", "Chaussures isolantes", "Cadenas de consignation LOTO", "VAT"],
+        "electricDetails": {
+            "consignationChecked": True,
+            "voltageAbsenceChecked": True,
+            "lockoutTagout": True,
+            "cablePulling": True,
+            "switchboardInstall": True,
+            "motorsInstall": True,
+            "equipmentHookup": True
+        },
         "visas": {
             "moex": {"name": "STELLANTIS MOEX", "status": "VALIDATED", "date": d_start},
-            "wpeex": {"name": "W.P.E.E.X Supervision", "status": "VALIDATED", "date": d_start},
+            "wpeex": {"name": "M. W.P.E.E.X", "status": "VALIDATED", "date": d_start},
             "hse": {"name": "Nouri Chahrour (HSE)", "status": "VALIDATED", "date": d_start}
         },
-        "workers": ["Sofiane Meziane (Électricien B2V)", "Reda Benali (Tech)", "XIE XIAN", "Nouri Chahrour (HSE)"],
-        "travailleurs": [default_workers[5], default_workers[7], default_workers[0], default_workers[2]],
+        "workers": ["Xie (Chef de Projet)", "Nouri Chahrour (HSE Sinylon)"],
+        "travailleurs": official_workers,
         "revalidations": [],
         "qr": {
             "enabled": True,
@@ -277,16 +295,16 @@ for w_num in range(25, 54):
         "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "ouvrage": "Secteur Prioritaire K9",
         "zone": "Zones FUSA / UAR / UB",
-        "location": "Bâtiment Montage Stellantis",
+        "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
-        "responsible": "Nouri Chahrour",
-        "tel": "0563765157",
+        "responsible": "Xie (Chef de Projet)",
+        "tel": "+213 550 12 34 56",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "chefNom": "XIE XIAN (Chef de Projet)",
-        "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+        "chefNom": "Xie (Chef de Projet)",
+        "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-        "hseNom": "Nouri Chahrour (0563765157)",
+        "hseNom": "Nouri Chahrour (HSE Sinylon)",
         "validFrom": fri_date,
         "validUntil": sat_date,
         "timeStart": "07h30",
@@ -301,17 +319,18 @@ for w_num in range(25, 54):
             "confined": False,
             "lifting": False,
             "tension": True,
+            "emergencyPlan": False,
             "ppe": True
         },
         "annexes": ["height", "hot"],
         "ppe": ["Casque de sécurité", "Chaussures S3", "Gilet haute visibilité", "Harnais si hauteur", "Extincteur"],
         "visas": {
             "moex": {"name": "STELLANTIS MOEX", "status": "VALIDATED", "date": fri_date},
-            "wpeex": {"name": "W.P.E.E.X Supervision", "status": "VALIDATED", "date": fri_date},
+            "wpeex": {"name": "M. W.P.E.E.X", "status": "VALIDATED", "date": fri_date},
             "hse": {"name": "Nouri Chahrour (HSE)", "status": "VALIDATED", "date": fri_date}
         },
-        "workers": ["XIE XIAN (Chef de Projet)", "ZHOULIN (Chef d'Équipe)", "Nouri Chahrour (HSE)", "Karim Belkacem (Nacelle)", "Mohamed Brahimi (Soudeur)"],
-        "travailleurs": default_workers[:5],
+        "workers": ["Xie (Chef de Projet)", "Nouri Chahrour (HSE Sinylon)"],
+        "travailleurs": official_workers,
         "revalidations": [],
         "qr": {
             "enabled": True,
@@ -319,7 +338,7 @@ for w_num in range(25, 54):
         }
     }
 
-    # Backward compatibility alias: SYN-K9-KWxx points to K9-Wxx-01
+    # Backward compatibility alias
     v2_permits[old_key] = v2_permits[p1_id]
 
 # Save to JSON

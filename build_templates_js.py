@@ -1,4 +1,4 @@
-/**
+content = """/**
  * SINYLON - STELLANTIS | Templates A4 Haute Fidélité V2
  * Conformité HSE Chantier Stellantis Algeria K9 CKD0
  * Emplacement QR Code sécurisé en bas de page (Footer) pour préserver les en-têtes et textes
@@ -520,3 +520,9 @@ const Templates = {
 };
 
 window.Templates = Templates;
+"""
+
+with open('/Users/nourine/.gemini/antigravity-ide/scratch/permis-sinylon/js/templates.js', 'w', encoding='utf-8') as f:
+    f.write(content)
+
+print("Rebuilt js/templates.js with footer QR verification placement successfully!")

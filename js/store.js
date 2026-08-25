@@ -293,16 +293,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-06-15",
     "validUntil": "2026-06-21",
     "timeStart": "07h30",
@@ -316,6 +316,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -328,6 +329,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -335,7 +344,7 @@ const Store = {
         "date": "2026-06-15"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-06-15"
       },
@@ -346,43 +355,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -424,16 +412,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-06-15",
     "validUntil": "2026-06-21",
     "timeStart": "07h30",
@@ -447,6 +435,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -459,6 +448,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -466,7 +464,7 @@ const Store = {
         "date": "2026-06-15"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-06-15"
       },
@@ -477,36 +475,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -525,23 +509,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 25",
     "title_zh": "电气接线与通电测试许可证 — 第 25 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W25)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W25)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 25 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W25)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W25)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 25 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-06-15",
     "validUntil": "2026-06-21",
     "timeStart": "07h30",
@@ -555,6 +539,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -567,6 +552,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -574,7 +568,7 @@ const Store = {
         "date": "2026-06-15"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-06-15"
       },
@@ -585,36 +579,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -640,16 +620,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-06-19",
     "validUntil": "2026-06-20",
     "timeStart": "07h30",
@@ -664,6 +644,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -684,7 +665,7 @@ const Store = {
         "date": "2026-06-19"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-06-19"
       },
@@ -695,43 +676,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -758,16 +718,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-06-15",
     "validUntil": "2026-06-21",
     "timeStart": "07h30",
@@ -781,6 +741,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -793,6 +754,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -800,7 +769,7 @@ const Store = {
         "date": "2026-06-15"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-06-15"
       },
@@ -811,43 +780,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -890,16 +838,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-06-22",
     "validUntil": "2026-06-28",
     "timeStart": "07h30",
@@ -913,6 +861,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -925,6 +874,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -932,7 +889,7 @@ const Store = {
         "date": "2026-06-22"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-06-22"
       },
@@ -943,43 +900,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -1021,16 +957,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-06-22",
     "validUntil": "2026-06-28",
     "timeStart": "07h30",
@@ -1044,6 +980,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -1056,6 +993,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -1063,7 +1009,7 @@ const Store = {
         "date": "2026-06-22"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-06-22"
       },
@@ -1074,36 +1020,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -1122,23 +1054,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 26",
     "title_zh": "电气接线与通电测试许可证 — 第 26 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W26)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W26)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 26 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W26)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W26)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 26 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-06-22",
     "validUntil": "2026-06-28",
     "timeStart": "07h30",
@@ -1152,6 +1084,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -1164,6 +1097,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -1171,7 +1113,7 @@ const Store = {
         "date": "2026-06-22"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-06-22"
       },
@@ -1182,36 +1124,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -1237,16 +1165,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-06-26",
     "validUntil": "2026-06-27",
     "timeStart": "07h30",
@@ -1261,6 +1189,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -1281,7 +1210,7 @@ const Store = {
         "date": "2026-06-26"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-06-26"
       },
@@ -1292,43 +1221,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -1355,16 +1263,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-06-22",
     "validUntil": "2026-06-28",
     "timeStart": "07h30",
@@ -1378,6 +1286,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -1390,6 +1299,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -1397,7 +1314,7 @@ const Store = {
         "date": "2026-06-22"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-06-22"
       },
@@ -1408,43 +1325,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -1487,16 +1383,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-06-29",
     "validUntil": "2026-07-05",
     "timeStart": "07h30",
@@ -1510,6 +1406,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -1522,6 +1419,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -1529,7 +1434,7 @@ const Store = {
         "date": "2026-06-29"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-06-29"
       },
@@ -1540,43 +1445,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -1618,16 +1502,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-06-29",
     "validUntil": "2026-07-05",
     "timeStart": "07h30",
@@ -1641,6 +1525,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -1653,6 +1538,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -1660,7 +1554,7 @@ const Store = {
         "date": "2026-06-29"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-06-29"
       },
@@ -1671,36 +1565,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -1719,23 +1599,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 27",
     "title_zh": "电气接线与通电测试许可证 — 第 27 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W27)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W27)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 27 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W27)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W27)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 27 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-06-29",
     "validUntil": "2026-07-05",
     "timeStart": "07h30",
@@ -1749,6 +1629,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -1761,6 +1642,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -1768,7 +1658,7 @@ const Store = {
         "date": "2026-06-29"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-06-29"
       },
@@ -1779,36 +1669,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -1834,16 +1710,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-03",
     "validUntil": "2026-07-04",
     "timeStart": "07h30",
@@ -1858,6 +1734,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -1878,7 +1755,7 @@ const Store = {
         "date": "2026-07-03"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-03"
       },
@@ -1889,43 +1766,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -1952,16 +1808,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-06-29",
     "validUntil": "2026-07-05",
     "timeStart": "07h30",
@@ -1975,6 +1831,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -1987,6 +1844,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -1994,7 +1859,7 @@ const Store = {
         "date": "2026-06-29"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-06-29"
       },
@@ -2005,43 +1870,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -2084,16 +1928,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-06",
     "validUntil": "2026-07-12",
     "timeStart": "07h30",
@@ -2107,6 +1951,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -2119,6 +1964,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -2126,7 +1979,7 @@ const Store = {
         "date": "2026-07-06"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-06"
       },
@@ -2137,43 +1990,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -2215,16 +2047,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-06",
     "validUntil": "2026-07-12",
     "timeStart": "07h30",
@@ -2238,6 +2070,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -2250,6 +2083,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -2257,7 +2099,7 @@ const Store = {
         "date": "2026-07-06"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-06"
       },
@@ -2268,36 +2110,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -2316,23 +2144,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 28",
     "title_zh": "电气接线与通电测试许可证 — 第 28 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W28)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W28)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 28 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W28)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W28)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 28 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-06",
     "validUntil": "2026-07-12",
     "timeStart": "07h30",
@@ -2346,6 +2174,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -2358,6 +2187,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -2365,7 +2203,7 @@ const Store = {
         "date": "2026-07-06"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-06"
       },
@@ -2376,36 +2214,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -2431,16 +2255,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-10",
     "validUntil": "2026-07-11",
     "timeStart": "07h30",
@@ -2455,6 +2279,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -2475,7 +2300,7 @@ const Store = {
         "date": "2026-07-10"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-10"
       },
@@ -2486,43 +2311,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -2549,16 +2353,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-06",
     "validUntil": "2026-07-12",
     "timeStart": "07h30",
@@ -2572,6 +2376,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -2584,6 +2389,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -2591,7 +2404,7 @@ const Store = {
         "date": "2026-07-06"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-06"
       },
@@ -2602,43 +2415,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -2681,16 +2473,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-13",
     "validUntil": "2026-07-19",
     "timeStart": "07h30",
@@ -2704,6 +2496,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -2716,6 +2509,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -2723,7 +2524,7 @@ const Store = {
         "date": "2026-07-13"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-13"
       },
@@ -2734,43 +2535,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -2812,16 +2592,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-13",
     "validUntil": "2026-07-19",
     "timeStart": "07h30",
@@ -2835,6 +2615,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -2847,6 +2628,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -2854,7 +2644,7 @@ const Store = {
         "date": "2026-07-13"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-13"
       },
@@ -2865,36 +2655,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -2913,23 +2689,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 29",
     "title_zh": "电气接线与通电测试许可证 — 第 29 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W29)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W29)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 29 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W29)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W29)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 29 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-13",
     "validUntil": "2026-07-19",
     "timeStart": "07h30",
@@ -2943,6 +2719,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -2955,6 +2732,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -2962,7 +2748,7 @@ const Store = {
         "date": "2026-07-13"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-13"
       },
@@ -2973,36 +2759,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -3028,16 +2800,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-17",
     "validUntil": "2026-07-18",
     "timeStart": "07h30",
@@ -3052,6 +2824,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -3072,7 +2845,7 @@ const Store = {
         "date": "2026-07-17"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-17"
       },
@@ -3083,43 +2856,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -3146,16 +2898,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-13",
     "validUntil": "2026-07-19",
     "timeStart": "07h30",
@@ -3169,6 +2921,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -3181,6 +2934,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -3188,7 +2949,7 @@ const Store = {
         "date": "2026-07-13"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-13"
       },
@@ -3199,43 +2960,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -3278,16 +3018,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-20",
     "validUntil": "2026-07-26",
     "timeStart": "07h30",
@@ -3301,6 +3041,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -3313,6 +3054,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -3320,7 +3069,7 @@ const Store = {
         "date": "2026-07-20"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-20"
       },
@@ -3331,43 +3080,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -3409,16 +3137,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-20",
     "validUntil": "2026-07-26",
     "timeStart": "07h30",
@@ -3432,6 +3160,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -3444,6 +3173,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -3451,7 +3189,7 @@ const Store = {
         "date": "2026-07-20"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-20"
       },
@@ -3462,36 +3200,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -3510,23 +3234,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 30",
     "title_zh": "电气接线与通电测试许可证 — 第 30 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W30)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W30)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 30 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W30)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W30)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 30 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-20",
     "validUntil": "2026-07-26",
     "timeStart": "07h30",
@@ -3540,6 +3264,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -3552,6 +3277,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -3559,7 +3293,7 @@ const Store = {
         "date": "2026-07-20"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-20"
       },
@@ -3570,36 +3304,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -3625,16 +3345,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-24",
     "validUntil": "2026-07-25",
     "timeStart": "07h30",
@@ -3649,6 +3369,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -3669,7 +3390,7 @@ const Store = {
         "date": "2026-07-24"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-24"
       },
@@ -3680,43 +3401,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -3743,16 +3443,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-20",
     "validUntil": "2026-07-26",
     "timeStart": "07h30",
@@ -3766,6 +3466,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -3778,6 +3479,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -3785,7 +3494,7 @@ const Store = {
         "date": "2026-07-20"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-20"
       },
@@ -3796,43 +3505,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -3875,16 +3563,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-27",
     "validUntil": "2026-08-02",
     "timeStart": "07h30",
@@ -3898,6 +3586,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -3910,6 +3599,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -3917,7 +3614,7 @@ const Store = {
         "date": "2026-07-27"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-27"
       },
@@ -3928,43 +3625,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -4006,16 +3682,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-27",
     "validUntil": "2026-08-02",
     "timeStart": "07h30",
@@ -4029,6 +3705,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -4041,6 +3718,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -4048,7 +3734,7 @@ const Store = {
         "date": "2026-07-27"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-27"
       },
@@ -4059,36 +3745,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -4107,23 +3779,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 31",
     "title_zh": "电气接线与通电测试许可证 — 第 31 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W31)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W31)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 31 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W31)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W31)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 31 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-27",
     "validUntil": "2026-08-02",
     "timeStart": "07h30",
@@ -4137,6 +3809,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -4149,6 +3822,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -4156,7 +3838,7 @@ const Store = {
         "date": "2026-07-27"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-27"
       },
@@ -4167,36 +3849,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -4222,16 +3890,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-31",
     "validUntil": "2026-08-01",
     "timeStart": "07h30",
@@ -4246,6 +3914,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -4266,7 +3935,7 @@ const Store = {
         "date": "2026-07-31"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-31"
       },
@@ -4277,43 +3946,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -4340,16 +3988,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-07-27",
     "validUntil": "2026-08-02",
     "timeStart": "07h30",
@@ -4363,6 +4011,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -4375,6 +4024,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -4382,7 +4039,7 @@ const Store = {
         "date": "2026-07-27"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-07-27"
       },
@@ -4393,43 +4050,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -4472,16 +4108,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-03",
     "validUntil": "2026-08-09",
     "timeStart": "07h30",
@@ -4495,6 +4131,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -4507,6 +4144,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -4514,7 +4159,7 @@ const Store = {
         "date": "2026-08-03"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-03"
       },
@@ -4525,43 +4170,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -4603,16 +4227,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-03",
     "validUntil": "2026-08-09",
     "timeStart": "07h30",
@@ -4626,6 +4250,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -4638,6 +4263,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -4645,7 +4279,7 @@ const Store = {
         "date": "2026-08-03"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-03"
       },
@@ -4656,36 +4290,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -4704,23 +4324,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 32",
     "title_zh": "电气接线与通电测试许可证 — 第 32 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W32)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W32)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 32 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W32)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W32)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 32 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-03",
     "validUntil": "2026-08-09",
     "timeStart": "07h30",
@@ -4734,6 +4354,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -4746,6 +4367,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -4753,7 +4383,7 @@ const Store = {
         "date": "2026-08-03"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-03"
       },
@@ -4764,36 +4394,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -4819,16 +4435,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-07",
     "validUntil": "2026-08-08",
     "timeStart": "07h30",
@@ -4843,6 +4459,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -4863,7 +4480,7 @@ const Store = {
         "date": "2026-08-07"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-07"
       },
@@ -4874,43 +4491,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -4937,16 +4533,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-03",
     "validUntil": "2026-08-09",
     "timeStart": "07h30",
@@ -4960,6 +4556,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -4972,6 +4569,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -4979,7 +4584,7 @@ const Store = {
         "date": "2026-08-03"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-03"
       },
@@ -4990,43 +4595,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -5069,16 +4653,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-10",
     "validUntil": "2026-08-16",
     "timeStart": "07h30",
@@ -5092,6 +4676,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -5104,6 +4689,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -5111,7 +4704,7 @@ const Store = {
         "date": "2026-08-10"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-10"
       },
@@ -5122,43 +4715,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -5200,16 +4772,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-10",
     "validUntil": "2026-08-16",
     "timeStart": "07h30",
@@ -5223,6 +4795,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -5235,6 +4808,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -5242,7 +4824,7 @@ const Store = {
         "date": "2026-08-10"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-10"
       },
@@ -5253,36 +4835,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -5301,23 +4869,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 33",
     "title_zh": "电气接线与通电测试许可证 — 第 33 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W33)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W33)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 33 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W33)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W33)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 33 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-10",
     "validUntil": "2026-08-16",
     "timeStart": "07h30",
@@ -5331,6 +4899,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -5343,6 +4912,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -5350,7 +4928,7 @@ const Store = {
         "date": "2026-08-10"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-10"
       },
@@ -5361,36 +4939,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -5416,16 +4980,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-14",
     "validUntil": "2026-08-15",
     "timeStart": "07h30",
@@ -5440,6 +5004,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -5460,7 +5025,7 @@ const Store = {
         "date": "2026-08-14"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-14"
       },
@@ -5471,43 +5036,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -5534,16 +5078,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-10",
     "validUntil": "2026-08-16",
     "timeStart": "07h30",
@@ -5557,6 +5101,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -5569,6 +5114,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -5576,7 +5129,7 @@ const Store = {
         "date": "2026-08-10"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-10"
       },
@@ -5587,43 +5140,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -5666,16 +5198,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-17",
     "validUntil": "2026-08-23",
     "timeStart": "07h30",
@@ -5689,6 +5221,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -5701,6 +5234,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -5708,7 +5249,7 @@ const Store = {
         "date": "2026-08-17"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-17"
       },
@@ -5719,43 +5260,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -5797,16 +5317,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-17",
     "validUntil": "2026-08-23",
     "timeStart": "07h30",
@@ -5820,6 +5340,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -5832,6 +5353,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -5839,7 +5369,7 @@ const Store = {
         "date": "2026-08-17"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-17"
       },
@@ -5850,36 +5380,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -5898,23 +5414,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 34",
     "title_zh": "电气接线与通电测试许可证 — 第 34 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W34)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W34)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 34 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W34)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W34)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 34 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-17",
     "validUntil": "2026-08-23",
     "timeStart": "07h30",
@@ -5928,6 +5444,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -5940,6 +5457,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -5947,7 +5473,7 @@ const Store = {
         "date": "2026-08-17"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-17"
       },
@@ -5958,36 +5484,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -6013,16 +5525,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-21",
     "validUntil": "2026-08-22",
     "timeStart": "07h30",
@@ -6037,6 +5549,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -6057,7 +5570,7 @@ const Store = {
         "date": "2026-08-21"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-21"
       },
@@ -6068,43 +5581,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -6131,16 +5623,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-17",
     "validUntil": "2026-08-23",
     "timeStart": "07h30",
@@ -6154,6 +5646,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -6166,6 +5659,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -6173,7 +5674,7 @@ const Store = {
         "date": "2026-08-17"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-17"
       },
@@ -6184,43 +5685,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -6263,16 +5743,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-24",
     "validUntil": "2026-08-30",
     "timeStart": "07h30",
@@ -6286,6 +5766,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -6298,6 +5779,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -6305,7 +5794,7 @@ const Store = {
         "date": "2026-08-24"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-24"
       },
@@ -6316,43 +5805,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -6394,16 +5862,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-24",
     "validUntil": "2026-08-30",
     "timeStart": "07h30",
@@ -6417,6 +5885,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -6429,6 +5898,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -6436,7 +5914,7 @@ const Store = {
         "date": "2026-08-24"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-24"
       },
@@ -6447,36 +5925,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -6495,23 +5959,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 35",
     "title_zh": "电气接线与通电测试许可证 — 第 35 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W35)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W35)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 35 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W35)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W35)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 35 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-24",
     "validUntil": "2026-08-30",
     "timeStart": "07h30",
@@ -6525,6 +5989,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -6537,6 +6002,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -6544,7 +6018,7 @@ const Store = {
         "date": "2026-08-24"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-24"
       },
@@ -6555,36 +6029,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -6610,16 +6070,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-28",
     "validUntil": "2026-08-29",
     "timeStart": "07h30",
@@ -6634,6 +6094,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -6654,7 +6115,7 @@ const Store = {
         "date": "2026-08-28"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-28"
       },
@@ -6665,43 +6126,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -6728,16 +6168,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-24",
     "validUntil": "2026-08-30",
     "timeStart": "07h30",
@@ -6751,6 +6191,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -6763,6 +6204,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -6770,7 +6219,7 @@ const Store = {
         "date": "2026-08-24"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-24"
       },
@@ -6781,43 +6230,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -6860,16 +6288,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-31",
     "validUntil": "2026-09-06",
     "timeStart": "07h30",
@@ -6883,6 +6311,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -6895,6 +6324,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -6902,7 +6339,7 @@ const Store = {
         "date": "2026-08-31"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-31"
       },
@@ -6913,43 +6350,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -6991,16 +6407,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-31",
     "validUntil": "2026-09-06",
     "timeStart": "07h30",
@@ -7014,6 +6430,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -7026,6 +6443,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -7033,7 +6459,7 @@ const Store = {
         "date": "2026-08-31"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-31"
       },
@@ -7044,36 +6470,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -7092,23 +6504,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 36",
     "title_zh": "电气接线与通电测试许可证 — 第 36 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W36)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W36)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 36 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W36)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W36)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 36 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-31",
     "validUntil": "2026-09-06",
     "timeStart": "07h30",
@@ -7122,6 +6534,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -7134,6 +6547,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -7141,7 +6563,7 @@ const Store = {
         "date": "2026-08-31"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-31"
       },
@@ -7152,36 +6574,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -7207,16 +6615,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-04",
     "validUntil": "2026-09-05",
     "timeStart": "07h30",
@@ -7231,6 +6639,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -7251,7 +6660,7 @@ const Store = {
         "date": "2026-09-04"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-04"
       },
@@ -7262,43 +6671,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -7325,16 +6713,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-08-31",
     "validUntil": "2026-09-06",
     "timeStart": "07h30",
@@ -7348,6 +6736,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -7360,6 +6749,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -7367,7 +6764,7 @@ const Store = {
         "date": "2026-08-31"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-08-31"
       },
@@ -7378,43 +6775,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -7457,16 +6833,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-07",
     "validUntil": "2026-09-13",
     "timeStart": "07h30",
@@ -7480,6 +6856,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -7492,6 +6869,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -7499,7 +6884,7 @@ const Store = {
         "date": "2026-09-07"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-07"
       },
@@ -7510,43 +6895,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -7588,16 +6952,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-07",
     "validUntil": "2026-09-13",
     "timeStart": "07h30",
@@ -7611,6 +6975,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -7623,6 +6988,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -7630,7 +7004,7 @@ const Store = {
         "date": "2026-09-07"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-07"
       },
@@ -7641,36 +7015,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -7689,23 +7049,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 37",
     "title_zh": "电气接线与通电测试许可证 — 第 37 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W37)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W37)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 37 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W37)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W37)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 37 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-07",
     "validUntil": "2026-09-13",
     "timeStart": "07h30",
@@ -7719,6 +7079,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -7731,6 +7092,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -7738,7 +7108,7 @@ const Store = {
         "date": "2026-09-07"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-07"
       },
@@ -7749,36 +7119,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -7804,16 +7160,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-11",
     "validUntil": "2026-09-12",
     "timeStart": "07h30",
@@ -7828,6 +7184,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -7848,7 +7205,7 @@ const Store = {
         "date": "2026-09-11"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-11"
       },
@@ -7859,43 +7216,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -7922,16 +7258,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-07",
     "validUntil": "2026-09-13",
     "timeStart": "07h30",
@@ -7945,6 +7281,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -7957,6 +7294,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -7964,7 +7309,7 @@ const Store = {
         "date": "2026-09-07"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-07"
       },
@@ -7975,43 +7320,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -8054,16 +7378,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-14",
     "validUntil": "2026-09-20",
     "timeStart": "07h30",
@@ -8077,6 +7401,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -8089,6 +7414,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -8096,7 +7429,7 @@ const Store = {
         "date": "2026-09-14"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-14"
       },
@@ -8107,43 +7440,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -8185,16 +7497,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-14",
     "validUntil": "2026-09-20",
     "timeStart": "07h30",
@@ -8208,6 +7520,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -8220,6 +7533,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -8227,7 +7549,7 @@ const Store = {
         "date": "2026-09-14"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-14"
       },
@@ -8238,36 +7560,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -8286,23 +7594,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 38",
     "title_zh": "电气接线与通电测试许可证 — 第 38 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W38)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W38)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 38 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W38)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W38)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 38 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-14",
     "validUntil": "2026-09-20",
     "timeStart": "07h30",
@@ -8316,6 +7624,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -8328,6 +7637,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -8335,7 +7653,7 @@ const Store = {
         "date": "2026-09-14"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-14"
       },
@@ -8346,36 +7664,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -8401,16 +7705,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-18",
     "validUntil": "2026-09-19",
     "timeStart": "07h30",
@@ -8425,6 +7729,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -8445,7 +7750,7 @@ const Store = {
         "date": "2026-09-18"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-18"
       },
@@ -8456,43 +7761,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -8519,16 +7803,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-14",
     "validUntil": "2026-09-20",
     "timeStart": "07h30",
@@ -8542,6 +7826,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -8554,6 +7839,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -8561,7 +7854,7 @@ const Store = {
         "date": "2026-09-14"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-14"
       },
@@ -8572,43 +7865,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -8651,16 +7923,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-21",
     "validUntil": "2026-09-27",
     "timeStart": "07h30",
@@ -8674,6 +7946,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -8686,6 +7959,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -8693,7 +7974,7 @@ const Store = {
         "date": "2026-09-21"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-21"
       },
@@ -8704,43 +7985,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -8782,16 +8042,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-21",
     "validUntil": "2026-09-27",
     "timeStart": "07h30",
@@ -8805,6 +8065,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -8817,6 +8078,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -8824,7 +8094,7 @@ const Store = {
         "date": "2026-09-21"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-21"
       },
@@ -8835,36 +8105,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -8883,23 +8139,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 39",
     "title_zh": "电气接线与通电测试许可证 — 第 39 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W39)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W39)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 39 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W39)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W39)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 39 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-21",
     "validUntil": "2026-09-27",
     "timeStart": "07h30",
@@ -8913,6 +8169,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -8925,6 +8182,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -8932,7 +8198,7 @@ const Store = {
         "date": "2026-09-21"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-21"
       },
@@ -8943,36 +8209,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -8998,16 +8250,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-25",
     "validUntil": "2026-09-26",
     "timeStart": "07h30",
@@ -9022,6 +8274,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -9042,7 +8295,7 @@ const Store = {
         "date": "2026-09-25"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-25"
       },
@@ -9053,43 +8306,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -9116,16 +8348,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-21",
     "validUntil": "2026-09-27",
     "timeStart": "07h30",
@@ -9139,6 +8371,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -9151,6 +8384,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -9158,7 +8399,7 @@ const Store = {
         "date": "2026-09-21"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-21"
       },
@@ -9169,43 +8410,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -9248,16 +8468,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-28",
     "validUntil": "2026-10-04",
     "timeStart": "07h30",
@@ -9271,6 +8491,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -9283,6 +8504,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -9290,7 +8519,7 @@ const Store = {
         "date": "2026-09-28"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-28"
       },
@@ -9301,43 +8530,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -9379,16 +8587,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-28",
     "validUntil": "2026-10-04",
     "timeStart": "07h30",
@@ -9402,6 +8610,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -9414,6 +8623,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -9421,7 +8639,7 @@ const Store = {
         "date": "2026-09-28"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-28"
       },
@@ -9432,36 +8650,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -9480,23 +8684,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 40",
     "title_zh": "电气接线与通电测试许可证 — 第 40 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W40)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W40)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 40 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W40)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W40)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 40 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-28",
     "validUntil": "2026-10-04",
     "timeStart": "07h30",
@@ -9510,6 +8714,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -9522,6 +8727,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -9529,7 +8743,7 @@ const Store = {
         "date": "2026-09-28"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-28"
       },
@@ -9540,36 +8754,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -9595,16 +8795,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-02",
     "validUntil": "2026-10-03",
     "timeStart": "07h30",
@@ -9619,6 +8819,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -9639,7 +8840,7 @@ const Store = {
         "date": "2026-10-02"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-02"
       },
@@ -9650,43 +8851,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -9713,16 +8893,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-09-28",
     "validUntil": "2026-10-04",
     "timeStart": "07h30",
@@ -9736,6 +8916,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -9748,6 +8929,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -9755,7 +8944,7 @@ const Store = {
         "date": "2026-09-28"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-09-28"
       },
@@ -9766,43 +8955,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -9845,16 +9013,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-05",
     "validUntil": "2026-10-11",
     "timeStart": "07h30",
@@ -9868,6 +9036,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -9880,6 +9049,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -9887,7 +9064,7 @@ const Store = {
         "date": "2026-10-05"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-05"
       },
@@ -9898,43 +9075,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -9976,16 +9132,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-05",
     "validUntil": "2026-10-11",
     "timeStart": "07h30",
@@ -9999,6 +9155,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -10011,6 +9168,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -10018,7 +9184,7 @@ const Store = {
         "date": "2026-10-05"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-05"
       },
@@ -10029,36 +9195,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -10077,23 +9229,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 41",
     "title_zh": "电气接线与通电测试许可证 — 第 41 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W41)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W41)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 41 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W41)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W41)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 41 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-05",
     "validUntil": "2026-10-11",
     "timeStart": "07h30",
@@ -10107,6 +9259,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -10119,6 +9272,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -10126,7 +9288,7 @@ const Store = {
         "date": "2026-10-05"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-05"
       },
@@ -10137,36 +9299,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -10192,16 +9340,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-09",
     "validUntil": "2026-10-10",
     "timeStart": "07h30",
@@ -10216,6 +9364,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -10236,7 +9385,7 @@ const Store = {
         "date": "2026-10-09"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-09"
       },
@@ -10247,43 +9396,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -10310,16 +9438,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-05",
     "validUntil": "2026-10-11",
     "timeStart": "07h30",
@@ -10333,6 +9461,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -10345,6 +9474,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -10352,7 +9489,7 @@ const Store = {
         "date": "2026-10-05"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-05"
       },
@@ -10363,43 +9500,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -10442,16 +9558,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-12",
     "validUntil": "2026-10-18",
     "timeStart": "07h30",
@@ -10465,6 +9581,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -10477,6 +9594,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -10484,7 +9609,7 @@ const Store = {
         "date": "2026-10-12"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-12"
       },
@@ -10495,43 +9620,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -10573,16 +9677,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-12",
     "validUntil": "2026-10-18",
     "timeStart": "07h30",
@@ -10596,6 +9700,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -10608,6 +9713,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -10615,7 +9729,7 @@ const Store = {
         "date": "2026-10-12"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-12"
       },
@@ -10626,36 +9740,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -10674,23 +9774,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 42",
     "title_zh": "电气接线与通电测试许可证 — 第 42 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W42)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W42)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 42 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W42)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W42)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 42 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-12",
     "validUntil": "2026-10-18",
     "timeStart": "07h30",
@@ -10704,6 +9804,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -10716,6 +9817,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -10723,7 +9833,7 @@ const Store = {
         "date": "2026-10-12"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-12"
       },
@@ -10734,36 +9844,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -10789,16 +9885,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-16",
     "validUntil": "2026-10-17",
     "timeStart": "07h30",
@@ -10813,6 +9909,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -10833,7 +9930,7 @@ const Store = {
         "date": "2026-10-16"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-16"
       },
@@ -10844,43 +9941,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -10907,16 +9983,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-12",
     "validUntil": "2026-10-18",
     "timeStart": "07h30",
@@ -10930,6 +10006,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -10942,6 +10019,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -10949,7 +10034,7 @@ const Store = {
         "date": "2026-10-12"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-12"
       },
@@ -10960,43 +10045,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -11039,16 +10103,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-19",
     "validUntil": "2026-10-25",
     "timeStart": "07h30",
@@ -11062,6 +10126,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -11074,6 +10139,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -11081,7 +10154,7 @@ const Store = {
         "date": "2026-10-19"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-19"
       },
@@ -11092,43 +10165,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -11170,16 +10222,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-19",
     "validUntil": "2026-10-25",
     "timeStart": "07h30",
@@ -11193,6 +10245,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -11205,6 +10258,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -11212,7 +10274,7 @@ const Store = {
         "date": "2026-10-19"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-19"
       },
@@ -11223,36 +10285,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -11271,23 +10319,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 43",
     "title_zh": "电气接线与通电测试许可证 — 第 43 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W43)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W43)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 43 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W43)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W43)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 43 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-19",
     "validUntil": "2026-10-25",
     "timeStart": "07h30",
@@ -11301,6 +10349,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -11313,6 +10362,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -11320,7 +10378,7 @@ const Store = {
         "date": "2026-10-19"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-19"
       },
@@ -11331,36 +10389,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -11386,16 +10430,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-23",
     "validUntil": "2026-10-24",
     "timeStart": "07h30",
@@ -11410,6 +10454,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -11430,7 +10475,7 @@ const Store = {
         "date": "2026-10-23"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-23"
       },
@@ -11441,43 +10486,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -11504,16 +10528,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-19",
     "validUntil": "2026-10-25",
     "timeStart": "07h30",
@@ -11527,6 +10551,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -11539,6 +10564,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -11546,7 +10579,7 @@ const Store = {
         "date": "2026-10-19"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-19"
       },
@@ -11557,43 +10590,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -11636,16 +10648,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-26",
     "validUntil": "2026-11-01",
     "timeStart": "07h30",
@@ -11659,6 +10671,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -11671,6 +10684,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -11678,7 +10699,7 @@ const Store = {
         "date": "2026-10-26"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-26"
       },
@@ -11689,43 +10710,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -11767,16 +10767,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-26",
     "validUntil": "2026-11-01",
     "timeStart": "07h30",
@@ -11790,6 +10790,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -11802,6 +10803,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -11809,7 +10819,7 @@ const Store = {
         "date": "2026-10-26"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-26"
       },
@@ -11820,36 +10830,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -11868,23 +10864,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 44",
     "title_zh": "电气接线与通电测试许可证 — 第 44 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W44)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W44)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 44 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W44)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W44)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 44 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-26",
     "validUntil": "2026-11-01",
     "timeStart": "07h30",
@@ -11898,6 +10894,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -11910,6 +10907,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -11917,7 +10923,7 @@ const Store = {
         "date": "2026-10-26"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-26"
       },
@@ -11928,36 +10934,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -11983,16 +10975,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-30",
     "validUntil": "2026-10-31",
     "timeStart": "07h30",
@@ -12007,6 +10999,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -12027,7 +11020,7 @@ const Store = {
         "date": "2026-10-30"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-30"
       },
@@ -12038,43 +11031,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -12101,16 +11073,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-10-26",
     "validUntil": "2026-11-01",
     "timeStart": "07h30",
@@ -12124,6 +11096,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -12136,6 +11109,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -12143,7 +11124,7 @@ const Store = {
         "date": "2026-10-26"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-10-26"
       },
@@ -12154,43 +11135,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -12233,16 +11193,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-02",
     "validUntil": "2026-11-08",
     "timeStart": "07h30",
@@ -12256,6 +11216,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -12268,6 +11229,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -12275,7 +11244,7 @@ const Store = {
         "date": "2026-11-02"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-02"
       },
@@ -12286,43 +11255,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -12364,16 +11312,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-02",
     "validUntil": "2026-11-08",
     "timeStart": "07h30",
@@ -12387,6 +11335,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -12399,6 +11348,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -12406,7 +11364,7 @@ const Store = {
         "date": "2026-11-02"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-02"
       },
@@ -12417,36 +11375,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -12465,23 +11409,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 45",
     "title_zh": "电气接线与通电测试许可证 — 第 45 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W45)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W45)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 45 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W45)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W45)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 45 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-02",
     "validUntil": "2026-11-08",
     "timeStart": "07h30",
@@ -12495,6 +11439,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -12507,6 +11452,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -12514,7 +11468,7 @@ const Store = {
         "date": "2026-11-02"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-02"
       },
@@ -12525,36 +11479,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -12580,16 +11520,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-06",
     "validUntil": "2026-11-07",
     "timeStart": "07h30",
@@ -12604,6 +11544,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -12624,7 +11565,7 @@ const Store = {
         "date": "2026-11-06"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-06"
       },
@@ -12635,43 +11576,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -12698,16 +11618,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-02",
     "validUntil": "2026-11-08",
     "timeStart": "07h30",
@@ -12721,6 +11641,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -12733,6 +11654,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -12740,7 +11669,7 @@ const Store = {
         "date": "2026-11-02"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-02"
       },
@@ -12751,43 +11680,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -12830,16 +11738,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-09",
     "validUntil": "2026-11-15",
     "timeStart": "07h30",
@@ -12853,6 +11761,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -12865,6 +11774,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -12872,7 +11789,7 @@ const Store = {
         "date": "2026-11-09"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-09"
       },
@@ -12883,43 +11800,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -12961,16 +11857,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-09",
     "validUntil": "2026-11-15",
     "timeStart": "07h30",
@@ -12984,6 +11880,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -12996,6 +11893,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -13003,7 +11909,7 @@ const Store = {
         "date": "2026-11-09"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-09"
       },
@@ -13014,36 +11920,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -13062,23 +11954,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 46",
     "title_zh": "电气接线与通电测试许可证 — 第 46 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W46)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W46)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 46 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W46)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W46)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 46 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-09",
     "validUntil": "2026-11-15",
     "timeStart": "07h30",
@@ -13092,6 +11984,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -13104,6 +11997,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -13111,7 +12013,7 @@ const Store = {
         "date": "2026-11-09"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-09"
       },
@@ -13122,36 +12024,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -13177,16 +12065,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-13",
     "validUntil": "2026-11-14",
     "timeStart": "07h30",
@@ -13201,6 +12089,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -13221,7 +12110,7 @@ const Store = {
         "date": "2026-11-13"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-13"
       },
@@ -13232,43 +12121,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -13295,16 +12163,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-09",
     "validUntil": "2026-11-15",
     "timeStart": "07h30",
@@ -13318,6 +12186,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -13330,6 +12199,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -13337,7 +12214,7 @@ const Store = {
         "date": "2026-11-09"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-09"
       },
@@ -13348,43 +12225,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -13427,16 +12283,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-16",
     "validUntil": "2026-11-22",
     "timeStart": "07h30",
@@ -13450,6 +12306,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -13462,6 +12319,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -13469,7 +12334,7 @@ const Store = {
         "date": "2026-11-16"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-16"
       },
@@ -13480,43 +12345,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -13558,16 +12402,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-16",
     "validUntil": "2026-11-22",
     "timeStart": "07h30",
@@ -13581,6 +12425,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -13593,6 +12438,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -13600,7 +12454,7 @@ const Store = {
         "date": "2026-11-16"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-16"
       },
@@ -13611,36 +12465,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -13659,23 +12499,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 47",
     "title_zh": "电气接线与通电测试许可证 — 第 47 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W47)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W47)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 47 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W47)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W47)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 47 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-16",
     "validUntil": "2026-11-22",
     "timeStart": "07h30",
@@ -13689,6 +12529,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -13701,6 +12542,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -13708,7 +12558,7 @@ const Store = {
         "date": "2026-11-16"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-16"
       },
@@ -13719,36 +12569,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -13774,16 +12610,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-20",
     "validUntil": "2026-11-21",
     "timeStart": "07h30",
@@ -13798,6 +12634,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -13818,7 +12655,7 @@ const Store = {
         "date": "2026-11-20"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-20"
       },
@@ -13829,43 +12666,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -13892,16 +12708,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-16",
     "validUntil": "2026-11-22",
     "timeStart": "07h30",
@@ -13915,6 +12731,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -13927,6 +12744,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -13934,7 +12759,7 @@ const Store = {
         "date": "2026-11-16"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-16"
       },
@@ -13945,43 +12770,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -14024,16 +12828,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-23",
     "validUntil": "2026-11-29",
     "timeStart": "07h30",
@@ -14047,6 +12851,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -14059,6 +12864,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -14066,7 +12879,7 @@ const Store = {
         "date": "2026-11-23"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-23"
       },
@@ -14077,43 +12890,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -14155,16 +12947,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-23",
     "validUntil": "2026-11-29",
     "timeStart": "07h30",
@@ -14178,6 +12970,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -14190,6 +12983,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -14197,7 +12999,7 @@ const Store = {
         "date": "2026-11-23"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-23"
       },
@@ -14208,36 +13010,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -14256,23 +13044,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 48",
     "title_zh": "电气接线与通电测试许可证 — 第 48 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W48)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W48)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 48 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W48)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W48)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 48 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-23",
     "validUntil": "2026-11-29",
     "timeStart": "07h30",
@@ -14286,6 +13074,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -14298,6 +13087,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -14305,7 +13103,7 @@ const Store = {
         "date": "2026-11-23"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-23"
       },
@@ -14316,36 +13114,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -14371,16 +13155,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-27",
     "validUntil": "2026-11-28",
     "timeStart": "07h30",
@@ -14395,6 +13179,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -14415,7 +13200,7 @@ const Store = {
         "date": "2026-11-27"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-27"
       },
@@ -14426,43 +13211,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -14489,16 +13253,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-23",
     "validUntil": "2026-11-29",
     "timeStart": "07h30",
@@ -14512,6 +13276,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -14524,6 +13289,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -14531,7 +13304,7 @@ const Store = {
         "date": "2026-11-23"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-23"
       },
@@ -14542,43 +13315,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -14621,16 +13373,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-30",
     "validUntil": "2026-12-06",
     "timeStart": "07h30",
@@ -14644,6 +13396,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -14656,6 +13409,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -14663,7 +13424,7 @@ const Store = {
         "date": "2026-11-30"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-30"
       },
@@ -14674,43 +13435,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -14752,16 +13492,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-30",
     "validUntil": "2026-12-06",
     "timeStart": "07h30",
@@ -14775,6 +13515,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -14787,6 +13528,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -14794,7 +13544,7 @@ const Store = {
         "date": "2026-11-30"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-30"
       },
@@ -14805,36 +13555,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -14853,23 +13589,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 49",
     "title_zh": "电气接线与通电测试许可证 — 第 49 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W49)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W49)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 49 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W49)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W49)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 49 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-30",
     "validUntil": "2026-12-06",
     "timeStart": "07h30",
@@ -14883,6 +13619,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -14895,6 +13632,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -14902,7 +13648,7 @@ const Store = {
         "date": "2026-11-30"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-30"
       },
@@ -14913,36 +13659,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -14968,16 +13700,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-04",
     "validUntil": "2026-12-05",
     "timeStart": "07h30",
@@ -14992,6 +13724,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -15012,7 +13745,7 @@ const Store = {
         "date": "2026-12-04"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-04"
       },
@@ -15023,43 +13756,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -15086,16 +13798,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-11-30",
     "validUntil": "2026-12-06",
     "timeStart": "07h30",
@@ -15109,6 +13821,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -15121,6 +13834,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -15128,7 +13849,7 @@ const Store = {
         "date": "2026-11-30"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-11-30"
       },
@@ -15139,43 +13860,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -15218,16 +13918,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-07",
     "validUntil": "2026-12-13",
     "timeStart": "07h30",
@@ -15241,6 +13941,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -15253,6 +13954,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -15260,7 +13969,7 @@ const Store = {
         "date": "2026-12-07"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-07"
       },
@@ -15271,43 +13980,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -15349,16 +14037,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-07",
     "validUntil": "2026-12-13",
     "timeStart": "07h30",
@@ -15372,6 +14060,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -15384,6 +14073,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -15391,7 +14089,7 @@ const Store = {
         "date": "2026-12-07"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-07"
       },
@@ -15402,36 +14100,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -15450,23 +14134,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 50",
     "title_zh": "电气接线与通电测试许可证 — 第 50 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W50)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W50)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 50 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W50)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W50)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 50 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-07",
     "validUntil": "2026-12-13",
     "timeStart": "07h30",
@@ -15480,6 +14164,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -15492,6 +14177,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -15499,7 +14193,7 @@ const Store = {
         "date": "2026-12-07"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-07"
       },
@@ -15510,36 +14204,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -15565,16 +14245,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-11",
     "validUntil": "2026-12-12",
     "timeStart": "07h30",
@@ -15589,6 +14269,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -15609,7 +14290,7 @@ const Store = {
         "date": "2026-12-11"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-11"
       },
@@ -15620,43 +14301,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -15683,16 +14343,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-07",
     "validUntil": "2026-12-13",
     "timeStart": "07h30",
@@ -15706,6 +14366,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -15718,6 +14379,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -15725,7 +14394,7 @@ const Store = {
         "date": "2026-12-07"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-07"
       },
@@ -15736,43 +14405,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -15815,16 +14463,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-14",
     "validUntil": "2026-12-20",
     "timeStart": "07h30",
@@ -15838,6 +14486,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -15850,6 +14499,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -15857,7 +14514,7 @@ const Store = {
         "date": "2026-12-14"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-14"
       },
@@ -15868,43 +14525,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -15946,16 +14582,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-14",
     "validUntil": "2026-12-20",
     "timeStart": "07h30",
@@ -15969,6 +14605,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -15981,6 +14618,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -15988,7 +14634,7 @@ const Store = {
         "date": "2026-12-14"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-14"
       },
@@ -15999,36 +14645,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -16047,23 +14679,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 51",
     "title_zh": "电气接线与通电测试许可证 — 第 51 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W51)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W51)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 51 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W51)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W51)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 51 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-14",
     "validUntil": "2026-12-20",
     "timeStart": "07h30",
@@ -16077,6 +14709,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -16089,6 +14722,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -16096,7 +14738,7 @@ const Store = {
         "date": "2026-12-14"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-14"
       },
@@ -16107,36 +14749,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -16162,16 +14790,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-18",
     "validUntil": "2026-12-19",
     "timeStart": "07h30",
@@ -16186,6 +14814,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -16206,7 +14835,7 @@ const Store = {
         "date": "2026-12-18"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-18"
       },
@@ -16217,43 +14846,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -16280,16 +14888,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-14",
     "validUntil": "2026-12-20",
     "timeStart": "07h30",
@@ -16303,6 +14911,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -16315,6 +14924,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -16322,7 +14939,7 @@ const Store = {
         "date": "2026-12-14"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-14"
       },
@@ -16333,43 +14950,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -16412,16 +15008,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-21",
     "validUntil": "2026-12-27",
     "timeStart": "07h30",
@@ -16435,6 +15031,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -16447,6 +15044,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -16454,7 +15059,7 @@ const Store = {
         "date": "2026-12-21"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-21"
       },
@@ -16465,43 +15070,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -16543,16 +15127,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-21",
     "validUntil": "2026-12-27",
     "timeStart": "07h30",
@@ -16566,6 +15150,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -16578,6 +15163,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -16585,7 +15179,7 @@ const Store = {
         "date": "2026-12-21"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-21"
       },
@@ -16596,36 +15190,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -16644,23 +15224,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 52",
     "title_zh": "电气接线与通电测试许可证 — 第 52 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W52)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W52)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 52 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W52)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W52)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 52 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-21",
     "validUntil": "2026-12-27",
     "timeStart": "07h30",
@@ -16674,6 +15254,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -16686,6 +15267,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -16693,7 +15283,7 @@ const Store = {
         "date": "2026-12-21"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-21"
       },
@@ -16704,36 +15294,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -16759,16 +15335,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-25",
     "validUntil": "2026-12-26",
     "timeStart": "07h30",
@@ -16783,6 +15359,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -16803,7 +15380,7 @@ const Store = {
         "date": "2026-12-25"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-25"
       },
@@ -16814,43 +15391,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -16877,16 +15433,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-21",
     "validUntil": "2026-12-27",
     "timeStart": "07h30",
@@ -16900,6 +15456,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -16912,6 +15469,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -16919,7 +15484,7 @@ const Store = {
         "date": "2026-12-21"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-21"
       },
@@ -16930,43 +15495,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -17009,16 +15553,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-28",
     "validUntil": "2027-01-03",
     "timeStart": "07h30",
@@ -17032,6 +15576,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -17044,6 +15589,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -17051,7 +15604,7 @@ const Store = {
         "date": "2026-12-28"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-28"
       },
@@ -17062,43 +15615,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
@@ -17140,16 +15672,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Lignes de Soudage & Pinces",
     "zone": "Zone UB / Postes de Soudure",
-    "location": "Hall Montage — Îlots Robotisés",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-28",
     "validUntil": "2027-01-03",
     "timeStart": "07h30",
@@ -17163,6 +15695,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -17175,6 +15708,15 @@ const Store = {
       "Extincteur CO2/Poudre à proximité",
       "Gants soudeur"
     ],
+    "hotDetails": {
+      "inflammablesClear10m": true,
+      "fireproofTarps": true,
+      "extinguisherWater": true,
+      "extinguisherPowder": true,
+      "extinguisherCO2": true,
+      "detectorBypass": false,
+      "detectorStatus": "Usine en phase montage — Détecteurs de fumée non activés"
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -17182,7 +15724,7 @@ const Store = {
         "date": "2026-12-28"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-28"
       },
@@ -17193,36 +15735,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN",
-      "Mohamed Brahimi (Soudeur Qualifié)",
-      "ZHOULIN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-7",
-        "nom": "Mohamed Brahimi",
-        "role": "Soudeur / Chaudronnier (Qualifié)",
-        "badge": "SYN-007"
-      },
-      {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -17241,23 +15769,23 @@ const Store = {
     "title_en": "Electrical Cabling & Power Connection — Week 53",
     "title_zh": "电气接线与通电测试许可证 — 第 53 周",
     "activity": {
-      "fr": "Câblage armoires, raccordement puissance et tests d'isolement (W53)",
-      "en": "Control cabinet wiring, power hookup and insulation testing (W53)",
-      "zh": "控制柜接线、动力接电与绝缘测试（第 53 周）"
+      "fr": "Câblage armoires, tirage câbles, raccordement moteurs et équipements (W53)",
+      "en": "Control cabinet wiring, cable pulling, motors and equipment hookup (W53)",
+      "zh": "控制柜接线、电缆敷设、电机与设备安装（第 53 周）"
     },
     "area": "Atelier Assemblage Stellantis",
     "ouvrage": "Armoires Électriques & TGBT",
-    "zone": "Zone FUSA / Armoires Principales",
-    "location": "Hall Montage — Baies Automates",
+    "zone": "Zones FUSA / UAR / UB",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Sofiane Meziane",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-28",
     "validUntil": "2027-01-03",
     "timeStart": "07h30",
@@ -17271,6 +15799,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -17283,6 +15812,15 @@ const Store = {
       "Cadenas de consignation LOTO",
       "VAT"
     ],
+    "electricDetails": {
+      "consignationChecked": true,
+      "voltageAbsenceChecked": true,
+      "lockoutTagout": true,
+      "cablePulling": true,
+      "switchboardInstall": true,
+      "motorsInstall": true,
+      "equipmentHookup": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -17290,7 +15828,7 @@ const Store = {
         "date": "2026-12-28"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-28"
       },
@@ -17301,36 +15839,22 @@ const Store = {
       }
     },
     "workers": [
-      "Sofiane Meziane (Électricien B2V)",
-      "Reda Benali (Tech)",
-      "XIE XIAN",
-      "Nouri Chahrour (HSE)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
-        "id": "T-6",
-        "nom": "Sofiane Meziane",
-        "role": "Électricien Habilité B2V / BR",
-        "badge": "SYN-006"
-      },
-      {
-        "id": "T-8",
-        "nom": "Reda Benali",
-        "role": "Technicien Instrumentation",
-        "badge": "SYN-008"
-      },
-      {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
-        "id": "T-3",
+        "id": "T-2",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -17356,16 +15880,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Secteur Prioritaire K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Bâtiment Montage Stellantis",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2027-01-01",
     "validUntil": "2027-01-02",
     "timeStart": "07h30",
@@ -17380,6 +15904,7 @@ const Store = {
       "confined": false,
       "lifting": false,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -17400,7 +15925,7 @@ const Store = {
         "date": "2027-01-01"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2027-01-01"
       },
@@ -17411,43 +15936,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE)",
-      "Karim Belkacem (Nacelle)",
-      "Mohamed Brahimi (Soudeur)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [],
@@ -17474,16 +15978,16 @@ const Store = {
     "area": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
     "ouvrage": "Ligne de Montage K9",
     "zone": "Zones FUSA / UAR / UB",
-    "location": "Hall Montage — Lignes Principales",
+    "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
     "contractor": "SINYLON",
     "company": "SINYLON & W.P.E.E.X",
-    "responsible": "Nouri Chahrour",
-    "tel": "0563765157",
+    "responsible": "Xie (Chef de Projet)",
+    "tel": "+213 550 12 34 56",
     "contact": "Nouri Chahrour (HSE Sinylon)",
-    "chefNom": "XIE XIAN (Chef de Projet)",
-    "chefEquipe": "ZHOULIN (Chef d'Équipe)",
+    "chefNom": "Xie (Chef de Projet)",
+    "chefEquipe": "Xian",
     "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
-    "hseNom": "Nouri Chahrour (0563765157)",
+    "hseNom": "Nouri Chahrour (HSE Sinylon)",
     "validFrom": "2026-12-28",
     "validUntil": "2027-01-03",
     "timeStart": "07h30",
@@ -17497,6 +16001,7 @@ const Store = {
       "confined": false,
       "lifting": true,
       "tension": true,
+      "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
@@ -17509,6 +16014,14 @@ const Store = {
       "Gants de protection",
       "Harnais antichute"
     ],
+    "heightDetails": {
+      "platform": true,
+      "scissorLiftsCount": 6,
+      "manliftCount": 1,
+      "equipmentDesc": "6 Nacelles Ciseaux + 1 Manlift (PEMP)",
+      "harnessChecked": true,
+      "operatorTrained": true
+    },
     "visas": {
       "moex": {
         "name": "STELLANTIS MOEX",
@@ -17516,7 +16029,7 @@ const Store = {
         "date": "2026-12-28"
       },
       "wpeex": {
-        "name": "W.P.E.E.X Supervision",
+        "name": "M. W.P.E.E.X",
         "status": "VALIDATED",
         "date": "2026-12-28"
       },
@@ -17527,43 +16040,22 @@ const Store = {
       }
     },
     "workers": [
-      "XIE XIAN (Chef de Projet)",
-      "ZHOULIN (Chef d'Équipe)",
-      "Nouri Chahrour (HSE - 0563765157)",
-      "Yacine Amrani (Monteur)",
-      "Karim Belkacem (Nacelle)"
+      "Xie (Chef de Projet)",
+      "Nouri Chahrour (HSE Sinylon)"
     ],
     "travailleurs": [
       {
         "id": "T-1",
-        "nom": "XIE XIAN",
+        "nom": "Xie",
         "role": "Chef de Projet / Receveur",
         "badge": "SYN-001"
       },
       {
         "id": "T-2",
-        "nom": "ZHOULIN",
-        "role": "Chef d'Équipe Montage",
-        "badge": "SYN-002"
-      },
-      {
-        "id": "T-3",
         "nom": "Nouri Chahrour",
         "role": "Superviseur HSE Sinylon",
         "badge": "SYN-003",
-        "tel": "0563765157"
-      },
-      {
-        "id": "T-4",
-        "nom": "Karim Belkacem",
-        "role": "Opérateur Nacelle PEMP (CACES)",
-        "badge": "SYN-004"
-      },
-      {
-        "id": "T-5",
-        "nom": "Yacine Amrani",
-        "role": "Monteur / Échafaudeur",
-        "badge": "SYN-005"
+        "tel": "+213 550 12 34 56"
       }
     ],
     "revalidations": [
