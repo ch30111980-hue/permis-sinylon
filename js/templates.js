@@ -354,10 +354,10 @@ const Templates = {
                 <!-- Barre d'action rapide pour Revalidation -->
                 <div class="no-print" style="margin-top: 8px; background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px; padding: 6px 12px; display: flex; justify-content: space-between; align-items: center; font-size: 11px;">
                     <div style="color: #166534; font-weight: 600;">
-                        ⏰ <strong>Revalidation Matin 07h55 :</strong> <span class="badge badge-sky" style="font-size: 9px;">ACTIVE</span> (Validation automatique chaque matin à 07h55)
+                        📋 <strong>Revalidation Quotidienne du Permis :</strong> <span class="badge badge-sky" style="font-size: 9px;">CONFORME</span> (Visas journaliers W.P.E.E.X & Sinylon)
                     </div>
                     <div style="display: flex; gap: 6px;">
-                        <button type="button" class="btn btn-sm btn-primary" onclick="App.revalidateTodayAuto('${permit.id}')">⚡ Revalider Aujourd'hui (07h55)</button>
+                        <button type="button" class="btn btn-sm btn-primary" onclick="App.revalidateTodayAuto('${permit.id}')">⚡ Valider Aujourd'hui</button>
                         <button type="button" class="btn btn-sm btn-secondary" onclick="App.signAllRevalidations('${permit.id}')">✍️ Signer Toute la Semaine</button>
                     </div>
                 </div>

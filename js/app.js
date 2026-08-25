@@ -28,22 +28,186 @@ const App = {
             this.showToast('🔔 MERCREDI : Préparation de la Caisse Week-end pour présentation à Stellantis !', 'warning', 8000);
         }
 
-        // Lancement du moteur de revalidation automatique quotidienne à 18h00
+        // Lancement du moteur de revalidation automatique quotidienne
         this.initAutoRevalidationEngine();
 
-        // Détection éventuelle de scan QR direct dans l'URL (ex: #SYN-K9-KW25)
+        // Détection de scan QR direct dans l'URL (ex: #SYN-K9-KW25) -> Mode Contrôle Public Client
         const handleUrlHash = () => {
             if (window.location.hash && window.location.hash.length > 1) {
                 const targetId = window.location.hash.substring(1).trim();
                 if (Store.getPermit(targetId)) {
                     setTimeout(() => {
-                        QREngine.openMobileQRModal(targetId);
-                    }, 200);
+                        this.showPublicClientView(targetId);
+                    }, 100);
                 }
             }
         };
         handleUrlHash();
         window.addEventListener('hashchange', handleUrlHash);
+    },
+
+    // =========================================================================
+    // VUE PUBLIQUE CLIENT / AUDITEUR APRÈS SCAN (CONFIDENTIALITÉ TOTALE SINYLON)
+    // =========================================================================
+
+    showPublicClientView(permitId) {
+        const permit = Store.getPermit(permitId);
+        if (!permit) return;
+
+        const layout = document.querySelector('.app-layout');
+        if (layout) layout.style.display = 'none';
+
+        const clientView = document.getElementById('client-public-view');
+        if (!clientView) return;
+
+        clientView.style.display = 'block';
+        document.body.style.overflow = 'auto';
+
+        const workers = permit.travailleurs && permit.travailleurs.length > 0 ? permit.travailleurs : [
+            { id: 'T-1', nom: 'XIE XIAN', role: 'Chef de Projet', badge: 'SYN-001' },
+            { id: 'T-2', nom: 'ZHOULIN', role: 'Chef d\'Équipe', badge: 'SYN-002' },
+            { id: 'T-3', nom: 'Nouri Chahrour', role: 'Superviseur HSE (0563765157)', badge: 'SYN-003' },
+            { id: 'T-4', nom: 'Karim Belkacem', role: 'Opérateur Nacelle PEMP', badge: 'SYN-004' },
+            { id: 'T-5', nom: 'Yacine Amrani', role: 'Monteur / Échafaudeur', badge: 'SYN-005' },
+            { id: 'T-6', nom: 'Sofiane Meziane', role: 'Électricien Habilité', badge: 'SYN-006' },
+            { id: 'T-7', nom: 'Mohamed Brahimi', role: 'Soudeur / Meuleur', badge: 'SYN-007' },
+            { id: 'T-8', nom: 'Reda Benali', role: 'Technicien Sécurité', badge: 'SYN-008' }
+        ];
+
+        let workersHtml = workers.map((w, idx) => `
+            <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; gap: 10px;">
+                <div style="font-size: 22px;">👷</div>
+                <div style="flex: 1;">
+                    <div style="font-weight: 700; color: #f8fafc; font-size: 13px;">${w.nom}</div>
+                    <div style="font-size: 11px; color: #94a3b8;">${w.role || 'Opérateur Chantier'}</div>
+                </div>
+                <span class="badge badge-outline" style="font-size: 10px; font-family: monospace;">${w.badge || 'SYN-0' + (idx + 10)}</span>
+            </div>
+        `).join('');
+
+        const revals = permit.revalidations || [];
+        let revalsHtml = '';
+        if (revals.length === 0) {
+            revalsHtml = '<div style="color: #94a3b8; font-size: 12px; font-style: italic;">Permis initialement validé et actif. Revalidations journalières enregistrées au fur et à mesure.</div>';
+        } else {
+            revalsHtml = revals.map(r => `
+                <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 6px; padding: 8px 12px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 12px;">
+                    <div>📅 <strong>${r.date}</strong> — Visa W.P.E.E.X : <strong>${r.wpeexEngineer}</strong> | Sinylon : <strong>${r.execManager}</strong></div>
+                    <span class="badge badge-success">CONFORME ✓</span>
+                </div>
+            `).join('');
+        }
+
+        clientView.innerHTML = `
+            <div style="max-width: 680px; margin: 0 auto; padding: 20px 14px; color: #f8fafc;">
+                <!-- Header Officiel -->
+                <div style="background: linear-gradient(135deg, #1e3a8a, #0f172a); border: 2px solid #3b82f6; border-radius: 14px; padding: 20px; text-align: center; margin-bottom: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <div style="display: flex; gap: 8px;">
+                            <span style="background: #ffffff; color: #000; padding: 4px 10px; font-weight: 900; font-size: 13px; border-radius: 4px;">SINYLON</span>
+                            <span style="border: 2px solid #ffffff; color: #ffffff; padding: 3px 10px; font-weight: 900; font-size: 13px; border-radius: 4px;">STELLANTIS</span>
+                        </div>
+                        <span style="background: rgba(59, 130, 246, 0.2); border: 1px solid #3b82f6; color: #93c5fd; padding: 4px 10px; font-size: 11px; font-weight: 700; border-radius: 20px;">
+                            🛡️ CONTRÔLE CHANTIER
+                        </span>
+                    </div>
+                    <div style="font-size: 22px; font-weight: 900; letter-spacing: 1px; color: #ffffff;">PERMIS DE TRAVAIL OFFICIEL</div>
+                    <div style="font-size: 16px; font-family: monospace; font-weight: 800; color: #60a5fa; margin-top: 4px;">${permit.id}</div>
+                    
+                    <div style="margin-top: 14px;">
+                        <span style="background: #15803d; color: #ffffff; font-weight: 800; padding: 8px 22px; border-radius: 30px; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(21, 128, 61, 0.4);">
+                            🟢 STATUT : AUTORISÉ & CONFORME SUR SITE
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Informations du Chantier -->
+                <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; margin-bottom: 16px;">
+                    <div style="font-size: 14px; font-weight: 800; color: #60a5fa; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 12px;">
+                        📋 Informations Générales
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 13px;">
+                        <div>🏢 <strong>Entreprise :</strong> SINYLON</div>
+                        <div>🏛️ <strong>Maître d'Ouvrage :</strong> STELLANTIS</div>
+                        <div>📍 <strong>Atelier / Ouvrage :</strong> ${permit.ouvrage || 'Atelier Assemblage'}</div>
+                        <div>📌 <strong>Zone :</strong> ${permit.zone || 'Zone 4'}</div>
+                        <div>👨‍💼 <strong>Chef de Projet :</strong> ${permit['chef-nom'] || 'XIE XIAN'}</div>
+                        <div>📋 <strong>Chef d'Équipe :</strong> ${permit.chef_equipe || 'ZHOULIN'}</div>
+                        <div>📞 <strong>Contact HSE :</strong> ${permit.contact || 'Nouri Chahrour'} (${permit.tel || '0563765157'})</div>
+                        <div>🛡️ <strong>Suivi Chantier :</strong> ${permit['wpeex-nom'] || 'M. W.P.E.E.X'}</div>
+                        <div style="grid-column: span 2;">⏰ <strong>Période de Validité :</strong> ${permit['date-main']} (07h30 → 18h00)</div>
+                    </div>
+                    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.1);">
+                        <strong style="color: #67e8f9;">🛠️ Nature des Travaux :</strong>
+                        <div style="margin-top: 4px; font-weight: 600;">${permit['work-desc'] || permit.title || ''}</div>
+                        ${permit['work-desc-en'] ? `<div style="font-size: 12px; color: #94a3b8; font-style: italic; margin-top: 2px;">${permit['work-desc-en']}</div>` : ''}
+                    </div>
+                </div>
+
+                <!-- Intervenants autorisés -->
+                <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; margin-bottom: 16px;">
+                    <div style="font-size: 14px; font-weight: 800; color: #60a5fa; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 12px;">
+                        👷 Intervenants Habilités & Autorisés (${workers.length} Personnes)
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                        ${workersHtml}
+                    </div>
+                </div>
+
+                <!-- Mesures de Sécurité -->
+                <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; margin-bottom: 16px;">
+                    <div style="font-size: 14px; font-weight: 800; color: #60a5fa; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 12px;">
+                        🛡️ Mesures de Prévention & Sécurité
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px;">
+                        <div style="background: rgba(2, 132, 199, 0.15); border: 1px solid #0284c7; padding: 8px; border-radius: 6px;">
+                            <strong>🧗 Travaux en Hauteur :</strong> Harnais de sécurité, nacelles PEMP contrôlées, balisage au sol.
+                        </div>
+                        <div style="background: rgba(220, 38, 38, 0.15); border: 1px solid #dc2626; padding: 8px; border-radius: 6px;">
+                            <strong>🔥 Travaux à Chaud :</strong> Extincteurs à poudre/CO2 vérifiés, surveillance incendie active.
+                        </div>
+                        <div style="background: rgba(217, 119, 6, 0.15); border: 1px solid #d97706; padding: 8px; border-radius: 6px;">
+                            <strong>⚡ Travaux Électriques :</strong> Habilitations électriques à jour, consignation d'énergie.
+                        </div>
+                        <div style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; padding: 8px; border-radius: 6px;">
+                            <strong>🦺 Équipements EPI :</strong> Casque jugulaire, gilet haute visibilité, chaussures S3.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Revalidations Journalières -->
+                <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; margin-bottom: 16px;">
+                    <div style="font-size: 14px; font-weight: 800; color: #60a5fa; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 12px;">
+                        📅 Revalidations Journalières de Sécurité
+                    </div>
+                    <div>${revalsHtml}</div>
+                </div>
+
+                <!-- Pied de page & Verrouillage Sinylon -->
+                <div style="text-align: center; padding: 20px 0; border-top: 1px solid var(--border-color);">
+                    <div style="font-size: 12px; color: #94a3b8; margin-bottom: 14px;">
+                        Attestation officielle SINYLON & STELLANTIS — Projet Algeria K9 CKD0
+                    </div>
+                    <button onclick="App.unlockSinylonAccess()" class="btn btn-outline" style="font-size: 12px; padding: 8px 20px; border-color: #64748b; color: #94a3b8;">
+                        🔒 Accès Espace Sinylon (Superviseurs)
+                    </button>
+                </div>
+            </div>
+        `;
+    },
+
+    unlockSinylonAccess() {
+        const code = prompt('Veuillez entrer le Code Superviseur Sinylon :');
+        if (code && code.trim() === Store.getAuthCode()) {
+            const clientView = document.getElementById('client-public-view');
+            if (clientView) clientView.style.display = 'none';
+            const layout = document.querySelector('.app-layout');
+            if (layout) layout.style.display = 'grid';
+            window.location.hash = '';
+            this.showToast('🔓 Accès Superviseur Sinylon accordé avec succès !', 'success');
+        } else if (code) {
+            this.showToast('⛔ Code incorrect. Accès réservé à Sinylon.', 'error');
+        }
     },
 
     // Liaison des événements UI

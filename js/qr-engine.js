@@ -289,10 +289,14 @@ const QREngine = {
         document.getElementById('modify-permit-title-label').innerText = permit.title || permit['work-desc'] || 'Permis Sinylon';
         
         // Reset form
-        document.getElementById('modify-auth-code').value = '';
-        document.getElementById('modify-author-name').value = 'Superviseur Chantier';
-        document.getElementById('modify-new-value').value = '';
-        document.getElementById('modify-field-select').selectedIndex = 0;
+        const authInput = document.getElementById('modify-auth-code');
+        if (authInput) authInput.value = '';
+        const authorInput = document.getElementById('modify-author-name');
+        if (authorInput) authorInput.value = 'Superviseur Chantier';
+        const newValInput = document.getElementById('modify-new-value');
+        if (newValInput) newValInput.value = '';
+        const fieldSelect = document.getElementById('modify-field-select');
+        if (fieldSelect) fieldSelect.selectedIndex = 0;
         this.onModifyFieldChange();
 
         modal.classList.add('active');

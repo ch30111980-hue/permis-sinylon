@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="css/mobile.css">
 </head>
 <body>
+    <!-- VUE PUBLIQUE ISOLÉE POUR SCAN SMARTPHONE CLIENT / STELLANTIS (100% CONFIDENTIEL) -->
+    <div id="client-public-view" style="display: none; min-height: 100vh; background-color: var(--bg-main);"></div>
+
     <div class="app-layout">
         <!-- Barre Latérale (Desktop) -->
         <aside class="sidebar no-print">
@@ -524,11 +527,10 @@
                 <div class="form-group" style="margin-bottom: 12px;">
                     <label>Sélectionner le champ à modifier :</label>
                     <select id="modify-field-select" class="form-control" onchange="QREngine.onModifyFieldChange()">
-                        <option value="chef-nom">Responsable / Chef de Projet (Xie)</option>
-                        <option value="receveur-nom">Receveur du Permis (Xian)</option>
-                        <option value="chef_equipe">Chef d'Équipe Terrain</option>
-                        <option value="contact">Personne de Contact HSE</option>
-                        <option value="tel">Numéro de Téléphone Contact</option>
+                        <option value="chef-nom">Chef de Projet (XIE XIAN)</option>
+                        <option value="chef_equipe">Chef d'Équipe Terrain (ZHOULIN)</option>
+                        <option value="contact">Superviseur HSE (Nouri Chahrour)</option>
+                        <option value="tel">Numéro de Téléphone HSE (0563765157)</option>
                         <option value="location">Localisation & Zone d'Intervention</option>
                         <option value="notes_chantier">Notes & Remarques Terrain</option>
                         <option value="travailleurs_add">➕ Ajouter un Intervenant (Nom, Rôle, Badge)</option>

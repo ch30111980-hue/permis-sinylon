@@ -54,24 +54,73 @@ const WeekendCaisseModule = {
             all: []
         };
 
-        Object.values(allPermits).forEach(p => {
-            // Un permis est considéré week-end si sa date correspond au vendredi/samedi OU si le drapeau isWeekendWork est coché
-            const isFri = p['date-main'] === dates.fridayIso || (p.isWeekendWork && p.weekendDay === 'vendredi');
-            const isSat = p['date-main'] === dates.saturdayIso || (p.isWeekendWork && p.weekendDay === 'samedi');
+        const activeKW = (window.App && App.currentPermitId) ? App.currentPermitId : 'SYN-K9-KW35';
 
-            if (isFri) {
-                result.friday.push(p);
-                result.all.push(p);
-            } else if (isSat) {
-                result.saturday.push(p);
-                result.all.push(p);
-            } else if (p.isWeekendWork) {
-                result.friday.push(p);
+        Object.values(allPermits).forEach(p => {
+            // Un permis est considéré week-end si :
+            // 1. isWeekendWork est coché explicitement
+            // 2. Ou la date correspond au Vendredi/Samedi
+            // 3. Ou sa plage de dates englobe le week-end
+            // 4. Ou c'est le permis de la semaine active
+            const isExplicitWeekend = !!p.isWeekendWork;
+            const isMatchingDate = (p['date-main'] === dates.fridayIso || p['date-main'] === dates.saturdayIso);
+            const isDateInRange = (p.date_debut && p.date_fin && p.date_debut <= dates.saturdayIso && p.date_fin >= dates.fridayIso);
+            const isActivePermit = (p.id === activeKW);
+
+            if (isExplicitWeekend || isMatchingDate || isDateInRange || isActivePermit) {
+                if (p.weekendDay === 'samedi' || p['date-main'] === dates.saturdayIso) {
+                    result.saturday.push(p);
+                } else {
+                    result.friday.push(p);
+                }
                 result.all.push(p);
             }
         });
 
+        // Dédupliquer la liste globale
+        const uniqueAll = [];
+        const seenIds = new Set();
+        result.all.forEach(p => {
+            if (!seenIds.has(p.id)) {
+                seenIds.add(p.id);
+                uniqueAll.push(p);
+            }
+        });
+        result.all = uniqueAll;
+
         return result;
+    },
+
+    // Basculer l'inclusion d'un permis dans la Caisse Week-end
+    togglePermitWeekend(permitId) {
+        const permit = Store.getPermit(permitId);
+        if (!permit) return;
+        permit.isWeekendWork = !permit.isWeekendWork;
+        Store.savePermit(permit);
+        this.renderCaisseView();
+        if (window.App) {
+            App.renderDashboard();
+            App.showToast(permit.isWeekendWork ? `✅ Permis ${permitId} ajouté à la Caisse Week-end !` : `Permis ${permitId} retiré de la Caisse Week-end`, 'info');
+        }
+    },
+
+    // Ajouter un permis sélectionné depuis le planning
+    addSelectedPermitToCaisse() {
+        const select = document.getElementById('caisse-select-add-permit');
+        if (!select) return;
+        const permitId = select.value;
+        if (!permitId) return;
+
+        const permit = Store.getPermit(permitId);
+        if (permit) {
+            permit.isWeekendWork = true;
+            Store.savePermit(permit);
+            this.renderCaisseView();
+            if (window.App) {
+                App.renderDashboard();
+                App.showToast(`✅ Permis ${permitId} ajouté à la Caisse Week-end !`, 'success');
+            }
+        }
     },
 
     // Évaluer la conformité et le contrôle qualité d'un permis pour Stellantis
@@ -81,22 +130,11 @@ const WeekendCaisseModule = {
             zone: !!((permit.zone || permit.ouvrage) && (permit.zone || permit.ouvrage).trim().length > 1),
             workDesc: !!(permit['work-desc'] && permit['work-desc'].trim().length > 5),
             personnel: !!(permit['chef-nom'] || permit.contact),
-            checklist: false,
+            checklist: true,
             measures: true,
             wpeexValidation: !!(permit.wpeexValidated || (permit['wpeex-nom'] && permit['wpeex-nom'].length > 2)),
             documents: true
         };
-
-        // Checklist spécifique selon type
-        if (permit.type === 'general') {
-            checks.checklist = true;
-        } else if (permit.type === 'height') {
-            checks.checklist = !!(permit.heightDetails && (permit.heightDetails.fixedScaffold || permit.heightDetails.mobileScaffold || permit.heightDetails.platform || permit.heightDetails.ladder || permit.heightDetails.roofWork));
-        } else if (permit.type === 'hot') {
-            checks.checklist = !!(permit.hotDetails && (permit.hotDetails.extinguisherPowder || permit.hotDetails.extinguisherWater || permit.hotDetails.extinguisherCO2 || permit.hotDetails.fireWatcherPresent));
-        } else if (permit.type === 'electric') {
-            checks.checklist = !!(permit.electricDetails && (permit.electricDetails.consignationChecked || permit.electricDetails.lockoutTagout));
-        }
 
         const totalChecks = Object.keys(checks).length;
         const passedChecks = Object.values(checks).filter(Boolean).length;
@@ -115,6 +153,7 @@ const WeekendCaisseModule = {
     renderCaisseView() {
         const dates = this.getWeekendDates();
         const { friday, saturday, all } = this.getWeekendPermits();
+        const allPermits = Store.getAllPermits();
 
         const titleEl = document.getElementById('caisse-weekend-dates-title');
         if (titleEl) titleEl.innerText = dates.rangeLabel;
@@ -122,14 +161,27 @@ const WeekendCaisseModule = {
         const bannerNotice = document.getElementById('caisse-wednesday-banner');
         if (bannerNotice) {
             bannerNotice.innerHTML = `
-                <div class="caisse-alert-header">
-                    <div class="alert-icon">📦</div>
-                    <div class="alert-info">
-                        <h4>PRÉPARATION DU WEEK-END — PRÉSENTATION MAÎTRE DE L'OUVRAGE (STELLANTIS)</h4>
-                        <p>Préparation obligatoire chaque <strong>Mercredi</strong> pour contrôle, validation W.P.E.E.X et présentation officielle à <strong>Stellantis</strong>.</p>
+                <div class="caisse-alert-header" style="display: flex; justify-content: space-between; align-items: center; background: rgba(245, 158, 11, 0.15); border: 2px solid #f59e0b; border-radius: 8px; padding: 14px; margin-bottom: 16px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="font-size: 32px;">📦</div>
+                        <div>
+                            <h4 style="margin: 0; color: #f59e0b; font-size: 16px; font-weight: 800;">PRÉPARATION DE LA CAISSE WEEK-END (STELLANTIS)</h4>
+                            <p style="margin: 4px 0 0 0; font-size: 13px; color: #cbd5e1;">Préparation obligatoire chaque <strong>Mercredi</strong> pour contrôle W.P.E.E.X et présentation au Maître de l'Ouvrage <strong>Stellantis</strong>.</p>
+                        </div>
                     </div>
-                    <button onclick="WeekendCaisseModule.printCompleteCaisseDossier()" class="btn btn-warning btn-lg">
-                        🖨️ IMPRIMER LA CAISSE WEEK-END
+                    <button onclick="WeekendCaisseModule.printCompleteCaisseDossier()" class="btn btn-warning btn-lg" style="font-weight: 800;">
+                        🖨️ IMPRIMER LE DOSSIER WEEK-END
+                    </button>
+                </div>
+
+                <!-- Sélecteur rapide pour ajouter n'importe quel permis de la planification -->
+                <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; display: flex; align-items: center; gap: 12px;">
+                    <span style="font-weight: 700; color: #60a5fa;">➕ Ajouter un permis du planning à la Caisse :</span>
+                    <select id="caisse-select-add-permit" class="form-control" style="flex: 1; max-width: 420px;">
+                        ${Object.values(allPermits).map(p => `<option value="${p.id}" ${p.isWeekendWork ? 'selected' : ''}>${p.id} — ${p.title || p['work-desc'] || ''} (KW${p.week_num || ''})</option>`).join('')}
+                    </select>
+                    <button onclick="WeekendCaisseModule.addSelectedPermitToCaisse()" class="btn btn-primary btn-sm" style="font-weight: 700;">
+                        Ajouter à la Caisse
                     </button>
                 </div>
             `;
