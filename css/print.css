@@ -65,75 +65,102 @@
     color: #000;
     font-weight: 900;
     font-size: 13px;
-    padding: 2px 6px;
+    padding: 1px 6px;
     border-radius: 2px;
-}
-
-.doc-id-box-exact {
-    border: 1.5px solid #000;
-    padding: 3px 8px;
-    font-size: 9px;
-    text-align: center;
-    background: #f8fafc;
-    min-width: 130px;
+    letter-spacing: 0.5px;
+    background: #fff;
 }
 
 .doc-header-right-group {
     display: flex;
     align-items: center;
-    gap: 6px;
-    flex-shrink: 0;
+    gap: 8px;
 }
 
-.qr-container.qr-code-box {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    min-height: 44px;
-    max-width: 44px;
-    max-height: 44px;
-    background: #ffffff;
-    border: 1px solid #000;
-    border-radius: 3px;
-    padding: 1px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    flex-shrink: 0;
-}
-
-.qr-container canvas {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    object-fit: contain;
-    display: block;
-}
-
-/* Bandes Jaunes Officielles */
-.yellow-bar-header {
-    background: #ffff00;
-    color: #000;
-    font-weight: 800;
+.doc-id-box-exact {
+    border: 1.5px solid #000;
+    padding: 3px 8px;
+    text-align: right;
     font-size: 9.5px;
-    padding: 2px 6px;
+    border-radius: 2px;
+    background: #f8fafc;
+}
+
+.yellow-bar-header {
+    background: #ffeb3b !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
     border: 1px solid #000;
-    text-align: center;
+    padding: 2px 6px;
+    font-weight: 900;
+    font-size: 9.5px;
+    text-transform: uppercase;
+    color: #000 !important;
+}
+
+.doc-box-bordered {
+    border: 1px solid #000;
+    padding: 3px 6px;
+    font-size: 9px;
 }
 
 .yellow-grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 0;
 }
 
-/* Tableaux et Boîtes */
-.doc-box-bordered {
-    border: 1px solid #000;
-    padding: 4px 6px;
+.doc-workers-box {
+    border: 1.5px solid #000;
+    padding: 3px 6px;
+    background: #fff;
+}
+
+.doc-workers-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 900;
     font-size: 9px;
+    border-bottom: 1px dashed #000;
+    padding-bottom: 2px;
+    margin-bottom: 3px;
+}
+
+.doc-workers-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.worker-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 8.5px;
+    font-weight: 700;
+}
+
+.worker-chip-del {
+    color: #ef4444;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.btn-add-worker-mini {
+    background: #0284c7;
+    color: #fff;
+    border: none;
+    font-size: 7.5px;
+    font-weight: 800;
+    padding: 1px 5px;
+    border-radius: 2px;
+    cursor: pointer;
 }
 
 .doc-table-exact {
@@ -146,25 +173,28 @@
 .doc-table-exact th, .doc-table-exact td {
     border: 1px solid #000;
     padding: 2px 4px;
-    vertical-align: middle;
+    text-align: left;
 }
 
 .doc-table-exact th {
     background: #f1f5f9;
-    font-weight: bold;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-weight: 800;
+    text-align: center;
 }
 
-/* Dangers Checkboxes */
 .check-yn {
     display: inline-flex;
     border: 1px solid #000;
-    font-size: 8.5px;
-    font-weight: bold;
-    margin-left: 4px;
+    border-radius: 2px;
+    overflow: hidden;
+    font-size: 7.5px;
+    font-weight: 900;
 }
 
 .check-yn span {
-    padding: 1px 3px;
+    padding: 0 4px;
     border-right: 1px solid #000;
 }
 
@@ -172,12 +202,13 @@
     border-right: none;
 }
 
-.check-active {
-    background: #000;
-    color: #fff;
+.check-yn .check-active {
+    background: #000 !important;
+    color: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
 }
 
-/* Grilles Signatures Fidèles */
 .signatures-grid-exact {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -187,116 +218,49 @@
 
 .sign-card-exact {
     border: 1px solid #000;
-    min-height: 52px;
-    padding: 3px 4px;
+    padding: 3px;
+    font-size: 8px;
+    min-height: 48px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: #f8fafc;
 }
 
 .sign-card-header {
-    background: #cbd5e1;
-    color: #000;
-    font-weight: bold;
-    font-size: 8.5px;
-    padding: 1px 3px;
+    background: #f1f5f9;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-weight: 900;
+    font-size: 7.5px;
+    padding: 1px;
     text-align: center;
     border-bottom: 1px solid #000;
-    margin: -3px -4px 2px -4px;
+    margin-bottom: 2px;
 }
 
 .sign-card-exact.wpeex-sign {
-    border: 1.5px solid #2563eb;
+    border: 1.5px solid #1e3a8a;
     background: #eff6ff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
 }
 
 .sign-card-exact.wpeex-sign .sign-card-header {
-    background: #2563eb;
+    background: #1e3a8a;
     color: #fff;
 }
 
 .sign-legal-note {
     font-size: 7px;
-    line-height: 1.1;
-    color: #334155;
-    margin-top: 2px;
-}
-
-/* Handback Section */
-.handback-section {
-    border: 1.5px solid #000;
-    padding: 4px 6px;
-    margin-top: 6px;
-    background: #fff;
-}
-
-.checkbox-square {
-    width: 14px;
-    height: 14px;
-    border: 1.5px solid #000;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 10px;
-    vertical-align: middle;
-}
-
-/* Annexes Spécifiques */
-.annexe-letter-badge {
-    width: 24px;
-    height: 24px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    font-weight: 900;
-    color: #fff;
-    margin-right: 6px;
-}
-
-.annexe-letter-a { background: #0284c7; }
-.annexe-letter-b { background: #dc2626; }
-.annexe-letter-c { background: #d97706; }
-
-/* Impression Physique */
-@media print {
-    body {
-        background: #fff !important;
-        color: #000 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    .no-print, .sidebar, .top-navbar, #toast-container, .modal-backdrop {
-        display: none !important;
-    }
-
-    .app-layout, .main-content, .preview-container {
-        display: block !important;
-        height: auto !important;
-        overflow: visible !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        background: #fff !important;
-    }
-
-    .a4-document {
-        box-shadow: none !important;
-        margin: 0 !important;
-        padding: 8mm 10mm !important;
-        width: 100% !important;
-        min-height: auto !important;
-        page-break-after: always !important;
-    }
+    color: #475569;
+    font-style: italic;
 }
 
 /* Bandeau Pied de page QR Code de vérification */
 .doc-footer-qr-verification {
-    margin-top: 10px;
+    margin-top: 6px;
     border: 1.5px solid #000;
-    padding: 4px 10px;
+    padding: 3px 8px;
     background: #f8fafc;
     border-radius: 3px;
     display: flex;
@@ -306,19 +270,19 @@
 }
 
 .qr-verify-text {
-    font-size: 8px;
+    font-size: 7.5px;
     color: #000;
     line-height: 1.2;
     flex: 1;
 }
 
 .qr-container.qr-code-box-footer {
-    width: 48px;
-    height: 48px;
-    min-width: 48px;
-    min-height: 48px;
-    max-width: 48px;
-    max-height: 48px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    max-width: 44px;
+    max-height: 44px;
     background: #ffffff;
     border: 1.5px solid #000;
     border-radius: 2px;
@@ -331,11 +295,57 @@
     flex-shrink: 0;
 }
 
-.qr-container.qr-code-box-footer canvas {
+.qr-container.qr-code-box-footer canvas,
+.qr-container.qr-code-box-footer img {
     width: 100% !important;
     height: 100% !important;
     max-width: 100% !important;
     max-height: 100% !important;
     object-fit: contain;
     display: block;
+}
+
+/* =========================================================================
+   RÈGLES D'IMPRESSION PHYSIQUE ET PDF PARFAITES (@MEDIA PRINT)
+   ========================================================================= */
+
+@media print {
+    /* Masquer impérativement toute l'interface de l'application */
+    body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .app-layout, .sidebar, .top-navbar, #toast-container, .modal-backdrop, .no-print, .preview-toolbar {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    #print-container {
+        display: block !important;
+        visibility: visible !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+    }
+
+    #print-container * {
+        visibility: visible !important;
+    }
+
+    .a4-document {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 8mm 10mm !important;
+        width: 100% !important;
+        min-height: 280mm !important;
+        page-break-after: always !important;
+        break-after: page !important;
+    }
 }

@@ -1,7 +1,7 @@
 /**
- * SINYLON - STELLANTIS | Templates A4 Haute Fidélité V2
- * Conformité HSE Chantier Stellantis Algeria K9 CKD0
- * Emplacement QR Code sécurisé en bas de page (Footer) pour préserver les en-têtes et textes
+ * SINYLON - STELLANTIS | Templates A4 Haute Fidélité V3
+ * Moteur de Revalidation Journalière Dynamique (Jour par Jour à 08h00 - Protocole HSE W.P.E.E.X)
+ * Emplacement QR Code sécurisé en bas de page (Footer)
  */
 
 const Templates = {
@@ -10,13 +10,13 @@ const Templates = {
         return `
             <div class="doc-footer-qr-verification">
                 <div class="qr-verify-text">
-                    <div style="font-weight: 900; font-size: 9px; text-transform: uppercase; color: #000; letter-spacing: 0.5px;">
+                    <div style="font-weight: 900; font-size: 8.5px; text-transform: uppercase; color: #000; letter-spacing: 0.5px;">
                         🛡️ VÉRIFICATION ÉLECTRONIQUE / DIGITAL WORK PERMIT QR VERIFICATION
                     </div>
-                    <div style="font-size: 8px; color: #334155; margin-top: 1px;">
-                        Scannez ce QR Code pour vérifier en direct la conformité du permis, les visas MOEX / W.P.E.E.X et les habilitations.
+                    <div style="font-size: 7.5px; color: #334155; margin-top: 1px;">
+                        Scannez ce QR Code pour vérifier en direct la validité journalière, les visas MOEX / W.P.E.E.X et les habilitations.
                     </div>
-                    <div style="font-family: monospace; font-weight: 800; font-size: 9px; color: #1e3a8a; margin-top: 2px;">
+                    <div style="font-family: monospace; font-weight: 800; font-size: 8.5px; color: #1e3a8a; margin-top: 1px;">
                         PERMIS N° ${permit.id} · PROJET ALGERIA K9 CKD0 · STELLANTIS
                     </div>
                 </div>
@@ -45,7 +45,7 @@ const Templates = {
 
         return `
             <div class="a4-document" id="a4-doc-${permit.id}">
-                <!-- En-tête officiel exact (Sans QR dans le header) -->
+                <!-- En-tête officiel exact -->
                 <div class="doc-header-exact">
                     <div class="doc-logo-box">
                         <span class="logo-sinylon-badge">SINYLON</span>
@@ -188,40 +188,37 @@ const Templates = {
                     </div>
                 </div>
 
-                <!-- Validité du permis et signatures -->
+                <!-- Validité du permis et signatures initiales (Jour 1 Lundi) -->
                 <div style="margin-top: 4px; border: 1.5px solid #000; padding: 4px 6px;">
                     <div style="font-weight: bold; font-size: 9.5px; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 4px;">
-                        validité du permis et signatures
+                        validité du permis et signatures initiales (Jour 1)
                     </div>
                     <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 4px; font-size: 9px;">
-                        <div>Date du permis : <span style="border-bottom: 1px solid #000; font-weight: bold; padding: 0 8px;" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'date-main', this.innerText)">${permit.validFrom || permit['date-main'] || '2026-08-24'}</span></div>
-                        <div>heure de début : <span style="border-bottom: 1px solid #000; font-weight: bold; padding: 0 8px;" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'time-start', this.innerText)">${permit.timeStart || permit['time-start'] || '07h30'}</span></div>
-                        <div>heure de fin : <span style="border-bottom: 1px solid #000; font-weight: bold; padding: 0 8px;" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'time-end', this.innerText)">${permit.timeEnd || permit['time-end'] || '18h00'}</span></div>
-                    </div>
-                    <div style="font-size: 7.5px; color: #333; line-height: 1.15; margin-bottom: 4px;">
-                        Ce permis de travail de sécurité générale et ses annexes sont uniquement valides pour la date et la période spécifiée. Toutes les signatures doivent être obtenues avant l'entame du travail. Permis affiché sur le lieu de travail.
+                        <div>Date initiale : <span style="border-bottom: 1px solid #000; font-weight: bold; padding: 0 8px;" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'date-main', this.innerText)">${permit.validFrom || permit['date-main'] || '2026-08-24'}</span></div>
+                        <div>heure début : <span style="border-bottom: 1px solid #000; font-weight: bold; padding: 0 8px;">07h30</span></div>
+                        <div>heure fin : <span style="border-bottom: 1px solid #000; font-weight: bold; padding: 0 8px;">18h00</span></div>
                     </div>
 
-                    <!-- Les Signatures Fidèles -->
+                    <!-- Signatures Officielles -->
                     <div class="signatures-grid-exact">
                         <div class="sign-card-exact">
                             <div class="sign-card-header">Chef de Projet Entreprise</div>
-                            <div style="font-size: 8px;">Nom : <strong contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'chef-nom', this.innerText)">${permit.chefNom || permit['chef-nom'] || 'Xie (Chef de Projet)'}</strong></div>
+                            <div style="font-size: 8px;">Nom : <strong>${permit.chefNom || permit['chef-nom'] || 'Xie (Chef de Projet)'}</strong></div>
                             <div style="font-size: 8px; color: #2563eb; font-weight: bold;">Signature : Xie (Validé ✓)</div>
                         </div>
                         <div class="sign-card-exact wpeex-sign">
                             <div class="sign-card-header">W.P.E.E.X - Ingénieur de Suivi</div>
-                            <div style="font-size: 8px;">Nom : <strong contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'wpeex-nom', this.innerText)">${permit.wpeexNom || permit['wpeex-nom'] || 'M. W.P.E.E.X'}</strong></div>
-                            <div style="font-size: 8px; color: #1d4ed8; font-weight: bold;">Visa : W.P.E.E.X (Approuvé ✓)</div>
+                            <div style="font-size: 8px;">Nom : <strong>${permit.wpeexNom || permit['wpeex-nom'] || 'M. W.P.E.E.X'}</strong></div>
+                            <div style="font-size: 8px; color: #1d4ed8; font-weight: bold;">Visa Initial : W.P.E.E.X ✓</div>
                         </div>
                         <div class="sign-card-exact">
                             <div class="sign-card-header">Superviseur HSE</div>
-                            <div style="font-size: 8px;">Nom : <strong contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'hse-nom', this.innerText)">${permit.hseNom || permit['hse-nom'] || 'Nouri Chahrour (HSE Sinylon)'}</strong></div>
+                            <div style="font-size: 8px;">Nom : <strong>${permit.hseNom || permit['hse-nom'] || 'Nouri Chahrour (HSE Sinylon)'}</strong></div>
                             <div class="sign-legal-note">Précautions et conformité HSE validées.</div>
                         </div>
                         <div class="sign-card-exact">
                             <div class="sign-card-header">Receveur / Chef d'Équipe</div>
-                            <div style="font-size: 8px;">Nom : <strong contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'chef_equipe', this.innerText)">${permit.chefEquipe || permit.chef_equipe || 'Xian'}</strong></div>
+                            <div style="font-size: 8px;">Nom : <strong>${permit.chefEquipe || permit.chef_equipe || 'Xian'}</strong></div>
                             <div class="sign-legal-note">Équipe briefée, consignes de sécurité appliquées.</div>
                         </div>
                     </div>
@@ -233,25 +230,65 @@ const Templates = {
         `;
     },
 
-    // 2. PERMIS GÉNÉRAL - PAGE 2/2 (VERSO REVALIDATIONS)
+    // 2. PERMIS GÉNÉRAL - PAGE 2/2 (VERSO REVALIDATIONS DYNAMIQUES DU JOUR 2 AU JOUR 7 À 08H00)
     generalP2(permit) {
-        const rows = [];
-        const days = ['Jour 2 (Mardi)', 'Jour 3 (Mercredi)', 'Jour 4 (Jeudi)', 'Jour 5 (Vendredi)', 'Jour 6 (Samedi)', 'Jour 7 (Dimanche)'];
+        const dStart = permit.validFrom || permit['date-main'] || '2026-08-24';
+        const startDate = new Date(dStart);
         
-        days.forEach((day, idx) => {
-            rows.push(`
+        // Données des revalidations enregistrées
+        const revals = permit.revalidations || [];
+        const revalMap = {};
+        revals.forEach(r => {
+            if (r.dayIndex) revalMap[r.dayIndex] = r;
+            else if (r.date) revalMap[r.date] = r;
+        });
+
+        const dayNames = [
+            { dayIndex: 2, name: 'Jour 2 (Mardi)', offset: 1, isWeekend: false },
+            { dayIndex: 3, name: 'Jour 3 (Mercredi)', offset: 2, isWeekend: false },
+            { dayIndex: 4, name: 'Jour 4 (Jeudi)', offset: 3, isWeekend: false },
+            { dayIndex: 5, name: 'Jour 5 (Vendredi)', offset: 4, isWeekend: true },
+            { dayIndex: 6, name: 'Jour 6 (Samedi)', offset: 5, isWeekend: true },
+            { dayIndex: 7, name: 'Jour 7 (Dimanche)', offset: 6, isWeekend: false }
+        ];
+
+        const rows = dayNames.map(dayInfo => {
+            const targetDate = new Date(startDate);
+            targetDate.setDate(startDate.getDate() + dayInfo.offset);
+            const dateStr = targetDate.toISOString().split('T')[0];
+            
+            const existing = revalMap[dayInfo.dayIndex] || revalMap[dateStr];
+            const isValidated = !!existing;
+            const timeValidated = existing ? (existing.time || '08:00') : '08:00';
+
+            return `
                 <tr>
-                    <td class="text-center bold-cell">${day}</td>
-                    <td class="text-center">2026-08-${25 + idx}</td>
-                    <td>M. W.P.E.E.X</td>
-                    <td>Ingénieur Suivi</td>
-                    <td class="text-center" style="font-weight: bold; color: #1e3a8a;">VISA CONFORME ✓</td>
-                    <td>Xie</td>
-                    <td>Chef de Projet</td>
-                    <td class="text-center" style="font-weight: bold; color: #2563eb;">SIGNÉ ✓</td>
-                    <td class="no-print text-center"><span class="badge badge-success">VALIDÉ</span></td>
+                    <td class="text-center bold-cell">${dayInfo.name}</td>
+                    <td class="text-center" style="font-family: monospace;">${dateStr}</td>
+                    <td>${isValidated ? 'M. W.P.E.E.X' : '<span style="color:#94a3b8;">—</span>'}</td>
+                    <td>${isValidated ? 'Ingénieur Suivi' : '<span style="color:#94a3b8;">—</span>'}</td>
+                    <td class="text-center">
+                        ${isValidated 
+                            ? `<span style="font-weight: 800; color: #1e3a8a;">VISA W.P.E.E.X ✓ (${timeValidated})</span>`
+                            : `<span style="color: #64748b; font-style: italic;">En attente 08h00</span>`
+                        }
+                    </td>
+                    <td>${isValidated ? 'Xie' : '<span style="color:#94a3b8;">—</span>'}</td>
+                    <td>${isValidated ? 'Chef de Projet' : '<span style="color:#94a3b8;">—</span>'}</td>
+                    <td class="text-center">
+                        ${isValidated 
+                            ? `<span style="font-weight: 800; color: #2563eb;">SIGNÉ ✓ (${timeValidated})</span>`
+                            : `<span style="color: #64748b; font-style: italic;">Non signé</span>`
+                        }
+                    </td>
+                    <td class="no-print text-center">
+                        ${isValidated 
+                            ? `<span class="badge badge-success" style="font-size: 8px;">VALIDÉ 08:00</span>`
+                            : `<button type="button" class="btn btn-xs btn-primary" onclick="App.validateDayMorning('${permit.id}', ${dayInfo.dayIndex}, '${dateStr}')">⚡ Valider 08h00</button>`
+                        }
+                    </td>
                 </tr>
-            `);
+            `;
         });
 
         return `
@@ -263,7 +300,7 @@ const Templates = {
                     </div>
                     <div class="doc-title-exact">
                         Revalidation Quotidienne du Permis de Travail<br>
-                        <span style="font-size: 8px; font-weight: normal;">Daily Work Permit Revalidation Sheet (Algeria K9 CKD0)</span>
+                        <span style="font-size: 8px; font-weight: normal;">Daily Work Permit Revalidation Sheet (Contrôle du Lendemain à 08h00)</span>
                     </div>
                     <div class="doc-header-right-group">
                         <div class="doc-id-box-exact">
@@ -273,23 +310,32 @@ const Templates = {
                     </div>
                 </div>
 
-                <div class="yellow-bar-header" style="margin-top: 10px;">REVALIDATION QUOTIDIENNE DU PERMIS (DU JOUR 2 AU JOUR 7)</div>
-                <table class="doc-table-exact" style="margin-top: 6px;">
+                <div class="no-print" style="margin-top: 6px; background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px; padding: 6px 12px; display: flex; justify-content: space-between; align-items: center; font-size: 11px;">
+                    <div style="color: #166534; font-weight: 600;">
+                        📋 <strong>Protocole Chantier :</strong> Chaque matin à 08h00, l'ingénieur W.P.E.E.X et le Chef de Projet Xie revalident les conditions de sécurité.
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-secondary" onclick="App.signAllRevalidations('${permit.id}')">✍️ Signer Tout Jusqu'à Aujourd'hui</button>
+                    </div>
+                </div>
+
+                <div class="yellow-bar-header" style="margin-top: 8px;">REVALIDATION QUOTIDIENNE DU PERMIS (CONTRÔLE LE LENDEMAIN À 08H00)</div>
+                <table class="doc-table-exact" style="margin-top: 4px;">
                     <thead>
                         <tr>
-                            <th rowspan="2" style="width: 100px;">JOUR</th>
-                            <th rowspan="2" style="width: 85px;">DATE</th>
+                            <th rowspan="2" style="width: 105px;">JOURNÉE</th>
+                            <th rowspan="2" style="width: 80px;">DATE</th>
                             <th colspan="3">W.P.E.E.X - Ingénieur de Suivi</th>
                             <th colspan="3">Responsable d'exécution (SINYLON)</th>
-                            <th rowspan="2" class="no-print" style="width: 70px;">STATUT</th>
+                            <th rowspan="2" class="no-print" style="width: 90px;">ACTION</th>
                         </tr>
                         <tr>
                             <th>Nom</th>
                             <th>Fonction</th>
-                            <th>Visa</th>
+                            <th>Visa & Heure</th>
                             <th>Nom</th>
                             <th>Fonction</th>
-                            <th>Signature</th>
+                            <th>Signature & Heure</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -297,31 +343,31 @@ const Templates = {
                     </tbody>
                 </table>
 
-                <div class="yellow-bar-header" style="margin-top: 20px;">SUPERVISION SPÉCIALE CAISSE WEEK-END (VENDREDI / SAMEDI)</div>
-                <table class="doc-table-exact" style="margin-top: 6px;">
+                <div class="yellow-bar-header" style="margin-top: 16px;">SUPERVISION SPÉCIALE CAISSE WEEK-END (VENDREDI / SAMEDI)</div>
+                <table class="doc-table-exact" style="margin-top: 4px;">
                     <thead>
                         <tr>
-                            <th>JOURNÉE</th>
-                            <th>DATE</th>
+                            <th style="width: 80px;">JOURNÉE</th>
+                            <th style="width: 90px;">DATE</th>
                             <th>SUPERVISEUR W.P.E.E.X</th>
-                            <th>CONTRÔLE SÉCURITÉ</th>
-                            <th>STATUT CAISSE STELLANTIS</th>
+                            <th>CONTRÔLE DE SÉCURITÉ (08H00)</th>
+                            <th>DOSSIER CAISSE STELLANTIS</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td class="text-center bold-cell">Vendredi</td>
-                            <td class="text-center">2026-08-28</td>
+                            <td class="text-center" style="font-family: monospace;">2026-08-28</td>
                             <td>M. W.P.E.E.X</td>
-                            <td>Vérification 360°, Nacelles, Extincteurs, EPI</td>
-                            <td class="text-center" style="font-weight: 900; color: #15803d;">AUTORISÉ & CONFORME ✓</td>
+                            <td>Vérification 360°, Nacelles, Extincteurs, Balisage</td>
+                            <td class="text-center" style="font-weight: 800; color: #15803d;">AUTORISÉ CAISSE WEEK-END ✓</td>
                         </tr>
                         <tr>
                             <td class="text-center bold-cell">Samedi</td>
-                            <td class="text-center">2026-08-29</td>
+                            <td class="text-center" style="font-family: monospace;">2026-08-29</td>
                             <td>M. W.P.E.E.X</td>
-                            <td>Vérification 360°, Nacelles, Extincteurs, EPI</td>
-                            <td class="text-center" style="font-weight: 900; color: #15803d;">AUTORISÉ & CONFORME ✓</td>
+                            <td>Vérification 360°, Nacelles, Extincteurs, Balisage</td>
+                            <td class="text-center" style="font-weight: 800; color: #15803d;">AUTORISÉ CAISSE WEEK-END ✓</td>
                         </tr>
                     </tbody>
                 </table>
@@ -416,7 +462,7 @@ const Templates = {
                 </div>
 
                 <div style="background: #fee2e2; border: 1.5px solid #ef4444; padding: 6px 12px; margin-top: 8px; border-radius: 4px; font-size: 10px; color: #b91c1c; font-weight: 700;">
-                    🔥 CONSIGNES SOUDAGE / MEULAGE : DÉGAGELEMENT 10M + EXTINCTEURS DIRECTEMENT SUR LE POSTE
+                    🔥 CONSIGNES SOUDAGE / MEULAGE : DÉGAGEMENT 10M + EXTINCTEURS DIRECTEMENT SUR LE POSTE
                 </div>
 
                 <table class="doc-table-exact" style="margin-top: 10px;">

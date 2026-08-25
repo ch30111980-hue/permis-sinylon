@@ -743,6 +743,84 @@ const App = {
         if (modal) modal.classList.remove('active');
     },
 
+    // Validation journalière du matin à 08h00 (Protocole officiel W.P.E.E.X / HSE)
+    validateDayMorning(permitId, dayIndex, dateStr) {
+        const permit = Store.getPermit(permitId);
+        if (!permit) return;
+
+        if (!permit.revalidations) permit.revalidations = [];
+
+        // Supprimer l'ancienne entrée pour ce jour si elle existe
+        permit.revalidations = permit.revalidations.filter(r => r.dayIndex !== dayIndex && r.date !== dateStr);
+
+        const newEntry = {
+            id: 'REV-' + Date.now(),
+            dayIndex: dayIndex,
+            date: dateStr,
+            time: '08:00',
+            unchangedInfo: true,
+            unchangedConditions: true,
+            securityMeasuresApplicable: true,
+            wpeexEngineer: 'M. W.P.E.E.X',
+            wpeexValidated: true,
+            execManager: 'Xie (Chef de Projet)',
+            comments: `Revalidation conforme Jour ${dayIndex} effectuée le matin à 08:00.`
+        };
+
+        permit.revalidations.push(newEntry);
+        Store.savePermit(permit);
+
+        if (this.currentView === 'preview') {
+            this.renderPermitPage(this.previewPage);
+        } else {
+            this.renderDashboard();
+        }
+
+        this.showToast(`✅ Revalidation Jour ${dayIndex} (${dateStr}) signée à 08:00 par W.P.E.E.X & Xie !`, 'success');
+    },
+
+    signAllRevalidations(permitId) {
+        const permit = Store.getPermit(permitId);
+        if (!permit) return;
+
+        const dStart = permit.validFrom || permit['date-main'] || '2026-08-24';
+        const startDate = new Date(dStart);
+
+        if (!permit.revalidations) permit.revalidations = [];
+
+        for (let i = 1; i <= 6; i++) {
+            const targetDate = new Date(startDate);
+            targetDate.setDate(startDate.getDate() + i);
+            const dateStr = targetDate.toISOString().split('T')[0];
+            const dayIndex = i + 1;
+
+            permit.revalidations = permit.revalidations.filter(r => r.dayIndex !== dayIndex && r.date !== dateStr);
+            permit.revalidations.push({
+                id: 'REV-' + Date.now() + '-' + i,
+                dayIndex: dayIndex,
+                date: dateStr,
+                time: '08:00',
+                unchangedInfo: true,
+                unchangedConditions: true,
+                securityMeasuresApplicable: true,
+                wpeexEngineer: 'M. W.P.E.E.X',
+                wpeexValidated: true,
+                execManager: 'Xie (Chef de Projet)',
+                comments: `Revalidation matinale 08:00 (K9 CKD0 Protocol)`
+            });
+        }
+
+        Store.savePermit(permit);
+
+        if (this.currentView === 'preview') {
+            this.renderPermitPage(this.previewPage);
+        } else {
+            this.renderDashboard();
+        }
+
+        this.showToast(`✍️ Revalidations de la semaine signées pour 08:00 !`, 'success');
+    },
+
     verifyPermitFromInput() {
         const input = document.getElementById('verifier-input-text').value.trim();
         if (!input) return;
@@ -790,3 +868,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.App = App;
+
