@@ -255,7 +255,7 @@ const App = {
         this.showToast(`Jour ${rowIndex + 2} : ${!isCurrentlyValid ? '✅ VALIDÉ ET SIGNÉ' : '⏳ REMIS EN ATTENTE'}`, 'success', 2000);
     },
 
-    // Revalidation automatique de la journée d'aujourd'hui (comme à 18h00)
+    // Revalidation automatique de la journée d'aujourd'hui (comme à 07h55)
     revalidateTodayAuto(permitId) {
         const permit = Store.getPermit(permitId || this.currentPermitId);
         if (!permit) return;
@@ -271,7 +271,7 @@ const App = {
                 weekNumber: permit.revalidations.length + 2,
                 date: todayStr,
                 wpeexEngineer: 'M. W.P.E.E.X',
-                execManager: 'Xie',
+                execManager: 'XIE XIAN (Chef de Projet)',
                 status: 'VALIDE',
                 wpeexValidated: true,
                 sinylonSigned: true
@@ -286,7 +286,7 @@ const App = {
 
         Store.savePermit(permit);
         this.renderPreview();
-        this.showToast(`⚡ Revalidation automatique 18h00 exécutée avec succès pour Jour ${targetRowIndex + 2} (${todayStr}) !`, 'success', 4000);
+        this.showToast(`⚡ Revalidation automatique 07h55 exécutée avec succès pour Jour ${targetRowIndex + 2} (${todayStr}) !`, 'success', 4000);
     },
 
     // Valider et signer l'intégralité des 6 jours (Jour 2 à Jour 7)
@@ -309,7 +309,7 @@ const App = {
                 weekNumber: i,
                 date: rowDate,
                 wpeexEngineer: 'M. W.P.E.E.X',
-                execManager: 'Xie',
+                execManager: 'XIE XIAN (Chef de Projet)',
                 status: 'VALIDE',
                 wpeexValidated: true,
                 sinylonSigned: true,
@@ -324,7 +324,7 @@ const App = {
     },
 
     // =========================================================================
-    // MOTEUR DE REVALIDATION AUTOMATIQUE À 18H00
+    // MOTEUR DE REVALIDATION AUTOMATIQUE DU MATIN À 07H55
     // =========================================================================
 
     initAutoRevalidationEngine() {
@@ -334,7 +334,7 @@ const App = {
             const hour = now.getHours();
             const min = now.getMinutes();
 
-            // Si 18h00 ou plus, revalider automatiquement le permis actif de la semaine
+            // Si 07h55 du matin ou plus, revalider automatiquement le permis actif de la semaine
             const permits = Store.getAllPermits();
             const activePermit = permits[this.currentPermitId] || Object.values(permits)[0];
             if (!activePermit) return;
@@ -349,22 +349,22 @@ const App = {
                     weekNumber: activePermit.revalidations.length + 2,
                     date: todayStr,
                     wpeexEngineer: 'M. W.P.E.E.X',
-                    execManager: 'Xie',
+                    execManager: 'XIE XIAN (Chef de Projet)',
                     status: 'VALIDE',
                     wpeexValidated: true,
                     sinylonSigned: true
                 });
             }
 
-            // Si non validé aujourd'hui et qu'il est 18h ou plus, valider automatiquement
+            // Si non validé aujourd'hui et qu'il est 07h55 ou plus
             if (!activePermit.revalidations[rowIndex].wpeexValidated || !activePermit.revalidations[rowIndex].sinylonSigned) {
-                if (hour >= 18) {
+                if (hour > 7 || (hour === 7 && min >= 55)) {
                     activePermit.revalidations[rowIndex].date = todayStr;
                     activePermit.revalidations[rowIndex].wpeexValidated = true;
                     activePermit.revalidations[rowIndex].sinylonSigned = true;
                     activePermit.revalidations[rowIndex].status = 'VALIDE';
                     Store.savePermit(activePermit);
-                    console.log(`[AutoReval 18h] Permis ${activePermit.id} Jour ${rowIndex + 2} revalidé automatiquement.`);
+                    console.log(`[AutoReval 07h55] Permis ${activePermit.id} Jour ${rowIndex + 2} revalidé automatiquement.`);
                 }
             }
         };
@@ -632,7 +632,7 @@ const App = {
                     <td><strong>${p.company || 'SINYLON'}</strong></td>
                     <td>${p.ouvrage || ''} - ${p.zone || ''}</td>
                     <td>${p['work-desc'] || p.title || ''}</td>
-                    <td><strong>Xie</strong> (Chef) / <strong>Xian</strong> (Receveur)</td>
+                    <td><strong>XIE XIAN</strong> (Chef) / <strong>ZHOULIN</strong> (Équipe)</td>
                     <td><span class="status-badge status-${(p.status || 'valide').toLowerCase()}">${p.status || 'VALIDE'}</span></td>
                     <td>
                         <button onclick="QREngine.openMobileQRModal('${p.id}')" class="btn btn-primary btn-sm" style="font-weight: 700;">📱 Fiche QR</button>
@@ -665,7 +665,7 @@ const App = {
         document.getElementById('form-title-en').value = '';
         document.getElementById('form-company').value = 'SINYLON';
         document.getElementById('form-contact').value = 'Nouri Chahrour (HSE Sinylon)';
-        document.getElementById('form-tel').value = '+213 550 12 34 56';
+        document.getElementById('form-tel').value = '0563765157';
         document.getElementById('form-ouvrage').value = 'Atelier Assemblage Stellantis';
         document.getElementById('form-zone').value = 'Zone 4';
         document.getElementById('form-location').value = 'Bâtiment Principal';
@@ -675,10 +675,12 @@ const App = {
         document.getElementById('form-time-start').value = '07h30';
         document.getElementById('form-time-end').value = '18h00';
         document.getElementById('form-is-weekend').checked = false;
-        document.getElementById('form-chef-nom').value = 'Xie (Chef de Projet Sinylon)';
+        document.getElementById('form-chef-nom').value = 'XIE XIAN (Chef de Projet)';
         document.getElementById('form-wpeex-nom').value = 'M. W.P.E.E.X (Ingénieur de Suivi)';
         document.getElementById('form-hse-nom').value = 'Nouri Chahrour (HSE Sinylon)';
-        document.getElementById('form-receveur-nom').value = 'Xian (Receveur du Permis)';
+        if (document.getElementById('form-chef-equipe')) {
+            document.getElementById('form-chef-equipe').value = 'ZHOULIN (Chef d\'Équipe)';
+        }
 
         this.switchView('create');
         this.showToast('Nouveau permis initialisé.', 'info');
@@ -695,7 +697,7 @@ const App = {
         document.getElementById('form-title-en').value = permit['title-en'] || Translator.localDictionaryTranslate(permit.title || '');
         document.getElementById('form-company').value = permit.company || 'SINYLON';
         document.getElementById('form-contact').value = permit.contact || 'Nouri Chahrour (HSE Sinylon)';
-        document.getElementById('form-tel').value = permit.tel || '+213 550 12 34 56';
+        document.getElementById('form-tel').value = permit.tel || '0563765157';
         document.getElementById('form-ouvrage').value = permit.ouvrage || '';
         document.getElementById('form-zone').value = permit.zone || '';
         document.getElementById('form-location').value = permit.location || '';
@@ -705,10 +707,12 @@ const App = {
         document.getElementById('form-time-start').value = permit['time-start'] || '';
         document.getElementById('form-time-end').value = permit['time-end'] || '';
         document.getElementById('form-is-weekend').checked = !!permit.isWeekendWork;
-        document.getElementById('form-chef-nom').value = permit['chef-nom'] || 'Xie (Chef de Projet Sinylon)';
+        document.getElementById('form-chef-nom').value = permit['chef-nom'] || 'XIE XIAN (Chef de Projet)';
         document.getElementById('form-wpeex-nom').value = permit['wpeex-nom'] || 'M. W.P.E.E.X (Ingénieur de Suivi)';
         document.getElementById('form-hse-nom').value = permit['hse-nom'] || 'Nouri Chahrour (HSE Sinylon)';
-        document.getElementById('form-receveur-nom').value = permit['receveur-nom'] || 'Xian (Receveur du Permis)';
+        if (document.getElementById('form-chef-equipe')) {
+            document.getElementById('form-chef-equipe').value = permit.chef_equipe || 'ZHOULIN (Chef d\'Équipe)';
+        }
 
         this.switchView('create');
         this.showToast(`✏️ Mode modification activé pour le permis ${permit.id}`, 'info');
@@ -723,7 +727,7 @@ const App = {
             createdAt: new Date().toISOString(), 
             revalidations: [], 
             travailleurs: [
-                { id: 'T-101', nom: 'Xian', role: 'Receveur / Chef d\'Équipe', badge: 'SYN-014' }
+                { id: 'T-101', nom: 'ZHOULIN', role: 'Chef d\'Équipe', badge: 'SYN-014' }
             ],
             historique_modifications: []
         };
@@ -734,7 +738,7 @@ const App = {
         permit['title-en'] = document.getElementById('form-title-en').value.trim() || Translator.localDictionaryTranslate(permit.title);
         permit.company = document.getElementById('form-company').value.trim() || 'SINYLON';
         permit.contact = document.getElementById('form-contact').value.trim() || 'Nouri Chahrour (HSE Sinylon)';
-        permit.tel = document.getElementById('form-tel').value.trim() || '+213 550 12 34 56';
+        permit.tel = document.getElementById('form-tel').value.trim() || '0563765157';
         permit.ouvrage = document.getElementById('form-ouvrage').value.trim();
         permit.zone = document.getElementById('form-zone').value.trim();
         permit.location = document.getElementById('form-location').value.trim();
@@ -744,10 +748,11 @@ const App = {
         permit['time-start'] = document.getElementById('form-time-start').value;
         permit['time-end'] = document.getElementById('form-time-end').value;
         permit.isWeekendWork = document.getElementById('form-is-weekend').checked;
-        permit['chef-nom'] = document.getElementById('form-chef-nom').value.trim() || 'Xie (Chef de Projet Sinylon)';
+        permit['chef-nom'] = document.getElementById('form-chef-nom').value.trim() || 'XIE XIAN (Chef de Projet)';
+        permit.chef_equipe = (document.getElementById('form-chef-equipe') ? document.getElementById('form-chef-equipe').value.trim() : '') || 'ZHOULIN (Chef d\'Équipe)';
         permit['wpeex-nom'] = document.getElementById('form-wpeex-nom').value.trim() || 'M. W.P.E.E.X (Ingénieur de Suivi)';
         permit['hse-nom'] = document.getElementById('form-hse-nom').value.trim() || 'Nouri Chahrour (HSE Sinylon)';
-        permit['receveur-nom'] = document.getElementById('form-receveur-nom').value.trim() || 'Xian (Receveur du Permis)';
+        permit['receveur-nom'] = '';
 
         if (!permit.dangers) permit.dangers = { methodReq: true };
         permit.dangers.height = (type === 'height');

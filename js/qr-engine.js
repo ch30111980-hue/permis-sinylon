@@ -91,11 +91,21 @@ const QREngine = {
         document.getElementById('mobile-qr-hours').innerText = `${permit['date-main']} (${permit['time-start']} → ${permit['time-end']})`;
         
         // Responsables
-        document.getElementById('mobile-qr-chef').innerText = permit['chef-nom'] || 'Xie (Chef de Projet)';
-        document.getElementById('mobile-qr-receveur').innerText = permit['receveur-nom'] || 'Xian (Receveur)';
-        document.getElementById('mobile-qr-chef-equipe').innerText = permit.chef_equipe || permit['receveur-nom'] || 'Xian';
-        document.getElementById('mobile-qr-contact').innerText = `${permit.contact || 'Nouri Chahrour'} (${permit.tel || '+213 550 12 34 56'})`;
-        document.getElementById('mobile-qr-wpeex').innerText = permit['wpeex-nom'] || 'M. W.P.E.E.X (Ingénieur de Suivi)';
+        if (document.getElementById('mobile-qr-chef')) {
+            document.getElementById('mobile-qr-chef').innerText = permit['chef-nom'] || 'XIE XIAN (Chef de Projet)';
+        }
+        if (document.getElementById('mobile-qr-receveur')) {
+            document.getElementById('mobile-qr-receveur').innerText = permit.chef_equipe || 'ZHOULIN';
+        }
+        if (document.getElementById('mobile-qr-chef-equipe')) {
+            document.getElementById('mobile-qr-chef-equipe').innerText = permit.chef_equipe || 'ZHOULIN (Chef d\'Équipe)';
+        }
+        if (document.getElementById('mobile-qr-contact')) {
+            document.getElementById('mobile-qr-contact').innerText = `${permit.contact || 'Nouri Chahrour'} (${permit.tel || '0563765157'})`;
+        }
+        if (document.getElementById('mobile-qr-wpeex')) {
+            document.getElementById('mobile-qr-wpeex').innerText = permit['wpeex-nom'] || 'M. W.P.E.E.X (Ingénieur de Suivi)';
+        }
 
         // Badge Statut dynamique
         const badge = document.getElementById('mobile-qr-status-badge');
@@ -129,12 +139,6 @@ const QREngine = {
 
         // Historique des Modifications (Traçabilité QR_TERRAIN)
         this.renderAuditHistory(permit);
-
-        // Générer le QR Code dans le canvas
-        const canvas = document.getElementById('mobile-qr-canvas');
-        if (canvas) {
-            this.renderToCanvas(canvas, permit, { size: 260 });
-        }
 
         modal.dataset.currentPermitId = permit.id;
         modal.classList.add('active');

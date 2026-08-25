@@ -12,7 +12,7 @@ const Templates = {
 
         const descFr = permit['work-desc'] || permit.title || '';
         const descEn = permit['work-desc-en'] || permit['title-en'] || Translator.localDictionaryTranslate(descFr);
-        const workers = permit.workers && permit.workers.length > 0 ? permit.workers : ['Xie (Chef de Projet)', 'Nouri Chahrour (HSE)'];
+        const workers = permit.workers && permit.workers.length > 0 ? permit.workers : ['XIE XIAN (Chef de Projet)', 'ZHOULIN (Chef d\'Équipe)', 'Nouri Chahrour (HSE - 0563765157)'];
 
         const workersHtml = workers.map((w, idx) => `
             <span class="worker-chip">
@@ -69,7 +69,7 @@ const Templates = {
                     <div class="doc-box-bordered" style="border-right: none;">
                         <strong>Entreprise Intervenante :</strong> <span contenteditable="true" style="font-weight: bold;" onblur="App.updatePermitField('${permit.id}', 'company', this.innerText)">${permit.company || 'SINYLON'}</span><br>
                         Avant de commencer le travail, veuillez contacter :<br>
-                        <strong>Chef de Projet :</strong> <span contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'chef-nom', this.innerText)">${permit['chef-nom'] || 'Xie'}</span>
+                        <strong>Chef de Projet :</strong> <span contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'chef-nom', this.innerText)">${permit['chef-nom'] || 'XIE XIAN'}</span>
                     </div>
                     <div class="doc-box-bordered">
                         <div style="display: flex; justify-content: space-between;">
@@ -196,8 +196,8 @@ const Templates = {
                     <div class="signatures-grid-exact">
                         <div class="sign-card-exact">
                             <div class="sign-card-header">Chef de Projet Entreprise</div>
-                            <div style="font-size: 8px;">Nom : <strong contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'chef-nom', this.innerText)">${permit['chef-nom'] || 'Xie'}</strong></div>
-                            <div style="font-size: 8px; color: #2563eb; font-weight: bold;">Signature : Xie (Validé)</div>
+                            <div style="font-size: 8px;">Nom : <strong contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'chef-nom', this.innerText)">${permit['chef-nom'] || 'XIE XIAN'}</strong></div>
+                            <div style="font-size: 8px; color: #2563eb; font-weight: bold;">Signature : XIE XIAN (Validé)</div>
                         </div>
                         <div class="sign-card-exact wpeex-sign">
                             <div class="sign-card-header">W.P.E.E.X - Ingénieur de Suivi</div>
@@ -205,14 +205,14 @@ const Templates = {
                             <div style="font-size: 8px; color: #1d4ed8; font-weight: bold;">Visa : W.P.E.E.X (Approuvé)</div>
                         </div>
                         <div class="sign-card-exact">
-                            <div class="sign-card-header">HSE Entreprise</div>
-                            <div style="font-size: 8px;">Nom : <strong contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'hse-nom', this.innerText)">${permit['hse-nom'] || 'Nouri Chahrour'}</strong></div>
-                            <div class="sign-legal-note">Confirmation que toutes les précautions et les vérifications sont en place.</div>
+                            <div class="sign-card-header">Superviseur HSE</div>
+                            <div style="font-size: 8px;">Nom : <strong contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'hse-nom', this.innerText)">${permit['hse-nom'] || 'Nouri Chahrour (0563765157)'}</strong></div>
+                            <div class="sign-legal-note">Précautions et conformité HSE validées.</div>
                         </div>
                         <div class="sign-card-exact">
-                            <div class="sign-card-header">Receveur du permis</div>
-                            <div style="font-size: 8px;">Nom : <strong contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'receveur-nom', this.innerText)">${permit['receveur-nom'] || '________________'}</strong></div>
-                            <div class="sign-legal-note">Tout les travailleurs ont été informés. Instructions suivies.</div>
+                            <div class="sign-card-header">Chef d'Équipe Chantier</div>
+                            <div style="font-size: 8px;">Nom : <strong contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'chef_equipe', this.innerText)">${permit.chef_equipe || 'ZHOULIN'}</strong></div>
+                            <div class="sign-legal-note">Équipe briefée, instructions de sécurité suivies.</div>
                         </div>
                     </div>
                 </div>
@@ -239,24 +239,24 @@ const Templates = {
 
                     <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 4px;">
                         <div class="sign-card-exact">
-                            <div class="sign-card-header">Receveur du permis</div>
-                            <div style="font-size: 7.5px;">Nom : ________</div>
-                            <div style="font-size: 7.5px;">Signature : ________</div>
+                            <div class="sign-card-header">Chef d'Équipe</div>
+                            <div style="font-size: 7.5px;">Nom : ${permit.chef_equipe || 'ZHOULIN'}</div>
+                            <div style="font-size: 7.5px;">Signature : Validé</div>
+                        </div>
+                        <div class="sign-card-exact">
+                            <div class="sign-card-header">HSE Sinylon</div>
+                            <div style="font-size: 7.5px;">Nom : Nouri Chahrour</div>
+                            <div style="font-size: 7.5px;">Tel : 0563765157</div>
                         </div>
                         <div class="sign-card-exact wpeex-sign">
-                            <div class="sign-card-header">W.P.E.E.X - Ingénieur Suivi</div>
-                            <div style="font-size: 7.5px;">Nom : W.P.E.E.X</div>
-                            <div style="font-size: 7.5px;">Signature : ________</div>
+                            <div class="sign-card-header">W.P.E.E.X</div>
+                            <div style="font-size: 7.5px;">Visa : Conforme</div>
+                            <div style="font-size: 7.5px;">Date : ${permit['date-main']}</div>
                         </div>
                         <div class="sign-card-exact">
                             <div class="sign-card-header">Chef de Projet</div>
-                            <div style="font-size: 7.5px;">Nom : Xie</div>
-                            <div style="font-size: 7.5px;">Signature : ________</div>
-                        </div>
-                        <div class="sign-card-exact">
-                            <div class="sign-card-header">HSE Entreprise</div>
-                            <div style="font-size: 7.5px;">Nom : Nouri Chahrour</div>
-                            <div style="font-size: 7.5px;">Signature : ________</div>
+                            <div style="font-size: 7.5px;">Nom : ${permit['chef-nom'] || 'XIE XIAN'}</div>
+                            <div style="font-size: 7.5px;">Statut : CLÔTURÉ</div>
                         </div>
                     </div>
                 </div>
@@ -292,7 +292,7 @@ const Templates = {
             const curDate = rev?.date || defaultDate;
             const curWpeex = rev?.wpeexEngineer || 'M. W.P.E.E.X';
             const isWpeexValid = rev?.wpeexValidated !== false && (rev?.status === 'VALIDE' || rev?.wpeexValidated === true);
-            const curExec = rev?.execManager || 'Xie';
+            const curExec = rev?.execManager || 'XIE XIAN';
             const isExecSigned = rev?.sinylonSigned !== false && (rev?.status === 'VALIDE' || rev?.sinylonSigned === true);
 
             rows.push(`
@@ -319,7 +319,7 @@ const Templates = {
                     <td class="text-center" style="font-size: 7.5px; color: #64748b;">Chef de Projet</td>
                     <td class="text-center" style="cursor: pointer;" onclick="App.toggleRevalSinylon('${permit.id}', ${rowIndex})">
                         <span class="badge ${isExecSigned ? 'badge-sky' : 'badge-yellow'}" style="font-size: 8px; padding: 2px 6px; cursor: pointer;" title="Cliquer pour basculer la signature">
-                            ${isExecSigned ? 'SIGNÉ Xie ✓' : '⏳ EN ATTENTE'}
+                            ${isExecSigned ? 'SIGNÉ XIE XIAN ✓' : '⏳ EN ATTENTE'}
                         </span>
                     </td>
                     <td class="text-center no-print" style="width: 75px;">
@@ -354,10 +354,10 @@ const Templates = {
                 <!-- Barre d'action rapide pour Revalidation -->
                 <div class="no-print" style="margin-top: 8px; background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px; padding: 6px 12px; display: flex; justify-content: space-between; align-items: center; font-size: 11px;">
                     <div style="color: #166534; font-weight: 600;">
-                        ⏰ <strong>Revalidation Automatique 18h00 :</strong> <span class="badge badge-sky" style="font-size: 9px;">ACTIVE</span> (Validation automatique chaque jour à 18h00)
+                        ⏰ <strong>Revalidation Matin 07h55 :</strong> <span class="badge badge-sky" style="font-size: 9px;">ACTIVE</span> (Validation automatique chaque matin à 07h55)
                     </div>
                     <div style="display: flex; gap: 6px;">
-                        <button type="button" class="btn btn-sm btn-primary" onclick="App.revalidateTodayAuto('${permit.id}')">⚡ Revalider Aujourd'hui (18h)</button>
+                        <button type="button" class="btn btn-sm btn-primary" onclick="App.revalidateTodayAuto('${permit.id}')">⚡ Revalider Aujourd'hui (07h55)</button>
                         <button type="button" class="btn btn-sm btn-secondary" onclick="App.signAllRevalidations('${permit.id}')">✍️ Signer Toute la Semaine</button>
                     </div>
                 </div>
@@ -421,7 +421,7 @@ const Templates = {
         const h = permit.heightDetails || {};
         const isY = (val) => val ? 'check-active' : '';
         const isN = (val) => !val ? 'check-active' : '';
-        const workers = permit.workers && permit.workers.length > 0 ? permit.workers : ['Xie (Chef de Projet)', 'Nouri Chahrour (HSE)'];
+        const workers = permit.workers && permit.workers.length > 0 ? permit.workers : ['XIE XIAN (Chef de Projet)', 'ZHOULIN (Chef d\'Équipe)', 'Nouri Chahrour (HSE - 0563765157)'];
 
         const workersHtml = workers.map((w, idx) => `
             <span class="worker-chip">
@@ -528,8 +528,8 @@ const Templates = {
                 <div style="display: grid; grid-template-columns: 1.5fr 1.5fr 1fr; gap: 6px; margin-top: 6px;">
                     <div class="sign-card-exact">
                         <div class="sign-card-header">CHEF DE PROJET</div>
-                        <div style="font-size: 8px;">Nom : <strong contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'chef-nom', this.innerText)">${permit['chef-nom'] || 'Xie'}</strong></div>
-                        <div style="font-size: 8px; color: #0284c7; font-weight: bold;">Signature : Xie</div>
+                        <div style="font-size: 8px;">Nom : <strong contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'chef-nom', this.innerText)">${permit['chef-nom'] || 'XIE XIAN'}</strong></div>
+                        <div style="font-size: 8px; color: #0284c7; font-weight: bold;">Signature : XIE XIAN (Validé)</div>
                     </div>
                     <div class="sign-card-exact">
                         <div class="sign-card-header">HSE ENTREPRISE</div>
@@ -550,7 +550,7 @@ const Templates = {
         const ht = permit.hotDetails || {};
         const isY = (val) => val ? 'check-active' : '';
         const isN = (val) => !val ? 'check-active' : '';
-        const workers = permit.workers && permit.workers.length > 0 ? permit.workers : ['Xie (Chef de Projet)', 'Nouri Chahrour (HSE)'];
+        const workers = permit.workers && permit.workers.length > 0 ? permit.workers : ['XIE XIAN (Chef de Projet)', 'ZHOULIN (Chef d\'Équipe)', 'Nouri Chahrour (HSE - 0563765157)'];
 
         const workersHtml = workers.map((w, idx) => `
             <span class="worker-chip">
@@ -631,8 +631,8 @@ const Templates = {
                 <div style="display: grid; grid-template-columns: 1.5fr 1.5fr 1fr; gap: 6px; margin-top: 6px;">
                     <div class="sign-card-exact">
                         <div class="sign-card-header" style="background: #fecaca;">CHEF DE PROJET</div>
-                        <div style="font-size: 8px;">Nom : <strong contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'chef-nom', this.innerText)">${permit['chef-nom'] || 'Xie'}</strong></div>
-                        <div style="font-size: 8px; color: #dc2626; font-weight: bold;">Signature : Xie</div>
+                        <div style="font-size: 8px;">Nom : <strong contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'chef-nom', this.innerText)">${permit['chef-nom'] || 'XIE XIAN'}</strong></div>
+                        <div style="font-size: 8px; color: #dc2626; font-weight: bold;">Signature : XIE XIAN (Validé)</div>
                     </div>
                     <div class="sign-card-exact">
                         <div class="sign-card-header" style="background: #fecaca;">HSE ENTREPRISE</div>
@@ -652,7 +652,7 @@ const Templates = {
     // Tirage de câbles, pose des armoires électriques, installation des moteurs & équipements
     electricAnnexe(permit) {
         const el = permit.electricDetails || {};
-        const workers = permit.workers && permit.workers.length > 0 ? permit.workers : ['Xie (Chef de Projet)', 'Nouri Chahrour (HSE)'];
+        const workers = permit.workers && permit.workers.length > 0 ? permit.workers : ['XIE XIAN (Chef de Projet)', 'ZHOULIN (Chef d\'Équipe)', 'Nouri Chahrour (HSE - 0563765157)'];
 
         const workersHtml = workers.map((w, idx) => `
             <span class="worker-chip">
@@ -708,8 +708,8 @@ const Templates = {
                 <div style="display: grid; grid-template-columns: 1.5fr 1.5fr 1fr; gap: 6px; margin-top: 10px;">
                     <div class="sign-card-exact">
                         <div class="sign-card-header" style="background: #fde68a;">CHEF DE PROJET</div>
-                        <div style="font-size: 8px;">Nom : <strong contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'chef-nom', this.innerText)">${permit['chef-nom'] || 'Xie'}</strong></div>
-                        <div style="font-size: 8px; color: #d97706; font-weight: bold;">Signature : Xie</div>
+                        <div style="font-size: 8px;">Nom : <strong contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'chef-nom', this.innerText)">${permit['chef-nom'] || 'XIE XIAN'}</strong></div>
+                        <div style="font-size: 8px; color: #d97706; font-weight: bold;">Signature : XIE XIAN (Validé)</div>
                     </div>
                     <div class="sign-card-exact">
                         <div class="sign-card-header" style="background: #fde68a;">HSE ENTREPRISE</div>
@@ -737,7 +737,7 @@ const Templates = {
                 <td>${p['work-desc'] || p.title || ''}</td>
                 <td>${p.ouvrage || ''} (${p.zone || ''})</td>
                 <td>${p.isFriday ? '📅 Vendredi' : '📅 Samedi'}</td>
-                <td class="text-center bold-cell">${p['chef-nom'] || 'Xie'} / ${p['receveur-nom'] || 'Xian'}</td>
+                <td class="text-center bold-cell">${p['chef-nom'] || 'XIE XIAN'} / ${p['receveur-nom'] || 'Xian'}</td>
                 <td class="text-center"><span class="sign-badge">CONFORME</span></td>
             </tr>
         `).join('');
@@ -785,7 +785,7 @@ const Templates = {
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 14px;">
                     <div class="sign-card-exact">
                         <div class="sign-card-header">SINYLON (Chef de Projet)</div>
-                        <div style="font-size: 8px;">Nom : Xie</div>
+                        <div style="font-size: 8px;">Nom : XIE XIAN</div>
                         <div style="font-size: 8px;">Dépôt Dossier Week-end</div>
                     </div>
                     <div class="sign-card-exact wpeex-sign">

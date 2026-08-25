@@ -11,9 +11,9 @@ js_content = """/**
  */
 
 const Store = {
-    STORAGE_KEY: "sinylon_permits_database_v7",
-    SETTINGS_KEY: "sinylon_app_settings_v7",
-    ARCHIVE_KEY: "sinylon_permits_archive_v7",
+    STORAGE_KEY: "sinylon_permits_database_v8",
+    SETTINGS_KEY: "sinylon_app_settings_v8",
+    ARCHIVE_KEY: "sinylon_permits_archive_v8",
     DEFAULT_AUTH_CODE: "SINYLON2026",
 
     // Obtenir les paramètres de l'application
@@ -25,10 +25,10 @@ const Store = {
                 projectName: "Algeria K9 CKD0",
                 siteName: "STELLANTIS - Site Industriel Assemblage",
                 companyName: "SINYLON & W.P.E.E.X",
-                defaultHSE: "Nouri Chahrour",
+                defaultHSE: "Nouri Chahrour (0563765157)",
                 defaultWPEEX: "M. W.P.E.E.X (Ingénieur de Suivi)",
-                defaultChef: "Xie (Chef de Projet)",
-                defaultReceveur: "Xian (Receveur)"
+                defaultChef: "XIE XIAN (Chef de Projet)",
+                defaultChefEquipe: "ZHOULIN (Chef d'Équipe)"
             };
             localStorage.setItem(this.SETTINGS_KEY, JSON.stringify(defaults));
             return defaults;

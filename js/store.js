@@ -6,9 +6,9 @@
  */
 
 const Store = {
-    STORAGE_KEY: "sinylon_permits_database_v7",
-    SETTINGS_KEY: "sinylon_app_settings_v7",
-    ARCHIVE_KEY: "sinylon_permits_archive_v7",
+    STORAGE_KEY: "sinylon_permits_database_v8",
+    SETTINGS_KEY: "sinylon_app_settings_v8",
+    ARCHIVE_KEY: "sinylon_permits_archive_v8",
     DEFAULT_AUTH_CODE: "SINYLON2026",
 
     // Obtenir les paramètres de l'application
@@ -20,10 +20,10 @@ const Store = {
                 projectName: "Algeria K9 CKD0",
                 siteName: "STELLANTIS - Site Industriel Assemblage",
                 companyName: "SINYLON & W.P.E.E.X",
-                defaultHSE: "Nouri Chahrour",
+                defaultHSE: "Nouri Chahrour (0563765157)",
                 defaultWPEEX: "M. W.P.E.E.X (Ingénieur de Suivi)",
-                defaultChef: "Xie (Chef de Projet)",
-                defaultReceveur: "Xian (Receveur)"
+                defaultChef: "XIE XIAN (Chef de Projet)",
+                defaultChefEquipe: "ZHOULIN (Chef d'Équipe)"
             };
             localStorage.setItem(this.SETTINGS_KEY, JSON.stringify(defaults));
             return defaults;
@@ -306,7 +306,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW25 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -318,9 +318,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -382,8 +382,8 @@ const Store = {
         "createdAt": "2026-08-25T17:49:40.062709",
         "updatedAt": "2026-08-25T17:49:40.062712",
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
@@ -454,7 +454,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW26 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -466,9 +466,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -553,8 +553,8 @@ const Store = {
             "specialMeasures": "Port obligatoire du harnais de sécurité avec longe d'assujettissement en nacelle"
         },
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "hotDetails": {
             "inflammablesClear10m": true,
@@ -602,7 +602,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW27 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -614,9 +614,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -701,8 +701,8 @@ const Store = {
             "specialMeasures": "Port obligatoire du harnais de sécurité avec longe d'assujettissement en nacelle"
         },
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "hotDetails": {
             "inflammablesClear10m": true,
@@ -750,7 +750,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW28 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -762,9 +762,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -849,8 +849,8 @@ const Store = {
             "specialMeasures": "Port obligatoire du harnais de sécurité avec longe d'assujettissement en nacelle"
         },
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "hotDetails": {
             "inflammablesClear10m": true,
@@ -898,7 +898,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW29 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -910,9 +910,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -997,8 +997,8 @@ const Store = {
             "specialMeasures": "Port obligatoire du harnais de sécurité avec longe d'assujettissement en nacelle"
         },
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "hotDetails": {
             "inflammablesClear10m": true,
@@ -1046,7 +1046,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW30 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -1058,9 +1058,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -1145,8 +1145,8 @@ const Store = {
             "specialMeasures": "Port obligatoire du harnais de sécurité avec longe d'assujettissement en nacelle"
         },
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "hotDetails": {
             "inflammablesClear10m": true,
@@ -1194,7 +1194,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW31 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -1206,9 +1206,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -1293,8 +1293,8 @@ const Store = {
             "specialMeasures": "Port obligatoire du harnais de sécurité avec longe d'assujettissement en nacelle"
         },
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "hotDetails": {
             "inflammablesClear10m": true,
@@ -1342,7 +1342,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW32 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -1354,9 +1354,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -1418,8 +1418,8 @@ const Store = {
         "createdAt": "2026-08-25T17:49:40.064208",
         "updatedAt": "2026-08-25T17:49:40.064211",
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
@@ -1490,7 +1490,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW33 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -1502,9 +1502,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -1605,8 +1605,8 @@ const Store = {
             "groundingApplied": true
         },
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "hotDetails": {
             "inflammablesClear10m": true,
@@ -1638,7 +1638,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW34 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -1650,9 +1650,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -1772,8 +1772,8 @@ const Store = {
             "groundingApplied": true
         },
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "notes_chantier": "Projet Algeria K9 CKD0 — Respect strict des consignes HSE Stellantis. Balisage physique 360° du chantier, port obligatoire des EPI (Casque, Lunettes, Chaussures S3, Gants de précision, Harnais si hauteur)."
     },
@@ -1786,7 +1786,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW35 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -1798,9 +1798,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -1920,8 +1920,8 @@ const Store = {
             "groundingApplied": true
         },
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "notes_chantier": "Projet Algeria K9 CKD0 — Respect strict des consignes HSE Stellantis. Balisage physique 360° du chantier, port obligatoire des EPI (Casque, Lunettes, Chaussures S3, Gants de précision, Harnais si hauteur)."
     },
@@ -1934,7 +1934,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW36 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -1946,9 +1946,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -2068,8 +2068,8 @@ const Store = {
             "groundingApplied": true
         },
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "notes_chantier": "Projet Algeria K9 CKD0 — Respect strict des consignes HSE Stellantis. Balisage physique 360° du chantier, port obligatoire des EPI (Casque, Lunettes, Chaussures S3, Gants de précision, Harnais si hauteur)."
     },
@@ -2082,7 +2082,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW37 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -2094,9 +2094,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -2216,8 +2216,8 @@ const Store = {
             "groundingApplied": true
         },
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "notes_chantier": "Projet Algeria K9 CKD0 — Respect strict des consignes HSE Stellantis. Balisage physique 360° du chantier, port obligatoire des EPI (Casque, Lunettes, Chaussures S3, Gants de précision, Harnais si hauteur)."
     },
@@ -2230,7 +2230,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW38 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -2242,9 +2242,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -2341,8 +2341,8 @@ const Store = {
             "groundingApplied": true
         },
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
@@ -2378,7 +2378,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW39 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -2390,9 +2390,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -2473,8 +2473,8 @@ const Store = {
             "surveillanceDesc": "Surveillance immédiate continue pendant l'exécution des travaux de soudage / meulage"
         },
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
@@ -2526,7 +2526,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW40 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -2538,9 +2538,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -2621,8 +2621,8 @@ const Store = {
             "surveillanceDesc": "Surveillance immédiate continue pendant l'exécution des travaux de soudage / meulage"
         },
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
@@ -2674,7 +2674,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW41 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -2686,9 +2686,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -2750,8 +2750,8 @@ const Store = {
         "createdAt": "2026-08-25T17:49:40.068191",
         "updatedAt": "2026-08-25T17:49:40.068193",
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
@@ -2822,7 +2822,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW42 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -2834,9 +2834,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -2898,8 +2898,8 @@ const Store = {
         "createdAt": "2026-08-25T17:49:40.068364",
         "updatedAt": "2026-08-25T17:49:40.068366",
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
@@ -2970,7 +2970,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW43 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -2982,9 +2982,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -3046,8 +3046,8 @@ const Store = {
         "createdAt": "2026-08-25T17:49:40.068543",
         "updatedAt": "2026-08-25T17:49:40.068546",
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
@@ -3118,7 +3118,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW44 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -3130,9 +3130,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -3194,8 +3194,8 @@ const Store = {
         "createdAt": "2026-08-25T17:49:40.068699",
         "updatedAt": "2026-08-25T17:49:40.068702",
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
@@ -3266,7 +3266,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW45 (FUSA / UAR / UB)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR / UB",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB",
@@ -3278,9 +3278,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -3342,8 +3342,8 @@ const Store = {
         "createdAt": "2026-08-25T17:49:40.068878",
         "updatedAt": "2026-08-25T17:49:40.068881",
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
@@ -3414,7 +3414,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW46 (FUSA / UAR)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR",
@@ -3426,9 +3426,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -3490,8 +3490,8 @@ const Store = {
         "createdAt": "2026-08-25T17:49:40.069039",
         "updatedAt": "2026-08-25T17:49:40.069042",
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
@@ -3562,7 +3562,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW47 (FUSA / UAR)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR",
@@ -3574,9 +3574,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -3638,8 +3638,8 @@ const Store = {
         "createdAt": "2026-08-25T17:49:40.069175",
         "updatedAt": "2026-08-25T17:49:40.069177",
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
@@ -3710,7 +3710,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW48 (FUSA / UAR)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA / UAR",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA / UAR",
@@ -3722,9 +3722,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -3786,8 +3786,8 @@ const Store = {
         "createdAt": "2026-08-25T17:49:40.069311",
         "updatedAt": "2026-08-25T17:49:40.069314",
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
@@ -3858,7 +3858,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW49 (FUSA)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA",
@@ -3870,9 +3870,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -3934,8 +3934,8 @@ const Store = {
         "createdAt": "2026-08-25T17:49:40.069446",
         "updatedAt": "2026-08-25T17:49:40.069448",
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
@@ -4006,7 +4006,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW50 (FUSA)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA",
@@ -4018,9 +4018,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -4082,8 +4082,8 @@ const Store = {
         "createdAt": "2026-08-25T17:49:40.069572",
         "updatedAt": "2026-08-25T17:49:40.069575",
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
@@ -4154,7 +4154,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW51 (FUSA)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA",
@@ -4166,9 +4166,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -4230,8 +4230,8 @@ const Store = {
         "createdAt": "2026-08-25T17:49:40.069699",
         "updatedAt": "2026-08-25T17:49:40.069702",
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
@@ -4302,7 +4302,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW52 (FUSA)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA",
@@ -4314,9 +4314,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -4378,8 +4378,8 @@ const Store = {
         "createdAt": "2026-08-25T17:49:40.069812",
         "updatedAt": "2026-08-25T17:49:40.069815",
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
@@ -4450,7 +4450,7 @@ const Store = {
         "title-en": "Algeria K9 CKD0 Project — Weekly Work CW53 (FUSA)",
         "company": "SINYLON",
         "contact": "Nouri Chahrour (HSE Sinylon)",
-        "tel": "+213 550 12 34 56",
+        "tel": "0563765157",
         "ouvrage": "Atelier Assemblage Stellantis (Algeria K9 CKD0)",
         "zone": "Zones FUSA",
         "location": "Bâtiment Montage Stellantis — Lignes FUSA",
@@ -4462,9 +4462,9 @@ const Store = {
         "time-start": "07h30",
         "time-end": "18h00",
         "isWeekendWork": false,
-        "chef-nom": "Xie (Chef de Projet)",
+        "chef-nom": "XIE XIAN (Chef de Projet)",
         "receveur-nom": "",
-        "chef_equipe": "Xian",
+        "chef_equipe": "ZHOULIN (Chef d'Équipe)",
         "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
         "hse-nom": "Nouri Chahrour (HSE Sinylon)",
         "coord-nom": "W.P.E.E.X Coordination",
@@ -4526,8 +4526,8 @@ const Store = {
         "createdAt": "2026-08-25T17:49:40.070102",
         "updatedAt": "2026-08-25T17:49:40.074144",
         "workers": [
-            "Xie (Chef de Projet)",
-            "Nouri Chahrour (HSE Sinylon)"
+            "XIE XIAN (Chef de Projet)",
+            "Nouri Chahrour (HSE - 0563765157)"
         ],
         "heightDetails": {
             "platform": true,
