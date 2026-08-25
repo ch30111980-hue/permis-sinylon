@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SINYLON - STELLANTIS | Work Permit Management System</title>
-    <link rel="stylesheet" href="css/app.css?v=2.5.0">
-    <link rel="stylesheet" href="css/print.css?v=2.5.0">
-    <link rel="stylesheet" href="css/mobile.css?v=2.5.0">
+    <link rel="stylesheet" href="css/app.css?v=2.6.0">
+    <link rel="stylesheet" href="css/print.css?v=2.6.0">
+    <link rel="stylesheet" href="css/mobile.css?v=2.6.0">
 </head>
 <body>
     <!-- VUE PUBLIQUE ISOLÉE POUR SCAN SMARTPHONE SUR CHANTIER (100% SÉCURISÉE & DÉDIÉE) -->
@@ -319,10 +319,11 @@
                         </div>
                     </div>
                     <div class="preview-toolbar-right">
-                        <button class="btn btn-outline btn-sm" onclick="App.fastEditPermit(App.currentPermitId)">✏️ Fast Edit</button>
-                        <button class="btn btn-secondary btn-sm" onclick="QREngine.openMobileQRModal(App.currentPermitId)">📱 QR & Poster</button>
-                        <button class="btn btn-warning btn-sm" onclick="PrintEngine.printQROnly(App.currentPermitId)">🏷️ Print QR Poster</button>
-                        <button class="btn btn-primary btn-sm" onclick="PrintEngine.printPermit(App.currentPermitId)">🖨️ Print A4</button>
+                        <button class="btn btn-outline btn-sm" onclick="App.fastEditPermit(App.currentPermitId)">✏️ Modifier</button>
+                        <button class="btn btn-secondary btn-sm" onclick="App.openQR(App.currentPermitId)">📱 QR Code</button>
+                        <button class="btn btn-warning btn-sm" onclick="App.printQROnly(App.currentPermitId)">🏷️ Imprimer Affiche QR</button>
+                        <button class="btn btn-info btn-sm" onclick="App.printCurrentPage()">📄 Imprimer cette Page</button>
+                        <button class="btn btn-primary btn-sm" onclick="App.printPermit(App.currentPermitId)">🖨️ Dossier Complet A4</button>
                     </div>
                 </div>
 
@@ -597,15 +598,15 @@
     <!-- Conteneur d'Impression Pure A4 -->
     <div id="print-container"></div>
 
-    <!-- Scripts JavaScript (Versionnés 2.5.0 pour forcer le rafraîchissement du cache navigateur) -->
-    <script src="lib/qrcode.min.js?v=2.5.0"></script>
-    <script src="js/translator.js?v=2.5.0"></script>
-    <script src="js/store.js?v=2.5.0"></script>
-    <script src="js/templates.js?v=2.5.0"></script>
-    <script src="js/qr-engine.js?v=2.5.0"></script>
-    <script src="js/revalidation.js?v=2.5.0"></script>
-    <script src="js/weekend-caisse.js?v=2.5.0"></script>
-    <script src="js/print-engine.js?v=2.5.0"></script>
-    <script src="js/app.js?v=2.5.0"></script>
+    <!-- Scripts JavaScript (Versionnés 2.6.0 pour forcer le rafraîchissement du cache navigateur) -->
+    <script src="lib/qrcode.min.js?v=2.6.0"></script>
+    <script src="js/translator.js?v=2.6.0"></script>
+    <script src="js/store.js?v=2.6.0"></script>
+    <script src="js/templates.js?v=2.6.0"></script>
+    <script src="js/qr-engine.js?v=2.6.0"></script>
+    <script src="js/revalidation.js?v=2.6.0"></script>
+    <script src="js/weekend-caisse.js?v=2.6.0"></script>
+    <script src="js/print-engine.js?v=2.6.0"></script>
+    <script src="js/app.js?v=2.6.0"></script>
 </body>
 </html>

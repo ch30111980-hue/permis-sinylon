@@ -297,8 +297,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -370,7 +370,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -428,8 +428,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -502,7 +502,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -544,8 +544,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -618,7 +618,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -660,8 +660,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -727,7 +727,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -770,8 +770,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -843,7 +843,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -902,8 +902,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -975,7 +975,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -1033,8 +1033,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -1107,7 +1107,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -1149,8 +1149,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -1223,7 +1223,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -1265,8 +1265,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -1332,7 +1332,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -1375,8 +1375,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -1448,7 +1448,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -1507,8 +1507,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -1580,7 +1580,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -1638,8 +1638,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -1712,7 +1712,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -1754,8 +1754,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -1828,7 +1828,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -1870,8 +1870,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -1937,7 +1937,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -1980,8 +1980,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -2053,7 +2053,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -2112,8 +2112,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -2185,7 +2185,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -2243,8 +2243,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -2317,7 +2317,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -2359,8 +2359,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -2433,7 +2433,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -2475,8 +2475,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -2542,7 +2542,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -2585,8 +2585,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -2658,7 +2658,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -2717,8 +2717,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -2790,7 +2790,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -2851,8 +2851,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -2925,7 +2925,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -2967,8 +2967,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -3041,7 +3041,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -3080,8 +3080,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -3147,7 +3147,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -3191,8 +3191,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -3264,7 +3264,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -3326,8 +3326,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -3399,7 +3399,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -3461,8 +3461,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -3535,7 +3535,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -3577,8 +3577,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -3651,7 +3651,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -3693,8 +3693,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -3760,7 +3760,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -3804,8 +3804,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -3877,7 +3877,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -3940,8 +3940,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -4013,7 +4013,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -4075,8 +4075,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -4149,7 +4149,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -4188,8 +4188,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -4262,7 +4262,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -4304,8 +4304,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -4371,7 +4371,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -4415,8 +4415,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -4488,7 +4488,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -4551,8 +4551,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -4624,7 +4624,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -4682,8 +4682,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -4756,7 +4756,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -4795,8 +4795,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -4869,7 +4869,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -4911,8 +4911,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -4978,7 +4978,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -5021,8 +5021,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -5094,7 +5094,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -5153,8 +5153,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -5226,7 +5226,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -5288,8 +5288,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -5362,7 +5362,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -5401,8 +5401,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -5475,7 +5475,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -5517,8 +5517,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -5584,7 +5584,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -5628,8 +5628,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -5701,7 +5701,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -5764,8 +5764,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -5837,7 +5837,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -5899,8 +5899,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -5973,7 +5973,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -6013,8 +6013,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -6087,7 +6087,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -6126,8 +6126,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -6193,7 +6193,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -6237,8 +6237,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -6310,7 +6310,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -6373,8 +6373,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -6446,7 +6446,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -6508,8 +6508,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -6582,7 +6582,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -6621,8 +6621,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -6695,7 +6695,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -6735,8 +6735,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -6802,7 +6802,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -6846,8 +6846,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -6919,7 +6919,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -6982,8 +6982,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -7055,7 +7055,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -7117,8 +7117,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -7191,7 +7191,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -7230,8 +7230,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -7304,7 +7304,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -7344,8 +7344,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -7411,7 +7411,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -7455,8 +7455,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -7528,7 +7528,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -7591,8 +7591,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -7664,7 +7664,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -7726,8 +7726,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -7800,7 +7800,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -7839,8 +7839,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -7913,7 +7913,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -7952,8 +7952,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -8019,7 +8019,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -8063,8 +8063,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -8136,7 +8136,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -8199,8 +8199,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -8272,7 +8272,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -8334,8 +8334,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -8408,7 +8408,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -8448,8 +8448,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -8522,7 +8522,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -8561,8 +8561,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -8628,7 +8628,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -8672,8 +8672,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -8745,7 +8745,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -8808,8 +8808,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -8881,7 +8881,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -8943,8 +8943,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -9017,7 +9017,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -9058,8 +9058,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -9132,7 +9132,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -9171,8 +9171,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -9238,7 +9238,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -9282,8 +9282,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -9355,7 +9355,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -9418,8 +9418,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -9491,7 +9491,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -9553,8 +9553,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -9627,7 +9627,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -9667,8 +9667,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -9741,7 +9741,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -9780,8 +9780,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -9847,7 +9847,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -9891,8 +9891,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -9964,7 +9964,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -10027,8 +10027,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -10100,7 +10100,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -10162,8 +10162,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -10236,7 +10236,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -10275,8 +10275,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -10349,7 +10349,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -10391,8 +10391,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -10458,7 +10458,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -10502,8 +10502,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -10575,7 +10575,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -10638,8 +10638,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -10711,7 +10711,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -10773,8 +10773,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -10847,7 +10847,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -10886,8 +10886,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -10960,7 +10960,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -11002,8 +11002,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -11069,7 +11069,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -11113,8 +11113,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -11186,7 +11186,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -11249,8 +11249,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -11322,7 +11322,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -11384,8 +11384,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -11458,7 +11458,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -11497,8 +11497,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -11571,7 +11571,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -11613,8 +11613,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -11680,7 +11680,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -11724,8 +11724,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -11797,7 +11797,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -11860,8 +11860,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -11933,7 +11933,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -11995,8 +11995,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -12069,7 +12069,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -12108,8 +12108,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -12182,7 +12182,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -12224,8 +12224,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -12291,7 +12291,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -12335,8 +12335,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -12408,7 +12408,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -12471,8 +12471,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -12544,7 +12544,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -12606,8 +12606,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -12680,7 +12680,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -12719,8 +12719,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -12793,7 +12793,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -12835,8 +12835,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -12902,7 +12902,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -12946,8 +12946,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -13019,7 +13019,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -13082,8 +13082,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -13155,7 +13155,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -13212,8 +13212,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -13286,7 +13286,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -13327,8 +13327,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -13401,7 +13401,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -13442,8 +13442,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -13509,7 +13509,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -13551,8 +13551,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -13624,7 +13624,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -13682,8 +13682,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -13755,7 +13755,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -13812,8 +13812,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -13886,7 +13886,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -13927,8 +13927,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -14001,7 +14001,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -14042,8 +14042,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -14109,7 +14109,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -14151,8 +14151,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -14224,7 +14224,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -14282,8 +14282,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -14355,7 +14355,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -14412,8 +14412,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -14486,7 +14486,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -14527,8 +14527,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -14601,7 +14601,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -14642,8 +14642,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -14709,7 +14709,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -14751,8 +14751,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -14824,7 +14824,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -14882,8 +14882,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -14955,7 +14955,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -15011,8 +15011,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -15085,7 +15085,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -15125,8 +15125,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -15199,7 +15199,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -15239,8 +15239,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -15306,7 +15306,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -15347,8 +15347,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -15420,7 +15420,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -15477,8 +15477,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -15550,7 +15550,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -15606,8 +15606,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -15680,7 +15680,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -15720,8 +15720,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -15794,7 +15794,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -15834,8 +15834,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -15901,7 +15901,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -15942,8 +15942,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -16015,7 +16015,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -16072,8 +16072,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -16145,7 +16145,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -16201,8 +16201,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -16275,7 +16275,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -16315,8 +16315,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -16389,7 +16389,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -16429,8 +16429,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -16496,7 +16496,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -16537,8 +16537,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -16610,7 +16610,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -16667,8 +16667,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -16740,7 +16740,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -16796,8 +16796,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -16870,7 +16870,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -16910,8 +16910,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -16984,7 +16984,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -17024,8 +17024,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -17091,7 +17091,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -17132,8 +17132,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -17205,7 +17205,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -17262,8 +17262,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -17335,7 +17335,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [
@@ -17391,8 +17391,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -17465,7 +17465,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -17505,8 +17505,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -17579,7 +17579,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -17619,8 +17619,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -17686,7 +17686,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [],
@@ -17727,8 +17727,8 @@ const Store = {
         "contractor": "SINYLON",
         "company": "SINYLON & W.P.E.E.X",
         "responsible": "Xie (Chef de Projet)",
-        "tel": "+213 550 12 34 56",
-        "contact": "Nouri Chahrour (HSE Sinylon)",
+        "tel": "0563765157",
+        "contact": "Nouri Chahrour (HSE Sinylon - 0563765157)",
         "chefNom": "Xie (Chef de Projet)",
         "chefEquipe": "Xian",
         "wpeexNom": "M. W.P.E.E.X (Ingénieur de Suivi)",
@@ -17800,7 +17800,7 @@ const Store = {
                 "nom": "Nouri Chahrour",
                 "role": "Superviseur HSE Sinylon",
                 "badge": "SYN-003",
-                "tel": "+213 550 12 34 56"
+                "tel": "0563765157"
             }
         ],
         "revalidations": [

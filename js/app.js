@@ -875,6 +875,12 @@ const App = {
         }
     },
 
+    printCurrentPage() {
+        if (window.PrintEngine && typeof PrintEngine.printCurrentPreview === 'function') {
+            PrintEngine.printCurrentPreview();
+        }
+    },
+
     downloadQRPNG(permitId) {
         if (window.QREngine && typeof QREngine.downloadQRPNG === 'function') {
             QREngine.downloadQRPNG(permitId || this.currentPermitId);

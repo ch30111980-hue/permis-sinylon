@@ -305,6 +305,12 @@
     display: block;
 }
 
+/* Conteneur d'impression strictement masqué sur écran */
+#print-container {
+    display: none !important;
+    visibility: hidden !important;
+}
+
 /* =========================================================================
    RÈGLES D'IMPRESSION PHYSIQUE ET PDF PARFAITES (@MEDIA PRINT)
    ========================================================================= */

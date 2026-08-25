@@ -4,10 +4,37 @@
  */
 
 const PrintEngine = {
+    // Imprimer uniquement la page actuellement visualisée à l'écran (Page 1 seule, ou Annexe seule)
+    printCurrentPreview() {
+        const container = document.getElementById('a4-preview-render');
+        const printContainer = document.getElementById('print-container');
+        if (!container || !printContainer) return;
+
+        printContainer.innerHTML = container.innerHTML;
+
+        setTimeout(() => {
+            if (window.require) {
+                try {
+                    const { ipcRenderer } = window.require('electron');
+                    ipcRenderer.invoke('print-document');
+                    return;
+                } catch (e) {}
+            }
+            window.print();
+            setTimeout(() => {
+                printContainer.innerHTML = '';
+            }, 1000);
+        }, 100);
+    },
+
     // Imprimer un permis spécifique avec toutes ses pages et annexes
     printPermit(permitId) {
-        const permit = Store.getPermit(permitId);
-        if (!permit) return;
+        const targetId = permitId || (window.App && App.currentPermitId) || 'K9-W35-01';
+        const permit = Store.getPermit(targetId);
+        if (!permit) {
+            if (window.App) App.showToast('⚠️ Permis introuvable pour impression', 'error');
+            return;
+        }
 
         const printContainer = document.getElementById('print-container');
         if (!printContainer) return;
@@ -37,10 +64,7 @@ const PrintEngine = {
 
         printContainer.innerHTML = htmlPages.join('');
 
-        // Générer les QR Codes pour chaque page
-        this.injectPrintQRCodes(permit);
-
-        // Déclencher l'impression
+        // Déclencher l'impression instantanée
         setTimeout(() => {
             if (window.require) {
                 try {
@@ -50,7 +74,10 @@ const PrintEngine = {
                 } catch (e) {}
             }
             window.print();
-        }, 150);
+            setTimeout(() => {
+                printContainer.innerHTML = '';
+            }, 1000);
+        }, 100);
     },
 
     // Imprimer uniquement le QR Code en grand format pour affichage sur chantier
