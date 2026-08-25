@@ -311,8 +311,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -320,7 +320,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -441,17 +443,19 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -557,16 +561,18 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -678,14 +684,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -784,8 +791,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -793,7 +800,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -916,8 +925,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -925,7 +934,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -1046,17 +1057,19 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -1162,16 +1175,18 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -1283,14 +1298,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -1389,8 +1405,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -1398,7 +1414,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -1521,8 +1539,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -1530,7 +1548,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -1651,17 +1671,19 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -1767,16 +1789,18 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -1888,14 +1912,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -1994,8 +2019,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -2003,7 +2028,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -2126,8 +2153,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -2135,7 +2162,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -2256,17 +2285,19 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -2372,16 +2403,18 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -2493,14 +2526,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -2599,8 +2633,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -2608,7 +2642,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -2731,8 +2767,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -2740,7 +2776,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -2864,17 +2902,19 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -2980,16 +3020,18 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -3098,14 +3140,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -3205,8 +3248,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -3214,7 +3257,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -3340,8 +3385,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -3349,7 +3394,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -3474,17 +3521,19 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -3590,16 +3639,18 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -3711,14 +3762,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -3818,8 +3870,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -3827,7 +3879,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -3954,8 +4008,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -3963,7 +4017,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -4088,17 +4144,19 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -4201,16 +4259,18 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -4322,14 +4382,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -4429,8 +4490,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -4438,7 +4499,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -4565,8 +4628,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -4574,7 +4637,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -4695,17 +4760,19 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -4808,16 +4875,18 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -4929,14 +4998,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -5035,8 +5105,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -5044,7 +5114,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -5167,8 +5239,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -5176,7 +5248,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -5301,17 +5375,19 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -5414,16 +5490,18 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -5535,14 +5613,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -5642,8 +5721,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -5651,7 +5730,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -5778,8 +5859,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -5787,7 +5868,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -5912,17 +5995,19 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -6026,16 +6111,18 @@ const Store = {
         "status": "CLOTURE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -6144,14 +6231,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -6251,8 +6339,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -6260,7 +6348,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -6387,8 +6477,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -6396,7 +6486,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -6521,17 +6613,19 @@ const Store = {
         "status": "VALIDE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -6634,16 +6728,18 @@ const Store = {
         "status": "VALIDE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -6753,14 +6849,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -6860,8 +6957,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -6869,7 +6966,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -6996,8 +7095,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -7005,7 +7104,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -7130,17 +7231,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -7243,16 +7346,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -7362,14 +7467,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -7469,8 +7575,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -7478,7 +7584,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -7605,8 +7713,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -7614,7 +7722,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -7739,17 +7849,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -7852,16 +7964,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -7970,14 +8084,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -8077,8 +8192,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -8086,7 +8201,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -8213,8 +8330,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -8222,7 +8339,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -8347,17 +8466,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -8461,16 +8582,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -8579,14 +8702,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -8686,8 +8810,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -8695,7 +8819,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -8822,8 +8948,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -8831,7 +8957,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -8956,17 +9084,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -9071,16 +9201,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -9189,14 +9321,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -9296,8 +9429,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -9305,7 +9438,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -9432,8 +9567,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -9441,7 +9576,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -9566,17 +9703,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -9680,16 +9819,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -9798,14 +9939,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -9905,8 +10047,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -9914,7 +10056,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -10041,8 +10185,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -10050,7 +10194,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -10175,17 +10321,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -10288,16 +10436,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -10409,14 +10559,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -10516,8 +10667,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -10525,7 +10676,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -10652,8 +10805,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -10661,7 +10814,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -10786,17 +10941,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -10899,16 +11056,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -11020,14 +11179,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -11127,8 +11287,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -11136,7 +11296,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -11263,8 +11425,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -11272,7 +11434,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -11397,17 +11561,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -11510,16 +11676,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -11631,14 +11799,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -11738,8 +11907,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -11747,7 +11916,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -11874,8 +12045,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -11883,7 +12054,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -12008,17 +12181,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -12121,16 +12296,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -12242,14 +12419,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -12349,8 +12527,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -12358,7 +12536,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -12485,8 +12665,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -12494,7 +12674,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -12619,17 +12801,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -12732,16 +12916,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -12853,14 +13039,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -12960,8 +13147,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -12969,7 +13156,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -13096,8 +13285,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -13105,7 +13294,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -13225,17 +13416,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -13340,16 +13533,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -13460,14 +13655,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -13565,8 +13761,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -13574,7 +13770,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -13696,8 +13894,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -13705,7 +13903,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -13825,17 +14025,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -13940,16 +14142,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -14060,14 +14264,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -14165,8 +14370,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -14174,7 +14379,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -14296,8 +14503,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -14305,7 +14512,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -14425,17 +14634,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -14540,16 +14751,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -14660,14 +14873,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -14765,8 +14979,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -14774,7 +14988,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -14896,8 +15112,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -14905,7 +15121,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -15024,17 +15242,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -15138,16 +15358,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -15257,14 +15479,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -15361,8 +15584,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -15370,7 +15593,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -15491,8 +15716,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -15500,7 +15725,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -15619,17 +15846,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -15733,16 +15962,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -15852,14 +16083,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -15956,8 +16188,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -15965,7 +16197,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -16086,8 +16320,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -16095,7 +16329,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -16214,17 +16450,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -16328,16 +16566,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -16447,14 +16687,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -16551,8 +16792,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -16560,7 +16801,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -16681,8 +16924,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -16690,7 +16933,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -16809,17 +17054,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -16923,16 +17170,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -17042,14 +17291,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -17146,8 +17396,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -17155,7 +17405,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -17276,8 +17528,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -17285,7 +17537,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -17404,17 +17658,19 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
+            "height": true,
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
-            "hot"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Masque à souder",
@@ -17518,16 +17774,18 @@ const Store = {
         "status": "PLANIFIE",
         "weekend": false,
         "dangers": {
-            "height": false,
-            "hot": false,
+            "height": true,
+            "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
+            "height",
+            "hot",
             "electric"
         ],
         "ppe": [
@@ -17637,14 +17895,15 @@ const Store = {
             "hot": true,
             "electric": true,
             "confined": false,
-            "lifting": false,
+            "lifting": true,
             "tension": true,
             "emergencyPlan": false,
             "ppe": true
         },
         "annexes": [
             "height",
-            "hot"
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",
@@ -17741,8 +18000,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -17750,7 +18009,9 @@ const Store = {
             "ppe": true
         },
         "annexes": [
-            "height"
+            "height",
+            "hot",
+            "electric"
         ],
         "ppe": [
             "Casque de sécurité",

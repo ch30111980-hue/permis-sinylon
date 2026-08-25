@@ -35,8 +35,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -44,7 +44,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -165,17 +167,19 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -281,16 +285,18 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -402,14 +408,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -508,8 +515,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -517,7 +524,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -640,8 +649,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -649,7 +658,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -770,17 +781,19 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -886,16 +899,18 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -1007,14 +1022,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -1113,8 +1129,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -1122,7 +1138,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -1245,8 +1263,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -1254,7 +1272,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -1375,17 +1395,19 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -1491,16 +1513,18 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -1612,14 +1636,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -1718,8 +1743,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -1727,7 +1752,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -1850,8 +1877,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -1859,7 +1886,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -1980,17 +2009,19 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -2096,16 +2127,18 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -2217,14 +2250,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -2323,8 +2357,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -2332,7 +2366,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -2455,8 +2491,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -2464,7 +2500,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -2588,17 +2626,19 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -2704,16 +2744,18 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -2822,14 +2864,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -2929,8 +2972,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -2938,7 +2981,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -3064,8 +3109,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -3073,7 +3118,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -3198,17 +3245,19 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -3314,16 +3363,18 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -3435,14 +3486,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -3542,8 +3594,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -3551,7 +3603,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -3678,8 +3732,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -3687,7 +3741,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -3812,17 +3868,19 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -3925,16 +3983,18 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -4046,14 +4106,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -4153,8 +4214,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -4162,7 +4223,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -4289,8 +4352,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -4298,7 +4361,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -4419,17 +4484,19 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -4532,16 +4599,18 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -4653,14 +4722,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -4759,8 +4829,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -4768,7 +4838,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -4891,8 +4963,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -4900,7 +4972,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -5025,17 +5099,19 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -5138,16 +5214,18 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -5259,14 +5337,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -5366,8 +5445,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -5375,7 +5454,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -5502,8 +5583,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -5511,7 +5592,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -5636,17 +5719,19 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -5750,16 +5835,18 @@
     "status": "CLOTURE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -5868,14 +5955,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -5975,8 +6063,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -5984,7 +6072,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -6111,8 +6201,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -6120,7 +6210,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -6245,17 +6337,19 @@
     "status": "VALIDE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -6358,16 +6452,18 @@
     "status": "VALIDE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -6477,14 +6573,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -6584,8 +6681,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -6593,7 +6690,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -6720,8 +6819,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -6729,7 +6828,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -6854,17 +6955,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -6967,16 +7070,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -7086,14 +7191,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -7193,8 +7299,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -7202,7 +7308,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -7329,8 +7437,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -7338,7 +7446,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -7463,17 +7573,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -7576,16 +7688,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -7694,14 +7808,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -7801,8 +7916,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -7810,7 +7925,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -7937,8 +8054,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -7946,7 +8063,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -8071,17 +8190,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -8185,16 +8306,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -8303,14 +8426,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -8410,8 +8534,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -8419,7 +8543,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -8546,8 +8672,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -8555,7 +8681,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -8680,17 +8808,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -8795,16 +8925,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -8913,14 +9045,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -9020,8 +9153,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -9029,7 +9162,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -9156,8 +9291,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -9165,7 +9300,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -9290,17 +9427,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -9404,16 +9543,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -9522,14 +9663,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -9629,8 +9771,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -9638,7 +9780,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -9765,8 +9909,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -9774,7 +9918,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -9899,17 +10045,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -10012,16 +10160,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -10133,14 +10283,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -10240,8 +10391,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -10249,7 +10400,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -10376,8 +10529,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -10385,7 +10538,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -10510,17 +10665,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -10623,16 +10780,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -10744,14 +10903,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -10851,8 +11011,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -10860,7 +11020,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -10987,8 +11149,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -10996,7 +11158,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -11121,17 +11285,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -11234,16 +11400,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -11355,14 +11523,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -11462,8 +11631,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -11471,7 +11640,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -11598,8 +11769,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -11607,7 +11778,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -11732,17 +11905,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -11845,16 +12020,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -11966,14 +12143,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -12073,8 +12251,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -12082,7 +12260,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -12209,8 +12389,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -12218,7 +12398,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -12343,17 +12525,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -12456,16 +12640,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -12577,14 +12763,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -12684,8 +12871,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -12693,7 +12880,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -12820,8 +13009,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -12829,7 +13018,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -12949,17 +13140,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -13064,16 +13257,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -13184,14 +13379,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -13289,8 +13485,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -13298,7 +13494,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -13420,8 +13618,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -13429,7 +13627,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -13549,17 +13749,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -13664,16 +13866,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -13784,14 +13988,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -13889,8 +14094,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -13898,7 +14103,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -14020,8 +14227,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -14029,7 +14236,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -14149,17 +14358,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -14264,16 +14475,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -14384,14 +14597,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -14489,8 +14703,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -14498,7 +14712,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -14620,8 +14836,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -14629,7 +14845,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -14748,17 +14966,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -14862,16 +15082,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -14981,14 +15203,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -15085,8 +15308,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -15094,7 +15317,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -15215,8 +15440,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -15224,7 +15449,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -15343,17 +15570,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -15457,16 +15686,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -15576,14 +15807,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -15680,8 +15912,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -15689,7 +15921,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -15810,8 +16044,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -15819,7 +16053,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -15938,17 +16174,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -16052,16 +16290,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -16171,14 +16411,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -16275,8 +16516,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -16284,7 +16525,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -16405,8 +16648,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -16414,7 +16657,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -16533,17 +16778,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -16647,16 +16894,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -16766,14 +17015,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -16870,8 +17120,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -16879,7 +17129,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -17000,8 +17252,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -17009,7 +17261,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -17128,17 +17382,19 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
+      "height": true,
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
-      "hot"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Masque à souder",
@@ -17242,16 +17498,18 @@
     "status": "PLANIFIE",
     "weekend": false,
     "dangers": {
-      "height": false,
-      "hot": false,
+      "height": true,
+      "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
+      "height",
+      "hot",
       "electric"
     ],
     "ppe": [
@@ -17361,14 +17619,15 @@
       "hot": true,
       "electric": true,
       "confined": false,
-      "lifting": false,
+      "lifting": true,
       "tension": true,
       "emergencyPlan": false,
       "ppe": true
     },
     "annexes": [
       "height",
-      "hot"
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",
@@ -17465,8 +17724,8 @@
     "weekend": false,
     "dangers": {
       "height": true,
-      "hot": false,
-      "electric": false,
+      "hot": true,
+      "electric": true,
       "confined": false,
       "lifting": true,
       "tension": true,
@@ -17474,7 +17733,9 @@
       "ppe": true
     },
     "annexes": [
-      "height"
+      "height",
+      "hot",
+      "electric"
     ],
     "ppe": [
       "Casque de sécurité",

@@ -27,53 +27,53 @@ const PrintEngine = {
         }, 100);
     },
 
-    // Imprimer un permis spécifique avec toutes ses pages et annexes
+    // Imprimer un permis spécifique avec toutes ses pages et annexes (5 Pages A4)
     printPermit(permitId) {
-        const targetId = permitId || (window.App && App.currentPermitId) || 'K9-W35-01';
-        const permit = Store.getPermit(targetId);
+        const store = typeof window !== 'undefined' && window.Store ? window.Store : Store;
+        const templates = typeof window !== 'undefined' && window.Templates ? window.Templates : Templates;
+        const targetId = permitId || (typeof window !== 'undefined' && window.App && window.App.currentPermitId) || 'K9-W35-01';
+        
+        const permit = store.getPermit(targetId);
         if (!permit) {
-            if (window.App) App.showToast('⚠️ Permis introuvable pour impression', 'error');
+            if (typeof window !== 'undefined' && window.App) window.App.showToast('⚠️ Permis introuvable pour impression', 'error');
             return;
         }
 
         const printContainer = document.getElementById('print-container');
         if (!printContainer) return;
 
-        // Construire les pages à imprimer selon le type et les annexes
+        // Construire l'intégralité du dossier officiel certifié (5 Pages A4)
         let htmlPages = [];
 
-        // 1. Permis Général P1 (Recto)
-        htmlPages.push(Templates.generalP1(permit));
+        // 1. Permis Général P1 (Page 1 : Recto)
+        htmlPages.push(templates.generalP1(permit));
 
-        // 2. Permis Général P2 (Verso Revalidations)
-        htmlPages.push(Templates.generalP2(permit));
+        // 2. Permis Général P2 (Page 2 : Verso Revalidations Journalières 08h00)
+        htmlPages.push(templates.generalP2(permit));
 
-        // 3. Annexes spécifiques
-        const d = permit.dangers || {};
-        if (permit.type === 'height' || d.height || (permit.annexes && permit.annexes.includes('height'))) {
-            htmlPages.push(Templates.heightAnnexe(permit));
-        }
+        // 3. Annexe A : Travail en Hauteur (Page 3)
+        htmlPages.push(templates.heightAnnexe(permit));
 
-        if (permit.type === 'hot' || d.hot || (permit.annexes && permit.annexes.includes('hot'))) {
-            htmlPages.push(Templates.hotAnnexe(permit));
-        }
+        // 4. Annexe B : Travail à Chaud (Page 4)
+        htmlPages.push(templates.hotAnnexe(permit));
 
-        if (permit.type === 'electric' || d.electric || (permit.annexes && permit.annexes.includes('electric'))) {
-            htmlPages.push(Templates.electricAnnexe(permit));
-        }
+        // 5. Annexe C : Travail Électrique & Énergies (Page 5)
+        htmlPages.push(templates.electricAnnexe(permit));
 
         printContainer.innerHTML = htmlPages.join('');
 
         // Déclencher l'impression instantanée
         setTimeout(() => {
-            if (window.require) {
+            if (typeof window !== 'undefined' && window.require) {
                 try {
                     const { ipcRenderer } = window.require('electron');
                     ipcRenderer.invoke('print-document');
                     return;
                 } catch (e) {}
             }
-            window.print();
+            if (typeof window !== 'undefined') {
+                window.print();
+            }
             setTimeout(() => {
                 printContainer.innerHTML = '';
             }, 1000);
@@ -82,7 +82,9 @@ const PrintEngine = {
 
     // Imprimer uniquement le QR Code en grand format pour affichage sur chantier
     printQROnly(permitId) {
-        const permit = Store.getPermit(permitId);
+        const store = typeof window !== 'undefined' && window.Store ? window.Store : Store;
+        const targetId = permitId || (typeof window !== 'undefined' && window.App && window.App.currentPermitId) || 'K9-W35-01';
+        const permit = store.getPermit(targetId);
         if (!permit) return;
 
         const printContainer = document.getElementById('print-container');
