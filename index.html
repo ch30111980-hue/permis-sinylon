@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SINYLON - STELLANTIS | Gestionnaire de Permis de Travail (W.P.E.E.X)</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/print.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Barre Latérale (Desktop) -->
+        <aside class="sidebar no-print">
+            <div class="brand-header">
+                <div class="brand-title">
+                    <span>SINYLON</span>
+                    <span class="badge-sinylon">STELLANTIS</span>
+                </div>
+                <div class="brand-subtitle">Système Officiel de Permis de Travail (Bilingue FR / EN)</div>
+                <div class="brand-wpeex">Ingénieur de Suivi : W.P.E.E.X</div>
+            </div>
+
+            <div class="nav-links">
+                <div class="nav-item active" id="nav-dashboard" onclick="App.switchView('dashboard')">
+                    <div class="nav-item-left"><span>📊</span> Tableau de Bord</div>
+                </div>
+                <div class="nav-item" id="nav-caisse" onclick="App.switchView('caisse')">
+                    <div class="nav-item-left"><span>📦</span> Caisse Week-end</div>
+                    <span class="nav-badge alert" id="sidebar-caisse-badge">Ven/Sam</span>
+                </div>
+                <div class="nav-item" id="nav-create" onclick="App.createNewPermit()">
+                    <div class="nav-item-left"><span>➕</span> Nouveau Permis</div>
+                </div>
+                <div class="nav-item" id="nav-preview" onclick="App.switchView('preview')">
+                    <div class="nav-item-left"><span>📄</span> Aperçu A4 & Print</div>
+                </div>
+                <div class="nav-item" id="nav-list" onclick="App.switchView('list')">
+                    <div class="nav-item-left"><span>📁</span> Planning Hebdo (KW25-53)</div>
+                </div>
+                <div class="nav-item" id="nav-mobile-qr-direct" onclick="QREngine.openMobileQRModal(App.currentPermitId)">
+                    <div class="nav-item-left"><span>📱</span> Fiche Chantier (QR)</div>
+                </div>
+                <div class="nav-item" id="nav-verifier" onclick="QREngine.openVerifierModal()">
+                    <div class="nav-item-left"><span>🔍</span> Scanner un QR Code</div>
+                </div>
+                <div class="nav-item" id="nav-auth-settings" onclick="App.openAuthSettingsModal()">
+                    <div class="nav-item-left"><span>🔐</span> Code d'Autorisation</div>
+                </div>
+            </div>
+
+            <div class="quick-action-box">
+                <button class="btn-new-permit" onclick="App.createNewPermit()">
+                    <span>➕</span> CRÉER UN PERMIS
+                </button>
+                <button class="btn-sidebar-urgent" onclick="App.openUrgentActionModal()">
+                    <span>🚨</span> BESOIN URGENT
+                </button>
+            </div>
+
+            <div class="sidebar-section-title">Planning K9 CKD0 (29 Semaines) :</div>
+            <div class="sidebar-permits-scroll" id="sidebar-permit-list">
+                <!-- Rendu dynamique des permis -->
+            </div>
+        </aside>
+
+        <!-- Contenu Principal -->
+        <main class="main-content">
+            <!-- Barre Supérieure -->
+            <header class="top-navbar no-print">
+                <div class="top-navbar-left">
+                    <span class="view-title" id="current-view-title">SINYLON - STELLANTIS</span>
+                    <span class="badge badge-blue">FR / EN BILINGUAL</span>
+                </div>
+                <div class="top-navbar-right">
+                    <button onclick="QREngine.openMobileQRModal(App.currentPermitId)" class="btn btn-primary btn-sm">
+                        📱 Fiche Chantier QR
+                    </button>
+                    <button onclick="QREngine.openVerifierModal()" class="btn btn-secondary btn-sm">
+                        🔍 Scanner QR
+                    </button>
+                    <button onclick="WeekendCaisseModule.printCompleteCaisseDossier()" class="btn btn-warning btn-sm">
+                        📦 Dossier Week-end Stellantis
+                    </button>
+                    <button onclick="App.openUrgentActionModal()" class="btn-top-urgent">
+                        <span>🚨</span> BESOIN URGENT
+                    </button>
+                </div>
+            </header>
+
+            <!-- VUE 1 : DASHBOARD -->
+            <div class="view-container view-pane" id="view-dashboard">
+                <!-- Widget Caisse Week-end Stellantis -->
+                <div class="weekend-widget-banner">
+                    <div class="widget-left">
+                        <div class="widget-icon">📦</div>
+                        <div>
+                            <div class="widget-title">CAISSE WEEK-END (VENDREDI + SAMEDI)</div>
+                            <div class="widget-subtitle">Préparation automatique du Mercredi pour présentation au Maître de l'Ouvrage <strong>STELLANTIS</strong></div>
+                            <div class="widget-meta">
+                                <span>📅 <strong id="dash-weekend-dates">Vendredi & Samedi</strong></span>
+                                <span>📋 <strong id="dash-weekend-count">0 permis</strong></span>
+                                <span>🛡️ <strong id="dash-weekend-ready">0 Prêts</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-actions">
+                        <button onclick="App.switchView('caisse')" class="btn btn-primary btn-lg">
+                            OUVRIR LA CAISSE WEEK-END →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Statistiques Clés -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-label">TOTAL SEMAINES DU PLANNING</span>
+                        <div class="stat-value" id="dash-stat-total">29</div>
+                        <span class="stat-desc">KW25 à KW53 (Juin - Déc 2026)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">PERMIS SEMAINE EN COURS</span>
+                        <div class="stat-value" style="color: #10b981;" id="dash-stat-valide">KW35</div>
+                        <span class="stat-desc">Actif (24/08 au 30/08/2026)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">CHEF PROJET & RECEVEUR</span>
+                        <div class="stat-value" style="font-size: 20px; color: #60a5fa;">Xie / Xian</div>
+                        <span class="stat-desc">Projet Algeria K9 CKD0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">INGÉNIEUR DE SUIVI</span>
+                        <div class="stat-value" style="font-size: 20px; color: #34d399;">W.P.E.E.X</div>
+                        <span class="stat-desc">Supervision Stellantis</span>
+                    </div>
+                </div>
+
+                <!-- Tableau des Permis Hebdomadaires K9 CKD0 -->
+                <div class="form-card">
+                    <div class="form-section-title">
+                        <span>📋 Permis Hebdomadaires — Projet Algeria K9 CKD0 (Stellantis)</span>
+                        <span class="badge badge-success">29 SEMAINES PROGRAMMÉES</span>
+                    </div>
+                    <table class="doc-table-reval" style="width: 100%; border: none;">
+                        <thead>
+                            <tr>
+                                <th>IDENTIFIANT</th>
+                                <th>TYPE</th>
+                                <th>ENTREPRISE</th>
+                                <th>ZONE / OUVRAGE</th>
+                                <th>STATUT W.P.E.E.X</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dash-recent-table-body">
+                            <!-- Rempli dynamiquement -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- VUE 2 : CAISSE WEEK-END (VENDREDI + SAMEDI) -->
+            <div class="view-container view-pane" id="view-caisse" style="display: none;">
+                <div id="caisse-wednesday-banner" class="caisse-header-alert">
+                    <!-- Rempli dynamiquement -->
+                </div>
+
+                <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 20px;">
+                    <div class="stat-card">
+                        <span class="stat-label">TOTAL PERMIS DU WEEK-END</span>
+                        <div class="stat-value" id="caisse-stat-total">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">🟢 PRÊTS POUR STELLANTIS</span>
+                        <div class="stat-value" style="color: #10b981;" id="caisse-stat-ready">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">🟠 DOSSIERS À COMPLÉTER</span>
+                        <div class="stat-value" style="color: #f59e0b;" id="caisse-stat-pending">0</div>
+                    </div>
+                </div>
+
+                <div class="caisse-days-container">
+                    <div class="caisse-day-column">
+                        <div class="day-column-header">
+                            <h3 style="color: #60a5fa;">📅 VENDREDI</h3>
+                            <span class="badge badge-blue">Journée 1</span>
+                        </div>
+                        <div id="caisse-friday-list"></div>
+                    </div>
+
+                    <div class="caisse-day-column">
+                        <div class="day-column-header">
+                            <h3 style="color: #38bdf8;">📅 SAMEDI</h3>
+                            <span class="badge badge-sky">Journée 2</span>
+                        </div>
+                        <div id="caisse-saturday-list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VUE 3 : FORMULAIRE DE CRÉATION / ÉDITION -->
+            <div class="view-container view-pane" id="view-create" style="display: none;">
+                <div class="form-card">
+                    <div class="form-section-title">
+                        <span>1. En-tête & Informations Générales (Bilingue SINYLON - STELLANTIS)</span>
+                        <button type="button" onclick="App.forceTranslateNow()" class="translate-trigger-btn">
+                            🌐 TRADUIRE AUTOMATIQUEMENT FR ⇄ EN
+                        </button>
+                    </div>
+
+                    <div class="form-grid-3">
+                        <div class="form-group">
+                            <label>Identifiant du Permis (Officiel)</label>
+                            <input type="text" id="form-permit-id" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Type de Permis Principal</label>
+                            <select id="form-permit-type" class="form-control">
+                                <option value="general">Permis Général de Travail</option>
+                                <option value="height">Permis Travail en Hauteur (Annexe Bleue)</option>
+                                <option value="hot">Permis Travail à Chaud / Soudure (Annexe Rouge)</option>
+                                <option value="electric">Permis Électrique & Consignation (Annexe Jaune)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Entreprise Intervenante</label>
+                            <input type="text" id="form-company" class="form-control" value="SINYLON">
+                        </div>
+                    </div>
+
+                    <div class="form-grid-2" style="margin-top: 10px;">
+                        <div class="form-group">
+                            <label>Titre de l'Opération (Français)</label>
+                            <input type="text" id="form-title" class="form-control" placeholder="Ex: Soudage tuyauterie fluide">
+                        </div>
+                        <div class="form-group">
+                            <label>Titre de l'Opération (Anglais auto-généré)</label>
+                            <input type="text" id="form-title-en" class="form-control" placeholder="Auto-translated title">
+                        </div>
+                    </div>
+
+                    <div class="form-grid-2" style="margin-top: 10px;">
+                        <div class="form-group">
+                            <label>Description Détaillée des Travaux (Français)</label>
+                            <textarea id="form-work-desc" class="form-control" rows="3" placeholder="Décrivez les opérations..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Description Détaillée (Anglais auto-généré)</label>
+                            <textarea id="form-work-desc-en" class="form-control" rows="3" placeholder="Auto-translated description..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-grid-3" style="margin-top: 10px;">
+                        <div class="form-group">
+                            <label>Ouvrage / Atelier</label>
+                            <input type="text" id="form-ouvrage" class="form-control" value="Atelier Assemblage Stellantis">
+                        </div>
+                        <div class="form-group">
+                            <label>Zone d'Intervention</label>
+                            <input type="text" id="form-zone" class="form-control" value="Zone 4">
+                        </div>
+                        <div class="form-group">
+                            <label>Localisation Précise</label>
+                            <input type="text" id="form-location" class="form-control" value="Bâtiment Montage">
+                        </div>
+                    </div>
+
+                    <div class="form-grid-3" style="margin-top: 10px;">
+                        <div class="form-group">
+                            <label>Date Principale</label>
+                            <input type="date" id="form-date-main" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Heure Début</label>
+                            <input type="text" id="form-time-start" class="form-control" value="07h30">
+                        </div>
+                        <div class="form-group">
+                            <label>Heure Fin</label>
+                            <input type="text" id="form-time-end" class="form-control" value="18h00">
+                        </div>
+                    </div>
+
+                    <div class="form-section-title" style="margin-top: 24px;">
+                        <span>2. Responsables, Suivi W.P.E.E.X & Signataires</span>
+                    </div>
+
+                    <div class="form-grid-3">
+                        <div class="form-group">
+                            <label>Chef de Projet Sinylon</label>
+                            <input type="text" id="form-chef-nom" class="form-control" value="Xie (Chef de Projet Sinylon)">
+                        </div>
+                        <div class="form-group">
+                            <label>Receveur du Permis</label>
+                            <input type="text" id="form-receveur-nom" class="form-control" value="Xian (Receveur du Permis)">
+                        </div>
+                        <div class="form-group">
+                            <label>Ingénieur de Suivi (W.P.E.E.X)</label>
+                            <input type="text" id="form-wpeex-nom" class="form-control" value="M. W.P.E.E.X (Ingénieur de Suivi)">
+                        </div>
+                    </div>
+
+                    <div class="form-grid-3" style="margin-top: 10px;">
+                        <div class="form-group">
+                            <label>Superviseur HSE</label>
+                            <input type="text" id="form-hse-nom" class="form-control" value="Nouri Chahrour (HSE Sinylon)">
+                        </div>
+                        <div class="form-group">
+                            <label>Contact Téléphonique HSE</label>
+                            <input type="text" id="form-tel" class="form-control" value="+213 550 12 34 56">
+                        </div>
+                        <div class="form-group">
+                            <label>Travail Week-end ?</label>
+                            <div style="margin-top: 6px;">
+                                <label><input type="checkbox" id="form-is-weekend"> Déclarer pour la Caisse Week-end</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 24px; display: flex; justify-content: space-between; align-items: center;">
+                        <button type="button" onclick="App.splitFormInto4Permits()" class="btn btn-warning btn-lg" style="background: #f59e0b; color: #000; font-weight: bold;">
+                            ⚡ DÉCOUPER EN 4 PERMIS DISTINCTS (XIE & XIAN)
+                        </button>
+                        <div style="display: flex; gap: 10px;">
+                            <button type="button" onclick="App.switchView('dashboard')" class="btn btn-secondary">Annuler</button>
+                            <button type="button" onclick="App.savePermitFromForm()" class="btn btn-primary btn-lg">💾 ENREGISTRER CE PERMIS</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VUE 4 : APERÇU A4 & IMPRESSION (WYSIWYG) -->
+            <div class="view-container view-pane" id="view-preview" style="display: none;">
+                <div class="preview-toolbar no-print">
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <button onclick="App.switchPreviewTab('p1')" id="btn-tab-p1" class="btn btn-secondary btn-sm preview-tab-btn active">📄 Recto (Page 1)</button>
+                        <button onclick="App.switchPreviewTab('p2')" id="btn-tab-p2" class="btn btn-secondary btn-sm preview-tab-btn">📅 Revalidations (Page 2)</button>
+                        <button onclick="App.switchPreviewTab('height')" id="btn-tab-height" class="btn btn-secondary btn-sm preview-tab-btn">🔵 Annexe A (Hauteur)</button>
+                        <button onclick="App.switchPreviewTab('hot')" id="btn-tab-hot" class="btn btn-secondary btn-sm preview-tab-btn">🔴 Annexe B (Chaud)</button>
+                        <button onclick="App.switchPreviewTab('electric')" id="btn-tab-electric" class="btn btn-secondary btn-sm preview-tab-btn">🟡 Annexe C (Électrique)</button>
+                    </div>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <button onclick="App.saveCurrentA4View()" class="btn btn-success btn-sm" style="background: #10b981; color: #fff; font-weight: bold; border: none; box-shadow: 0 2px 8px rgba(16,185,129,0.4); padding: 7px 14px; font-size: 12px; cursor: pointer;">
+                            💾 ENREGISTRER CE PERMIS
+                        </button>
+                        <button onclick="QREngine.openMobileQRModal(App.currentPermitId)" class="btn btn-primary btn-sm" style="font-weight: bold;">
+                            📱 QR CHANTIER DIRECT
+                        </button>
+                        <button onclick="PrintEngine.exportPermitPDF(App.currentPermitId)" class="btn btn-secondary btn-sm">🖨️ Imprimer / PDF</button>
+                        <button onclick="PrintEngine.printQROnly(App.currentPermitId)" class="btn btn-outline btn-sm">📱 Affiche QR</button>
+                    </div>
+                </div>
+
+                <div class="no-print" style="margin-bottom: 12px; background: rgba(37, 99, 235, 0.08); border: 1px solid #3b82f6; padding: 10px 16px; border-radius: 8px; font-size: 12px; display: flex; justify-content: space-between; align-items: center;">
+                    <span>✍️ <strong>ÉDITION DIRECTE :</strong> Vous pouvez modifier n'importe quel texte ou nom directement sur la feuille A4. Cliquez sur <strong>💾 ENREGISTRER CE PERMIS</strong> pour sauvegarder.</span>
+                    <div style="display: flex; gap: 8px;">
+                        <button class="btn btn-success btn-sm" style="font-weight: bold; background: #10b981; color: #fff; border: none;" onclick="App.saveCurrentA4View()">💾 Enregistrer</button>
+                        <button class="btn btn-warning btn-sm" style="font-weight: bold;" onclick="App.editPermit(App.currentPermitId)">✏️ Formulaire complet</button>
+                    </div>
+                </div>
+
+                <div class="preview-container">
+                    <div id="a4-preview-render">
+                        <!-- Rendu dynamique du modèle A4 Bilingue -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- VUE 5 : REGISTRE PLANNING HEBDOMADAIRE -->
+            <div class="view-container view-pane" id="view-list" style="display: none;">
+                <div class="form-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <div class="form-section-title" style="margin-bottom: 0;">📁 Registre Planning Hebdomadaire — Algeria K9 CKD0 (KW25 à KW53)</div>
+                        <input type="text" id="search-permits" class="form-control" style="width: 280px;" placeholder="🔍 Rechercher KW, zone (UB/UAR/FUSA), tâche...">
+                    </div>
+                    <table class="doc-table-reval" style="width: 100%; border: none;">
+                        <thead>
+                            <tr>
+                                <th>ID PERMIS</th>
+                                <th>TYPE</th>
+                                <th>ENTREPRISE</th>
+                                <th>ZONE / OUVRAGE</th>
+                                <th>TRAVAIL</th>
+                                <th>RESPONSABLES</th>
+                                <th>STATUT W.P.E.E.X</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody id="full-permits-table-body">
+                            <!-- Rendu dynamique -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- =========================================================================
+         MODAL 1 : FICHE CHANTIER MOBILE QR (CONSULTATION SANS COMPTE)
+         ========================================================================= -->
+    <div class="modal-backdrop" id="modal-mobile-qr">
+        <div class="modal-window" style="max-width: 520px; max-height: 92vh; overflow-y: auto;">
+            <div class="modal-header">
+                <h3 style="display: flex; align-items: center; gap: 8px;">
+                    <span>📱</span> FICHE DE CONTRÔLE CHANTIER (QR TERRAIN)
+                </h3>
+                <button onclick="QREngine.closeMobileQRModal()" class="btn btn-outline btn-sm">✕</button>
+            </div>
+            <div class="modal-body modal-qr-content">
+                <!-- En-tête officiel mobile -->
+                <div class="mobile-qr-header-banner">
+                    <div class="brand-tags">
+                        <span class="brand-badge">SINYLON</span>
+                        <span class="brand-badge">STELLANTIS</span>
+                        <span class="brand-badge">W.P.E.E.X</span>
+                    </div>
+                    <div class="mobile-qr-id-title" id="mobile-qr-permit-id">SYN-P-2026-00000</div>
+                    <div id="mobile-qr-type-badge" class="badge badge-blue">PERMIS GÉNÉRAL DE TRAVAIL</div>
+                </div>
+
+                <!-- Statut dynamique -->
+                <div style="text-align: center; margin-bottom: 12px;">
+                    <div id="mobile-qr-status-badge" class="status-badge status-valide" style="font-size: 14px; padding: 6px 16px;">
+                        🟢 VALIDE & ACTIF
+                    </div>
+                </div>
+
+                <!-- Grand QR Code de vérification -->
+                <div class="qr-large-wrapper" style="text-align: center; margin-bottom: 14px;">
+                    <canvas id="mobile-qr-canvas"></canvas>
+                    <div style="font-size: 11px; color: var(--text-secondary); margin-top: 4px;">
+                        Scannable sans compte sur tout smartphone
+                    </div>
+                </div>
+
+                <!-- Informations générales et localisation -->
+                <div class="mobile-qr-info-card" style="margin-bottom: 12px;">
+                    <div>🏢 <strong>Entreprise :</strong> <span id="mobile-qr-company">SINYLON</span></div>
+                    <div>📍 <strong>Zone & Ouvrage :</strong> <span id="mobile-qr-zone">Atelier Montage - Zone 4</span></div>
+                    <div>📌 <strong>Localisation :</strong> <span id="mobile-qr-location">Bâtiment Montage — Hall Principal</span></div>
+                    <div>⏰ <strong>Validité :</strong> <span id="mobile-qr-hours">07:30 → 18:00</span></div>
+                    <div style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(255,255,255,0.1);">
+                        <strong>🛠️ Nature des Travaux :</strong>
+                        <div id="mobile-qr-work" style="color: #67e8f9; font-weight: 600; margin-top: 2px;">Travaux autorisés</div>
+                        <div id="mobile-qr-work-en" style="color: var(--text-secondary); font-size: 11px; font-style: italic;">Auto-translated</div>
+                    </div>
+                </div>
+
+                <!-- Responsables et Suivi -->
+                <div class="mobile-qr-info-card" style="margin-bottom: 12px; background: rgba(30, 58, 138, 0.2);">
+                    <div>👨‍💼 <strong>Chef de Projet :</strong> <span id="mobile-qr-chef">Xie</span></div>
+                    <div>👷 <strong>Receveur :</strong> <span id="mobile-qr-receveur">Xian</span></div>
+                    <div>📋 <strong>Chef d'Équipe :</strong> <span id="mobile-qr-chef-equipe">Xian</span></div>
+                    <div>🛡️ <strong>Suivi W.P.E.E.X :</strong> <span id="mobile-qr-wpeex">M. W.P.E.E.X</span></div>
+                    <div>📞 <strong>Contact HSE :</strong> <span id="mobile-qr-contact">Nouri Chahrour (+213 550 12 34 56)</span></div>
+                </div>
+
+                <!-- Section Mesures de Sécurité & Annexes Applicables -->
+                <div class="form-section-title" style="font-size: 13px; margin: 12px 0 6px 0;">
+                    <span>🛡️ Mesures de Sécurité & Annexes Applicables</span>
+                </div>
+                <div id="mobile-qr-safety-annexes" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px; margin-bottom: 12px; font-size: 12px;">
+                    <!-- Rempli dynamiquement -->
+                </div>
+
+                <!-- Section Intervenants / Équipe Autorisée -->
+                <div class="form-section-title" style="font-size: 13px; margin: 12px 0 6px 0; display: flex; justify-content: space-between; align-items: center;">
+                    <span>👷 Équipe Autorisée / Intervenants</span>
+                    <button onclick="QREngine.openModifyModal(document.getElementById('modal-mobile-qr').dataset.currentPermitId)" class="btn btn-warning btn-sm" style="font-size: 10px; padding: 2px 8px;">
+                        ✏️ Gérer l'équipe
+                    </button>
+                </div>
+                <div id="mobile-qr-workers-list"></div>
+
+                <!-- Section Revalidations du Jour -->
+                <div class="form-section-title" style="font-size: 13px; margin: 16px 0 6px 0;">
+                    <span>🔄 Revalidations Quotidiennes</span>
+                </div>
+                <div id="mobile-qr-revals-list"></div>
+
+                <!-- Section Traçabilité & Audit (QR_TERRAIN) -->
+                <div class="form-section-title" style="font-size: 13px; margin: 16px 0 6px 0;">
+                    <span>📜 Traçabilité des Modifications (QR_TERRAIN)</span>
+                </div>
+                <div id="mobile-qr-audit-list"></div>
+            </div>
+
+            <!-- Pied de modal avec actions complètes -->
+            <div class="modal-footer" style="flex-direction: column; gap: 8px;">
+                <div style="display: flex; gap: 8px; width: 100%;">
+                    <button onclick="QREngine.openModifyModal(document.getElementById('modal-mobile-qr').dataset.currentPermitId)" class="btn btn-warning" style="flex: 1; font-weight: bold; background: #f59e0b; color: #000; border: none;">
+                        ✏️ MODIFIER (PROTÉGÉ PAR CODE)
+                    </button>
+                    <button onclick="QREngine.saveQRImage(document.getElementById('modal-mobile-qr').dataset.currentPermitId)" class="btn btn-primary" style="flex: 1;">
+                        📲 ENREGISTRER QR (PNG)
+                    </button>
+                </div>
+                <div style="display: flex; gap: 8px; width: 100%;">
+                    <button onclick="QREngine.exportQRPDF(document.getElementById('modal-mobile-qr').dataset.currentPermitId)" class="btn btn-secondary" style="flex: 1;">
+                        📄 Exporter QR (PDF)
+                    </button>
+                    <button onclick="QREngine.printQRSheet(document.getElementById('modal-mobile-qr').dataset.currentPermitId)" class="btn btn-outline" style="flex: 1;">
+                        🖨️ Imprimer Affiche
+                    </button>
+                    <button onclick="QREngine.closeMobileQRModal(); App.openPermitPreview(document.getElementById('modal-mobile-qr').dataset.currentPermitId);" class="btn btn-secondary" style="flex: 1;">
+                        📋 Document A4
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+         MODAL 2 : MODIFICATION CONTRÔLÉE PAR CODE D'AUTORISATION
+         ========================================================================= -->
+    <div class="modal-backdrop" id="modal-qr-modify">
+        <div class="modal-window" style="max-width: 480px;">
+            <div class="modal-header" style="background: #1e3a8a;">
+                <h3 style="color: #93c5fd; display: flex; align-items: center; gap: 8px;">
+                    <span>🔐</span> MODIFICATION TERRAIN CONTRÔLÉE
+                </h3>
+                <button onclick="QREngine.closeModifyModal()" class="btn btn-outline btn-sm" style="color: white; border-color: white;">✕</button>
+            </div>
+            <div class="modal-body">
+                <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; margin-bottom: 14px; border: 1px solid var(--border-color);">
+                    <div style="display: flex; justify-content: space-between;">
+                        <strong id="modify-permit-id-label" class="text-primary" style="font-family: monospace;">SYN-P-2026-00000</strong>
+                        <span class="badge badge-warning">Sécurisé</span>
+                    </div>
+                    <div id="modify-permit-title-label" style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">Titre du permis</div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label>Sélectionner le champ à modifier :</label>
+                    <select id="modify-field-select" class="form-control" onchange="QREngine.onModifyFieldChange()">
+                        <option value="chef-nom">Responsable / Chef de Projet (Xie)</option>
+                        <option value="receveur-nom">Receveur du Permis (Xian)</option>
+                        <option value="chef_equipe">Chef d'Équipe Terrain</option>
+                        <option value="contact">Personne de Contact HSE</option>
+                        <option value="tel">Numéro de Téléphone Contact</option>
+                        <option value="location">Localisation & Zone d'Intervention</option>
+                        <option value="notes_chantier">Notes & Remarques Terrain</option>
+                        <option value="travailleurs_add">➕ Ajouter un Intervenant (Nom, Rôle, Badge)</option>
+                        <option value="travailleurs_remove">➖ Retirer un Intervenant</option>
+                    </select>
+                </div>
+
+                <!-- Conteneur dynamique des inputs selon le champ sélectionné -->
+                <div id="modify-field-inputs-container"></div>
+
+                <div class="form-group" style="margin-top: 14px;">
+                    <label>Nom du Superviseur / Auteur de la modification :</label>
+                    <input type="text" id="modify-author-name" class="form-control" value="Superviseur Chantier">
+                </div>
+
+                <!-- ZONE CRITIQUE : CODE D'AUTORISATION -->
+                <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.4); padding: 12px; border-radius: 8px; margin-top: 16px;">
+                    <div style="color: #f87171; font-weight: 700; font-size: 12px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+                        <span>🔒</span> CODE D'AUTORISATION REQUIS
+                    </div>
+                    <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">
+                        Pour empêcher toute modification non autorisée sur chantier, saisissez le code superviseur :
+                    </p>
+                    <input type="password" id="modify-auth-code" class="form-control" placeholder="Code d'autorisation (ex: SINYLON2026)" style="letter-spacing: 2px; font-weight: bold;">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="QREngine.closeModifyModal()" class="btn btn-secondary">Annuler</button>
+                <button onclick="QREngine.submitFieldModification()" class="btn btn-warning" style="background: #f59e0b; color: #000; font-weight: bold; border: none;">
+                    ✅ ENREGISTRER LA MODIFICATION
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+         MODAL 3 : REVALIDATION QUOTIDIENNE W.P.E.E.X (NORO UNIFIED)
+         ========================================================================= -->
+    <div class="modal-backdrop" id="modal-revalidation">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h3>🔄 Revalidation du Permis de Travail (W.P.E.E.X)</h3>
+                <button onclick="RevalidationModule.closeModal()" class="btn btn-outline btn-sm">✕</button>
+            </div>
+            <div class="modal-body">
+                <div style="background: var(--bg-card); padding: 12px; border-radius: 8px; margin-bottom: 16px; border: 1px solid var(--border-color);">
+                    <div style="display: flex; justify-content: space-between;">
+                        <strong id="reval-permit-id" class="text-primary">SYN-P-2026-00000</strong>
+                        <span id="reval-week-label" class="badge badge-warning">Session Matin</span>
+                    </div>
+                    <div id="reval-permit-title" style="font-weight: 600; margin: 4px 0;">Titre du permis</div>
+                    <div style="font-size: 11px; color: var(--text-secondary);">
+                        <span id="reval-company">SINYLON</span> | <span id="reval-zone">Zone 4</span>
+                    </div>
+                </div>
+
+                <div class="form-section-title">Contrôle de Conformité & Sécurité</div>
+
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label>1. Les informations de base sont-elles toujours inchangées ?</label>
+                    <div style="display: flex; gap: 16px;">
+                        <label><input type="radio" name="reval-q1" id="reval-q1-yes" checked> OUI</label>
+                        <label><input type="radio" name="reval-q1" id="reval-q1-no"> NON</label>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label>2. Les conditions de travail et l'environnement sont-ils inchangés ?</label>
+                    <div style="display: flex; gap: 16px;">
+                        <label><input type="radio" name="reval-q2" id="reval-q2-yes" checked> OUI</label>
+                        <label><input type="radio" name="reval-q2" id="reval-q2-no"> NON</label>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label>3. Les mesures de sécurité et EPI restent-ils applicables ?</label>
+                    <div style="display: flex; gap: 16px;">
+                        <label><input type="radio" name="reval-q3" id="reval-q3-yes" checked> OUI</label>
+                        <label><input type="radio" name="reval-q3" id="reval-q3-no"> NON</label>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label>4. Des modifications particulières sont-elles à signaler ?</label>
+                    <div style="display: flex; gap: 16px;">
+                        <label><input type="radio" name="reval-q4" id="reval-q4-yes" onchange="RevalidationModule.toggleModificationField(true)"> OUI</label>
+                        <label><input type="radio" name="reval-q4" id="reval-q4-no" onchange="RevalidationModule.toggleModificationField(false)" checked> NON</label>
+                    </div>
+                </div>
+
+                <div class="form-group" id="reval-mod-box" style="display: none; margin-bottom: 12px;">
+                    <label>Notes de Modification</label>
+                    <textarea id="reval-mod-notes" class="form-control" rows="2" placeholder="Préciser les changements..."></textarea>
+                </div>
+
+                <div class="form-grid-2" style="margin-top: 14px;">
+                    <div class="form-group">
+                        <label>Date de Revalidation</label>
+                        <input type="date" id="reval-date" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Heure</label>
+                        <input type="text" id="reval-time" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label>Validation W.P.E.E.X (Ingénieur de Suivi)</label>
+                        <input type="text" id="reval-wpeex-engineer" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Responsable d'Exécution</label>
+                        <input type="text" id="reval-exec-manager" class="form-control" value="Xie (Chef de Projet)">
+                    </div>
+                </div>
+
+                <div class="form-section-title" style="margin-top: 20px;">Historique des Cycles Précédents</div>
+                <div id="reval-history-list"></div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="RevalidationModule.closeModal()" class="btn btn-secondary">Annuler</button>
+                <button onclick="RevalidationModule.submitRevalidation()" class="btn btn-primary">
+                    ✍️ VALIDER PAR W.P.E.E.X
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+         MODAL 4 : SCANNER / VÉRIFICATEUR MANUEL
+         ========================================================================= -->
+    <div class="modal-backdrop" id="modal-qr-verifier">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h3>🔍 Vérificateur de QR Code & Statut Permis</h3>
+                <button onclick="QREngine.closeVerifierModal()" class="btn btn-outline btn-sm">✕</button>
+            </div>
+            <div class="modal-body">
+                <p style="color: var(--text-secondary); margin-bottom: 12px;">Entrez l'identifiant du permis ou collez les données scannées par le lecteur de QR Code :</p>
+                <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+                    <input type="text" id="verifier-input-text" class="form-control" placeholder="Ex: SYN-P-2026-00101">
+                    <button onclick="QREngine.verifyScannedCode(document.getElementById('verifier-input-text').value)" class="btn btn-primary">
+                        Vérifier
+                    </button>
+                </div>
+                <div id="verifier-result"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+         MODAL 5 : GESTION DU CODE D'AUTORISATION
+         ========================================================================= -->
+    <div class="modal-backdrop" id="modal-auth-settings">
+        <div class="modal-window" style="max-width: 440px;">
+            <div class="modal-header">
+                <h3 style="display: flex; align-items: center; gap: 8px;">
+                    <span>🔐</span> Paramètres du Code d'Autorisation
+                </h3>
+                <button onclick="App.closeAuthSettingsModal()" class="btn btn-outline btn-sm">✕</button>
+            </div>
+            <div class="modal-body">
+                <p style="color: var(--text-secondary); font-size: 12px; margin-bottom: 12px;">
+                    Ce code est requis pour déverrouiller toute modification terrain depuis la fiche mobile QR.
+                </p>
+                <div class="form-group" style="margin-bottom: 14px;">
+                    <label>Code d'Autorisation Actuel :</label>
+                    <input type="text" id="settings-current-auth-code" class="form-control" readonly style="background: rgba(255,255,255,0.05); font-family: monospace; font-weight: bold; letter-spacing: 2px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 14px;">
+                    <label>Nouveau Code d'Autorisation :</label>
+                    <input type="text" id="settings-new-auth-code" class="form-control" placeholder="Entrez le nouveau code...">
+                </div>
+                <div class="form-group" style="margin-top: 18px; border-top: 1px dashed rgba(255,255,255,0.15); padding-top: 12px;">
+                    <label style="display: flex; align-items: center; gap: 6px;">
+                        <span>🌐</span> <strong>URL du Serveur Render (Scan Mobile) :</strong>
+                    </label>
+                    <input type="text" id="settings-render-url" class="form-control" placeholder="https://permis-sinylon.onrender.com" style="font-family: monospace; font-size: 12px;">
+                    <small style="color: var(--text-secondary); font-size: 11px; display: block; margin-top: 4px;">
+                        Cette URL est encodée dans tous les QR codes pour ouvrir automatiquement la fiche mobile lors du scan.
+                    </small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="App.closeAuthSettingsModal()" class="btn btn-secondary">Fermer</button>
+                <button onclick="App.saveAuthAndRenderSettings()" class="btn btn-primary">💾 Enregistrer les Paramètres</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+         MODAL 6 : 🚨 URGENCE TERRAIN ("BESOIN URGENT")
+         ========================================================================= -->
+    <div class="modal-backdrop" id="modal-urgent-action">
+        <div class="modal-window" style="max-width: 480px;">
+            <div class="modal-header" style="background: #7f1d1d;">
+                <h3 style="color: #fecaca; display: flex; align-items: center; gap: 8px;">
+                    <span>🚨</span> ACTION D'URGENCE TERRAIN
+                </h3>
+                <button onclick="App.closeUrgentActionModal()" class="btn btn-outline btn-sm" style="color: white; border-color: white;">✕</button>
+            </div>
+            <div class="modal-body">
+                <p style="margin-bottom: 16px;">Présentez ou imprimez immédiatement le permis sans retourner au bureau :</p>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <button onclick="App.closeUrgentActionModal(); QREngine.openMobileQRModal(App.currentPermitId);" class="btn btn-primary btn-lg" style="justify-content: flex-start;">
+                        📱 1. Afficher la Fiche Chantier QR (Mobile)
+                    </button>
+                    <button onclick="App.closeUrgentActionModal(); PrintEngine.exportPermitPDF(App.currentPermitId);" class="btn btn-secondary btn-lg" style="justify-content: flex-start;">
+                        💾 2. Télécharger le PDF Immédiat
+                    </button>
+                    <button onclick="App.closeUrgentActionModal(); PrintEngine.printPermit(App.currentPermitId);" class="btn btn-warning btn-lg" style="justify-content: flex-start;">
+                        🖨️ 3. Imprimer le Permis Complet A4
+                    </button>
+                    <button onclick="App.closeUrgentActionModal(); PrintEngine.printQROnly(App.currentPermitId);" class="btn btn-outline btn-lg" style="justify-content: flex-start;">
+                        🏷️ 4. Imprimer l'Affiche QR Seule
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteneur Toast Notifications -->
+    <div class="toast-container no-print" id="toast-container"></div>
+
+    <!-- Conteneur d'Impression Pure A4 -->
+    <div id="print-container"></div>
+
+    <!-- Scripts JavaScript -->
+    <script src="lib/qrcode.min.js"></script>
+    <script src="js/translator.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="js/qr-engine.js"></script>
+    <script src="js/revalidation.js"></script>
+    <script src="js/weekend-caisse.js"></script>
+    <script src="js/print-engine.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

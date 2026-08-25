@@ -1,0 +1,63 @@
+{
+  "name": "permis-sinylon",
+  "version": "1.0.0",
+  "description": "SINYLON - STELLANTIS | Système Intelligent de Gestion du Cycle de Vie des Permis de Travail",
+  "main": "main.js",
+  "scripts": {
+    "start": "node server.js",
+    "web": "node server.js",
+    "electron": "electron .",
+    "dev": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "build:mac": "electron-builder --mac dmg",
+    "serve": "npx -y serve ."
+  },
+  "keywords": [
+    "permis",
+    "sinylon",
+    "stellantis",
+    "wpeex",
+    "securite",
+    "hse",
+    "chantier"
+  ],
+  "author": "SINYLON & W.P.E.E.X",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8",
+    "qrcode": "^1.5.4"
+  },
+  "build": {
+    "appId": "com.sinylon.permis",
+    "productName": "Permis Sinylon",
+    "mac": {
+      "category": "public.app-category.business",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "assets/icon.png"
+    },
+    "dmg": {
+      "title": "Installation Permis Sinylon",
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "files": [
+      "**/*",
+      "!dist/*"
+    ]
+  }
+}

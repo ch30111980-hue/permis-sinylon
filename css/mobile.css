@@ -1,0 +1,269 @@
+/**
+ * SINYLON - STELLANTIS | Mobile & QR Stylesheet
+ * Responsive layout, smartphone inspection sheet ergonomics and audit timeline
+ */
+
+/* =========================================================================
+   1. QR MODAL & CONSULTATION CHANTIER MOBILE
+   ========================================================================= */
+
+.mobile-qr-container {
+    padding: 10px 4px;
+}
+
+.mobile-qr-header-banner {
+    background: linear-gradient(135deg, #1e3a8a 0%, #0284c7 100%);
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.mobile-qr-header-banner .brand-tags {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.mobile-qr-header-banner .brand-badge {
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.mobile-qr-id-title {
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: 800;
+    color: #67e8f9;
+    letter-spacing: 1px;
+    margin: 4px 0;
+}
+
+/* Grille Intervenants Chantier */
+.mobile-workers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.mobile-worker-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.mobile-worker-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary);
+}
+
+.worker-avatar {
+    font-size: 24px;
+    background: rgba(2, 132, 199, 0.15);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.worker-info {
+    flex: 1;
+    font-size: 12px;
+}
+
+.worker-name {
+    color: var(--text-primary);
+    font-size: 13px;
+}
+
+.worker-role {
+    color: var(--text-secondary);
+    font-size: 11px;
+}
+
+.worker-badge {
+    margin-top: 4px;
+}
+
+/* Revalidations Timeline */
+.mobile-reval-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.mobile-reval-item {
+    background: rgba(16, 185, 129, 0.06);
+    border-left: 3px solid #10b981;
+    padding: 8px 12px;
+    border-radius: 0 8px 8px 0;
+    font-size: 12px;
+}
+
+.reval-time-badge {
+    font-weight: 700;
+    color: #34d399;
+    margin-bottom: 2px;
+}
+
+.reval-desc {
+    color: var(--text-primary);
+}
+
+.reval-comment {
+    color: var(--text-secondary);
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+/* Traçabilité & Audit QR_TERRAIN */
+.mobile-audit-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.mobile-audit-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.mobile-audit-item.audit-qr {
+    border-left: 3px solid #0284c7;
+    background: rgba(2, 132, 199, 0.05);
+}
+
+.audit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.audit-date {
+    color: var(--text-secondary);
+    font-size: 11px;
+}
+
+.audit-field {
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.audit-diff {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+.diff-old del {
+    color: #f87171;
+}
+
+.diff-new ins {
+    color: #4ade80;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.audit-author {
+    color: var(--text-secondary);
+    font-size: 10px;
+    text-align: right;
+}
+
+/* =========================================================================
+   2. MEDIA QUERIES RESPONSIVE MOBILE
+   ========================================================================= */
+
+@media screen and (max-width: 900px) {
+    .app-layout {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .sidebar.mobile-open {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80%;
+        max-width: 320px;
+        z-index: 150;
+        box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    }
+
+    .top-navbar {
+        padding: 12px 16px;
+    }
+
+    .view-container {
+        padding: 12px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .weekend-widget-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 14px;
+    }
+
+    .caisse-days-container {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .form-grid-2, .form-grid-3 {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .preview-container {
+        padding: 8px 2px;
+    }
+
+    .a4-document {
+        width: 100%;
+        min-height: auto;
+        padding: 6mm;
+        margin-bottom: 14px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .modal-window {
+        width: 95% !important;
+        max-height: 90vh;
+        margin: 10px;
+    }
+}
