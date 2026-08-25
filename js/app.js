@@ -338,21 +338,21 @@ const App = {
                         <h3 class="permit-activity-title">${activityMain}</h3>
 
                         <div class="permit-info-grid">
-                            <div class="info-item">
-                                <span class="info-label">📍 Area / Zone</span>
-                                <span class="info-value">${p.ouvrage || 'Atelier Montage'} — ${p.zone || 'Zone 4'}</span>
+                            <div class="info-item" style="grid-column: span 2;">
+                                <span class="info-label">📍 Implantation & Zone(s)</span>
+                                <span class="info-value" style="color: #38bdf8; font-weight: 700;">${p.zone || 'Zone UB / UAR / FUSA'}</span>
+                            </div>
+                            <div class="info-item" style="grid-column: span 2;">
+                                <span class="info-label">⚙️ Équipements à installer</span>
+                                <span class="info-value" style="color: #cbd5e1; font-size: 11px;">${Array.isArray(p.equipements_a_installer) ? p.equipements_a_installer.slice(0, 4).join(', ') : (p.equipements_a_installer || 'Nacelles ciseaux (x6), Palans DEMAG KBK')}</span>
                             </div>
                             <div class="info-item">
-                                <span class="info-label">🏢 Contractor</span>
+                                <span class="info-label">🏢 Entreprise</span>
                                 <span class="info-value">${p.contractor || p.company || 'SINYLON'}</span>
                             </div>
                             <div class="info-item">
-                                <span class="info-label">👨‍💼 Responsible</span>
-                                <span class="info-value">${p.responsible || p.chefNom || 'Nouri Chahrour'}</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">📅 Validity</span>
-                                <span class="info-value">${p.validFrom || p['date-main']} → ${p.validUntil || p['date_fin'] || ''}</span>
+                                <span class="info-label">📅 Période & Horaires</span>
+                                <span class="info-value">${p.validFrom || p['date-main']} → ${p.validUntil || p['date_fin'] || ''} (08h00 - 17h30)</span>
                             </div>
                         </div>
 

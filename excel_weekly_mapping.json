@@ -1,0 +1,1096 @@
+{
+  "25": {
+    "week": 25,
+    "startDate": "2026-06-15",
+    "endDate": "2026-06-21",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Traçage au sol et repérage géométrique des zones",
+      "[UAR] Traçage au sol et repérage géométrique des zones",
+      "[FUSA] Traçage au sol et repérage géométrique des zones"
+    ],
+    "tasks_en": [
+      "[UB] Floor marking & layout positioning",
+      "[UAR] Floor marking & layout positioning",
+      "[FUSA] Floor marking & layout positioning"
+    ],
+    "tasks_zh": [
+      "[UB] 划线及区域定位",
+      "[UAR] 划线及区域定位",
+      "[FUSA] 划线及区域定位"
+    ],
+    "equipmentList": [
+      "Outillages industriels certifiés UB",
+      "Outillages industriels certifiés UAR",
+      "Instruments de mesure et calibres",
+      "Outillages industriels certifiés FUSA"
+    ]
+  },
+  "26": {
+    "week": 26,
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-28",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Montage et érection des charpentes métalliques",
+      "[UAR] Montage et érection des charpentes métalliques",
+      "[FUSA] Montage et érection des charpentes métalliques"
+    ],
+    "tasks_en": [
+      "[UB] Steel structure installation and erection",
+      "[UAR] Steel structure installation and erection",
+      "[FUSA] Steel structure installation and erection"
+    ],
+    "tasks_zh": [
+      "[UB] 钢结构安装",
+      "[UAR] 钢结构安装",
+      "[FUSA] 钢结构安装"
+    ],
+    "equipmentList": [
+      "Nacelles ciseaux",
+      "Charpentes métalliques primaires",
+      "Boulonnerie HR 8.8/10.9",
+      "Poteaux et poutres IPN/HEA"
+    ]
+  },
+  "27": {
+    "week": 27,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-05",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Montage et érection des charpentes métalliques",
+      "[UAR] Montage et érection des charpentes métalliques",
+      "[FUSA] Montage et érection des charpentes métalliques"
+    ],
+    "tasks_en": [
+      "[UB] Steel structure installation and erection",
+      "[UAR] Steel structure installation and erection",
+      "[FUSA] Steel structure installation and erection"
+    ],
+    "tasks_zh": [
+      "[UB] 钢结构安装",
+      "[UAR] 钢结构安装",
+      "[FUSA] 钢结构安装"
+    ],
+    "equipmentList": [
+      "Nacelles ciseaux",
+      "Charpentes métalliques primaires",
+      "Boulonnerie HR 8.8/10.9",
+      "Poteaux et poutres IPN/HEA"
+    ]
+  },
+  "28": {
+    "week": 28,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-12",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Montage et érection des charpentes métalliques",
+      "[UAR] Montage et érection des charpentes métalliques",
+      "[FUSA] Montage et érection des charpentes métalliques"
+    ],
+    "tasks_en": [
+      "[UB] Steel structure installation and erection",
+      "[UAR] Steel structure installation and erection",
+      "[FUSA] Steel structure installation and erection"
+    ],
+    "tasks_zh": [
+      "[UB] 钢结构安装",
+      "[UAR] 钢结构安装",
+      "[FUSA] 钢结构安装"
+    ],
+    "equipmentList": [
+      "Nacelles ciseaux",
+      "Charpentes métalliques primaires",
+      "Boulonnerie HR 8.8/10.9",
+      "Poteaux et poutres IPN/HEA"
+    ]
+  },
+  "29": {
+    "week": 29,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-19",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Montage et érection des charpentes métalliques",
+      "[UB] Installation et câblage de l'éclairage des postes",
+      "[UAR] Montage et érection des charpentes métalliques",
+      "[FUSA] Montage et érection des charpentes métalliques"
+    ],
+    "tasks_en": [
+      "[UB] Steel structure installation and erection",
+      "[UB] Station lighting installation and wiring",
+      "[UAR] Steel structure installation and erection",
+      "[FUSA] Steel structure installation and erection"
+    ],
+    "tasks_zh": [
+      "[UB] 钢结构安装",
+      "[UB] 工位照明安装",
+      "[UAR] 钢结构安装",
+      "[FUSA] 钢结构安装"
+    ],
+    "equipmentList": [
+      "Charpentes métalliques primaires",
+      "Poteaux et poutres IPN/HEA",
+      "Boulonnerie HR 8.8/10.9",
+      "Luminaires LED étanches 4000K",
+      "Tableaux divisionnaires éclairage",
+      "Nacelles ciseaux",
+      "Chemins de câbles d'éclairage"
+    ]
+  },
+  "30": {
+    "week": 30,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-26",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Installation et câblage de l'éclairage des postes",
+      "[UB] Pose et fixation des ventilateurs industriels de postes",
+      "[UAR] Montage et érection des charpentes métalliques",
+      "[FUSA] Montage et érection des charpentes métalliques"
+    ],
+    "tasks_en": [
+      "[UB] Station lighting installation and wiring",
+      "[UB] Station cooling fans installation",
+      "[UAR] Steel structure installation and erection",
+      "[FUSA] Steel structure installation and erection"
+    ],
+    "tasks_zh": [
+      "[UB] 工位照明安装",
+      "[UB] 工位风扇安装",
+      "[UAR] 钢结构安装",
+      "[FUSA] 钢结构安装"
+    ],
+    "equipmentList": [
+      "Ventilateurs axiaux industriels",
+      "Charpentes métalliques primaires",
+      "Poteaux et poutres IPN/HEA",
+      "Nacelles ciseaux",
+      "Luminaires LED étanches 4000K",
+      "Tableaux divisionnaires éclairage",
+      "Supports amortisseurs de vibrations",
+      "Boulonnerie HR 8.8/10.9"
+    ]
+  },
+  "31": {
+    "week": 31,
+    "startDate": "2026-07-27",
+    "endDate": "2026-08-02",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Pose et fixation des ventilateurs industriels de postes",
+      "[UB] Pose et raccordement des tuyauteries eau et air comprimé",
+      "[UAR] Montage et érection des charpentes métalliques",
+      "[FUSA] Montage et érection des charpentes métalliques"
+    ],
+    "tasks_en": [
+      "[UB] Station cooling fans installation",
+      "[UB] Pneumatic and cooling water piping installation",
+      "[UAR] Steel structure installation and erection",
+      "[FUSA] Steel structure installation and erection"
+    ],
+    "tasks_zh": [
+      "[UB] 工位风扇安装",
+      "[UB] 水气管道安装",
+      "[UAR] 钢结构安装",
+      "[FUSA] 钢结构安装"
+    ],
+    "equipmentList": [
+      "Ventilateurs axiaux industriels",
+      "Charpentes métalliques primaires",
+      "Vannes de sectionnement",
+      "Purgeurs automatiques",
+      "Poteaux et poutres IPN/HEA",
+      "Nacelles ciseaux",
+      "Tuyauteries inox eau de refroidissement (DN50/DN80)",
+      "Supports amortisseurs de vibrations"
+    ]
+  },
+  "32": {
+    "week": 32,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-09",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Pose et raccordement des tuyauteries eau et air comprimé",
+      "[UAR] Pose et raccordement des tuyauteries eau et air comprimé",
+      "[FUSA] Pose et raccordement des tuyauteries eau et air comprimé"
+    ],
+    "tasks_en": [
+      "[UB] Pneumatic and cooling water piping installation",
+      "[UAR] Pneumatic and cooling water piping installation",
+      "[FUSA] Pneumatic and cooling water piping installation"
+    ],
+    "tasks_zh": [
+      "[UB] 水气管道安装",
+      "[UAR] 水气管道安装",
+      "[FUSA] 水气管道安装"
+    ],
+    "equipmentList": [
+      "Réseau air comprimé 6-8 bars",
+      "Vannes de sectionnement",
+      "Tuyauteries inox eau de refroidissement (DN50/DN80)",
+      "Purgeurs automatiques"
+    ]
+  },
+  "33": {
+    "week": 33,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-16",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Installation des jeux de barres électriques blindées IG2",
+      "[UB] Tirage et raccordement des câbles de puissance IG1-IG2",
+      "[UB] Montage des rails et ponts suspendus DEMAG KBK",
+      "[UB] Implantation, mise à niveau et calage des gabarits (fixtures)",
+      "[UAR] Pose et raccordement des tuyauteries eau et air comprimé",
+      "[FUSA] Pose et raccordement des tuyauteries eau et air comprimé"
+    ],
+    "tasks_en": [
+      "[UB] IG2 busbar electrical installation",
+      "[UB] Power cable pulling and IG1-IG2 connection",
+      "[UB] DEMAG KBK overhead rail and crane installation",
+      "[UB] Fixtures positioning, leveling and mechanical adjustment",
+      "[UAR] Pneumatic and cooling water piping installation",
+      "[FUSA] Pneumatic and cooling water piping installation"
+    ],
+    "tasks_zh": [
+      "[UB] IG2母排安装",
+      "[UB] 电缆敷设与接线",
+      "[UB] DEMAG导轨及起重设备安装",
+      "[UB] 夹具落位及精准调平",
+      "[UAR] 水气管道安装",
+      "[FUSA] 水气管道安装"
+    ],
+    "equipmentList": [
+      "Chariots de translation",
+      "Centrages mécaniques trempés",
+      "Vannes de sectionnement",
+      "Purgeurs automatiques",
+      "Profilés suspendus DEMAG KBK II",
+      "Gabarits de soudage géométriques UB",
+      "Équilibreurs de charge",
+      "Bras de mesure 3D Faro/Romer"
+    ]
+  },
+  "34": {
+    "week": 34,
+    "startDate": "2026-08-17",
+    "endDate": "2026-08-23",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Montage des rails et ponts suspendus DEMAG KBK",
+      "[UB] Installation et mise en service des coffrets contrôleurs de soudage",
+      "[UB] Contrôle et serrage au couple certifié des ancrages",
+      "[UAR] Pose et fixation des ventilateurs industriels de postes",
+      "[UAR] Pose et raccordement des tuyauteries eau et air comprimé",
+      "[UAR] Tirage et raccordement des câbles de puissance IG1-IG2"
+    ],
+    "tasks_en": [
+      "[UB] DEMAG KBK overhead rail and crane installation",
+      "[UB] Manual welding controllers installation & setup",
+      "[UB] Torque check and anchor bolting verification",
+      "[UAR] Station cooling fans installation",
+      "[UAR] Pneumatic and cooling water piping installation",
+      "[UAR] Power cable pulling and IG1-IG2 connection"
+    ],
+    "tasks_zh": [
+      "[UB] DEMAG导轨及起重设备安装",
+      "[UB] 手动焊接控制器安装与调试",
+      "[UB] 地脚螺栓扭力检查",
+      "[UAR] 工位风扇安装",
+      "[UAR] 水气管道安装",
+      "[UAR] 电缆敷设与接线"
+    ],
+    "equipmentList": [
+      "Armoires contrôleurs de soudage ARO/BOSCH",
+      "Ventilateurs axiaux industriels",
+      "Outillages industriels certifiés UAR",
+      "Purgeurs automatiques",
+      "Profilés suspendus DEMAG KBK II",
+      "Équilibreurs de charge",
+      "Bras de mesure 3D Faro/Romer",
+      "Tuyauteries inox eau de refroidissement (DN50/DN80)"
+    ]
+  },
+  "35": {
+    "week": 35,
+    "startDate": "2026-08-24",
+    "endDate": "2026-08-30",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Montage et équilibrage des pinces à souder manuelles",
+      "[UB] Mise sous tension, purge fluides et raccordements énergies",
+      "[UB] Installation et mise en service des coffrets contrôleurs de soudage",
+      "[UB] Levée des réserves et ajustements préalables des gabarits",
+      "[UB] Mesures tridimensionnelles, réglages précis et rapport Black Book",
+      "[UB] Contrôle géométrique préalable des jeux entre pièces"
+    ],
+    "tasks_en": [
+      "[UB] Manual welding guns installation and balancing",
+      "[UB] Power on, water & pneumatic supply connection",
+      "[UB] Manual welding controllers installation & setup",
+      "[UB] Pre-buyoff checklist issues closure and fine tuning",
+      "[UB] Fixtures 3D measurement, adjustment and Black Book report",
+      "[UB] Preliminary parts clearance inspection"
+    ],
+    "tasks_zh": [
+      "[UB] 手动焊枪安装与平衡器调节",
+      "[UB] 水气电能源接通与调试",
+      "[UB] 手动焊接控制器安装与调试",
+      "[UB] 预验收问题单整改",
+      "[UB] 夹具三坐标测量、调试及Black Book报告",
+      "[UB] 零件间隙预检查"
+    ],
+    "equipmentList": [
+      "Armoires contrôleurs de soudage ARO/BOSCH",
+      "Ventilateurs axiaux industriels",
+      "Profilés suspendus DEMAG KBK II",
+      "Bras de mesure 3D Faro/Romer",
+      "Équilibreurs de charge",
+      "Instruments de mesure et calibres",
+      "Serrages sauterelles pneumatiques",
+      "Câbles cuivre 4x240mm²"
+    ]
+  },
+  "36": {
+    "week": 36,
+    "startDate": "2026-08-31",
+    "endDate": "2026-09-06",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Installation et mise en service des coffrets contrôleurs de soudage",
+      "[UB] Montage mécanique et alignement des préhenseurs (grippers)",
+      "[UB] Levée des réserves et ajustements préalables des gabarits",
+      "[UB] Contrôle géométrique préalable des jeux entre pièces",
+      "[UB] Ajustement géométrique des pièces sur les gabarits",
+      "[UB] Tests de répétabilité et assemblage à cadence lente"
+    ],
+    "tasks_en": [
+      "[UB] Manual welding controllers installation & setup",
+      "[UB] Robotic grippers installation and mechanical alignment",
+      "[UB] Pre-buyoff checklist issues closure and fine tuning",
+      "[UB] Preliminary parts clearance inspection",
+      "[UB] Parts fitting and clearance adjustment on fixtures",
+      "[UB] Repeatability tests and slow-build assembly trials"
+    ],
+    "tasks_zh": [
+      "[UB] 手动焊接控制器安装与调试",
+      "[UB] 机器人抓手安装与机械校准",
+      "[UB] 预验收问题单整改",
+      "[UB] 零件间隙预检查",
+      "[UB] 零件与夹具匹配及间隙调整",
+      "[UB] 重复性验证与慢速试装"
+    ],
+    "equipmentList": [
+      "Armoires contrôleurs de soudage ARO/BOSCH",
+      "Outillages industriels certifiés UAR",
+      "Ventilateurs axiaux industriels",
+      "Bras de mesure 3D Faro/Romer",
+      "Luminaires LED étanches 4000K",
+      "Instruments de mesure et calibres",
+      "Serrages sauterelles pneumatiques",
+      "Câbles cuivre 4x240mm²"
+    ]
+  },
+  "37": {
+    "week": 37,
+    "startDate": "2026-09-07",
+    "endDate": "2026-09-13",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Pose et raccordement des équipements de dépose de colle",
+      "[UB] Ajustement géométrique des pièces sur les gabarits",
+      "[UB] Tests de répétabilité et assemblage à cadence lente",
+      "[UB] Réalisation et validation de la première pièce assemblée (First Assembly)",
+      "[UB] Essais de sécurité, tests de conformité et certification",
+      "[UB] Vérification de conformité de l'installation FEE/REE"
+    ],
+    "tasks_en": [
+      "[UB] Gluing dispensing equipment installation",
+      "[UB] Parts fitting and clearance adjustment on fixtures",
+      "[UB] Repeatability tests and slow-build assembly trials",
+      "[UB] First Assembly Part (First ASM) manufacturing and validation",
+      "[UB] Safety certification and compliance validation tests",
+      "[UB] FEE_REE installation compliance checklist verification"
+    ],
+    "tasks_zh": [
+      "[UB] 涂胶设备安装与管道连接",
+      "[UB] 零件与夹具匹配及间隙调整",
+      "[UB] 重复性验证与慢速试装",
+      "[UB] 首件装配制作与质检验收",
+      "[UB] 安全认证及综合测试",
+      "[UB] FEE/REE安装检查清单验证"
+    ],
+    "equipmentList": [
+      "Armoires contrôleurs de soudage ARO/BOSCH",
+      "Outillages industriels certifiés UAR",
+      "Ventilateurs axiaux industriels",
+      "Profilés suspendus DEMAG KBK II",
+      "Bras de mesure 3D Faro/Romer",
+      "Équilibreurs de charge",
+      "Luminaires LED étanches 4000K",
+      "Instruments de mesure et calibres"
+    ]
+  },
+  "38": {
+    "week": 38,
+    "startDate": "2026-09-14",
+    "endDate": "2026-09-20",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Essais de sécurité, tests de conformité et certification",
+      "[UB] Vérification de conformité de l'installation FEE/REE",
+      "[UB] Jalon Industriel X0 et conformité ligne",
+      "[UAR] Installation et mise en service des coffrets contrôleurs de soudage",
+      "[UAR] Montage et équilibrage des pinces à souder manuelles",
+      "[UAR] Mise sous tension, purge fluides et raccordements énergies"
+    ],
+    "tasks_en": [
+      "[UB] Safety certification and compliance validation tests",
+      "[UB] FEE_REE installation compliance checklist verification",
+      "[UB] Industrial Milestone X0 and line buyoff",
+      "[UAR] Manual welding controllers installation & setup",
+      "[UAR] Manual welding guns installation and balancing",
+      "[UAR] Power on, water & pneumatic supply connection"
+    ],
+    "tasks_zh": [
+      "[UB] 安全认证及综合测试",
+      "[UB] FEE/REE安装检查清单验证",
+      "[UB] 工业化里程碑 X0",
+      "[UAR] 手动焊接控制器安装与调试",
+      "[UAR] 手动焊枪安装与平衡器调节",
+      "[UAR] 水气电能源接通与调试"
+    ],
+    "equipmentList": [
+      "Armoires contrôleurs de soudage ARO/BOSCH",
+      "Outillages industriels certifiés UAR",
+      "Gabarits de soudage géométriques UAR",
+      "Centrages mécaniques trempés",
+      "Préhenseurs robotisés (Grippers)",
+      "Bras de mesure 3D Faro/Romer",
+      "Centrages coniques",
+      "Capteurs inductifs de présence pièce"
+    ]
+  },
+  "39": {
+    "week": 39,
+    "startDate": "2026-09-21",
+    "endDate": "2026-09-27",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Vérification de conformité de l'installation FEE/REE",
+      "[UB] Réception formelle de sécurité HSE et levée des barrières",
+      "[UB] Jalon Industriel X0 et conformité ligne",
+      "[UAR] Installation et mise en service des coffrets contrôleurs de soudage",
+      "[UAR] Ajustement géométrique des pièces sur les gabarits",
+      "[UAR] Tests de répétabilité et assemblage à cadence lente"
+    ],
+    "tasks_en": [
+      "[UB] FEE_REE installation compliance checklist verification",
+      "[UB] HSE Safety Acceptance and site authorization buyoff",
+      "[UB] Industrial Milestone X0 and line buyoff",
+      "[UAR] Manual welding controllers installation & setup",
+      "[UAR] Parts fitting and clearance adjustment on fixtures",
+      "[UAR] Repeatability tests and slow-build assembly trials"
+    ],
+    "tasks_zh": [
+      "[UB] FEE/REE安装检查清单验证",
+      "[UB] 安全验收与现场放行",
+      "[UB] 工业化里程碑 X0",
+      "[UAR] 手动焊接控制器安装与调试",
+      "[UAR] 零件与夹具匹配及间隙调整",
+      "[UAR] 重复性验证与慢速试装"
+    ],
+    "equipmentList": [
+      "Armoires contrôleurs de soudage ARO/BOSCH",
+      "Gabarits de soudage géométriques UAR",
+      "Outillages industriels certifiés UAR",
+      "Centrages mécaniques trempés",
+      "Bras de mesure 3D Faro/Romer",
+      "Gabarits de soudage géométriques FUSA",
+      "Système de chauffe régulée",
+      "Instruments de mesure et calibres"
+    ]
+  },
+  "40": {
+    "week": 40,
+    "startDate": "2026-09-28",
+    "endDate": "2026-10-04",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Réception formelle de sécurité HSE et levée des barrières",
+      "[UB] Jalon Industriel X0 et conformité ligne",
+      "[UAR] Installation et mise en service des coffrets contrôleurs de soudage",
+      "[UAR] Montage mécanique et alignement des préhenseurs (grippers)",
+      "[UAR] Pose et raccordement des équipements de dépose de colle",
+      "[UAR] Essais de sécurité, tests de conformité et certification"
+    ],
+    "tasks_en": [
+      "[UB] HSE Safety Acceptance and site authorization buyoff",
+      "[UB] Industrial Milestone X0 and line buyoff",
+      "[UAR] Manual welding controllers installation & setup",
+      "[UAR] Robotic grippers installation and mechanical alignment",
+      "[UAR] Gluing dispensing equipment installation",
+      "[UAR] Safety certification and compliance validation tests"
+    ],
+    "tasks_zh": [
+      "[UB] 安全验收与现场放行",
+      "[UB] 工业化里程碑 X0",
+      "[UAR] 手动焊接控制器安装与调试",
+      "[UAR] 机器人抓手安装与机械校准",
+      "[UAR] 涂胶设备安装与管道连接",
+      "[UAR] 安全认证及综合测试"
+    ],
+    "equipmentList": [
+      "Armoires contrôleurs de soudage ARO/BOSCH",
+      "Outillages industriels certifiés UAR",
+      "Bras de mesure 3D Faro/Romer",
+      "Gabarits de soudage géométriques FUSA",
+      "Instruments de mesure et calibres",
+      "Serrages sauterelles pneumatiques",
+      "Système de chauffe régulée",
+      "Centrages mécaniques trempés"
+    ]
+  },
+  "41": {
+    "week": 41,
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-11",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Réception formelle de sécurité HSE et levée des barrières",
+      "[UB] Formation pratique des opérateurs et techniciens de maintenance",
+      "[UB] Formation pratique des opérateurs et techniciens de maintenance",
+      "[UB] Jalon Industriel X0 et conformité ligne",
+      "[UAR] Pose et raccordement des équipements de dépose de colle",
+      "[UAR] Essais de sécurité, tests de conformité et certification"
+    ],
+    "tasks_en": [
+      "[UB] HSE Safety Acceptance and site authorization buyoff",
+      "[UB] Line operators and maintenance team technical training",
+      "[UB] Line operators and maintenance team technical training",
+      "[UB] Industrial Milestone X0 and line buyoff",
+      "[UAR] Gluing dispensing equipment installation",
+      "[UAR] Safety certification and compliance validation tests"
+    ],
+    "tasks_zh": [
+      "[UB] 安全验收与现场放行",
+      "[UB] 操作工与维修人员实操培训",
+      "[UB] 操作工与维修人员实操培训",
+      "[UB] 工业化里程碑 X0",
+      "[UAR] 涂胶设备安装与管道连接",
+      "[UAR] 安全认证及综合测试"
+    ],
+    "equipmentList": [
+      "Outillages industriels certifiés UAR",
+      "Centrages mécaniques trempés",
+      "Bras de mesure 3D Faro/Romer",
+      "Gabarits de soudage géométriques FUSA",
+      "Instruments de mesure et calibres",
+      "Serrages sauterelles pneumatiques",
+      "Unité de dosage et pompage colle bi-composant",
+      "Outillages industriels certifiés UB"
+    ]
+  },
+  "42": {
+    "week": 42,
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-18",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Formation pratique des opérateurs et techniciens de maintenance",
+      "[UB] Formation pratique des opérateurs et techniciens de maintenance",
+      "[UB] Jalon Industriel X0 et conformité ligne",
+      "[UAR] Vérification de conformité de l'installation FEE/REE",
+      "[UAR] Réception formelle de sécurité HSE et levée des barrières",
+      "[UAR] Jalon Industriel X0 et conformité ligne"
+    ],
+    "tasks_en": [
+      "[UB] Line operators and maintenance team technical training",
+      "[UB] Line operators and maintenance team technical training",
+      "[UB] Industrial Milestone X0 and line buyoff",
+      "[UAR] FEE_REE installation compliance checklist verification",
+      "[UAR] HSE Safety Acceptance and site authorization buyoff",
+      "[UAR] Industrial Milestone X0 and line buyoff"
+    ],
+    "tasks_zh": [
+      "[UB] 操作工与维修人员实操培训",
+      "[UB] 操作工与维修人员实操培训",
+      "[UB] 工业化里程碑 X0",
+      "[UAR] FEE/REE安装检查清单验证",
+      "[UAR] 安全验收与现场放行",
+      "[UAR] 工业化里程碑 X0"
+    ],
+    "equipmentList": [
+      "Outillages industriels certifiés UAR",
+      "Centrages mécaniques trempés",
+      "Bras de mesure 3D Faro/Romer",
+      "Gabarits de soudage géométriques FUSA",
+      "Instruments de mesure et calibres",
+      "Serrages sauterelles pneumatiques",
+      "Outillages industriels certifiés UB",
+      "Outillages industriels certifiés FUSA"
+    ]
+  },
+  "43": {
+    "week": 43,
+    "startDate": "2026-10-19",
+    "endDate": "2026-10-25",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Formation pratique des opérateurs et techniciens de maintenance",
+      "[UB] Formation pratique des opérateurs et techniciens de maintenance",
+      "[UB] Jalon Industriel X0 et conformité ligne",
+      "[UAR] Réception formelle de sécurité HSE et levée des barrières",
+      "[UAR] Formation pratique des opérateurs et techniciens de maintenance",
+      "[UAR] Jalon Industriel X0 et conformité ligne"
+    ],
+    "tasks_en": [
+      "[UB] Line operators and maintenance team technical training",
+      "[UB] Line operators and maintenance team technical training",
+      "[UB] Industrial Milestone X0 and line buyoff",
+      "[UAR] HSE Safety Acceptance and site authorization buyoff",
+      "[UAR] Line operators and maintenance team technical training",
+      "[UAR] Industrial Milestone X0 and line buyoff"
+    ],
+    "tasks_zh": [
+      "[UB] 操作工与维修人员实操培训",
+      "[UB] 操作工与维修人员实操培训",
+      "[UB] 工业化里程碑 X0",
+      "[UAR] 安全验收与现场放行",
+      "[UAR] 操作工与维修人员实操培训",
+      "[UAR] 工业化里程碑 X0"
+    ],
+    "equipmentList": [
+      "Outillages industriels certifiés UAR",
+      "Centrages mécaniques trempés",
+      "Bras de mesure 3D Faro/Romer",
+      "Gabarits de soudage géométriques FUSA",
+      "Instruments de mesure et calibres",
+      "Serrages sauterelles pneumatiques",
+      "Outillages industriels certifiés UB",
+      "Outillages industriels certifiés FUSA"
+    ]
+  },
+  "44": {
+    "week": 44,
+    "startDate": "2026-10-26",
+    "endDate": "2026-11-01",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Démarrage de la production pilote / SOP (Start of Production)",
+      "[UAR] Formation pratique des opérateurs et techniciens de maintenance",
+      "[UAR] Formation pratique des opérateurs et techniciens de maintenance",
+      "[UAR] Jalon Industriel X0 et conformité ligne",
+      "[FUSA] Ajustement géométrique des pièces sur les gabarits",
+      "[FUSA] Tests de répétabilité et assemblage à cadence lente"
+    ],
+    "tasks_en": [
+      "[UB] Pilot production start / SOP (Start of Production)",
+      "[UAR] Line operators and maintenance team technical training",
+      "[UAR] Line operators and maintenance team technical training",
+      "[UAR] Industrial Milestone X0 and line buyoff",
+      "[FUSA] Parts fitting and clearance adjustment on fixtures",
+      "[FUSA] Repeatability tests and slow-build assembly trials"
+    ],
+    "tasks_zh": [
+      "[UB] 试生产启动 (SOP)",
+      "[UAR] 操作工与维修人员实操培训",
+      "[UAR] 操作工与维修人员实操培训",
+      "[UAR] 工业化里程碑 X0",
+      "[FUSA] 零件与夹具匹配及间隙调整",
+      "[FUSA] 重复性验证与慢速试装"
+    ],
+    "equipmentList": [
+      "Outillages industriels certifiés UAR",
+      "Centrages mécaniques trempés",
+      "Bras de mesure 3D Faro/Romer",
+      "Gabarits de soudage géométriques FUSA",
+      "Instruments de mesure et calibres",
+      "Serrages sauterelles pneumatiques",
+      "Outillages industriels certifiés UB",
+      "Outillages industriels certifiés FUSA"
+    ]
+  },
+  "45": {
+    "week": 45,
+    "startDate": "2026-11-02",
+    "endDate": "2026-11-08",
+    "zones": [
+      "FUSA",
+      "UAR",
+      "UB"
+    ],
+    "zoneLabel": "Zones FUSA / UAR / UB",
+    "tasks_fr": [
+      "[UB] Démarrage de la production pilote / SOP (Start of Production)",
+      "[UAR] Formation pratique des opérateurs et techniciens de maintenance",
+      "[UAR] Formation pratique des opérateurs et techniciens de maintenance",
+      "[UAR] Jalon Industriel X0 et conformité ligne",
+      "[FUSA] Ajustement géométrique des pièces sur les gabarits",
+      "[FUSA] Tests de répétabilité et assemblage à cadence lente"
+    ],
+    "tasks_en": [
+      "[UB] Pilot production start / SOP (Start of Production)",
+      "[UAR] Line operators and maintenance team technical training",
+      "[UAR] Line operators and maintenance team technical training",
+      "[UAR] Industrial Milestone X0 and line buyoff",
+      "[FUSA] Parts fitting and clearance adjustment on fixtures",
+      "[FUSA] Repeatability tests and slow-build assembly trials"
+    ],
+    "tasks_zh": [
+      "[UB] 试生产启动 (SOP)",
+      "[UAR] 操作工与维修人员实操培训",
+      "[UAR] 操作工与维修人员实操培训",
+      "[UAR] 工业化里程碑 X0",
+      "[FUSA] 零件与夹具匹配及间隙调整",
+      "[FUSA] 重复性验证与慢速试装"
+    ],
+    "equipmentList": [
+      "Outillages industriels certifiés UAR",
+      "Centrages mécaniques trempés",
+      "Bras de mesure 3D Faro/Romer",
+      "Gabarits de soudage géométriques FUSA",
+      "Instruments de mesure et calibres",
+      "Serrages sauterelles pneumatiques",
+      "Outillages industriels certifiés UB",
+      "Outillages industriels certifiés FUSA"
+    ]
+  },
+  "46": {
+    "week": 46,
+    "startDate": "2026-11-09",
+    "endDate": "2026-11-15",
+    "zones": [
+      "FUSA",
+      "UAR"
+    ],
+    "zoneLabel": "Zones FUSA / UAR",
+    "tasks_fr": [
+      "[UAR] Formation pratique des opérateurs et techniciens de maintenance",
+      "[UAR] Formation pratique des opérateurs et techniciens de maintenance",
+      "[UAR] Jalon Industriel X0 et conformité ligne",
+      "[UAR] Démarrage de la production pilote / SOP (Start of Production)",
+      "[FUSA] Essais de sécurité, tests de conformité et certification",
+      "[FUSA] Vérification de conformité de l'installation FEE/REE"
+    ],
+    "tasks_en": [
+      "[UAR] Line operators and maintenance team technical training",
+      "[UAR] Line operators and maintenance team technical training",
+      "[UAR] Industrial Milestone X0 and line buyoff",
+      "[UAR] Pilot production start / SOP (Start of Production)",
+      "[FUSA] Safety certification and compliance validation tests",
+      "[FUSA] FEE_REE installation compliance checklist verification"
+    ],
+    "tasks_zh": [
+      "[UAR] 操作工与维修人员实操培训",
+      "[UAR] 操作工与维修人员实操培训",
+      "[UAR] 工业化里程碑 X0",
+      "[UAR] 试生产启动 (SOP)",
+      "[FUSA] 安全认证及综合测试",
+      "[FUSA] FEE/REE安装检查清单验证"
+    ],
+    "equipmentList": [
+      "Outillages industriels certifiés UAR",
+      "Instruments de mesure et calibres",
+      "Outillages industriels certifiés FUSA"
+    ]
+  },
+  "47": {
+    "week": 47,
+    "startDate": "2026-11-16",
+    "endDate": "2026-11-22",
+    "zones": [
+      "FUSA",
+      "UAR"
+    ],
+    "zoneLabel": "Zones FUSA / UAR",
+    "tasks_fr": [
+      "[UAR] Démarrage de la production pilote / SOP (Start of Production)",
+      "[FUSA] Vérification de conformité de l'installation FEE/REE",
+      "[FUSA] Réception formelle de sécurité HSE et levée des barrières",
+      "[FUSA] Jalon Industriel X0 et conformité ligne"
+    ],
+    "tasks_en": [
+      "[UAR] Pilot production start / SOP (Start of Production)",
+      "[FUSA] FEE_REE installation compliance checklist verification",
+      "[FUSA] HSE Safety Acceptance and site authorization buyoff",
+      "[FUSA] Industrial Milestone X0 and line buyoff"
+    ],
+    "tasks_zh": [
+      "[UAR] 试生产启动 (SOP)",
+      "[FUSA] FEE/REE安装检查清单验证",
+      "[FUSA] 安全验收与现场放行",
+      "[FUSA] 工业化里程碑 X0"
+    ],
+    "equipmentList": [
+      "Outillages industriels certifiés UAR",
+      "Instruments de mesure et calibres",
+      "Outillages industriels certifiés FUSA"
+    ]
+  },
+  "48": {
+    "week": 48,
+    "startDate": "2026-11-23",
+    "endDate": "2026-11-29",
+    "zones": [
+      "FUSA",
+      "UAR"
+    ],
+    "zoneLabel": "Zones FUSA / UAR",
+    "tasks_fr": [
+      "[UAR] Démarrage de la production pilote / SOP (Start of Production)",
+      "[FUSA] Réception formelle de sécurité HSE et levée des barrières",
+      "[FUSA] Jalon Industriel X0 et conformité ligne"
+    ],
+    "tasks_en": [
+      "[UAR] Pilot production start / SOP (Start of Production)",
+      "[FUSA] HSE Safety Acceptance and site authorization buyoff",
+      "[FUSA] Industrial Milestone X0 and line buyoff"
+    ],
+    "tasks_zh": [
+      "[UAR] 试生产启动 (SOP)",
+      "[FUSA] 安全验收与现场放行",
+      "[FUSA] 工业化里程碑 X0"
+    ],
+    "equipmentList": [
+      "Outillages industriels certifiés UAR",
+      "Instruments de mesure et calibres",
+      "Outillages industriels certifiés FUSA"
+    ]
+  },
+  "49": {
+    "week": 49,
+    "startDate": "2026-11-30",
+    "endDate": "2026-12-06",
+    "zones": [
+      "FUSA"
+    ],
+    "zoneLabel": "Zones FUSA",
+    "tasks_fr": [
+      "[FUSA] Réception formelle de sécurité HSE et levée des barrières",
+      "[FUSA] Formation pratique des opérateurs et techniciens de maintenance",
+      "[FUSA] Formation pratique des opérateurs et techniciens de maintenance",
+      "[FUSA] Jalon Industriel X0 et conformité ligne"
+    ],
+    "tasks_en": [
+      "[FUSA] HSE Safety Acceptance and site authorization buyoff",
+      "[FUSA] Line operators and maintenance team technical training",
+      "[FUSA] Line operators and maintenance team technical training",
+      "[FUSA] Industrial Milestone X0 and line buyoff"
+    ],
+    "tasks_zh": [
+      "[FUSA] 安全验收与现场放行",
+      "[FUSA] 操作工与维修人员实操培训",
+      "[FUSA] 操作工与维修人员实操培训",
+      "[FUSA] 工业化里程碑 X0"
+    ],
+    "equipmentList": [
+      "Instruments de mesure et calibres",
+      "Outillages industriels certifiés FUSA"
+    ]
+  },
+  "50": {
+    "week": 50,
+    "startDate": "2026-12-07",
+    "endDate": "2026-12-13",
+    "zones": [
+      "FUSA"
+    ],
+    "zoneLabel": "Zones FUSA",
+    "tasks_fr": [
+      "[FUSA] Formation pratique des opérateurs et techniciens de maintenance",
+      "[FUSA] Formation pratique des opérateurs et techniciens de maintenance",
+      "[FUSA] Jalon Industriel X0 et conformité ligne"
+    ],
+    "tasks_en": [
+      "[FUSA] Line operators and maintenance team technical training",
+      "[FUSA] Line operators and maintenance team technical training",
+      "[FUSA] Industrial Milestone X0 and line buyoff"
+    ],
+    "tasks_zh": [
+      "[FUSA] 操作工与维修人员实操培训",
+      "[FUSA] 操作工与维修人员实操培训",
+      "[FUSA] 工业化里程碑 X0"
+    ],
+    "equipmentList": [
+      "Instruments de mesure et calibres",
+      "Outillages industriels certifiés FUSA"
+    ]
+  },
+  "51": {
+    "week": 51,
+    "startDate": "2026-12-14",
+    "endDate": "2026-12-20",
+    "zones": [
+      "FUSA"
+    ],
+    "zoneLabel": "Zones FUSA",
+    "tasks_fr": [
+      "[FUSA] Formation pratique des opérateurs et techniciens de maintenance",
+      "[FUSA] Formation pratique des opérateurs et techniciens de maintenance",
+      "[FUSA] Jalon Industriel X0 et conformité ligne"
+    ],
+    "tasks_en": [
+      "[FUSA] Line operators and maintenance team technical training",
+      "[FUSA] Line operators and maintenance team technical training",
+      "[FUSA] Industrial Milestone X0 and line buyoff"
+    ],
+    "tasks_zh": [
+      "[FUSA] 操作工与维修人员实操培训",
+      "[FUSA] 操作工与维修人员实操培训",
+      "[FUSA] 工业化里程碑 X0"
+    ],
+    "equipmentList": [
+      "Instruments de mesure et calibres",
+      "Outillages industriels certifiés FUSA"
+    ]
+  },
+  "52": {
+    "week": 52,
+    "startDate": "2026-12-21",
+    "endDate": "2026-12-27",
+    "zones": [
+      "FUSA"
+    ],
+    "zoneLabel": "Zones FUSA",
+    "tasks_fr": [
+      "[FUSA] Démarrage de la production pilote / SOP (Start of Production)"
+    ],
+    "tasks_en": [
+      "[FUSA] Pilot production start / SOP (Start of Production)"
+    ],
+    "tasks_zh": [
+      "[FUSA] 试生产启动 (SOP)"
+    ],
+    "equipmentList": [
+      "Instruments de mesure et calibres",
+      "Outillages industriels certifiés FUSA"
+    ]
+  },
+  "53": {
+    "week": 53,
+    "startDate": "2026-12-28",
+    "endDate": "2027-01-03",
+    "zones": [
+      "FUSA"
+    ],
+    "zoneLabel": "Zones FUSA",
+    "tasks_fr": [
+      "[FUSA] Démarrage de la production pilote / SOP (Start of Production)"
+    ],
+    "tasks_en": [
+      "[FUSA] Pilot production start / SOP (Start of Production)"
+    ],
+    "tasks_zh": [
+      "[FUSA] 试生产启动 (SOP)"
+    ],
+    "equipmentList": [
+      "Instruments de mesure et calibres",
+      "Outillages industriels certifiés FUSA"
+    ]
+  }
+}

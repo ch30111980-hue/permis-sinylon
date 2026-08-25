@@ -46,54 +46,83 @@ const Templates = {
         const descFr = (permit.activity && permit.activity.fr) || permit['work-desc'] || permit.title || '';
         const descEn = (permit.activity && permit.activity.en) || permit['work-desc-en'] || permit.title_en || Translator.localDictionaryTranslate(descFr);
         const workers = permit.workers && permit.workers.length > 0 ? permit.workers : ['Xie (Chef de Projet)', 'Nouri Chahrour (HSE Sinylon)'];
+        const descFr = permit.activite_detaillee_fr || (permit.activity && (permit.activity.fr || permit.activity.en)) || permit['work-desc'] || permit.title || 'Installation Mécanique et Montage';
+        const descEn = permit.activite_detaillee_en || (permit.activity && permit.activity.en) || permit.title_en || 'Mechanical and Assembly Installation';
+        const descZh = permit.activite_detaillee_zh || (permit.activity && permit.activity.zh) || permit.title_zh || '机械装配与设备安装';
+        const equipementsStr = Array.isArray(permit.equipements_a_installer) ? permit.equipements_a_installer.join(', ') : (permit.equipements_a_installer || 'Nacelles ciseaux (x6), Palans DEMAG KBK, Outillages certifiés');
 
-        const workersHtml = workers.map((w, idx) => `
-            <span class="worker-chip">
-                <span>👤</span>
-                <span contenteditable="true" onblur="App.updateWorkerName('${permit.id}', ${idx}, this.innerText)">${w}</span>
-                <span class="worker-chip-del no-print" onclick="App.removeWorker('${permit.id}', ${idx})">✕</span>
-            </span>
-        `).join('');
+        // Générer les vignettes d'intervenants
+        const workers = permit.travailleurs || permit.workers || [];
+        const workersHtml = workers.map(w => {
+            const nom = typeof w === 'object' ? w.nom : w;
+            const role = typeof w === 'object' ? w.role : 'Intervenant';
+            return `<span class="worker-tag"><strong>${nom}</strong> <small>(${role})</small></span>`;
+        }).join(' ');
 
         return `
-            <div class="a4-document" id="a4-doc-${permit.id}">
-                <!-- En-tête officiel exact -->
-                <div class="doc-header-exact">
-                    <div class="doc-logo-box">
-                        <span class="logo-sinylon-badge">SINYLON</span>
-                        <span class="logo-stellantis-badge">STELLANTIS</span>
+            <div class="a4-document" id="doc-${permit.id}-p1">
+                <!-- En-tête Logos & Titre Officiel -->
+                <div class="doc-header">
+                    <div class="doc-logo">
+                        <div class="logo-sinylon">SINYLON</div>
+                        <div class="logo-stellantis">STELLANTIS</div>
                     </div>
-                    <div class="doc-title-exact">
-                        Permis de Travail de Securité Générale<br>
-                        <span style="font-size: 8px; font-weight: normal;">(à afficher sur le site de travail) / General Safety Work Permit</span>
+                    <div class="doc-title-container">
+                        <div class="doc-title-main">PERMIS GENERAL DE TRAVAIL</div>
+                        <div class="doc-title-sub">GENERAL WORK PERMIT / 通用作业许可证</div>
                     </div>
-                    <div class="doc-header-right-group">
-                        <div class="doc-id-box-exact">
-                            <strong>Identifiant du permis / Permit ID</strong><br>
-                            <span style="font-size: 12px; font-weight: 900; color: #1e3a8a;" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'id', this.innerText)">${permit.id}</span>
+                    <div class="doc-permit-number">
+                        <div class="permit-label">PERMIS N°</div>
+                        <div class="permit-value" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'id', this.innerText)">${permit.id}</div>
+                    </div>
+                </div>
+
+                <!-- Validité & Date d'émission (Bande Jaune) -->
+                <div class="yellow-grid-3">
+                    <div>
+                        <div class="yellow-bar-header">Date d'émission:</div>
+                        <div class="doc-box-bordered" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'date-main', this.innerText)">${permit.validFrom || permit['date-main'] || '2026-08-24'}</div>
+                    </div>
+                    <div>
+                        <div class="yellow-bar-header">Période de validité du permis:</div>
+                        <div class="doc-box-bordered" style="color: #1e3a8a; font-weight: 800;">
+                            Du: <span contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'date-main', this.innerText)">${permit.validFrom || permit['date-main'] || '2026-08-24'}</span> 
+                            Au: <span contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'date_fin', this.innerText)">${permit.validUntil || permit['date_fin'] || '2026-08-30'}</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="yellow-bar-header">Horaires autorisés:</div>
+                        <div class="doc-box-bordered" style="font-weight: 800;">
+                            De: <span>${permit.timeStart || permit['time-start'] || '08h00'}</span> 
+                            À: <span>${permit.timeEnd || permit['time-end'] || '17h30'}</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Brève description du travail (Bande Jaune) -->
-                <div class="yellow-bar-header">Bréve description du travail / Brief work description</div>
-                <div class="doc-box-bordered" style="min-height: 36px;">
-                    <div style="font-weight: 500;"><strong>FR :</strong> <span contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'work-desc', this.innerText)">${descFr}</span></div>
-                    <div style="font-size: 8.5px; color: #1e3a8a; font-style: italic; margin-top: 2px;"><strong>EN :</strong> <span contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'work-desc-en', this.innerText)">${descEn}</span></div>
+                <div class="yellow-bar-header">Bréve description du travail & Activités de la zone / Brief work description (UB / UAR / FUSA)</div>
+                <div class="doc-box-bordered" style="min-height: 38px; font-size: 8px;">
+                    <div style="font-weight: 600;"><strong>FR :</strong> <span contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'work-desc', this.innerText)">${descFr}</span></div>
+                    <div style="font-size: 7.5px; color: #1e3a8a; font-style: italic; margin-top: 1px;"><strong>EN :</strong> <span contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'work-desc-en', this.innerText)">${descEn}</span></div>
+                    <div style="font-size: 7.5px; color: #047857; margin-top: 1px;"><strong>ZH :</strong> ${descZh}</div>
                 </div>
 
                 <!-- Endroit de travail & Équipement/Machinerie (Bande Jaune 2 colonnes) -->
                 <div class="yellow-grid-2" style="margin-top: 4px;">
-                    <div class="yellow-bar-header" style="border-right: none;">Endroit de travail:</div>
-                    <div class="yellow-bar-header">Equipment/Machinerie / Zone sur lequel s'effectue le travail</div>
+                    <div class="yellow-bar-header" style="border-right: none;">Endroit de travail & Zone(s) d'implantation :</div>
+                    <div class="yellow-bar-header">Équipements & Installations à poser dans la zone :</div>
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
-                    <div class="doc-box-bordered" style="border-right: none;" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'location', this.innerText)">
-                        ${permit.location || 'Hall Montage / Usine Stellantis'}
+                <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 0;">
+                    <div class="doc-box-bordered" style="border-right: none; font-size: 8px;">
+                        <strong>Bâtiment :</strong> ${permit.location || 'Hall Montage / Usine Stellantis'}<br>
+                        <strong>Secteur :</strong> ${permit.ouvrage || 'Ligne Assemblage K9 CKD0'}<br>
+                        <strong>ZONE(S) :</strong> <span style="color: #1e3a8a; font-weight: 800;">${permit.zone || 'UB / UAR / FUSA'}</span>
                     </div>
-                    <div class="doc-box-bordered" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'ouvrage', this.innerText)">
-                        ${permit.ouvrage || 'Ligne Assemblage'} — Zone : <span contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'zone', this.innerText)">${permit.zone || 'Zone 4'}</span>
+                    <div class="doc-box-bordered" style="font-size: 7.5px; line-height: 1.25;">
+                        <strong>Équipements à installer :</strong><br>
+                        <span style="color: #0f172a; font-weight: 600;">${equipementsStr}</span>
                     </div>
+                </div>       </div>
                 </div>
 
                 <!-- Entreprise Intervenante & Contacts -->
