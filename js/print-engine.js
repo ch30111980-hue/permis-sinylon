@@ -88,10 +88,10 @@ const PrintEngine = {
                     </div>
                 </div>
 
-                <!-- 3. GRAND QR CODE AU CENTRE -->
+                <!-- 3. GRAND QR CODE AU CENTRE (VECTORIEL SVG CRISTALLIN) -->
                 <div style="text-align: center; margin: 10px 0; display: flex; flex-direction: column; align-items: center;">
-                    <div style="display: inline-block; padding: 12px; background: #ffffff; border: 3px solid #000; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                        <canvas id="qr-poster-canvas"></canvas>
+                    <div style="display: inline-flex; align-items: center; justify-content: center; padding: 12px; background: #ffffff; border: 3px solid #000; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 320px; height: 320px;">
+                        ${(window.QRCodeGenerator && window.QRCodeGenerator.toSVG(QREngine.generatePayload(permit), { size: 300, margin: 2 })) || '<canvas id="qr-poster-canvas"></canvas>'}
                     </div>
                     <div style="margin-top: 10px; font-size: 18px; font-weight: 900; color: #15803d; background: #dcfce7; border: 2px solid #15803d; padding: 4px 20px; border-radius: 20px; display: inline-block;">
                         🟢 STATUT : ${permit.status || 'VALIDE & ACTIF'}

@@ -5,8 +5,18 @@
  */
 
 const Templates = {
-    // Helper pour le bandeau QR en bas de page
+    // Helper pour le bandeau QR en bas de page (Rendu Vectoriel SVG direct et infaillible)
     renderFooterQR(permit) {
+        const payload = (window.QREngine && typeof QREngine.generatePayload === 'function') 
+            ? QREngine.generatePayload(permit) 
+            : `https://permis-sinylon.onrender.com/?permitId=${permit.id}`;
+        
+        let svgQr = '';
+        const engine = window.QRCodeGenerator || window.QRCode;
+        if (engine && typeof engine.toSVG === 'function') {
+            svgQr = engine.toSVG(payload, { size: 44, margin: 1 });
+        }
+
         return `
             <div class="doc-footer-qr-verification">
                 <div class="qr-verify-text">
@@ -20,7 +30,9 @@ const Templates = {
                         PERMIS N° ${permit.id} · PROJET ALGERIA K9 CKD0 · STELLANTIS
                     </div>
                 </div>
-                <div class="qr-container qr-code-box-footer" id="doc-qr-${permit.id}" title="Scan QR Code"></div>
+                <div class="qr-container qr-code-box-footer" id="doc-qr-${permit.id}" title="Scan QR Code">
+                    ${svgQr}
+                </div>
             </div>
         `;
     },

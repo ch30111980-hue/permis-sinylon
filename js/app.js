@@ -368,10 +368,10 @@ const App = {
                         <button type="button" class="btn-action btn-modify" onclick="App.fastEditPermit('${p.id}')" title="Quick Edit">
                             <span>✏️</span> MODIFY
                         </button>
-                        <button type="button" class="btn-action btn-qr" onclick="QREngine.openMobileQRModal('${p.id}')" title="QR Code & Poster">
+                        <button type="button" class="btn-action btn-qr" onclick="App.openQR('${p.id}')" title="QR Code & Poster">
                             <span>📱</span> QR
                         </button>
-                        <button type="button" class="btn-action btn-print" onclick="PrintEngine.printPermit('${p.id}')" title="Print A4 Document">
+                        <button type="button" class="btn-action btn-print" onclick="App.printPermit('${p.id}')" title="Print A4 Document">
                             <span>🖨️</span> PRINT
                         </button>
                     </div>
@@ -855,6 +855,30 @@ const App = {
             toast.style.opacity = '0';
             setTimeout(() => container.removeChild(toast), 300);
         }, duration);
+    },
+
+    openQR(permitId) {
+        if (window.QREngine && typeof QREngine.openMobileQRModal === 'function') {
+            QREngine.openMobileQRModal(permitId || this.currentPermitId);
+        }
+    },
+
+    printPermit(permitId) {
+        if (window.PrintEngine && typeof PrintEngine.printPermit === 'function') {
+            PrintEngine.printPermit(permitId || this.currentPermitId);
+        }
+    },
+
+    printQROnly(permitId) {
+        if (window.PrintEngine && typeof PrintEngine.printQROnly === 'function') {
+            PrintEngine.printQROnly(permitId || this.currentPermitId);
+        }
+    },
+
+    downloadQRPNG(permitId) {
+        if (window.QREngine && typeof QREngine.downloadQRPNG === 'function') {
+            QREngine.downloadQRPNG(permitId || this.currentPermitId);
+        }
     },
 
     bindEvents() {

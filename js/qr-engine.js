@@ -127,15 +127,25 @@ const QREngine = {
             elDates.innerText = `${permit.validFrom || permit['date-main'] || '2026-08-24'} → ${permit.validUntil || permit['date_fin'] || '2026-08-30'} (${permit.timeStart || permit['time-start'] || '08h00'} - ${permit.timeEnd || permit['time-end'] || '17h30'})`;
         }
 
-        // Rendu du QR Code dans le canvas du modal
-        const canvas = document.getElementById('mobile-qr-canvas-preview');
-        if (canvas) {
+        // Rendu immédiat du QR Code Vectoriel SVG dans la boîte de prévisualisation
+        const payload = this.generatePayload(permit);
+        const previewBox = document.getElementById('mobile-qr-preview-box');
+        const engine = window.QRCodeGenerator || window.QRCode;
+        
+        if (previewBox && engine && typeof engine.toSVG === 'function') {
+            previewBox.innerHTML = engine.toSVG(payload, { size: 280, margin: 2 });
+        } else {
+            const canvas = document.getElementById('mobile-qr-canvas-preview') || document.createElement('canvas');
+            if (previewBox && !previewBox.contains(canvas)) {
+                previewBox.innerHTML = '';
+                previewBox.appendChild(canvas);
+            }
             this.renderToCanvas(canvas, permit, { size: 280, margin: 2 });
         }
 
         const urlText = document.getElementById('mobile-qr-link-url');
         if (urlText) {
-            urlText.value = this.generatePayload(permit);
+            urlText.value = payload;
         }
 
         modal.dataset.currentPermitId = permit.id;
