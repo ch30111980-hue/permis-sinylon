@@ -26,20 +26,20 @@ const Templates = {
             <div class="a4-document" id="a4-doc-${permit.id}">
                 <!-- En-tête officiel exact -->
                 <div class="doc-header-exact">
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                        <div class="doc-logo-box">
-                            <span class="logo-sinylon-badge">SINYLON</span>
-                            <span class="logo-stellantis-badge">STELLANTIS</span>
-                        </div>
-                        <div class="qr-container qr-code-box" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2px;"></div>
+                    <div class="doc-logo-box">
+                        <span class="logo-sinylon-badge">SINYLON</span>
+                        <span class="logo-stellantis-badge">STELLANTIS</span>
                     </div>
                     <div class="doc-title-exact">
                         Permis de Travail de Securité Générale<br>
                         <span style="font-size: 8px; font-weight: normal;">(à afficher sur le site de travail) / General Safety Work Permit</span>
                     </div>
-                    <div class="doc-id-box-exact">
-                        <strong>Identifiant du permis / Permit ID</strong><br>
-                        <span style="font-size: 11px; font-weight: bold; color: #1e3a8a;" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'id', this.innerText)">${permit.id}</span>
+                    <div class="doc-header-right-group">
+                        <div class="doc-id-box-exact">
+                            <strong>Identifiant du permis / Permit ID</strong><br>
+                            <span style="font-size: 11px; font-weight: bold; color: #1e3a8a;" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'id', this.innerText)">${permit.id}</span>
+                        </div>
+                        <div class="qr-container qr-code-box" id="doc-qr-p1" title="Scan QR Code Mobile"></div>
                     </div>
                 </div>
 
@@ -334,20 +334,20 @@ const Templates = {
         return `
             <div class="a4-document" id="a4-doc-p2">
                 <div class="doc-header-exact">
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                        <div class="doc-logo-box">
-                            <span class="logo-sinylon-badge">SINYLON</span>
-                            <span class="logo-stellantis-badge">STELLANTIS</span>
-                        </div>
-                        <div class="qr-container qr-code-box" id="doc-qr-p2" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2px;"></div>
+                    <div class="doc-logo-box">
+                        <span class="logo-sinylon-badge">SINYLON</span>
+                        <span class="logo-stellantis-badge">STELLANTIS</span>
                     </div>
                     <div class="doc-title-exact">
                         Permis de Travail de Securité Générale<br>
                         <span style="font-size: 8px; font-weight: normal;">(Tableau des Revalidations Quotidiennes / Work Permit Daily Revalidations)</span>
                     </div>
-                    <div class="doc-id-box-exact">
-                        <strong>Identifiant du permis</strong><br>
-                        <span style="font-size: 11px; font-weight: bold; color: #1e3a8a;">${permit.id}</span>
+                    <div class="doc-header-right-group">
+                        <div class="doc-id-box-exact">
+                            <strong>Identifiant du permis</strong><br>
+                            <span style="font-size: 11px; font-weight: bold; color: #1e3a8a;">${permit.id}</span>
+                        </div>
+                        <div class="qr-container qr-code-box" id="doc-qr-p2" title="Scan QR Code Mobile"></div>
                     </div>
                 </div>
 
@@ -437,15 +437,17 @@ const Templates = {
                     <div style="display: flex; align-items: center; gap: 8px;">
                         <span class="annexe-letter-badge annexe-letter-a">A</span>
                         <span style="font-size: 16px; font-weight: 900; color: #0284c7;">Travail en hauteur</span>
-                        <div class="qr-container qr-code-box" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-left: 6px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2px;"></div>
                     </div>
                     <div class="doc-logo-box">
                         <span class="logo-sinylon-badge">SINYLON</span>
                         <span class="logo-stellantis-badge">STELLANTIS</span>
                     </div>
-                    <div class="doc-id-box-exact">
-                        <strong>Identifiant du permis</strong><br>
-                        <span style="font-size: 11px; font-weight: bold; color: #0284c7;">${permit.id}</span>
+                    <div class="doc-header-right-group">
+                        <div class="doc-id-box-exact">
+                            <strong>Identifiant du permis</strong><br>
+                            <span style="font-size: 11px; font-weight: bold; color: #0284c7;">${permit.id}</span>
+                        </div>
+                        <div class="qr-container qr-code-box" title="Scan QR Code Mobile"></div>
                     </div>
                 </div>
 
@@ -564,15 +566,17 @@ const Templates = {
                     <div style="display: flex; align-items: center; gap: 8px;">
                         <span class="annexe-letter-badge annexe-letter-b">B</span>
                         <span style="font-size: 16px; font-weight: 900; color: #dc2626;">Travail chaud</span>
-                        <div class="qr-container qr-code-box" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-left: 6px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2px;"></div>
                     </div>
                     <div class="doc-logo-box">
                         <span class="logo-sinylon-badge">SINYLON</span>
                         <span class="logo-stellantis-badge">STELLANTIS</span>
                     </div>
-                    <div class="doc-id-box-exact">
-                        <strong>Permit Identifier</strong><br>
-                        <span style="font-size: 11px; font-weight: bold; color: #dc2626;">${permit.id}</span>
+                    <div class="doc-header-right-group">
+                        <div class="doc-id-box-exact">
+                            <strong>Permit Identifier</strong><br>
+                            <span style="font-size: 11px; font-weight: bold; color: #dc2626;">${permit.id}</span>
+                        </div>
+                        <div class="qr-container qr-code-box" title="Scan QR Code Mobile"></div>
                     </div>
                 </div>
 
@@ -664,15 +668,17 @@ const Templates = {
                     <div style="display: flex; align-items: center; gap: 8px;">
                         <span class="annexe-letter-badge annexe-letter-c">C</span>
                         <span style="font-size: 16px; font-weight: 900; color: #d97706;">Travail Électrique & Équipements</span>
-                        <div class="qr-container qr-code-box" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-left: 6px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2px;"></div>
                     </div>
                     <div class="doc-logo-box">
                         <span class="logo-sinylon-badge">SINYLON</span>
                         <span class="logo-stellantis-badge">STELLANTIS</span>
                     </div>
-                    <div class="doc-id-box-exact">
-                        <strong>Permit Identifier</strong><br>
-                        <span style="font-size: 11px; font-weight: bold; color: #d97706;">${permit.id}</span>
+                    <div class="doc-header-right-group">
+                        <div class="doc-id-box-exact">
+                            <strong>Permit Identifier</strong><br>
+                            <span style="font-size: 11px; font-weight: bold; color: #d97706;">${permit.id}</span>
+                        </div>
+                        <div class="qr-container qr-code-box" title="Scan QR Code Mobile"></div>
                     </div>
                 </div>
 
