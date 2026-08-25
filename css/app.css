@@ -1099,3 +1099,393 @@ body {
     display: block;
 }
 
+
+/* ==========================================================================
+   SINYLON V2 — AUTO WEEK BANNER & PERMIT CARDS STYLES
+   ========================================================================== */
+
+/* Sélecteur de Langue Trilingue */
+.lang-switch-group {
+    display: flex;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 3px;
+    border-radius: var(--radius-sm);
+    gap: 2px;
+    border: 1px solid var(--border-color);
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-weight: 700;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.lang-btn.active {
+    background: var(--color-primary);
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4);
+}
+
+/* Bandeau Moteur de Semaine Automatique */
+.week-navigator-banner {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border: 1px solid #334155;
+    border-radius: var(--radius-lg);
+    padding: 18px 24px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-md);
+}
+
+.week-nav-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.week-badge-pill {
+    background: rgba(37, 99, 235, 0.15);
+    border: 1px solid #3b82f6;
+    color: #60a5fa;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #10b981;
+    animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.week-main-info .week-title-heading {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    margin-bottom: 2px;
+}
+
+.week-main-info .week-meta-subtitle {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.week-nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-week-nav {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 8px 14px;
+    border-radius: var(--radius-md);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-week-nav:hover {
+    background: var(--bg-surface-hover);
+    border-color: #3b82f6;
+    color: #60a5fa;
+}
+
+.btn-week-today {
+    background: #1e3a8a;
+    border: 1px solid #3b82f6;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-week-today:hover {
+    background: #2563eb;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+}
+
+/* En-tête de section */
+.section-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.section-title-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-icon {
+    font-size: 18px;
+}
+
+.section-title-text {
+    font-size: 15px;
+    font-weight: 800;
+    color: #f8fafc;
+    letter-spacing: -0.3px;
+}
+
+/* Grille des Cartes de Permis V2 */
+.permits-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+    gap: 16px;
+}
+
+.permit-card-v2 {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.25s ease;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.permit-card-v2:hover {
+    transform: translateY(-2px);
+    border-color: #3b82f6;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.permit-card-v2.weekend-card {
+    border-color: rgba(139, 92, 246, 0.4);
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.06) 0%, var(--bg-card) 100%);
+}
+
+.permit-card-v2.weekend-card:hover {
+    border-color: #8b5cf6;
+}
+
+.permit-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.permit-id-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.permit-id-code {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 900;
+    color: #60a5fa;
+    letter-spacing: 0.5px;
+}
+
+.permit-type-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* Pastilles Statut */
+.status-pill {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.status-pill.valid {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid #10b981;
+    color: #34d399;
+}
+
+.status-pill.weekend {
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid #8b5cf6;
+    color: #c084fc;
+}
+
+.status-pill.closed {
+    background: rgba(100, 116, 139, 0.2);
+    border: 1px solid #64748b;
+    color: #94a3b8;
+}
+
+/* Corps de Carte */
+.permit-activity-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    min-height: 40px;
+}
+
+.permit-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 14px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 12px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.info-label {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.info-value {
+    font-size: 12px;
+    color: var(--text-primary);
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Risques Chips */
+.permit-risks-bar {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.risk-tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.risk-tag.height { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+.risk-tag.hot { background: rgba(248, 113, 113, 0.15); color: #f87171; border: 1px solid rgba(248, 113, 113, 0.3); }
+.risk-tag.electric { background: rgba(250, 204, 21, 0.15); color: #facc15; border: 1px solid rgba(250, 204, 21, 0.3); }
+.risk-tag.confined { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+.risk-tag.lifting { background: rgba(249, 115, 22, 0.15); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.3); }
+.risk-tag.general { background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3); }
+
+/* Barre des 4 Actions de Carte */
+.permit-card-actions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 12px;
+}
+
+.btn-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 7px 4px;
+    border-radius: var(--radius-sm);
+    font-size: 11px;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+.btn-action.btn-open {
+    background: #1e3a8a;
+    color: #ffffff;
+}
+
+.btn-action.btn-open:hover {
+    background: #2563eb;
+}
+
+.btn-action.btn-modify {
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid #f59e0b;
+    color: #fbbf24;
+}
+
+.btn-action.btn-modify:hover {
+    background: #f59e0b;
+    color: #000000;
+}
+
+.btn-action.btn-qr {
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid #8b5cf6;
+    color: #c084fc;
+}
+
+.btn-action.btn-qr:hover {
+    background: #8b5cf6;
+    color: #ffffff;
+}
+
+.btn-action.btn-print {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid #10b981;
+    color: #34d399;
+}
+
+.btn-action.btn-print:hover {
+    background: #10b981;
+    color: #000000;
+}
+
