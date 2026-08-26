@@ -214,7 +214,7 @@ const App = {
                         </div>
                         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 11px; text-align: center;">
                             <div style="background: rgba(16,185,129,0.1); border: 1px solid #10b981; padding: 8px; border-radius: 6px;">
-                                <div style="font-weight: 700; color: #10b981;">STELLANTIS MOEX</div>
+                                <div style="font-weight: 700; color: #10b981;">STELLANTIS</div>
                                 <div style="font-size: 10px; color: #a7f3d0;">✓ VALIDÉ</div>
                             </div>
                             <div style="background: rgba(16,185,129,0.1); border: 1px solid #10b981; padding: 8px; border-radius: 6px;">

@@ -364,7 +364,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-06-15"
             },
@@ -498,7 +498,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-06-15"
             },
@@ -616,7 +616,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-06-15"
             },
@@ -726,7 +726,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-06-19"
             },
@@ -844,7 +844,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-06-15"
             },
@@ -978,7 +978,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-06-22"
             },
@@ -1112,7 +1112,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-06-22"
             },
@@ -1230,7 +1230,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-06-22"
             },
@@ -1340,7 +1340,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-06-26"
             },
@@ -1458,7 +1458,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-06-22"
             },
@@ -1592,7 +1592,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-06-29"
             },
@@ -1726,7 +1726,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-06-29"
             },
@@ -1844,7 +1844,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-06-29"
             },
@@ -1954,7 +1954,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-03"
             },
@@ -2072,7 +2072,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-06-29"
             },
@@ -2206,7 +2206,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-06"
             },
@@ -2340,7 +2340,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-06"
             },
@@ -2458,7 +2458,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-06"
             },
@@ -2568,7 +2568,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-10"
             },
@@ -2686,7 +2686,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-06"
             },
@@ -2820,7 +2820,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-13"
             },
@@ -2957,7 +2957,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-13"
             },
@@ -3075,7 +3075,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-13"
             },
@@ -3182,7 +3182,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-17"
             },
@@ -3301,7 +3301,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-13"
             },
@@ -3438,7 +3438,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-20"
             },
@@ -3576,7 +3576,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-20"
             },
@@ -3694,7 +3694,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-20"
             },
@@ -3804,7 +3804,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-24"
             },
@@ -3923,7 +3923,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-20"
             },
@@ -4061,7 +4061,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-27"
             },
@@ -4199,7 +4199,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-27"
             },
@@ -4314,7 +4314,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-27"
             },
@@ -4424,7 +4424,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-31"
             },
@@ -4543,7 +4543,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-07-27"
             },
@@ -4681,7 +4681,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-03"
             },
@@ -4815,7 +4815,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-03"
             },
@@ -4930,7 +4930,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-03"
             },
@@ -5040,7 +5040,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-07"
             },
@@ -5158,7 +5158,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-03"
             },
@@ -5292,7 +5292,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-10"
             },
@@ -5430,7 +5430,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-10"
             },
@@ -5545,7 +5545,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-10"
             },
@@ -5655,7 +5655,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-14"
             },
@@ -5774,7 +5774,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-10"
             },
@@ -5912,7 +5912,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-17"
             },
@@ -6050,7 +6050,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-17"
             },
@@ -6166,7 +6166,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-17"
             },
@@ -6273,7 +6273,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-21"
             },
@@ -6392,7 +6392,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-17"
             },
@@ -6530,7 +6530,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-24"
             },
@@ -6668,7 +6668,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-24"
             },
@@ -6783,7 +6783,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-24"
             },
@@ -6891,7 +6891,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-28"
             },
@@ -7010,7 +7010,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-24"
             },
@@ -7148,7 +7148,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-31"
             },
@@ -7286,7 +7286,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-31"
             },
@@ -7401,7 +7401,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-31"
             },
@@ -7509,7 +7509,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-04"
             },
@@ -7628,7 +7628,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-08-31"
             },
@@ -7766,7 +7766,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-07"
             },
@@ -7904,7 +7904,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-07"
             },
@@ -8019,7 +8019,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-07"
             },
@@ -8126,7 +8126,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-11"
             },
@@ -8245,7 +8245,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-07"
             },
@@ -8383,7 +8383,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-14"
             },
@@ -8521,7 +8521,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-14"
             },
@@ -8637,7 +8637,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-14"
             },
@@ -8744,7 +8744,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-18"
             },
@@ -8863,7 +8863,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-14"
             },
@@ -9001,7 +9001,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-21"
             },
@@ -9139,7 +9139,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-21"
             },
@@ -9256,7 +9256,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-21"
             },
@@ -9363,7 +9363,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-25"
             },
@@ -9482,7 +9482,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-21"
             },
@@ -9620,7 +9620,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-28"
             },
@@ -9758,7 +9758,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-28"
             },
@@ -9874,7 +9874,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-28"
             },
@@ -9981,7 +9981,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-02"
             },
@@ -10100,7 +10100,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-09-28"
             },
@@ -10238,7 +10238,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-05"
             },
@@ -10376,7 +10376,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-05"
             },
@@ -10491,7 +10491,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-05"
             },
@@ -10601,7 +10601,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-09"
             },
@@ -10720,7 +10720,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-05"
             },
@@ -10858,7 +10858,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-12"
             },
@@ -10996,7 +10996,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-12"
             },
@@ -11111,7 +11111,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-12"
             },
@@ -11221,7 +11221,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-16"
             },
@@ -11340,7 +11340,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-12"
             },
@@ -11478,7 +11478,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-19"
             },
@@ -11616,7 +11616,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-19"
             },
@@ -11731,7 +11731,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-19"
             },
@@ -11841,7 +11841,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-23"
             },
@@ -11960,7 +11960,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-19"
             },
@@ -12098,7 +12098,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-26"
             },
@@ -12236,7 +12236,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-26"
             },
@@ -12351,7 +12351,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-26"
             },
@@ -12461,7 +12461,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-30"
             },
@@ -12580,7 +12580,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-10-26"
             },
@@ -12718,7 +12718,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-02"
             },
@@ -12856,7 +12856,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-02"
             },
@@ -12971,7 +12971,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-02"
             },
@@ -13081,7 +13081,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-06"
             },
@@ -13200,7 +13200,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-02"
             },
@@ -13338,7 +13338,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-09"
             },
@@ -13471,7 +13471,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-09"
             },
@@ -13588,7 +13588,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-09"
             },
@@ -13697,7 +13697,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-13"
             },
@@ -13814,7 +13814,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-09"
             },
@@ -13947,7 +13947,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-16"
             },
@@ -14080,7 +14080,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-16"
             },
@@ -14197,7 +14197,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-16"
             },
@@ -14306,7 +14306,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-20"
             },
@@ -14423,7 +14423,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-16"
             },
@@ -14556,7 +14556,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-23"
             },
@@ -14689,7 +14689,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-23"
             },
@@ -14806,7 +14806,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-23"
             },
@@ -14915,7 +14915,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-27"
             },
@@ -15032,7 +15032,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-23"
             },
@@ -15165,7 +15165,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-30"
             },
@@ -15297,7 +15297,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-30"
             },
@@ -15413,7 +15413,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-30"
             },
@@ -15521,7 +15521,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-04"
             },
@@ -15637,7 +15637,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-11-30"
             },
@@ -15769,7 +15769,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-07"
             },
@@ -15901,7 +15901,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-07"
             },
@@ -16017,7 +16017,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-07"
             },
@@ -16125,7 +16125,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-11"
             },
@@ -16241,7 +16241,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-07"
             },
@@ -16373,7 +16373,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-14"
             },
@@ -16505,7 +16505,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-14"
             },
@@ -16621,7 +16621,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-14"
             },
@@ -16729,7 +16729,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-18"
             },
@@ -16845,7 +16845,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-14"
             },
@@ -16977,7 +16977,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-21"
             },
@@ -17109,7 +17109,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-21"
             },
@@ -17225,7 +17225,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-21"
             },
@@ -17333,7 +17333,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-25"
             },
@@ -17449,7 +17449,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-21"
             },
@@ -17581,7 +17581,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-28"
             },
@@ -17713,7 +17713,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-28"
             },
@@ -17829,7 +17829,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-28"
             },
@@ -17937,7 +17937,7 @@ const Store = {
         ],
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2027-01-01"
             },
@@ -18053,7 +18053,7 @@ const Store = {
         },
         "visas": {
             "moex": {
-                "name": "STELLANTIS MOEX",
+                "name": "STELLANTIS",
                 "status": "VALIDATED",
                 "date": "2026-12-28"
             },
