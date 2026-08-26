@@ -41,26 +41,63 @@ const Store = {
         }
     },
 
-    // Gestion du Code d'Autorisation
-    getAuthCode() {
+    // Gestion du Code d'Autorisation (hashé SHA-256 — jamais en clair dans localStorage)
+
+    // Migration : hash le code existant si encore en clair, crée le hash par défaut sinon
+    async initAuth() {
         const settings = this.getSettings();
-        return settings.authCode || this.DEFAULT_AUTH_CODE;
+        if (settings.authCode && !settings.authHash) {
+            // Ancien format en clair → migrer vers hash
+            settings.authHash = await this.hashCode(settings.authCode.trim());
+            delete settings.authCode;
+            this.saveSettings(settings);
+        } else if (!settings.authHash) {
+            // Premier démarrage : hash du code par défaut
+            settings.authHash = await this.hashCode(this.DEFAULT_AUTH_CODE);
+            delete settings.authCode;
+            this.saveSettings(settings);
+        } else if (settings.authCode) {
+            // Nettoyage : supprimer le code en clair s'il traîne
+            delete settings.authCode;
+            this.saveSettings(settings);
+        }
     },
 
-    setAuthCode(newCode) {
+    // Hash SHA-256 via Web Crypto API (async, natif, sécurisé)
+    async hashCode(code) {
+        if (!code) return '';
+        try {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(code.trim());
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            return Array.from(new Uint8Array(hashBuffer))
+                .map(b => b.toString(16).padStart(2, '0'))
+                .join('');
+        } catch (e) {
+            // Fallback minimal si Web Crypto indisponible (rare)
+            console.warn('Web Crypto indisponible, fallback btoa');
+            return btoa(code.trim()).split('').reverse().join('');
+        }
+    },
+
+    async verifyAuthCode(inputCode) {
+        if (!inputCode) return false;
+        const settings = this.getSettings();
+        const storedHash = settings.authHash;
+        if (!storedHash) return false;
+        const inputHash = await this.hashCode(inputCode.trim());
+        return inputHash === storedHash;
+    },
+
+    async setAuthCode(newCode) {
         if (!newCode || newCode.trim().length < 4) {
-            return { success: false, error: "Le code doit comporter au moins 4 caractères." };
+            return { success: false, error: 'Le code doit comporter au moins 4 caractères.' };
         }
         const settings = this.getSettings();
-        settings.authCode = newCode.trim();
+        settings.authHash = await this.hashCode(newCode.trim());
+        delete settings.authCode; // S'assurer qu'aucun code en clair ne reste
         this.saveSettings(settings);
         return { success: true };
-    },
-
-    verifyAuthCode(inputCode) {
-        if (!inputCode) return false;
-        const currentCode = this.getAuthCode();
-        return inputCode.trim() === currentCode.trim();
     },
 
     // =========================================================================

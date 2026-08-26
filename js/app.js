@@ -9,8 +9,16 @@ const App = {
     currentPermitId: 'K9-W35-01',
     previewPage: 'p1',
 
+    // Sécurité : mode lecture seule pour visiteurs QR
+    isQRSession: false,
+    _supAttempts: 0,
+    _supLockedUntil: 0,
+
     // Initialisation
     async init() {
+        // 0. Migration sécurité : passer le code auth en hash (SHA-256)
+        await Store.initAuth();
+
         // 1. Détection de la semaine courante
         this.currentWeek = Store.getCurrentWeekNumber();
 
@@ -37,6 +45,7 @@ const App = {
 
         if (queryPermitId) {
             this.currentPermitId = queryPermitId;
+            this.isQRSession = true; // 🔒 Mode lecture seule — bloque l'accès au dashboard
             await this.showPublicClientView(queryPermitId);
             return;
         }
@@ -65,6 +74,11 @@ const App = {
     },
 
     exitToDashboard() {
+        // 🔒 SÉCURITÉ : bloquer l'accès dashboard pour les visiteurs QR non authentifiés
+        if (this.isQRSession) {
+            this.showToast('⛔ Accès réservé aux superviseurs SINYLON. Utilisez le bouton 🔒.', 'error', 4000);
+            return;
+        }
         const clientView = document.getElementById('client-public-view');
         if (clientView) clientView.style.display = 'none';
         const layout = document.querySelector('.app-layout');
@@ -81,18 +95,26 @@ const App = {
     // =========================================================================
 
     async showPublicClientView(permitId) {
-        // 1. Récupération synchrone immédiate (Affichage instantané 0ms)
-        let permit = Store.getPermit(permitId) || Store.getPermit('K9-W35-01');
-        if (!permit) {
-            const all = Store.getAllPermits();
-            permit = Object.values(all)[0];
-        }
-
+        // 1. Récupération synchrone — FIXE 5 : erreur si permitId inconnu (pas de fallback silencieux)
         const layout = document.querySelector('.app-layout');
         if (layout) layout.style.display = 'none';
-
         const clientView = document.getElementById('client-public-view');
         if (!clientView) return;
+
+        let permit = permitId ? Store.getPermit(permitId) : null;
+        if (!permit) {
+            // Afficher une page d'erreur propre — ne jamais ouvrir un permis aléatoire
+            clientView.style.display = 'block';
+            document.body.style.overflow = 'auto';
+            clientView.innerHTML = `
+                <div style="max-width:500px;margin:60px auto;padding:32px 24px;text-align:center;color:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+                    <div style="font-size:64px;margin-bottom:16px;">🔍</div>
+                    <div style="font-size:20px;font-weight:800;color:#ef4444;margin-bottom:8px;">Permis introuvable</div>
+                    <div style="font-size:13px;color:#94a3b8;margin-bottom:24px;">Le permis <code style="background:#1e293b;padding:2px 6px;border-radius:4px;color:#60a5fa;">${permitId || '—'}</code> n'existe pas dans la base K9.</div>
+                    <div style="background:#1e293b;border:1px solid #334155;border-radius:8px;padding:16px;font-size:12px;color:#64748b;">Ce QR code est peut-être expiré ou non encore enregistré. Contactez le superviseur SINYLON HSE : <strong style="color:#38bdf8;">0563765157</strong></div>
+                </div>`;
+            return;
+        }
 
         clientView.style.display = 'block';
         document.body.style.overflow = 'auto';
@@ -137,7 +159,6 @@ const App = {
                             <span style="border: 2px solid #ffffff; color: #ffffff; padding: 3px 10px; font-weight: 900; font-size: 14px; border-radius: 4px;">STELLANTIS</span>
                         </div>
                         <div style="display: flex; gap: 6px; align-items: center;">
-                            <button onclick="App.exitToDashboard()" class="btn btn-secondary btn-sm" style="font-size: 11px; padding: 4px 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff;">📋 Current Week</button>
                             <div class="lang-switch-group">
                                 <button class="lang-btn ${currentLang === 'fr' ? 'active' : ''}" onclick="Translator.setLang('fr'); App.showPublicClientView('${p.id}');">FR</button>
                                 <button class="lang-btn ${currentLang === 'en' ? 'active' : ''}" onclick="Translator.setLang('en'); App.showPublicClientView('${p.id}');">EN</button>
@@ -243,7 +264,7 @@ const App = {
                         <button onclick="App.printPermit('${p.id}')" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center; font-size: 15px; padding: 14px;">
                             🖨️ IMPRIMER / TÉLÉCHARGER DOSSIER COMPLET (5 PAGES A4)
                         </button>
-                        <button onclick="App.unlockSupervisorMode()" class="btn btn-outline btn-sm" style="color: #64748b; border-color: #334155; font-size: 12px; padding: 8px;">
+                        <button onclick="App.openSupervisorModal()" class="btn btn-outline btn-sm" style="color: #64748b; border-color: #334155; font-size: 12px; padding: 8px;">
                             🔒 Accès Superviseur (Équipe SINYLON)
                         </button>
                     </div>
@@ -262,19 +283,101 @@ const App = {
         });
     },
 
-    unlockSupervisorMode() {
-        const code = prompt('Please enter the SINYLON Supervisor Code :');
-        if (code && Store.verifyAuthCode(code)) {
-            const clientView = document.getElementById('client-public-view');
-            if (clientView) clientView.style.display = 'none';
-            const layout = document.querySelector('.app-layout');
-            if (layout) layout.style.display = 'grid';
-            window.location.hash = '';
-            this.showToast('🔓 Supervisor Access Granted !', 'success');
-            this.renderDashboard();
-        } else if (code) {
-            this.showToast('⛔ Incorrect code. Access reserved to SINYLON supervisors.', 'error');
+    // =========================================================================
+    // MODAL SUPERVISEUR — Accès sécurisé avec 3 tentatives max + verrouillage
+    // =========================================================================
+
+    openSupervisorModal() {
+        const modal = document.getElementById('modal-supervisor');
+        if (!modal) return;
+        const input = document.getElementById('supervisor-code-input');
+        const attemptWarn = document.getElementById('supervisor-attempt-warning');
+        const lockWarn = document.getElementById('supervisor-lock-warning');
+        if (input) input.value = '';
+        if (attemptWarn) attemptWarn.style.display = 'none';
+        if (this._supLockedUntil > Date.now()) {
+            if (lockWarn) lockWarn.style.display = 'block';
+            this._startLockTimer();
+        } else {
+            if (lockWarn) lockWarn.style.display = 'none';
+            this._supAttempts = 0;
         }
+        modal.classList.add('active');
+        setTimeout(() => { if (input) input.focus(); }, 150);
+    },
+
+    closeSupervisorModal() {
+        const modal = document.getElementById('modal-supervisor');
+        if (modal) modal.classList.remove('active');
+    },
+
+    async submitSupervisorCode() {
+        const MAX_ATTEMPTS = 3;
+        const LOCK_MS = 5 * 60 * 1000; // 5 minutes
+
+        if (this._supLockedUntil > Date.now()) {
+            this.showToast('⛔ Accès bloqué — Réessayez dans quelques minutes.', 'error');
+            return;
+        }
+
+        const input = document.getElementById('supervisor-code-input');
+        const code = input ? input.value.trim() : '';
+        if (!code) { this.showToast('⚠️ Entrez le code superviseur', 'warning'); return; }
+
+        const btn = document.getElementById('supervisor-submit-btn');
+        if (btn) { btn.disabled = true; btn.textContent = '⏳...'; }
+
+        const ok = await Store.verifyAuthCode(code);
+
+        if (btn) { btn.disabled = false; btn.textContent = '🔓 Accéder'; }
+
+        if (ok) {
+            this._supAttempts = 0;
+            this._supLockedUntil = 0;
+            this.isQRSession = false; // 🔓 Lever le verrou QR
+            this.closeSupervisorModal();
+            this.showToast('🔓 Accès Superviseur accordé !', 'success');
+            this.exitToDashboard();
+        } else {
+            this._supAttempts++;
+            const remaining = MAX_ATTEMPTS - this._supAttempts;
+            if (remaining <= 0) {
+                this._supLockedUntil = Date.now() + LOCK_MS;
+                this._supAttempts = 0;
+                const lockWarn = document.getElementById('supervisor-lock-warning');
+                const attemptWarn = document.getElementById('supervisor-attempt-warning');
+                if (lockWarn) lockWarn.style.display = 'block';
+                if (attemptWarn) attemptWarn.style.display = 'none';
+                this._startLockTimer();
+                this.showToast('🔴 Accès bloqué 5 min — 3 tentatives échouées', 'error', 6000);
+            } else {
+                const attemptWarn = document.getElementById('supervisor-attempt-warning');
+                const attLeft = document.getElementById('supervisor-attempts-left');
+                if (attemptWarn) attemptWarn.style.display = 'block';
+                if (attLeft) attLeft.textContent = remaining;
+                this.showToast(`⛔ Code incorrect — ${remaining} tentative(s) restante(s)`, 'error');
+            }
+            if (input) { input.value = ''; input.focus(); }
+        }
+    },
+
+    _startLockTimer() {
+        const timerEl = document.getElementById('supervisor-lock-timer');
+        if (!timerEl) return;
+        const tick = () => {
+            const left = Math.max(0, this._supLockedUntil - Date.now());
+            if (left <= 0) {
+                timerEl.textContent = '0:00';
+                const lockWarn = document.getElementById('supervisor-lock-warning');
+                if (lockWarn) lockWarn.style.display = 'none';
+                return;
+            }
+            const m = Math.floor(left / 60000);
+            const s = Math.floor((left % 60000) / 1000);
+            timerEl.textContent = `${m}:${s.toString().padStart(2, '0')}`;
+            setTimeout(tick, 1000);
+        };
+        tick();
     },
 
     // =========================================================================
