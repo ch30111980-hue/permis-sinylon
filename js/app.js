@@ -34,9 +34,8 @@ const App = {
         // 5. Détection de scan QR direct dans l'URL (?permitId=... ou #K9-W35-01)
         const urlParams = new URLSearchParams(window.location.search);
         const queryPermitId = urlParams.get('permitId') || (window.location.hash ? window.location.hash.substring(1).trim() : null);
-        const isMobileDevice = typeof window !== 'undefined' && (window.innerWidth <= 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
 
-        if (queryPermitId && isMobileDevice) {
+        if (queryPermitId) {
             this.currentPermitId = queryPermitId;
             await this.showPublicClientView(queryPermitId);
             return;
