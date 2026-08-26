@@ -163,4 +163,33 @@ server.listen(PORT, '0.0.0.0', () => {
     console.log(`🔄 API de Synchronisation Temps Réel : /api/permits`);
     console.log(`📱 Prêt pour Render.com & Scanners QR Mobiles`);
     console.log(`====================================================`);
+
+    // =========================================================================
+    // SELF-PING ANTI-SLEEP — Garde le serveur éveillé sur Render Free Tier
+    // Render endort les services après 15 min d'inactivité → 502 au scan QR
+    // Ce ping interne toutes les 14 min empêche le sommeil définitivement
+    // =========================================================================
+    const PING_INTERVAL_MS = 14 * 60 * 1000; // 14 minutes
+    const selfPing = () => {
+        const host = process.env.RENDER_EXTERNAL_URL || `http://localhost:${PORT}`;
+        const pingUrl = `${host}/api/permits`;
+        try {
+            const mod = pingUrl.startsWith('https') ? require('https') : require('http');
+            const req = mod.get(pingUrl, (res) => {
+                console.log(`🔔 Self-ping OK (${new Date().toISOString()}) → Status ${res.statusCode}`);
+            });
+            req.on('error', (e) => {
+                console.warn(`⚠️ Self-ping failed: ${e.message}`);
+            });
+            req.setTimeout(10000, () => { req.destroy(); });
+        } catch (e) {
+            console.warn(`⚠️ Self-ping error: ${e.message}`);
+        }
+    };
+
+    // Premier ping 30 secondes après le démarrage, puis toutes les 14 minutes
+    setTimeout(() => {
+        selfPing();
+        setInterval(selfPing, PING_INTERVAL_MS);
+    }, 30000);
 });
