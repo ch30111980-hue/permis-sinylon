@@ -63,7 +63,9 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    const urlObj = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+    // Sanitize req.url : évite le crash ERR_INVALID_URL si l'URL commence par '//' (double slash)
+    const rawUrl = (req.url || '/').replace(/^\/\/+/, '/');
+    const urlObj = new URL(rawUrl, `http://${req.headers.host || 'localhost'}`);
     const pathname = urlObj.pathname;
 
     // =========================================================================

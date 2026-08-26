@@ -14,7 +14,8 @@ const QREngine = {
             return savedUrl.trim().replace(/\/+$/, '');
         }
         if (window.location && window.location.protocol.startsWith('http') && !window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1')) {
-            return window.location.origin + window.location.pathname.replace(/\/index\.html$/, '');
+            // Supprimer le slash final pour éviter le double // dans les URLs QR
+            return (window.location.origin + window.location.pathname.replace(/\/index\.html$/, '')).replace(/\/+$/, '');
         }
         return 'https://permis-sinylon.onrender.com';
     },
