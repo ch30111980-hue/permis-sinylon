@@ -420,7 +420,7 @@ const Templates = {
         `;
     },
 
-    // 3. ANNEXE A (BLEUE) — TRAVAIL EN HAUTEUR (conforme formulaire CSPS FIAT réel)
+    // 3. ANNEXE A (BLEUE) — TRAVAIL EN HAUTEUR (SINYLON / STELLANTIS)
     heightAnnexe(permit) {
         const h = permit.annexeA || {};
         const yn = (v, field) => `
@@ -436,12 +436,18 @@ const Templates = {
         return `
             <div class="a4-document annexe-height-doc" id="a4-doc-${permit.id}-height" style="font-size:8px;line-height:1.4;">
 
-                <!-- EN-TÊTE CSPS FIAT -->
+                <!-- EN-TÊTE OFFICIEL SINYLON / STELLANTIS -->
                 <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;border:2px solid #1e3a8a;margin-bottom:4px;">
                     <div style="padding:4px 8px;">
-                        <div style="background:#1e3a8a;color:#fff;font-weight:900;font-size:14px;display:inline-block;padding:2px 8px;">A</div>
-                        <span style="font-size:13px;font-weight:900;margin-left:6px;color:#1e3a8a;">Travail en hauteur</span>
-                        <div style="font-size:7px;font-weight:600;color:#1e3a8a;margin-top:1px;">CSPS <strong>FIAT</strong></div>
+                        <div style="display:flex;align-items:center;gap:6px;">
+                            <div style="background:#1e3a8a;color:#fff;font-weight:900;font-size:14px;display:inline-block;padding:2px 8px;">A</div>
+                            <span style="font-size:13px;font-weight:900;color:#1e3a8a;">Travail en hauteur</span>
+                        </div>
+                        <div style="font-size:7.5px;font-weight:800;color:#1e3a8a;margin-top:2px;display:flex;gap:6px;align-items:center;">
+                            <span style="background:#1e3a8a;color:#fff;padding:1px 5px;border-radius:2px;">SINYLON</span>
+                            <span style="border:1px solid #1e3a8a;padding:0 4px;border-radius:2px;">STELLANTIS</span>
+                            <span style="color:#475569;font-weight:600;">Projet K9 CKD0</span>
+                        </div>
                         <div style="font-size:7px;color:#444;margin-top:1px;">Cette liste de vérification doit être toujours accompagnée par le permis de travail de sécurité générale</div>
                     </div>
                     <div style="border-left:1px solid #1e3a8a;padding:4px 8px;text-align:center;">
@@ -636,7 +642,7 @@ const Templates = {
         `;
     },
 
-    // 4. ANNEXE B (ROUGE) — TRAVAIL À CHAUD (conforme formulaire CSPS FIAT réel)
+    // 4. ANNEXE B (ROUGE) — TRAVAIL À CHAUD (SINYLON / STELLANTIS)
     hotAnnexe(permit) {
         const b = permit.annexeB || {};
         const yn = (v) => `
@@ -651,16 +657,22 @@ const Templates = {
         return `
             <div class="a4-document annexe-hot-doc" id="a4-doc-${permit.id}-hot" style="font-size:8px;line-height:1.4;">
 
-                <!-- EN-TÊTE CSPS FIAT -->
+                <!-- EN-TÊTE OFFICIEL SINYLON / STELLANTIS -->
                 <div style="display:grid;grid-template-columns:1fr auto;align-items:center;border:2px solid #b91c1c;margin-bottom:4px;">
                     <div style="padding:4px 8px;">
-                        <div style="background:#b91c1c;color:#fff;font-weight:900;font-size:14px;display:inline-block;padding:2px 8px;">B</div>
-                        <span style="font-size:13px;font-weight:900;margin-left:6px;color:#b91c1c;">Travail chaud</span>
-                        <div style="font-size:7px;font-weight:600;color:#b91c1c;margin-top:1px;">CSPS <strong>FIAT</strong></div>
+                        <div style="display:flex;align-items:center;gap:6px;">
+                            <div style="background:#b91c1c;color:#fff;font-weight:900;font-size:14px;display:inline-block;padding:2px 8px;">B</div>
+                            <span style="font-size:13px;font-weight:900;color:#b91c1c;">Travail chaud</span>
+                        </div>
+                        <div style="font-size:7.5px;font-weight:800;color:#b91c1c;margin-top:2px;display:flex;gap:6px;align-items:center;">
+                            <span style="background:#b91c1c;color:#fff;padding:1px 5px;border-radius:2px;">SINYLON</span>
+                            <span style="border:1px solid #b91c1c;padding:0 4px;border-radius:2px;">STELLANTIS</span>
+                            <span style="color:#475569;font-weight:600;">Projet K9 CKD0</span>
+                        </div>
                         <div style="font-size:7px;color:#444;margin-top:1px;">La liste de vérification doit être toujours accompagnée par le permis de travail de sécurité générale</div>
                     </div>
                     <div style="border-left:1px solid #b91c1c;padding:4px 10px;text-align:center;">
-                        <div style="font-size:7px;font-weight:700;">Permit Identifier</div>
+                        <div style="font-size:7px;font-weight:700;">Identifiant du permis</div>
                         <div style="font-size:14px;font-weight:900;color:#b91c1c;">${permit.id}</div>
                     </div>
                 </div>
@@ -788,7 +800,7 @@ const Templates = {
         `;
     },
 
-    // 5. ANNEXE C (JAUNE) — ÉLECTRICITÉ & CONSIGNATION (conforme standard CSPS FIAT)
+    // 5. ANNEXE C (JAUNE) — ÉLECTRICITÉ & CONSIGNATION (SINYLON / STELLANTIS)
     electricAnnexe(permit) {
         const c = permit.annexeC || {};
         const yn = (v) => `
@@ -804,12 +816,18 @@ const Templates = {
         return `
             <div class="a4-document annexe-elec-doc" id="a4-doc-${permit.id}-electric" style="font-size:8px;line-height:1.4;">
 
-                <!-- EN-TÊTE CSPS FIAT -->
+                <!-- EN-TÊTE OFFICIEL SINYLON / STELLANTIS -->
                 <div style="display:grid;grid-template-columns:1fr auto;align-items:center;border:2px solid #b45309;margin-bottom:4px;">
                     <div style="padding:4px 8px;">
-                        <div style="background:#b45309;color:#fff;font-weight:900;font-size:14px;display:inline-block;padding:2px 8px;">C</div>
-                        <span style="font-size:13px;font-weight:900;margin-left:6px;color:#b45309;">Travail Électrique &amp; Consignation</span>
-                        <div style="font-size:7px;font-weight:600;color:#b45309;margin-top:1px;">CSPS <strong>FIAT</strong> — Electrical Works, Cabling &amp; LOTO Lockout Protocol</div>
+                        <div style="display:flex;align-items:center;gap:6px;">
+                            <div style="background:#b45309;color:#fff;font-weight:900;font-size:14px;display:inline-block;padding:2px 8px;">C</div>
+                            <span style="font-size:13px;font-weight:900;color:#b45309;">Travail Électrique &amp; Consignation</span>
+                        </div>
+                        <div style="font-size:7.5px;font-weight:800;color:#b45309;margin-top:2px;display:flex;gap:6px;align-items:center;">
+                            <span style="background:#b45309;color:#fff;padding:1px 5px;border-radius:2px;">SINYLON</span>
+                            <span style="border:1px solid #b45309;padding:0 4px;border-radius:2px;">STELLANTIS</span>
+                            <span style="color:#475569;font-weight:600;">Projet K9 CKD0 — Cabling &amp; LOTO Lockout Protocol</span>
+                        </div>
                         <div style="font-size:7px;color:#444;margin-top:1px;">Cette liste de vérification doit être toujours accompagnée par le permis de travail de sécurité générale</div>
                     </div>
                     <div style="border-left:1px solid #b45309;padding:4px 10px;text-align:center;">
