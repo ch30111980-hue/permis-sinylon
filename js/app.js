@@ -14,6 +14,17 @@ const App = {
     _supAttempts: 0,
     _supLockedUntil: 0,
 
+    // Helper robuste — résout l'ID du permis actif au moment du clic (jamais null)
+    getActivePermitId() {
+        if (this.currentPermitId) return this.currentPermitId;
+        const permits = Store.getPermitsByWeek(this.currentWeek || 35);
+        if (permits && permits.length > 0) {
+            this.currentPermitId = permits[0].id;
+            return this.currentPermitId;
+        }
+        return 'K9-W35-01';
+    },
+
     // Initialisation
     async init() {
         // 0. Détection immédiate de scan QR direct dans l'URL (?permitId=... ou #K9-W35-01) pour éviter tout clignotement

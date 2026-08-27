@@ -145,16 +145,16 @@
                         <span style="font-weight: 800; font-size: 13px; color: #38bdf8; letter-spacing: 0.5px;">ACTIONS RAPIDES EN 1 CLIC :</span>
                     </div>
                     <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                        <button onclick="(function(){ var id = App.currentPermitId || Store.getPermitsByWeek(App.currentWeek)[0]?.id || 'K9-W35-01'; App.printPermit(id); })()" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 800; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; box-shadow: 0 2px 8px rgba(16,185,129,0.4);">
+                        <button onclick="App.printPermit(App.getActivePermitId())" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 800; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; box-shadow: 0 2px 8px rgba(16,185,129,0.4);">
                             🖨️ Imprimer Permis Actif (A4)
                         </button>
-                        <button onclick="(function(){ var id = App.currentPermitId || Store.getPermitsByWeek(App.currentWeek)[0]?.id || 'K9-W35-01'; App.openQR(id); })()" style="background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%); color: #ffffff; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 800; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; box-shadow: 0 2px 8px rgba(14,165,233,0.4);">
+                        <button onclick="App.openQR(App.getActivePermitId())" style="background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%); color: #ffffff; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 800; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; box-shadow: 0 2px 8px rgba(14,165,233,0.4);">
                             📱 QR Code Chantier
                         </button>
                         <button onclick="App.switchView('caisse')" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #ffffff; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 800; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer;">
                             📦 Dossier Week-End
                         </button>
-                        <button onclick="(function(){ var id = App.currentPermitId || Store.getPermitsByWeek(App.currentWeek)[0]?.id || 'K9-W35-01'; App.showPublicClientView(id); })()" style="background: rgba(255, 255, 255, 0.1); color: #f8fafc; border: 1px solid rgba(255, 255, 255, 0.25); padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer;">
+                        <button onclick="App.showPublicClientView(App.getActivePermitId())" style="background: rgba(255, 255, 255, 0.1); color: #f8fafc; border: 1px solid rgba(255, 255, 255, 0.25); padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer;">
                             🔍 Vue Contrôle Terrain
                         </button>
                     </div>
@@ -694,15 +694,15 @@
     <!-- Conteneur d'Impression Pure A4 -->
     <div id="print-container"></div>
 
-    <!-- Scripts JavaScript (Versionnés 3.4.0 pour forcer le rafraîchissement du cache navigateur) -->
-    <script src="lib/qrcode.min.js?v=3.4.0"></script>
-    <script src="js/translator.js?v=3.4.0"></script>
-    <script src="js/store.js?v=3.4.0"></script>
-    <script src="js/templates.js?v=3.4.0"></script>
-    <script src="js/qr-engine.js?v=3.4.0"></script>
-    <script src="js/revalidation.js?v=3.4.0"></script>
-    <script src="js/weekend-caisse.js?v=3.4.0"></script>
-    <script src="js/print-engine.js?v=3.4.0"></script>
-    <script src="js/app.js?v=3.4.0"></script>
+    <!-- Scripts JavaScript (Versionnés 3.5.0 pour forcer le rafraîchissement du cache navigateur) -->
+    <script src="lib/qrcode.min.js?v=3.5.0"></script>
+    <script src="js/translator.js?v=3.5.0"></script>
+    <script src="js/store.js?v=3.5.0"></script>
+    <script src="js/templates.js?v=3.5.0"></script>
+    <script src="js/qr-engine.js?v=3.5.0"></script>
+    <script src="js/revalidation.js?v=3.5.0"></script>
+    <script src="js/weekend-caisse.js?v=3.5.0"></script>
+    <script src="js/print-engine.js?v=3.5.0"></script>
+    <script src="js/app.js?v=3.5.0"></script>
 </body>
 </html>
