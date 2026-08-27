@@ -788,63 +788,244 @@ const Templates = {
         `;
     },
 
-    // 5. ANNEXE C (JAUNE) — ÉLECTRICITÉ & CONSIGNATION
+    // 5. ANNEXE C (JAUNE) — ÉLECTRICITÉ & CONSIGNATION (conforme standard CSPS FIAT)
     electricAnnexe(permit) {
+        const c = permit.annexeC || {};
+        const yn = (v) => `
+            <span style="display:inline-flex;gap:2px;">
+                <span style="border:1px solid #000;padding:0 3px;font-size:7.5px;font-weight:800;background:${v===true?'#b45309':'#fff'};color:${v===true?'#fff':'#000'};">Y</span>
+                <span style="border:1px solid #000;padding:0 3px;font-size:7.5px;font-weight:800;background:${v===false?'#b45309':'#fff'};color:${v===false?'#fff':'#000'};">N</span>
+            </span>`;
+        const chefNom = permit.responsible || permit.chefNom || 'Xie';
+        const hseNom = permit.hseNom || 'Nouri Chahrour';
+        const consignateur = c.consignateur || 'Nouri Chahrour';
+        const datePermis = permit.validFrom || permit['date-main'] || new Date().toISOString().slice(0,10);
+
         return `
-            <div class="a4-document annexe-elec-doc" id="a4-doc-${permit.id}-electric">
-                <div class="doc-header-exact">
-                    <div class="doc-logo-box">
-                        <span class="logo-sinylon-badge">SINYLON</span>
-                        <span class="logo-stellantis-badge">STELLANTIS</span>
+            <div class="a4-document annexe-elec-doc" id="a4-doc-${permit.id}-electric" style="font-size:8px;line-height:1.4;">
+
+                <!-- EN-TÊTE CSPS FIAT -->
+                <div style="display:grid;grid-template-columns:1fr auto;align-items:center;border:2px solid #b45309;margin-bottom:4px;">
+                    <div style="padding:4px 8px;">
+                        <div style="background:#b45309;color:#fff;font-weight:900;font-size:14px;display:inline-block;padding:2px 8px;">C</div>
+                        <span style="font-size:13px;font-weight:900;margin-left:6px;color:#b45309;">Travail Électrique &amp; Consignation</span>
+                        <div style="font-size:7px;font-weight:600;color:#b45309;margin-top:1px;">CSPS <strong>FIAT</strong> — Electrical Works, Cabling &amp; LOTO Lockout Protocol</div>
+                        <div style="font-size:7px;color:#444;margin-top:1px;">Cette liste de vérification doit être toujours accompagnée par le permis de travail de sécurité générale</div>
                     </div>
-                    <div class="doc-title-exact" style="color: #b45309;">
-                        ANNEXE C : PERMIS ÉLECTRIQUE & CONSIGNATION (JAUNE)<br>
-                        <span style="font-size: 8px; font-weight: normal; color: #000;">Electrical Works, Cabling & LOTO Lockout Protocol</span>
-                    </div>
-                    <div class="doc-header-right-group">
-                        <div class="doc-id-box-exact">
-                            <strong>Permit ID</strong><br>
-                            <span style="font-size: 12px; font-weight: 900; color: #b45309;">${permit.id}</span>
-                        </div>
+                    <div style="border-left:1px solid #b45309;padding:4px 10px;text-align:center;">
+                        <div style="font-size:7px;font-weight:700;">Identifiant du permis</div>
+                        <div style="font-size:14px;font-weight:900;color:#b45309;">${permit.id}</div>
                     </div>
                 </div>
 
-                <div style="background: #fef3c7; border: 1.5px solid #f59e0b; padding: 6px 12px; margin-top: 8px; border-radius: 4px; font-size: 10px; color: #b45309; font-weight: 700;">
-                    ⚡ TRAVAUX : TIRAGE DE CÂBLES, ARMOIRES ÉLECTRIQUES, MOTEURS & ÉQUIPEMENTS INDUSTRIELS
-                </div>
-
-                <table class="doc-table-exact" style="margin-top: 10px;">
-                    <thead>
-                        <tr>
-                            <th style="width: 75%;">Protocoles de Sécurité Électrique</th>
-                            <th style="width: 25%;">Conformité</th>
+                <!-- TYPE DE TRAVAUX -->
+                <div style="border:1.5px solid #b45309;margin-bottom:4px;">
+                    <div style="background:#b45309;color:#fff;font-weight:800;font-size:8px;padding:2px 6px;">Type de travaux électriques</div>
+                    <table style="width:100%;border-collapse:collapse;">
+                        <tr style="font-size:7.5px;">
+                            <td style="border:1px solid #aaa;padding:2px 4px;width:28%;">Tirage de câbles</td>
+                            <td style="border:1px solid #aaa;padding:2px;width:8%;text-align:center;">${yn(c.travail_cables ?? true)}</td>
+                            <td style="border:1px solid #aaa;padding:2px 4px;width:30%;">Raccordement armoire électrique</td>
+                            <td style="border:1px solid #aaa;padding:2px;width:8%;text-align:center;">${yn(c.travail_armoire ?? true)}</td>
+                            <td style="border:1px solid #aaa;padding:2px 4px;width:18%;">Moteurs / Variateurs</td>
+                            <td style="border:1px solid #aaa;padding:2px;width:8%;text-align:center;">${yn(c.travail_moteurs)}</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Consignation LOTO effectuée et cadenas posés</td><td class="text-center font-bold" style="color: green;">OUI (Cadenas Sinylon)</td></tr>
-                        <tr><td>Vérification d'Absence de Tension (VAT) certifiée</td><td class="text-center font-bold" style="color: green;">CONFORME (0V) ✓</td></tr>
-                        <tr><td>Habilitations électriques des intervenants vérifiées (B2V / BR / BC / H1V)</td><td class="text-center font-bold" style="color: green;">OUI (Habilités)</td></tr>
-                        <tr><td>EPI isolants (Gants 1000V, Écran facial anti-arc, Chaussures isolantes)</td><td class="text-center font-bold" style="color: green;">CONFORME ✓</td></tr>
-                        <tr><td>Mise à la terre et en court-circuit (MALT/CC) si requise</td><td class="text-center font-bold" style="color: green;">APPLIQUÉE ✓</td></tr>
+                        <tr style="font-size:7.5px;">
+                            <td style="border:1px solid #aaa;padding:2px 4px;">Chemins de câbles / Goulottes</td>
+                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.travail_chemins ?? true)}</td>
+                            <td style="border:1px solid #aaa;padding:2px 4px;">Équipements basse tension (BT &lt; 1000V)</td>
+                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.travail_bt ?? true)}</td>
+                            <td style="border:1px solid #aaa;padding:2px 4px;">Hors tension (travail mort)</td>
+                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.travail_hors_tension ?? true)}</td>
+                        </tr>
+                        <tr style="font-size:7.5px;">
+                            <td colspan="6" style="border:1px solid #aaa;padding:2px 4px;">Description : <span style="border-bottom:1px solid #000;display:inline-block;width:70%;"> </span></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- PROTOCOLE LOTO 5 ÉTAPES -->
+                <div style="border:1.5px solid #b45309;margin-bottom:4px;">
+                    <div style="background:#b45309;color:#fff;font-weight:800;font-size:8px;padding:2px 6px;">⚡ Protocole LOTO — Consignation / Déconsignation (5 étapes obligatoires)</div>
+                    <table style="width:100%;border-collapse:collapse;">
+                        <thead>
+                            <tr style="background:#fef3c7;font-size:7.5px;font-weight:700;">
+                                <th style="border:1px solid #aaa;padding:2px 4px;width:5%;">Étape</th>
+                                <th style="border:1px solid #aaa;padding:2px 4px;width:72%;">Action LOTO</th>
+                                <th style="border:1px solid #aaa;padding:2px 4px;width:11%;text-align:center;">Y/N</th>
+                                <th style="border:1px solid #aaa;padding:2px 4px;width:12%;text-align:center;">Initiales</th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size:7.5px;">
+                            <tr>
+                                <td style="border:1px solid #aaa;padding:2px 4px;text-align:center;font-weight:800;background:#fef3c7;">1</td>
+                                <td style="border:1px solid #aaa;padding:2px 4px;"><strong>Identification</strong> — Identifier toutes les sources d'énergie électrique de l'équipement à consigner</td>
+                                <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.loto_1 ?? true)}</td>
+                                <td style="border:1px solid #aaa;padding:2px;text-align:center;"><span style="border-bottom:1px solid #aaa;display:inline-block;width:80%;"> </span></td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #aaa;padding:2px 4px;text-align:center;font-weight:800;background:#fef3c7;">2</td>
+                                <td style="border:1px solid #aaa;padding:2px 4px;"><strong>Isolation</strong> — Mettre hors tension et condamner tous les organes de coupure (disjoncteurs, sectionneurs)</td>
+                                <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.loto_2 ?? true)}</td>
+                                <td style="border:1px solid #aaa;padding:2px;text-align:center;"><span style="border-bottom:1px solid #aaa;display:inline-block;width:80%;"> </span></td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #aaa;padding:2px 4px;text-align:center;font-weight:800;background:#fef3c7;">3</td>
+                                <td style="border:1px solid #aaa;padding:2px 4px;"><strong>Cadenassage</strong> — Poser cadenas personnel sur chaque organe de coupure + étiquette de danger</td>
+                                <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.loto_3 ?? true)}</td>
+                                <td style="border:1px solid #aaa;padding:2px;text-align:center;"><span style="border-bottom:1px solid #aaa;display:inline-block;width:80%;"> </span></td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #aaa;padding:2px 4px;text-align:center;font-weight:800;background:#fef3c7;">4</td>
+                                <td style="border:1px solid #aaa;padding:2px 4px;"><strong>VAT</strong> — Vérification d'Absence de Tension certifiée avec VAT homologué (résultat : <strong style="color:#15803d;">${c.vat_resultat || '0 V'}</strong>)</td>
+                                <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.loto_4 ?? true)}</td>
+                                <td style="border:1px solid #aaa;padding:2px;text-align:center;"><span style="border-bottom:1px solid #aaa;display:inline-block;width:80%;"> </span></td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #aaa;padding:2px 4px;text-align:center;font-weight:800;background:#fef3c7;">5</td>
+                                <td style="border:1px solid #aaa;padding:2px 4px;"><strong>MALT/CC</strong> — Mise à la Terre et en Court-Circuit si requis (HT ou risque de réalimentation)</td>
+                                <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.loto_5)}</td>
+                                <td style="border:1px solid #aaa;padding:2px;text-align:center;"><span style="border-bottom:1px solid #aaa;display:inline-block;width:80%;"> </span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- HABILITATIONS & EPI (2 colonnes) -->
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;">
+
+                    <div style="border:1.5px solid #b45309;">
+                        <div style="background:#b45309;color:#fff;font-weight:800;font-size:8px;padding:2px 6px;">Habilitations électriques des intervenants</div>
+                        <table style="width:100%;border-collapse:collapse;">
+                            <thead>
+                                <tr style="background:#fef3c7;font-size:7px;font-weight:700;">
+                                    <th style="border:1px solid #aaa;padding:2px 3px;width:18%;">Niveau</th>
+                                    <th style="border:1px solid #aaa;padding:2px 3px;width:66%;">Intervenant</th>
+                                    <th style="border:1px solid #aaa;padding:2px 3px;width:16%;text-align:center;">Valide</th>
+                                </tr>
+                            </thead>
+                            <tbody style="font-size:7px;">
+                                <tr>
+                                    <td style="border:1px solid #aaa;padding:2px 3px;font-weight:800;color:#b45309;">B0 / B1</td>
+                                    <td style="border:1px solid #aaa;padding:2px 3px;">${c.hab_b0 || 'Non-électriciens'}</td>
+                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.hab_b0_ok ?? true)}</td>
+                                </tr>
+                                <tr>
+                                    <td style="border:1px solid #aaa;padding:2px 3px;font-weight:800;color:#b45309;">B2V</td>
+                                    <td style="border:1px solid #aaa;padding:2px 3px;">${c.hab_b2v || 'Électriciens BT'}</td>
+                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.hab_b2v_ok ?? true)}</td>
+                                </tr>
+                                <tr>
+                                    <td style="border:1px solid #aaa;padding:2px 3px;font-weight:800;color:#b45309;">BR</td>
+                                    <td style="border:1px solid #aaa;padding:2px 3px;">${c.hab_br || 'Chargé de travaux'}</td>
+                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.hab_br_ok ?? true)}</td>
+                                </tr>
+                                <tr>
+                                    <td style="border:1px solid #aaa;padding:2px 3px;font-weight:800;color:#b45309;">BC</td>
+                                    <td style="border:1px solid #aaa;padding:2px 3px;">${c.hab_bc || 'Chargé consignation'}</td>
+                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.hab_bc_ok ?? true)}</td>
+                                </tr>
+                                <tr>
+                                    <td style="border:1px solid #aaa;padding:2px 3px;font-weight:800;color:#b45309;">H1V</td>
+                                    <td style="border:1px solid #aaa;padding:2px 3px;">${c.hab_h1v || 'Électriciens HT (si requis)'}</td>
+                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.hab_h1v_ok)}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div style="border:1.5px solid #b45309;">
+                        <div style="background:#b45309;color:#fff;font-weight:800;font-size:8px;padding:2px 6px;">EPI Électrique obligatoires</div>
+                        <table style="width:100%;border-collapse:collapse;">
+                            <tbody style="font-size:7.5px;">
+                                <tr>
+                                    <td style="border:1px solid #aaa;padding:2px 4px;width:84%;">Gants isolants 1000V (classe 0 min.)</td>
+                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.epi_gants ?? true)}</td>
+                                </tr>
+                                <tr>
+                                    <td style="border:1px solid #aaa;padding:2px 4px;">Écran facial anti-arc électrique</td>
+                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.epi_ecran ?? true)}</td>
+                                </tr>
+                                <tr>
+                                    <td style="border:1px solid #aaa;padding:2px 4px;">Chaussures de sécurité isolantes</td>
+                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.epi_chaussures ?? true)}</td>
+                                </tr>
+                                <tr>
+                                    <td style="border:1px solid #aaa;padding:2px 4px;">Casque anti-choc + Lunettes de protection</td>
+                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.epi_casque ?? true)}</td>
+                                </tr>
+                                <tr>
+                                    <td style="border:1px solid #aaa;padding:2px 4px;">Vêtements anti-arc (si risque arc &gt; 4 cal)</td>
+                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.epi_arc)}</td>
+                                </tr>
+                                <tr>
+                                    <td style="border:1px solid #aaa;padding:2px 4px;">VAT homologué (testeur de tension)</td>
+                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.epi_vat ?? true)}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- CHECKLIST GÉNÉRALE SITE -->
+                <table style="width:100%;border-collapse:collapse;margin-bottom:4px;">
+                    <tbody style="font-size:7.5px;">
+                        <tr><td style="border:1px solid #aaa;padding:2px 4px;width:88%;">Zone de travail délimitée et balisée (périmètre de sécurité électrique)</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.zone_delimitee ?? true)}</td></tr>
+                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Signalisation de danger électrique apposée sur tous les organes consignés</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.signalisation ?? true)}</td></tr>
+                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Outils isolants vérifiés (IEC 60900 — 1000V) et outillage en bon état</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.outils_isoles ?? true)}</td></tr>
+                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Consignes d'urgence connues — extincteur CO₂ à portée immédiate</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.urgence_co2 ?? true)}</td></tr>
+                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Procédure de déconsignation définie et communiquée à l'équipe</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.deconsignation_proc ?? true)}</td></tr>
+                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Rapport VAT joint au permis (document obligatoire)</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.rapport_vat ?? true)}</td></tr>
                     </tbody>
                 </table>
 
-                <div class="signatures-grid-exact" style="margin-top: 20px;">
-                    <div class="sign-card-exact">
-                        <div class="sign-card-header">Chef de Projet Sinylon</div>
-                        <div>Xie (Validé ✓)</div>
+                <!-- BLOC CONSIGNATEUR -->
+                <div style="border:2px solid #b45309;padding:6px;margin-bottom:6px;">
+                    <div style="background:#b45309;color:#fff;font-weight:800;font-size:8px;padding:2px 6px;margin-bottom:6px;">⚡ CHARGÉ DE CONSIGNATION (BC) — Responsable unique du cadenassage</div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:7.5px;">
+                        <div>
+                            <div style="font-weight:700;">Nom (lettres majuscule) :</div>
+                            <div style="font-weight:800;margin-top:2px;">${consignateur}</div>
+                            <div style="border-bottom:1px solid #000;height:16px;margin-top:4px;"></div>
+                        </div>
+                        <div>
+                            <div style="font-weight:700;">Habilitation :</div>
+                            <div style="margin-top:2px;font-weight:800;color:#b45309;">BC (Chargé de Consignation)</div>
+                            <div style="border-bottom:1px solid #000;height:16px;margin-top:4px;"></div>
+                        </div>
+                        <div>
+                            <div style="font-weight:700;">Signature :</div>
+                            <div style="border-bottom:1px solid #000;height:28px;margin-top:4px;"></div>
+                        </div>
                     </div>
-                    <div class="sign-card-exact wpeex-sign">
-                        <div class="sign-card-header">W.P.E.E.X Suivi</div>
-                        <div>M. W.P.E.E.X (Approuvé ✓)</div>
-                    </div>
-                    <div class="sign-card-exact">
-                        <div class="sign-card-header">Superviseur HSE</div>
-                        <div>Nouri Chahrour (0563765157)</div>
+                    <div style="font-size:7px;color:#b45309;font-weight:700;margin-top:4px;border-top:1px solid #f59e0b;padding-top:3px;">
+                        ⚠️ Aucun intervenant ne peut commencer le travail avant la signature du Chargé de Consignation et la remise de l'attestation de consignation.
                     </div>
                 </div>
 
-                <!-- QR CODE FOOTER DÉDIÉ -->
+                <!-- SIGNATURES -->
+                <table style="width:100%;border-collapse:collapse;margin-top:4px;">
+                    <tr>
+                        <td style="border:2px solid #b45309;padding:6px;width:40%;vertical-align:top;">
+                            <div style="font-size:8px;font-weight:800;background:#b45309;color:#fff;padding:2px 4px;margin-bottom:4px;">CHEF DE PROJET</div>
+                            <div style="font-size:7.5px;font-style:italic;color:#555;">Nom (lettres majuscule) et signature</div>
+                            <div style="font-size:8px;font-weight:700;margin-top:2px;">${chefNom}</div>
+                            <div style="border-bottom:1px solid #000;height:18px;margin-top:4px;"></div>
+                        </td>
+                        <td style="border:2px solid #b45309;padding:6px;width:40%;vertical-align:top;">
+                            <div style="font-size:8px;font-weight:800;background:#b45309;color:#fff;padding:2px 4px;margin-bottom:4px;">HSE ENTREPRISE</div>
+                            <div style="font-size:7.5px;font-style:italic;color:#555;">Nom (lettres majuscule) et signature</div>
+                            <div style="font-size:8px;font-weight:700;margin-top:2px;">${hseNom}</div>
+                            <div style="border-bottom:1px solid #000;height:18px;margin-top:4px;"></div>
+                        </td>
+                        <td style="border:2px solid #b45309;padding:6px;width:20%;vertical-align:top;">
+                            <div style="font-size:7.5px;">Date : <strong>${datePermis}</strong></div>
+                            <div style="font-size:7.5px;margin-top:6px;">Heure : <strong>${permit.timeStart || '08h00'}</strong></div>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- QR FOOTER -->
                 ${this.renderFooterQR(permit)}
             </div>
         `;
