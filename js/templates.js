@@ -53,12 +53,17 @@ const Templates = {
         const descZh = permit.activite_detaillee_zh || (permit.activity && permit.activity.zh) || permit.title_zh || '机械装配与设备安装';
         const equipementsStr = Array.isArray(permit.equipements_a_installer) ? permit.equipements_a_installer.join(', ') : (permit.equipements_a_installer || 'Nacelles ciseaux (x6), Palans DEMAG KBK, Outillages certifiés');
 
-        // Générer les vignettes d'intervenants
+        // Générer les vignettes d'intervenants avec distinction Actif (Blanc) / Inactif (Bleu)
         const workers = permit.travailleurs || permit.workers || ['Xie (Chef de Projet)', 'Nouri Chahrour (HSE Sinylon)'];
         const workersHtml = workers.map(w => {
             const nom = typeof w === 'object' ? w.nom : w;
-            const role = typeof w === 'object' ? w.role : 'Intervenant';
-            return `<span class="worker-tag"><strong>${nom}</strong> <small>(${role})</small></span>`;
+            const role = typeof w === 'object' ? (w.role || 'Intervenant') : 'Intervenant';
+            const isActive = typeof w === 'object' ? (w.status !== 'Inactif' && w.status !== 'Inactive') : true;
+            if (isActive) {
+                return `<span class="worker-tag" style="background: #ffffff; color: #0f172a; border: 1.5px solid #0f172a; font-weight: 800; padding: 2px 8px; border-radius: 4px; display: inline-block; margin: 2px;"><strong>${nom}</strong> <small style="color: #475569;">(${role})</small> <span style="color: #16a34a; font-weight: 900;">✓</span></span>`;
+            } else {
+                return `<span class="worker-tag" style="background: #dbeafe; color: #1e40af; border: 1.5px solid #3b82f6; font-weight: 700; padding: 2px 8px; border-radius: 4px; display: inline-block; margin: 2px;"><strong>${nom}</strong> <small style="color: #3b82f6;">(${role})</small> <span style="color: #2563eb; font-weight: 800;">🔵 Inactif</span></span>`;
+            }
         }).join(' ');
 
         return `

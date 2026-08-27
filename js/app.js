@@ -16,52 +16,50 @@ const App = {
 
     // Initialisation
     async init() {
-        // 0. Migration sécurité : passer le code auth en hash (SHA-256)
-        await Store.initAuth();
-
-        // 1. Détection de la semaine courante
-        this.currentWeek = Store.getCurrentWeekNumber();
-
-        // 2. Gestion des paramètres de l'application & langue
-        const settings = Store.getSettings();
-        if (settings.defaultLang) {
-            Translator.currentLang = settings.defaultLang;
-            this.updateLanguageButtons(settings.defaultLang);
-        }
-
-        // 3. Liaison des événements
-        this.bindEvents();
-
-        // 4. Synchronisation en arrière-plan avec le serveur Render
-        Store.syncWithServer().then(() => {
-            if (this.currentView === 'dashboard') {
-                this.renderDashboard();
-            }
-        });
-
-        // 5. Détection de scan QR direct dans l'URL (?permitId=... ou #K9-W35-01)
+        // 0. Détection immédiate de scan QR direct dans l'URL (?permitId=... ou #K9-W35-01) pour éviter tout clignotement
         const urlParams = new URLSearchParams(window.location.search);
         const queryPermitId = urlParams.get('permitId') || (window.location.hash ? window.location.hash.substring(1).trim() : null);
 
         if (queryPermitId) {
             this.currentPermitId = queryPermitId;
             this.isQRSession = true; // 🔒 Mode lecture seule — bloque l'accès au dashboard
+            document.documentElement.classList.add('qr-mode');
+            await Store.initAuth();
             await this.showPublicClientView(queryPermitId);
             return;
         }
 
-        // 6. Initialisation normale du Dashboard sur la semaine active (CURRENT WEEK)
+        // 1. Migration sécurité : passer le code auth en hash (SHA-256)
+        await Store.initAuth();
+
+        // 2. Détection de la semaine courante
+        this.currentWeek = Store.getCurrentWeekNumber();
+
+        // 3. Gestion des paramètres de l'application & langue
+        const settings = Store.getSettings();
+        if (settings.defaultLang) {
+            Translator.currentLang = settings.defaultLang;
+            this.updateLanguageButtons(settings.defaultLang);
+        }
+
+        // 4. Liaison des événements
+        this.bindEvents();
+
+        // 5. Initialisation propre du Dashboard
         this.renderDashboard();
         this.renderSidebarWeekIndex();
 
-        if (queryPermitId) {
-            this.openPermitPreview(queryPermitId);
-        }
+        // 6. Synchronisation douce en arrière-plan sans re-render brutal (anti-clignotement)
+        Store.syncWithServer().then((updated) => {
+            if (updated && this.currentView === 'dashboard' && !this.isQRSession) {
+                this.renderSidebarWeekIndex();
+            }
+        });
 
         // 7. Alerte Caisse Weekend le Mercredi
         const dates = WeekendCaisseModule.getWeekendDates();
         if (dates && dates.isWednesday) {
-            this.showToast('🔔 WEDNESDAY : Preparation of Weekend Dossier for STELLANTIS Presentation!', 'warning', 8000);
+            this.showToast('🔔 MERCREDI : Préparation du Dossier Week-end pour présentation STELLANTIS !', 'warning', 8000);
         }
 
         // 8. Écouteur de changement de hash
@@ -79,6 +77,7 @@ const App = {
             this.showToast('⛔ Accès réservé aux superviseurs SINYLON. Utilisez le bouton 🔒.', 'error', 4000);
             return;
         }
+        document.documentElement.classList.remove('qr-mode');
         const clientView = document.getElementById('client-public-view');
         if (clientView) clientView.style.display = 'none';
         const layout = document.querySelector('.app-layout');
@@ -96,49 +95,95 @@ const App = {
 
     async showPublicClientView(permitId) {
         // 1. Récupération synchrone — FIXE 5 : erreur si permitId inconnu (pas de fallback silencieux)
+        document.documentElement.classList.add('qr-mode');
         const layout = document.querySelector('.app-layout');
         if (layout) layout.style.display = 'none';
         const clientView = document.getElementById('client-public-view');
         if (!clientView) return;
+        clientView.style.display = 'block';
 
-        let permit = permitId ? Store.getPermit(permitId) : null;
-        if (!permit) {
-            // Afficher une page d'erreur propre — ne jamais ouvrir un permis aléatoire
-            clientView.style.display = 'block';
-            document.body.style.overflow = 'auto';
+        let p = Store.getPermit(permitId);
+
+        // Si non trouvé en cache local, tenter une synchronisation ciblée
+        if (!p && typeof Store.syncWithServer === 'function') {
+            await Store.syncWithServer();
+            p = Store.getPermit(permitId);
+        }
+
+        if (!p) {
+            // Affichage sécurisé d'erreur
             clientView.innerHTML = `
-                <div style="max-width:500px;margin:60px auto;padding:32px 24px;text-align:center;color:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
-                    <div style="font-size:64px;margin-bottom:16px;">🔍</div>
-                    <div style="font-size:20px;font-weight:800;color:#ef4444;margin-bottom:8px;">Permis introuvable</div>
-                    <div style="font-size:13px;color:#94a3b8;margin-bottom:24px;">Le permis <code style="background:#1e293b;padding:2px 6px;border-radius:4px;color:#60a5fa;">${permitId || '—'}</code> n'existe pas dans la base K9.</div>
-                    <div style="background:#1e293b;border:1px solid #334155;border-radius:8px;padding:16px;font-size:12px;color:#64748b;">Ce QR code est peut-être expiré ou non encore enregistré. Contactez le superviseur SINYLON HSE : <strong style="color:#38bdf8;">0563765157</strong></div>
-                </div>`;
+                <div style="max-width: 500px; margin: 60px auto; padding: 30px; text-align: center; background: rgba(15,23,42,0.95); border: 2px solid #ef4444; border-radius: 16px; color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, sans-serif;">
+                    <div style="font-size: 48px; margin-bottom: 12px;">🚫</div>
+                    <h2 style="color: #ef4444; margin-bottom: 8px;">Permis Non Trouvé / Invalide</h2>
+                    <p style="color: #94a3b8; font-size: 13px; line-height: 1.6;">L'identifiant de permis <strong>"${permitId}"</strong> n'existe pas ou n'est pas encore synchronisé sur le serveur officiel SINYLON.</p>
+                    <div style="margin-top: 24px; display: flex; justify-content: center; gap: 10px;">
+                        <button onclick="window.location.reload()" style="background: #3b82f6; color: #fff; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 700; cursor: pointer;">🔄 Réessayer</button>
+                        <button onclick="App.openSupervisorAuthModal()" style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 8px; font-weight: 700; cursor: pointer;">🔒 Superviseur</button>
+                    </div>
+                </div>
+            `;
             return;
         }
 
-        clientView.style.display = 'block';
-        document.body.style.overflow = 'auto';
-
-        const renderMobileContent = (p) => {
+        try {
             const currentLang = Translator.currentLang || 'fr';
-            const activityText = p.activite_detaillee_fr || (p.activity && (p.activity[currentLang] || p.activity.fr || p.activity.en)) || p['work-desc'] || p.title || 'Installation Mécanique et Montage';
+            const dict = (Translator.translations && Translator.translations[currentLang]) ? Translator.translations[currentLang] : (Translator.translations ? Translator.translations['fr'] : {});
+
+            const isChinese = currentLang === 'zh';
+            const isEnglish = currentLang === 'en';
+
+            const zoneStr = p.zone || 'Zone A1 (Bâtiment Principal / Ligne Montage)';
+            const activiteStr = isChinese ? (p.activite_detaillee_zh || p.title_zh || p.title) :
+                                isEnglish ? (p.activite_detaillee_en || p.title_en || p.title) :
+                                (p.activite_detaillee_fr || p.title || 'Installation Mécanique et Montage');
+
             const equipementsStr = Array.isArray(p.equipements_a_installer) ? p.equipements_a_installer.join(', ') : (p.equipements_a_installer || 'Nacelles ciseaux (x6), Palans DEMAG KBK, Outillages certifiés');
 
             const workers = p.travailleurs && p.travailleurs.length > 0 ? p.travailleurs : [
-                { id: 'T-1', nom: 'Xie', role: 'Chef de Projet / Receveur', badge: 'SYN-001' },
-                { id: 'T-2', nom: 'Nouri Chahrour', role: 'Superviseur HSE Sinylon (0563765157)', badge: 'SYN-003' }
+                { id: 'T-1', nom: 'Xie', role: 'Chef de Projet / Receveur', badge: 'SYN-001', status: 'Actif' },
+                { id: 'T-2', nom: 'Nouri Chahrour', role: 'Superviseur HSE Sinylon (0563765157)', badge: 'SYN-003', status: 'Actif' }
             ];
 
-            let workersHtml = workers.map(w => `
-                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; gap: 10px;">
-                    <div style="font-size: 22px;">👷</div>
-                    <div style="flex: 1;">
-                        <div style="font-weight: 700; color: #f8fafc; font-size: 13px;">${typeof w === 'object' ? w.nom : w}</div>
-                        <div style="font-size: 11px; color: #94a3b8;">${typeof w === 'object' ? (w.role || 'Intervenant') : 'Intervenant'}</div>
-                    </div>
-                    <span class="badge badge-outline" style="font-size: 10px; font-family: monospace;">${(typeof w === 'object' && w.badge) ? w.badge : 'SYN-OK'}</span>
-                </div>
-            `).join('');
+            // Rendu des travailleurs avec la règle : BLANC si Actif / Sur liste, BLEU si Inactif / Hors liste
+            let workersHtml = workers.map((w, idx) => {
+                const nom = typeof w === 'object' ? w.nom : w;
+                const role = typeof w === 'object' ? (w.role || 'Intervenant') : 'Intervenant';
+                const badge = typeof w === 'object' && w.badge ? w.badge : `SIN-${1040 + idx * 2}`;
+                const isActive = typeof w === 'object' ? (w.status !== 'Inactif' && w.status !== 'Inactive') : true;
+
+                if (isActive) {
+                    return `
+                        <div style="background: rgba(15, 23, 42, 0.7); border: 1.5px solid rgba(52, 211, 153, 0.4); border-left: 4px solid #34d399; border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                            <div style="font-size: 24px;">👷</div>
+                            <div style="flex: 1;">
+                                <!-- NOM EN BLANC ÉCLATANT -->
+                                <div style="font-weight: 800; color: #ffffff; font-size: 14px; letter-spacing: 0.3px; text-shadow: 0 0 8px rgba(255,255,255,0.4);">${nom}</div>
+                                <div style="font-size: 11px; color: #cbd5e1; margin-top: 2px;">${role}</div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
+                                <span style="background: #ffffff; color: #0f172a; font-weight: 900; font-size: 10px; padding: 2px 7px; border-radius: 4px; font-family: monospace;">${badge}</span>
+                                <span style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-weight: 800; font-size: 9.5px; padding: 2px 6px; border-radius: 8px; border: 1px solid rgba(52, 211, 153, 0.4);">🟢 SUR LISTE</span>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    return `
+                        <div style="background: rgba(30, 58, 138, 0.2); border: 1.5px solid rgba(96, 165, 250, 0.35); border-left: 4px solid #3b82f6; border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 12px;">
+                            <div style="font-size: 24px; opacity: 0.8;">👤</div>
+                            <div style="flex: 1;">
+                                <!-- NOM EN BLEU / HORS LISTE -->
+                                <div style="font-weight: 700; color: #60a5fa; font-size: 14px; letter-spacing: 0.2px;">${nom}</div>
+                                <div style="font-size: 11px; color: #93c5fd; margin-top: 2px;">${role}</div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
+                                <span style="background: rgba(59, 130, 246, 0.2); color: #93c5fd; font-weight: 700; font-size: 10px; padding: 2px 7px; border-radius: 4px; font-family: monospace;">${badge}</span>
+                                <span style="background: rgba(37, 99, 235, 0.2); color: #93c5fd; font-weight: 800; font-size: 9.5px; padding: 2px 6px; border-radius: 8px; border: 1px solid rgba(96, 165, 250, 0.35);">🔵 HORS LISTE</span>
+                            </div>
+                        </div>
+                    `;
+                }
+            }).join('');
 
             const ppeList = p.ppe || ["Casque de sécurité", "Chaussures S3", "Gilet haute visibilité", "Gants de protection", "Harnais antichute"];
             const ppeHtml = ppeList.map(item => `

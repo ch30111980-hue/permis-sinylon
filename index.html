@@ -7,6 +7,22 @@
     <link rel="stylesheet" href="css/app.css?v=3.4.0">
     <link rel="stylesheet" href="css/print.css?v=3.4.0">
     <link rel="stylesheet" href="css/mobile.css?v=3.4.0">
+    <script>
+        // Anti-flicker instantané : bascule le mode QR avant même le rendu initial du DOM
+        (function() {
+            try {
+                var params = new URLSearchParams(window.location.search);
+                var isQR = params.get('permitId') || (window.location.hash && window.location.hash.length > 1);
+                if (isQR) {
+                    document.documentElement.classList.add('qr-mode');
+                }
+            } catch(e){}
+        })();
+    </script>
+    <style>
+        html.qr-mode .app-layout { display: none !important; }
+        html.qr-mode #client-public-view { display: block !important; }
+    </style>
 </head>
 <body>
     <!-- VUE PUBLIQUE ISOLÉE POUR SCAN SMARTPHONE SUR CHANTIER (100% SÉCURISÉE & DÉDIÉE) -->
