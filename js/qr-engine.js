@@ -102,11 +102,15 @@ const QREngine = {
     // =========================================================================
 
     openMobileQRModal(permitId) {
-        const targetId = permitId || App.currentPermitId || 'K9-W35-01';
-        const permit = Store.getPermit(targetId);
+        let targetId = permitId || (typeof App !== 'undefined' && App.getActivePermitId ? App.getActivePermitId() : null) || 'K9-W35-01';
+        let permit = Store.getPermit(targetId);
         if (!permit) {
-            App.showToast('⚠️ Permis introuvable', 'error');
-            return;
+            const list = Store.getPermitsByWeek(typeof App !== 'undefined' ? App.currentWeek : 35);
+            if (list && list.length > 0) {
+                permit = list[0];
+            } else {
+                permit = { id: targetId, contractor: 'SINYLON', zone: 'Zone K9', title: 'Permis de Travail' };
+            }
         }
 
         this.currentPermitId = permit.id;
@@ -133,12 +137,13 @@ const QREngine = {
             elDates.innerText = `${permit.validFrom || permit['date-main'] || '2026-08-24'} → ${permit.validUntil || permit['date_fin'] || '2026-08-30'} (${permit.timeStart || permit['time-start'] || '08h00'} - ${permit.timeEnd || permit['time-end'] || '17h30'})`;
         }
 
-        // Rendu immédiat du QR Code sur le canvas existant (sans remplacer l'innerHTML)
+        // Rendu du QR Code
         const payload = this.generatePayload(permit);
         const previewBox = document.getElementById('mobile-qr-preview-box');
         const canvas = document.getElementById('mobile-qr-canvas-preview');
         const engine = typeof window !== 'undefined' ? (window.QRCodeGenerator || window.QRCode) : (typeof QRCodeGenerator !== 'undefined' ? QRCodeGenerator : null);
 
+        let qrDrawn = false;
         // Priorité 1 : dessiner sur le canvas avec fond transparent
         if (canvas && engine && typeof engine.drawCanvas === 'function') {
             try {
@@ -148,31 +153,29 @@ const QREngine = {
                     darkColor: '#0f172a',
                     lightColor: 'transparent'
                 });
-                // Canvas visible, pas besoin de fallback
                 canvas.style.display = '';
-                return;
+                qrDrawn = true;
             } catch (e) {
                 console.warn('drawCanvas échoué, tentative SVG:', e);
             }
         }
 
         // Priorité 2 : SVG inline avec fond transparent
-        if (previewBox && engine && typeof engine.toSVG === 'function') {
+        if (!qrDrawn && previewBox && engine && typeof engine.toSVG === 'function') {
             try {
                 let svg = engine.toSVG(payload, { size: 248, margin: 2 });
-                // Supprimer le rect de fond blanc du SVG si présent
                 svg = svg.replace(/<rect[^>]+fill=["']#?(?:fff|ffffff|white)["'][^>]*>/gi, '');
                 if (svg && svg.length > 50) {
                     previewBox.innerHTML = svg;
-                    return;
+                    qrDrawn = true;
                 }
             } catch (e) {
                 console.warn('toSVG échoué, tentative API externe:', e);
             }
         }
 
-        // Priorité 3 (fallback Render) : API externe avec fond transparent
-        if (previewBox) {
+        // Priorité 3 (fallback) : API externe
+        if (!qrDrawn && previewBox) {
             previewBox.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=248x248&bgcolor=255-255-255-0&color=0-0-0&data=${encodeURIComponent(payload)}" style="width:100%;height:100%;object-fit:contain;" alt="QR Code" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=248x248&data=${encodeURIComponent(payload)}'">`;
         }
 
