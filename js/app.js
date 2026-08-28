@@ -137,206 +137,211 @@ const App = {
             return;
         }
 
-        try {
-            const currentLang = Translator.currentLang || 'fr';
-            const dict = (Translator.translations && Translator.translations[currentLang]) ? Translator.translations[currentLang] : (Translator.translations ? Translator.translations['fr'] : {});
+        const renderMobileContent = (p) => {
+            if (!p) return;
+            try {
+                const currentLang = Translator.currentLang || 'fr';
+                const isChinese = currentLang === 'zh';
+                const isEnglish = currentLang === 'en';
 
-            const isChinese = currentLang === 'zh';
-            const isEnglish = currentLang === 'en';
+                const zoneStr = p.zone || 'Zone A1 (Bâtiment Principal / Ligne Montage)';
+                const activityText = isChinese ? (p.activite_detaillee_zh || p.title_zh || p.title || '') :
+                                    isEnglish ? (p.activite_detaillee_en || p.title_en || p.title || '') :
+                                    (p.activite_detaillee_fr || p.title || 'Installation Mécanique et Montage');
 
-            const zoneStr = p.zone || 'Zone A1 (Bâtiment Principal / Ligne Montage)';
-            const activiteStr = isChinese ? (p.activite_detaillee_zh || p.title_zh || p.title) :
-                                isEnglish ? (p.activite_detaillee_en || p.title_en || p.title) :
-                                (p.activite_detaillee_fr || p.title || 'Installation Mécanique et Montage');
+                const equipementsStr = Array.isArray(p.equipements_a_installer) ? p.equipements_a_installer.join(', ') : (p.equipements_a_installer || 'Nacelles ciseaux (x6), Palans DEMAG KBK, Outillages certifiés');
 
-            const equipementsStr = Array.isArray(p.equipements_a_installer) ? p.equipements_a_installer.join(', ') : (p.equipements_a_installer || 'Nacelles ciseaux (x6), Palans DEMAG KBK, Outillages certifiés');
+                const workers = p.travailleurs && p.travailleurs.length > 0 ? p.travailleurs : [
+                    { id: 'T-1', nom: 'Xie', role: 'Chef de Projet / Receveur', badge: 'SYN-001', status: 'Actif' },
+                    { id: 'T-2', nom: 'Nouri Chahrour', role: 'Superviseur HSE Sinylon (0563765157)', badge: 'SYN-003', status: 'Actif' }
+                ];
 
-            const workers = p.travailleurs && p.travailleurs.length > 0 ? p.travailleurs : [
-                { id: 'T-1', nom: 'Xie', role: 'Chef de Projet / Receveur', badge: 'SYN-001', status: 'Actif' },
-                { id: 'T-2', nom: 'Nouri Chahrour', role: 'Superviseur HSE Sinylon (0563765157)', badge: 'SYN-003', status: 'Actif' }
-            ];
+                // Rendu des travailleurs avec la règle : BLANC si Actif / Sur liste, BLEU si Inactif / Hors liste
+                let workersHtml = workers.map((w, idx) => {
+                    const nom = typeof w === 'object' ? w.nom : w;
+                    const role = typeof w === 'object' ? (w.role || 'Intervenant') : 'Intervenant';
+                    const badge = typeof w === 'object' && w.badge ? w.badge : `SIN-${1040 + idx * 2}`;
+                    const isActive = typeof w === 'object' ? (w.status !== 'Inactif' && w.status !== 'Inactive') : true;
 
-            // Rendu des travailleurs avec la règle : BLANC si Actif / Sur liste, BLEU si Inactif / Hors liste
-            let workersHtml = workers.map((w, idx) => {
-                const nom = typeof w === 'object' ? w.nom : w;
-                const role = typeof w === 'object' ? (w.role || 'Intervenant') : 'Intervenant';
-                const badge = typeof w === 'object' && w.badge ? w.badge : `SIN-${1040 + idx * 2}`;
-                const isActive = typeof w === 'object' ? (w.status !== 'Inactif' && w.status !== 'Inactive') : true;
-
-                if (isActive) {
-                    return `
-                        <div style="background: rgba(15, 23, 42, 0.7); border: 1.5px solid rgba(52, 211, 153, 0.4); border-left: 4px solid #34d399; border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-                            <div style="font-size: 24px;">👷</div>
-                            <div style="flex: 1;">
-                                <!-- NOM EN BLANC ÉCLATANT -->
-                                <div style="font-weight: 800; color: #ffffff; font-size: 14px; letter-spacing: 0.3px; text-shadow: 0 0 8px rgba(255,255,255,0.4);">${nom}</div>
-                                <div style="font-size: 11px; color: #cbd5e1; margin-top: 2px;">${role}</div>
+                    if (isActive) {
+                        return `
+                            <div style="background: rgba(15, 23, 42, 0.7); border: 1.5px solid rgba(52, 211, 153, 0.4); border-left: 4px solid #34d399; border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                                <div style="font-size: 24px;">👷</div>
+                                <div style="flex: 1;">
+                                    <!-- NOM EN BLANC ÉCLATANT -->
+                                    <div style="font-weight: 800; color: #ffffff; font-size: 14px; letter-spacing: 0.3px; text-shadow: 0 0 8px rgba(255,255,255,0.4);">${nom}</div>
+                                    <div style="font-size: 11px; color: #cbd5e1; margin-top: 2px;">${role}</div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
+                                    <span style="background: #ffffff; color: #0f172a; font-weight: 900; font-size: 10px; padding: 2px 7px; border-radius: 4px; font-family: monospace;">${badge}</span>
+                                    <span style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-weight: 800; font-size: 9.5px; padding: 2px 6px; border-radius: 8px; border: 1px solid rgba(52, 211, 153, 0.4);">🟢 SUR LISTE</span>
+                                </div>
                             </div>
-                            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
-                                <span style="background: #ffffff; color: #0f172a; font-weight: 900; font-size: 10px; padding: 2px 7px; border-radius: 4px; font-family: monospace;">${badge}</span>
-                                <span style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-weight: 800; font-size: 9.5px; padding: 2px 6px; border-radius: 8px; border: 1px solid rgba(52, 211, 153, 0.4);">🟢 SUR LISTE</span>
+                        `;
+                    } else {
+                        return `
+                            <div style="background: rgba(30, 58, 138, 0.2); border: 1.5px solid rgba(96, 165, 250, 0.35); border-left: 4px solid #3b82f6; border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 12px;">
+                                <div style="font-size: 24px; opacity: 0.8;">👤</div>
+                                <div style="flex: 1;">
+                                    <!-- NOM EN BLEU / HORS LISTE -->
+                                    <div style="font-weight: 700; color: #60a5fa; font-size: 14px; letter-spacing: 0.2px;">${nom}</div>
+                                    <div style="font-size: 11px; color: #93c5fd; margin-top: 2px;">${role}</div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
+                                    <span style="background: rgba(59, 130, 246, 0.2); color: #93c5fd; font-weight: 700; font-size: 10px; padding: 2px 7px; border-radius: 4px; font-family: monospace;">${badge}</span>
+                                    <span style="background: rgba(37, 99, 235, 0.2); color: #93c5fd; font-weight: 800; font-size: 9.5px; padding: 2px 6px; border-radius: 8px; border: 1px solid rgba(96, 165, 250, 0.35);">🔵 HORS LISTE</span>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }).join('');
+
+                const ppeList = p.ppe || ["Casque de sécurité", "Chaussures S3", "Gilet haute visibilité", "Gants de protection", "Harnais antichute"];
+                const ppeHtml = ppeList.map(item => `
+                    <span class="badge badge-sky" style="font-size: 11px; padding: 4px 8px;">🛡️ ${item}</span>
+                `).join(' ');
+
+                const isWeekend = !!p.weekend || !!p.isWeekendWork;
+                const statusBadge = isWeekend ? 
+                    `<span style="background: #8b5cf6; color: #ffffff; font-weight: 800; padding: 6px 18px; border-radius: 20px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;">🟣 PERMIS TRAVAIL WEEK-END</span>` :
+                    `<span style="background: #15803d; color: #ffffff; font-weight: 800; padding: 6px 18px; border-radius: 20px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;">🟢 PERMIS VALIDE & ACTIF SUR CHANTIER</span>`;
+
+                clientView.innerHTML = `
+                    <div style="max-width: 680px; margin: 0 auto; padding: 20px 16px; color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+                        <!-- En-tête Langues & Logos -->
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; gap: 8px; flex-wrap: wrap;">
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <span style="background: #ffffff; color: #000; padding: 4px 10px; font-weight: 900; font-size: 14px; border-radius: 4px;">SINYLON</span>
+                                <span style="border: 2px solid #ffffff; color: #ffffff; padding: 3px 10px; font-weight: 900; font-size: 14px; border-radius: 4px;">STELLANTIS</span>
+                            </div>
+                            <div style="display: flex; gap: 6px; align-items: center;">
+                                <div class="lang-switch-group">
+                                    <button class="lang-btn ${currentLang === 'fr' ? 'active' : ''}" onclick="Translator.setLang('fr'); App.showPublicClientView('${p.id}');">FR</button>
+                                    <button class="lang-btn ${currentLang === 'en' ? 'active' : ''}" onclick="Translator.setLang('en'); App.showPublicClientView('${p.id}');">EN</button>
+                                    <button class="lang-btn ${currentLang === 'zh' ? 'active' : ''}" onclick="Translator.setLang('zh'); App.showPublicClientView('${p.id}');">中文</button>
+                                </div>
                             </div>
                         </div>
-                    `;
-                } else {
-                    return `
-                        <div style="background: rgba(30, 58, 138, 0.2); border: 1.5px solid rgba(96, 165, 250, 0.35); border-left: 4px solid #3b82f6; border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 12px;">
-                            <div style="font-size: 24px; opacity: 0.8;">👤</div>
-                            <div style="flex: 1;">
-                                <!-- NOM EN BLEU / HORS LISTE -->
-                                <div style="font-weight: 700; color: #60a5fa; font-size: 14px; letter-spacing: 0.2px;">${nom}</div>
-                                <div style="font-size: 11px; color: #93c5fd; margin-top: 2px;">${role}</div>
+
+                        <!-- Header de Certification Officielle -->
+                        <div style="background: linear-gradient(135deg, #1e3a8a, #0f172a); border: 2px solid #3b82f6; border-radius: 14px; padding: 20px; text-align: center; margin-bottom: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
+                            <div style="font-size: 11px; font-weight: 700; color: #93c5fd; text-transform: uppercase; letter-spacing: 1px;">
+                                🛡️ FICHE DE CONTRÔLE HSE ET AUDIT CHANTIER OFFICIEL
                             </div>
-                            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
-                                <span style="background: rgba(59, 130, 246, 0.2); color: #93c5fd; font-weight: 700; font-size: 10px; padding: 2px 7px; border-radius: 4px; font-family: monospace;">${badge}</span>
-                                <span style="background: rgba(37, 99, 235, 0.2); color: #93c5fd; font-weight: 800; font-size: 9.5px; padding: 2px 6px; border-radius: 8px; border: 1px solid rgba(96, 165, 250, 0.35);">🔵 HORS LISTE</span>
+                            <div style="font-size: 24px; font-weight: 900; letter-spacing: 1px; color: #ffffff; margin-top: 4px;">
+                                PERMIS ${p.id}
+                            </div>
+                            <div style="font-size: 13px; color: #cbd5e1; margin-top: 2px;">
+                                Projet : Algeria K9 CKD0 — Usine Stellantis
+                            </div>
+                            
+                            <div style="margin-top: 14px;">
+                                ${statusBadge}
                             </div>
                         </div>
-                    `;
-                }
-            }).join('');
 
-            const ppeList = p.ppe || ["Casque de sécurité", "Chaussures S3", "Gilet haute visibilité", "Gants de protection", "Harnais antichute"];
-            const ppeHtml = ppeList.map(item => `
-                <span class="badge badge-sky" style="font-size: 11px; padding: 4px 8px;">🛡️ ${item}</span>
-            `).join(' ');
-
-            const isWeekend = !!p.weekend || !!p.isWeekendWork;
-            const statusBadge = isWeekend ? 
-                `<span style="background: #8b5cf6; color: #ffffff; font-weight: 800; padding: 6px 18px; border-radius: 20px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;">🟣 PERMIS TRAVAIL WEEK-END</span>` :
-                `<span style="background: #15803d; color: #ffffff; font-weight: 800; padding: 6px 18px; border-radius: 20px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;">🟢 PERMIS VALIDE & ACTIF SUR CHANTIER</span>`;
-
-            clientView.innerHTML = `
-                <div style="max-width: 680px; margin: 0 auto; padding: 20px 16px; color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-                    <!-- En-tête Langues & Logos -->
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; gap: 8px; flex-wrap: wrap;">
-                        <div style="display: flex; gap: 8px; align-items: center;">
-                            <span style="background: #ffffff; color: #000; padding: 4px 10px; font-weight: 900; font-size: 14px; border-radius: 4px;">SINYLON</span>
-                            <span style="border: 2px solid #ffffff; color: #ffffff; padding: 3px 10px; font-weight: 900; font-size: 14px; border-radius: 4px;">STELLANTIS</span>
-                        </div>
-                        <div style="display: flex; gap: 6px; align-items: center;">
-                            <div class="lang-switch-group">
-                                <button class="lang-btn ${currentLang === 'fr' ? 'active' : ''}" onclick="Translator.setLang('fr'); App.showPublicClientView('${p.id}');">FR</button>
-                                <button class="lang-btn ${currentLang === 'en' ? 'active' : ''}" onclick="Translator.setLang('en'); App.showPublicClientView('${p.id}');">EN</button>
-                                <button class="lang-btn ${currentLang === 'zh' ? 'active' : ''}" onclick="Translator.setLang('zh'); App.showPublicClientView('${p.id}');">中文</button>
+                        <!-- Activité et Détails de la Zone -->
+                        <div style="background: #182238; border: 1px solid #23304c; border-radius: 12px; padding: 18px; margin-bottom: 16px;">
+                            <div style="font-size: 14px; font-weight: 800; color: #60a5fa; border-bottom: 1px solid #23304c; padding-bottom: 8px; margin-bottom: 12px;">
+                                📋 Activités & Travaux de la Zone
                             </div>
+                            <div style="font-size: 14px; font-weight: 600; color: #ffffff; line-height: 1.5; margin-bottom: 10px; white-space: pre-line;">
+                                ${activityText}
+                            </div>
+                            <div style="background: rgba(0,0,0,0.2); border: 1px solid #23304c; border-radius: 8px; padding: 10px; margin-bottom: 12px; font-size: 12.5px;">
+                                <strong style="color: #38bdf8;">📦 Équipements à installer :</strong><br>
+                                <span style="color: #e2e8f0;">${equipementsStr}</span>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 13px; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 10px;">
+                                <div>🏢 <strong>Entreprise :</strong> ${p.contractor || p.company || 'SINYLON'}</div>
+                                <div>🏛️ <strong>Client :</strong> STELLANTIS</div>
+                                <div>📍 <strong>Secteur :</strong> ${p.ouvrage || 'Atelier Montage K9'}</div>
+                                <div>📌 <strong>Zone(s) :</strong> <span style="color: #60a5fa; font-weight: 800;">${p.zone || 'UB / UAR / FUSA'}</span></div>
+                                <div>👨‍💼 <strong>Chef de Projet :</strong> ${p.responsible || p.chefNom || 'Xie (Chef de Projet)'}</div>
+                                <div>📞 <strong>Tél. HSE :</strong> <span style="color: #10b981; font-weight: 800;">${p.tel || '0563765157'}</span></div>
+                                <div style="grid-column: span 2;">⏰ <strong>Horaires de Travail :</strong> ${p.timeStart || '08h00'} → ${p.timeEnd || '17h30'} (${p.validFrom || '2026-08-24'} au ${p.validUntil || '2026-08-30'})</div>
+                            </div>
+                        </div>
+
+                        <!-- 3 Annexes de Sécurité Certifiées -->
+                        <div style="background: #182238; border: 1px solid #23304c; border-radius: 12px; padding: 18px; margin-bottom: 16px;">
+                            <div style="font-size: 14px; font-weight: 800; color: #f59e0b; border-bottom: 1px solid #23304c; padding-bottom: 8px; margin-bottom: 12px;">
+                                ⚠️ Annexes de Sécurité & Dossier 5 Pages Certifié
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr; gap: 8px; font-size: 12px;">
+                                <div style="background: rgba(2,132,199,0.15); border: 1px solid #0284c7; padding: 8px 12px; border-radius: 6px; color: #7dd3fc;">
+                                    🧗 <strong>Annexe A (Hauteur) :</strong> 6 Nacelles Ciseaux + 1 Manlift (PEMP) — Validé ✓
+                                </div>
+                                <div style="background: rgba(239,68,68,0.15); border: 1px solid #ef4444; padding: 8px 12px; border-radius: 6px; color: #fca5a5;">
+                                    🔥 <strong>Annexe B (Chaud) :</strong> Soudage / Pinces X/C, Extincteurs à poste — Validé ✓
+                                </div>
+                                <div style="background: rgba(245,158,11,0.15); border: 1px solid #f59e0b; padding: 8px 12px; border-radius: 6px; color: #fcd34d;">
+                                    ⚡ <strong>Annexe C (Électrique) :</strong> Consignation LOTO, VAT 0V, Gants 1000V — Validé ✓
+                                </div>
+                            </div>
+                            <div style="margin-top: 12px;">
+                                ${ppeHtml}
+                            </div>
+                        </div>
+
+                        <!-- Visas MOEX / W.P.E.E.X / SINYLON HSE -->
+                        <div style="background: #182238; border: 1px solid #23304c; border-radius: 12px; padding: 18px; margin-bottom: 16px;">
+                            <div style="font-size: 14px; font-weight: 800; color: #10b981; border-bottom: 1px solid #23304c; padding-bottom: 8px; margin-bottom: 12px;">
+                                ✅ Visas Officiels & Revalidations Journalières (08h00)
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 11px; text-align: center;">
+                                <div style="background: rgba(16,185,129,0.1); border: 1px solid #10b981; padding: 8px; border-radius: 6px;">
+                                    <div style="font-weight: 700; color: #10b981;">STELLANTIS</div>
+                                    <div style="font-size: 10px; color: #a7f3d0;">✓ VALIDÉ</div>
+                                </div>
+                                <div style="background: rgba(16,185,129,0.1); border: 1px solid #10b981; padding: 8px; border-radius: 6px;">
+                                    <div style="font-weight: 700; color: #10b981;">W.P.E.E.X SUIVI</div>
+                                    <div style="font-size: 10px; color: #a7f3d0;">✓ 08H00 MATIN</div>
+                                </div>
+                                <div style="background: rgba(16,185,129,0.1); border: 1px solid #10b981; padding: 8px; border-radius: 6px;">
+                                    <div style="font-weight: 700; color: #10b981;">SINYLON HSE</div>
+                                    <div style="font-size: 10px; color: #a7f3d0;">✓ 0563765157</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Intervenants autorisés -->
+                        <div style="background: #182238; border: 1px solid #23304c; border-radius: 12px; padding: 18px; margin-bottom: 16px;">
+                            <div style="font-size: 14px; font-weight: 800; color: #60a5fa; border-bottom: 1px solid #23304c; padding-bottom: 8px; margin-bottom: 12px;">
+                                👥 Équipe Autorisée sur Chantier
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                ${workersHtml}
+                            </div>
+                        </div>
+
+                        <!-- Boutons d'action -->
+                        <div style="text-align: center; margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+                            <button onclick="App.printPermit('${p.id}')" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center; font-size: 15px; padding: 14px;">
+                                🖨️ IMPRIMER / TÉLÉCHARGER DOSSIER COMPLET (5 PAGES A4)
+                            </button>
+                            <button onclick="App.openSupervisorModal()" class="btn btn-outline btn-sm" style="color: #64748b; border-color: #334155; font-size: 12px; padding: 8px;">
+                                🔒 Accès Superviseur (Équipe SINYLON)
+                            </button>
                         </div>
                     </div>
-
-                    <!-- Header de Certification Officielle -->
-                    <div style="background: linear-gradient(135deg, #1e3a8a, #0f172a); border: 2px solid #3b82f6; border-radius: 14px; padding: 20px; text-align: center; margin-bottom: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
-                        <div style="font-size: 11px; font-weight: 700; color: #93c5fd; text-transform: uppercase; letter-spacing: 1px;">
-                            🛡️ FICHE DE CONTRÔLE HSE ET AUDIT CHANTIER OFFICIEL
-                        </div>
-                        <div style="font-size: 24px; font-weight: 900; letter-spacing: 1px; color: #ffffff; margin-top: 4px;">
-                            PERMIS ${p.id}
-                        </div>
-                        <div style="font-size: 13px; color: #cbd5e1; margin-top: 2px;">
-                            Projet : Algeria K9 CKD0 — Usine Stellantis
-                        </div>
-                        
-                        <div style="margin-top: 14px;">
-                            ${statusBadge}
-                        </div>
-                    </div>
-
-                    <!-- Activité et Détails de la Zone -->
-                    <div style="background: #182238; border: 1px solid #23304c; border-radius: 12px; padding: 18px; margin-bottom: 16px;">
-                        <div style="font-size: 14px; font-weight: 800; color: #60a5fa; border-bottom: 1px solid #23304c; padding-bottom: 8px; margin-bottom: 12px;">
-                            📋 Activités & Travaux de la Zone
-                        </div>
-                        <div style="font-size: 14px; font-weight: 600; color: #ffffff; line-height: 1.5; margin-bottom: 10px; white-space: pre-line;">
-                            ${activityText}
-                        </div>
-                        <div style="background: rgba(0,0,0,0.2); border: 1px solid #23304c; border-radius: 8px; padding: 10px; margin-bottom: 12px; font-size: 12.5px;">
-                            <strong style="color: #38bdf8;">📦 Équipements à installer :</strong><br>
-                            <span style="color: #e2e8f0;">${equipementsStr}</span>
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 13px; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 10px;">
-                            <div>🏢 <strong>Entreprise :</strong> ${p.contractor || p.company || 'SINYLON'}</div>
-                            <div>🏛️ <strong>Client :</strong> STELLANTIS</div>
-                            <div>📍 <strong>Secteur :</strong> ${p.ouvrage || 'Atelier Montage K9'}</div>
-                            <div>📌 <strong>Zone(s) :</strong> <span style="color: #60a5fa; font-weight: 800;">${p.zone || 'UB / UAR / FUSA'}</span></div>
-                            <div>👨‍💼 <strong>Chef de Projet :</strong> ${p.responsible || p.chefNom || 'Xie (Chef de Projet)'}</div>
-                            <div>📞 <strong>Tél. HSE :</strong> <span style="color: #10b981; font-weight: 800;">${p.tel || '0563765157'}</span></div>
-                            <div style="grid-column: span 2;">⏰ <strong>Horaires de Travail :</strong> ${p.timeStart || '08h00'} → ${p.timeEnd || '17h30'} (${p.validFrom || '2026-08-24'} au ${p.validUntil || '2026-08-30'})</div>
-                        </div>
-                    </div>
-
-                    <!-- 3 Annexes de Sécurité Certifiées -->
-                    <div style="background: #182238; border: 1px solid #23304c; border-radius: 12px; padding: 18px; margin-bottom: 16px;">
-                        <div style="font-size: 14px; font-weight: 800; color: #f59e0b; border-bottom: 1px solid #23304c; padding-bottom: 8px; margin-bottom: 12px;">
-                            ⚠️ Annexes de Sécurité & Dossier 5 Pages Certifié
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr; gap: 8px; font-size: 12px;">
-                            <div style="background: rgba(2,132,199,0.15); border: 1px solid #0284c7; padding: 8px 12px; border-radius: 6px; color: #7dd3fc;">
-                                🧗 <strong>Annexe A (Hauteur) :</strong> 6 Nacelles Ciseaux + 1 Manlift (PEMP) — Validé ✓
-                            </div>
-                            <div style="background: rgba(239,68,68,0.15); border: 1px solid #ef4444; padding: 8px 12px; border-radius: 6px; color: #fca5a5;">
-                                🔥 <strong>Annexe B (Chaud) :</strong> Soudage / Pinces X/C, Extincteurs à poste — Validé ✓
-                            </div>
-                            <div style="background: rgba(245,158,11,0.15); border: 1px solid #f59e0b; padding: 8px 12px; border-radius: 6px; color: #fcd34d;">
-                                ⚡ <strong>Annexe C (Électrique) :</strong> Consignation LOTO, VAT 0V, Gants 1000V — Validé ✓
-                            </div>
-                        </div>
-                        <div style="margin-top: 12px;">
-                            ${ppeHtml}
-                        </div>
-                    </div>
-
-                    <!-- Visas MOEX / W.P.E.E.X / SINYLON HSE -->
-                    <div style="background: #182238; border: 1px solid #23304c; border-radius: 12px; padding: 18px; margin-bottom: 16px;">
-                        <div style="font-size: 14px; font-weight: 800; color: #10b981; border-bottom: 1px solid #23304c; padding-bottom: 8px; margin-bottom: 12px;">
-                            ✅ Visas Officiels & Revalidations Journalières (08h00)
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 11px; text-align: center;">
-                            <div style="background: rgba(16,185,129,0.1); border: 1px solid #10b981; padding: 8px; border-radius: 6px;">
-                                <div style="font-weight: 700; color: #10b981;">STELLANTIS</div>
-                                <div style="font-size: 10px; color: #a7f3d0;">✓ VALIDÉ</div>
-                            </div>
-                            <div style="background: rgba(16,185,129,0.1); border: 1px solid #10b981; padding: 8px; border-radius: 6px;">
-                                <div style="font-weight: 700; color: #10b981;">W.P.E.E.X SUIVI</div>
-                                <div style="font-size: 10px; color: #a7f3d0;">✓ 08H00 MATIN</div>
-                            </div>
-                            <div style="background: rgba(16,185,129,0.1); border: 1px solid #10b981; padding: 8px; border-radius: 6px;">
-                                <div style="font-weight: 700; color: #10b981;">SINYLON HSE</div>
-                                <div style="font-size: 10px; color: #a7f3d0;">✓ 0563765157</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Intervenants autorisés -->
-                    <div style="background: #182238; border: 1px solid #23304c; border-radius: 12px; padding: 18px; margin-bottom: 16px;">
-                        <div style="font-size: 14px; font-weight: 800; color: #60a5fa; border-bottom: 1px solid #23304c; padding-bottom: 8px; margin-bottom: 12px;">
-                            👥 Équipe Autorisée sur Chantier
-                        </div>
-                        <div style="display: flex; flex-direction: column; gap: 8px;">
-                            ${workersHtml}
-                        </div>
-                    </div>
-
-                    <!-- Boutons d'action -->
-                    <div style="text-align: center; margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
-                        <button onclick="App.printPermit('${p.id}')" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center; font-size: 15px; padding: 14px;">
-                            🖨️ IMPRIMER / TÉLÉCHARGER DOSSIER COMPLET (5 PAGES A4)
-                        </button>
-                        <button onclick="App.openSupervisorModal()" class="btn btn-outline btn-sm" style="color: #64748b; border-color: #334155; font-size: 12px; padding: 8px;">
-                            🔒 Accès Superviseur (Équipe SINYLON)
-                        </button>
-                    </div>
-                </div>
-            `;
+                `;
+            } catch (err) {
+                console.error("Erreur renderMobileContent:", err);
+            }
         };
 
         // Rendu immédiat
-        renderMobileContent(permit);
+        renderMobileContent(p);
 
         // Rafraîchissement en arrière-plan
-        Store.getPermitAsync(permitId).then(fresh => {
-            if (fresh && fresh.id) {
-                renderMobileContent(fresh);
-            }
-        });
+        if (typeof Store.getPermitAsync === 'function') {
+            Store.getPermitAsync(permitId).then(fresh => {
+                if (fresh && fresh.id) {
+                    renderMobileContent(fresh);
+                }
+            });
+        }
     },
 
     // =========================================================================
