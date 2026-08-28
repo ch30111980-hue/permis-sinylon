@@ -57,7 +57,7 @@ const QREngine = {
                     size: size,
                     margin: margin,
                     darkColor: options.darkColor || '#000000',
-                    lightColor: options.lightColor !== undefined ? options.lightColor : 'transparent'
+                    lightColor: options.lightColor !== undefined ? options.lightColor : '#ffffff'
                 });
                 return canvas;
             } catch (e) {
@@ -144,27 +144,26 @@ const QREngine = {
         const engine = typeof window !== 'undefined' ? (window.QRCodeGenerator || window.QRCode) : (typeof QRCodeGenerator !== 'undefined' ? QRCodeGenerator : null);
 
         let qrDrawn = false;
-        // Priorité 1 : dessiner sur le canvas avec fond transparent
+        // Priorité 1 : dessiner sur le canvas avec fond BLANC PUR (#ffffff) et modules NOIRS (#000000)
         if (canvas && engine && typeof engine.drawCanvas === 'function') {
             try {
                 engine.drawCanvas(canvas, payload, {
                     size: 248,
                     margin: 2,
-                    darkColor: '#0f172a',
-                    lightColor: 'transparent'
+                    darkColor: '#000000',
+                    lightColor: '#ffffff'
                 });
-                canvas.style.display = '';
+                canvas.style.display = 'block';
                 qrDrawn = true;
             } catch (e) {
                 console.warn('drawCanvas échoué, tentative SVG:', e);
             }
         }
 
-        // Priorité 2 : SVG inline avec fond transparent
+        // Priorité 2 : SVG inline avec fond blanc
         if (!qrDrawn && previewBox && engine && typeof engine.toSVG === 'function') {
             try {
-                let svg = engine.toSVG(payload, { size: 248, margin: 2 });
-                svg = svg.replace(/<rect[^>]+fill=["']#?(?:fff|ffffff|white)["'][^>]*>/gi, '');
+                let svg = engine.toSVG(payload, { size: 248, margin: 2, darkColor: '#000000', lightColor: '#ffffff' });
                 if (svg && svg.length > 50) {
                     previewBox.innerHTML = svg;
                     qrDrawn = true;
@@ -174,9 +173,9 @@ const QREngine = {
             }
         }
 
-        // Priorité 3 (fallback) : API externe
+        // Priorité 3 (fallback) : API externe fond blanc
         if (!qrDrawn && previewBox) {
-            previewBox.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=248x248&bgcolor=255-255-255-0&color=0-0-0&data=${encodeURIComponent(payload)}" style="width:100%;height:100%;object-fit:contain;" alt="QR Code" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=248x248&data=${encodeURIComponent(payload)}'">`;
+            previewBox.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=248x248&bgcolor=255-255-255&color=0-0-0&data=${encodeURIComponent(payload)}" style="width:100%;height:100%;object-fit:contain;background:#ffffff;border-radius:8px;" alt="QR Code">`;
         }
 
         const urlText = document.getElementById('mobile-qr-link-url');
