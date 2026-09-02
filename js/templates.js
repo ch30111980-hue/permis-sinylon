@@ -69,222 +69,386 @@ const Templates = {
 
     // 1. PERMIS GÉNÉRAL - PAGE 1/2 (RECTO)
     // Signatures VIDES prêtes pour émargement manuscrit au stylo / tampon
+    // =========================================================================
+    // PAGE 1 : PERMIS DE TRAVAIL DE SECURITÉ GÉNÉRALE (RECTO - PAGE 1/2)
+    // REPRODUCTION EXACTE DE LA PHOTO CSPS FIAT ADAPTÉE POUR SINYLON - STELLANTIS
+    // Utilise dynamiquement la description et les données du permis dans l'application
+    // =========================================================================
     generalP1(permit) {
-        const d = permit.dangers || {};
-        const isY = (val) => val ? 'check-active' : '';
-        const isN = (val) => !val ? 'check-active' : '';
+        const p = permit || {};
+        const dangers = p.dangers || {};
+        const isHeight = !!dangers.height;
+        const isHot = !!dangers.hot;
+        const isElec = !!dangers.electric;
+        const isConfined = !!dangers.confined;
+        const isTension = !!dangers.tension;
+        const isExcav = !!dangers.excavation;
+        const isRupture = !!dangers.rupture;
 
-        const descFr = permit.activite_detaillee_fr || (permit.activity && (permit.activity.fr || permit.activity.en)) || permit['work-desc'] || permit.title || 'Installation Mécanique et Montage';
-        const descEn = permit.activite_detaillee_en || (permit.activity && permit.activity.en) || permit.title_en || 'Mechanical and Assembly Installation';
-        const descZh = permit.activite_detaillee_zh || (permit.activity && permit.activity.zh) || permit.title_zh || '机械装配与设备安装';
-        const equipementsStr = Array.isArray(permit.equipements_a_installer) ? permit.equipements_a_installer.join(', ') : (permit.equipements_a_installer || 'Nacelles ciseaux (x6), Palans DEMAG KBK, Outillages certifiés');
-
-        const workers = permit.travailleurs || permit.workers || ['Xie (Chef de Projet)', 'Nouri Chahrour (HSE Sinylon)'];
-        const workersHtml = workers.map(w => {
-            const nom = typeof w === 'object' ? w.nom : w;
-            const role = typeof w === 'object' ? (w.role || 'Intervenant') : 'Intervenant';
-            const isActive = typeof w === 'object' ? (w.status !== 'Inactif' && w.status !== 'Inactive') : true;
-            if (isActive) {
-                return `<span class="worker-tag" style="background:#fff;color:#0f172a;border:1.5px solid #0f172a;font-weight:800;padding:2px 8px;border-radius:4px;display:inline-block;margin:2px;"><strong>${nom}</strong> <small style="color:#475569;">(${role})</small> <span style="color:#16a34a;font-weight:900;">✓</span></span>`;
-            } else {
-                return `<span class="worker-tag" style="background:#dbeafe;color:#1e40af;border:1.5px solid #3b82f6;font-weight:700;padding:2px 8px;border-radius:4px;display:inline-block;margin:2px;"><strong>${nom}</strong> <small style="color:#3b82f6;">(${role})</small> <span style="color:#2563eb;font-weight:800;">🔵 Inactif</span></span>`;
-            }
-        }).join(' ');
+        // Description exacte provenant de l'application / JSON
+        const workDescription = p['work-desc'] || p.description || p.desc || '';
+        const workDescEn = p['work-desc-en'] || '';
 
         return `
-            <div class="a4-document" id="doc-${permit.id}-p1">
-                <!-- En-tête Logos & Titre Officiel -->
-                <div class="doc-header" style="display:flex;justify-content:space-between;align-items:center;border-bottom:1.5px solid #000;padding-bottom:5px;margin-bottom:4px;">
-                    <div class="doc-logo" style="display:flex;align-items:center;gap:6px;">
-                        <span style="background:#000;color:#fff;font-weight:900;font-size:13px;padding:2px 6px;border-radius:2px;">SINYLON</span>
-                        <span style="border:1.5px solid #000;color:#000;font-weight:900;font-size:13px;padding:1px 6px;border-radius:2px;background:#fff;">STELLANTIS</span>
-                        ${this.renderLogoSinylonStellantis()}
+        <div class="a4-document" style="font-family:Arial,Helvetica,sans-serif;color:#000;padding:5mm 8mm 4mm 8mm;display:flex;flex-direction:column;justify-content:space-between;box-sizing:border-box;height:297mm;overflow:hidden;position:relative;">
+            <div>
+                <!-- EN-TÊTE : EXACT PHOTO -->
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2px;">
+                    <div style="flex:1;text-align:center;padding-left:40px;">
+                        <div style="font-size:16px;font-weight:900;letter-spacing:0.2px;text-transform:none;">
+                            Permis de Travail de Securité Générale
+                        </div>
+                        <div style="font-size:8.5px;color:#000;margin-top:1px;">
+                            (à afficher sur le site de travail )
+                        </div>
                     </div>
-                    <div class="doc-title-container" style="text-align:center;flex:1;">
-                        <div class="doc-title-main" style="font-size:14px;font-weight:900;">PERMIS GENERAL DE TRAVAIL</div>
-                        <div class="doc-title-sub" style="font-size:7.5px;color:#333;">GENERAL WORK PERMIT / 通用作业许可证 (à afficher sur le site de travail)</div>
-                    </div>
-                    <div class="doc-permit-number" style="border:1.5px solid #000;padding:2px 8px;text-align:center;border-radius:2px;background:#f8fafc;">
-                        <div class="permit-label" style="font-size:7.5px;font-weight:700;">PERMIS N°</div>
-                        <div class="permit-value" style="font-size:13px;font-weight:900;color:#1e3a8a;">${permit.id}</div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <div style="display:flex;align-items:center;gap:5px;">
+                            <span style="background:#000;color:#fff;font-weight:900;font-size:14px;padding:2px 7px;border-radius:2px;letter-spacing:1px;">SINYLON</span>
+                            <span style="border:1.5px solid #000;color:#000;font-weight:900;font-size:14px;padding:1px 7px;border-radius:2px;background:#fff;letter-spacing:1px;">STELLANTIS</span>
+                        </div>
+                        <div style="border:1px solid #000;text-align:center;width:130px;">
+                            <div style="font-size:7.5px;font-weight:700;border-bottom:1px solid #000;padding:1px 4px;background:#f8fafc;">Identifiant du permis</div>
+                            <div style="font-size:12px;font-weight:900;padding:1px 4px;color:#000;">${p.id || 'SYN-K9-KW35'}</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Validité & Date d'émission (Bande Jaune) -->
-                <div class="yellow-grid-3" style="display:grid;grid-template-columns:1fr 1.5fr 1fr;margin-bottom:4px;">
-                    <div>
-                        <div class="yellow-bar-header" style="background:#ffeb3b;border:1px solid #000;padding:2px 4px;font-weight:900;font-size:8px;">Date d'émission :</div>
-                        <div class="doc-box-bordered" style="border:1px solid #000;border-top:none;padding:2px 4px;font-size:8px;">${permit.validFrom || permit['date-main'] || '2026-08-24'}</div>
+                <!-- SECTION 1 : BRÈVE DESCRIPTION DU TRAVAIL (BANDEAU JAUNE) -->
+                <div style="border:1px solid #000;margin-top:3px;">
+                    <div style="background:#ffeb3b;border-bottom:1px solid #000;padding:2px 6px;font-weight:900;font-size:8.5px;text-align:center;">
+                        Bréve description du travail
                     </div>
-                    <div>
-                        <div class="yellow-bar-header" style="background:#ffeb3b;border:1px solid #000;padding:2px 4px;font-weight:900;font-size:8px;">Période de validité du permis :</div>
-                        <div class="doc-box-bordered" style="border:1px solid #000;border-top:none;padding:2px 4px;font-size:8px;color:#1e3a8a;font-weight:800;">
-                            Du : <span>${permit.validFrom || permit['date-main'] || '2026-08-24'}</span> 
-                            Au : <span>${permit.validUntil || permit['date_fin'] || '2026-08-30'}</span>
+                    <div style="padding:4px 6px;min-height:38px;font-size:7.5px;line-height:1.25;color:#000;">
+                        ${workDescription}
+                        ${workDescEn ? `<div style="font-size:7px;color:#475569;font-style:italic;margin-top:2px;">${workDescEn}</div>` : ''}
+                    </div>
+                </div>
+
+                <!-- SECTION 2 : ENDROIT DE TRAVAIL & ÉQUIPEMENTS (BANDEAUX JAUNES) -->
+                <div style="display:grid;grid-template-columns:1fr 1fr;border:1px solid #000;border-top:none;">
+                    <div style="border-right:1px solid #000;">
+                        <div style="background:#ffeb3b;border-bottom:1px solid #000;padding:2px 6px;font-weight:900;font-size:8.5px;text-align:center;">
+                            Endroit de travail:
+                        </div>
+                        <div style="padding:3px 6px;font-size:7.5px;min-height:34px;">
+                            <strong>Localisation :</strong> ${p.location || p.ouvrage || 'Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB'}<br>
+                            <strong>Secteur :</strong> ${p.ouvrage || 'Atelier Assemblage Stellantis (Algeria K9 CKD0)'}
                         </div>
                     </div>
                     <div>
-                        <div class="yellow-bar-header" style="background:#ffeb3b;border:1px solid #000;padding:2px 4px;font-weight:900;font-size:8px;">Horaires autorisés :</div>
-                        <div class="doc-box-bordered" style="border:1px solid #000;border-top:none;padding:2px 4px;font-size:8px;font-weight:800;">
-                            De : <span>${permit.timeStart || permit['time-start'] || '08h00'}</span> 
-                            À : <span>${permit.timeEnd || permit['time-end'] || '17h30'}</span>
+                        <div style="background:#ffeb3b;border-bottom:1px solid #000;padding:2px 6px;font-weight:900;font-size:8.5px;text-align:center;">
+                            Equipment/Machinerie / Zone sur lequel s'effectue le travail
+                        </div>
+                        <div style="padding:3px 6px;font-size:7.5px;min-height:34px;">
+                            <strong>ZONE :</strong> <span style="font-weight:bold;color:#1e3a8a;">${p.zone || 'Zones FUSA / UAR / UB'}</span><br>
+                            <strong>Équipements :</strong> Postes de soudage ARO, Pinces manuelles, Nacelles ciseaux (x6), Manlift, Palans DEMAG
                         </div>
                     </div>
                 </div>
 
-                <!-- Brève description du travail (Bande Jaune) -->
-                <div class="yellow-bar-header" style="background:#ffeb3b;border:1px solid #000;padding:2px 4px;font-weight:900;font-size:8px;">Bréve description du travail & Activités de la zone / Brief work description</div>
-                <div class="doc-box-bordered" style="border:1px solid #000;border-top:none;padding:3px 6px;min-height:36px;font-size:8px;">
-                    <div style="font-weight:600;"><strong>FR :</strong> ${descFr}</div>
-                    <div style="font-size:7.5px;color:#1e3a8a;font-style:italic;margin-top:1px;"><strong>EN :</strong> ${descEn}</div>
-                    <div style="font-size:7.5px;color:#047857;margin-top:1px;"><strong>ZH :</strong> ${descZh}</div>
-                </div>
-
-                <!-- Endroit de travail & Équipement/Machinerie -->
-                <div class="yellow-grid-2" style="display:grid;grid-template-columns:1.1fr 1fr;margin-top:4px;">
-                    <div class="yellow-bar-header" style="background:#ffeb3b;border:1px solid #000;border-right:none;padding:2px 4px;font-weight:900;font-size:8px;">Endroit de travail & Zone(s) :</div>
-                    <div class="yellow-bar-header" style="background:#ffeb3b;border:1px solid #000;padding:2px 4px;font-weight:900;font-size:8px;">Équipements & Installations à poser :</div>
-                </div>
-                <div style="display:grid;grid-template-columns:1.1fr 1fr;">
-                    <div class="doc-box-bordered" style="border:1px solid #000;border-top:none;border-right:none;padding:3px 6px;font-size:8px;">
-                        <strong>Bâtiment :</strong> ${permit.location || 'Hall Montage / Usine Stellantis'}<br>
-                        <strong>Secteur :</strong> ${permit.ouvrage || 'Ligne Assemblage K9 CKD0'}<br>
-                        <strong>ZONE(S) :</strong> <span style="color:#1e3a8a;font-weight:800;">${permit.zone || 'UB / UAR / FUSA'}</span>
+                <!-- SECTION 3 : ENTREPRISE INTERVENANTE & CONTACTS -->
+                <div style="display:grid;grid-template-columns:1.2fr 1fr;border:1px solid #000;border-top:none;font-size:7.5px;">
+                    <div style="border-right:1px solid #000;padding:3px 6px;">
+                        <div><strong>Entreprise Intervenante :</strong> <span style="font-weight:bold;">${p.company || 'SINYLON'}</span></div>
+                        <div style="color:#333;margin-top:1px;">Avant de commencer le travail, veuillez contacter:</div>
+                        <div style="margin-top:1px;"><strong>Nom:</strong> ${p['chef-nom'] || 'XIE XIAN (Chef de Projet)'}</div>
                     </div>
-                    <div class="doc-box-bordered" style="border:1px solid #000;border-top:none;padding:3px 6px;font-size:7.5px;line-height:1.25;">
-                        <strong>Équipements à installer :</strong><br>
-                        <span style="color:#0f172a;font-weight:600;">${equipementsStr}</span>
-                    </div>
-                </div>
-
-                <!-- Entreprise Intervenante & Contacts -->
-                <div style="display:grid;grid-template-columns:1.4fr 1fr;margin-top:4px;">
-                    <div class="doc-box-bordered" style="border:1px solid #000;border-right:none;padding:3px 6px;font-size:8px;">
-                        <strong>Entreprise Intervenante :</strong> <span style="font-weight:bold;">${permit.contractor || permit.company || 'SINYLON'}</span><br>
-                        Avant de commencer le travail, veuillez contacter :<br>
-                        <strong>Chef de Projet :</strong> <span>${permit.chefNom || permit['chef-nom'] || 'Xie (Chef de Projet)'}</span>
-                    </div>
-                    <div class="doc-box-bordered" style="border:1px solid #000;padding:3px 6px;font-size:8px;">
-                        <div style="display:flex;justify-content:space-between;">
-                            <span>Plan d'urgence du site attaché :</span>
-                            <span class="check-yn"><span>Y</span><span class="check-active" style="background:#000;color:#fff;padding:0 3px;">N</span></span>
+                    <div style="padding:3px 6px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <span>Plan d'urgence du site attaché</span>
+                            <span style="border:1px solid #000;display:inline-flex;font-size:7px;font-weight:bold;">
+                                <span style="padding:0 3px;">Y</span>
+                                <span style="background:#000;color:#fff;padding:0 3px;">N</span>
+                            </span>
                         </div>
-                        <strong>Ouvrage :</strong> <span>${permit.ouvrage || 'Stellantis'}</span> 
-                        <strong>ZONE :</strong> <span>${permit.zone || 'Zone 4'}</span><br>
-                        <strong>Tél. HSE :</strong> <span>${permit.tel || '0563765157'}</span>
-                    </div>
-                </div>
-
-                <!-- Équipe & Intervenants autorisés -->
-                <div class="doc-workers-box" style="border:1px solid #000;padding:3px 6px;margin-top:4px;">
-                    <div style="font-weight:bold;font-size:8px;color:#1e3a8a;margin-bottom:2px;">
-                        👥 INTERVENANTS AUTORISÉS (CHEF DE PROJET, HSE & TECHNICIENS SINYLON)
-                    </div>
-                    <div>${workersHtml}</div>
-                </div>
-
-                <!-- Grille d'Analyse des Grands Dangers (A, B, C, D, E, F) -->
-                <div style="margin-top:4px;font-weight:bold;font-size:8px;">
-                    si oui, la liste de verification des grands danger suivante doit être attachée :
-                </div>
-                <table class="doc-table-exact" style="width:100%;border-collapse:collapse;margin-top:2px;font-size:7.5px;">
-                    <tr>
-                        <td style="border:1px solid #000;padding:2px 4px;width:50%;">
-                            <div style="display:flex;justify-content:space-between;align-items:center;">
-                                <span>Travail en hauteur (Annexe A Bleue)</span>
-                                <div><span class="check-yn"><span class="${isY(d.height)}" style="${isY(d.height)?'background:#000;color:#fff;':''}">.Y.</span><span class="${isN(d.height)}">N</span></span> <strong style="margin-left:4px;">A</strong></div>
-                            </div>
-                        </td>
-                        <td style="border:1px solid #000;padding:2px 4px;width:50%;">
-                            <div style="display:flex;justify-content:space-between;align-items:center;">
-                                <span>Travail à chaud / Soudage (Annexe B Rouge)</span>
-                                <div><span class="check-yn"><span class="${isY(d.hot)}" style="${isY(d.hot)?'background:#000;color:#fff;':''}">.Y.</span><span class="${isN(d.hot)}">N</span></span> <strong style="margin-left:4px;">B</strong></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border:1px solid #000;padding:2px 4px;">
-                            <div style="display:flex;justify-content:space-between;align-items:center;">
-                                <span>Travail Électrique & Consignation (Annexe C Jaune)</span>
-                                <div><span class="check-yn"><span class="${isY(d.electric)}" style="${isY(d.electric)?'background:#000;color:#fff;':''}">.Y.</span><span class="${isN(d.electric)}">N</span></span> <strong style="margin-left:4px;">C</strong></div>
-                            </div>
-                        </td>
-                        <td style="border:1px solid #000;padding:2px 4px;">
-                            <div style="display:flex;justify-content:space-between;align-items:center;">
-                                <span>Espace confiné</span>
-                                <div><span class="check-yn"><span>.Y.</span><span class="check-active" style="background:#000;color:#fff;padding:0 3px;">N</span></span> <strong style="margin-left:4px;">D</strong></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border:1px solid #000;padding:2px 4px;">
-                            <div style="display:flex;justify-content:space-between;align-items:center;">
-                                <span>Excavation / Fouille</span>
-                                <div><span class="check-yn"><span>.Y.</span><span class="check-active" style="background:#000;color:#fff;padding:0 3px;">N</span></span> <strong style="margin-left:4px;">E</strong></div>
-                            </div>
-                        </td>
-                        <td style="border:1px solid #000;padding:2px 4px;">
-                            <div style="display:flex;justify-content:space-between;align-items:center;">
-                                <span>Tension ou rupture de conduite</span>
-                                <div><span class="check-yn"><span>.Y.</span><span class="check-active" style="background:#000;color:#fff;padding:0 3px;">N</span></span> <strong style="margin-left:4px;">F</strong></div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-
-                <div style="display:flex;justify-content:space-between;align-items:center;border:1px solid #000;padding:2px 6px;margin-top:3px;font-size:8px;">
-                    <div>
-                        Est ce que l'analyse des risques de travail / la méthode d'exécution est requise ?
-                        <span class="check-yn" style="margin-left:6px;"><span style="background:#000;color:#fff;padding:0 3px;">.Y.</span><span>N</span></span>
-                    </div>
-                    <div>
-                        Si oui, Ref. Nr. / Id. : <strong>${permit['method-ref'] || 'SINY-MOS-K9-01'}</strong>
-                    </div>
-                </div>
-
-                <!-- VALIDITÉ DU PERMIS ET SIGNATURES (CASES VIDES POUR SIGNATURE ET TAMPON À LA MAIN) -->
-                <div style="margin-top:4px;border:1.5px solid #000;padding:4px 6px;">
-                    <div style="font-weight:bold;font-size:8.5px;border-bottom:1px solid #000;padding-bottom:2px;margin-bottom:3px;display:flex;justify-content:space-between;">
-                        <span>VALIDITÉ DU PERMIS ET SIGNATURES INITIALES (JOUR 1 — VALIDÉ À 08H10)</span>
-                        <span style="font-size:7.5px;color:#555;">(Émargement manuscrit obligatoire avant démarrage)</span>
-                    </div>
-                    <div style="display:flex;gap:12px;align-items:center;margin-bottom:4px;font-size:8px;">
-                        <div>Date initiale : <span style="border-bottom:1px solid #000;font-weight:bold;padding:0 8px;">${permit.validFrom || permit['date-main'] || '2026-08-24'}</span></div>
-                        <div>Heure début : <span style="border-bottom:1px solid #000;font-weight:bold;padding:0 8px;">08h10</span></div>
-                        <div>Heure fin : <span style="border-bottom:1px solid #000;font-weight:bold;padding:0 8px;">17h30</span></div>
-                    </div>
-
-                    <!-- Grille des 4 Signatures : CASES VIDES POUR SIGNATURE MANUELLE -->
-                    <div class="signatures-grid-exact" style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;">
-                        <div class="sign-card-exact" style="border:1px solid #000;padding:3px;font-size:7.5px;min-height:56px;display:flex;flex-direction:column;justify-content:space-between;background:#fff;">
-                            <div class="sign-card-header" style="background:#f1f5f9;font-weight:900;font-size:7.5px;padding:1px;text-align:center;border-bottom:1px solid #000;">Chef de Projet Entreprise</div>
-                            <div>Nom : <strong>${permit.chefNom || permit['chef-nom'] || 'Xie'}</strong></div>
-                            <div style="height:26px;border-bottom:1px dashed #777;display:flex;align-items:flex-end;color:#888;font-size:7px;">Signature / Tampon :</div>
-                        </div>
-
-                        <div class="sign-card-exact wpeex-sign" style="border:1.5px solid #1e3a8a;padding:3px;font-size:7.5px;min-height:56px;display:flex;flex-direction:column;justify-content:space-between;background:#eff6ff;">
-                            <div class="sign-card-header" style="background:#1e3a8a;color:#fff;font-weight:900;font-size:7.5px;padding:1px;text-align:center;">W.P.E.E.X - Ingénieur de Suivi</div>
-                            <div>Nom : <strong>${permit.wpeexNom || permit['wpeex-nom'] || 'M. W.P.E.E.X'}</strong></div>
-                            <div style="height:26px;border-bottom:1px dashed #1e3a8a;display:flex;align-items:flex-end;color:#1e3a8a;font-size:7px;">Visa & Cachet (08h10) :</div>
-                        </div>
-
-                        <div class="sign-card-exact" style="border:1px solid #000;padding:3px;font-size:7.5px;min-height:56px;display:flex;flex-direction:column;justify-content:space-between;background:#fff;">
-                            <div class="sign-card-header" style="background:#f1f5f9;font-weight:900;font-size:7.5px;padding:1px;text-align:center;border-bottom:1px solid #000;">Superviseur HSE Sinylon</div>
-                            <div>Nom : <strong>${permit.hseNom || permit['hse-nom'] || 'Nouri Chahrour'}</strong></div>
-                            <div style="height:26px;border-bottom:1px dashed #777;display:flex;align-items:flex-end;color:#888;font-size:7px;">Signature & Visa HSE :</div>
-                        </div>
-
-                        <div class="sign-card-exact" style="border:1px solid #000;padding:3px;font-size:7.5px;min-height:56px;display:flex;flex-direction:column;justify-content:space-between;background:#fff;">
-                            <div class="sign-card-header" style="background:#f1f5f9;font-weight:900;font-size:7.5px;padding:1px;text-align:center;border-bottom:1px solid #000;">Receveur / Chef d'Équipe</div>
-                            <div>Nom : <strong>${permit.chefEquipe || permit.chef_equipe || 'Xian'}</strong></div>
-                            <div style="height:26px;border-bottom:1px dashed #777;display:flex;align-items:flex-end;color:#888;font-size:7px;">Signature :</div>
+                        <div style="margin-top:2px;">
+                            <strong>Ouvrage :</strong> ${p.ouvrage ? 'Stellantis K9' : 'Stellantis K9'}&nbsp;&nbsp;&nbsp;
+                            <strong>ZONE :</strong> ${p.zone || 'FUSA/UAR/UB'}&nbsp;&nbsp;&nbsp;
+                            <strong>Tél. :</strong> ${p.tel || '0563765157'}
                         </div>
                     </div>
                 </div>
 
-                <!-- QR CODE FOOTER DÉDIÉ -->
-                ${this.renderFooterQR(permit)}
+                <!-- SECTION 4 : GRANDS DANGERS (EXACT PHOTO) -->
+                <div style="border:1px solid #000;border-top:none;padding:2px 6px 4px 6px;font-size:7px;">
+                    <div style="font-size:7.5px;font-style:italic;margin-bottom:2px;color:#000;">
+                        si oui, la liste de verification des grands danger suivante doit etre attachée &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; de &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; de
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                        <!-- Colonne gauche -->
+                        <div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
+                                <span>Travail en hauteur</span>
+                                <span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7px;font-weight:bold;">
+                                        <span style="${isHeight ? 'background:#000;color:#fff;' : ''}padding:0 2px;">.Y.</span>
+                                        <span style="${!isHeight ? 'background:#000;color:#fff;' : ''}padding:0 2px;">N</span>
+                                    </span>
+                                    <strong style="margin-left:4px;font-size:8px;">A</strong>
+                                </span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
+                                <span>Travail dans un espace confiné</span>
+                                <span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7px;font-weight:bold;">
+                                        <span style="${isConfined ? 'background:#000;color:#fff;' : ''}padding:0 2px;">.Y.</span>
+                                        <span style="${!isConfined ? 'background:#000;color:#fff;' : ''}padding:0 2px;">N</span>
+                                    </span>
+                                    <strong style="margin-left:4px;font-size:8px;">B</strong>
+                                </span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
+                                <span>Travail sur un système électrique</span>
+                                <span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7px;font-weight:bold;">
+                                        <span style="${isElec ? 'background:#000;color:#fff;' : ''}padding:0 2px;">.Y.</span>
+                                        <span style="${!isElec ? 'background:#000;color:#fff;' : ''}padding:0 2px;">N</span>
+                                    </span>
+                                    <strong style="margin-left:4px;font-size:8px;">C</strong>
+                                </span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
+                                <span>Ouvrir un système/une ligne de rupture ( ligne Hydraulique etc )</span>
+                                <span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7px;font-weight:bold;">
+                                        <span style="${isRupture ? 'background:#000;color:#fff;' : ''}padding:0 2px;">.Y.</span>
+                                        <span style="${!isRupture ? 'background:#000;color:#fff;' : ''}padding:0 2px;">N</span>
+                                    </span>
+                                    <strong style="margin-left:4px;font-size:8px;">D</strong>
+                                </span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
+                                <span>Autre travaux dangereux: (si oui veuillez spécifier ci-dessous)</span>
+                                <span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7px;font-weight:bold;">
+                                        <span style="padding:0 2px;">.Y.</span>
+                                        <span style="background:#000;color:#fff;padding:0 2px;">N</span>
+                                    </span>
+                                    <strong style="margin-left:4px;font-size:8px;">E</strong>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Colonne droite -->
+                        <div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
+                                <span>Travail à chaud</span>
+                                <span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7px;font-weight:bold;">
+                                        <span style="${isHot ? 'background:#000;color:#fff;' : ''}padding:0 2px;">Y</span>
+                                        <span style="${!isHot ? 'background:#000;color:#fff;' : ''}padding:0 2px;">N</span>
+                                    </span>
+                                    <strong style="margin-left:4px;font-size:8px;">B</strong>
+                                </span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
+                                <span>Excavation</span>
+                                <span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7px;font-weight:bold;">
+                                        <span style="${isExcav ? 'background:#000;color:#fff;' : ''}padding:0 2px;">.Y.</span>
+                                        <span style="${!isExcav ? 'background:#000;color:#fff;' : ''}padding:0 2px;">N</span>
+                                    </span>
+                                    <strong style="margin-left:4px;font-size:8px;">D</strong>
+                                </span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
+                                <span>Travail sur equipement sous tension</span>
+                                <span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7px;font-weight:bold;">
+                                        <span style="${isTension ? 'background:#000;color:#fff;' : ''}padding:0 2px;">.Y.</span>
+                                        <span style="${!isTension ? 'background:#000;color:#fff;' : ''}padding:0 2px;">N</span>
+                                    </span>
+                                    <strong style="margin-left:4px;font-size:8px;">E</strong>
+                                </span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
+                                <span>Exposition/Cond. Atmosphérique</span>
+                                <span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7px;font-weight:bold;">
+                                        <span style="padding:0 2px;">.Y.</span>
+                                        <span style="background:#000;color:#fff;padding:0 2px;">N</span>
+                                    </span>
+                                    <strong style="margin-left:4px;font-size:8px;">F</strong>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lignes Déclaration de méthode & MOC -->
+                    <div style="border-top:1px dashed #aaa;margin-top:3px;padding-top:2px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1px;">
+                            <span>Declaration de methode requis</span>
+                            <span>
+                                <span style="border:1px solid #000;display:inline-flex;font-size:7px;font-weight:bold;">
+                                    <span style="background:#000;color:#fff;padding:0 2px;">Y</span>
+                                    <span style="padding:0 2px;">N</span>
+                                </span>
+                                <strong style="margin-left:4px;font-size:8px;">G</strong>
+                            </span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1px;">
+                            <span>Autre listes de verification attachées (si oui spécifier ci-dessous)</span>
+                            <span>
+                                <span style="border:1px solid #000;display:inline-flex;font-size:7px;font-weight:bold;">
+                                    <span style="padding:0 2px;">Y</span>
+                                    <span style="background:#000;color:#fff;padding:0 2px;">N</span>
+                                </span>
+                            </span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1px;">
+                            <div style="display:flex;align-items:center;gap:8px;">
+                                <span>Est ce travail, une modification couverte par MOC?</span>
+                                <span style="border:1px solid #000;display:inline-flex;font-size:7px;font-weight:bold;">
+                                    <span style="padding:0 2px;">Y</span>
+                                    <span style="background:#000;color:#fff;padding:0 2px;">N</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span>MOC Ref. Nr. / Id.</span>
+                                <span style="border-bottom:1px solid #000;display:inline-block;width:90px;height:10px;"></span> /
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 5 : VALIDITÉ DU PERMIS ET SIGNATURES -->
+                <div style="border:1px solid #000;border-top:none;padding:3px 6px;">
+                    <div style="font-weight:900;font-size:8.5px;margin-bottom:2px;">
+                        validité du permis et signatures
+                    </div>
+                    <div style="display:flex;gap:15px;align-items:center;font-size:7.5px;margin-bottom:2px;">
+                        <div>Date du permis : <span style="border:1px solid #000;padding:1px 6px;font-weight:bold;font-family:monospace;">${p.date_debut || '2026-08-24'}</span></div>
+                        <div>heure de début : <span style="border:1px solid #000;padding:1px 6px;font-weight:bold;font-family:monospace;">${p['time-start'] || '08h00'}</span></div>
+                        <div>heure de fin : <span style="border:1px solid #000;padding:1px 6px;font-weight:bold;font-family:monospace;">${p['time-end'] || '17h30'}</span></div>
+                    </div>
+                    <div style="font-size:6.5px;color:#333;line-height:1.2;margin-bottom:3px;">
+                        Ce permis de travail de sécurité générale et sa liste de verification des grands danger avec le meme identifiant du permis sont uniquement valide pour la date et la période spécifiée ci-dessus. Toute les signatures doivent etre obtenues avant l'entame du travail. Permis affiché sur le lieu de travail. Copies: Emetteur du permis,receveur du permis et si applicable: Coordinateurr, chef de quart et/ou salle de controle.
+                    </div>
+
+                    <!-- GRILLE DES SIGNATURES INITIALES (EXACT PHOTO - CASES VIDES POUR SIGNATURE AU STYLO) -->
+                    <!-- Ligne 1 : 2 grandes cases -->
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:3px;">
+                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;font-size:7px;min-height:36px;display:flex;flex-direction:column;justify-content:space-between;">
+                            <div style="background:#bfdbfe;font-weight:bold;padding:1px;text-align:center;border-bottom:1px solid #000;font-size:7.5px;">Chef de Projet Entreprise</div>
+                            <div>Nom (lettres en majuscule) et signature: <strong>${p['chef-nom'] || 'XIE XIAN'}</strong></div>
+                            <div style="height:14px;border-bottom:1px dashed #999;color:#777;font-size:6.5px;display:flex;align-items:flex-end;">Signature :</div>
+                        </div>
+                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;font-size:7px;min-height:36px;display:flex;flex-direction:column;justify-content:space-between;">
+                            <div style="background:#bfdbfe;font-weight:bold;padding:1px;text-align:center;border-bottom:1px solid #000;font-size:7.5px;">MOEX - Ingénieur de Suivi</div>
+                            <div>Nom(lettres en majuscule) et signature: <strong>${p['wpeex-nom'] || 'M. W.P.E.E.X'}</strong></div>
+                            <div style="height:14px;border-bottom:1px dashed #999;color:#777;font-size:6.5px;display:flex;align-items:flex-end;">Signature :</div>
+                        </div>
+                    </div>
+
+                    <!-- Ligne 2 : 3 cases -->
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:4px;">
+                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;font-size:7px;min-height:46px;display:flex;flex-direction:column;justify-content:space-between;">
+                            <div style="background:#bfdbfe;font-weight:bold;padding:1px;text-align:center;border-bottom:1px solid #000;font-size:7.5px;">Coordinateur HSE Sinylon</div>
+                            <div>Nom (lettres en majuscule) et signature:<br><strong>${p['hse-nom'] || 'Nouri Chahrour'}</strong></div>
+                            <div style="height:14px;border-bottom:1px dashed #999;color:#777;font-size:6.5px;display:flex;align-items:flex-end;">Signature :</div>
+                        </div>
+                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;font-size:7px;min-height:46px;display:flex;flex-direction:column;justify-content:space-between;">
+                            <div style="background:#bfdbfe;font-weight:bold;padding:1px;text-align:center;border-bottom:1px solid #000;font-size:7.5px;">HSE Entreprise</div>
+                            <div>Nom (lettres en majuscule) et signature:<br><strong>${p['hse-nom'] || 'Nouri Chahrour'}</strong></div>
+                            <div style="height:14px;border-bottom:1px dashed #999;color:#777;font-size:6.5px;display:flex;align-items:flex-end;">Signature :</div>
+                            <div style="font-size:5.5px;color:#333;line-height:1;margin-top:1px;">Confirmation que toutes les précautions et les vérifications nécessaires sont en place, comme la liste de vérification appliquée</div>
+                        </div>
+                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;font-size:7px;min-height:46px;display:flex;flex-direction:column;justify-content:space-between;">
+                            <div style="background:#bfdbfe;font-weight:bold;padding:1px;text-align:center;border-bottom:1px solid #000;font-size:7.5px;">Receveur du permis</div>
+                            <div>Nom (lettres en majuscule) et signature:<br><strong>${p['receveur-nom'] || p.chef_equipe || 'ZHOU LIN'}</strong></div>
+                            <div style="height:14px;border-bottom:1px dashed #999;color:#777;font-size:6.5px;display:flex;align-items:flex-end;">Signature :</div>
+                            <div style="font-size:5.5px;color:#333;line-height:1;margin-top:1px;">Information que toutes les précautions et les vérifications nécessaires sont en place ont été reçues. Les instructions fournies dans le permis de travail seront suivies. Tout les travailleurs ont été informés.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 6 : PERMIT HAND-BACK (EXACT PHOTO) -->
+                <div style="border:1px solid #000;border-top:none;padding:3px 6px;font-size:7px;">
+                    <div style="font-weight:bold;font-size:8px;">
+                        Permit Hand-Back <span style="font-weight:normal;font-size:7px;">(renvoyer à l'emetteur du permis après signature)</span>
+                    </div>
+                    <div style="font-size:6.5px;color:#444;font-style:italic;margin-bottom:2px;">
+                        (superviseur d'unité: veuillez cocher les caases appropriées ci-dessous)
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:8px;margin-bottom:3px;">
+                        <!-- Etat de travail -->
+                        <div>
+                            <div style="font-weight:bold;margin-bottom:1px;">Etat de travail</div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <span>Achevé</span>
+                                <span style="border:1px solid #000;width:12px;height:12px;display:inline-block;"></span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1px;">
+                                <span>Inachevé (veuillez spécifier ci-dessous)</span>
+                                <span style="border:1px solid #000;width:12px;height:12px;display:inline-block;"></span>
+                            </div>
+                        </div>
+                        <!-- Etat de la surface -->
+                        <div>
+                            <div style="font-weight:bold;margin-bottom:1px;">Etat de la surface/installation/équipmer</div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <span>pret pour l'operation normale</span>
+                                <span style="border:1px solid #000;width:12px;height:12px;display:inline-block;"></span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1px;">
+                                <span>pas pret (veuillez spécifier ci-dessous)</span>
+                                <span style="border:1px solid #000;width:12px;height:12px;display:inline-block;"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Signatures Hand-Back (EXACT PHOTO - 2 LIGNES) -->
+                    <div style="display:grid;grid-template-columns:1.2fr 1.2fr 1fr;gap:4px;margin-bottom:3px;">
+                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;min-height:30px;display:flex;flex-direction:column;justify-content:space-between;">
+                            <div style="background:#bfdbfe;font-weight:bold;padding:1px;text-align:center;font-size:7px;">Receveur du permis</div>
+                            <div style="font-size:6px;color:#555;">Nom (lettres en majuscule) et signature:</div>
+                            <div style="height:12px;border-bottom:1px dashed #999;font-size:6px;color:#777;">Signature :</div>
+                        </div>
+                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;min-height:30px;display:flex;flex-direction:column;justify-content:space-between;">
+                            <div style="background:#bfdbfe;font-weight:bold;padding:1px;text-align:center;font-size:7px;">MOEX - Ingénieur de Suivi</div>
+                            <div style="font-size:6px;color:#555;">Nom(lettres en majuscule) et signature:</div>
+                            <div style="height:12px;border-bottom:1px dashed #999;font-size:6px;color:#777;">Signature :</div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;justify-content:center;gap:3px;font-size:7px;">
+                            <div style="display:flex;gap:4px;align-items:center;">
+                                <span>Date:</span>
+                                <span style="border:1px solid #000;flex:1;height:14px;"></span>
+                            </div>
+                            <div style="display:flex;gap:4px;align-items:center;">
+                                <span>Heure:</span>
+                                <span style="border:1px solid #000;flex:1;height:14px;"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;min-height:30px;display:flex;flex-direction:column;justify-content:space-between;">
+                            <div style="background:#bfdbfe;font-weight:bold;padding:1px;text-align:center;font-size:7px;">Chef de Projet Entreprise</div>
+                            <div style="font-size:6px;color:#555;">Nom (lettres en majuscule) et signature:</div>
+                            <div style="height:12px;border-bottom:1px dashed #999;font-size:6px;color:#777;">Signature :</div>
+                        </div>
+                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;min-height:30px;display:flex;flex-direction:column;justify-content:space-between;">
+                            <div style="background:#bfdbfe;font-weight:bold;padding:1px;text-align:center;font-size:7px;">HSE Entreprise</div>
+                            <div style="font-size:6px;color:#555;">Nom (lettres en majuscule) et signature:</div>
+                            <div style="height:12px;border-bottom:1px dashed #999;font-size:6px;color:#777;">Signature :</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PIED DE PAGE EXACT PHOTO : Numéro d'urgence / Mobile / Page 1/2 -->
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:8px;font-weight:bold;margin-top:3px;padding:0 4px;">
+                    <div>Numéro d'urgence : <span style="font-weight:normal;">0563765157 / 14</span></div>
+                    <div>Mobile : <span style="font-weight:normal;">0563765157</span></div>
+                    <div>Page 1/2</div>
+                </div>
             </div>
+
+            <!-- Discrete Secure QR Footer for Online Verification at 08h10 -->
+            ${this.renderFooterQR(p)}
+        </div>
         `;
     },
 
