@@ -1244,14 +1244,17 @@ body {{
 </html>
 """
 
-# Sauvegarde des fichiers sur le Bureau
-desktop_html_path = os.path.expanduser("~/Desktop/DOSSIER_PERMIS_SINYLON_A4_OFFICIEL.html")
+# Sauvegarde des fichiers dans le dossier dédié sur le Bureau
+permis_folder = os.path.expanduser("~/Desktop/PERMIS_SINYLON_SEMAINE_36")
+os.makedirs(permis_folder, exist_ok=True)
+
+desktop_html_path = os.path.join(permis_folder, "DOSSIER_PERMIS_SINYLON_A4_OFFICIEL.html")
 with open(desktop_html_path, "w", encoding="utf-8") as f:
     f.write(html_content)
-print(f"Succès : HTML sauvegardé sur le Bureau -> {desktop_html_path}")
+print(f"Succès : HTML sauvegardé dans le dossier Bureau -> {desktop_html_path}")
 
 # Génération du PDF avec ReportLab
-desktop_pdf_path = os.path.expanduser("~/Desktop/DOSSIER_PERMIS_SINYLON_A4_OFFICIEL.pdf")
+desktop_pdf_path = os.path.join(permis_folder, "DOSSIER_PERMIS_SINYLON_A4_OFFICIEL.pdf")
 doc = SimpleDocTemplate(
     desktop_pdf_path,
     pagesize=A4,
@@ -1696,11 +1699,11 @@ body {{ margin: 0; padding: 0; font-family: Arial, sans-serif; background: #f1f5
 </html>
 """
 
-poster_html_path = os.path.expanduser("~/Desktop/AFFICHE_A4_QR_CODE_PERMIS_SINYLON.html")
+poster_html_path = os.path.join(permis_folder, "AFFICHE_A4_QR_CODE_PERMIS_SINYLON.html")
 with open(poster_html_path, "w", encoding="utf-8") as f:
     f.write(poster_html)
 
-poster_pdf_path = os.path.expanduser("~/Desktop/AFFICHE_A4_QR_CODE_PERMIS_SINYLON.pdf")
+poster_pdf_path = os.path.join(permis_folder, "AFFICHE_A4_QR_CODE_PERMIS_SINYLON.pdf")
 doc_poster = SimpleDocTemplate(
     poster_pdf_path,
     pagesize=A4,
