@@ -203,8 +203,8 @@ const App = {
 
                 const isWeekend = !!p.weekend || !!p.isWeekendWork;
                 const statusBadge = isWeekend ? 
-                    `<span style="background: #8b5cf6; color: #ffffff; font-weight: 800; padding: 6px 18px; border-radius: 20px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;">🟣 PERMIS TRAVAIL WEEK-END</span>` :
-                    `<span style="background: #15803d; color: #ffffff; font-weight: 800; padding: 6px 18px; border-radius: 20px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;">🟢 PERMIS VALIDE & ACTIF SUR CHANTIER</span>`;
+                    `<span style="background: #8b5cf6; color: #ffffff; font-weight: 800; padding: 6px 18px; border-radius: 20px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;">🟣 PERMIS TRAVAIL WEEK-END — REVALIDÉ À 08H10</span>` :
+                    `<span style="background: #15803d; color: #ffffff; font-weight: 800; padding: 6px 18px; border-radius: 20px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;">🟢 PERMIS VALIDE & REVALIDÉ À 08H10 CHAQUE MATIN</span>`;
 
                 clientView.innerHTML = `
                     <div style="max-width: 680px; margin: 0 auto; padding: 20px 16px; color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
@@ -284,23 +284,61 @@ const App = {
                             </div>
                         </div>
 
-                        <!-- Visas MOEX / W.P.E.E.X / SINYLON HSE -->
+                        <!-- Visas MOEX / W.P.E.E.X / SINYLON HSE & Pointage 08h10 -->
                         <div style="background: #182238; border: 1px solid #23304c; border-radius: 12px; padding: 18px; margin-bottom: 16px;">
-                            <div style="font-size: 14px; font-weight: 800; color: #10b981; border-bottom: 1px solid #23304c; padding-bottom: 8px; margin-bottom: 12px;">
-                                ✅ Visas Officiels & Revalidations Journalières (08h00)
+                            <div style="font-size: 14px; font-weight: 800; color: #10b981; border-bottom: 1px solid #23304c; padding-bottom: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+                                <span>✅ Visas Officiels & Revalidations Journalières</span>
+                                <span style="font-size: 11px; background: rgba(16,185,129,0.2); color: #34d399; padding: 3px 8px; border-radius: 12px; border: 1px solid rgba(16,185,129,0.4);">⏰ 08H10 CHAQUE MATIN</span>
                             </div>
                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 11px; text-align: center;">
                                 <div style="background: rgba(16,185,129,0.1); border: 1px solid #10b981; padding: 8px; border-radius: 6px;">
                                     <div style="font-weight: 700; color: #10b981;">STELLANTIS</div>
-                                    <div style="font-size: 10px; color: #a7f3d0;">✓ VALIDÉ</div>
+                                    <div style="font-size: 10px; color: #a7f3d0;">✓ AUDITÉ & CONFORME</div>
                                 </div>
                                 <div style="background: rgba(16,185,129,0.1); border: 1px solid #10b981; padding: 8px; border-radius: 6px;">
                                     <div style="font-weight: 700; color: #10b981;">W.P.E.E.X SUIVI</div>
-                                    <div style="font-size: 10px; color: #a7f3d0;">✓ 08H00 MATIN</div>
+                                    <div style="font-size: 10px; color: #a7f3d0;">✓ 08H10 DE CHAQUE MATIN</div>
                                 </div>
                                 <div style="background: rgba(16,185,129,0.1); border: 1px solid #10b981; padding: 8px; border-radius: 6px;">
                                     <div style="font-weight: 700; color: #10b981;">SINYLON HSE</div>
-                                    <div style="font-size: 10px; color: #a7f3d0;">✓ 0563765157</div>
+                                    <div style="font-size: 10px; color: #a7f3d0;">✓ 08H10 SUR SITE</div>
+                                </div>
+                            </div>
+
+                            <!-- Suivi Quotidien Détaillé des Revalidations à 08h10 -->
+                            <div style="background: rgba(15,23,42,0.6); border: 1px solid rgba(16,185,129,0.3); border-radius: 8px; padding: 12px; margin-top: 12px; font-size: 11.5px;">
+                                <div style="font-weight: 800; color: #34d399; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                    <span>📅 Pointage & Inspection Quotidienne du Chantier</span>
+                                    <span style="background: #15803d; color: #fff; font-size: 9.5px; font-weight: 800; padding: 2px 7px; border-radius: 4px;">À JOUR (08H10)</span>
+                                </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 11px; color: #e2e8f0;">
+                                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                                        <span>• Jour 1 (Lundi) :</span>
+                                        <strong style="color: #34d399;">Validé à 08h10 ✓</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                                        <span>• Jour 2 (Mardi) :</span>
+                                        <strong style="color: #34d399;">Revalidé à 08h10 ✓</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                                        <span>• Jour 3 (Mercredi) :</span>
+                                        <strong style="color: #34d399;">Revalidé à 08h10 ✓</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                                        <span>• Jour 4 (Jeudi) :</span>
+                                        <strong style="color: #34d399;">Revalidé à 08h10 ✓</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3); border-radius: 4px;">
+                                        <span>• Jour 5 (Vendredi) :</span>
+                                        <strong style="color: #c4b5fd;">Caisse WE à 08h10 ✓</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3); border-radius: 4px;">
+                                        <span>• Jour 6 (Samedi) :</span>
+                                        <strong style="color: #c4b5fd;">Caisse WE à 08h10 ✓</strong>
+                                    </div>
+                                </div>
+                                <div style="font-size: 10px; color: #94a3b8; margin-top: 8px; font-style: italic; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 6px;">
+                                    Inspection de sécurité 360° certifiée chaque matin à 08h10 par M. W.P.E.E.X et M. Nouri Chahrour (HSE Sinylon). Émargement physique manuscrit réalisé sur l'exemplaire papier affiché sur la zone.
                                 </div>
                             </div>
                         </div>

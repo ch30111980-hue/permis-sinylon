@@ -1,11 +1,23 @@
 /**
- * SINYLON - STELLANTIS | Templates A4 Haute Fidélité V3
- * Moteur de Revalidation Journalière Dynamique (Jour par Jour à 08h00 - Protocole HSE W.P.E.E.X)
- * Emplacement QR Code sécurisé en bas de page (Footer)
+ * SINYLON - STELLANTIS | Templates A4 Haute Fidélité V4 (MODÈLES OFFICIELS CSPS FIAT)
+ * Reproduction exacte des photos de permis du chantier Stellantis Algeria K9 CKD0
+ * - Signatures et visas VIDES pour émargement manuscrit au stylo / tampon
+ * - Revalidation quotidienne certifiée à 08h10 chaque matin
+ * - Annexe A (Bleue), Annexe B (Rouge), Annexe C (Ambre) conformes aux formulaires CSPS FIAT
  */
 
 const Templates = {
-    // Helper pour le bandeau QR en bas de page (Rendu Vectoriel SVG direct et infaillible)
+    // Helper Logo CSPS FIAT conforme aux photos officielles
+    renderLogoCSPSFIAT() {
+        return `
+            <div class="csps-fiat-logo" style="display:inline-flex;align-items:center;border:1.5px solid #000;border-radius:2px;overflow:hidden;height:24px;vertical-align:middle;">
+                <span style="background:#000;color:#fff;font-weight:900;font-size:13px;padding:2px 6px;letter-spacing:1px;display:flex;align-items:center;height:100%;">CSPS</span>
+                <span style="background:#fff;color:#c00;font-weight:900;font-size:13px;padding:2px 6px;letter-spacing:1px;font-style:italic;display:flex;align-items:center;height:100%;font-family:Arial,Helvetica,sans-serif;">FIAT</span>
+            </div>
+        `;
+    },
+
+    // Helper pour le bandeau QR en bas de page
     renderFooterQR(permit) {
         const payload = (typeof window !== 'undefined' && window.QREngine && typeof window.QREngine.generatePayload === 'function') 
             ? window.QREngine.generatePayload(permit) 
@@ -23,26 +35,40 @@ const Templates = {
         }
 
         return `
-            <div class="doc-footer-qr-verification">
-                <div class="qr-verify-text">
-                    <div style="font-weight: 900; font-size: 8.5px; text-transform: uppercase; color: #000; letter-spacing: 0.5px;">
+            <div class="doc-footer-qr-verification" style="margin-top:auto;border:1.5px solid #000;padding:3px 8px;background:#f8fafc;border-radius:3px;display:flex;justify-content:space-between;align-items:center;box-sizing:border-box;">
+                <div class="qr-verify-text" style="font-size:7.5px;color:#000;line-height:1.2;flex:1;">
+                    <div style="font-weight:900;font-size:8.5px;text-transform:uppercase;color:#000;letter-spacing:0.5px;">
                         🛡️ VÉRIFICATION ÉLECTRONIQUE / DIGITAL WORK PERMIT QR VERIFICATION
                     </div>
-                    <div style="font-size: 7.5px; color: #334155; margin-top: 1px;">
-                        Scannez ce QR Code pour vérifier en direct la validité journalière, les visas MOEX / W.P.E.E.X et les habilitations.
+                    <div style="font-size:7.5px;color:#334155;margin-top:1px;">
+                        Scannez ce QR Code pour vérifier en direct la validité journalière <strong>(Validé à 08h10 chaque matin)</strong>, les visas MOEX / W.P.E.E.X et les habilitations.
                     </div>
-                    <div style="font-family: monospace; font-weight: 800; font-size: 8.5px; color: #1e3a8a; margin-top: 1px;">
+                    <div style="font-family:monospace;font-weight:800;font-size:8.5px;color:#1e3a8a;margin-top:1px;">
                         PERMIS N° ${permit.id} · PROJET ALGERIA K9 CKD0 · STELLANTIS
                     </div>
                 </div>
-                <div class="qr-container qr-code-box-footer" id="doc-qr-${permit.id}" title="Scan QR Code">
+                <div class="qr-container qr-code-box-footer" id="doc-qr-${permit.id}" title="Scan QR Code" style="width:44px;height:44px;min-width:44px;min-height:44px;background:#fff;border:1.5px solid #000;border-radius:2px;padding:1px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;">
                     ${svgQr}
                 </div>
             </div>
         `;
     },
 
+    // Helper Case à cocher [.Y .N] conforme aux formulaires
+    renderCheckYN(value, isYNStyle = true) {
+        if (!isYNStyle) {
+            return `<span style="border:1px solid #000;padding:0 3px;font-size:7.5px;font-weight:800;display:inline-block;">Y</span>`;
+        }
+        return `
+            <span style="border:1px solid #000;display:inline-flex;font-size:7px;font-weight:800;line-height:1;margin-left:4px;vertical-align:middle;">
+                <span style="padding:1px 3px;border-right:1px solid #000;background:${value===true?'#000':'#fff'};color:${value===true?'#fff':'#000'};">.Y</span>
+                <span style="padding:1px 3px;background:${value===false?'#000':'#fff'};color:${value===false?'#fff':'#000'};">.N</span>
+            </span>
+        `;
+    },
+
     // 1. PERMIS GÉNÉRAL - PAGE 1/2 (RECTO)
+    // Signatures VIDES prêtes pour émargement manuscrit au stylo / tampon
     generalP1(permit) {
         const d = permit.dangers || {};
         const isY = (val) => val ? 'check-active' : '';
@@ -53,220 +79,205 @@ const Templates = {
         const descZh = permit.activite_detaillee_zh || (permit.activity && permit.activity.zh) || permit.title_zh || '机械装配与设备安装';
         const equipementsStr = Array.isArray(permit.equipements_a_installer) ? permit.equipements_a_installer.join(', ') : (permit.equipements_a_installer || 'Nacelles ciseaux (x6), Palans DEMAG KBK, Outillages certifiés');
 
-        // Générer les vignettes d'intervenants avec distinction Actif (Blanc) / Inactif (Bleu)
         const workers = permit.travailleurs || permit.workers || ['Xie (Chef de Projet)', 'Nouri Chahrour (HSE Sinylon)'];
         const workersHtml = workers.map(w => {
             const nom = typeof w === 'object' ? w.nom : w;
             const role = typeof w === 'object' ? (w.role || 'Intervenant') : 'Intervenant';
             const isActive = typeof w === 'object' ? (w.status !== 'Inactif' && w.status !== 'Inactive') : true;
             if (isActive) {
-                return `<span class="worker-tag" style="background: #ffffff; color: #0f172a; border: 1.5px solid #0f172a; font-weight: 800; padding: 2px 8px; border-radius: 4px; display: inline-block; margin: 2px;"><strong>${nom}</strong> <small style="color: #475569;">(${role})</small> <span style="color: #16a34a; font-weight: 900;">✓</span></span>`;
+                return `<span class="worker-tag" style="background:#fff;color:#0f172a;border:1.5px solid #0f172a;font-weight:800;padding:2px 8px;border-radius:4px;display:inline-block;margin:2px;"><strong>${nom}</strong> <small style="color:#475569;">(${role})</small> <span style="color:#16a34a;font-weight:900;">✓</span></span>`;
             } else {
-                return `<span class="worker-tag" style="background: #dbeafe; color: #1e40af; border: 1.5px solid #3b82f6; font-weight: 700; padding: 2px 8px; border-radius: 4px; display: inline-block; margin: 2px;"><strong>${nom}</strong> <small style="color: #3b82f6;">(${role})</small> <span style="color: #2563eb; font-weight: 800;">🔵 Inactif</span></span>`;
+                return `<span class="worker-tag" style="background:#dbeafe;color:#1e40af;border:1.5px solid #3b82f6;font-weight:700;padding:2px 8px;border-radius:4px;display:inline-block;margin:2px;"><strong>${nom}</strong> <small style="color:#3b82f6;">(${role})</small> <span style="color:#2563eb;font-weight:800;">🔵 Inactif</span></span>`;
             }
         }).join(' ');
 
         return `
             <div class="a4-document" id="doc-${permit.id}-p1">
                 <!-- En-tête Logos & Titre Officiel -->
-                <div class="doc-header">
-                    <div class="doc-logo">
-                        <div class="logo-sinylon">SINYLON</div>
-                        <div class="logo-stellantis">STELLANTIS</div>
+                <div class="doc-header" style="display:flex;justify-content:space-between;align-items:center;border-bottom:1.5px solid #000;padding-bottom:5px;margin-bottom:4px;">
+                    <div class="doc-logo" style="display:flex;align-items:center;gap:6px;">
+                        <span style="background:#000;color:#fff;font-weight:900;font-size:13px;padding:2px 6px;border-radius:2px;">SINYLON</span>
+                        <span style="border:1.5px solid #000;color:#000;font-weight:900;font-size:13px;padding:1px 6px;border-radius:2px;background:#fff;">STELLANTIS</span>
+                        ${this.renderLogoCSPSFIAT()}
                     </div>
-                    <div class="doc-title-container">
-                        <div class="doc-title-main">PERMIS GENERAL DE TRAVAIL</div>
-                        <div class="doc-title-sub">GENERAL WORK PERMIT / 通用作业许可证</div>
+                    <div class="doc-title-container" style="text-align:center;flex:1;">
+                        <div class="doc-title-main" style="font-size:14px;font-weight:900;">PERMIS GENERAL DE TRAVAIL</div>
+                        <div class="doc-title-sub" style="font-size:7.5px;color:#333;">GENERAL WORK PERMIT / 通用作业许可证 (à afficher sur le site de travail)</div>
                     </div>
-                    <div class="doc-permit-number">
-                        <div class="permit-label">PERMIS N°</div>
-                        <div class="permit-value" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'id', this.innerText)">${permit.id}</div>
+                    <div class="doc-permit-number" style="border:1.5px solid #000;padding:2px 8px;text-align:center;border-radius:2px;background:#f8fafc;">
+                        <div class="permit-label" style="font-size:7.5px;font-weight:700;">PERMIS N°</div>
+                        <div class="permit-value" style="font-size:13px;font-weight:900;color:#1e3a8a;">${permit.id}</div>
                     </div>
                 </div>
 
                 <!-- Validité & Date d'émission (Bande Jaune) -->
-                <div class="yellow-grid-3">
+                <div class="yellow-grid-3" style="display:grid;grid-template-columns:1fr 1.5fr 1fr;margin-bottom:4px;">
                     <div>
-                        <div class="yellow-bar-header">Date d'émission:</div>
-                        <div class="doc-box-bordered" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'date-main', this.innerText)">${permit.validFrom || permit['date-main'] || '2026-08-24'}</div>
+                        <div class="yellow-bar-header" style="background:#ffeb3b;border:1px solid #000;padding:2px 4px;font-weight:900;font-size:8px;">Date d'émission :</div>
+                        <div class="doc-box-bordered" style="border:1px solid #000;border-top:none;padding:2px 4px;font-size:8px;">${permit.validFrom || permit['date-main'] || '2026-08-24'}</div>
                     </div>
                     <div>
-                        <div class="yellow-bar-header">Période de validité du permis:</div>
-                        <div class="doc-box-bordered" style="color: #1e3a8a; font-weight: 800;">
-                            Du: <span contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'date-main', this.innerText)">${permit.validFrom || permit['date-main'] || '2026-08-24'}</span> 
-                            Au: <span contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'date_fin', this.innerText)">${permit.validUntil || permit['date_fin'] || '2026-08-30'}</span>
+                        <div class="yellow-bar-header" style="background:#ffeb3b;border:1px solid #000;padding:2px 4px;font-weight:900;font-size:8px;">Période de validité du permis :</div>
+                        <div class="doc-box-bordered" style="border:1px solid #000;border-top:none;padding:2px 4px;font-size:8px;color:#1e3a8a;font-weight:800;">
+                            Du : <span>${permit.validFrom || permit['date-main'] || '2026-08-24'}</span> 
+                            Au : <span>${permit.validUntil || permit['date_fin'] || '2026-08-30'}</span>
                         </div>
                     </div>
                     <div>
-                        <div class="yellow-bar-header">Horaires autorisés:</div>
-                        <div class="doc-box-bordered" style="font-weight: 800;">
-                            De: <span>${permit.timeStart || permit['time-start'] || '08h00'}</span> 
-                            À: <span>${permit.timeEnd || permit['time-end'] || '17h30'}</span>
+                        <div class="yellow-bar-header" style="background:#ffeb3b;border:1px solid #000;padding:2px 4px;font-weight:900;font-size:8px;">Horaires autorisés :</div>
+                        <div class="doc-box-bordered" style="border:1px solid #000;border-top:none;padding:2px 4px;font-size:8px;font-weight:800;">
+                            De : <span>${permit.timeStart || permit['time-start'] || '08h00'}</span> 
+                            À : <span>${permit.timeEnd || permit['time-end'] || '17h30'}</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Brève description du travail (Bande Jaune) -->
-                <div class="yellow-bar-header">Bréve description du travail & Activités de la zone / Brief work description (UB / UAR / FUSA)</div>
-                <div class="doc-box-bordered" style="min-height: 38px; font-size: 8px;">
-                    <div style="font-weight: 600;"><strong>FR :</strong> <span contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'work-desc', this.innerText)">${descFr}</span></div>
-                    <div style="font-size: 7.5px; color: #1e3a8a; font-style: italic; margin-top: 1px;"><strong>EN :</strong> <span contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'work-desc-en', this.innerText)">${descEn}</span></div>
-                    <div style="font-size: 7.5px; color: #047857; margin-top: 1px;"><strong>ZH :</strong> ${descZh}</div>
+                <div class="yellow-bar-header" style="background:#ffeb3b;border:1px solid #000;padding:2px 4px;font-weight:900;font-size:8px;">Bréve description du travail & Activités de la zone / Brief work description</div>
+                <div class="doc-box-bordered" style="border:1px solid #000;border-top:none;padding:3px 6px;min-height:36px;font-size:8px;">
+                    <div style="font-weight:600;"><strong>FR :</strong> ${descFr}</div>
+                    <div style="font-size:7.5px;color:#1e3a8a;font-style:italic;margin-top:1px;"><strong>EN :</strong> ${descEn}</div>
+                    <div style="font-size:7.5px;color:#047857;margin-top:1px;"><strong>ZH :</strong> ${descZh}</div>
                 </div>
 
-                <!-- Endroit de travail & Équipement/Machinerie (Bande Jaune 2 colonnes) -->
-                <div class="yellow-grid-2" style="margin-top: 4px;">
-                    <div class="yellow-bar-header" style="border-right: none;">Endroit de travail & Zone(s) d'implantation :</div>
-                    <div class="yellow-bar-header">Équipements & Installations à poser dans la zone :</div>
+                <!-- Endroit de travail & Équipement/Machinerie -->
+                <div class="yellow-grid-2" style="display:grid;grid-template-columns:1.1fr 1fr;margin-top:4px;">
+                    <div class="yellow-bar-header" style="background:#ffeb3b;border:1px solid #000;border-right:none;padding:2px 4px;font-weight:900;font-size:8px;">Endroit de travail & Zone(s) :</div>
+                    <div class="yellow-bar-header" style="background:#ffeb3b;border:1px solid #000;padding:2px 4px;font-weight:900;font-size:8px;">Équipements & Installations à poser :</div>
                 </div>
-                <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 0;">
-                    <div class="doc-box-bordered" style="border-right: none; font-size: 8px;">
+                <div style="display:grid;grid-template-columns:1.1fr 1fr;">
+                    <div class="doc-box-bordered" style="border:1px solid #000;border-top:none;border-right:none;padding:3px 6px;font-size:8px;">
                         <strong>Bâtiment :</strong> ${permit.location || 'Hall Montage / Usine Stellantis'}<br>
                         <strong>Secteur :</strong> ${permit.ouvrage || 'Ligne Assemblage K9 CKD0'}<br>
-                        <strong>ZONE(S) :</strong> <span style="color: #1e3a8a; font-weight: 800;">${permit.zone || 'UB / UAR / FUSA'}</span>
+                        <strong>ZONE(S) :</strong> <span style="color:#1e3a8a;font-weight:800;">${permit.zone || 'UB / UAR / FUSA'}</span>
                     </div>
-                    <div class="doc-box-bordered" style="font-size: 7.5px; line-height: 1.25;">
+                    <div class="doc-box-bordered" style="border:1px solid #000;border-top:none;padding:3px 6px;font-size:7.5px;line-height:1.25;">
                         <strong>Équipements à installer :</strong><br>
-                        <span style="color: #0f172a; font-weight: 600;">${equipementsStr}</span>
+                        <span style="color:#0f172a;font-weight:600;">${equipementsStr}</span>
                     </div>
                 </div>
 
                 <!-- Entreprise Intervenante & Contacts -->
-                <div style="display: grid; grid-template-columns: 1.4fr 1fr; margin-top: 4px;">
-                    <div class="doc-box-bordered" style="border-right: none;">
-                        <strong>Entreprise Intervenante :</strong> <span contenteditable="true" style="font-weight: bold;" onblur="App.updatePermitField('${permit.id}', 'company', this.innerText)">${permit.contractor || permit.company || 'SINYLON'}</span><br>
+                <div style="display:grid;grid-template-columns:1.4fr 1fr;margin-top:4px;">
+                    <div class="doc-box-bordered" style="border:1px solid #000;border-right:none;padding:3px 6px;font-size:8px;">
+                        <strong>Entreprise Intervenante :</strong> <span style="font-weight:bold;">${permit.contractor || permit.company || 'SINYLON'}</span><br>
                         Avant de commencer le travail, veuillez contacter :<br>
-                        <strong>Chef de Projet :</strong> <span contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'chef-nom', this.innerText)">${permit.chefNom || permit['chef-nom'] || 'Xie (Chef de Projet)'}</span>
+                        <strong>Chef de Projet :</strong> <span>${permit.chefNom || permit['chef-nom'] || 'Xie (Chef de Projet)'}</span>
                     </div>
-                    <div class="doc-box-bordered">
-                        <div style="display: flex; justify-content: space-between;">
+                    <div class="doc-box-bordered" style="border:1px solid #000;padding:3px 6px;font-size:8px;">
+                        <div style="display:flex;justify-content:space-between;">
                             <span>Plan d'urgence du site attaché :</span>
-                            <span class="check-yn"><span>Y</span><span class="check-active">N</span></span>
+                            <span class="check-yn"><span>Y</span><span class="check-active" style="background:#000;color:#fff;padding:0 3px;">N</span></span>
                         </div>
-                        <strong>Ouvrage :</strong> <span contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'ouvrage', this.innerText)">${permit.ouvrage || 'Stellantis'}</span> 
-                        <strong>ZONE :</strong> <span contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'zone', this.innerText)">${permit.zone || 'Zone 4'}</span><br>
-                        <strong>Tél. HSE :</strong> <span contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'tel', this.innerText)">${permit.tel || '0563765157'}</span>
+                        <strong>Ouvrage :</strong> <span>${permit.ouvrage || 'Stellantis'}</span> 
+                        <strong>ZONE :</strong> <span>${permit.zone || 'Zone 4'}</span><br>
+                        <strong>Tél. HSE :</strong> <span>${permit.tel || '0563765157'}</span>
                     </div>
                 </div>
 
                 <!-- Équipe & Intervenants autorisés -->
-                <div class="doc-workers-box" style="margin-top: 4px;">
-                    <div class="doc-workers-header">
-                        <span>👥 INTERVENANTS AUTORISÉS (CHEF DE PROJET & HSE)</span>
-                        <button type="button" class="btn-add-worker-mini no-print" onclick="App.promptAddWorker('${permit.id}')">+ AJOUTER UN NOM</button>
+                <div class="doc-workers-box" style="border:1px solid #000;padding:3px 6px;margin-top:4px;">
+                    <div style="font-weight:bold;font-size:8px;color:#1e3a8a;margin-bottom:2px;">
+                        👥 INTERVENANTS AUTORISÉS (CHEF DE PROJET, HSE & TECHNICIENS SINYLON)
                     </div>
-                    <div class="doc-workers-tags">${workersHtml}</div>
+                    <div>${workersHtml}</div>
                 </div>
 
-                <!-- Grille d'Analyse des Grands Dangers -->
-                <div style="margin-top: 4px; font-weight: bold; font-size: 8.5px;">
+                <!-- Grille d'Analyse des Grands Dangers (A, B, C, D, E, F) -->
+                <div style="margin-top:4px;font-weight:bold;font-size:8px;">
                     si oui, la liste de verification des grands danger suivante doit être attachée :
                 </div>
-                <table class="doc-table-exact">
+                <table class="doc-table-exact" style="width:100%;border-collapse:collapse;margin-top:2px;font-size:7.5px;">
                     <tr>
-                        <td style="width: 50%;">
-                            <div style="display: flex; justify-content: space-between; align-items: center;" onclick="App.toggleHazard('${permit.id}', 'height')">
-                                <span>Travail en hauteur</span>
-                                <div>
-                                    <span class="check-yn"><span class="${isY(d.height)}">.Y.</span><span class="${isN(d.height)}">N</span></span>
-                                    <strong style="margin-left: 4px;">A</strong>
-                                </div>
+                        <td style="border:1px solid #000;padding:2px 4px;width:50%;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <span>Travail en hauteur (Annexe A Bleue)</span>
+                                <div><span class="check-yn"><span class="${isY(d.height)}" style="${isY(d.height)?'background:#000;color:#fff;':''}">.Y.</span><span class="${isN(d.height)}">N</span></span> <strong style="margin-left:4px;">A</strong></div>
                             </div>
                         </td>
-                        <td style="width: 50%;">
-                            <div style="display: flex; justify-content: space-between; align-items: center;" onclick="App.toggleHazard('${permit.id}', 'hot')">
-                                <span>Travail à chaud</span>
-                                <div>
-                                    <span class="check-yn"><span class="${isY(d.hot)}">.Y.</span><span class="${isN(d.hot)}">N</span></span>
-                                    <strong style="margin-left: 4px;">B</strong>
-                                </div>
+                        <td style="border:1px solid #000;padding:2px 4px;width:50%;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <span>Travail à chaud / Soudage (Annexe B Rouge)</span>
+                                <div><span class="check-yn"><span class="${isY(d.hot)}" style="${isY(d.hot)?'background:#000;color:#fff;':''}">.Y.</span><span class="${isN(d.hot)}">N</span></span> <strong style="margin-left:4px;">B</strong></div>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <div style="display: flex; justify-content: space-between; align-items: center;" onclick="App.toggleHazard('${permit.id}', 'electric')">
-                                <span>Travail Électrique</span>
-                                <div>
-                                    <span class="check-yn"><span class="${isY(d.electric)}">.Y.</span><span class="${isN(d.electric)}">N</span></span>
-                                    <strong style="margin-left: 4px;">C</strong>
-                                </div>
+                        <td style="border:1px solid #000;padding:2px 4px;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <span>Travail Électrique & Consignation (Annexe C Jaune)</span>
+                                <div><span class="check-yn"><span class="${isY(d.electric)}" style="${isY(d.electric)?'background:#000;color:#fff;':''}">.Y.</span><span class="${isN(d.electric)}">N</span></span> <strong style="margin-left:4px;">C</strong></div>
                             </div>
                         </td>
-                        <td>
-                            <div style="display: flex; justify-content: space-between; align-items: center;" onclick="App.toggleHazard('${permit.id}', 'confined')">
+                        <td style="border:1px solid #000;padding:2px 4px;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
                                 <span>Espace confiné</span>
-                                <div>
-                                    <span class="check-yn"><span class="${isY(d.confined)}">.Y.</span><span class="${isN(d.confined)}">N</span></span>
-                                    <strong style="margin-left: 4px;">D</strong>
-                                </div>
+                                <div><span class="check-yn"><span>.Y.</span><span class="check-active" style="background:#000;color:#fff;padding:0 3px;">N</span></span> <strong style="margin-left:4px;">D</strong></div>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <div style="display: flex; justify-content: space-between; align-items: center;" onclick="App.toggleHazard('${permit.id}', 'excavation')">
-                                <span>Excavation</span>
-                                <div>
-                                    <span class="check-yn"><span class="${isY(d.excavation)}">.Y.</span><span class="${isN(d.excavation)}">N</span></span>
-                                    <strong style="margin-left: 4px;">E</strong>
-                                </div>
+                        <td style="border:1px solid #000;padding:2px 4px;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <span>Excavation / Fouille</span>
+                                <div><span class="check-yn"><span>.Y.</span><span class="check-active" style="background:#000;color:#fff;padding:0 3px;">N</span></span> <strong style="margin-left:4px;">E</strong></div>
                             </div>
                         </td>
-                        <td>
-                            <div style="display: flex; justify-content: space-between; align-items: center;" onclick="App.toggleHazard('${permit.id}', 'tension')">
+                        <td style="border:1px solid #000;padding:2px 4px;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
                                 <span>Tension ou rupture de conduite</span>
-                                <div>
-                                    <span class="check-yn"><span class="${isY(d.tension)}">.Y.</span><span class="${isN(d.tension)}">N</span></span>
-                                    <strong style="margin-left: 4px;">F</strong>
-                                </div>
+                                <div><span class="check-yn"><span>.Y.</span><span class="check-active" style="background:#000;color:#fff;padding:0 3px;">N</span></span> <strong style="margin-left:4px;">F</strong></div>
                             </div>
                         </td>
                     </tr>
                 </table>
 
-                <div style="display: flex; justify-content: space-between; align-items: center; border: 1px solid #000; padding: 2px 6px; margin-top: 4px; font-size: 8.5px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;border:1px solid #000;padding:2px 6px;margin-top:3px;font-size:8px;">
                     <div>
                         Est ce que l'analyse des risques de travail / la méthode d'exécution est requise ?
-                        <span class="check-yn" style="margin-left: 6px;"><span class="check-active">.Y.</span><span>N</span></span>
+                        <span class="check-yn" style="margin-left:6px;"><span style="background:#000;color:#fff;padding:0 3px;">.Y.</span><span>N</span></span>
                     </div>
                     <div>
-                        Si oui, Ref. Nr. / Id. : <strong contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'method-ref', this.innerText)">${permit['method-ref'] || 'SINY-MOS-K9-01'}</strong>
+                        Si oui, Ref. Nr. / Id. : <strong>${permit['method-ref'] || 'SINY-MOS-K9-01'}</strong>
                     </div>
                 </div>
 
-                <!-- Validité du permis et signatures initiales (Jour 1 Lundi) -->
-                <div style="margin-top: 4px; border: 1.5px solid #000; padding: 4px 6px;">
-                    <div style="font-weight: bold; font-size: 9.5px; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 4px;">
-                        validité du permis et signatures initiales (Jour 1)
+                <!-- VALIDITÉ DU PERMIS ET SIGNATURES (CASES VIDES POUR SIGNATURE ET TAMPON À LA MAIN) -->
+                <div style="margin-top:4px;border:1.5px solid #000;padding:4px 6px;">
+                    <div style="font-weight:bold;font-size:8.5px;border-bottom:1px solid #000;padding-bottom:2px;margin-bottom:3px;display:flex;justify-content:space-between;">
+                        <span>VALIDITÉ DU PERMIS ET SIGNATURES INITIALES (JOUR 1 — VALIDÉ À 08H10)</span>
+                        <span style="font-size:7.5px;color:#555;">(Émargement manuscrit obligatoire avant démarrage)</span>
                     </div>
-                    <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 4px; font-size: 9px;">
-                        <div>Date initiale : <span style="border-bottom: 1px solid #000; font-weight: bold; padding: 0 8px;" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'date-main', this.innerText)">${permit.validFrom || permit['date-main'] || '2026-08-24'}</span></div>
-                        <div>heure début : <span style="border-bottom: 1px solid #000; font-weight: bold; padding: 0 8px;" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'time-start', this.innerText)">${permit.timeStart || permit['time-start'] || '08h00'}</span></div>
-                        <div>heure fin : <span style="border-bottom: 1px solid #000; font-weight: bold; padding: 0 8px;" contenteditable="true" onblur="App.updatePermitField('${permit.id}', 'time-end', this.innerText)">${permit.timeEnd || permit['time-end'] || '17h30'}</span></div>
+                    <div style="display:flex;gap:12px;align-items:center;margin-bottom:4px;font-size:8px;">
+                        <div>Date initiale : <span style="border-bottom:1px solid #000;font-weight:bold;padding:0 8px;">${permit.validFrom || permit['date-main'] || '2026-08-24'}</span></div>
+                        <div>Heure début : <span style="border-bottom:1px solid #000;font-weight:bold;padding:0 8px;">08h10</span></div>
+                        <div>Heure fin : <span style="border-bottom:1px solid #000;font-weight:bold;padding:0 8px;">17h30</span></div>
                     </div>
 
-                    <!-- Signatures Officielles -->
-                    <div class="signatures-grid-exact">
-                        <div class="sign-card-exact">
-                            <div class="sign-card-header">Chef de Projet Entreprise</div>
-                            <div style="font-size: 8px;">Nom : <strong>${permit.chefNom || permit['chef-nom'] || 'Xie (Chef de Projet)'}</strong></div>
-                            <div style="font-size: 8px; color: #2563eb; font-weight: bold;">Signature : Xie (Validé ✓)</div>
+                    <!-- Grille des 4 Signatures : CASES VIDES POUR SIGNATURE MANUELLE -->
+                    <div class="signatures-grid-exact" style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;">
+                        <div class="sign-card-exact" style="border:1px solid #000;padding:3px;font-size:7.5px;min-height:56px;display:flex;flex-direction:column;justify-content:space-between;background:#fff;">
+                            <div class="sign-card-header" style="background:#f1f5f9;font-weight:900;font-size:7.5px;padding:1px;text-align:center;border-bottom:1px solid #000;">Chef de Projet Entreprise</div>
+                            <div>Nom : <strong>${permit.chefNom || permit['chef-nom'] || 'Xie'}</strong></div>
+                            <div style="height:26px;border-bottom:1px dashed #777;display:flex;align-items:flex-end;color:#888;font-size:7px;">Signature / Tampon :</div>
                         </div>
-                        <div class="sign-card-exact wpeex-sign">
-                            <div class="sign-card-header">W.P.E.E.X - Ingénieur de Suivi</div>
-                            <div style="font-size: 8px;">Nom : <strong>${permit.wpeexNom || permit['wpeex-nom'] || 'M. W.P.E.E.X'}</strong></div>
-                            <div style="font-size: 8px; color: #1d4ed8; font-weight: bold;">Visa Initial : W.P.E.E.X ✓</div>
+
+                        <div class="sign-card-exact wpeex-sign" style="border:1.5px solid #1e3a8a;padding:3px;font-size:7.5px;min-height:56px;display:flex;flex-direction:column;justify-content:space-between;background:#eff6ff;">
+                            <div class="sign-card-header" style="background:#1e3a8a;color:#fff;font-weight:900;font-size:7.5px;padding:1px;text-align:center;">W.P.E.E.X - Ingénieur de Suivi</div>
+                            <div>Nom : <strong>${permit.wpeexNom || permit['wpeex-nom'] || 'M. W.P.E.E.X'}</strong></div>
+                            <div style="height:26px;border-bottom:1px dashed #1e3a8a;display:flex;align-items:flex-end;color:#1e3a8a;font-size:7px;">Visa & Cachet (08h10) :</div>
                         </div>
-                        <div class="sign-card-exact">
-                            <div class="sign-card-header">Superviseur HSE</div>
-                            <div style="font-size: 8px;">Nom : <strong>${permit.hseNom || permit['hse-nom'] || 'Nouri Chahrour (HSE Sinylon)'}</strong></div>
-                            <div class="sign-legal-note">Précautions et conformité HSE validées.</div>
+
+                        <div class="sign-card-exact" style="border:1px solid #000;padding:3px;font-size:7.5px;min-height:56px;display:flex;flex-direction:column;justify-content:space-between;background:#fff;">
+                            <div class="sign-card-header" style="background:#f1f5f9;font-weight:900;font-size:7.5px;padding:1px;text-align:center;border-bottom:1px solid #000;">Superviseur HSE Sinylon</div>
+                            <div>Nom : <strong>${permit.hseNom || permit['hse-nom'] || 'Nouri Chahrour'}</strong></div>
+                            <div style="height:26px;border-bottom:1px dashed #777;display:flex;align-items:flex-end;color:#888;font-size:7px;">Signature & Visa HSE :</div>
                         </div>
-                        <div class="sign-card-exact">
-                            <div class="sign-card-header">Receveur / Chef d'Équipe</div>
-                            <div style="font-size: 8px;">Nom : <strong>${permit.chefEquipe || permit.chef_equipe || 'Xian'}</strong></div>
-                            <div class="sign-legal-note">Équipe briefée, consignes de sécurité appliquées.</div>
+
+                        <div class="sign-card-exact" style="border:1px solid #000;padding:3px;font-size:7.5px;min-height:56px;display:flex;flex-direction:column;justify-content:space-between;background:#fff;">
+                            <div class="sign-card-header" style="background:#f1f5f9;font-weight:900;font-size:7.5px;padding:1px;text-align:center;border-bottom:1px solid #000;">Receveur / Chef d'Équipe</div>
+                            <div>Nom : <strong>${permit.chefEquipe || permit.chef_equipe || 'Xian'}</strong></div>
+                            <div style="height:26px;border-bottom:1px dashed #777;display:flex;align-items:flex-end;color:#888;font-size:7px;">Signature :</div>
                         </div>
                     </div>
                 </div>
@@ -277,62 +288,44 @@ const Templates = {
         `;
     },
 
-    // 2. PERMIS GÉNÉRAL - PAGE 2/2 (VERSO REVALIDATIONS DYNAMIQUES DU JOUR 2 AU JOUR 7 À 08H00)
+    // 2. PERMIS GÉNÉRAL - PAGE 2/2 (VERSO REVALIDATIONS DU JOUR 2 AU JOUR 7)
+    // Tableau avec colonnes Visa et Signature VIDES pour émargement manuscrit chaque matin à 08h10
     generalP2(permit) {
         const dStart = permit.validFrom || permit['date-main'] || '2026-08-24';
         const startDate = new Date(dStart);
-        
-        // Données des revalidations enregistrées
-        const revals = permit.revalidations || [];
-        const revalMap = {};
-        revals.forEach(r => {
-            if (r.dayIndex) revalMap[r.dayIndex] = r;
-            else if (r.date) revalMap[r.date] = r;
-        });
 
         const dayNames = [
-            { dayIndex: 2, name: 'Jour 2 (Mardi)', offset: 1, isWeekend: false },
-            { dayIndex: 3, name: 'Jour 3 (Mercredi)', offset: 2, isWeekend: false },
-            { dayIndex: 4, name: 'Jour 4 (Jeudi)', offset: 3, isWeekend: false },
-            { dayIndex: 5, name: 'Jour 5 (Vendredi)', offset: 4, isWeekend: true },
-            { dayIndex: 6, name: 'Jour 6 (Samedi)', offset: 5, isWeekend: true },
-            { dayIndex: 7, name: 'Jour 7 (Dimanche)', offset: 6, isWeekend: false }
+            { dayIndex: 2, name: 'Jour 2 (Mardi)', offset: 1 },
+            { dayIndex: 3, name: 'Jour 3 (Mercredi)', offset: 2 },
+            { dayIndex: 4, name: 'Jour 4 (Jeudi)', offset: 3 },
+            { dayIndex: 5, name: 'Jour 5 (Vendredi)', offset: 4 },
+            { dayIndex: 6, name: 'Jour 6 (Samedi)', offset: 5 },
+            { dayIndex: 7, name: 'Jour 7 (Dimanche)', offset: 6 }
         ];
 
         const rows = dayNames.map(dayInfo => {
             const targetDate = new Date(startDate);
             targetDate.setDate(startDate.getDate() + dayInfo.offset);
             const dateStr = targetDate.toISOString().split('T')[0];
-            
-            const existing = revalMap[dayInfo.dayIndex] || revalMap[dateStr];
-            const isValidated = !!existing;
-            const timeValidated = existing ? (existing.time || '08:00') : '08:00';
 
             return `
-                <tr>
-                    <td class="text-center bold-cell">${dayInfo.name}</td>
-                    <td class="text-center" style="font-family: monospace;">${dateStr}</td>
-                    <td>${isValidated ? 'M. W.P.E.E.X' : '<span style="color:#94a3b8;">—</span>'}</td>
-                    <td>${isValidated ? 'Ingénieur Suivi' : '<span style="color:#94a3b8;">—</span>'}</td>
-                    <td class="text-center">
-                        ${isValidated 
-                            ? `<span style="font-weight: 800; color: #1e3a8a;">VISA W.P.E.E.X ✓ (${timeValidated})</span>`
-                            : `<span style="color: #64748b; font-style: italic;">En attente 08h00</span>`
-                        }
+                <tr style="height:26px;">
+                    <td class="text-center bold-cell" style="font-weight:bold;font-size:8px;border:1px solid #000;padding:2px 4px;">${dayInfo.name}</td>
+                    <td class="text-center" style="font-family:monospace;font-size:8px;border:1px solid #000;padding:2px 4px;">${dateStr}</td>
+                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">M. W.P.E.E.X</td>
+                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">Ingénieur Suivi</td>
+                    <!-- CASE VISA WPEEX VIDE POUR SIGNATURE MANUELLE À 08H10 -->
+                    <td class="text-center" style="border:1px solid #000;padding:2px;width:110px;">
+                        <div style="height:20px;border-bottom:1px dashed #999;margin:1px 4px;"></div>
                     </td>
-                    <td>${isValidated ? 'Xie' : '<span style="color:#94a3b8;">—</span>'}</td>
-                    <td>${isValidated ? 'Chef de Projet' : '<span style="color:#94a3b8;">—</span>'}</td>
-                    <td class="text-center">
-                        ${isValidated 
-                            ? `<span style="font-weight: 800; color: #2563eb;">SIGNÉ ✓ (${timeValidated})</span>`
-                            : `<span style="color: #64748b; font-style: italic;">Non signé</span>`
-                        }
+                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">Xie</td>
+                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">Chef de Projet</td>
+                    <!-- CASE SIGNATURE SINYLON VIDE POUR SIGNATURE MANUELLE À 08H10 -->
+                    <td class="text-center" style="border:1px solid #000;padding:2px;width:110px;">
+                        <div style="height:20px;border-bottom:1px dashed #999;margin:1px 4px;"></div>
                     </td>
-                    <td class="no-print text-center">
-                        ${isValidated 
-                            ? `<span class="badge badge-success" style="font-size: 8px;">VALIDÉ 08:00</span>`
-                            : `<button type="button" class="btn btn-xs btn-primary" onclick="App.validateDayMorning('${permit.id}', ${dayInfo.dayIndex}, '${dateStr}')">⚡ Valider 08h00</button>`
-                        }
+                    <td class="no-print text-center" style="border:1px solid #000;padding:2px;font-size:7.5px;">
+                        <span style="color:#16a34a;font-weight:700;">À signer 08h10</span>
                     </td>
                 </tr>
             `;
@@ -340,49 +333,44 @@ const Templates = {
 
         return `
             <div class="a4-document" id="a4-doc-${permit.id}-p2">
-                <div class="doc-header-exact">
-                    <div class="doc-logo-box">
-                        <span class="logo-sinylon-badge">SINYLON</span>
-                        <span class="logo-stellantis-badge">STELLANTIS</span>
+                <div class="doc-header-exact" style="display:flex;justify-content:space-between;align-items:center;border-bottom:1.5px solid #000;padding-bottom:5px;margin-bottom:4px;">
+                    <div class="doc-logo-box" style="display:flex;align-items:center;gap:6px;">
+                        <span style="background:#000;color:#fff;font-weight:900;font-size:13px;padding:2px 6px;border-radius:2px;">SINYLON</span>
+                        <span style="border:1.5px solid #000;color:#000;font-weight:900;font-size:13px;padding:1px 6px;border-radius:2px;background:#fff;">STELLANTIS</span>
+                        ${this.renderLogoCSPSFIAT()}
                     </div>
-                    <div class="doc-title-exact">
+                    <div class="doc-title-exact" style="font-size:14px;font-weight:900;text-align:center;flex:1;">
                         Revalidation Quotidienne du Permis de Travail<br>
-                        <span style="font-size: 8px; font-weight: normal;">Daily Work Permit Revalidation Sheet (Contrôle du Lendemain à 08h00)</span>
+                        <span style="font-size:7.5px;font-weight:normal;color:#333;">Daily Work Permit Revalidation Sheet (Contrôle et émargement chaque matin à 08h10)</span>
                     </div>
                     <div class="doc-header-right-group">
-                        <div class="doc-id-box-exact">
-                            <strong>Permit ID</strong><br>
-                            <span style="font-size: 12px; font-weight: 900; color: #1e3a8a;">${permit.id}</span>
+                        <div class="doc-id-box-exact" style="border:1.5px solid #000;padding:2px 8px;text-align:center;border-radius:2px;background:#f8fafc;">
+                            <strong style="font-size:7.5px;">Permit ID</strong><br>
+                            <span style="font-size:12px;font-weight:900;color:#1e3a8a;">${permit.id}</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="no-print" style="margin-top: 6px; background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px; padding: 6px 12px; display: flex; justify-content: space-between; align-items: center; font-size: 11px;">
-                    <div style="color: #166534; font-weight: 600;">
-                        📋 <strong>Protocole Chantier :</strong> Chaque matin à 08h00, l'ingénieur W.P.E.E.X et le Chef de Projet Xie revalident les conditions de sécurité.
-                    </div>
-                    <div>
-                        <button type="button" class="btn btn-sm btn-secondary" onclick="App.signAllRevalidations('${permit.id}')">✍️ Signer Tout Jusqu'à Aujourd'hui</button>
-                    </div>
+                <div class="yellow-bar-header" style="background:#ffeb3b;border:1px solid #000;padding:3px 6px;font-weight:900;font-size:8.5px;margin-top:6px;display:flex;justify-content:space-between;">
+                    <span>REVALIDATION QUOTIDIENNE DU PERMIS (DU JOUR 2 AU JOUR 7 — ÉMARGEMENT SUR SITE À 08H10)</span>
+                    <span style="font-size:7.5px;font-weight:normal;font-style:italic;">Chaque matin avant le démarrage des travaux</span>
                 </div>
-
-                <div class="yellow-bar-header" style="margin-top: 8px;">REVALIDATION QUOTIDIENNE DU PERMIS (CONTRÔLE LE LENDEMAIN À 08H00)</div>
-                <table class="doc-table-exact" style="margin-top: 4px;">
+                <table class="doc-table-exact" style="width:100%;border-collapse:collapse;margin-top:4px;">
                     <thead>
-                        <tr>
-                            <th rowspan="2" style="width: 105px;">JOURNÉE</th>
-                            <th rowspan="2" style="width: 80px;">DATE</th>
-                            <th colspan="3">W.P.E.E.X - Ingénieur de Suivi</th>
-                            <th colspan="3">Responsable d'exécution (SINYLON)</th>
-                            <th rowspan="2" class="no-print" style="width: 90px;">ACTION</th>
+                        <tr style="background:#f1f5f9;font-size:7.5px;">
+                            <th rowspan="2" style="border:1px solid #000;padding:3px 4px;width:95px;">JOURNÉE</th>
+                            <th rowspan="2" style="border:1px solid #000;padding:3px 4px;width:75px;">DATE</th>
+                            <th colspan="3" style="border:1px solid #000;padding:2px;background:#eff6ff;color:#1e3a8a;">W.P.E.E.X - Ingénieur de Suivi</th>
+                            <th colspan="3" style="border:1px solid #000;padding:2px;">Responsable d'exécution (SINYLON)</th>
+                            <th rowspan="2" class="no-print" style="border:1px solid #000;padding:2px;width:70px;">STATUT</th>
                         </tr>
-                        <tr>
-                            <th>Nom</th>
-                            <th>Fonction</th>
-                            <th>Visa & Heure</th>
-                            <th>Nom</th>
-                            <th>Fonction</th>
-                            <th>Signature & Heure</th>
+                        <tr style="background:#f8fafc;font-size:7px;">
+                            <th style="border:1px solid #000;padding:2px;">Nom</th>
+                            <th style="border:1px solid #000;padding:2px;">Fonction</th>
+                            <th style="border:1px solid #000;padding:2px;background:#eff6ff;color:#1e3a8a;">Visa Manuscrit (08h10)</th>
+                            <th style="border:1px solid #000;padding:2px;">Nom</th>
+                            <th style="border:1px solid #000;padding:2px;">Fonction</th>
+                            <th style="border:1px solid #000;padding:2px;">Signature Manuscrite (08h10)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -390,31 +378,37 @@ const Templates = {
                     </tbody>
                 </table>
 
-                <div class="yellow-bar-header" style="margin-top: 16px;">SUPERVISION SPÉCIALE CAISSE WEEK-END (VENDREDI / SAMEDI)</div>
-                <table class="doc-table-exact" style="margin-top: 4px;">
+                <div class="yellow-bar-header" style="background:#ffeb3b;border:1px solid #000;padding:3px 6px;font-weight:900;font-size:8.5px;margin-top:10px;">
+                    SUPERVISION SPÉCIALE CAISSE WEEK-END (VENDREDI / SAMEDI — 08H10)
+                </div>
+                <table class="doc-table-exact" style="width:100%;border-collapse:collapse;margin-top:4px;font-size:7.5px;">
                     <thead>
-                        <tr>
-                            <th style="width: 80px;">JOURNÉE</th>
-                            <th style="width: 90px;">DATE</th>
-                            <th>SUPERVISEUR W.P.E.E.X</th>
-                            <th>CONTRÔLE DE SÉCURITÉ (08H00)</th>
-                            <th>DOSSIER CAISSE STELLANTIS</th>
+                        <tr style="background:#f1f5f9;">
+                            <th style="border:1px solid #000;padding:3px;width:80px;">JOURNÉE</th>
+                            <th style="border:1px solid #000;padding:3px;width:85px;">DATE</th>
+                            <th style="border:1px solid #000;padding:3px;">SUPERVISEUR W.P.E.E.X</th>
+                            <th style="border:1px solid #000;padding:3px;">CONTRÔLE SÉCURITÉ (08H10)</th>
+                            <th style="border:1px solid #000;padding:3px;width:150px;">VISA CAISSE STELLANTIS</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="text-center bold-cell">Vendredi</td>
-                            <td class="text-center" style="font-family: monospace;">2026-08-28</td>
-                            <td>M. W.P.E.E.X</td>
-                            <td>Vérification 360°, Nacelles, Extincteurs, Balisage</td>
-                            <td class="text-center" style="font-weight: 800; color: #15803d;">AUTORISÉ CAISSE WEEK-END ✓</td>
+                        <tr style="height:28px;">
+                            <td class="text-center bold-cell" style="border:1px solid #000;font-weight:bold;padding:3px;">Vendredi</td>
+                            <td class="text-center" style="border:1px solid #000;font-family:monospace;padding:3px;">2026-08-28</td>
+                            <td style="border:1px solid #000;padding:3px;">M. W.P.E.E.X</td>
+                            <td style="border:1px solid #000;padding:3px;">Vérification 360°, Nacelles, Extincteurs, Balisage</td>
+                            <td style="border:1px solid #000;padding:2px;text-align:center;">
+                                <div style="height:20px;border-bottom:1px dashed #999;margin:1px 6px;"></div>
+                            </td>
                         </tr>
-                        <tr>
-                            <td class="text-center bold-cell">Samedi</td>
-                            <td class="text-center" style="font-family: monospace;">2026-08-29</td>
-                            <td>M. W.P.E.E.X</td>
-                            <td>Vérification 360°, Nacelles, Extincteurs, Balisage</td>
-                            <td class="text-center" style="font-weight: 800; color: #15803d;">AUTORISÉ CAISSE WEEK-END ✓</td>
+                        <tr style="height:28px;">
+                            <td class="text-center bold-cell" style="border:1px solid #000;font-weight:bold;padding:3px;">Samedi</td>
+                            <td class="text-center" style="border:1px solid #000;font-family:monospace;padding:3px;">2026-08-29</td>
+                            <td style="border:1px solid #000;padding:3px;">M. W.P.E.E.X</td>
+                            <td style="border:1px solid #000;padding:3px;">Vérification 360°, Nacelles, Extincteurs, Balisage</td>
+                            <td style="border:1px solid #000;padding:2px;text-align:center;">
+                                <div style="height:20px;border-bottom:1px dashed #999;margin:1px 6px;"></div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -425,634 +419,651 @@ const Templates = {
         `;
     },
 
-    // 3. ANNEXE A (BLEUE) — TRAVAIL EN HAUTEUR (SINYLON / STELLANTIS)
+    // 3. ANNEXE A (BLEUE) — TRAVAIL EN HAUTEUR
+    // REPRODUCTION EXACTE DE LA PHOTO CSPS FIAT (Cadre Bleu, Logo CSPS FIAT, Checklist exacte)
     heightAnnexe(permit) {
-        const h = permit.annexeA || {};
-        const yn = (v, field) => `
-            <span style="display:inline-flex;gap:2px;">
-                <span style="border:1px solid #000;padding:0 3px;font-size:7.5px;font-weight:800;background:${v===true?'#000':'#fff'};color:${v===true?'#fff':'#000'};">Y</span>
-                <span style="border:1px solid #000;padding:0 3px;font-size:7.5px;font-weight:800;background:${v===false?'#000':'#fff'};color:${v===false?'#fff':'#000'};">N</span>
-            </span>`;
-        const ynR = (v) => yn(v); // alias court
         const chefNom = permit.responsible || permit.chefNom || 'Xie';
         const hseNom = permit.hseNom || 'Nouri Chahrour';
-        const datePermis = permit.validFrom || permit['date-main'] || new Date().toISOString().slice(0,10);
+        const datePermis = permit.validFrom || permit['date-main'] || '2026-08-24';
 
         return `
-            <div class="a4-document annexe-height-doc" id="a4-doc-${permit.id}-height" style="font-size:8px;line-height:1.4;">
-
-                <!-- EN-TÊTE OFFICIEL SINYLON / STELLANTIS -->
-                <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;border:2px solid #1e3a8a;margin-bottom:4px;">
-                    <div style="padding:4px 8px;">
-                        <div style="display:flex;align-items:center;gap:6px;">
-                            <div style="background:#1e3a8a;color:#fff;font-weight:900;font-size:14px;display:inline-block;padding:2px 8px;">A</div>
-                            <span style="font-size:13px;font-weight:900;color:#1e3a8a;">Travail en hauteur</span>
-                        </div>
-                        <div style="font-size:7.5px;font-weight:800;color:#1e3a8a;margin-top:2px;display:flex;gap:6px;align-items:center;">
-                            <span style="background:#1e3a8a;color:#fff;padding:1px 5px;border-radius:2px;">SINYLON</span>
-                            <span style="border:1px solid #1e3a8a;padding:0 4px;border-radius:2px;">STELLANTIS</span>
-                            <span style="color:#475569;font-weight:600;">Projet K9 CKD0</span>
-                        </div>
-                        <div style="font-size:7px;color:#444;margin-top:1px;">Cette liste de vérification doit être toujours accompagnée par le permis de travail de sécurité générale</div>
+            <div class="a4-document annexe-height-doc" id="a4-doc-${permit.id}-height" style="border:3px solid #004080;padding:5px 8px;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;font-size:7.5px;line-height:1.2;color:#000;">
+                
+                <!-- EN-TÊTE EXACT PHOTO CSPS FIAT -->
+                <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1.5px solid #004080;padding-bottom:3px;margin-bottom:3px;">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                        <div style="background:#000;color:#fff;font-size:22px;font-weight:900;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:2px;">A</div>
+                        <div style="font-size:17px;font-weight:900;color:#000;letter-spacing:0.3px;">Travail en hauteur</div>
                     </div>
-                    <div style="border-left:1px solid #1e3a8a;padding:4px 8px;text-align:center;">
-                        <div style="font-size:7px;font-weight:700;">Identifiant du permis</div>
-                        <div style="font-size:14px;font-weight:900;color:#1e3a8a;">${permit.id}</div>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        ${this.renderLogoCSPSFIAT()}
+                        <div style="border:1px solid #000;text-align:center;width:125px;">
+                            <div style="font-size:7.5px;font-weight:700;border-bottom:1px solid #000;padding:1px 4px;background:#f8fafc;">Identifiant du permis</div>
+                            <div style="font-size:12px;font-weight:900;padding:1px 4px;color:#000;">${permit.id || '0'}</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- NOTE INTRO -->
-                <div style="border:1px solid #1e3a8a;padding:3px 6px;margin-bottom:3px;font-style:italic;font-size:7.5px;color:#1e3a8a;">
+                <div style="text-align:center;font-size:7.5px;font-weight:bold;margin-bottom:3px;color:#000;">
+                    Cette liste de verification doit etre toujours accompagnée par le permis de travail de sécurité générale
+                </div>
+
+                <div style="font-style:italic;font-size:7px;margin-bottom:2px;color:#333;">
                     Cette question est pour vous aider avec votre évaluation des risques.<br>
                     <strong>Usage de</strong> (si "oui" continuer à la colonne de droite):
                 </div>
 
-                <!-- TABLEAU ÉQUIPEMENTS -->
-                <table style="width:100%;border-collapse:collapse;margin-bottom:3px;">
-                    <thead>
-                        <tr style="background:#1e3a8a;color:#fff;">
-                            <th style="padding:2px 4px;font-size:7.5px;width:38%;border:1px solid #1e3a8a;">Type d'équipement</th>
-                            <th style="padding:2px 4px;font-size:7.5px;width:8%;border:1px solid #1e3a8a;text-align:center;">Y/N</th>
-                            <th style="padding:2px 4px;font-size:7.5px;width:46%;border:1px solid #1e3a8a;">Vérification requise si OUI</th>
-                            <th style="padding:2px 4px;font-size:7.5px;width:8%;border:1px solid #1e3a8a;text-align:center;">Y/N</th>
-                        </tr>
-                    </thead>
-                    <tbody style="font-size:7.5px;">
+                <!-- TABLEAU ÉQUIPEMENTS & RISQUES SECTION 1 -->
+                <table style="width:100%;border-collapse:collapse;margin-bottom:3px;font-size:7px;">
+                    <tbody>
                         <tr>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Échaffaudage fixe</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.echafaud_fixe)}</td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Approuvé et caché par le personnel qualifié</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.echafaud_fixe_ok)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;width:34%;">Echaffaudage fixe</td>
+                            <td style="border:1px solid #999;padding:1px;width:7%;text-align:center;">${this.renderCheckYN(false)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;width:52%;">approuvé et cacheté par le personnel qua</td>
+                            <td style="border:1px solid #999;padding:1px;width:7%;text-align:center;">${this.renderCheckYN(false)}</td>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Échaffaudage mobile</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.echafaud_mobile)}</td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Approuvé et caché par le personnel qualifié</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.echafaud_mobile_ok)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">Echaffaudage mobile</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">approuvé et cacheté par le personnel qua</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #aaa;padding:2px 4px;" rowspan="4">Élévateur de plateforme mobile (PEMP / Nacelle)</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;" rowspan="4">${ynR(h.elevateur ?? true)}</td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">L'opérateur et le travailleur entraînés</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.elevateur_forme ?? true)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;" rowspan="3">Elevateur de plateforme mobile</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;" rowspan="3">${this.renderCheckYN(true)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">L'opérateur et le travailleur entrainés</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Order to use given in written</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.elevateur_order ?? true)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">Order to use given in written</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Port d'équipement d'arrêt de chute</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.elevateur_harnais ?? true)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">Port d'équipement d'arret de chute</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">6 Nacelles ciseaux + 1 Manlift PEMP — VGP valide</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.vgp ?? true)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;" rowspan="5">Echelle</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;" rowspan="5">${this.renderCheckYN(false)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">aucun autre équipement ne peut etre utilisé</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;"><span style="border:1px solid #000;padding:0 3px;font-weight:800;">Y</span></td>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #aaa;padding:2px 4px;" rowspan="4">Échelle</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;" rowspan="4">${ynR(h.echelle)}</td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Aucun autre équipement ne peut être utilisé — Utilisé pour des activités à court terme</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.echelle_court_terme)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">Utilisé pour des activités à court terme</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Avec un potentiel de danger minimum</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.echelle_danger_min)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">Avec un potentiel de danger minimum</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Vérifier et cacheter</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.echelle_verif)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">verifier et cacheter</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Travailleur entraîné dans l'usage</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.echelle_forme)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">travailleur entrainé dans l'usage</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Équipement d'arrêt de chute requis ?</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.antichute ?? true)}</td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Vérifier avant de commencer le travail — Moyens d'attachement définis par le personnel qualifié</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.antichute_verif ?? true)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;" rowspan="2">Equipement d'arret de chute requis ?</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;" rowspan="2">${this.renderCheckYN(true)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">Verfiyer avant de commencer le travail</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">Moyens d'attachement définis par le personnel qualifié</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <!-- TRAVAIL SUR TOIT -->
-                <div style="border:1.5px solid #1e3a8a;margin-bottom:3px;">
-                    <div style="background:#1e3a8a;color:#fff;font-weight:800;font-size:8px;padding:2px 6px;">Travail sur toit</div>
+                <!-- SECTION 2 : TRAVAIL SUR TOIT -->
+                <div style="border:1px solid #000;margin-bottom:3px;font-size:7px;">
+                    <div style="font-weight:bold;padding:2px 4px;border-bottom:1px solid #000;background:#f1f5f9;display:flex;justify-content:space-between;">
+                        <span>Travail sur toit</span>
+                        <span>${this.renderCheckYN(false)}</span>
+                    </div>
                     <table style="width:100%;border-collapse:collapse;">
-                        <tr style="font-size:7.5px;">
-                            <td style="border:1px solid #aaa;padding:2px 4px;width:40%;">Capacité de Charge du toit suffisante à supporter</td>
-                            <td style="border:1px solid #aaa;padding:2px;width:8%;text-align:center;">${ynR(h.toit_charge)}</td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;width:38%;">Endroit coordonné fermé</td>
-                            <td style="border:1px solid #aaa;padding:2px;width:8%;text-align:center;">${ynR(h.toit_ferme)}</td>
+                        <tr>
+                            <td style="border:1px solid #999;padding:2px 4px;width:40%;">Capacité de Charge du toit suffisante à supporter</td>
+                            <td style="border:1px solid #999;padding:1px;width:7%;text-align:center;">${this.renderCheckYN(false)}</td>
+                            <td style="border:1px solid #999;padding:2px 4px;width:46%;">Endroit coordonné fermé</td>
+                            <td style="border:1px solid #999;padding:1px;width:7%;text-align:center;">${this.renderCheckYN(false)}</td>
                         </tr>
-                        <tr style="font-size:7.5px;">
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Présence d'une toiture fragile à proximité du site</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.toit_fragile)}</td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Protection de chute / Protection de bord existante ?</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.toit_protection)}</td>
+                        <tr>
+                            <td style="border:1px solid #999;padding:2px 4px;">Présence d'une toiture fragile proximité du site d</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
+                            <td style="border:1px solid #999;padding:2px 4px;">Protection de chute/Protection de bord existante?</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
                         </tr>
-                        <tr style="font-size:7.5px;">
-                            <td colspan="4" style="border:1px solid #aaa;padding:2px 4px;">Mesures additionnelles : <span style="border-bottom:1px solid #000;display:inline-block;width:70%;"> </span></td>
+                        <tr>
+                            <td colspan="4" style="border:1px solid #999;padding:2px 4px;">
+                                Mesures additionnel : <span style="border-bottom:1px solid #000;display:inline-block;width:75%;height:10px;"></span>
+                            </td>
                         </tr>
                     </table>
                 </div>
 
-                <!-- CHECKLIST GÉNÉRALE -->
-                <table style="width:100%;border-collapse:collapse;margin-bottom:3px;">
-                    <tbody style="font-size:7.5px;">
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;width:88%;">Endroit de travail barré pour véhicules / traffic / piétons</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.balisage ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Obstacles sur ou à proximité du site de travail (conduit de câble, câbles seuls, tuyauteries, etc.)</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.obstacles)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Conduits d'aération, cheminées, échappements qui peuvent émettre des substances chaudes/odorantes/dangereuses</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.ventilation)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Parties d'équipement de l'usine à protéger</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.protec_equipement)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Issue de secours d'urgence</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.issue_secours ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Matériels / outils qui a besoin d'être déplacé</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.materiel_deplace)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Directives de sécurité nécessaires</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.directives ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Autres : <span style="border-bottom:1px solid #000;display:inline-block;width:60%;"> </span></td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${ynR(h.autres)}</td></tr>
+                <!-- SECTION 3 : CHECKLIST CONSIGNES SUR LE SITE -->
+                <table style="width:100%;border-collapse:collapse;margin-bottom:3px;font-size:7px;">
+                    <tbody>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;width:92%;">Endroit de travail barré pour véhicules/traffic/piétons</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;width:8%;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Obstacles sur ou approximité du site de travail (conduit de cable, cables seul, tuyauteries, etc.)</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;"><span style="border:1px solid #000;padding:0 3px;font-weight:800;">Y</span></td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Conduits d'aération, cheminées, échappements qui peuvent émettre des substances chaudes/odorantes/d</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Parties d'équipement de l'usine à protéger</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Issue de secours d'urgence</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Materiels/outils qui a besoin d'être deplacé</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Directives de sécurité necessaires</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">
+                                Autres: <span style="border-bottom:1px solid #000;display:inline-block;width:55%;height:10px;"></span> porter les
+                            </td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
                     </tbody>
                 </table>
 
-                <!-- CONDITIONS AMBIANTES -->
-                <div style="border:1.5px solid #1e3a8a;margin-bottom:4px;">
-                    <div style="background:#1e3a8a;color:#fff;font-weight:800;font-size:8px;padding:2px 6px;">Conditions ambiantes au moment du travail</div>
-                    <div style="font-size:7px;padding:2px 6px;color:#555;font-style:italic;">NOTE: Permis doit être revu si les conditions se détériorent.</div>
-                    <table style="width:100%;border-collapse:collapse;">
-                        <tr style="font-size:7.5px;">
-                            <td style="border:1px solid #aaa;padding:2px 4px;width:20%;font-weight:700;">Visibilité générale</td>
-                            <td colspan="7" style="border:1px solid #aaa;padding:2px;"></td>
-                        </tr>
-                        <tr style="font-size:7.5px;">
-                            <td style="border:1px solid #aaa;padding:2px 4px;font-weight:700;">Pluie</td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">claire <strong>Y</strong></td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Amoindrit <strong>Y</strong></td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Sombre <strong>Y</strong></td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">obscure <strong>Y</strong></td>
-                            <td colspan="3" style="border:1px solid #aaa;padding:2px;"></td>
-                        </tr>
-                        <tr style="font-size:7.5px;">
-                            <td style="border:1px solid #aaa;padding:2px 4px;font-weight:700;">Surface du site de travail</td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">aucune <strong>Y</strong></td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">légère <strong>Y</strong></td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">modérée <strong>Y</strong></td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Forte <strong>Y</strong></td>
-                            <td colspan="3" style="border:1px solid #aaa;padding:2px;"></td>
-                        </tr>
-                        <tr style="font-size:7.5px;">
-                            <td style="border:1px solid #aaa;padding:2px 4px;font-weight:700;">Vent</td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">sec <strong>Y</strong></td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Mouillé <strong>Y</strong></td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">glissante <strong>Y</strong></td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;"></td>
-                            <td colspan="3" style="border:1px solid #aaa;padding:2px;"></td>
-                        </tr>
-                        <tr style="font-size:7.5px;">
-                            <td style="border:1px solid #aaa;padding:2px 4px;font-weight:700;">Surface glissante</td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">aucun <strong>Y</strong></td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Légère <strong>Y</strong></td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Modéré <strong>Y</strong></td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Fort <strong>Y</strong></td>
-                            <td colspan="3" style="border:1px solid #aaa;padding:2px;"></td>
-                        </tr>
-                        <tr style="font-size:7.5px;">
-                            <td colspan="8" style="border:1px solid #aaa;padding:2px 4px;">Surface de travail glissante suite au déversement des huiles et des produits chimiques ? ${ynR(h.surface_glissante)}</td>
-                        </tr>
-                        <tr style="font-size:7.5px;">
-                            <td colspan="8" style="border:1px solid #aaa;padding:2px 4px;">Mesures additionnelles : <strong>Porter obligatoire Casques anti choc et Ceinture de Sécurité</strong></td>
-                        </tr>
-                    </table>
+                <!-- SECTION 4 : CONDITIONS AMBIANTES AU MOMENT DU PROBLÈME -->
+                <div style="border:1px solid #000;padding:3px 4px;margin-bottom:3px;font-size:7px;">
+                    <div style="font-weight:bold;margin-bottom:1px;">Conditions ambiantes au moment du problème</div>
+                    <div style="font-size:6.5px;font-style:italic;color:#555;margin-bottom:2px;">NOTE: Permis doit être revu si les conditions se détériorent.</div>
+                    
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px;">
+                        <span style="width:110px;font-weight:600;">visibilité générale</span>
+                        <span>claire <span style="border:1px solid #000;padding:0 3px;font-weight:800;background:#000;color:#fff;">Y</span></span>
+                        <span>Amoindrit ${this.renderCheckYN(false)}</span>
+                        <span>Sombre ${this.renderCheckYN(false)}</span>
+                        <span>obscure ${this.renderCheckYN(false)}</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px;">
+                        <span style="width:110px;font-weight:600;">pluit</span>
+                        <span>aucune <span style="border:1px solid #000;padding:0 3px;font-weight:800;background:#000;color:#fff;">Y</span></span>
+                        <span>légère ${this.renderCheckYN(false)}</span>
+                        <span>moderé ${this.renderCheckYN(false)}</span>
+                        <span>Forte ${this.renderCheckYN(false)}</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px;">
+                        <span style="width:110px;font-weight:600;">Surface du site de travail</span>
+                        <span>sec <span style="border:1px solid #000;padding:0 3px;font-weight:800;background:#000;color:#fff;">Y</span></span>
+                        <span>Mouillé ${this.renderCheckYN(false)}</span>
+                        <span>glissante ${this.renderCheckYN(false)}</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px;">
+                        <span style="width:110px;font-weight:600;">Vent</span>
+                        <span>aucun <span style="border:1px solid #000;padding:0 3px;font-weight:800;background:#000;color:#fff;">Y</span></span>
+                        <span>Légère ${this.renderCheckYN(false)}</span>
+                        <span>Modéré ${this.renderCheckYN(false)}</span>
+                        <span>Fort ${this.renderCheckYN(false)}</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px;border-top:1px dashed #aaa;padding-top:2px;">
+                        <span>Surface de travail glissante suite au deversement des huiles et des produits chimiques?</span>
+                        <span>${this.renderCheckYN(false)}</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px;">
+                        <span>Mesures additionnel : <strong>Porter obligatoire Casques anti choc et Ceinture de Sécurité</strong></span>
+                        <span>${this.renderCheckYN(true)}</span>
+                    </div>
                 </div>
 
-                <!-- SIGNATURES -->
-                <table style="width:100%;border-collapse:collapse;margin-top:4px;">
+                <!-- SECTION 5 : SIGNATURES VIDES POUR ÉMARGEMENT MANUEL (EXACT PHOTO) -->
+                <table style="width:100%;border-collapse:collapse;margin-top:auto;border:1.5px solid #004080;margin-bottom:2px;">
+                    <tr style="background:#dbeafe;font-size:7.5px;font-weight:900;text-align:center;">
+                        <th style="border:1px solid #004080;padding:2px;width:38%;">CHEF DE PROJET</th>
+                        <th style="border:1px solid #004080;padding:2px;width:38%;">HSE ENTREPRISE</th>
+                        <th style="border:1px solid #004080;padding:2px;width:24%;">DATE / HEURE</th>
+                    </tr>
                     <tr>
-                        <td style="border:2px solid #1e3a8a;padding:6px;width:50%;vertical-align:top;">
-                            <div style="font-size:8px;font-weight:800;background:#1e3a8a;color:#fff;padding:2px 4px;margin-bottom:4px;">CHEF DE PROJET</div>
-                            <div style="font-size:7.5px;">Nom : <strong>${chefNom}</strong></div>
-                            <div style="font-size:7.5px;margin-top:4px;">Signature : <span style="border-bottom:1px solid #000;display:inline-block;width:60%;"> </span></div>
+                        <td style="border:1px solid #004080;padding:3px 6px;height:38px;vertical-align:top;font-size:7.5px;">
+                            <div>Nom : <strong>${chefNom}</strong></div>
+                            <div style="margin-top:8px;font-size:7px;color:#777;">Signature : </div>
                         </td>
-                        <td style="border:2px solid #1e3a8a;padding:6px;width:30%;vertical-align:top;">
-                            <div style="font-size:8px;font-weight:800;background:#1e3a8a;color:#fff;padding:2px 4px;margin-bottom:4px;">HSE ENTREPRISE</div>
-                            <div style="font-size:7.5px;">Nom : <strong>${hseNom}</strong></div>
-                            <div style="font-size:7.5px;margin-top:4px;">Signature : <span style="border-bottom:1px solid #000;display:inline-block;width:55%;"> </span></div>
+                        <td style="border:1px solid #004080;padding:3px 6px;height:38px;vertical-align:top;font-size:7.5px;">
+                            <div>Nom : <strong>${hseNom}</strong></div>
+                            <div style="margin-top:8px;font-size:7px;color:#777;">Signature : </div>
                         </td>
-                        <td style="border:2px solid #1e3a8a;padding:6px;width:20%;vertical-align:top;">
-                            <div style="font-size:7.5px;">Date : <strong>${datePermis}</strong></div>
-                            <div style="font-size:7.5px;margin-top:4px;">Heure : <strong>${permit.timeStart || '08h00'}</strong></div>
+                        <td style="border:1px solid #004080;padding:3px 6px;height:38px;vertical-align:middle;font-size:7.5px;">
+                            <div style="display:flex;gap:4px;align-items:center;margin-bottom:3px;">
+                                <span>Date :</span>
+                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">${datePermis}</span>
+                            </div>
+                            <div style="display:flex;gap:4px;align-items:center;">
+                                <span>Heure :</span>
+                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">08h10</span>
+                            </div>
                         </td>
                     </tr>
                 </table>
 
-                <!-- QR FOOTER -->
+                <!-- QR CODE FOOTER DÉDIÉ -->
                 ${this.renderFooterQR(permit)}
             </div>
         `;
     },
 
-    // 4. ANNEXE B (ROUGE) — TRAVAIL À CHAUD (SINYLON / STELLANTIS)
+    // 4. ANNEXE B (ROUGE) — TRAVAIL CHAUD
+    // REPRODUCTION EXACTE DE LA PHOTO CSPS FIAT (Cadre Rouge, Logo CSPS FIAT, Checklist exacte)
     hotAnnexe(permit) {
-        const b = permit.annexeB || {};
-        const yn = (v) => `
-            <span style="display:inline-flex;gap:2px;">
-                <span style="border:1px solid #000;padding:0 3px;font-size:7.5px;font-weight:800;background:${v===true?'#b91c1c':'#fff'};color:${v===true?'#fff':'#000'};">Y</span>
-                <span style="border:1px solid #000;padding:0 3px;font-size:7.5px;font-weight:800;background:${v===false?'#b91c1c':'#fff'};color:${v===false?'#fff':'#000'};">N</span>
-            </span>`;
         const chefNom = permit.responsible || permit.chefNom || 'Xie';
         const hseNom = permit.hseNom || 'Nouri Chahrour';
-        const datePermis = permit.validFrom || permit['date-main'] || new Date().toISOString().slice(0,10);
+        const datePermis = permit.validFrom || permit['date-main'] || '2026-08-24';
 
         return `
-            <div class="a4-document annexe-hot-doc" id="a4-doc-${permit.id}-hot" style="font-size:8px;line-height:1.4;">
-
-                <!-- EN-TÊTE OFFICIEL SINYLON / STELLANTIS -->
-                <div style="display:grid;grid-template-columns:1fr auto;align-items:center;border:2px solid #b91c1c;margin-bottom:4px;">
-                    <div style="padding:4px 8px;">
-                        <div style="display:flex;align-items:center;gap:6px;">
-                            <div style="background:#b91c1c;color:#fff;font-weight:900;font-size:14px;display:inline-block;padding:2px 8px;">B</div>
-                            <span style="font-size:13px;font-weight:900;color:#b91c1c;">Travail chaud</span>
-                        </div>
-                        <div style="font-size:7.5px;font-weight:800;color:#b91c1c;margin-top:2px;display:flex;gap:6px;align-items:center;">
-                            <span style="background:#b91c1c;color:#fff;padding:1px 5px;border-radius:2px;">SINYLON</span>
-                            <span style="border:1px solid #b91c1c;padding:0 4px;border-radius:2px;">STELLANTIS</span>
-                            <span style="color:#475569;font-weight:600;">Projet K9 CKD0</span>
-                        </div>
-                        <div style="font-size:7px;color:#444;margin-top:1px;">La liste de vérification doit être toujours accompagnée par le permis de travail de sécurité générale</div>
+            <div class="a4-document annexe-hot-doc" id="a4-doc-${permit.id}-hot" style="border:3px solid #cc0000;padding:5px 8px;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;font-size:7.5px;line-height:1.2;color:#000;">
+                
+                <!-- EN-TÊTE EXACT PHOTO CSPS FIAT -->
+                <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1.5px solid #cc0000;padding-bottom:3px;margin-bottom:3px;">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                        <div style="background:#000;color:#fff;font-size:22px;font-weight:900;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:2px;">B</div>
+                        <div style="font-size:17px;font-weight:900;color:#000;letter-spacing:0.3px;">Travail chaud</div>
                     </div>
-                    <div style="border-left:1px solid #b91c1c;padding:4px 10px;text-align:center;">
-                        <div style="font-size:7px;font-weight:700;">Identifiant du permis</div>
-                        <div style="font-size:14px;font-weight:900;color:#b91c1c;">${permit.id}</div>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        ${this.renderLogoCSPSFIAT()}
+                        <div style="border:1px solid #000;text-align:center;width:125px;">
+                            <div style="font-size:7.5px;font-weight:700;border-bottom:1px solid #000;padding:1px 4px;background:#f8fafc;">Permit Identifier</div>
+                            <div style="font-size:12px;font-weight:900;padding:1px 4px;color:#000;">${permit.id || '0'}</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- CHECKLIST PRINCIPALE Y/N -->
-                <table style="width:100%;border-collapse:collapse;margin-bottom:4px;">
-                    <tbody style="font-size:7.5px;">
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;width:88%;">Tous les produits inflammable ou combustible seront dégagés au minimum <strong>10 m</strong> du lieu d'intervention — Si le déplacement n'est pas possible, les produits inflammable ou combustible seront protégés and/or fire resistant curtains or covers</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(b.degagement_10m ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Tous débris, saleté, ou poussière est enlevé — environnement de travail incluant les vaissaux, tuyauterie, derrière des murs etc. — vérifiyer pour ou dissimulation de produit inflammable ou combustible</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(b.debris_enleve ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Présence dans un étage/autre structure combustible — si "oui" spécifier les précautions entreprises (e.g. arrosage avec l'eau, couverture avec de l'inerte matériaux): <span style="border-bottom:1px solid #000;display:inline-block;width:35%;"> </span></td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(b.etage_combustible)}</td></tr>
-                        <tr style="background:#fee2e2;"><td style="border:1px solid #aaa;padding:2px 4px;font-weight:700;">Couvrir tous les matériaux sont inflammés hors le lieu d'intervention</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(b.couvrir_materiaux ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Couvertures résistantes au feu / écran équipé à résister aux étincelles</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(b.couvertures_feu ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Fermetures des vannes, égouts, couvercles etc. automatiquement ouvrables</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(b.vannes_ferme ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Isolement sûr des conduits / convoyeurs / systèmes d'échapement qui peuvent resulter sur étincelles</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(b.isolement_conduits ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Couverture des trous et égouts (joints scellés, fentes, ouvertures, conduits, etc.)</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(b.couverture_trous ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Ventilation suffisante sur le lieu de travail (naturel <strong>Y</strong> — technique <strong>Y</strong>)</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(b.ventilation ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Appareils électrique et câbles protégés</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(b.cables_proteges ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Tous les équipements, tuyauteries, matériels de voisinnage sont protégés</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(b.equipements_proteges ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Pour les travaux en hauteur ou treillis, des protection supplémentaires sont fournies pour les endroits</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(b.protection_hauteur ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Le Site du travail est marqué / posté et barricadé adéquatement</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(b.site_balise ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Une gaz surveillance est nécessaire avant l'entame du travail pour gaz ou vapeurs inflammables — si "oui" exposition forme X additionnel est nécessaire</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(b.surveillance_gaz)}</td></tr>
-                        <tr><td colspan="2" style="border:1px solid #aaa;padding:2px 4px;font-size:7px;font-style:italic;">NB: Isolation sûre de l'équipements / lignes a besoin d'isolation forme I additionnel</td></tr>
+                <div style="text-align:center;font-size:7.5px;font-weight:bold;margin-bottom:3px;color:#000;">
+                    La liste de vérification doit être toujours accompagnée par le permis de travail de sécurité générale
+                </div>
+
+                <!-- CHECKLIST TRAVAIL CHAUD AVEC CASES [.Y .N.] (EXACT PHOTO) -->
+                <table style="width:100%;border-collapse:collapse;margin-bottom:3px;font-size:7px;">
+                    <tbody>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;width:92%;">
+                                Tous les produits inflamable ou combustible seront déga <span style="border:1px solid #000;padding:0 3px;font-weight:bold;">10</span> m (min. 10 m)
+                            </td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;width:8%;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">
+                                S i le déplacement n'est pas possible: les produits inflamable ou combustible seront protégés and/or fire resistant curtains or covers
+                            </td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Tous debris, saleté, ou poussière est enlevé</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">
+                                environnement de travail incluant les vaissaux, tuyauterie, derrière des murs etc. verifier pour ou dissimulation de produit inflamable ou combustible
+                            </td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">
+                                Présence dans un étage/autre structure combustible si "oui" spécifier les précautions entreprises (e.g. arosage avec l'eau, couverture avec d'inerte matériaux):<br>
+                                <div style="border:1px solid #000;padding:1px 4px;margin-top:1px;display:flex;justify-content:space-between;background:#fef2f2;">
+                                    <span>Couvrir tous les materiaux sont inflammés hors le lieu d'intervention</span>
+                                    <span>${this.renderCheckYN(true)}</span>
+                                </div>
+                            </td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;vertical-align:top;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">couvertures resistantes au feu/écran equipé à resister aux eteincelles</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Fermeturs des vannes, égouts,couvercles etc. automatiquement ouvrables</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Isolement sûr des conduits/convoyeurs/systémes d'échapement qui peuvent resulter sur éteincelles</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Couverture des trous et égouts ( joints scellés, fentes, ouvertures, conduits, etc.)</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">
+                                ventillation suffisante sur le lieu de travail &nbsp;&nbsp; (naturel <span style="border:1px solid #000;padding:0 2px;font-weight:bold;">Y</span> &nbsp; technique <span style="border:1px solid #000;padding:0 2px;font-weight:bold;">Y</span>)
+                            </td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Apareils électrique et cables protégés</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Tous les equipements, tuyauteries, materiels de voisinnage sont protégés</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Pour les travaux en hauteur ou treillis, des protection supplémentaires sont fournies pour les endroit</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Le Site du travail est marqué/posté et barricadé adequetement</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">
+                                Une gaz surveillance est nécessaire avant l'entame du travail pour gaz ou vapeurs inflammables si "oui" exposition forme X additionnel est nécessaire
+                            </td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="border:1px solid #999;padding:1px 4px;font-size:6.5px;font-style:italic;">
+                                NB: Isolation sûre de l'équipements/lignes a besoin d'isolation forme I additionnel
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
-                <!-- ÉQUIPEMENT ANTI-FEU + SIGNATURE HSE -->
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;">
-                    <div style="border:1.5px solid #b91c1c;padding:4px;">
-                        <div style="font-weight:800;font-size:8px;margin-bottom:3px;">Équipement de lutte anti feu fourni</div>
-                        <table style="width:100%;border-collapse:collapse;">
-                            <tr style="font-size:7.5px;">
-                                <td style="padding:1px 2px;">Extincteur de feu Water</td>
-                                <td style="padding:1px 2px;">${yn(b.extincteur_water ?? true)}</td>
-                                <td style="padding:1px 2px;">Poudre</td>
-                                <td style="padding:1px 2px;">${yn(b.extincteur_poudre ?? true)}</td>
-                                <td style="padding:1px 2px;">CO₂</td>
-                                <td style="padding:1px 2px;">${yn(b.extincteur_co2)}</td>
-                            </tr>
-                            <tr style="font-size:7.5px;">
-                                <td style="padding:1px 2px;">Couvertures anti-feu</td>
-                                <td colspan="5" style="padding:1px 2px;">${yn(b.couvertures_antifeu ?? true)}</td>
-                            </tr>
-                            <tr style="font-size:7.5px;">
-                                <td style="padding:1px 2px;">Surveillant d'incendie</td>
-                                <td colspan="5" style="padding:1px 2px;">${yn(b.surveillant ?? true)}</td>
-                            </tr>
-                            <tr style="font-size:7.5px;">
-                                <td style="padding:1px 2px;">Instruction par site</td>
-                                <td colspan="5" style="padding:1px 2px;">${yn(b.instruction_site ?? true)}</td>
-                            </tr>
-                        </table>
-                        <div style="font-size:7px;color:#555;margin-top:3px;">Éloigner tous les matériaux inflammables hors le lieu d'intervention (Hors l'exposition de feu)</div>
+                <!-- SECTION ÉQUIPEMENT DE LUTTE ANTI FEU FOURNI -->
+                <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:4px;margin-bottom:3px;border:1px solid #cc0000;padding:3px;font-size:7px;">
+                    <div>
+                        <div style="font-weight:bold;margin-bottom:2px;">Equipement de lutte anti feu fourni</div>
+                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:2px;">
+                            <span>Extincteur de feu :</span>
+                            <span>Water <span style="border:1px solid #000;padding:0 2px;font-weight:bold;">Y</span></span>
+                            <span>Poudre <span style="border:1px solid #000;padding:0 2px;font-weight:bold;background:#000;color:#fff;">Y</span></span>
+                            <span>CO₂ <span style="border:1px solid #000;padding:0 2px;font-weight:bold;">Y</span></span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px;">
+                            <span>Couvertures anti-feu <span style="border:1px solid #000;padding:0 2px;font-weight:bold;background:#000;color:#fff;">Y</span></span>
+                            <span>Gourde <span style="border:1px solid #000;padding:0 2px;font-weight:bold;">Y</span></span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px;">
+                            <span>surveillent d'incendie <span style="border:1px solid #000;padding:0 2px;font-weight:bold;background:#000;color:#fff;">Y</span></span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:8px;">
+                            <span>Instruction par site <span style="border:1px solid #000;padding:0 2px;font-weight:bold;background:#000;color:#fff;">Y</span></span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:4px;margin-top:3px;border-top:1px dashed #aaa;padding-top:2px;">
+                            <span>Inspection du site de trava</span>
+                            <span style="border:1px solid #000;padding:0 3px;font-weight:bold;">1</span>
+                            <span style="border:1px solid #000;padding:0 3px;font-weight:bold;background:#000;color:#fff;">2</span>
+                            <span style="border:1px solid #000;padding:0 3px;font-weight:bold;">3</span> h
+                            <span style="margin-left:4px;">Durée de la dernière inspecti</span>
+                            <span style="border:1px solid #000;padding:0 4px;font-weight:bold;">30 MIN</span>
+                        </div>
                     </div>
-                    <div style="border:1.5px solid #b91c1c;padding:4px;">
-                        <div style="background:#b91c1c;color:#fff;font-weight:800;font-size:7.5px;padding:2px 4px;margin-bottom:3px;">HSE ENTREPRISE<br><span style="font-weight:400;">Nom (lettres majuscule) et signature :</span></div>
-                        <div style="font-size:8px;font-weight:700;margin-bottom:2px;">${hseNom}</div>
-                        <div style="border-bottom:1px solid #000;height:16px;margin-bottom:6px;"></div>
-                        <div style="font-size:7px;color:#b91c1c;font-weight:700;">Surveillant d'incendie doit être présent durant le travail à chaud et <u>30 minutes après son achèvement</u></div>
+                    <div style="border-left:1px solid #cc0000;padding-left:4px;display:flex;flex-direction:column;justify-content:space-between;">
+                        <div style="font-size:6.5px;color:#000;line-height:1.2;">
+                            <strong>Eloigner tous les materiaux inflammable</strong> hors le lieu d'intervention<br>
+                            (Hors l'exposition de feu)
+                        </div>
+                        <div style="border:1px solid #cc0000;background:#fee2e2;padding:2px 4px;margin:2px 0;">
+                            <div style="font-weight:bold;font-size:7px;color:#991b1b;">HSE ENTREPRISE</div>
+                            <div style="font-size:6.5px;">Nom (lettres majuscule) et signature:</div>
+                            <div style="font-weight:bold;font-size:7.5px;">${hseNom}</div>
+                            <div style="height:14px;border-bottom:1px dashed #991b1b;"></div>
+                        </div>
+                        <div style="font-size:6.5px;color:#991b1b;font-weight:bold;line-height:1.2;">
+                            Surveillent d'incendie doit être présent durant le travail à chaud et <u>30 minutes après son achèvement</u>
+                        </div>
                     </div>
                 </div>
 
-                <!-- INSPECTION TEMPS -->
-                <div style="display:flex;align-items:center;gap:12px;border:1px solid #b91c1c;padding:4px 8px;margin-bottom:4px;font-size:8px;">
-                    <span style="font-weight:700;">Inspection du site de travail :</span>
-                    <span style="border:1px solid #000;padding:2px 6px;font-weight:800;background:${b.insp_1h?'#b91c1c':'#fff'};color:${b.insp_1h?'#fff':'#000'};">1</span>
-                    <span style="border:1px solid #000;padding:2px 6px;font-weight:800;background:${b.insp_2h?'#b91c1c':'#fff'};color:${b.insp_2h?'#fff':'#000'};">2</span>
-                    <span style="border:1px solid #000;padding:2px 6px;font-weight:800;background:${b.insp_3h?'#b91c1c':'#fff'};color:${b.insp_3h?'#fff':'#000'};">3</span>
-                    <span>h</span>
-                    <span style="margin-left:auto;font-weight:700;">Durée de la dernière inspection :</span>
-                    <span style="border:1px solid #000;padding:2px 8px;font-weight:900;font-family:monospace;">${b.duree_inspection || '30 MIN'}</span>
+                <!-- SECTION ALARME & NOTIFICATIONS -->
+                <div style="border:1px solid #000;padding:3px;margin-bottom:3px;font-size:7px;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px;">
+                        <span>L'alarme d'incendie la plus proche/appel d'urge</span>
+                        <span style="border:1px solid #000;padding:1px 6px;font-weight:bold;background:#f8fafc;">BLOC SECURITE</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px;">
+                        <span>Mise hors service de l'instrument de detection</span>
+                        <span>${this.renderCheckYN(false)}</span>
+                    </div>
+                    <div style="padding-left:8px;margin-bottom:2px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <span>si "oui": Notification requise Dept incendie ${this.renderCheckYN(false)}</span>
+                            <span>numero de téléphone <span style="border:1px solid #000;padding:0 8px;">/</span> Name <span style="border:1px solid #000;padding:0 8px;">/</span></span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1px;">
+                            <span>Notification requise à l'assurance ${this.renderCheckYN(false)}</span>
+                            <span style="font-size:6.5px;color:#555;">(Tel. Henkel Insurance Dept., 24h/weekend)</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1px;">
+                            <span>verification que le detecteur d'incendie est étein</span>
+                            <span>${this.renderCheckYN(false)}</span>
+                        </div>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px dashed #aaa;padding-top:2px;">
+                        <span>Surveillance de gaz pour d'éventuel gaz ou vapeurs inflammable sont necessaires durant la tache. si "oui" exposition forme X additionnel est necessaire</span>
+                        <span>${this.renderCheckYN(false)}</span>
+                    </div>
                 </div>
 
-                <!-- ALARME INCENDIE & DÉTECTION -->
-                <table style="width:100%;border-collapse:collapse;margin-bottom:4px;">
-                    <tr style="font-size:7.5px;">
-                        <td style="border:1px solid #aaa;padding:2px 4px;width:50%;">L'alarme d'incendie la plus proche / appel d'urgence</td>
-                        <td style="border:1px solid #aaa;padding:2px 4px;width:50%;font-weight:800;text-align:center;">BLOC SÉCURITÉ</td>
+                <!-- SECTION SIGNATURES VIDES POUR ÉMARGEMENT MANUEL (EXACT PHOTO) -->
+                <table style="width:100%;border-collapse:collapse;margin-top:auto;border:1.5px solid #cc0000;margin-bottom:2px;">
+                    <tr style="background:#fee2e2;font-size:7.5px;font-weight:900;text-align:center;">
+                        <th style="border:1px solid #cc0000;padding:2px;width:38%;">CHEF DE PROJET</th>
+                        <th style="border:1px solid #cc0000;padding:2px;width:38%;">HSE ENTREPRISE</th>
+                        <th style="border:1px solid #cc0000;padding:2px;width:24%;">DATE / HEURE</th>
                     </tr>
-                    <tr style="font-size:7.5px;">
-                        <td colspan="2" style="border:1px solid #aaa;padding:2px 4px;">Mise hors service de l'instrument de détection ? ${yn(b.detection_hors_service)}
-                            <span style="margin-left:8px;font-style:italic;">si "oui" :</span>
-                        </td>
-                    </tr>
-                    <tr style="font-size:7.5px;">
-                        <td style="border:1px solid #aaa;padding:2px 4px;">Notification requise Dept incendie ${yn(b.notif_incendie)} — numéro de téléphone : <span style="border-bottom:1px solid #000;display:inline-block;width:22%;"> </span></td>
-                        <td style="border:1px solid #aaa;padding:2px 4px;">Name : <span style="border-bottom:1px solid #000;display:inline-block;width:40%;"> </span></td>
-                    </tr>
-                    <tr style="font-size:7.5px;">
-                        <td style="border:1px solid #aaa;padding:2px 4px;">Notification requise à l'assurance ${yn(b.notif_assurance)}</td>
-                        <td style="border:1px solid #aaa;padding:2px 4px;font-style:italic;">(Tel. Henkel Insurance Dept., 24h/weekend)</td>
-                    </tr>
-                    <tr style="font-size:7.5px;">
-                        <td colspan="2" style="border:1px solid #aaa;padding:2px 4px;">Vérification que le détecteur d'incendie est éteint ? ${yn(b.detecteur_eteint)}</td>
-                    </tr>
-                    <tr style="font-size:7.5px;">
-                        <td colspan="2" style="border:1px solid #aaa;padding:2px 4px;">Surveillance de gaz pour d'éventuel gaz ou vapeurs inflammables sont nécessaires durant la tâche. ${yn(b.surveillance_gaz_final ?? true)} — si "oui" exposition forme X additionnel est nécessaire</td>
-                    </tr>
-                </table>
-
-                <!-- SIGNATURES -->
-                <table style="width:100%;border-collapse:collapse;margin-top:6px;">
                     <tr>
-                        <td style="border:2px solid #b91c1c;padding:6px;width:40%;vertical-align:top;">
-                            <div style="font-size:8px;font-weight:800;background:#b91c1c;color:#fff;padding:2px 4px;margin-bottom:4px;">CHEF DE PROJET</div>
-                            <div style="font-size:7.5px;font-style:italic;color:#555;">Nom (lettres majuscule) et signature</div>
-                            <div style="font-size:8px;font-weight:700;margin-top:2px;">${chefNom}</div>
-                            <div style="border-bottom:1px solid #000;height:18px;margin-top:4px;"></div>
+                        <td style="border:1px solid #cc0000;padding:3px 6px;height:38px;vertical-align:top;font-size:7.5px;">
+                            <div style="font-size:6.5px;color:#555;">Nom (lettres majuscule) et signature :</div>
+                            <div style="font-weight:700;font-size:8px;">${chefNom}</div>
+                            <div style="margin-top:8px;font-size:7px;color:#777;">Signature : </div>
                         </td>
-                        <td style="border:2px solid #b91c1c;padding:6px;width:40%;vertical-align:top;">
-                            <div style="font-size:8px;font-weight:800;background:#b91c1c;color:#fff;padding:2px 4px;margin-bottom:4px;">HSE ENTREPRISE</div>
-                            <div style="font-size:7.5px;font-style:italic;color:#555;">Nom (lettres majuscule) et signature</div>
-                            <div style="font-size:8px;font-weight:700;margin-top:2px;">${hseNom}</div>
-                            <div style="border-bottom:1px solid #000;height:18px;margin-top:4px;"></div>
+                        <td style="border:1px solid #cc0000;padding:3px 6px;height:38px;vertical-align:top;font-size:7.5px;">
+                            <div style="font-size:6.5px;color:#555;">Nom (lettres majuscule) et signature :</div>
+                            <div style="font-weight:700;font-size:8px;">${hseNom}</div>
+                            <div style="margin-top:8px;font-size:7px;color:#777;">Signature : </div>
                         </td>
-                        <td style="border:2px solid #b91c1c;padding:6px;width:20%;vertical-align:top;">
-                            <div style="font-size:7.5px;">Date : <strong>${datePermis}</strong></div>
-                            <div style="font-size:7.5px;margin-top:6px;">Heure : <strong>${permit.timeStart || '08h00'}</strong></div>
+                        <td style="border:1px solid #cc0000;padding:3px 6px;height:38px;vertical-align:middle;font-size:7.5px;">
+                            <div style="display:flex;gap:4px;align-items:center;margin-bottom:3px;">
+                                <span>Date :</span>
+                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">${datePermis}</span>
+                            </div>
+                            <div style="display:flex;gap:4px;align-items:center;">
+                                <span>Heure :</span>
+                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">08h10</span>
+                            </div>
                         </td>
                     </tr>
                 </table>
 
-                <!-- QR FOOTER -->
+                <!-- QR CODE FOOTER DÉDIÉ -->
                 ${this.renderFooterQR(permit)}
             </div>
         `;
     },
 
-    // 5. ANNEXE C (JAUNE) — ÉLECTRICITÉ & CONSIGNATION (SINYLON / STELLANTIS)
+    // 5. ANNEXE C (AMBRE / JAUNE) — TRAVAIL ÉLECTRIQUE & CONSIGNATION
+    // REPRODUCTION EXACTE DU STANDARD CSPS FIAT (Cadre Ambre, Logo CSPS FIAT, Checklist LOTO)
     electricAnnexe(permit) {
-        const c = permit.annexeC || {};
-        const yn = (v) => `
-            <span style="display:inline-flex;gap:2px;">
-                <span style="border:1px solid #000;padding:0 3px;font-size:7.5px;font-weight:800;background:${v===true?'#b45309':'#fff'};color:${v===true?'#fff':'#000'};">Y</span>
-                <span style="border:1px solid #000;padding:0 3px;font-size:7.5px;font-weight:800;background:${v===false?'#b45309':'#fff'};color:${v===false?'#fff':'#000'};">N</span>
-            </span>`;
         const chefNom = permit.responsible || permit.chefNom || 'Xie';
         const hseNom = permit.hseNom || 'Nouri Chahrour';
-        const consignateur = c.consignateur || 'Nouri Chahrour';
-        const datePermis = permit.validFrom || permit['date-main'] || new Date().toISOString().slice(0,10);
+        const datePermis = permit.validFrom || permit['date-main'] || '2026-08-24';
 
         return `
-            <div class="a4-document annexe-elec-doc" id="a4-doc-${permit.id}-electric" style="font-size:8px;line-height:1.4;">
-
-                <!-- EN-TÊTE OFFICIEL SINYLON / STELLANTIS -->
-                <div style="display:grid;grid-template-columns:1fr auto;align-items:center;border:2px solid #b45309;margin-bottom:4px;">
-                    <div style="padding:4px 8px;">
-                        <div style="display:flex;align-items:center;gap:6px;">
-                            <div style="background:#b45309;color:#fff;font-weight:900;font-size:14px;display:inline-block;padding:2px 8px;">C</div>
-                            <span style="font-size:13px;font-weight:900;color:#b45309;">Travail Électrique &amp; Consignation</span>
+            <div class="a4-document annexe-elec-doc" id="a4-doc-${permit.id}-electric" style="border:3px solid #d97706;padding:5px 8px;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;font-size:7.5px;line-height:1.2;color:#000;">
+                
+                <!-- EN-TÊTE EXACT CSPS FIAT -->
+                <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1.5px solid #d97706;padding-bottom:3px;margin-bottom:3px;">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                        <div style="background:#000;color:#fff;font-size:22px;font-weight:900;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:2px;">C</div>
+                        <div style="font-size:17px;font-weight:900;color:#000;letter-spacing:0.3px;">Travail électrique &amp; Consignation</div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        ${this.renderLogoCSPSFIAT()}
+                        <div style="border:1px solid #000;text-align:center;width:125px;">
+                            <div style="font-size:7.5px;font-weight:700;border-bottom:1px solid #000;padding:1px 4px;background:#f8fafc;">Identifiant du permis</div>
+                            <div style="font-size:12px;font-weight:900;padding:1px 4px;color:#000;">${permit.id || '0'}</div>
                         </div>
-                        <div style="font-size:7.5px;font-weight:800;color:#b45309;margin-top:2px;display:flex;gap:6px;align-items:center;">
-                            <span style="background:#b45309;color:#fff;padding:1px 5px;border-radius:2px;">SINYLON</span>
-                            <span style="border:1px solid #b45309;padding:0 4px;border-radius:2px;">STELLANTIS</span>
-                            <span style="color:#475569;font-weight:600;">Projet K9 CKD0 — Cabling &amp; LOTO Lockout Protocol</span>
-                        </div>
-                        <div style="font-size:7px;color:#444;margin-top:1px;">Cette liste de vérification doit être toujours accompagnée par le permis de travail de sécurité générale</div>
-                    </div>
-                    <div style="border-left:1px solid #b45309;padding:4px 10px;text-align:center;">
-                        <div style="font-size:7px;font-weight:700;">Identifiant du permis</div>
-                        <div style="font-size:14px;font-weight:900;color:#b45309;">${permit.id}</div>
                     </div>
                 </div>
 
-                <!-- TYPE DE TRAVAUX -->
-                <div style="border:1.5px solid #b45309;margin-bottom:4px;">
-                    <div style="background:#b45309;color:#fff;font-weight:800;font-size:8px;padding:2px 6px;">Type de travaux électriques</div>
-                    <table style="width:100%;border-collapse:collapse;">
-                        <tr style="font-size:7.5px;">
-                            <td style="border:1px solid #aaa;padding:2px 4px;width:28%;">Tirage de câbles</td>
-                            <td style="border:1px solid #aaa;padding:2px;width:8%;text-align:center;">${yn(c.travail_cables ?? true)}</td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;width:30%;">Raccordement armoire électrique</td>
-                            <td style="border:1px solid #aaa;padding:2px;width:8%;text-align:center;">${yn(c.travail_armoire ?? true)}</td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;width:18%;">Moteurs / Variateurs</td>
-                            <td style="border:1px solid #aaa;padding:2px;width:8%;text-align:center;">${yn(c.travail_moteurs)}</td>
+                <div style="text-align:center;font-size:7.5px;font-weight:bold;margin-bottom:3px;color:#000;">
+                    Cette liste de verification doit etre toujours accompagnée par le permis de travail de sécurité générale
+                </div>
+
+                <div style="font-style:italic;font-size:7px;margin-bottom:2px;color:#333;">
+                    Cette question est pour vous aider avec votre évaluation des risques électriques (Câblage, Armoires, Moteurs &amp; LOTO).<br>
+                    <strong>Type de travaux électriques</strong> (si "oui" continuer à la colonne de droite):
+                </div>
+
+                <!-- TABLEAU TYPES DE TRAVAUX ÉLECTRIQUES -->
+                <table style="width:100%;border-collapse:collapse;margin-bottom:3px;font-size:7px;">
+                    <tbody>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 3px;width:34%;">Tirage de câbles / Chemins de câbles</td>
+                            <td style="border:1px solid #999;padding:1px;width:7%;text-align:center;">${this.renderCheckYN(true)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;width:52%;">Câbles hors tension et protégés mécaniquement</td>
+                            <td style="border:1px solid #999;padding:1px;width:7%;text-align:center;">${this.renderCheckYN(true)}</td>
                         </tr>
-                        <tr style="font-size:7.5px;">
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Chemins de câbles / Goulottes</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.travail_chemins ?? true)}</td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Équipements basse tension (BT &lt; 1000V)</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.travail_bt ?? true)}</td>
-                            <td style="border:1px solid #aaa;padding:2px 4px;">Hors tension (travail mort)</td>
-                            <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.travail_hors_tension ?? true)}</td>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">Raccordement armoire électrique BT</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">Consignation LOTO effectuée et cadenas posés</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                         </tr>
-                        <tr style="font-size:7.5px;">
-                            <td colspan="6" style="border:1px solid #aaa;padding:2px 4px;">Description : <span style="border-bottom:1px solid #000;display:inline-block;width:70%;"> </span></td>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 3px;" rowspan="3">Intervention moteur / variateur</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;" rowspan="3">${this.renderCheckYN(true)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">Vérification d'Absence de Tension (VAT 0V certifiée)</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                         </tr>
-                    </table>
-                </div>
-
-                <!-- PROTOCOLE LOTO 5 ÉTAPES -->
-                <div style="border:1.5px solid #b45309;margin-bottom:4px;">
-                    <div style="background:#b45309;color:#fff;font-weight:800;font-size:8px;padding:2px 6px;">⚡ Protocole LOTO — Consignation / Déconsignation (5 étapes obligatoires)</div>
-                    <table style="width:100%;border-collapse:collapse;">
-                        <thead>
-                            <tr style="background:#fef3c7;font-size:7.5px;font-weight:700;">
-                                <th style="border:1px solid #aaa;padding:2px 4px;width:5%;">Étape</th>
-                                <th style="border:1px solid #aaa;padding:2px 4px;width:72%;">Action LOTO</th>
-                                <th style="border:1px solid #aaa;padding:2px 4px;width:11%;text-align:center;">Y/N</th>
-                                <th style="border:1px solid #aaa;padding:2px 4px;width:12%;text-align:center;">Initiales</th>
-                            </tr>
-                        </thead>
-                        <tbody style="font-size:7.5px;">
-                            <tr>
-                                <td style="border:1px solid #aaa;padding:2px 4px;text-align:center;font-weight:800;background:#fef3c7;">1</td>
-                                <td style="border:1px solid #aaa;padding:2px 4px;"><strong>Identification</strong> — Identifier toutes les sources d'énergie électrique de l'équipement à consigner</td>
-                                <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.loto_1 ?? true)}</td>
-                                <td style="border:1px solid #aaa;padding:2px;text-align:center;"><span style="border-bottom:1px solid #aaa;display:inline-block;width:80%;"> </span></td>
-                            </tr>
-                            <tr>
-                                <td style="border:1px solid #aaa;padding:2px 4px;text-align:center;font-weight:800;background:#fef3c7;">2</td>
-                                <td style="border:1px solid #aaa;padding:2px 4px;"><strong>Isolation</strong> — Mettre hors tension et condamner tous les organes de coupure (disjoncteurs, sectionneurs)</td>
-                                <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.loto_2 ?? true)}</td>
-                                <td style="border:1px solid #aaa;padding:2px;text-align:center;"><span style="border-bottom:1px solid #aaa;display:inline-block;width:80%;"> </span></td>
-                            </tr>
-                            <tr>
-                                <td style="border:1px solid #aaa;padding:2px 4px;text-align:center;font-weight:800;background:#fef3c7;">3</td>
-                                <td style="border:1px solid #aaa;padding:2px 4px;"><strong>Cadenassage</strong> — Poser cadenas personnel sur chaque organe de coupure + étiquette de danger</td>
-                                <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.loto_3 ?? true)}</td>
-                                <td style="border:1px solid #aaa;padding:2px;text-align:center;"><span style="border-bottom:1px solid #aaa;display:inline-block;width:80%;"> </span></td>
-                            </tr>
-                            <tr>
-                                <td style="border:1px solid #aaa;padding:2px 4px;text-align:center;font-weight:800;background:#fef3c7;">4</td>
-                                <td style="border:1px solid #aaa;padding:2px 4px;"><strong>VAT</strong> — Vérification d'Absence de Tension certifiée avec VAT homologué (résultat : <strong style="color:#15803d;">${c.vat_resultat || '0 V'}</strong>)</td>
-                                <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.loto_4 ?? true)}</td>
-                                <td style="border:1px solid #aaa;padding:2px;text-align:center;"><span style="border-bottom:1px solid #aaa;display:inline-block;width:80%;"> </span></td>
-                            </tr>
-                            <tr>
-                                <td style="border:1px solid #aaa;padding:2px 4px;text-align:center;font-weight:800;background:#fef3c7;">5</td>
-                                <td style="border:1px solid #aaa;padding:2px 4px;"><strong>MALT/CC</strong> — Mise à la Terre et en Court-Circuit si requis (HT ou risque de réalimentation)</td>
-                                <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.loto_5)}</td>
-                                <td style="border:1px solid #aaa;padding:2px;text-align:center;"><span style="border-bottom:1px solid #aaa;display:inline-block;width:80%;"> </span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- HABILITATIONS & EPI (2 colonnes) -->
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;">
-
-                    <div style="border:1.5px solid #b45309;">
-                        <div style="background:#b45309;color:#fff;font-weight:800;font-size:8px;padding:2px 6px;">Habilitations électriques des intervenants</div>
-                        <table style="width:100%;border-collapse:collapse;">
-                            <thead>
-                                <tr style="background:#fef3c7;font-size:7px;font-weight:700;">
-                                    <th style="border:1px solid #aaa;padding:2px 3px;width:18%;">Niveau</th>
-                                    <th style="border:1px solid #aaa;padding:2px 3px;width:66%;">Intervenant</th>
-                                    <th style="border:1px solid #aaa;padding:2px 3px;width:16%;text-align:center;">Valide</th>
-                                </tr>
-                            </thead>
-                            <tbody style="font-size:7px;">
-                                <tr>
-                                    <td style="border:1px solid #aaa;padding:2px 3px;font-weight:800;color:#b45309;">B0 / B1</td>
-                                    <td style="border:1px solid #aaa;padding:2px 3px;">${c.hab_b0 || 'Non-électriciens'}</td>
-                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.hab_b0_ok ?? true)}</td>
-                                </tr>
-                                <tr>
-                                    <td style="border:1px solid #aaa;padding:2px 3px;font-weight:800;color:#b45309;">B2V</td>
-                                    <td style="border:1px solid #aaa;padding:2px 3px;">${c.hab_b2v || 'Électriciens BT'}</td>
-                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.hab_b2v_ok ?? true)}</td>
-                                </tr>
-                                <tr>
-                                    <td style="border:1px solid #aaa;padding:2px 3px;font-weight:800;color:#b45309;">BR</td>
-                                    <td style="border:1px solid #aaa;padding:2px 3px;">${c.hab_br || 'Chargé de travaux'}</td>
-                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.hab_br_ok ?? true)}</td>
-                                </tr>
-                                <tr>
-                                    <td style="border:1px solid #aaa;padding:2px 3px;font-weight:800;color:#b45309;">BC</td>
-                                    <td style="border:1px solid #aaa;padding:2px 3px;">${c.hab_bc || 'Chargé consignation'}</td>
-                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.hab_bc_ok ?? true)}</td>
-                                </tr>
-                                <tr>
-                                    <td style="border:1px solid #aaa;padding:2px 3px;font-weight:800;color:#b45309;">H1V</td>
-                                    <td style="border:1px solid #aaa;padding:2px 3px;">${c.hab_h1v || 'Électriciens HT (si requis)'}</td>
-                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.hab_h1v_ok)}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div style="border:1.5px solid #b45309;">
-                        <div style="background:#b45309;color:#fff;font-weight:800;font-size:8px;padding:2px 6px;">EPI Électrique obligatoires</div>
-                        <table style="width:100%;border-collapse:collapse;">
-                            <tbody style="font-size:7.5px;">
-                                <tr>
-                                    <td style="border:1px solid #aaa;padding:2px 4px;width:84%;">Gants isolants 1000V (classe 0 min.)</td>
-                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.epi_gants ?? true)}</td>
-                                </tr>
-                                <tr>
-                                    <td style="border:1px solid #aaa;padding:2px 4px;">Écran facial anti-arc électrique</td>
-                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.epi_ecran ?? true)}</td>
-                                </tr>
-                                <tr>
-                                    <td style="border:1px solid #aaa;padding:2px 4px;">Chaussures de sécurité isolantes</td>
-                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.epi_chaussures ?? true)}</td>
-                                </tr>
-                                <tr>
-                                    <td style="border:1px solid #aaa;padding:2px 4px;">Casque anti-choc + Lunettes de protection</td>
-                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.epi_casque ?? true)}</td>
-                                </tr>
-                                <tr>
-                                    <td style="border:1px solid #aaa;padding:2px 4px;">Vêtements anti-arc (si risque arc &gt; 4 cal)</td>
-                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.epi_arc)}</td>
-                                </tr>
-                                <tr>
-                                    <td style="border:1px solid #aaa;padding:2px 4px;">VAT homologué (testeur de tension)</td>
-                                    <td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.epi_vat ?? true)}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- CHECKLIST GÉNÉRALE SITE -->
-                <table style="width:100%;border-collapse:collapse;margin-bottom:4px;">
-                    <tbody style="font-size:7.5px;">
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;width:88%;">Zone de travail délimitée et balisée (périmètre de sécurité électrique)</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.zone_delimitee ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Signalisation de danger électrique apposée sur tous les organes consignés</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.signalisation ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Outils isolants vérifiés (IEC 60900 — 1000V) et outillage en bon état</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.outils_isoles ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Consignes d'urgence connues — extincteur CO₂ à portée immédiate</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.urgence_co2 ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Procédure de déconsignation définie et communiquée à l'équipe</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.deconsignation_proc ?? true)}</td></tr>
-                        <tr><td style="border:1px solid #aaa;padding:2px 4px;">Rapport VAT joint au permis (document obligatoire)</td><td style="border:1px solid #aaa;padding:2px;text-align:center;">${yn(c.rapport_vat ?? true)}</td></tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">Habilitations électriques des intervenants vérifiées</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">Port d'EPI isolants (Gants 1000V, écran facial anti-arc)</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 3px;" rowspan="3">Mise à la terre et court-circuit (MALT/CC)</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;" rowspan="3">${this.renderCheckYN(true)}</td>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">Dispositif MALT raccordé avant intervention</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;"><span style="border:1px solid #000;padding:0 3px;font-weight:800;">Y</span></td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">Outillage à main isolé 1000V certifié EN 60900</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 3px;">Balisage de sécurité autour des cellules sous tension</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
                     </tbody>
                 </table>
 
-                <!-- BLOC CONSIGNATEUR -->
-                <div style="border:2px solid #b45309;padding:6px;margin-bottom:6px;">
-                    <div style="background:#b45309;color:#fff;font-weight:800;font-size:8px;padding:2px 6px;margin-bottom:6px;">⚡ CHARGÉ DE CONSIGNATION (BC) — Responsable unique du cadenassage</div>
-                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:7.5px;">
-                        <div>
-                            <div style="font-weight:700;">Nom (lettres majuscule) :</div>
-                            <div style="font-weight:800;margin-top:2px;">${consignateur}</div>
-                            <div style="border-bottom:1px solid #000;height:16px;margin-top:4px;"></div>
-                        </div>
-                        <div>
-                            <div style="font-weight:700;">Habilitation :</div>
-                            <div style="margin-top:2px;font-weight:800;color:#b45309;">BC (Chargé de Consignation)</div>
-                            <div style="border-bottom:1px solid #000;height:16px;margin-top:4px;"></div>
-                        </div>
-                        <div>
-                            <div style="font-weight:700;">Signature :</div>
-                            <div style="border-bottom:1px solid #000;height:28px;margin-top:4px;"></div>
-                        </div>
+                <!-- SECTION MESURES DE CONSIGNATION LOTO -->
+                <div style="border:1px solid #d97706;margin-bottom:3px;font-size:7px;">
+                    <div style="font-weight:bold;padding:2px 4px;background:#fef3c7;border-bottom:1px solid #d97706;display:flex;justify-content:space-between;">
+                        <span>Procédure de Consignation et Déconsignation (LOTO - Lockout / Tagout)</span>
+                        <span>${this.renderCheckYN(true)}</span>
                     </div>
-                    <div style="font-size:7px;color:#b45309;font-weight:700;margin-top:4px;border-top:1px solid #f59e0b;padding-top:3px;">
-                        ⚠️ Aucun intervenant ne peut commencer le travail avant la signature du Chargé de Consignation et la remise de l'attestation de consignation.
-                    </div>
+                    <table style="width:100%;border-collapse:collapse;">
+                        <tr>
+                            <td style="border:1px solid #999;padding:2px 4px;width:40%;">Séparation de la source d'énergie (Disjoncteur / Sectionneur ouvert)</td>
+                            <td style="border:1px solid #999;padding:1px;width:7%;text-align:center;">${this.renderCheckYN(true)}</td>
+                            <td style="border:1px solid #999;padding:2px 4px;width:46%;">Condamnation mécanique par cadenas individuel</td>
+                            <td style="border:1px solid #999;padding:1px;width:7%;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:2px 4px;">Pose de la pancarte d'interdiction de manœuvre (Tagout)</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                            <td style="border:1px solid #999;padding:2px 4px;">Vérification de décharge des condensateurs</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="border:1px solid #999;padding:2px 4px;">
+                                Chargé de Consignation Sinylon / MOEX : <strong>Nouri Chahrour / Xie</strong> — N° Cadenas : <span style="border-bottom:1px solid #000;display:inline-block;width:35%;height:10px;">LOTO-SINY-01</span>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
 
-                <!-- SIGNATURES -->
-                <table style="width:100%;border-collapse:collapse;margin-top:4px;">
+                <!-- SECTION CHECKLIST DE SÉCURITÉ CHANTIER ÉLECTRIQUE -->
+                <table style="width:100%;border-collapse:collapse;margin-bottom:3px;font-size:7px;">
+                    <tbody>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;width:92%;">Zone de tirage de câbles balisée avec ruban de signalisation et panneaux danger</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;width:8%;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Présence d'un surveillant électricien habilité pendant les manœuvres</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Éclairage de chantier 24V ou autonome protégé IP55</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Extincteur CO₂ approprié pour feu électrique présent à proximité immédiate</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;"><span style="border:1px solid #000;padding:0 3px;font-weight:800;">Y</span></td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #999;padding:1.5px 4px;">Procédure d'urgence et coupure générale d'urgence localisée</td>
+                            <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- SECTION SIGNATURES VIDES POUR ÉMARGEMENT MANUEL -->
+                <table style="width:100%;border-collapse:collapse;margin-top:auto;border:1.5px solid #d97706;margin-bottom:2px;">
+                    <tr style="background:#fef3c7;font-size:7.5px;font-weight:900;text-align:center;">
+                        <th style="border:1px solid #d97706;padding:2px;width:38%;">CHEF DE PROJET</th>
+                        <th style="border:1px solid #d97706;padding:2px;width:38%;">HSE ENTREPRISE / CHARGÉ CONSIGNATION</th>
+                        <th style="border:1px solid #d97706;padding:2px;width:24%;">DATE / HEURE</th>
+                    </tr>
                     <tr>
-                        <td style="border:2px solid #b45309;padding:6px;width:40%;vertical-align:top;">
-                            <div style="font-size:8px;font-weight:800;background:#b45309;color:#fff;padding:2px 4px;margin-bottom:4px;">CHEF DE PROJET</div>
-                            <div style="font-size:7.5px;font-style:italic;color:#555;">Nom (lettres majuscule) et signature</div>
-                            <div style="font-size:8px;font-weight:700;margin-top:2px;">${chefNom}</div>
-                            <div style="border-bottom:1px solid #000;height:18px;margin-top:4px;"></div>
+                        <td style="border:1px solid #d97706;padding:3px 6px;height:38px;vertical-align:top;font-size:7.5px;">
+                            <div style="font-size:6.5px;color:#555;">Nom (lettres majuscule) et signature :</div>
+                            <div style="font-weight:700;font-size:8px;">${chefNom}</div>
+                            <div style="margin-top:8px;font-size:7px;color:#777;">Signature : </div>
                         </td>
-                        <td style="border:2px solid #b45309;padding:6px;width:40%;vertical-align:top;">
-                            <div style="font-size:8px;font-weight:800;background:#b45309;color:#fff;padding:2px 4px;margin-bottom:4px;">HSE ENTREPRISE</div>
-                            <div style="font-size:7.5px;font-style:italic;color:#555;">Nom (lettres majuscule) et signature</div>
-                            <div style="font-size:8px;font-weight:700;margin-top:2px;">${hseNom}</div>
-                            <div style="border-bottom:1px solid #000;height:18px;margin-top:4px;"></div>
+                        <td style="border:1px solid #d97706;padding:3px 6px;height:38px;vertical-align:top;font-size:7.5px;">
+                            <div style="font-size:6.5px;color:#555;">Nom (lettres majuscule) et signature :</div>
+                            <div style="font-weight:700;font-size:8px;">${hseNom}</div>
+                            <div style="margin-top:8px;font-size:7px;color:#777;">Signature : </div>
                         </td>
-                        <td style="border:2px solid #b45309;padding:6px;width:20%;vertical-align:top;">
-                            <div style="font-size:7.5px;">Date : <strong>${datePermis}</strong></div>
-                            <div style="font-size:7.5px;margin-top:6px;">Heure : <strong>${permit.timeStart || '08h00'}</strong></div>
+                        <td style="border:1px solid #d97706;padding:3px 6px;height:38px;vertical-align:middle;font-size:7.5px;">
+                            <div style="display:flex;gap:4px;align-items:center;margin-bottom:3px;">
+                                <span>Date :</span>
+                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">${datePermis}</span>
+                            </div>
+                            <div style="display:flex;gap:4px;align-items:center;">
+                                <span>Heure :</span>
+                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">08h10</span>
+                            </div>
                         </td>
                     </tr>
                 </table>
 
-                <!-- QR FOOTER -->
+                <!-- QR CODE FOOTER DÉDIÉ -->
                 ${this.renderFooterQR(permit)}
             </div>
         `;
     }
 };
 
-window.Templates = Templates;
+if (typeof window !== 'undefined') {
+    window.Templates = Templates;
+}
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = Templates;
+}

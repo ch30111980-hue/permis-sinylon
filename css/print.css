@@ -381,6 +381,18 @@
         box-sizing: border-box !important;
     }
 
+    .annexe-height-doc {
+        border: 3px solid #004080 !important;
+    }
+
+    .annexe-hot-doc {
+        border: 3px solid #cc0000 !important;
+    }
+
+    .annexe-elec-doc {
+        border: 3px solid #d97706 !important;
+    }
+
     .a4-document:last-child {
         page-break-after: auto !important;
         break-after: auto !important;
