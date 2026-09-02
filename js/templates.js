@@ -1,18 +1,18 @@
 /**
- * SINYLON - STELLANTIS | Templates A4 Haute Fidélité V4 (MODÈLES OFFICIELS CSPS FIAT)
+ * SINYLON - STELLANTIS | Templates A4 Haute Fidélité V4 (MODÈLES OFFICIELS SINYLON - STELLANTIS)
  * Reproduction exacte des photos de permis du chantier Stellantis Algeria K9 CKD0
  * - Signatures et visas VIDES pour émargement manuscrit au stylo / tampon
  * - Revalidation quotidienne certifiée à 08h10 chaque matin
- * - Annexe A (Bleue), Annexe B (Rouge), Annexe C (Ambre) conformes aux formulaires CSPS FIAT
+ * - Annexe A (Bleue), Annexe B (Rouge), Annexe C (Ambre) conformes aux formulaires SINYLON - STELLANTIS
  */
 
 const Templates = {
-    // Helper Logo CSPS FIAT conforme aux photos officielles
-    renderLogoCSPSFIAT() {
+    // Logo officiel SINYLON - STELLANTIS
+    renderLogoSinylonStellantis() {
         return `
-            <div class="csps-fiat-logo" style="display:inline-flex;align-items:center;border:1.5px solid #000;border-radius:2px;overflow:hidden;height:24px;vertical-align:middle;">
-                <span style="background:#000;color:#fff;font-weight:900;font-size:13px;padding:2px 6px;letter-spacing:1px;display:flex;align-items:center;height:100%;">CSPS</span>
-                <span style="background:#fff;color:#c00;font-weight:900;font-size:13px;padding:2px 6px;letter-spacing:1px;font-style:italic;display:flex;align-items:center;height:100%;font-family:Arial,Helvetica,sans-serif;">FIAT</span>
+            <div style="display:inline-flex;align-items:center;gap:6px;vertical-align:middle;">
+                <span style="background:#000;color:#fff;font-weight:900;font-size:13px;padding:2px 7px;border-radius:2px;letter-spacing:1px;">SINYLON</span>
+                <span style="border:1.5px solid #000;color:#000;font-weight:900;font-size:13px;padding:1px 7px;border-radius:2px;background:#fff;letter-spacing:1px;">STELLANTIS</span>
             </div>
         `;
     },
@@ -98,7 +98,7 @@ const Templates = {
                     <div class="doc-logo" style="display:flex;align-items:center;gap:6px;">
                         <span style="background:#000;color:#fff;font-weight:900;font-size:13px;padding:2px 6px;border-radius:2px;">SINYLON</span>
                         <span style="border:1.5px solid #000;color:#000;font-weight:900;font-size:13px;padding:1px 6px;border-radius:2px;background:#fff;">STELLANTIS</span>
-                        ${this.renderLogoCSPSFIAT()}
+                        ${this.renderLogoSinylonStellantis()}
                     </div>
                     <div class="doc-title-container" style="text-align:center;flex:1;">
                         <div class="doc-title-main" style="font-size:14px;font-weight:900;">PERMIS GENERAL DE TRAVAIL</div>
@@ -337,7 +337,7 @@ const Templates = {
                     <div class="doc-logo-box" style="display:flex;align-items:center;gap:6px;">
                         <span style="background:#000;color:#fff;font-weight:900;font-size:13px;padding:2px 6px;border-radius:2px;">SINYLON</span>
                         <span style="border:1.5px solid #000;color:#000;font-weight:900;font-size:13px;padding:1px 6px;border-radius:2px;background:#fff;">STELLANTIS</span>
-                        ${this.renderLogoCSPSFIAT()}
+                        ${this.renderLogoSinylonStellantis()}
                     </div>
                     <div class="doc-title-exact" style="font-size:14px;font-weight:900;text-align:center;flex:1;">
                         Revalidation Quotidienne du Permis de Travail<br>
@@ -420,7 +420,7 @@ const Templates = {
     },
 
     // 3. ANNEXE A (BLEUE) — TRAVAIL EN HAUTEUR
-    // REPRODUCTION EXACTE DE LA PHOTO CSPS FIAT (Cadre Bleu, Logo CSPS FIAT, Checklist exacte)
+    // REPRODUCTION EXACTE DE LA PHOTO SINYLON - STELLANTIS (Cadre Bleu, Logo SINYLON - STELLANTIS, Checklist exacte)
     heightAnnexe(permit) {
         const chefNom = permit.responsible || permit.chefNom || 'Xie';
         const hseNom = permit.hseNom || 'Nouri Chahrour';
@@ -429,14 +429,14 @@ const Templates = {
         return `
             <div class="a4-document annexe-height-doc" id="a4-doc-${permit.id}-height" style="border:3px solid #004080;padding:5px 8px;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;font-size:7.5px;line-height:1.2;color:#000;">
                 
-                <!-- EN-TÊTE EXACT PHOTO CSPS FIAT -->
+                <!-- EN-TÊTE EXACT PHOTO SINYLON - STELLANTIS -->
                 <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1.5px solid #004080;padding-bottom:3px;margin-bottom:3px;">
                     <div style="display:flex;align-items:center;gap:8px;">
                         <div style="background:#000;color:#fff;font-size:22px;font-weight:900;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:2px;">A</div>
                         <div style="font-size:17px;font-weight:900;color:#000;letter-spacing:0.3px;">Travail en hauteur</div>
                     </div>
                     <div style="display:flex;align-items:center;gap:10px;">
-                        ${this.renderLogoCSPSFIAT()}
+                        ${this.renderLogoSinylonStellantis()}
                         <div style="border:1px solid #000;text-align:center;width:125px;">
                             <div style="font-size:7.5px;font-weight:700;border-bottom:1px solid #000;padding:1px 4px;background:#f8fafc;">Identifiant du permis</div>
                             <div style="font-size:12px;font-weight:900;padding:1px 4px;color:#000;">${permit.id || '0'}</div>
@@ -662,7 +662,7 @@ const Templates = {
     },
 
     // 4. ANNEXE B (ROUGE) — TRAVAIL CHAUD
-    // REPRODUCTION EXACTE DE LA PHOTO CSPS FIAT (Cadre Rouge, Logo CSPS FIAT, Checklist exacte)
+    // REPRODUCTION EXACTE DE LA PHOTO SINYLON - STELLANTIS (Cadre Rouge, Logo SINYLON - STELLANTIS, Checklist exacte)
     hotAnnexe(permit) {
         const chefNom = permit.responsible || permit.chefNom || 'Xie';
         const hseNom = permit.hseNom || 'Nouri Chahrour';
@@ -671,14 +671,14 @@ const Templates = {
         return `
             <div class="a4-document annexe-hot-doc" id="a4-doc-${permit.id}-hot" style="border:3px solid #cc0000;padding:5px 8px;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;font-size:7.5px;line-height:1.2;color:#000;">
                 
-                <!-- EN-TÊTE EXACT PHOTO CSPS FIAT -->
+                <!-- EN-TÊTE EXACT PHOTO SINYLON - STELLANTIS -->
                 <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1.5px solid #cc0000;padding-bottom:3px;margin-bottom:3px;">
                     <div style="display:flex;align-items:center;gap:8px;">
                         <div style="background:#000;color:#fff;font-size:22px;font-weight:900;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:2px;">B</div>
                         <div style="font-size:17px;font-weight:900;color:#000;letter-spacing:0.3px;">Travail chaud</div>
                     </div>
                     <div style="display:flex;align-items:center;gap:10px;">
-                        ${this.renderLogoCSPSFIAT()}
+                        ${this.renderLogoSinylonStellantis()}
                         <div style="border:1px solid #000;text-align:center;width:125px;">
                             <div style="font-size:7.5px;font-weight:700;border-bottom:1px solid #000;padding:1px 4px;background:#f8fafc;">Permit Identifier</div>
                             <div style="font-size:12px;font-weight:900;padding:1px 4px;color:#000;">${permit.id || '0'}</div>
@@ -840,7 +840,7 @@ const Templates = {
                         </div>
                         <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1px;">
                             <span>Notification requise à l'assurance ${this.renderCheckYN(false)}</span>
-                            <span style="font-size:6.5px;color:#555;">(Tel. Henkel Insurance Dept., 24h/weekend)</span>
+                            <span style="font-size:6.5px;color:#555;">(Tel. Stellantis Security / HSE Sinylon 24h/24)</span>
                         </div>
                         <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1px;">
                             <span>verification que le detecteur d'incendie est étein</span>
@@ -891,7 +891,7 @@ const Templates = {
     },
 
     // 5. ANNEXE C (AMBRE / JAUNE) — TRAVAIL ÉLECTRIQUE & CONSIGNATION
-    // REPRODUCTION EXACTE DU STANDARD CSPS FIAT (Cadre Ambre, Logo CSPS FIAT, Checklist LOTO)
+    // REPRODUCTION EXACTE DU STANDARD SINYLON - STELLANTIS (Cadre Ambre, Logo SINYLON - STELLANTIS, Checklist LOTO)
     electricAnnexe(permit) {
         const chefNom = permit.responsible || permit.chefNom || 'Xie';
         const hseNom = permit.hseNom || 'Nouri Chahrour';
@@ -900,14 +900,14 @@ const Templates = {
         return `
             <div class="a4-document annexe-elec-doc" id="a4-doc-${permit.id}-electric" style="border:3px solid #d97706;padding:5px 8px;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;font-size:7.5px;line-height:1.2;color:#000;">
                 
-                <!-- EN-TÊTE EXACT CSPS FIAT -->
+                <!-- EN-TÊTE EXACT SINYLON - STELLANTIS -->
                 <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1.5px solid #d97706;padding-bottom:3px;margin-bottom:3px;">
                     <div style="display:flex;align-items:center;gap:8px;">
                         <div style="background:#000;color:#fff;font-size:22px;font-weight:900;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:2px;">C</div>
                         <div style="font-size:17px;font-weight:900;color:#000;letter-spacing:0.3px;">Travail électrique &amp; Consignation</div>
                     </div>
                     <div style="display:flex;align-items:center;gap:10px;">
-                        ${this.renderLogoCSPSFIAT()}
+                        ${this.renderLogoSinylonStellantis()}
                         <div style="border:1px solid #000;text-align:center;width:125px;">
                             <div style="font-size:7.5px;font-weight:700;border-bottom:1px solid #000;padding:1px 4px;background:#f8fafc;">Identifiant du permis</div>
                             <div style="font-size:12px;font-weight:900;padding:1px 4px;color:#000;">${permit.id || '0'}</div>
