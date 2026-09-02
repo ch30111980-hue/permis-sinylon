@@ -5,8 +5,8 @@
 
 const App = {
     currentView: 'dashboard',
-    currentWeek: 35,
-    currentPermitId: 'K9-W35-01',
+    currentWeek: 36,
+    currentPermitId: 'SYN-K9-KW36',
     previewPage: 'p1',
 
     // Sécurité : mode lecture seule pour visiteurs QR

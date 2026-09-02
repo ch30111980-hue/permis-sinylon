@@ -31,7 +31,7 @@ const PrintEngine = {
     printPermit(permitId) {
         const store = typeof window !== 'undefined' && window.Store ? window.Store : Store;
         const templates = typeof window !== 'undefined' && window.Templates ? window.Templates : Templates;
-        const targetId = permitId || (typeof window !== 'undefined' && window.App && window.App.currentPermitId) || 'K9-W35-01';
+        const targetId = permitId || (typeof window !== 'undefined' && window.App && window.App.currentPermitId) || 'SYN-K9-KW36';
         
         const permit = store.getPermit(targetId);
         if (!permit) {

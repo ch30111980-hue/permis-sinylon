@@ -1654,9 +1654,9 @@
     "wpeex-nom": "M. W.P.E.E.X (Ingénieur de Suivi)",
     "hse-nom": "Nouri Chahrour (HSE Sinylon)",
     "coord-nom": "W.P.E.E.X Coordination",
-    "wpeexValidated": false,
+    "wpeexValidated": true,
     "isClosed": false,
-    "status": "EN_ATTENTE_WPEEX",
+    "status": "VALIDE",
     "travailleurs": [],
     "dangers": {
       "height": true,
