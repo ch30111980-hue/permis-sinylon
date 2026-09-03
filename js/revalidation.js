@@ -1,7 +1,7 @@
 /**
  * SINYLON - STELLANTIS | Revalidation Hebdomadaire
  * Gestion des cycles de revalidation (Semaine 1, Semaine 2, Semaine 3...),
- * checklist de conformité, validation W.P.E.E.X et journal d'audit
+ * checklist de conformité, validation Sinylon et journal d'audit
  */
 
 const RevalidationModule = {
@@ -26,7 +26,7 @@ const RevalidationModule = {
         const now = new Date();
         document.getElementById('reval-date').value = now.toISOString().split('T')[0];
         document.getElementById('reval-time').value = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-        document.getElementById('reval-wpeex-engineer').value = permit['wpeex-nom'] || 'M. W.P.E.E.X (Ingénieur de Suivi)';
+        document.getElementById('reval-wpeex-engineer').value = permit['wpeex-nom'] || 'M. Sinylon (Ingénieur de Suivi)';
         document.getElementById('reval-exec-manager').value = permit['chef-nom'] || 'Responsable Exécution';
 
         // Reset radio buttons
@@ -96,7 +96,7 @@ const RevalidationModule = {
             if (App.currentPermitId === permitId) {
                 App.openPermitPreview(permitId);
             }
-            App.showToast(`✅ Permis ${permitId} revalidé avec succès par W.P.E.E.X !`, 'success');
+            App.showToast(`✅ Permis ${permitId} revalidé avec succès par Sinylon !`, 'success');
         }
     },
 
@@ -115,7 +115,7 @@ const RevalidationModule = {
                 <div class="reval-h-header">
                     <span class="reval-h-week">Semaine ${rev.weekNumber || idx + 1}</span>
                     <span class="reval-h-date">${rev.date} à ${rev.time}</span>
-                    <span class="badge badge-success">Validé W.P.E.E.X</span>
+                    <span class="badge badge-success">Validé Sinylon</span>
                 </div>
                 <div class="reval-h-details">
                     <div><strong>Suivi :</strong> ${rev.wpeexEngineer}</div>

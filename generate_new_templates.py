@@ -1,8 +1,16 @@
-/**
+# Script de génération du templates.js officiel SINYLON - STELLANTIS pour SINYLON STELLANTIS
+# Reproduction rigoureuse des modèles photos réelles :
+# - Annexe A (Hauteur) : Cadre Bleu, Header A, Logo SINYLON - STELLANTIS, Checklist exacte photo
+# - Annexe B (Chaud) : Cadre Rouge, Header B, Logo SINYLON - STELLANTIS, Checklist exacte photo
+# - Annexe C (Électrique) : Cadre Ambre/Jaune, Header C, Logo SINYLON - STELLANTIS, Checklist LOTO
+# - Permis Général P1 & Revalidation P2 : Signatures et visas VIDES pour signature à la main
+# - Footer QR Code propre avec URL directe et horodatage certifié 08h10 chaque matin
+
+templates_code = r'''/**
  * SINYLON - STELLANTIS | Templates A4 Haute Fidélité V4 (MODÈLES OFFICIELS SINYLON - STELLANTIS)
  * Reproduction exacte des photos de permis du chantier Stellantis Algeria K9 CKD0
  * - Signatures et visas VIDES pour émargement manuscrit au stylo / tampon
- * - Revalidation quotidienne certifiée à 08h00 chaque matin
+ * - Revalidation quotidienne certifiée à 08h10 chaque matin
  * - Annexe A (Bleue), Annexe B (Rouge), Annexe C (Ambre) conformes aux formulaires SINYLON - STELLANTIS
  */
 
@@ -41,7 +49,7 @@ const Templates = {
                         🛡️ VÉRIFICATION ÉLECTRONIQUE / DIGITAL WORK PERMIT QR VERIFICATION
                     </div>
                     <div style="font-size:7.5px;color:#334155;margin-top:1px;">
-                        Scannez ce QR Code pour vérifier en direct la validité journalière <strong>(Validité Hebdomadaire)</strong>, les visas MOEX / Sinylon et les habilitations.
+                        Scannez ce QR Code pour vérifier en direct la validité journalière <strong>(Validé à 08h10 chaque matin)</strong>, les visas MOEX / W.P.E.E.X et les habilitations.
                     </div>
                     <div style="font-family:monospace;font-weight:800;font-size:8.5px;color:#1e3a8a;margin-top:1px;">
                         PERMIS N° ${permit.id} · PROJET ALGERIA K9 CKD0 · STELLANTIS
@@ -71,7 +79,7 @@ const Templates = {
     // Signatures VIDES prêtes pour émargement manuscrit au stylo / tampon
     // =========================================================================
     // PAGE 1 : PERMIS DE TRAVAIL DE SECURITÉ GÉNÉRALE (RECTO - PAGE 1/2)
-    // REPRODUCTION EXACTE DE LA PHOTO HSE Sinylon ADAPTÉE POUR SINYLON - STELLANTIS
+    // REPRODUCTION EXACTE DE LA PHOTO CSPS FIAT ADAPTÉE POUR SINYLON - STELLANTIS
     // Utilise dynamiquement la description et les données du permis dans l'application
     // =========================================================================
     generalP1(permit) {
@@ -337,7 +345,7 @@ const Templates = {
                         </div>
                         <div style="border:1px solid #000;background:#fff;padding:2px 4px;font-size:7px;min-height:36px;display:flex;flex-direction:column;justify-content:space-between;">
                             <div style="background:#bfdbfe;font-weight:bold;padding:1px;text-align:center;border-bottom:1px solid #000;font-size:7.5px;">MOEX - Ingénieur de Suivi</div>
-                            <div>Nom(lettres en majuscule) et signature: <strong>${p['wpeex-nom'] || 'M. Sinylon'}</strong></div>
+                            <div>Nom(lettres en majuscule) et signature: <strong>${p['wpeex-nom'] || 'M. W.P.E.E.X'}</strong></div>
                             <div style="height:14px;border-bottom:1px dashed #999;color:#777;font-size:6.5px;display:flex;align-items:flex-end;">Signature :</div>
                         </div>
                     </div>
@@ -446,14 +454,14 @@ const Templates = {
                 </div>
             </div>
 
-            <!-- Discrete Secure QR Footer for Online Verification at 08h00 -->
+            <!-- Discrete Secure QR Footer for Online Verification at 08h10 -->
             ${this.renderFooterQR(p)}
         </div>
         `;
     },
 
     // 2. PERMIS GÉNÉRAL - PAGE 2/2 (VERSO REVALIDATIONS DU JOUR 2 AU JOUR 7)
-    // Tableau avec colonnes Visa et Signature VIDES pour émargement manuscrit chaque matin à 08h00
+    // Tableau avec colonnes Visa et Signature VIDES pour émargement manuscrit chaque matin à 08h10
     generalP2(permit) {
         const dStart = permit.validFrom || permit['date-main'] || '2026-08-24';
         const startDate = new Date(dStart);
@@ -476,20 +484,20 @@ const Templates = {
                 <tr style="height:26px;">
                     <td class="text-center bold-cell" style="font-weight:bold;font-size:8px;border:1px solid #000;padding:2px 4px;">${dayInfo.name}</td>
                     <td class="text-center" style="font-family:monospace;font-size:8px;border:1px solid #000;padding:2px 4px;">${dateStr}</td>
-                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">M. Sinylon</td>
+                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">M. W.P.E.E.X</td>
                     <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">Ingénieur Suivi</td>
-                    <!-- CASE VISA WPEEX VIDE POUR SIGNATURE MANUELLE À 08H00 -->
+                    <!-- CASE VISA WPEEX VIDE POUR SIGNATURE MANUELLE À 08H10 -->
                     <td class="text-center" style="border:1px solid #000;padding:2px;width:110px;">
                         <div style="height:20px;border-bottom:1px dashed #999;margin:1px 4px;"></div>
                     </td>
                     <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">Xie</td>
                     <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">Chef de Projet</td>
-                    <!-- CASE SIGNATURE SINYLON VIDE POUR SIGNATURE MANUELLE À 08H00 -->
+                    <!-- CASE SIGNATURE SINYLON VIDE POUR SIGNATURE MANUELLE À 08H10 -->
                     <td class="text-center" style="border:1px solid #000;padding:2px;width:110px;">
                         <div style="height:20px;border-bottom:1px dashed #999;margin:1px 4px;"></div>
                     </td>
                     <td class="no-print text-center" style="border:1px solid #000;padding:2px;font-size:7.5px;">
-                        <span style="color:#16a34a;font-weight:700;">À signer 08h00</span>
+                        <span style="color:#16a34a;font-weight:700;">À signer 08h10</span>
                     </td>
                 </tr>
             `;
@@ -505,7 +513,7 @@ const Templates = {
                     </div>
                     <div class="doc-title-exact" style="font-size:14px;font-weight:900;text-align:center;flex:1;">
                         Revalidation Quotidienne du Permis de Travail<br>
-                        <span style="font-size:7.5px;font-weight:normal;color:#333;">Daily Work Permit Revalidation Sheet (Contrôle et émargement chaque matin à 08h00)</span>
+                        <span style="font-size:7.5px;font-weight:normal;color:#333;">Daily Work Permit Revalidation Sheet (Contrôle et émargement chaque matin à 08h10)</span>
                     </div>
                     <div class="doc-header-right-group">
                         <div class="doc-id-box-exact" style="border:1.5px solid #000;padding:2px 8px;text-align:center;border-radius:2px;background:#f8fafc;">
@@ -516,7 +524,7 @@ const Templates = {
                 </div>
 
                 <div class="yellow-bar-header" style="background:#ffeb3b;border:1px solid #000;padding:3px 6px;font-weight:900;font-size:8.5px;margin-top:6px;display:flex;justify-content:space-between;">
-                    <span>REVALIDATION QUOTIDIENNE DU PERMIS (DU JOUR 2 AU JOUR 7 — ÉMARGEMENT SUR SITE À 08H00)</span>
+                    <span>REVALIDATION QUOTIDIENNE DU PERMIS (DU JOUR 2 AU JOUR 7 — ÉMARGEMENT SUR SITE À 08H10)</span>
                     <span style="font-size:7.5px;font-weight:normal;font-style:italic;">Chaque matin avant le démarrage des travaux</span>
                 </div>
                 <table class="doc-table-exact" style="width:100%;border-collapse:collapse;margin-top:4px;">
@@ -524,17 +532,17 @@ const Templates = {
                         <tr style="background:#f1f5f9;font-size:7.5px;">
                             <th rowspan="2" style="border:1px solid #000;padding:3px 4px;width:95px;">JOURNÉE</th>
                             <th rowspan="2" style="border:1px solid #000;padding:3px 4px;width:75px;">DATE</th>
-                            <th colspan="3" style="border:1px solid #000;padding:2px;background:#eff6ff;color:#1e3a8a;">Sinylon - Ingénieur de Suivi</th>
+                            <th colspan="3" style="border:1px solid #000;padding:2px;background:#eff6ff;color:#1e3a8a;">W.P.E.E.X - Ingénieur de Suivi</th>
                             <th colspan="3" style="border:1px solid #000;padding:2px;">Responsable d'exécution (SINYLON)</th>
                             <th rowspan="2" class="no-print" style="border:1px solid #000;padding:2px;width:70px;">STATUT</th>
                         </tr>
                         <tr style="background:#f8fafc;font-size:7px;">
                             <th style="border:1px solid #000;padding:2px;">Nom</th>
                             <th style="border:1px solid #000;padding:2px;">Fonction</th>
-                            <th style="border:1px solid #000;padding:2px;background:#eff6ff;color:#1e3a8a;">Visa Manuscrit </th>
+                            <th style="border:1px solid #000;padding:2px;background:#eff6ff;color:#1e3a8a;">Visa Manuscrit (08h10)</th>
                             <th style="border:1px solid #000;padding:2px;">Nom</th>
                             <th style="border:1px solid #000;padding:2px;">Fonction</th>
-                            <th style="border:1px solid #000;padding:2px;">Signature Manuscrite </th>
+                            <th style="border:1px solid #000;padding:2px;">Signature Manuscrite (08h10)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -543,15 +551,15 @@ const Templates = {
                 </table>
 
                 <div class="yellow-bar-header" style="background:#ffeb3b;border:1px solid #000;padding:3px 6px;font-weight:900;font-size:8.5px;margin-top:10px;">
-                    SUPERVISION SPÉCIALE CAISSE WEEK-END (VENDREDI / SAMEDI — 08H00)
+                    SUPERVISION SPÉCIALE CAISSE WEEK-END (VENDREDI / SAMEDI — 08H10)
                 </div>
                 <table class="doc-table-exact" style="width:100%;border-collapse:collapse;margin-top:4px;font-size:7.5px;">
                     <thead>
                         <tr style="background:#f1f5f9;">
                             <th style="border:1px solid #000;padding:3px;width:80px;">JOURNÉE</th>
                             <th style="border:1px solid #000;padding:3px;width:85px;">DATE</th>
-                            <th style="border:1px solid #000;padding:3px;">SUPERVISEUR Sinylon</th>
-                            <th style="border:1px solid #000;padding:3px;">CONTRÔLE SÉCURITÉ </th>
+                            <th style="border:1px solid #000;padding:3px;">SUPERVISEUR W.P.E.E.X</th>
+                            <th style="border:1px solid #000;padding:3px;">CONTRÔLE SÉCURITÉ (08H10)</th>
                             <th style="border:1px solid #000;padding:3px;width:150px;">VISA CAISSE STELLANTIS</th>
                         </tr>
                     </thead>
@@ -559,7 +567,7 @@ const Templates = {
                         <tr style="height:28px;">
                             <td class="text-center bold-cell" style="border:1px solid #000;font-weight:bold;padding:3px;">Vendredi</td>
                             <td class="text-center" style="border:1px solid #000;font-family:monospace;padding:3px;">2026-08-28</td>
-                            <td style="border:1px solid #000;padding:3px;">M. Sinylon</td>
+                            <td style="border:1px solid #000;padding:3px;">M. W.P.E.E.X</td>
                             <td style="border:1px solid #000;padding:3px;">Vérification 360°, Nacelles, Extincteurs, Balisage</td>
                             <td style="border:1px solid #000;padding:2px;text-align:center;">
                                 <div style="height:20px;border-bottom:1px dashed #999;margin:1px 6px;"></div>
@@ -568,7 +576,7 @@ const Templates = {
                         <tr style="height:28px;">
                             <td class="text-center bold-cell" style="border:1px solid #000;font-weight:bold;padding:3px;">Samedi</td>
                             <td class="text-center" style="border:1px solid #000;font-family:monospace;padding:3px;">2026-08-29</td>
-                            <td style="border:1px solid #000;padding:3px;">M. Sinylon</td>
+                            <td style="border:1px solid #000;padding:3px;">M. W.P.E.E.X</td>
                             <td style="border:1px solid #000;padding:3px;">Vérification 360°, Nacelles, Extincteurs, Balisage</td>
                             <td style="border:1px solid #000;padding:2px;text-align:center;">
                                 <div style="height:20px;border-bottom:1px dashed #999;margin:1px 6px;"></div>
@@ -813,7 +821,7 @@ const Templates = {
                             </div>
                             <div style="display:flex;gap:4px;align-items:center;">
                                 <span>Heure :</span>
-                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">08h00</span>
+                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">08h10</span>
                             </div>
                         </td>
                     </tr>
@@ -1042,7 +1050,7 @@ const Templates = {
                             </div>
                             <div style="display:flex;gap:4px;align-items:center;">
                                 <span>Heure :</span>
-                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">08h00</span>
+                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">08h10</span>
                             </div>
                         </td>
                     </tr>
@@ -1212,7 +1220,7 @@ const Templates = {
                             </div>
                             <div style="display:flex;gap:4px;align-items:center;">
                                 <span>Heure :</span>
-                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">08h00</span>
+                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">08h10</span>
                             </div>
                         </td>
                     </tr>
@@ -1231,3 +1239,9 @@ if (typeof window !== 'undefined') {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = Templates;
 }
+'''
+
+with open('/Users/nourine/.gemini/antigravity-ide/scratch/permis-sinylon/js/templates.js', 'w', encoding='utf-8') as f:
+    f.write(templates_code)
+
+print("Succès : js/templates.js mis à jour avec les modèles officiels SINYLON - STELLANTIS !")

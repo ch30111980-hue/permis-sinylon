@@ -166,7 +166,7 @@ const WeekendCaisseModule = {
                         <div style="font-size: 32px;">📦</div>
                         <div>
                             <h4 style="margin: 0; color: #f59e0b; font-size: 16px; font-weight: 800;">PRÉPARATION DE LA CAISSE WEEK-END (STELLANTIS)</h4>
-                            <p style="margin: 4px 0 0 0; font-size: 13px; color: #cbd5e1;">Préparation obligatoire chaque <strong>Mercredi</strong> pour contrôle W.P.E.E.X et présentation au Maître de l'Ouvrage <strong>Stellantis</strong>.</p>
+                            <p style="margin: 4px 0 0 0; font-size: 13px; color: #cbd5e1;">Préparation obligatoire chaque <strong>Mercredi</strong> pour contrôle Sinylon et présentation au Maître de l'Ouvrage <strong>Stellantis</strong>.</p>
                         </div>
                     </div>
                     <button onclick="WeekendCaisseModule.printCompleteCaisseDossier()" class="btn btn-warning btn-lg" style="font-weight: 800;">
@@ -258,7 +258,7 @@ const WeekendCaisseModule = {
                     <div>🏢 <strong>Entreprise :</strong> ${permit.company || '<span class="text-danger">Manquant</span>'}</div>
                     <div>📍 <strong>Zone :</strong> ${permit.ouvrage || ''} (${permit.zone || ''})</div>
                     <div>⏰ <strong>Horaires :</strong> ${permit['time-start']} → ${permit['time-end']}</div>
-                    <div>👷 <strong>Suivi :</strong> ${permit['wpeex-nom'] || '<span class="text-warning">W.P.E.E.X</span>'}</div>
+                    <div>👷 <strong>Suivi :</strong> ${permit['wpeex-nom'] || '<span class="text-warning">Sinylon</span>'}</div>
                 </div>
 
                 <!-- Matrice de contrôle rapide -->

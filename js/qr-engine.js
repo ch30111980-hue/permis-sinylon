@@ -122,7 +122,7 @@ const QREngine = {
         if (elId) elId.innerText = permit.id;
 
         const elComp = document.getElementById('mobile-qr-company');
-        if (elComp) elComp.innerText = permit.contractor || permit.company || 'SINYLON & W.P.E.E.X';
+        if (elComp) elComp.innerText = permit.contractor || permit.company || 'SINYLON & Sinylon';
 
         const elZone = document.getElementById('mobile-qr-zone');
         if (elZone) elZone.innerText = `${permit.ouvrage || 'Atelier Montage'} — ${permit.zone || 'Zone 4'}`;

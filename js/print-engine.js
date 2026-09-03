@@ -138,7 +138,7 @@ const PrintEngine = {
                         <div>👨‍💼 <strong>Chef de Projet :</strong> ${permit['chef-nom'] || 'XIE XIAN (Chef de Projet)'}</div>
                         <div>📋 <strong>Chef d'Équipe :</strong> ${permit.chef_equipe || 'ZHOULIN (Chef d\'Équipe)'}</div>
                         <div>📞 <strong>Contact HSE :</strong> ${permit.contact || 'Nouri Chahrour'} (${permit.tel || '0563765157'})</div>
-                        <div>🛡️ <strong>Suivi W.P.E.E.X :</strong> ${permit['wpeex-nom'] || 'M. W.P.E.E.X (Ingénieur de Suivi)'}</div>
+                        <div>🛡️ <strong>Suivi Sinylon :</strong> ${permit['wpeex-nom'] || 'M. Sinylon (Ingénieur de Suivi)'}</div>
                         <div style="grid-column: span 2;">⏰ <strong>Période de Validité :</strong> ${permit.validFrom || permit['date-main']} → ${permit.validUntil || permit['date_fin'] || ''} (${permit.timeStart || '08h00'} → ${permit.timeEnd || '17h30'})</div>
                         <div style="grid-column: span 2; border-top: 1px dashed #94a3b8; padding-top: 6px; color: #0f172a;">
                             <strong>🛠️ Travaux Autorisés :</strong> ${permit['work-desc'] || permit.title || ''}
