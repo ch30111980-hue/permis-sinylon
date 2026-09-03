@@ -240,6 +240,13 @@ const App = {
                             </div>
                         </div>
 
+                        <!-- BOUTON ACCÈS IMMÉDIAT AUX DÉTAILS DU PERMIS -->
+                        <div style="margin-bottom: 16px;">
+                            <button type="button" onclick="App.togglePermitDetailViewer('${p.id}')" style="width: 100%; padding: 14px; background: linear-gradient(135deg, #10b981, #059669); color: #ffffff; border: 2px solid #34d399; border-radius: 12px; font-size: 15px; font-weight: 900; box-shadow: 0 4px 14px rgba(16,185,129,0.35); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                <span style="font-size: 18px;">👁️</span> VOIR LE DÉTAIL DU PERMIS (5 PAGES)
+                            </button>
+                        </div>
+
                         <!-- Activité et Détails de la Zone -->
                         <div style="background: #182238; border: 1px solid #23304c; border-radius: 12px; padding: 18px; margin-bottom: 16px;">
                             <div style="font-size: 14px; font-weight: 800; color: #60a5fa; border-bottom: 1px solid #23304c; padding-bottom: 8px; margin-bottom: 12px;">
@@ -269,14 +276,17 @@ const App = {
                                 ⚠️ Annexes de Sécurité & Dossier 5 Pages Certifié
                             </div>
                             <div style="display: grid; grid-template-columns: 1fr; gap: 8px; font-size: 12px;">
-                                <div style="background: rgba(2,132,199,0.15); border: 1px solid #0284c7; padding: 8px 12px; border-radius: 6px; color: #7dd3fc;">
-                                    🧗 <strong>Annexe A (Hauteur) :</strong> 6 Nacelles Ciseaux + 1 Manlift (PEMP) — Validé ✓
+                                <div style="background: rgba(2,132,199,0.15); border: 1px solid #0284c7; padding: 10px 12px; border-radius: 6px; color: #7dd3fc; display: flex; justify-content: space-between; align-items: center;">
+                                    <div>🧗 <strong>Annexe A (Hauteur) :</strong> 6 Nacelles Ciseaux + 1 Manlift (PEMP) — Validé ✓</div>
+                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'height')" style="background: #0284c7; color: #fff; border: none; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; cursor: pointer;">🔍 Détails</button>
                                 </div>
-                                <div style="background: rgba(239,68,68,0.15); border: 1px solid #ef4444; padding: 8px 12px; border-radius: 6px; color: #fca5a5;">
-                                    🔥 <strong>Annexe B (Chaud) :</strong> Soudage / Pinces X/C, Extincteurs à poste — Validé ✓
+                                <div style="background: rgba(239,68,68,0.15); border: 1px solid #ef4444; padding: 10px 12px; border-radius: 6px; color: #fca5a5; display: flex; justify-content: space-between; align-items: center;">
+                                    <div>🔥 <strong>Annexe B (Chaud) :</strong> Soudage / Pinces X/C, Extincteurs à poste — Validé ✓</div>
+                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'hot')" style="background: #ef4444; color: #fff; border: none; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; cursor: pointer;">🔍 Détails</button>
                                 </div>
-                                <div style="background: rgba(245,158,11,0.15); border: 1px solid #f59e0b; padding: 8px 12px; border-radius: 6px; color: #fcd34d;">
-                                    ⚡ <strong>Annexe C (Électrique) :</strong> Consignation LOTO, VAT 0V, Gants 1000V — Validé ✓
+                                <div style="background: rgba(245,158,11,0.15); border: 1px solid #f59e0b; padding: 10px 12px; border-radius: 6px; color: #fcd34d; display: flex; justify-content: space-between; align-items: center;">
+                                    <div>⚡ <strong>Annexe C (Électrique) :</strong> Consignation LOTO, VAT 0V, Gants 1000V — Validé ✓</div>
+                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'electric')" style="background: #f59e0b; color: #000; border: none; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 800; cursor: pointer;">🔍 Détails</button>
                                 </div>
                             </div>
                             <div style="margin-top: 12px;">
@@ -305,40 +315,17 @@ const App = {
                                 </div>
                             </div>
 
-                            <!-- Suivi Quotidien Détaillé des Revalidations à 08h00 -->
-                            <div style="background: rgba(15,23,42,0.6); border: 1px solid rgba(16,185,129,0.3); border-radius: 8px; padding: 12px; margin-top: 12px; font-size: 11.5px;">
+                            <!-- Validation Hebdomadaire Officielle Sinylon -->
+                            <div style="background: rgba(15,23,42,0.6); border: 1.5px solid rgba(16,185,129,0.35); border-radius: 8px; padding: 14px; margin-top: 12px; font-size: 12px;">
                                 <div style="font-weight: 800; color: #34d399; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
-                                    <span>📅 Pointage & Inspection Quotidienne du Chantier</span>
-                                    <span style="background: #15803d; color: #fff; font-size: 9.5px; font-weight: 800; padding: 2px 7px; border-radius: 4px;">À JOUR </span>
+                                    <span>📅 Autorisation & Validité Hebdomadaire Officielle</span>
+                                    <span style="background: #15803d; color: #fff; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 4px;">SEMAINE S36</span>
                                 </div>
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 11px; color: #e2e8f0;">
-                                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
-                                        <span>• Jour 1 (Lundi) :</span>
-                                        <strong style="color: #34d399;">Validé à 08h00 ✓</strong>
-                                    </div>
-                                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
-                                        <span>• Jour 2 (Mardi) :</span>
-                                        <strong style="color: #34d399;">Revalidé à 08h00 ✓</strong>
-                                    </div>
-                                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
-                                        <span>• Jour 3 (Mercredi) :</span>
-                                        <strong style="color: #34d399;">Revalidé à 08h00 ✓</strong>
-                                    </div>
-                                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
-                                        <span>• Jour 4 (Jeudi) :</span>
-                                        <strong style="color: #34d399;">Revalidé à 08h00 ✓</strong>
-                                    </div>
-                                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3); border-radius: 4px;">
-                                        <span>• Jour 5 (Vendredi) :</span>
-                                        <strong style="color: #c4b5fd;">Caisse WE à 08h00 ✓</strong>
-                                    </div>
-                                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3); border-radius: 4px;">
-                                        <span>• Jour 6 (Samedi) :</span>
-                                        <strong style="color: #c4b5fd;">Caisse WE à 08h00 ✓</strong>
-                                    </div>
-                                </div>
-                                <div style="font-size: 10px; color: #94a3b8; margin-top: 8px; font-style: italic; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 6px;">
-                                    Inspection de sécurité 360° certifiée chaque matin à 08h00 par M. Sinylon et M. Nouri Chahrour (HSE Sinylon). Émargement physique manuscrit réalisé sur l'exemplaire papier affiché sur la zone.
+                                <div style="display: flex; flex-direction: column; gap: 6px; color: #cbd5e1; font-size: 12px; line-height: 1.5;">
+                                    <div>• <strong>Période Couverte :</strong> Du ${p.validFrom || '31/08/2026'} au ${p.validUntil || '06/09/2026'}</div>
+                                    <div>• <strong>Validation Unique :</strong> Permis délivré pour l'ensemble de la semaine sans réémission quotidienne.</div>
+                                    <div>• <strong>Contrôles Équipements Terrain :</strong> Vérification pré-utilisation des 6 nacelles et contrôles VAT LOTO réalisés avant travaux.</div>
+                                    <div>• <strong>Autorité HSE Sinylon :</strong> Nouri Chahrour (0563765157) · Chef de Projet : Xie Xian</div>
                                 </div>
                             </div>
                         </div>
@@ -353,12 +340,18 @@ const App = {
                             </div>
                         </div>
 
-                        <!-- Boutons d'action -->
-                        <div style="text-align: center; margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
-                            <button onclick="App.printPermit('${p.id}')" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center; font-size: 15px; padding: 14px;">
+                        <!-- Boutons d'action Principaux -->
+                        <div style="text-align: center; margin-top: 20px; display: flex; flex-direction: column; gap: 12px;">
+                            <!-- BOUTON DÉTAIL DU PERMIS (5 PAGES) DEMANDÉ PAR L'UTILISATEUR -->
+                            <button type="button" onclick="App.togglePermitDetailViewer('${p.id}')" class="btn btn-success btn-lg" style="width: 100%; justify-content: center; font-size: 16px; font-weight: 900; padding: 16px; background: linear-gradient(135deg, #10b981, #059669); color: #ffffff; border: 2px solid #34d399; border-radius: 12px; box-shadow: 0 4px 16px rgba(16,185,129,0.4); cursor: pointer; display: flex; align-items: center; gap: 10px;">
+                                <span style="font-size: 20px;">👁️</span> AFFICHER LE DÉTAIL DU PERMIS (5 PAGES A4)
+                            </button>
+
+                            <button type="button" onclick="App.printPermit('${p.id}')" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center; font-size: 15px; font-weight: 800; padding: 14px; background: #2563eb; color: #fff; border: 1.5px solid #3b82f6; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 8px;">
                                 🖨️ IMPRIMER / TÉLÉCHARGER DOSSIER COMPLET (5 PAGES A4)
                             </button>
-                            <button onclick="App.openSupervisorModal()" class="btn btn-outline btn-sm" style="color: #64748b; border-color: #334155; font-size: 12px; padding: 8px;">
+
+                            <button type="button" onclick="App.openSupervisorModal()" class="btn btn-outline btn-sm" style="color: #64748b; border-color: #334155; font-size: 12px; padding: 8px;">
                                 🔒 Accès Superviseur (Équipe SINYLON)
                             </button>
                         </div>

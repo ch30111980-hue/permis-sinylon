@@ -45,20 +45,22 @@ const PrintEngine = {
         // Construire l'intégralité du dossier officiel certifié (5 Pages A4)
         let htmlPages = [];
 
-        // 1. Permis Général P1 (Page 1 : Recto)
+        // 1. Permis Général Hebdomadaire (Page 1)
         htmlPages.push(templates.generalP1(permit));
 
-        // 2. Permis Général P2 (Page 2 : Verso Revalidations Journalières 08h00)
-        htmlPages.push(templates.generalP2(permit));
-
-        // 3. Annexe A : Travail en Hauteur (Page 3)
+        // 2. Annexe A : Travail en Hauteur (Page 2)
         htmlPages.push(templates.heightAnnexe(permit));
 
-        // 4. Annexe B : Travail à Chaud (Page 4)
+        // 3. Annexe B : Travail à Chaud (Page 3)
         htmlPages.push(templates.hotAnnexe(permit));
 
-        // 5. Annexe C : Travail Électrique & Énergies (Page 5)
+        // 4. Annexe C : Travail Électrique & Consignation (Page 4)
         htmlPages.push(templates.electricAnnexe(permit));
+
+        // 5. Affiche A4 QR Code de Zone (Page 5)
+        if (typeof this.getPosterHtml === 'function') {
+            htmlPages.push(this.getPosterHtml(permit));
+        }
 
         printContainer.innerHTML = htmlPages.join('');
 
