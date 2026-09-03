@@ -7,6 +7,44 @@
  */
 
 const Templates = {
+
+    // Rendu dynamique d'une case de signature (Manuscrite électronique ou à signer)
+    renderSigBox(permit, role, title, defaultName, subtitle = '') {
+        const p = permit || {};
+        const sigs = p.signatures || {};
+        const sig = sigs[role];
+        const name = sig ? (sig.signatoryName || defaultName) : defaultName;
+
+        if (sig && sig.dataUrl) {
+            return `
+                <div style="border:1.5px solid #16a34a;background:#fff;padding:2px 4px;font-size:7px;min-height:44px;display:flex;flex-direction:column;justify-content:space-between;border-radius:2px;box-shadow:0 1px 4px rgba(22,163,74,0.15);">
+                    <div style="background:#dcfce7;color:#15803d;font-weight:900;padding:1px 3px;text-align:center;border-bottom:1px solid #16a34a;font-size:7px;letter-spacing:0.3px;">${title}</div>
+                    <div style="font-size:6.5px;">Nom : <strong>${name}</strong></div>
+                    <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:1px 4px;margin:1px 0;">
+                        <img src="${sig.dataUrl}" style="height:20px;max-width:95px;object-fit:contain;" alt="Signature">
+                        <div style="font-size:5.5px;color:#16a34a;font-weight:900;text-align:right;line-height:1;">
+                            ✓ SIGNÉ SUR SITE<br>${sig.date} ${sig.time}
+                        </div>
+                    </div>
+                    ${subtitle ? `<div style="font-size:5px;color:#555;line-height:1;">${subtitle}</div>` : ''}
+                </div>
+            `;
+        }
+
+        // Si signature par défaut pour Semaine 36
+        return `
+            <div style="border:1px solid #000;background:#fff;padding:2px 4px;font-size:7px;min-height:44px;display:flex;flex-direction:column;justify-content:space-between;">
+                <div style="background:#bfdbfe;font-weight:bold;padding:1px 3px;text-align:center;border-bottom:1px solid #000;font-size:7px;">${title}</div>
+                <div style="font-size:6.5px;">Nom : <strong>${defaultName}</strong></div>
+                <div style="height:18px;border-bottom:1px dashed #999;color:#2563eb;font-size:6px;display:flex;align-items:flex-end;justify-content:space-between;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}','${role}')">
+                    <span style="color:#777;">Signature :</span>
+                    <span style="font-size:6px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:1px 4px;border-radius:2px;border:1px solid #bfdbfe;">✍️ Signer</span>
+                </div>
+                ${subtitle ? `<div style="font-size:5px;color:#555;line-height:1;">${subtitle}</div>` : ''}
+            </div>
+        `;
+    },
+
     // Logo officiel SINYLON - STELLANTIS
     renderLogoSinylonStellantis() {
         return `
@@ -327,40 +365,11 @@ const Templates = {
                         Ce permis de travail de sécurité générale et sa liste de verification des grands danger avec le meme identifiant du permis sont uniquement valide pour la date et la période spécifiée ci-dessus. Toute les signatures doivent etre obtenues avant l'entame du travail. Permis affiché sur le lieu de travail. Copies: Emetteur du permis,receveur du permis et si applicable: Coordinateurr, chef de quart et/ou salle de controle.
                     </div>
 
-                    <!-- GRILLE DES SIGNATURES INITIALES (EXACT PHOTO - CASES VIDES POUR SIGNATURE AU STYLO) -->
-                    <!-- Ligne 1 : 2 grandes cases -->
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:3px;">
-                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;font-size:7px;min-height:36px;display:flex;flex-direction:column;justify-content:space-between;">
-                            <div style="background:#bfdbfe;font-weight:bold;padding:1px;text-align:center;border-bottom:1px solid #000;font-size:7.5px;">Chef de Projet Entreprise</div>
-                            <div>Nom (lettres en majuscule) et signature: <strong>${p['chef-nom'] || 'XIE XIAN'}</strong></div>
-                            <div style="height:14px;border-bottom:1px dashed #999;color:#777;font-size:6.5px;display:flex;align-items:flex-end;">Signature :</div>
-                        </div>
-                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;font-size:7px;min-height:36px;display:flex;flex-direction:column;justify-content:space-between;">
-                            <div style="background:#bfdbfe;font-weight:bold;padding:1px;text-align:center;border-bottom:1px solid #000;font-size:7.5px;">MOEX - Ingénieur de Suivi</div>
-                            <div>Nom(lettres en majuscule) et signature: <strong>${p['wpeex-nom'] || 'M. Sinylon'}</strong></div>
-                            <div style="height:14px;border-bottom:1px dashed #999;color:#777;font-size:6.5px;display:flex;align-items:flex-end;">Signature :</div>
-                        </div>
-                    </div>
-
-                    <!-- Ligne 2 : 3 cases -->
-                    <div style="display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:4px;">
-                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;font-size:7px;min-height:46px;display:flex;flex-direction:column;justify-content:space-between;">
-                            <div style="background:#bfdbfe;font-weight:bold;padding:1px;text-align:center;border-bottom:1px solid #000;font-size:7.5px;">Coordinateur HSE Sinylon</div>
-                            <div>Nom (lettres en majuscule) et signature:<br><strong>${p['hse-nom'] || 'Nouri Chahrour'}</strong></div>
-                            <div style="height:14px;border-bottom:1px dashed #999;color:#777;font-size:6.5px;display:flex;align-items:flex-end;">Signature :</div>
-                        </div>
-                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;font-size:7px;min-height:46px;display:flex;flex-direction:column;justify-content:space-between;">
-                            <div style="background:#bfdbfe;font-weight:bold;padding:1px;text-align:center;border-bottom:1px solid #000;font-size:7.5px;">HSE Entreprise</div>
-                            <div>Nom (lettres en majuscule) et signature:<br><strong>${p['hse-nom'] || 'Nouri Chahrour'}</strong></div>
-                            <div style="height:14px;border-bottom:1px dashed #999;color:#777;font-size:6.5px;display:flex;align-items:flex-end;">Signature :</div>
-                            <div style="font-size:5.5px;color:#333;line-height:1;margin-top:1px;">Confirmation que toutes les précautions et les vérifications nécessaires sont en place, comme la liste de vérification appliquée</div>
-                        </div>
-                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;font-size:7px;min-height:46px;display:flex;flex-direction:column;justify-content:space-between;">
-                            <div style="background:#bfdbfe;font-weight:bold;padding:1px;text-align:center;border-bottom:1px solid #000;font-size:7.5px;">Receveur du permis</div>
-                            <div>Nom (lettres en majuscule) et signature:<br><strong>${p['receveur-nom'] || p.chef_equipe || 'ZHOU LIN'}</strong></div>
-                            <div style="height:14px;border-bottom:1px dashed #999;color:#777;font-size:6.5px;display:flex;align-items:flex-end;">Signature :</div>
-                            <div style="font-size:5.5px;color:#333;line-height:1;margin-top:1px;">Information que toutes les précautions et les vérifications nécessaires sont en place ont été reçues. Les instructions fournies dans le permis de travail seront suivies. Tout les travailleurs ont été informés.</div>
-                        </div>
+                    <!-- GRILLE DES SIGNATURES OFFICIELLES SINYLON AVEC SUPPORT ÉLECTRONIQUE -->
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:4px;margin-bottom:3px;">
+                        ${this.renderSigBox(p, 'chef', 'Chef de Projet Sinylon', p['chef-nom'] || 'XIE XIAN', 'Autorisation officielle des travaux de la semaine')}
+                        ${this.renderSigBox(p, 'hse', 'Superviseur HSE Sinylon', p['hse-nom'] || 'Nouri Chahrour', 'Conformité HSE & Mesures de sécurité 360°')}
+                        ${this.renderSigBox(p, 'receveur', 'Receveur Sinylon', p['receveur-nom'] || p.chef_equipe || 'ZHOU LIN', 'Engagements d\'application stricte des consignes')}
                     </div>
                 </div>
 

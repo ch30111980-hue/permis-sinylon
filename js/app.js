@@ -137,221 +137,215 @@ const App = {
             return;
         }
 
-        const renderMobileContent = (p) => {
+                const renderMobileContent = (p) => {
             if (!p) return;
             try {
                 const currentLang = Translator.currentLang || 'fr';
                 const isChinese = currentLang === 'zh';
                 const isEnglish = currentLang === 'en';
 
-                const zoneStr = p.zone || 'Zone A1 (Bâtiment Principal / Ligne Montage)';
+                const zoneStr = p.zone || 'Montage K9 (UB / UAR / FUSA)';
                 const activityText = isChinese ? (p.activite_detaillee_zh || p.title_zh || p.title || '') :
                                     isEnglish ? (p.activite_detaillee_en || p.title_en || p.title || '') :
-                                    (p.activite_detaillee_fr || p.title || 'Installation Mécanique et Montage');
+                                    (p.activite_detaillee_fr || p.title || 'Installation Mécanique, Montage Lignes & Outillages');
 
-                const equipementsStr = Array.isArray(p.equipements_a_installer) ? p.equipements_a_installer.join(', ') : (p.equipements_a_installer || 'Nacelles ciseaux (x6), Palans DEMAG KBK, Outillages certifiés');
+                const equipementsStr = Array.isArray(p.equipements_a_installer) ? p.equipements_a_installer.join(', ') : (p.equipements_a_installer || 'Nacelles ciseaux (x6), Manlift, Palans DEMAG KBK, Outillages certifiés');
 
-                const workers = p.travailleurs && p.travailleurs.length > 0 ? p.travailleurs : [
-                    { id: 'T-1', nom: 'Xie', role: 'Chef de Projet / Receveur', badge: 'SYN-001', status: 'Actif' },
-                    { id: 'T-2', nom: 'Nouri Chahrour', role: 'Superviseur HSE Sinylon (0563765157)', badge: 'SYN-003', status: 'Actif' }
-                ];
+                const sigs = p.signatures || {};
+                const chefSig = sigs.chef;
+                const hseSig = sigs.hse;
+                const recSig = sigs.receveur;
 
-                // Rendu des travailleurs avec la règle : BLANC si Actif / Sur liste, BLEU si Inactif / Hors liste
-                let workersHtml = workers.map((w, idx) => {
-                    const nom = typeof w === 'object' ? w.nom : w;
-                    const role = typeof w === 'object' ? (w.role || 'Intervenant') : 'Intervenant';
-                    const badge = typeof w === 'object' && w.badge ? w.badge : `SIN-${1040 + idx * 2}`;
-                    const isActive = typeof w === 'object' ? (w.status !== 'Inactif' && w.status !== 'Inactive') : true;
+                const validDeb = p.validFrom || p.date_debut || '2026-08-31';
+                const validFin = p.validUntil || p.date_fin || '2026-09-06';
+                const weekNum = p.week || 36;
 
-                    if (isActive) {
+                // Helper d'affichage pour une case de signature électronique
+                const renderSigCard = (roleKey, title, defaultName, sigObj) => {
+                    if (sigObj && sigObj.dataUrl) {
                         return `
-                            <div style="background: rgba(15, 23, 42, 0.7); border: 1.5px solid rgba(52, 211, 153, 0.4); border-left: 4px solid #34d399; border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-                                <div style="font-size: 24px;">👷</div>
-                                <div style="flex: 1;">
-                                    <!-- NOM EN BLANC ÉCLATANT -->
-                                    <div style="font-weight: 800; color: #ffffff; font-size: 14px; letter-spacing: 0.3px; text-shadow: 0 0 8px rgba(255,255,255,0.4);">${nom}</div>
-                                    <div style="font-size: 11px; color: #cbd5e1; margin-top: 2px;">${role}</div>
+                            <div style="background: rgba(16,185,129,0.1); border: 1.5px solid #10b981; border-radius: 10px; padding: 10px; text-align: center; box-shadow: 0 4px 12px rgba(16,185,129,0.15);">
+                                <div style="font-size: 10.5px; font-weight: 800; color: #34d399; text-transform: uppercase;">${title}</div>
+                                <div style="font-size: 12px; font-weight: 900; color: #ffffff; margin: 2px 0;">${sigObj.signatoryName || defaultName}</div>
+                                <div style="background: #ffffff; border-radius: 6px; padding: 4px; margin: 6px 0; display: inline-block; width: 100%; max-width: 160px;">
+                                    <img src="${sigObj.dataUrl}" style="height: 28px; max-width: 100%; object-fit: contain;" alt="Signature">
                                 </div>
-                                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
-                                    <span style="background: #ffffff; color: #0f172a; font-weight: 900; font-size: 10px; padding: 2px 7px; border-radius: 4px; font-family: monospace;">${badge}</span>
-                                    <span style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-weight: 800; font-size: 9.5px; padding: 2px 6px; border-radius: 8px; border: 1px solid rgba(52, 211, 153, 0.4);">🟢 SUR LISTE</span>
-                                </div>
-                            </div>
-                        `;
-                    } else {
-                        return `
-                            <div style="background: rgba(30, 58, 138, 0.2); border: 1.5px solid rgba(96, 165, 250, 0.35); border-left: 4px solid #3b82f6; border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 12px;">
-                                <div style="font-size: 24px; opacity: 0.8;">👤</div>
-                                <div style="flex: 1;">
-                                    <!-- NOM EN BLEU / HORS LISTE -->
-                                    <div style="font-weight: 700; color: #60a5fa; font-size: 14px; letter-spacing: 0.2px;">${nom}</div>
-                                    <div style="font-size: 11px; color: #93c5fd; margin-top: 2px;">${role}</div>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
-                                    <span style="background: rgba(59, 130, 246, 0.2); color: #93c5fd; font-weight: 700; font-size: 10px; padding: 2px 7px; border-radius: 4px; font-family: monospace;">${badge}</span>
-                                    <span style="background: rgba(37, 99, 235, 0.2); color: #93c5fd; font-weight: 800; font-size: 9.5px; padding: 2px 6px; border-radius: 8px; border: 1px solid rgba(96, 165, 250, 0.35);">🔵 HORS LISTE</span>
+                                <div style="font-size: 9.5px; color: #6ee7b7; font-weight: 700;">
+                                    ✓ SIGNÉ LE ${sigObj.date} À ${sigObj.time}
                                 </div>
                             </div>
                         `;
                     }
-                }).join('');
-
-                const ppeList = p.ppe || ["Casque de sécurité", "Chaussures S3", "Gilet haute visibilité", "Gants de protection", "Harnais antichute"];
-                const ppeHtml = ppeList.map(item => `
-                    <span class="badge badge-sky" style="font-size: 11px; padding: 4px 8px;">🛡️ ${item}</span>
-                `).join(' ');
-
-                const isWeekend = !!p.weekend || !!p.isWeekendWork;
-                const statusBadge = isWeekend ? 
-                    `<span style="background: #8b5cf6; color: #ffffff; font-weight: 800; padding: 6px 18px; border-radius: 20px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;">🟣 PERMIS TRAVAIL WEEK-END — VALIDE SEMAINE 36</span>` :
-                    `<span style="background: #15803d; color: #ffffff; font-weight: 800; padding: 6px 18px; border-radius: 20px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;">🟢 PERMIS VALIDE & VALIDE SEMAINE 36</span>`;
+                    return `
+                        <div style="background: rgba(30,41,59,0.6); border: 1.5px dashed #475569; border-radius: 10px; padding: 10px; text-align: center;">
+                            <div style="font-size: 10.5px; font-weight: 800; color: #94a3b8; text-transform: uppercase;">${title}</div>
+                            <div style="font-size: 12px; font-weight: 800; color: #cbd5e1; margin: 2px 0;">${defaultName}</div>
+                            <button type="button" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}','${roleKey}')" style="margin-top: 6px; background: #2563eb; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 2px 8px rgba(37,99,235,0.4);">
+                                ✍️ Signer sur site
+                            </button>
+                        </div>
+                    `;
+                };
 
                 clientView.innerHTML = `
-                    <div style="max-width: 680px; margin: 0 auto; padding: 20px 16px; color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-                        <!-- En-tête Langues & Logos -->
+                    <div style="max-width: 720px; margin: 0 auto; padding: 18px 14px; color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+                        
+                        <!-- 1. EN-TÊTE INDUSTRIEL TITANIUM PRO -->
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; gap: 8px; flex-wrap: wrap;">
                             <div style="display: flex; gap: 8px; align-items: center;">
-                                <span style="background: #ffffff; color: #000; padding: 4px 10px; font-weight: 900; font-size: 14px; border-radius: 4px;">SINYLON</span>
-                                <span style="border: 2px solid #ffffff; color: #ffffff; padding: 3px 10px; font-weight: 900; font-size: 14px; border-radius: 4px;">STELLANTIS</span>
+                                <span style="background: #ffffff; color: #000; padding: 5px 12px; font-weight: 900; font-size: 14px; border-radius: 4px; letter-spacing: 1px;">SINYLON</span>
+                                <span style="border: 2px solid #ffffff; color: #ffffff; padding: 4px 12px; font-weight: 900; font-size: 14px; border-radius: 4px; letter-spacing: 1px;">STELLANTIS</span>
                             </div>
-                            <div style="display: flex; gap: 6px; align-items: center;">
-                                <div class="lang-switch-group">
-                                    <button class="lang-btn ${currentLang === 'fr' ? 'active' : ''}" onclick="Translator.setLang('fr'); App.showPublicClientView('${p.id}');">FR</button>
-                                    <button class="lang-btn ${currentLang === 'en' ? 'active' : ''}" onclick="Translator.setLang('en'); App.showPublicClientView('${p.id}');">EN</button>
-                                    <button class="lang-btn ${currentLang === 'zh' ? 'active' : ''}" onclick="Translator.setLang('zh'); App.showPublicClientView('${p.id}');">中文</button>
-                                </div>
+                            <div class="lang-switch-group">
+                                <button class="lang-btn ${currentLang === 'fr' ? 'active' : ''}" onclick="Translator.setLang('fr'); App.showPublicClientView('${p.id}');">FR</button>
+                                <button class="lang-btn ${currentLang === 'en' ? 'active' : ''}" onclick="Translator.setLang('en'); App.showPublicClientView('${p.id}');">EN</button>
+                                <button class="lang-btn ${currentLang === 'zh' ? 'active' : ''}" onclick="Translator.setLang('zh'); App.showPublicClientView('${p.id}');">中文</button>
                             </div>
                         </div>
 
-                        <!-- Header de Certification Officielle -->
-                        <div style="background: linear-gradient(135deg, #1e3a8a, #0f172a); border: 2px solid #3b82f6; border-radius: 14px; padding: 20px; text-align: center; margin-bottom: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
-                            <div style="font-size: 11px; font-weight: 700; color: #93c5fd; text-transform: uppercase; letter-spacing: 1px;">
-                                🛡️ FICHE DE CONTRÔLE HSE ET AUDIT CHANTIER OFFICIEL
-                            </div>
-                            <div style="font-size: 24px; font-weight: 900; letter-spacing: 1px; color: #ffffff; margin-top: 4px;">
-                                PERMIS ${p.id}
-                            </div>
-                            <div style="font-size: 13px; color: #cbd5e1; margin-top: 2px;">
-                                Projet : Algeria K9 CKD0 — Usine Stellantis
-                            </div>
+                        <!-- 2. HERO BANNER : VALIDITÉ SEMAINE COMPLÈTE -->
+                        <div style="background: linear-gradient(135deg, #0f172a, #1e293b); border: 2px solid #10b981; border-radius: 16px; padding: 22px 18px; text-align: center; margin-bottom: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; background: rgba(16,185,129,0.15); border-radius: 50%; filter: blur(25px);"></div>
                             
-                            <div style="margin-top: 14px;">
-                                ${statusBadge}
+                            <div style="display: inline-block; background: rgba(16,185,129,0.2); border: 1.5px solid #10b981; color: #34d399; font-size: 11px; font-weight: 900; padding: 4px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
+                                🛡️ SYSTÈME OFFICIEL DE PERMIS SÉCURISÉ — PROJET K9 TAFRAOUI
+                            </div>
+
+                            <div style="font-size: 26px; font-weight: 900; letter-spacing: 1px; color: #ffffff; margin: 4px 0;">
+                                PERMIS HEBDOMADAIRE ${p.id}
+                            </div>
+                            <div style="font-size: 13px; color: #94a3b8; font-weight: 600;">
+                                Semaine ${weekNum} · Du ${validDeb} au ${validFin} (08h00 → 17h30)
+                            </div>
+
+                            <!-- GRAND BADGE VERT : VALIDITÉ HEBDOMADAIRE STRICTE -->
+                            <div style="margin-top: 16px; background: linear-gradient(135deg, #15803d, #166534); border: 2px solid #4ade80; border-radius: 12px; padding: 12px 16px; box-shadow: 0 4px 15px rgba(22,163,74,0.4);">
+                                <div style="font-size: 15px; font-weight: 900; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                    <span>🟢</span> PERMIS VALIDÉ POUR TOUTE LA SEMAINE S${weekNum}
+                                </div>
+                                <div style="font-size: 11.5px; color: #bbf7d0; margin-top: 4px; font-weight: 500;">
+                                    Autorisation unique 7 jours (Lundi au Dimanche) · Contrôles machines assurés avant chaque intervention
+                                </div>
                             </div>
                         </div>
 
-                        <!-- BOUTON ACCÈS IMMÉDIAT AUX DÉTAILS DU PERMIS -->
-                        <div style="margin-bottom: 16px;">
-                            <button type="button" onclick="App.togglePermitDetailViewer('${p.id}')" style="width: 100%; padding: 14px; background: linear-gradient(135deg, #10b981, #059669); color: #ffffff; border: 2px solid #34d399; border-radius: 12px; font-size: 15px; font-weight: 900; box-shadow: 0 4px 14px rgba(16,185,129,0.35); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                                <span style="font-size: 18px;">👁️</span> VOIR LE DÉTAIL DU PERMIS (5 PAGES)
+                        <!-- 3. MODULE SIGNATURES ÉLECTRONIQUES CHANTIER SUR SITE -->
+                        <div style="background: #0f172a; border: 1.5px solid #1e3a8a; border-radius: 14px; padding: 18px; margin-bottom: 18px; box-shadow: 0 6px 20px rgba(0,0,0,0.4);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #1e293b; padding-bottom: 8px;">
+                                <div style="font-size: 14px; font-weight: 900; color: #60a5fa; display: flex; align-items: center; gap: 8px;">
+                                    <span>✍️</span> Émargements Électroniques de la Semaine
+                                </div>
+                                <span style="font-size: 10px; background: rgba(59,130,246,0.2); color: #93c5fd; padding: 2px 8px; border-radius: 10px; font-weight: 700;">Site K9 Stellantis</span>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 14px;">
+                                ${renderSigCard('chef', 'Chef de Projet', p['chef-nom'] || 'Xie Xian', chefSig)}
+                                ${renderSigCard('hse', 'Superviseur HSE', p['hse-nom'] || 'Nouri Chahrour', hseSig)}
+                                ${renderSigCard('receveur', 'Receveur Travaux', p['receveur-nom'] || 'Zhou Lin', recSig)}
+                            </div>
+
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                                <button type="button" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}')" style="flex: 2; padding: 12px; background: linear-gradient(135deg, #2563eb, #1d4ed8); border: 1.5px solid #60a5fa; color: #fff; font-weight: 900; font-size: 13px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(37,99,235,0.4);">
+                                    <span>✍️</span> SIGNER AU DOIGT / STYLET SUR SITE
+                                </button>
+                                <button type="button" onclick="if(window.SignaturePad)SignaturePad.createNewWeekPermit(${parseInt(weekNum, 10) + 1})" style="flex: 1; padding: 12px; background: #1e293b; border: 1.5px solid #475569; color: #e2e8f0; font-weight: 800; font-size: 12px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                    <span>🚀</span> S${parseInt(weekNum, 10) + 1}
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 4. SECTION DÉDIÉE : LES 5 PERMIS OFFICIELS SINYLON (ACCÈS PUR & IMMÉDIAT) -->
+                        <div style="background: #0f172a; border: 1.5px solid #334155; border-radius: 14px; padding: 18px; margin-bottom: 18px;">
+                            <div style="font-size: 14px; font-weight: 900; color: #f8fafc; border-bottom: 1px solid #1e293b; padding-bottom: 8px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center;">
+                                <span>📁 Les 5 Documents Officiels du Permis</span>
+                                <span style="font-size: 11px; color: #94a3b8; font-weight: 700;">Format A4 Certifié</span>
+                            </div>
+
+                            <div style="display: flex; flex-direction: column; gap: 10px;">
+                                
+                                <!-- DOCUMENT 1 : PERMIS GÉNÉRAL -->
+                                <div style="background: rgba(30,41,59,0.7); border: 1.5px solid #3b82f6; border-radius: 10px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div style="background: #2563eb; color: #fff; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px;">1</div>
+                                        <div>
+                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">Permis Général Hebdomadaire</div>
+                                            <div style="font-size: 11px; color: #93c5fd;">Montage K9 (UB / UAR / FUSA) · 59 Intervenants autorisés</div>
+                                        </div>
+                                    </div>
+                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'general')" style="background: #2563eb; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 800; cursor: pointer; white-space: nowrap;">
+                                        👁️ Ouvrir
+                                    </button>
+                                </div>
+
+                                <!-- DOCUMENT 2 : ANNEXE A HAUTEUR -->
+                                <div style="background: rgba(30,41,59,0.7); border: 1.5px solid #0284c7; border-radius: 10px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div style="background: #0284c7; color: #fff; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px;">A</div>
+                                        <div>
+                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">Annexe A — Travail en Hauteur</div>
+                                            <div style="font-size: 11px; color: #7dd3fc;">6 Nacelles Ciseaux + Manlift · Harnais & Ancrage certifié</div>
+                                        </div>
+                                    </div>
+                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'height')" style="background: #0284c7; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 800; cursor: pointer; white-space: nowrap;">
+                                        👁️ Ouvrir
+                                    </button>
+                                </div>
+
+                                <!-- DOCUMENT 3 : ANNEXE B CHAUD -->
+                                <div style="background: rgba(30,41,59,0.7); border: 1.5px solid #ef4444; border-radius: 10px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div style="background: #ef4444; color: #fff; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px;">B</div>
+                                        <div>
+                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">Annexe B — Travail à Chaud (Permis Feu)</div>
+                                            <div style="font-size: 11px; color: #fca5a5;">Rayon 10m · Bâches ignifugées · Fire Watch + 30 min</div>
+                                        </div>
+                                    </div>
+                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'hot')" style="background: #ef4444; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 800; cursor: pointer; white-space: nowrap;">
+                                        👁️ Ouvrir
+                                    </button>
+                                </div>
+
+                                <!-- DOCUMENT 4 : ANNEXE C LOTO -->
+                                <div style="background: rgba(30,41,59,0.7); border: 1.5px solid #f59e0b; border-radius: 10px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div style="background: #f59e0b; color: #000; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px;">C</div>
+                                        <div>
+                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">Annexe C — Électrique & LOTO</div>
+                                            <div style="font-size: 11px; color: #fcd34d;">Réf: LOTO-SINY-KW${weekNum} · VAT 0V · EPI 1000V · Cadenas</div>
+                                        </div>
+                                    </div>
+                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'electric')" style="background: #f59e0b; color: #000; border: none; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 900; cursor: pointer; white-space: nowrap;">
+                                        👁️ Ouvrir
+                                    </button>
+                                </div>
+
+                                <!-- DOCUMENT 5 : AFFICHE DE ZONE QR -->
+                                <div style="background: rgba(30,41,59,0.7); border: 1.5px solid #10b981; border-radius: 10px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div style="background: #10b981; color: #fff; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px;">QR</div>
+                                        <div>
+                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">Affiche Grand Format de Zone</div>
+                                            <div style="font-size: 11px; color: #86efac;">Panneau officiel d'affichage sur site avec QR Code</div>
+                                        </div>
+                                    </div>
+                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'poster')" style="background: #10b981; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 800; cursor: pointer; white-space: nowrap;">
+                                        👁️ Ouvrir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. BOUTONS D'ACTION MAJEURS -->
+                        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 14px;">
+                            <button type="button" onclick="App.togglePermitDetailViewer('${p.id}', 'all')" style="width: 100%; padding: 16px; background: linear-gradient(135deg, #10b981, #059669); color: #ffffff; border: 2px solid #34d399; border-radius: 12px; font-size: 15px; font-weight: 900; box-shadow: 0 4px 16px rgba(16,185,129,0.4); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                <span style="font-size: 18px;">📑</span> AFFICHER LE DOSSIER COMPLET (5 PAGES A4)
                             </button>
-                        </div>
 
-                        <!-- Activité et Détails de la Zone -->
-                        <div style="background: #182238; border: 1px solid #23304c; border-radius: 12px; padding: 18px; margin-bottom: 16px;">
-                            <div style="font-size: 14px; font-weight: 800; color: #60a5fa; border-bottom: 1px solid #23304c; padding-bottom: 8px; margin-bottom: 12px;">
-                                📋 Activités & Travaux de la Zone
-                            </div>
-                            <div style="font-size: 14px; font-weight: 600; color: #ffffff; line-height: 1.5; margin-bottom: 10px; white-space: pre-line;">
-                                ${activityText}
-                            </div>
-                            <div style="background: rgba(0,0,0,0.2); border: 1px solid #23304c; border-radius: 8px; padding: 10px; margin-bottom: 12px; font-size: 12.5px;">
-                                <strong style="color: #38bdf8;">📦 Équipements à installer :</strong><br>
-                                <span style="color: #e2e8f0;">${equipementsStr}</span>
-                            </div>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 13px; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 10px;">
-                                <div>🏢 <strong>Entreprise :</strong> ${p.contractor || p.company || 'SINYLON'}</div>
-                                <div>🏛️ <strong>Client :</strong> STELLANTIS</div>
-                                <div>📍 <strong>Secteur :</strong> ${p.ouvrage || 'Atelier Montage K9'}</div>
-                                <div>📌 <strong>Zone(s) :</strong> <span style="color: #60a5fa; font-weight: 800;">${p.zone || 'UB / UAR / FUSA'}</span></div>
-                                <div>👨‍💼 <strong>Chef de Projet :</strong> ${p.responsible || p.chefNom || 'Xie (Chef de Projet)'}</div>
-                                <div>📞 <strong>Tél. HSE :</strong> <span style="color: #10b981; font-weight: 800;">${p.tel || '0563765157'}</span></div>
-                                <div style="grid-column: span 2;">⏰ <strong>Horaires de Travail :</strong> ${p.timeStart || '08h00'} → ${p.timeEnd || '17h30'} (${p.validFrom || '2026-08-24'} au ${p.validUntil || '2026-08-30'})</div>
-                            </div>
-                        </div>
-
-                        <!-- 3 Annexes de Sécurité Certifiées -->
-                        <div style="background: #182238; border: 1px solid #23304c; border-radius: 12px; padding: 18px; margin-bottom: 16px;">
-                            <div style="font-size: 14px; font-weight: 800; color: #f59e0b; border-bottom: 1px solid #23304c; padding-bottom: 8px; margin-bottom: 12px;">
-                                ⚠️ Annexes de Sécurité & Dossier 5 Pages Certifié
-                            </div>
-                            <div style="display: grid; grid-template-columns: 1fr; gap: 8px; font-size: 12px;">
-                                <div style="background: rgba(2,132,199,0.15); border: 1px solid #0284c7; padding: 10px 12px; border-radius: 6px; color: #7dd3fc; display: flex; justify-content: space-between; align-items: center;">
-                                    <div>🧗 <strong>Annexe A (Hauteur) :</strong> 6 Nacelles Ciseaux + 1 Manlift (PEMP) — Validé ✓</div>
-                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'height')" style="background: #0284c7; color: #fff; border: none; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; cursor: pointer;">🔍 Détails</button>
-                                </div>
-                                <div style="background: rgba(239,68,68,0.15); border: 1px solid #ef4444; padding: 10px 12px; border-radius: 6px; color: #fca5a5; display: flex; justify-content: space-between; align-items: center;">
-                                    <div>🔥 <strong>Annexe B (Chaud) :</strong> Soudage / Pinces X/C, Extincteurs à poste — Validé ✓</div>
-                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'hot')" style="background: #ef4444; color: #fff; border: none; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; cursor: pointer;">🔍 Détails</button>
-                                </div>
-                                <div style="background: rgba(245,158,11,0.15); border: 1px solid #f59e0b; padding: 10px 12px; border-radius: 6px; color: #fcd34d; display: flex; justify-content: space-between; align-items: center;">
-                                    <div>⚡ <strong>Annexe C (Électrique) :</strong> Consignation LOTO, VAT 0V, Gants 1000V — Validé ✓</div>
-                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'electric')" style="background: #f59e0b; color: #000; border: none; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 800; cursor: pointer;">🔍 Détails</button>
-                                </div>
-                            </div>
-                            <div style="margin-top: 12px;">
-                                ${ppeHtml}
-                            </div>
-                        </div>
-
-                        <!-- Visas MOEX / Sinylon / SINYLON HSE & Pointage 08h00 -->
-                        <div style="background: #182238; border: 1px solid #23304c; border-radius: 12px; padding: 18px; margin-bottom: 16px;">
-                            <div style="font-size: 14px; font-weight: 800; color: #10b981; border-bottom: 1px solid #23304c; padding-bottom: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
-                                <span>✅ Visas Officiels & Revalidations Journalières</span>
-                                <span style="font-size: 11px; background: rgba(16,185,129,0.2); color: #34d399; padding: 3px 8px; border-radius: 12px; border: 1px solid rgba(16,185,129,0.4);">📅 SEMAINE COMPLÈTE</span>
-                            </div>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 11px; text-align: center;">
-                                <div style="background: rgba(16,185,129,0.1); border: 1px solid #10b981; padding: 8px; border-radius: 6px;">
-                                    <div style="font-weight: 700; color: #10b981;">STELLANTIS</div>
-                                    <div style="font-size: 10px; color: #a7f3d0;">✓ AUDITÉ & CONFORME</div>
-                                </div>
-                                <div style="background: rgba(16,185,129,0.1); border: 1px solid #10b981; padding: 8px; border-radius: 6px;">
-                                    <div style="font-weight: 700; color: #10b981;">Sinylon SUIVI</div>
-                                    <div style="font-size: 10px; color: #a7f3d0;">✓ VALIDITÉ SEMAINE 36</div>
-                                </div>
-                                <div style="background: rgba(16,185,129,0.1); border: 1px solid #10b981; padding: 8px; border-radius: 6px;">
-                                    <div style="font-weight: 700; color: #10b981;">SINYLON HSE</div>
-                                    <div style="font-size: 10px; color: #a7f3d0;">✓ CONTRÔLE SEMAINE</div>
-                                </div>
-                            </div>
-
-                            <!-- Validation Hebdomadaire Officielle Sinylon -->
-                            <div style="background: rgba(15,23,42,0.6); border: 1.5px solid rgba(16,185,129,0.35); border-radius: 8px; padding: 14px; margin-top: 12px; font-size: 12px;">
-                                <div style="font-weight: 800; color: #34d399; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
-                                    <span>📅 Autorisation & Validité Hebdomadaire Officielle</span>
-                                    <span style="background: #15803d; color: #fff; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 4px;">SEMAINE S36</span>
-                                </div>
-                                <div style="display: flex; flex-direction: column; gap: 6px; color: #cbd5e1; font-size: 12px; line-height: 1.5;">
-                                    <div>• <strong>Période Couverte :</strong> Du ${p.validFrom || '31/08/2026'} au ${p.validUntil || '06/09/2026'}</div>
-                                    <div>• <strong>Validation Unique :</strong> Permis délivré pour l'ensemble de la semaine sans réémission quotidienne.</div>
-                                    <div>• <strong>Contrôles Équipements Terrain :</strong> Vérification pré-utilisation des 6 nacelles et contrôles VAT LOTO réalisés avant travaux.</div>
-                                    <div>• <strong>Autorité HSE Sinylon :</strong> Nouri Chahrour (0563765157) · Chef de Projet : Xie Xian</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Intervenants autorisés -->
-                        <div style="background: #182238; border: 1px solid #23304c; border-radius: 12px; padding: 18px; margin-bottom: 16px;">
-                            <div style="font-size: 14px; font-weight: 800; color: #60a5fa; border-bottom: 1px solid #23304c; padding-bottom: 8px; margin-bottom: 12px;">
-                                👥 Équipe Autorisée sur Chantier
-                            </div>
-                            <div style="display: flex; flex-direction: column; gap: 8px;">
-                                ${workersHtml}
-                            </div>
-                        </div>
-
-                        <!-- Boutons d'action Principaux -->
-                        <div style="text-align: center; margin-top: 20px; display: flex; flex-direction: column; gap: 12px;">
-                            <!-- BOUTON DÉTAIL DU PERMIS (5 PAGES) DEMANDÉ PAR L'UTILISATEUR -->
-                            <button type="button" onclick="App.togglePermitDetailViewer('${p.id}')" class="btn btn-success btn-lg" style="width: 100%; justify-content: center; font-size: 16px; font-weight: 900; padding: 16px; background: linear-gradient(135deg, #10b981, #059669); color: #ffffff; border: 2px solid #34d399; border-radius: 12px; box-shadow: 0 4px 16px rgba(16,185,129,0.4); cursor: pointer; display: flex; align-items: center; gap: 10px;">
-                                <span style="font-size: 20px;">👁️</span> AFFICHER LE DÉTAIL DU PERMIS (5 PAGES A4)
+                            <button type="button" onclick="App.printPermit('${p.id}')" style="width: 100%; padding: 14px; background: #2563eb; color: #ffffff; border: 1.5px solid #3b82f6; border-radius: 10px; font-size: 14px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                🖨️ IMPRIMER / TÉLÉCHARGER LE DOSSIER OFFICIEL
                             </button>
 
-                            <button type="button" onclick="App.printPermit('${p.id}')" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center; font-size: 15px; font-weight: 800; padding: 14px; background: #2563eb; color: #fff; border: 1.5px solid #3b82f6; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 8px;">
-                                🖨️ IMPRIMER / TÉLÉCHARGER DOSSIER COMPLET (5 PAGES A4)
-                            </button>
-
-                            <button type="button" onclick="App.openSupervisorModal()" class="btn btn-outline btn-sm" style="color: #64748b; border-color: #334155; font-size: 12px; padding: 8px;">
+                            <button type="button" onclick="App.openSupervisorModal()" style="color: #94a3b8; background: transparent; border: 1px solid #334155; padding: 8px; font-size: 12px; border-radius: 8px; cursor: pointer;">
                                 🔒 Accès Superviseur (Équipe SINYLON)
                             </button>
                         </div>
