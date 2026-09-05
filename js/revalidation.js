@@ -26,8 +26,8 @@ const RevalidationModule = {
         const now = new Date();
         document.getElementById('reval-date').value = now.toISOString().split('T')[0];
         document.getElementById('reval-time').value = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-        document.getElementById('reval-wpeex-engineer').value = permit['wpeex-nom'] || 'M. Sinylon (Ingénieur de Suivi)';
-        document.getElementById('reval-exec-manager').value = permit['chef-nom'] || 'Responsable Exécution';
+        document.getElementById('reval-wpeex-engineer').value = permit['wpeex-nom'] || 'M. W.P.E.E.X (Ingénieur de Suivi)';
+        document.getElementById('reval-exec-manager').value = permit['chef-nom'] || 'Xie Xian (Responsable Exécution Sinylon)';
 
         // Reset radio buttons
         document.getElementById('reval-q1-yes').checked = true;

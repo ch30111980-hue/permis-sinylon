@@ -79,7 +79,7 @@ const Templates = {
                         🛡️ VÉRIFICATION ÉLECTRONIQUE / DIGITAL WORK PERMIT QR VERIFICATION
                     </div>
                     <div style="font-size:7.5px;color:#334155;margin-top:1px;">
-                        Scannez ce QR Code pour vérifier en direct la validité journalière <strong>(Validité Hebdomadaire)</strong>, les visas MOEX / Sinylon et les habilitations.
+                        Scannez ce QR Code pour vérifier en direct la validité journalière <strong>(Validité Hebdomadaire)</strong>, les visas M. W.P.E.E.X / Sinylon et les habilitations.
                     </div>
                     <div style="font-family:monospace;font-weight:800;font-size:8.5px;color:#1e3a8a;margin-top:1px;">
                         PERMIS N° ${permit.id} · PROJET ALGERIA K9 CKD0 · STELLANTIS
@@ -417,7 +417,7 @@ const Templates = {
                             <div style="height:12px;border-bottom:1px dashed #999;font-size:6px;color:#777;">Signature :</div>
                         </div>
                         <div style="border:1px solid #000;background:#fff;padding:2px 4px;min-height:30px;display:flex;flex-direction:column;justify-content:space-between;">
-                            <div style="background:#bfdbfe;font-weight:bold;padding:1px;text-align:center;font-size:7px;">MOEX - Ingénieur de Suivi</div>
+                            <div style="background:#bfdbfe;font-weight:bold;padding:1px;text-align:center;font-size:7px;">M. W.P.E.E.X - Ingénieur de Suivi</div>
                             <div style="font-size:6px;color:#555;">Nom(lettres en majuscule) et signature:</div>
                             <div style="height:12px;border-bottom:1px dashed #999;font-size:6px;color:#777;">Signature :</div>
                         </div>
@@ -1164,7 +1164,7 @@ const Templates = {
                         </tr>
                         <tr>
                             <td colspan="4" style="border:1px solid #999;padding:2px 4px;">
-                                Chargé de Consignation Sinylon / MOEX : <strong>Nouri Chahrour / Xie</strong> — N° Cadenas : <span style="border-bottom:1px solid #000;display:inline-block;width:35%;height:10px;">LOTO-SINY-01</span>
+                                Chargé de Consignation Sinylon / M. W.P.E.E.X : <strong>Nouri Chahrour / Xie Xian</strong> — N° Cadenas : <span style="border-bottom:1px solid #000;display:inline-block;width:35%;height:10px;">LOTO-SINY-01</span>
                             </td>
                         </tr>
                     </table>
@@ -1230,6 +1230,221 @@ const Templates = {
                 <!-- QR CODE FOOTER DÉDIÉ -->
                 ${this.renderFooterQR(permit)}
             </div>
+        `;
+    },
+
+    // =========================================================================
+    // NOUVEAU : AFFICHE A4 OFFICIELLE D'ENTRÉE DE ZONE (UB / UAR / FUSA)
+    // À COLLER SUR LES PALISSADES / ENTRÉES DE ZONE SUR CHANTIER
+    // =========================================================================
+    renderZonePosterA4(permit, zoneKey = 'ALL') {
+        const p = permit || {};
+        const z = (zoneKey || 'ALL').toUpperCase();
+
+        const zoneMeta = {
+            UB: {
+                name: 'ZONE UB — UNDERBODY (SOUBASSEMENT CENTRAL)',
+                nameZh: 'UB 区域 (中底盘工位)',
+                badgeColor: '#1d4ed8',
+                bgBadge: '#dbeafe',
+                borderColor: '#2563eb',
+                icon: '🏗️',
+                desc: 'Traçage au sol, ancrages chimiques, charpentes, lignes de manutention et montage outillages.',
+                equip: 'Nacelles ciseaux, Manlift, Palans DEMAG KBK, Visseuses dynamométriques'
+            },
+            UAR: {
+                name: 'ZONE UAR — UNDERBODY REAR (SOUBASSEMENT ARRIÈRE)',
+                nameZh: 'UAR 区域 (后底盘工位)',
+                badgeColor: '#0369a1',
+                bgBadge: '#e0f2fe',
+                borderColor: '#0284c7',
+                icon: '🔩',
+                desc: 'Montage structures aériennes, pose des guides, raccordement eau/air et travaux en hauteur.',
+                equip: 'Nacelles ciseaux électriques, Harnais de sécurité doubles longes, Lignes de vie'
+            },
+            FUSA: {
+                name: 'ZONE FUSA — FRONT UNDERBODY SUB-ASSEMBLY (AVANT)',
+                nameZh: 'FUSA 区域 (前底盘分总成)',
+                badgeColor: '#b45309',
+                bgBadge: '#fef3c7',
+                borderColor: '#d97706',
+                icon: '⚡',
+                desc: 'Lignes de soudage par points, charpentes métalliques, armoires électriques et consignation LOTO.',
+                equip: 'Postes de soudure conformes, Extincteurs CO2, Cadenas LOTO, Écrans thermiques'
+            },
+            ALL: {
+                name: 'ZONES FUSA / UAR / UB (ENSEMBLE DU CHANTIER K9)',
+                nameZh: 'FUSA / UAR / UB 联合区域',
+                badgeColor: '#0f172a',
+                bgBadge: '#f1f5f9',
+                borderColor: '#000000',
+                icon: '🛡️',
+                desc: 'Installation globale des lignes de production soubassements Projet Stellantis Algeria K9 CKD0.',
+                equip: 'Ensemble des outillages industriels certifiés, nacelles homologuées, EPI conformes'
+            }
+        };
+
+        const activeZone = zoneMeta[z] || zoneMeta['ALL'];
+        const permitZoneId = z === 'ALL' ? p.id : `${p.id}-${z}`;
+        const weekNum = p.week || p.week_num || 36;
+        const validDeb = p.validFrom || p.date_debut || '2026-08-31';
+        const validFin = p.validUntil || p.date_fin || '2026-09-06';
+
+        // Filtrer les tâches spécifiques à la zone
+        let tasksList = [];
+        if (p.tasks_fr && Array.isArray(p.tasks_fr)) {
+            if (z === 'ALL') {
+                tasksList = p.tasks_fr;
+            } else {
+                tasksList = p.tasks_fr.filter(t => t.includes(`[${z}]`));
+                if (tasksList.length === 0) tasksList = p.tasks_fr;
+            }
+        } else {
+            const rawDesc = p['work-desc'] || p.title || '';
+            tasksList = rawDesc.split(';').map(t => t.trim()).filter(Boolean);
+        }
+
+        const payload = (typeof window !== 'undefined' && window.QREngine && typeof window.QREngine.generatePayload === 'function')
+            ? window.QREngine.generatePayload(p)
+            : `https://permis-sinylon.onrender.com/?permitId=${permitZoneId}`;
+
+        let svgQr = '';
+        const engine = typeof window !== 'undefined' ? (window.QRCodeGenerator || window.QRCode) : (typeof QRCodeGenerator !== 'undefined' ? QRCodeGenerator : null);
+        if (engine && typeof engine.toSVG === 'function') {
+            try {
+                svgQr = engine.toSVG(payload, { size: 180, margin: 1 });
+            } catch(e) {}
+        }
+        if (!svgQr || svgQr.length < 50) {
+            svgQr = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(payload)}" style="width:100%;height:100%;object-fit:contain;" alt="QR Code">`;
+        }
+
+        return `
+        <div class="a4-document zone-poster-a4" style="font-family:Arial,Helvetica,sans-serif;color:#000;padding:6mm 8mm;display:flex;flex-direction:column;justify-content:space-between;box-sizing:border-box;height:297mm;overflow:hidden;border:3.5px solid ${activeZone.borderColor};background:#fff;">
+            
+            <!-- 1. EN-TÊTE CORPORATE OFFICIEL -->
+            <div style="border-bottom:2px solid #000;padding-bottom:6px;display:flex;justify-content:space-between;align-items:center;">
+                <div style="display:flex;align-items:center;gap:8px;">
+                    <span style="background:#000;color:#fff;font-weight:900;font-size:16px;padding:3px 10px;border-radius:3px;letter-spacing:1px;">SINYLON</span>
+                    <span style="border:2px solid #000;color:#000;font-weight:900;font-size:16px;padding:2px 10px;border-radius:3px;background:#fff;letter-spacing:1px;">STELLANTIS</span>
+                </div>
+                <div style="text-align:center;">
+                    <div style="font-size:11px;font-weight:900;color:#1e3a8a;text-transform:uppercase;letter-spacing:1px;">Chantier Tafraoui · Usine K9 CKD0</div>
+                    <div style="font-size:8px;color:#475569;">Projet Assemblage Véhicules Utilitaires Stellantis Algérie</div>
+                </div>
+                <div style="border:2px solid #000;background:#f8fafc;padding:3px 10px;text-align:center;border-radius:4px;">
+                    <div style="font-size:7.5px;font-weight:800;color:#64748b;">PERMIS N°</div>
+                    <div style="font-size:13px;font-weight:900;font-family:monospace;color:#000;">${permitZoneId}</div>
+                </div>
+            </div>
+
+            <!-- 2. TITRE GÉANT DU POSTER DE ZONE -->
+            <div style="background:${activeZone.bgBadge};border:2.5px solid ${activeZone.borderColor};border-radius:8px;padding:10px 14px;text-align:center;margin-top:6px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+                <div style="font-size:10px;font-weight:900;color:${activeZone.badgeColor};text-transform:uppercase;letter-spacing:1.5px;margin-bottom:2px;">
+                    ${activeZone.icon} AFFICHAGE RÉGLEMENTAIRE DE SÉCURITÉ DE ZONE
+                </div>
+                <div style="font-size:18px;font-weight:900;color:#000;letter-spacing:0.5px;line-height:1.2;">
+                    ${activeZone.name}
+                </div>
+                <div style="font-size:11px;color:#334155;font-weight:700;margin-top:2px;">
+                    ${activeZone.nameZh}
+                </div>
+            </div>
+
+            <!-- 3. BANDEAU DE VALIDITÉ HEBDOMADAIRE & HORAIRES -->
+            <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:8px;margin-top:6px;">
+                <div style="border:1.5px solid #16a34a;background:#f0fdf4;border-radius:6px;padding:6px 10px;text-align:center;">
+                    <div style="font-size:7.5px;font-weight:800;color:#166534;">STATUT DU PERMIS DE ZONE</div>
+                    <div style="font-size:12px;font-weight:900;color:#15803d;margin-top:1px;">🟢 AUTORISÉ & ACTIF (SEMAINE ${weekNum})</div>
+                </div>
+                <div style="border:1.5px solid #000;background:#f8fafc;border-radius:6px;padding:6px 10px;text-align:center;">
+                    <div style="font-size:7.5px;font-weight:800;color:#475569;">PÉRIODE DE VALIDITÉ</div>
+                    <div style="font-size:10.5px;font-weight:900;color:#000;margin-top:1px;">${validDeb} → ${validFin}</div>
+                </div>
+                <div style="border:1.5px solid #000;background:#f8fafc;border-radius:6px;padding:6px 10px;text-align:center;">
+                    <div style="font-size:7.5px;font-weight:800;color:#475569;">HORAIRES AUTORISÉS</div>
+                    <div style="font-size:10.5px;font-weight:900;color:#000;margin-top:1px;">08h00 → 17h30</div>
+                </div>
+            </div>
+
+            <!-- 4. CORPS PRINCIPAL : QR CODE GÉANT DE SCAN + TÂCHES AUTORISÉES -->
+            <div style="display:grid;grid-template-columns:220px 1fr;gap:12px;margin-top:8px;align-items:stretch;">
+                
+                <!-- BLOC QR CODE GÉANT -->
+                <div style="border:2px solid #000;border-radius:8px;padding:10px;text-align:center;background:#f8fafc;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+                    <div style="font-size:8.5px;font-weight:900;color:#000;text-transform:uppercase;margin-bottom:6px;letter-spacing:0.5px;">
+                        📱 SCAN CONTRÔLE HSE
+                    </div>
+                    <div style="width:160px;height:160px;background:#fff;border:2px solid #000;border-radius:6px;padding:4px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,0.15);">
+                        ${svgQr}
+                    </div>
+                    <div style="font-size:7.5px;font-weight:800;color:#1e3a8a;margin-top:6px;line-height:1.2;">
+                        Scannez pour vérifier en direct les visas de M. W.P.E.E.X, habilitations et revalidation
+                    </div>
+                </div>
+
+                <!-- BLOC TÂCHES AUTORISÉES & ÉQUIPEMENTS -->
+                <div style="border:1.5px solid #000;border-radius:8px;padding:10px 12px;background:#fff;display:flex;flex-direction:column;justify-content:space-between;">
+                    <div>
+                        <div style="font-size:9.5px;font-weight:900;color:#000;border-bottom:1.5px solid #000;padding-bottom:3px;margin-bottom:6px;text-transform:uppercase;">
+                            📋 ACTIVITÉS AUTORISÉES EN ${activeZone.name.split('—')[0].trim()} :
+                        </div>
+                        <ul style="margin:0;padding-left:14px;font-size:8.5px;line-height:1.4;color:#1e293b;">
+                            ${tasksList.map(t => `<li style="margin-bottom:3px;"><strong>${t}</strong></li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <div style="margin-top:8px;background:#f1f5f9;border:1px solid #cbd5e1;border-radius:6px;padding:6px 8px;">
+                        <div style="font-size:7.5px;font-weight:800;color:#475569;text-transform:uppercase;">Outillages & Équipements de Levage Homologués :</div>
+                        <div style="font-size:8px;color:#0f172a;font-weight:600;margin-top:2px;">${activeZone.equip}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. MATRICE DE SÉCURITÉ & ANNEXES EXIGÉES POUR LA ZONE -->
+            <div style="border:1.5px solid #000;border-radius:6px;padding:8px 12px;margin-top:8px;background:#fff;">
+                <div style="font-size:8.5px;font-weight:900;color:#000;margin-bottom:4px;text-transform:uppercase;">
+                    🛡️ CONSIGNES CRITIQUES & ANNEXES DU DOSSIER ASSOCIÉES À CETTE ZONE :
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:6px;font-size:7.5px;">
+                    <div style="border:1px solid #0284c7;background:#f0f9ff;padding:4px 6px;border-radius:4px;text-align:center;">
+                        <strong style="color:#0284c7;">ANNEXE A (HAUTEUR)</strong><br>
+                        <span>Harnais double longe obligatoire dès 1.80m</span>
+                    </div>
+                    <div style="border:1px solid #dc2626;background:#fef2f2;padding:4px 6px;border-radius:4px;text-align:center;">
+                        <strong style="color:#dc2626;">ANNEXE B (CHAUD)</strong><br>
+                        <span>Extincteur 6kg + écran thermique + veille 30min</span>
+                    </div>
+                    <div style="border:1px solid #d97706;background:#fffbeb;padding:4px 6px;border-radius:4px;text-align:center;">
+                        <strong style="color:#d97706;">ANNEXE C (LOTO)</strong><br>
+                        <span>Consignation cadenassée TGBT & Armoires</span>
+                    </div>
+                    <div style="border:1px solid #16a34a;background:#f0fdf4;padding:4px 6px;border-radius:4px;text-align:center;">
+                        <strong style="color:#16a34a;">59 INTERVENANTS</strong><br>
+                        <span>Badges & Stickers casques SINYLON validés</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. BLOC DE SIGNATURES OFFICIELLES DU PERMIS DE ZONE -->
+            <div style="border:1.5px solid #000;border-radius:6px;padding:6px 10px;margin-top:8px;background:#f8fafc;">
+                <div style="font-size:8px;font-weight:900;color:#000;margin-bottom:4px;text-transform:uppercase;text-align:center;">
+                    VISAS & ÉMARGEMENTS DU PERMIS DE ZONE (VALIDITÉ SEMAINE ${weekNum})
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:6px;">
+                    ${this.renderSigBox(p, 'wpeex', 'M. W.P.E.E.X', p['wpeex-nom'] || 'M. W.P.E.E.X', 'Ingénieur de Suivi Sinylon / Stellantis')}
+                    ${this.renderSigBox(p, 'chef', 'Xie Xian', p['chef-nom'] || 'Xie Xian', 'Responsable Exécution Sinylon')}
+                    ${this.renderSigBox(p, 'hse', 'Nouri Chahrour', p['hse-nom'] || 'Nouri Chahrour', 'Superviseur HSE Sinylon')}
+                </div>
+            </div>
+
+            <!-- 7. FOOTER DE BAS D'AFFICHE -->
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:7px;color:#64748b;margin-top:4px;border-top:1px solid #cbd5e1;padding-top:3px;">
+                <div>Document officiel de chantier · Affichage obligatoire à l'entrée de la zone de travail</div>
+                <div>SINYLON & W.P.E.E.X · Système Permis Stellantis K9</div>
+                <div>Date d'impression : ${new Date().toLocaleDateString('fr-FR')}</div>
+            </div>
+        </div>
         `;
     }
 };

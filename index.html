@@ -86,6 +86,7 @@
             <!-- Barre Supérieure -->
             <header class="top-navbar no-print">
                 <div class="top-navbar-left">
+                    <button type="button" class="btn-mobile-menu" onclick="App.toggleMobileSidebar()" aria-label="Menu" title="Menu Navigation">☰</button>
                     <span class="view-title" id="current-view-title">SINYLON — STELLANTIS</span>
                     <span class="badge badge-blue">ALGERIA K9 CKD0</span>
                 </div>
@@ -355,12 +356,20 @@
                             <button class="tab-btn" id="tab-height" onclick="App.switchPreviewTab('height')">Annexe A (Hauteur)</button>
                             <button class="tab-btn" id="tab-hot" onclick="App.switchPreviewTab('hot')">Annexe B (Chaud)</button>
                             <button class="tab-btn" id="tab-electric" onclick="App.switchPreviewTab('electric')">Annexe C (Élec)</button>
+                            <button class="tab-btn" id="tab-poster" onclick="App.switchPreviewTab('poster')">🏷️ Affiche A4 Zone à Coller</button>
+                        </div>
+                        <div class="zone-selector-pills" style="display: flex; gap: 6px; align-items: center; margin-top: 6px;">
+                            <span style="font-size: 11px; font-weight: 800; color: #94a3b8;">Zone :</span>
+                            <button type="button" class="zone-filter-btn active" data-zone="ALL" onclick="App.selectZone('ALL')">🌐 Toutes (UB/UAR/FUSA)</button>
+                            <button type="button" class="zone-filter-btn" data-zone="UB" onclick="App.selectZone('UB')">🔵 Zone UB</button>
+                            <button type="button" class="zone-filter-btn" data-zone="UAR" onclick="App.selectZone('UAR')">🔷 Zone UAR</button>
+                            <button type="button" class="zone-filter-btn" data-zone="FUSA" onclick="App.selectZone('FUSA')">🟠 Zone FUSA</button>
                         </div>
                     </div>
                     <div class="preview-toolbar-right">
                         <button class="btn btn-outline btn-sm" onclick="App.fastEditPermit(App.currentPermitId)">✏️ Modifier</button>
                         <button class="btn btn-secondary btn-sm" onclick="App.openQR(App.currentPermitId)">📱 QR Code</button>
-                        <button class="btn btn-warning btn-sm" onclick="App.printQROnly(App.currentPermitId)">🏷️ Imprimer Affiche QR</button>
+                        <button class="btn btn-warning btn-sm" onclick="App.printZonePoster(App.currentZone)">🏷️ Imprimer Affiche Zone A4</button>
                         <button class="btn btn-info btn-sm" onclick="App.printCurrentPage()">📄 Imprimer cette Page</button>
                         <button class="btn btn-primary btn-sm" onclick="App.printPermit(App.currentPermitId)">🖨️ Dossier Complet A4</button>
                     </div>

@@ -8,6 +8,7 @@ const App = {
     currentWeek: 36,
     currentPermitId: 'SYN-K9-KW36',
     previewPage: 'p1',
+    currentZone: 'ALL',
 
     // Sécurité : mode lecture seule pour visiteurs QR
     isQRSession: false,
@@ -160,28 +161,47 @@ const App = {
                 const validFin = p.validUntil || p.date_fin || '2026-09-06';
                 const weekNum = p.week || 36;
 
+                const wpeexSig = sigs.wpeex;
+
+                // Vérifier si consigne coupure de courant active
+                let powerCutNotice = '';
+                if (typeof WeekendCaisseModule !== 'undefined' && typeof WeekendCaisseModule.getPowerCutConfig === 'function') {
+                    const pc = WeekendCaisseModule.getPowerCutConfig();
+                    if (pc && pc.enabled) {
+                        powerCutNotice = `
+                            <div style="background: rgba(56,189,248,0.15); border: 1.5px solid #38bdf8; border-radius: 12px; padding: 12px 14px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+                                <span style="font-size: 24px;">⚡</span>
+                                <div style="font-size: 12px; color: #e0f2fe; line-height: 1.4;">
+                                    <strong style="color: #38bdf8; text-transform: uppercase;">Avis Chantier Coupure Électrique :</strong><br>
+                                    Coupure programmée le <strong>Vendredi (${pc.startTime} → ${pc.endTime})</strong> sur <strong>${pc.zones}</strong>. Consignation LOTO obligatoire sous visa <strong>M. W.P.E.E.X</strong>.
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
+
                 // Helper d'affichage pour une case de signature électronique
                 const renderSigCard = (roleKey, title, defaultName, sigObj) => {
                     if (sigObj && sigObj.dataUrl) {
                         return `
-                            <div style="background: rgba(16,185,129,0.1); border: 1.5px solid #10b981; border-radius: 10px; padding: 10px; text-align: center; box-shadow: 0 4px 12px rgba(16,185,129,0.15);">
-                                <div style="font-size: 10.5px; font-weight: 800; color: #34d399; text-transform: uppercase;">${title}</div>
-                                <div style="font-size: 12px; font-weight: 900; color: #ffffff; margin: 2px 0;">${sigObj.signatoryName || defaultName}</div>
-                                <div style="background: #ffffff; border-radius: 6px; padding: 4px; margin: 6px 0; display: inline-block; width: 100%; max-width: 160px;">
-                                    <img src="${sigObj.dataUrl}" style="height: 28px; max-width: 100%; object-fit: contain;" alt="Signature">
+                            <div style="background: rgba(16,185,129,0.1); border: 1.5px solid #10b981; border-radius: 10px; padding: 8px; text-align: center; box-shadow: 0 4px 12px rgba(16,185,129,0.15);">
+                                <div style="font-size: 9.5px; font-weight: 800; color: #34d399; text-transform: uppercase;">${title}</div>
+                                <div style="font-size: 11px; font-weight: 900; color: #ffffff; margin: 2px 0;">${sigObj.signatoryName || defaultName}</div>
+                                <div style="background: #ffffff; border-radius: 6px; padding: 3px; margin: 4px 0; display: inline-block; width: 100%; max-width: 140px;">
+                                    <img src="${sigObj.dataUrl}" style="height: 24px; max-width: 100%; object-fit: contain;" alt="Signature">
                                 </div>
-                                <div style="font-size: 9.5px; color: #6ee7b7; font-weight: 700;">
-                                    ✓ SIGNÉ LE ${sigObj.date} À ${sigObj.time}
+                                <div style="font-size: 8.5px; color: #6ee7b7; font-weight: 700;">
+                                    ✓ SIGNÉ ${sigObj.date} ${sigObj.time}
                                 </div>
                             </div>
                         `;
                     }
                     return `
-                        <div style="background: rgba(30,41,59,0.6); border: 1.5px dashed #475569; border-radius: 10px; padding: 10px; text-align: center;">
-                            <div style="font-size: 10.5px; font-weight: 800; color: #94a3b8; text-transform: uppercase;">${title}</div>
-                            <div style="font-size: 12px; font-weight: 800; color: #cbd5e1; margin: 2px 0;">${defaultName}</div>
-                            <button type="button" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}','${roleKey}')" style="margin-top: 6px; background: #2563eb; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 2px 8px rgba(37,99,235,0.4);">
-                                ✍️ Signer sur site
+                        <div style="background: rgba(30,41,59,0.6); border: 1.5px dashed #475569; border-radius: 10px; padding: 8px; text-align: center;">
+                            <div style="font-size: 9.5px; font-weight: 800; color: #94a3b8; text-transform: uppercase;">${title}</div>
+                            <div style="font-size: 11px; font-weight: 800; color: #cbd5e1; margin: 2px 0;">${defaultName}</div>
+                            <button type="button" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}','${roleKey}')" style="margin-top: 4px; background: #2563eb; color: #fff; border: none; padding: 6px 10px; min-height: 38px; border-radius: 6px; font-size: 10.5px; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 4px; box-shadow: 0 2px 8px rgba(37,99,235,0.4); touch-action: manipulation; width: 100%;">
+                                ✍️ Signer
                             </button>
                         </div>
                     `;
@@ -202,6 +222,8 @@ const App = {
                                 <button class="lang-btn ${currentLang === 'zh' ? 'active' : ''}" onclick="Translator.setLang('zh'); App.showPublicClientView('${p.id}');">中文</button>
                             </div>
                         </div>
+
+                        ${powerCutNotice}
 
                         <!-- 2. HERO BANNER : VALIDITÉ SEMAINE COMPLÈTE -->
                         <div style="background: linear-gradient(135deg, #0f172a, #1e293b); border: 2px solid #10b981; border-radius: 16px; padding: 22px 18px; text-align: center; margin-bottom: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); position: relative; overflow: hidden;">
@@ -229,26 +251,27 @@ const App = {
                             </div>
                         </div>
 
-                        <!-- 3. MODULE SIGNATURES ÉLECTRONIQUES CHANTIER SUR SITE -->
+                        <!-- 3. MODULE SIGNATURES ÉLECTRONIQUES CHANTIER SUR SITE (4 SIGNATAIRES OFFICIELS) -->
                         <div style="background: #0f172a; border: 1.5px solid #1e3a8a; border-radius: 14px; padding: 18px; margin-bottom: 18px; box-shadow: 0 6px 20px rgba(0,0,0,0.4);">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #1e293b; padding-bottom: 8px;">
                                 <div style="font-size: 14px; font-weight: 900; color: #60a5fa; display: flex; align-items: center; gap: 8px;">
-                                    <span>✍️</span> Émargements Électroniques de la Semaine
+                                    <span>✍️</span> Émargements Officiels de la Semaine
                                 </div>
                                 <span style="font-size: 10px; background: rgba(59,130,246,0.2); color: #93c5fd; padding: 2px 8px; border-radius: 10px; font-weight: 700;">Site K9 Stellantis</span>
                             </div>
 
-                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 14px;">
-                                ${renderSigCard('chef', 'Chef de Projet', p['chef-nom'] || 'Xie Xian', chefSig)}
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 14px;">
+                                ${renderSigCard('wpeex', 'Ingénieur de Suivi', p['wpeex-nom'] || 'M. W.P.E.E.X', wpeexSig)}
+                                ${renderSigCard('chef', 'Resp. Exécution', p['chef-nom'] || 'Xie Xian', chefSig)}
                                 ${renderSigCard('hse', 'Superviseur HSE', p['hse-nom'] || 'Nouri Chahrour', hseSig)}
                                 ${renderSigCard('receveur', 'Receveur Travaux', p['receveur-nom'] || 'Zhou Lin', recSig)}
                             </div>
 
                             <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                                <button type="button" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}')" style="flex: 2; padding: 12px; background: linear-gradient(135deg, #2563eb, #1d4ed8); border: 1.5px solid #60a5fa; color: #fff; font-weight: 900; font-size: 13px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(37,99,235,0.4);">
+                                <button type="button" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}')" style="flex: 2; padding: 12px; min-height: 48px; background: linear-gradient(135deg, #2563eb, #1d4ed8); border: 1.5px solid #60a5fa; color: #fff; font-weight: 900; font-size: 13px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(37,99,235,0.4); touch-action: manipulation;">
                                     <span>✍️</span> SIGNER AU DOIGT / STYLET SUR SITE
                                 </button>
-                                <button type="button" onclick="if(window.SignaturePad)SignaturePad.createNewWeekPermit(${parseInt(weekNum, 10) + 1})" style="flex: 1; padding: 12px; background: #1e293b; border: 1.5px solid #475569; color: #e2e8f0; font-weight: 800; font-size: 12px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                <button type="button" onclick="if(window.SignaturePad)SignaturePad.createNewWeekPermit(${parseInt(weekNum, 10) + 1})" style="flex: 1; padding: 12px; min-height: 48px; background: #1e293b; border: 1.5px solid #475569; color: #e2e8f0; font-weight: 800; font-size: 12px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; touch-action: manipulation;">
                                     <span>🚀</span> S${parseInt(weekNum, 10) + 1}
                                 </button>
                             </div>
@@ -722,6 +745,144 @@ const App = {
         `).join('');
     },
 
+    selectZone(zoneKey) {
+        this.currentZone = zoneKey || 'ALL';
+        document.querySelectorAll('.zone-filter-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-zone') === this.currentZone);
+        });
+        if (this.currentView === 'preview' && this.previewPage === 'poster') {
+            this.renderPreview();
+        }
+    },
+
+    printZonePoster(zoneKey) {
+        const z = zoneKey || this.currentZone || 'ALL';
+        if (window.PrintEngine && typeof PrintEngine.printZonePoster === 'function') {
+            PrintEngine.printZonePoster(this.getActivePermitId(), z);
+        } else {
+            this.showToast(`Impression de l'affiche zone ${z}...`, 'info');
+            window.print();
+        }
+    },
+
+    toggleMobileSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        if (sidebar) {
+            sidebar.classList.toggle('mobile-open');
+        }
+    },
+
+    // Affiche un document spécifique (Général, Hauteur, Chaud, Élec, Affiche Zone) dans le visualiseur
+    showPermitSpecificPage(permitId, pageKey) {
+        this.currentPermitId = permitId || this.getActivePermitId();
+        const p = Store.getPermit(this.currentPermitId);
+        if (!p) {
+            this.showToast('Permis introuvable', 'error');
+            return;
+        }
+
+        let docHtml = '';
+        let docTitle = 'Document Officiel';
+
+        if (pageKey === 'general') {
+            docHtml = Templates.generalP1(p) + '<div style="page-break-before: always; margin-top: 20px;"></div>' + Templates.generalP2(p);
+            docTitle = 'Permis Général & Revalidations (Pages 1 & 2)';
+        } else if (pageKey === 'height') {
+            docHtml = Templates.heightAnnexe(p);
+            docTitle = 'Annexe A — Travail en Hauteur (Nacelles & Manlift)';
+        } else if (pageKey === 'hot') {
+            docHtml = Templates.hotAnnexe(p);
+            docTitle = 'Annexe B — Travail à Chaud (Permis Feu & Soudure)';
+        } else if (pageKey === 'electric') {
+            docHtml = Templates.electricAnnexe(p);
+            docTitle = 'Annexe C — Consignation Électrique & LOTO';
+        } else if (pageKey === 'poster') {
+            docHtml = Templates.renderZonePosterA4(p, this.currentZone || 'ALL');
+            docTitle = `Affiche Réglementaire A4 (${this.currentZone || 'Toutes Zones'})`;
+        } else {
+            docHtml = Templates.generalP1(p);
+            docTitle = 'Permis de Travail';
+        }
+
+        this._openDocViewerModal(docTitle, docHtml, p.id);
+    },
+
+    // Affiche le dossier complet (les 5 documents A4)
+    togglePermitDetailViewer(permitId, viewMode = 'all') {
+        this.currentPermitId = permitId || this.getActivePermitId();
+        const p = Store.getPermit(this.currentPermitId);
+        if (!p) {
+            this.showToast('Permis introuvable', 'error');
+            return;
+        }
+
+        const separator = '<div style="page-break-before: always; margin: 30px 0; border-top: 2px dashed #94a3b8;"></div>';
+        const docHtml = `
+            ${Templates.generalP1(p)}
+            ${separator}
+            ${Templates.generalP2(p)}
+            ${separator}
+            ${Templates.heightAnnexe(p)}
+            ${separator}
+            ${Templates.hotAnnexe(p)}
+            ${separator}
+            ${Templates.electricAnnexe(p)}
+            ${separator}
+            ${Templates.renderZonePosterA4(p, this.currentZone || 'ALL')}
+        `;
+
+        this._openDocViewerModal(`Dossier Complet Permis N° ${p.id} (5 Pages A4 + Affiche)`, docHtml, p.id);
+    },
+
+    _openDocViewerModal(title, contentHtml, permitId) {
+        let modal = document.getElementById('modal-doc-viewer');
+        if (!modal) {
+            modal = document.createElement('div');
+            modal.id = 'modal-doc-viewer';
+            modal.className = 'modal-backdrop';
+            modal.innerHTML = `
+                <div class="modal-window" style="max-width: 950px; width: 96%; max-height: 94vh; display: flex; flex-direction: column;">
+                    <div class="modal-header" style="background: #0f172a; border-bottom: 2px solid #3b82f6; padding: 12px 18px; display: flex; justify-content: space-between; align-items: center;">
+                        <h3 id="doc-viewer-title" style="color: #f8fafc; font-size: 15px; font-weight: 800; margin: 0; display: flex; align-items: center; gap: 8px;">
+                            <span>📄</span> <span id="doc-viewer-title-text">Document</span>
+                        </h3>
+                        <div style="display: flex; gap: 8px; align-items: center;">
+                            <button type="button" onclick="App.printPermit(App.currentPermitId)" style="background: #2563eb; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+                                🖨️ Imprimer A4
+                            </button>
+                            <button type="button" onclick="App.closeDocViewerModal()" style="background: #334155; color: #e2e8f0; border: none; padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 800; cursor: pointer;">
+                                ✕ Fermer
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal-body" id="doc-viewer-body" style="overflow-y: auto; padding: 20px; background: #334155; flex: 1;">
+                        <!-- Contenu du document -->
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        const titleText = document.getElementById('doc-viewer-title-text');
+        if (titleText) titleText.textContent = title;
+
+        const bodyEl = document.getElementById('doc-viewer-body');
+        if (bodyEl) {
+            bodyEl.innerHTML = contentHtml;
+        }
+
+        modal.classList.add('active');
+        modal.style.display = 'flex';
+    },
+
+    closeDocViewerModal() {
+        const modal = document.getElementById('modal-doc-viewer');
+        if (modal) {
+            modal.classList.remove('active');
+            modal.style.display = 'none';
+        }
+    },
+
     switchPreviewTab(pageName) {
         this.previewPage = pageName;
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -746,6 +907,8 @@ const App = {
             html = Templates.hotAnnexe(permit);
         } else if (this.previewPage === 'electric') {
             html = Templates.electricAnnexe(permit);
+        } else if (this.previewPage === 'poster') {
+            html = Templates.renderZonePosterA4(permit, this.currentZone || 'ALL');
         } else {
             html = Templates.generalP1(permit);
         }
@@ -996,9 +1159,9 @@ const App = {
             unchangedInfo: true,
             unchangedConditions: true,
             securityMeasuresApplicable: true,
-            wpeexEngineer: 'M. Sinylon',
+            wpeexEngineer: 'M. W.P.E.E.X (Ingénieur de Suivi)',
             wpeexValidated: true,
-            execManager: 'Xie (Chef de Projet)',
+            execManager: 'Xie Xian (Responsable Exécution Sinylon)',
             comments: `Revalidation conforme Jour ${dayIndex} effectuée le matin à 08:00.`
         };
 
@@ -1006,12 +1169,12 @@ const App = {
         Store.savePermit(permit);
 
         if (this.currentView === 'preview') {
-            this.renderPermitPage(this.previewPage);
+            this.renderPreview();
         } else {
             this.renderDashboard();
         }
 
-        this.showToast(`✅ Revalidation Jour ${dayIndex} (${dateStr}) signée à 08:00 par Sinylon & Xie !`, 'success');
+        this.showToast(`✅ Revalidation Jour ${dayIndex} (${dateStr}) signée à 08:00 par M. W.P.E.E.X & Xie Xian !`, 'success');
     },
 
     signAllRevalidations(permitId) {
@@ -1038,9 +1201,9 @@ const App = {
                 unchangedInfo: true,
                 unchangedConditions: true,
                 securityMeasuresApplicable: true,
-                wpeexEngineer: 'M. Sinylon',
+                wpeexEngineer: 'M. W.P.E.E.X (Ingénieur de Suivi)',
                 wpeexValidated: true,
-                execManager: 'Xie (Chef de Projet)',
+                execManager: 'Xie Xian (Responsable Exécution Sinylon)',
                 comments: `Revalidation matinale 08:00 (K9 CKD0 Protocol)`
             });
         }
@@ -1048,12 +1211,12 @@ const App = {
         Store.savePermit(permit);
 
         if (this.currentView === 'preview') {
-            this.renderPermitPage(this.previewPage);
+            this.renderPreview();
         } else {
             this.renderDashboard();
         }
 
-        this.showToast(`✍️ Revalidations de la semaine signées pour 08:00 !`, 'success');
+        this.showToast(`✍️ Revalidations signées par M. W.P.E.E.X & Xie Xian pour 08:00 !`, 'success');
     },
 
     verifyPermitFromInput() {

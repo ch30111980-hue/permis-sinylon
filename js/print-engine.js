@@ -140,7 +140,7 @@ const PrintEngine = {
                         <div>👨‍💼 <strong>Chef de Projet :</strong> ${permit['chef-nom'] || 'XIE XIAN (Chef de Projet)'}</div>
                         <div>📋 <strong>Chef d'Équipe :</strong> ${permit.chef_equipe || 'ZHOULIN (Chef d\'Équipe)'}</div>
                         <div>📞 <strong>Contact HSE :</strong> ${permit.contact || 'Nouri Chahrour'} (${permit.tel || '0563765157'})</div>
-                        <div>🛡️ <strong>Suivi Sinylon :</strong> ${permit['wpeex-nom'] || 'M. Sinylon (Ingénieur de Suivi)'}</div>
+                        <div>🛡️ <strong>Ingénieur de Suivi :</strong> ${permit['wpeex-nom'] || 'M. W.P.E.E.X (Ingénieur de Suivi)'}</div>
                         <div style="grid-column: span 2;">⏰ <strong>Période de Validité :</strong> ${permit.validFrom || permit['date-main']} → ${permit.validUntil || permit['date_fin'] || ''} (${permit.timeStart || '08h00'} → ${permit.timeEnd || '17h30'})</div>
                         <div style="grid-column: span 2; border-top: 1px dashed #94a3b8; padding-top: 6px; color: #0f172a;">
                             <strong>🛠️ Travaux Autorisés :</strong> ${permit['work-desc'] || permit.title || ''}
@@ -253,6 +253,37 @@ const PrintEngine = {
             container.innerHTML = '';
             container.appendChild(canvas);
         });
+    },
+
+    // Imprimer l'affiche A4 réglementaire spécifique pour une zone (UB, UAR, FUSA)
+    printZonePoster(permitId, zoneKey = 'ALL') {
+        const store = typeof window !== 'undefined' && window.Store ? window.Store : Store;
+        const templates = typeof window !== 'undefined' && window.Templates ? window.Templates : Templates;
+        const targetId = permitId || (typeof window !== 'undefined' && window.App && window.App.currentPermitId) || 'SYN-K9-KW36';
+        const permit = store.getPermit(targetId);
+        if (!permit) {
+            if (window.App) window.App.showToast('⚠️ Permis introuvable', 'error');
+            return;
+        }
+
+        const printContainer = document.getElementById('print-container');
+        if (!printContainer) return;
+
+        printContainer.innerHTML = templates.renderZonePosterA4(permit, zoneKey);
+
+        setTimeout(() => {
+            if (typeof window !== 'undefined' && window.require) {
+                try {
+                    const { ipcRenderer } = window.require('electron');
+                    ipcRenderer.invoke('print-document');
+                    return;
+                } catch (e) {}
+            }
+            window.print();
+            setTimeout(() => {
+                printContainer.innerHTML = '';
+            }, 1000);
+        }, 120);
     }
 };
 

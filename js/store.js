@@ -20,7 +20,7 @@ const Store = {
                 siteName: "STELLANTIS - Site Industriel Assemblage",
                 companyName: "SINYLON & Sinylon",
                 defaultHSE: "Nouri Chahrour (0563765157)",
-                defaultWPEEX: "M. Sinylon (Ingénieur de Suivi)",
+                defaultWPEEX: "M. W.P.E.E.X (Ingénieur de Suivi)",
                 defaultChef: "XIE XIAN (Chef de Projet)",
                 defaultChefEquipe: "ZHOULIN (Chef d'Équipe)",
                 defaultLang: "en"

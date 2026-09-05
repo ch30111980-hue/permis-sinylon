@@ -8,7 +8,7 @@ const SignaturePad = {
     canvas: null,
     ctx: null,
     isDrawing: false,
-    currentSignatory: 'chef', // 'chef', 'hse', 'receveur'
+    currentSignatory: 'wpeex', // 'wpeex', 'chef', 'hse', 'receveur'
     currentPermitId: 'SYN-K9-KW36',
     inkColor: '#1e3a8a', // Encre bleue d'ingénieur par défaut
     hasDrawn: false,
@@ -34,37 +34,41 @@ const SignaturePad = {
             justify-content: center;
             padding: 14px;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            touch-action: manipulation;
         `;
 
         modal.innerHTML = `
-            <div style="background: #0f172a; border: 2px solid #3b82f6; border-radius: 16px; width: 100%; max-width: 540px; box-shadow: 0 20px 50px rgba(0,0,0,0.7); overflow: hidden; display: flex; flex-direction: column;">
+            <div style="background: #0f172a; border: 2px solid #3b82f6; border-radius: 16px; width: 100%; max-width: 580px; box-shadow: 0 20px 50px rgba(0,0,0,0.7); overflow: hidden; display: flex; flex-direction: column;">
                 
                 <!-- En-tête modal -->
                 <div style="background: linear-gradient(135deg, #1e3a8a, #0f172a); padding: 14px 18px; border-bottom: 1.5px solid #1e40af; display: flex; justify-content: space-between; align-items: center;">
                     <div style="display: flex; align-items: center; gap: 8px;">
-                        <span style="font-size: 20px;">✍️</span>
+                        <span style="font-size: 22px;">✍️</span>
                         <div>
-                            <div style="font-weight: 900; color: #ffffff; font-size: 15px; letter-spacing: 0.5px;">SIGNATURE ÉLECTRONIQUE CHANTIER</div>
-                            <div style="font-size: 11px; color: #93c5fd;">Permis Hebdomadaire Sinylon · Validité Semaine Complète</div>
+                            <div style="font-weight: 900; color: #ffffff; font-size: 15px; letter-spacing: 0.5px;">SIGNATURE ÉLECTRONIQUE SUR SITE</div>
+                            <div style="font-size: 11px; color: #93c5fd;">Sinylon Stellantis K9 · Validation Ingénieur & Responsables</div>
                         </div>
                     </div>
-                    <button type="button" onclick="SignaturePad.close()" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 30px; height: 30px; border-radius: 50%; font-weight: 900; cursor: pointer; display: flex; align-items: center; justify-content: center;">✕</button>
+                    <button type="button" onclick="SignaturePad.close()" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 36px; height: 36px; min-height: 36px; border-radius: 50%; font-weight: 900; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; touch-action: manipulation;">✕</button>
                 </div>
 
                 <!-- Corps avec sélection du signataire & Canvas -->
                 <div style="padding: 16px;">
                     
-                    <!-- Choix du rôle de signature -->
+                    <!-- Choix du rôle de signature (4 Signataires Officiels) -->
                     <label style="display: block; font-size: 11px; font-weight: 800; color: #94a3b8; text-transform: uppercase; margin-bottom: 6px;">Signataire officiel :</label>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 14px;">
-                        <button type="button" id="sig-role-chef" class="sig-role-btn active" onclick="SignaturePad.setSignatory('chef')" style="padding: 8px 4px; font-size: 11px; font-weight: 800; border-radius: 8px; border: 1.5px solid #3b82f6; background: #1e3a8a; color: #fff; cursor: pointer; text-align: center;">
-                            👨‍💼 Xie Xian<br><span style="font-size: 9px; opacity: 0.8;">Chef de Projet</span>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 14px;">
+                        <button type="button" id="sig-role-wpeex" class="sig-role-btn active" onclick="SignaturePad.setSignatory('wpeex')" style="padding: 10px 8px; min-height: 48px; font-size: 11.5px; font-weight: 800; border-radius: 8px; border: 1.5px solid #3b82f6; background: #1e3a8a; color: #fff; cursor: pointer; text-align: center; touch-action: manipulation;">
+                            🛡️ M. W.P.E.E.X<br><span style="font-size: 9.5px; opacity: 0.85; font-weight: 600;">Ingénieur de Suivi</span>
                         </button>
-                        <button type="button" id="sig-role-hse" class="sig-role-btn" onclick="SignaturePad.setSignatory('hse')" style="padding: 8px 4px; font-size: 11px; font-weight: 800; border-radius: 8px; border: 1px solid #334155; background: #1e293b; color: #cbd5e1; cursor: pointer; text-align: center;">
-                            🛡️ N. Chahrour<br><span style="font-size: 9px; opacity: 0.8;">Superviseur HSE</span>
+                        <button type="button" id="sig-role-chef" class="sig-role-btn" onclick="SignaturePad.setSignatory('chef')" style="padding: 10px 8px; min-height: 48px; font-size: 11.5px; font-weight: 800; border-radius: 8px; border: 1px solid #334155; background: #1e293b; color: #cbd5e1; cursor: pointer; text-align: center; touch-action: manipulation;">
+                            👨‍💼 Xie Xian<br><span style="font-size: 9.5px; opacity: 0.85; font-weight: 600;">Responsable Exécution</span>
                         </button>
-                        <button type="button" id="sig-role-receveur" class="sig-role-btn" onclick="SignaturePad.setSignatory('receveur')" style="padding: 8px 4px; font-size: 11px; font-weight: 800; border-radius: 8px; border: 1px solid #334155; background: #1e293b; color: #cbd5e1; cursor: pointer; text-align: center;">
-                            👷 Zhou Lin<br><span style="font-size: 9px; opacity: 0.8;">Receveur Travaux</span>
+                        <button type="button" id="sig-role-hse" class="sig-role-btn" onclick="SignaturePad.setSignatory('hse')" style="padding: 10px 8px; min-height: 48px; font-size: 11.5px; font-weight: 800; border-radius: 8px; border: 1px solid #334155; background: #1e293b; color: #cbd5e1; cursor: pointer; text-align: center; touch-action: manipulation;">
+                            🦺 Nouri Chahrour<br><span style="font-size: 9.5px; opacity: 0.85; font-weight: 600;">Superviseur HSE</span>
+                        </button>
+                        <button type="button" id="sig-role-receveur" class="sig-role-btn" onclick="SignaturePad.setSignatory('receveur')" style="padding: 10px 8px; min-height: 48px; font-size: 11.5px; font-weight: 800; border-radius: 8px; border: 1px solid #334155; background: #1e293b; color: #cbd5e1; cursor: pointer; text-align: center; touch-action: manipulation;">
+                            👷 Zhou Lin<br><span style="font-size: 9.5px; opacity: 0.85; font-weight: 600;">Receveur Travaux</span>
                         </button>
                     </div>
 
@@ -87,10 +91,10 @@ const SignaturePad = {
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
                         <div style="display: flex; gap: 8px; align-items: center;">
                             <span style="font-size: 11px; color: #94a3b8; font-weight: 700;">Couleur :</span>
-                            <button type="button" onclick="SignaturePad.setInk('#1e3a8a')" style="width: 22px; height: 22px; border-radius: 50%; background: #1e3a8a; border: 2px solid #fff; cursor: pointer;" title="Bleu"></button>
-                            <button type="button" onclick="SignaturePad.setInk('#000000')" style="width: 22px; height: 22px; border-radius: 50%; background: #000000; border: 2px solid #64748b; cursor: pointer;" title="Noir"></button>
+                            <button type="button" onclick="SignaturePad.setInk('#1e3a8a')" style="width: 28px; height: 28px; border-radius: 50%; background: #1e3a8a; border: 2px solid #fff; cursor: pointer; touch-action: manipulation;" title="Bleu"></button>
+                            <button type="button" onclick="SignaturePad.setInk('#000000')" style="width: 28px; height: 28px; border-radius: 50%; background: #000000; border: 2px solid #64748b; cursor: pointer; touch-action: manipulation;" title="Noir"></button>
                         </div>
-                        <button type="button" onclick="SignaturePad.clearCanvas()" style="background: rgba(239,68,68,0.15); border: 1px solid #ef4444; color: #fca5a5; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; cursor: pointer;">
+                        <button type="button" onclick="SignaturePad.clearCanvas()" style="background: rgba(239,68,68,0.15); border: 1px solid #ef4444; color: #fca5a5; font-size: 12px; font-weight: 700; padding: 6px 14px; min-height: 38px; border-radius: 8px; cursor: pointer; touch-action: manipulation;">
                             🗑️ Effacer
                         </button>
                     </div>
@@ -103,11 +107,11 @@ const SignaturePad = {
 
                 <!-- Boutons d'action -->
                 <div style="background: #090d16; padding: 12px 16px; border-top: 1.5px solid #1e293b; display: flex; gap: 10px;">
-                    <button type="button" onclick="SignaturePad.close()" style="flex: 1; padding: 12px; background: #1e293b; border: 1px solid #334155; color: #cbd5e1; font-weight: 800; font-size: 13px; border-radius: 8px; cursor: pointer;">
+                    <button type="button" onclick="SignaturePad.close()" style="flex: 1; padding: 12px; min-height: 46px; background: #1e293b; border: 1px solid #334155; color: #cbd5e1; font-weight: 800; font-size: 13px; border-radius: 8px; cursor: pointer; touch-action: manipulation;">
                         Annuler
                     </button>
-                    <button type="button" onclick="SignaturePad.saveSignature()" style="flex: 2; padding: 12px; background: linear-gradient(135deg, #10b981, #059669); border: 1.5px solid #34d399; color: #ffffff; font-weight: 900; font-size: 14px; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 12px rgba(16,185,129,0.4); display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        <span>✅</span> Valider & Sceller la Semaine
+                    <button type="button" onclick="SignaturePad.saveSignature()" style="flex: 2; padding: 12px; min-height: 46px; background: linear-gradient(135deg, #10b981, #059669); border: 1.5px solid #34d399; color: #ffffff; font-weight: 900; font-size: 14px; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 12px rgba(16,185,129,0.4); display: flex; align-items: center; justify-content: center; gap: 6px; touch-action: manipulation;">
+                        <span>✅</span> Valider & Sceller
                     </button>
                 </div>
             </div>
@@ -130,7 +134,7 @@ const SignaturePad = {
         this.ctx.scale(dpr, dpr);
         this.ctx.lineCap = 'round';
         this.ctx.lineJoin = 'round';
-        this.ctx.lineWidth = 2.5;
+        this.ctx.lineWidth = 2.8;
         this.ctx.strokeStyle = this.inkColor;
 
         const getPos = (e) => {
@@ -148,7 +152,7 @@ const SignaturePad = {
         };
 
         const startDraw = (e) => {
-            e.preventDefault();
+            if (e.cancelable) e.preventDefault();
             this.isDrawing = true;
             this.hasDrawn = true;
             const ph = document.getElementById('sig-placeholder-text');
@@ -161,31 +165,38 @@ const SignaturePad = {
 
         const draw = (e) => {
             if (!this.isDrawing) return;
-            e.preventDefault();
+            if (e.cancelable) e.preventDefault();
             const pos = getPos(e);
             this.ctx.lineTo(pos.x, pos.y);
             this.ctx.stroke();
         };
 
-        const stopDraw = () => {
-            this.isDrawing = false;
+        const stopDraw = (e) => {
+            if (this.isDrawing) {
+                this.isDrawing = false;
+                if (this.ctx) this.ctx.closePath();
+            }
         };
 
+        // Pointer Events modernes
+        this.canvas.style.touchAction = 'none';
+        
         // Mouse events
         this.canvas.addEventListener('mousedown', startDraw);
         this.canvas.addEventListener('mousemove', draw);
         window.addEventListener('mouseup', stopDraw);
 
-        // Touch events pour mobile / tablette sur chantier
+        // Touch events
         this.canvas.addEventListener('touchstart', startDraw, { passive: false });
         this.canvas.addEventListener('touchmove', draw, { passive: false });
         this.canvas.addEventListener('touchend', stopDraw);
+        this.canvas.addEventListener('touchcancel', stopDraw);
     },
 
-    open(permitId, signatory = 'chef') {
+    open(permitId, signatory = 'wpeex') {
         this.init();
         this.currentPermitId = permitId || (window.App && window.App.currentPermitId) || 'SYN-K9-KW36';
-        this.setSignatory(signatory);
+        this.setSignatory(signatory || 'wpeex');
         this.clearCanvas();
 
         const modal = document.getElementById('modal-signature-pad');
@@ -246,9 +257,10 @@ const SignaturePad = {
         const timeStr = now.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
 
         const signatoryNames = {
-            chef: 'Xie Xian (Chef de Projet Sinylon)',
+            wpeex: 'M. W.P.E.E.X (Ingénieur de Suivi Sinylon / Stellantis)',
+            chef: 'Xie Xian (Responsable Exécution Sinylon)',
             hse: 'Nouri Chahrour (Superviseur HSE Sinylon)',
-            receveur: 'Zhou Lin (Receveur Sinylon)'
+            receveur: 'Zhou Lin (Receveur Travaux Sinylon)'
         };
 
         const signatureObj = {
@@ -276,7 +288,7 @@ const SignaturePad = {
         this.close();
 
         if (window.App) {
-            window.App.showToast(`✅ Signature de ${signatoryNames[this.currentSignatory]} certifiée pour toute la semaine !`, 'success');
+            window.App.showToast(`✅ Signature de ${signatoryNames[this.currentSignatory]} scellée avec succès !`, 'success');
             
             // Rafraîchir la vue active
             if (typeof window.App.showPublicClientView === 'function' && document.documentElement.classList.contains('qr-mode')) {
