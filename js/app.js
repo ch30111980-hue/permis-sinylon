@@ -360,30 +360,47 @@ const App = {
                             </div>
                         </div>
 
-                        <!-- 4. MODULE SIGNATURES ÉLECTRONIQUES CHANTIER SUR SITE (4 SIGNATAIRES OFFICIELS) -->
+                        <!-- 4. MODULE SIGNATURES ÉLECTRONIQUES CHANTIER SUR SITE -->
                         <div style="background: #0f172a; border: 1.5px solid #1e3a8a; border-radius: 14px; padding: 18px; margin-bottom: 18px; box-shadow: 0 6px 20px rgba(0,0,0,0.4);">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #1e293b; padding-bottom: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 1px solid #1e293b; padding-bottom: 8px;">
                                 <div style="font-size: 14px; font-weight: 900; color: #60a5fa; display: flex; align-items: center; gap: 8px;">
                                     <span>✍️</span> ${L.officialSignOffs}
                                 </div>
                                 <span style="font-size: 10px; background: rgba(59,130,246,0.2); color: #93c5fd; padding: 2px 8px; border-radius: 10px; font-weight: 700;">${L.siteK9}</span>
                             </div>
 
-                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 14px;">
-                                ${renderSigCard('wpeex', L.wpeexTitle, p['wpeex-nom'] || 'M. W.P.E.E.X', wpeexSig)}
+                            <!-- CARTOUCHE MAJEURE : INGÉNIEUR DE SUIVI SINYLON (M. W.P.E.E.X) -->
+                            <div style="background: linear-gradient(135deg, rgba(30,58,138,0.5), rgba(15,23,42,0.9)); border: 2px solid #3b82f6; border-radius: 12px; padding: 14px; margin-bottom: 14px; text-align: center; box-shadow: 0 4px 16px rgba(59,130,246,0.25);">
+                                <div style="font-size: 11px; font-weight: 900; color: #60a5fa; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                    <span>🎖️</span> ${L.wpeexTitle} — SINYLON / STELLANTIS
+                                </div>
+                                <div style="font-size: 15px; font-weight: 900; color: #ffffff; margin: 4px 0 8px 0;">
+                                    ${p['wpeex-nom'] || 'M. W.P.E.E.X'}
+                                </div>
+                                ${wpeexSig && wpeexSig.dataUrl ? `
+                                    <div style="background: #ffffff; border-radius: 8px; padding: 6px; margin: 6px auto; max-width: 200px; display: flex; justify-content: center; align-items: center;">
+                                        <img src="${wpeexSig.dataUrl}" style="height: 38px; max-width: 100%; object-fit: contain;" alt="Signature M. W.P.E.E.X">
+                                    </div>
+                                    <div style="font-size: 10.5px; color: #34d399; font-weight: 800; margin-top: 4px;">
+                                        ${L.signed} ${wpeexSig.date} ${wpeexSig.time}
+                                    </div>
+                                ` : `
+                                    <button type="button" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}','wpeex')" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); border: 1.5px solid #60a5fa; color: #ffffff; padding: 12px 18px; min-height: 44px; border-radius: 8px; font-size: 13px; font-weight: 900; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 14px rgba(37,99,235,0.4); touch-action: manipulation; width: 100%; max-width: 340px;">
+                                        <span>✍️</span> ${currentLang === 'zh' ? '监理工程师 M. W.P.E.E.X 电子签名' : (currentLang === 'en' ? 'Sign as Follow-up Engineer (M. W.P.E.E.X)' : 'Signer (Ingénieur de Suivi M. W.P.E.E.X)')}
+                                    </button>
+                                `}
+                            </div>
+
+                            <!-- GRILLE DES AUTRES SIGNATAIRES DU CHANTIER -->
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 12px;">
                                 ${renderSigCard('chef', L.chefTitle, p['chef-nom'] || 'Xie Xian', chefSig)}
                                 ${renderSigCard('hse', L.hseTitle, p['hse-nom'] || 'Nouri Chahrour', hseSig)}
                                 ${renderSigCard('receveur', L.receveurTitle, p['receveur-nom'] || 'Zhou Lin', recSig)}
                             </div>
 
-                            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                                <button type="button" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}')" style="flex: 2; padding: 12px; min-height: 48px; background: linear-gradient(135deg, #2563eb, #1d4ed8); border: 1.5px solid #60a5fa; color: #fff; font-weight: 900; font-size: 13px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(37,99,235,0.4); touch-action: manipulation;">
-                                    ${L.signSiteBtn}
-                                </button>
-                                <button type="button" onclick="if(window.SignaturePad)SignaturePad.createNewWeekPermit(${parseInt(weekNum, 10) + 1})" style="flex: 1; padding: 12px; min-height: 48px; background: #1e293b; border: 1.5px solid #475569; color: #e2e8f0; font-weight: 800; font-size: 12px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; touch-action: manipulation;">
-                                    ${L.nextWeekBtn}
-                                </button>
-                            </div>
+                            <button type="button" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}')" style="width: 100%; padding: 13px; min-height: 46px; background: rgba(30,41,59,0.8); border: 1.5px solid #475569; color: #e2e8f0; font-weight: 800; font-size: 12px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; touch-action: manipulation;">
+                                <span>✍️</span> ${L.signSiteBtn}
+                            </button>
                         </div>
 
                         <!-- 5. SECTION DÉDIÉE : LES 5 PERMIS OFFICIELS DE CETTE ZONE -->
@@ -985,11 +1002,14 @@ const App = {
                     ${contentHtml}
                 </div>
             `;
+            bodyEl.scrollTop = 0;
         }
 
         modal.classList.add('active');
         modal.style.display = 'flex';
-        modal.style.zIndex = '100000';
+        modal.style.zIndex = '999999';
+        modal.scrollTop = 0;
+        modal.onclick = (e) => { if (e.target === modal) App.closeDocViewerModal(); };
     },
 
     closeDocViewerModal() {

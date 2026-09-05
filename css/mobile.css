@@ -335,6 +335,52 @@
         margin: 10px;
     }
 
+    /* Visionneuse Documents Officiels Mobile & Tablette */
+    #modal-doc-viewer {
+        z-index: 999999 !important;
+        padding: 6px !important;
+    }
+
+    #modal-doc-viewer.active {
+        display: flex !important;
+    }
+
+    #modal-doc-viewer .modal-window {
+        width: 98% !important;
+        max-width: 900px !important;
+        max-height: 94vh !important;
+        background: #0f172a !important;
+        border: 2px solid #3b82f6 !important;
+        border-radius: 14px !important;
+        overflow: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    #modal-doc-viewer .modal-body {
+        flex: 1 !important;
+        overflow-y: auto !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding: 12px 6px !important;
+        background: #1e293b !important;
+    }
+
+    #modal-doc-viewer .a4-document {
+        width: 100% !important;
+        max-width: 820px !important;
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding: 12px 10px !important;
+        margin: 0 auto 16px auto !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
+        border-radius: 6px !important;
+        box-sizing: border-box !important;
+    }
+
     /* Target hit size for all interactive buttons on mobile/tablet */
     button, input, select {
         touch-action: manipulation;
