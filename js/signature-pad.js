@@ -273,15 +273,33 @@ const SignaturePad = {
             hash: 'SIG-' + Math.random().toString(36).substring(2, 9).toUpperCase()
         };
 
-        // Sauvegarder dans le Store
+        // Sauvegarder dans le Store et propager aux 3 zones de la même semaine (UB, UAR, FUSA)
         if (window.Store) {
             const p = window.Store.getPermit(this.currentPermitId);
             if (p) {
-                if (!p.signatures) p.signatures = {};
-                p.signatures[this.currentSignatory] = signatureObj;
-                p.isWeeklySigned = true;
-                p.weeklySignDate = dateStr;
-                window.Store.savePermit(p);
+                const targetWeek = p.week || p.week_num;
+                const allPermits = window.Store.getAllPermits();
+                
+                // Appliquer la signature sur tous les permis de la même semaine
+                Object.values(allPermits).forEach(perm => {
+                    if (perm.id === p.id || (targetWeek && (perm.week === targetWeek || perm.week_num === targetWeek))) {
+                        if (!perm.signatures) perm.signatures = {};
+                        perm.signatures[this.currentSignatory] = signatureObj;
+                        perm.isWeeklySigned = true;
+                        perm.weeklySignDate = dateStr;
+                    }
+                });
+                
+                window.Store.saveAllPermits(allPermits);
+
+                // Synchroniser instantanément avec le serveur Render
+                if (typeof fetch !== 'undefined') {
+                    fetch('/api/permits', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(allPermits)
+                    }).catch(() => {});
+                }
             }
         }
 
