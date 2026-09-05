@@ -96,9 +96,9 @@
                 <div class="top-navbar-right">
                     <!-- Sélecteur de Langue Trilingue -->
                     <div class="lang-switch-group">
-                        <button type="button" class="lang-btn" id="lang-btn-fr" onclick="Translator.setLang('fr')">FR</button>
-                        <button type="button" class="lang-btn active" id="lang-btn-en" onclick="Translator.setLang('en')">EN</button>
-                        <button type="button" class="lang-btn" id="lang-btn-zh" onclick="Translator.setLang('zh')">中文</button>
+                        <button type="button" class="lang-btn" id="lang-btn-fr" onclick="App.switchLanguage('fr')">FR</button>
+                        <button type="button" class="lang-btn active" id="lang-btn-en" onclick="App.switchLanguage('en')">EN</button>
+                        <button type="button" class="lang-btn" id="lang-btn-zh" onclick="App.switchLanguage('zh')">中文</button>
                     </div>
 
                     <button onclick="QREngine.openMobileQRModal(App.currentPermitId)" class="btn btn-primary btn-sm">

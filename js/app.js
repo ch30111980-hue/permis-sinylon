@@ -308,10 +308,10 @@ const App = {
                                 <span style="background: #ffffff; color: #000; padding: 5px 12px; font-weight: 900; font-size: 14px; border-radius: 4px; letter-spacing: 1px;">SINYLON</span>
                                 <span style="border: 2px solid #ffffff; color: #ffffff; padding: 4px 12px; font-weight: 900; font-size: 14px; border-radius: 4px; letter-spacing: 1px;">STELLANTIS</span>
                             </div>
-                            <div class="lang-switch-group">
-                                <button class="lang-btn ${currentLang === 'fr' ? 'active' : ''}" onclick="Translator.setLang('fr'); App.showPublicClientView('${p.id}');">FR</button>
-                                <button class="lang-btn ${currentLang === 'en' ? 'active' : ''}" onclick="Translator.setLang('en'); App.showPublicClientView('${p.id}');">EN</button>
-                                <button class="lang-btn ${currentLang === 'zh' ? 'active' : ''}" onclick="Translator.setLang('zh'); App.showPublicClientView('${p.id}');">中文</button>
+                            <div class="lang-switch-group" style="display: flex; gap: 4px; background: rgba(30,41,59,0.95); border: 1.5px solid #3b82f6; border-radius: 8px; padding: 3px;">
+                                <button type="button" class="lang-btn ${currentLang === 'fr' ? 'active' : ''}" onclick="App.switchLanguage('fr', '${p.id}')" style="background: ${currentLang === 'fr' ? '#2563eb' : 'transparent'}; color: ${currentLang === 'fr' ? '#ffffff' : '#94a3b8'}; border: none; font-weight: 900; font-size: 13px; padding: 8px 14px; min-height: 38px; border-radius: 6px; cursor: pointer; touch-action: manipulation;">FR</button>
+                                <button type="button" class="lang-btn ${currentLang === 'en' ? 'active' : ''}" onclick="App.switchLanguage('en', '${p.id}')" style="background: ${currentLang === 'en' ? '#2563eb' : 'transparent'}; color: ${currentLang === 'en' ? '#ffffff' : '#94a3b8'}; border: none; font-weight: 900; font-size: 13px; padding: 8px 14px; min-height: 38px; border-radius: 6px; cursor: pointer; touch-action: manipulation;">EN</button>
+                                <button type="button" class="lang-btn ${currentLang === 'zh' ? 'active' : ''}" onclick="App.switchLanguage('zh', '${p.id}')" style="background: ${currentLang === 'zh' ? '#2563eb' : 'transparent'}; color: ${currentLang === 'zh' ? '#ffffff' : '#94a3b8'}; border: none; font-weight: 900; font-size: 13px; padding: 8px 14px; min-height: 38px; border-radius: 6px; cursor: pointer; touch-action: manipulation;">中文</button>
                             </div>
                         </div>
 
@@ -1228,14 +1228,35 @@ const App = {
         if (activeBtn) activeBtn.classList.add('active');
     },
 
+    switchLanguage(lang, permitId) {
+        if (window.Translator) {
+            window.Translator.setLang(lang);
+        }
+        const targetId = permitId || this.currentPermitId || 'K9-W36-UB';
+        if (document.documentElement.classList.contains('qr-mode') || (document.getElementById('client-public-view') && document.getElementById('client-public-view').style.display === 'block')) {
+            this.showPublicClientView(targetId);
+        } else {
+            this.updateLanguageButtons(lang);
+            this.renderDashboard();
+            if (this.currentView === 'preview') this.renderPreview();
+            if (this.currentView === 'list') this.renderMasterPlanTable();
+        }
+        this.showToast(`Langue : ${lang.toUpperCase()}`, 'info', 1200);
+    },
+
     onLanguageChanged(lang) {
         this.updateLanguageButtons(lang);
-        if (this.currentView === 'dashboard') {
-            this.renderDashboard();
-        } else if (this.currentView === 'list') {
-            this.renderMasterPlanTable();
+        if (document.documentElement.classList.contains('qr-mode') || (document.getElementById('client-public-view') && document.getElementById('client-public-view').style.display === 'block')) {
+            this.showPublicClientView(this.currentPermitId || 'K9-W36-UB');
+        } else {
+            if (this.currentView === 'dashboard') {
+                this.renderDashboard();
+            } else if (this.currentView === 'list') {
+                this.renderMasterPlanTable();
+            } else if (this.currentView === 'preview') {
+                this.renderPreview();
+            }
         }
-        this.showToast(`Language switched to ${lang.toUpperCase()}`, 'info', 1500);
     },
 
     // =========================================================================
