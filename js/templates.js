@@ -485,24 +485,33 @@ const Templates = {
                 <tr style="height:26px;">
                     <td class="text-center bold-cell" style="font-weight:bold;font-size:8px;border:1px solid #000;padding:2px 4px;">${dayInfo.name}</td>
                     <td class="text-center" style="font-family:monospace;font-size:8px;border:1px solid #000;padding:2px 4px;">${dateStr}</td>
-                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">M. Sinylon</td>
+                    <!-- Nom Ingénieur Suivi laissé vide pour émargement -->
+                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;"></td>
                     <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">Ingénieur Suivi</td>
                     <!-- CASE VISA WPEEX VIDE POUR SIGNATURE MANUELLE À 08H00 -->
                     <td class="text-center" style="border:1px solid #000;padding:2px;width:110px;">
                         <div style="height:20px;border-bottom:1px dashed #999;margin:1px 4px;"></div>
                     </td>
-                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">Xie</td>
+                    <!-- Nom Responsable Sinylon laissé vide pour émargement -->
+                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;"></td>
                     <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">Chef de Projet</td>
                     <!-- CASE SIGNATURE SINYLON VIDE POUR SIGNATURE MANUELLE À 08H00 -->
                     <td class="text-center" style="border:1px solid #000;padding:2px;width:110px;">
                         <div style="height:20px;border-bottom:1px dashed #999;margin:1px 4px;"></div>
                     </td>
-                    <td class="no-print text-center" style="border:1px solid #000;padding:2px;font-size:7.5px;">
-                        <span style="color:#16a34a;font-weight:700;">À signer 08h00</span>
-                    </td>
+                    <!-- STATUT LAISSÉ VIDE -->
+                    <td class="text-center" style="border:1px solid #000;padding:2px;font-size:7.5px;"></td>
                 </tr>
             `;
         });
+
+        const friDate = new Date(startDate);
+        friDate.setDate(startDate.getDate() + 4);
+        const friDateStr = friDate.toISOString().split('T')[0];
+
+        const satDate = new Date(startDate);
+        satDate.setDate(startDate.getDate() + 5);
+        const satDateStr = satDate.toISOString().split('T')[0];
 
         return `
             <div class="a4-document" id="a4-doc-${permit.id}-p2">
@@ -535,7 +544,7 @@ const Templates = {
                             <th rowspan="2" style="border:1px solid #000;padding:3px 4px;width:75px;">DATE</th>
                             <th colspan="3" style="border:1px solid #000;padding:2px;background:#eff6ff;color:#1e3a8a;">Sinylon - Ingénieur de Suivi</th>
                             <th colspan="3" style="border:1px solid #000;padding:2px;">Responsable d'exécution (SINYLON)</th>
-                            <th rowspan="2" class="no-print" style="border:1px solid #000;padding:2px;width:70px;">STATUT</th>
+                            <th rowspan="2" style="border:1px solid #000;padding:2px;width:70px;">STATUT</th>
                         </tr>
                         <tr style="background:#f8fafc;font-size:7px;">
                             <th style="border:1px solid #000;padding:2px;">Nom</th>
@@ -561,14 +570,15 @@ const Templates = {
                             <th style="border:1px solid #000;padding:3px;width:85px;">DATE</th>
                             <th style="border:1px solid #000;padding:3px;">SUPERVISEUR Sinylon</th>
                             <th style="border:1px solid #000;padding:3px;">CONTRÔLE SÉCURITÉ </th>
-                            <th style="border:1px solid #000;padding:3px;width:150px;">VISA CAISSE STELLANTIS</th>
+                            <th style="border:1px solid #000;padding:3px;width:150px;">VISA CAISSE</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr style="height:28px;">
                             <td class="text-center bold-cell" style="border:1px solid #000;font-weight:bold;padding:3px;">Vendredi</td>
-                            <td class="text-center" style="border:1px solid #000;font-family:monospace;padding:3px;">2026-08-28</td>
-                            <td style="border:1px solid #000;padding:3px;">M. Sinylon</td>
+                            <td class="text-center" style="border:1px solid #000;font-family:monospace;padding:3px;">${friDateStr}</td>
+                            <!-- SUPERVISEUR SINYLON LAISSÉ VIDE -->
+                            <td style="border:1px solid #000;padding:3px;"></td>
                             <td style="border:1px solid #000;padding:3px;">Vérification 360°, Nacelles, Extincteurs, Balisage</td>
                             <td style="border:1px solid #000;padding:2px;text-align:center;">
                                 <div style="height:20px;border-bottom:1px dashed #999;margin:1px 6px;"></div>
@@ -576,8 +586,9 @@ const Templates = {
                         </tr>
                         <tr style="height:28px;">
                             <td class="text-center bold-cell" style="border:1px solid #000;font-weight:bold;padding:3px;">Samedi</td>
-                            <td class="text-center" style="border:1px solid #000;font-family:monospace;padding:3px;">2026-08-29</td>
-                            <td style="border:1px solid #000;padding:3px;">M. Sinylon</td>
+                            <td class="text-center" style="border:1px solid #000;font-family:monospace;padding:3px;">${satDateStr}</td>
+                            <!-- SUPERVISEUR SINYLON LAISSÉ VIDE -->
+                            <td style="border:1px solid #000;padding:3px;"></td>
                             <td style="border:1px solid #000;padding:3px;">Vérification 360°, Nacelles, Extincteurs, Balisage</td>
                             <td style="border:1px solid #000;padding:2px;text-align:center;">
                                 <div style="height:20px;border-bottom:1px dashed #999;margin:1px 6px;"></div>
