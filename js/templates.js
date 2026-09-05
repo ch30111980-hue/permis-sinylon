@@ -203,7 +203,7 @@ const Templates = {
                         <div style="margin-top:2px;">
                             <strong>Ouvrage :</strong> ${p.ouvrage ? 'Stellantis K9' : 'Stellantis K9'}&nbsp;&nbsp;&nbsp;
                             <strong>ZONE :</strong> ${p.zone || 'FUSA/UAR/UB'}&nbsp;&nbsp;&nbsp;
-                            <strong>Tél. :</strong> ${p.tel || '0563765157'}
+                            <strong>Tél. :</strong> ${p.tel || '0562765157'}
                         </div>
                     </div>
                 </div>
@@ -449,8 +449,8 @@ const Templates = {
 
                 <!-- PIED DE PAGE EXACT PHOTO : Numéro d'urgence / Mobile / Page 1/2 -->
                 <div style="display:flex;justify-content:space-between;align-items:center;font-size:8px;font-weight:bold;margin-top:3px;padding:0 4px;">
-                    <div>Numéro d'urgence : <span style="font-weight:normal;">0563765157 / 14</span></div>
-                    <div>Mobile : <span style="font-weight:normal;">0563765157</span></div>
+                    <div>Numéro d'urgence : <span style="font-weight:normal;">0562765157 / 14</span></div>
+                    <div>Mobile : <span style="font-weight:normal;">0562765157</span></div>
                     <div>Page 1/2</div>
                 </div>
             </div>

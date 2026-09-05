@@ -24,7 +24,7 @@ const Store = {
                 projectName: "Algeria K9 CKD0",
                 siteName: "STELLANTIS - Site Industriel Assemblage",
                 companyName: "SINYLON & W.P.E.E.X",
-                defaultHSE: "Nouri Chahrour (0563765157)",
+                defaultHSE: "Nouri Chahrour (0562765157)",
                 defaultWPEEX: "M. W.P.E.E.X (Ingénieur de Suivi)",
                 defaultChef: "XIE XIAN (Chef de Projet)",
                 defaultChefEquipe: "ZHOULIN (Chef d'Équipe)",

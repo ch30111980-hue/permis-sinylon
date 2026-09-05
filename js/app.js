@@ -145,40 +145,130 @@ const App = {
                 const isChinese = currentLang === 'zh';
                 const isEnglish = currentLang === 'en';
 
-                const zoneStr = p.zone || 'Montage K9 (UB / UAR / FUSA)';
-                const activityText = isChinese ? (p.activite_detaillee_zh || p.title_zh || p.title || '') :
-                                    isEnglish ? (p.activite_detaillee_en || p.title_en || p.title || '') :
-                                    (p.activite_detaillee_fr || p.title || 'Installation Mécanique, Montage Lignes & Outillages');
+                const dict = {
+                    fr: {
+                        zonePermit: `📍 Permis Spécifique par Zone (Semaine ${p.week || 36}) :`,
+                        dedicatedPermits: "3 Permis Dédiés",
+                        officialPermit: `🛡️ PERMIS OFFICIEL ${p.zoneKey || 'UB'} — PROJET K9 TAFRAOUI`,
+                        permitNo: "N°",
+                        week: "Semaine",
+                        to: "au",
+                        activeBadge: `🟢 PERMIS AUTORISÉ & ACTIF (SEMAINE S${p.week || 36})`,
+                        suiviVisa: "Visa Ingénieur de Suivi M. W.P.E.E.X",
+                        officialSignOffs: `✍️ Émargements Officiels — ${p.id}`,
+                        siteK9: "Site K9 Stellantis",
+                        wpeexTitle: "Ingénieur de Suivi",
+                        chefTitle: "Resp. Exécution",
+                        hseTitle: "Superviseur HSE",
+                        receveurTitle: "Receveur Travaux",
+                        signed: "✓ SIGNÉ",
+                        signBtn: "✍️ Signer",
+                        signSiteBtn: "<span>✍️</span> SIGNER AU DOIGT / STYLET SUR SITE",
+                        nextWeekBtn: `<span>🚀</span> S${parseInt(p.week || 36, 10) + 1}`,
+                        fiveDocsTitle: `📁 Les 5 Documents Officiels de la ${p.zoneKey || 'UB'}`,
+                        formatA4: "Format A4 Certifié",
+                        doc1Title: `Permis Général — ${p.zoneKey || 'UB'}`,
+                        doc1Sub: "Recto A4 + Verso Revalidations 08h00 M. W.P.E.E.X",
+                        doc2Title: "Annexe A — Travail en Hauteur",
+                        doc2Sub: "Nacelles Ciseaux + Manlift · Harnais certifiés",
+                        doc3Title: "Annexe B — Travail à Chaud (Permis Feu)",
+                        doc3Sub: "Soudage & Meulage · Extincteurs · Bâches ignifugées",
+                        doc4Title: "Annexe C — Électrique & LOTO",
+                        doc4Sub: "Consignation TGBT & Armoires · Cadenas LOTO-SINY",
+                        doc5Title: "Affiche A4 Réglementaire de Zone",
+                        doc5Sub: "Panneau d'entrée de zone avec QR Code géant",
+                        openBtn: "👁️ Ouvrir",
+                        viewAllBtn: "📑 AFFICHER LE DOSSIER COMPLET (5 PAGES A4)",
+                        printBtn: "🖨️ IMPRIMER / TÉLÉCHARGER CE PERMIS (A4)",
+                        supervisorBtn: "🔒 Accès Superviseur (Équipe SINYLON)"
+                    },
+                    en: {
+                        zonePermit: `📍 Specific Zone Permit (Week ${p.week || 36}) :`,
+                        dedicatedPermits: "3 Dedicated Permits",
+                        officialPermit: `🛡️ OFFICIAL PERMIT ${p.zoneKey || 'UB'} — K9 PROJECT TAFRAOUI`,
+                        permitNo: "No.",
+                        week: "Week",
+                        to: "to",
+                        activeBadge: `🟢 AUTHORIZED & ACTIVE PERMIT (WEEK W${p.week || 36})`,
+                        suiviVisa: "Follow-up Engineer Visa: M. W.P.E.E.X",
+                        officialSignOffs: `✍️ Official Sign-offs — ${p.id}`,
+                        siteK9: "Stellantis K9 Site",
+                        wpeexTitle: "Follow-up Engineer",
+                        chefTitle: "Execution Lead",
+                        hseTitle: "HSE Supervisor",
+                        receveurTitle: "Work Receiver",
+                        signed: "✓ SIGNED",
+                        signBtn: "✍️ Sign",
+                        signSiteBtn: "<span>✍️</span> SIGN WITH FINGER / STYLUS ON SITE",
+                        nextWeekBtn: `<span>🚀</span> W${parseInt(p.week || 36, 10) + 1}`,
+                        fiveDocsTitle: `📁 The 5 Official Documents — ${p.zoneKey || 'UB'}`,
+                        formatA4: "Certified A4 Format",
+                        doc1Title: `General Work Permit — ${p.zoneKey || 'UB'}`,
+                        doc1Sub: "Front A4 + Back Daily Revalidations 08:00 M. W.P.E.E.X",
+                        doc2Title: "Annex A — Work at Height",
+                        doc2Sub: "Scissor Lifts + Manlift · Certified Harnesses",
+                        doc3Title: "Annex B — Hot Work (Fire Permit)",
+                        doc3Sub: "Welding & Grinding · Fire Extinguishers · Fireproof Tarps",
+                        doc4Title: "Annex C — Electrical & LOTO",
+                        doc4Sub: "Main Switchboard & Panels Lockout · LOTO-SINY Padlocks",
+                        doc5Title: "Zone Regulatory A4 Poster",
+                        doc5Sub: "Zone Entrance Board with Giant QR Code",
+                        openBtn: "👁️ Open",
+                        viewAllBtn: "📑 VIEW FULL DOSSIER (5 PAGES A4)",
+                        printBtn: "🖨️ PRINT / DOWNLOAD THIS PERMIT (A4)",
+                        supervisorBtn: "🔒 Supervisor Access (SINYLON Team)"
+                    },
+                    zh: {
+                        zonePermit: `📍 施工区域专属许可证 (第 ${p.week || 36} 周) :`,
+                        dedicatedPermits: "3个专属区域许可证",
+                        officialPermit: `🛡️ 官方作业许可证 ${p.zoneKey || 'UB'} — 塔夫拉维 K9 项目`,
+                        permitNo: "编号",
+                        week: "作业周",
+                        to: "至",
+                        activeBadge: `🟢 许可证已签发并生效 (第 S${p.week || 36} 周)`,
+                        suiviVisa: "Sinylon现场监理工程师 M. W.P.E.E.X 审核通过",
+                        officialSignOffs: `✍️ 官方审批签字 — ${p.id}`,
+                        siteK9: "Stellantis K9 现场",
+                        wpeexTitle: "监理工程师",
+                        chefTitle: "施工负责人",
+                        hseTitle: "安全主管 HSE",
+                        receveurTitle: "作业接收人",
+                        signed: "✓ 已签署",
+                        signBtn: "✍️ 签名",
+                        signSiteBtn: "<span>✍️</span> 现场指纹/触控笔电子签名",
+                        nextWeekBtn: `<span>🚀</span> 第 S${parseInt(p.week || 36, 10) + 1} 周`,
+                        fiveDocsTitle: `📁 ${p.zoneKey || 'UB'} 区域 5 份官方许可文件`,
+                        formatA4: "A4 官方认证格式",
+                        doc1Title: `通用安全作业许可证 — ${p.zoneKey || 'UB'}`,
+                        doc1Sub: "正页A4 + 背页每日08:00复核签字 M. W.P.E.E.X",
+                        doc2Title: "附件 A — 高空作业许可证",
+                        doc2Sub: "剪叉升降车 + 曲臂车 · 双钩安全带认证",
+                        doc3Title: "附件 B — 动火作业许可证 (防火许可)",
+                        doc3Sub: "焊接与打磨 · 6kg灭火器 · 防火布覆盖",
+                        doc4Title: "附件 C — 电气安全与上锁挂牌 (LOTO)",
+                        doc4Sub: "主配电柜及设备断电挂牌 · LOTO-SINY 安全锁",
+                        doc5Title: "施工区域 A4 安全警示公示牌",
+                        doc5Sub: "车间工位入口张贴 · 带高清核验二维码",
+                        openBtn: "👁️ 查看",
+                        viewAllBtn: "📑 查看完整许可档案 (5页A4)",
+                        printBtn: "🖨️ 打印 / 下载该许可证 (A4)",
+                        supervisorBtn: "🔒 管理员登录 (SINYLON 团队)"
+                    }
+                };
 
-                const equipementsStr = Array.isArray(p.equipements_a_installer) ? p.equipements_a_installer.join(', ') : (p.equipements_a_installer || 'Nacelles ciseaux (x6), Manlift, Palans DEMAG KBK, Outillages certifiés');
+                const L = dict[currentLang] || dict.fr;
+                const zoneStr = isChinese ? (p.zone_zh || p.zone || 'K9 总装线') : (isEnglish ? (p.zone_en || p.zone || 'K9 Assembly Line') : (p.zone || 'Montage K9'));
+                const permitTitle = isChinese ? (p.title_zh || p.title) : (isEnglish ? (p.title_en || p.title) : (p.title || ('PERMIS ' + p.id)));
 
                 const sigs = p.signatures || {};
                 const chefSig = sigs.chef;
                 const hseSig = sigs.hse;
                 const recSig = sigs.receveur;
+                const wpeexSig = sigs.wpeex;
 
                 const validDeb = p.validFrom || p.date_debut || '2026-08-31';
                 const validFin = p.validUntil || p.date_fin || '2026-09-06';
                 const weekNum = p.week || 36;
-
-                const wpeexSig = sigs.wpeex;
-
-                // Vérifier si consigne coupure de courant active
-                let powerCutNotice = '';
-                if (typeof WeekendCaisseModule !== 'undefined' && typeof WeekendCaisseModule.getPowerCutConfig === 'function') {
-                    const pc = WeekendCaisseModule.getPowerCutConfig();
-                    if (pc && pc.enabled) {
-                        powerCutNotice = `
-                            <div style="background: rgba(56,189,248,0.15); border: 1.5px solid #38bdf8; border-radius: 12px; padding: 12px 14px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
-                                <span style="font-size: 24px;">⚡</span>
-                                <div style="font-size: 12px; color: #e0f2fe; line-height: 1.4;">
-                                    <strong style="color: #38bdf8; text-transform: uppercase;">Avis Chantier Coupure Électrique :</strong><br>
-                                    Coupure programmée le <strong>Vendredi (${pc.startTime} → ${pc.endTime})</strong> sur <strong>${pc.zones}</strong>. Consignation LOTO obligatoire sous visa <strong>M. W.P.E.E.X</strong>.
-                                </div>
-                            </div>
-                        `;
-                    }
-                }
 
                 // Helper d'affichage pour une case de signature électronique
                 const renderSigCard = (roleKey, title, defaultName, sigObj) => {
@@ -191,7 +281,7 @@ const App = {
                                     <img src="${sigObj.dataUrl}" style="height: 24px; max-width: 100%; object-fit: contain;" alt="Signature">
                                 </div>
                                 <div style="font-size: 8.5px; color: #6ee7b7; font-weight: 700;">
-                                    ✓ SIGNÉ ${sigObj.date} ${sigObj.time}
+                                    ${L.signed} ${sigObj.date} ${sigObj.time}
                                 </div>
                             </div>
                         `;
@@ -201,7 +291,7 @@ const App = {
                             <div style="font-size: 9.5px; font-weight: 800; color: #94a3b8; text-transform: uppercase;">${title}</div>
                             <div style="font-size: 11px; font-weight: 800; color: #cbd5e1; margin: 2px 0;">${defaultName}</div>
                             <button type="button" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}','${roleKey}')" style="margin-top: 4px; background: #2563eb; color: #fff; border: none; padding: 6px 10px; min-height: 38px; border-radius: 6px; font-size: 10.5px; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 4px; box-shadow: 0 2px 8px rgba(37,99,235,0.4); touch-action: manipulation; width: 100%;">
-                                ✍️ Signer
+                                ${L.signBtn}
                             </button>
                         </div>
                     `;
@@ -228,8 +318,8 @@ const App = {
                         <!-- 2. SÉLECTEUR RAPIDE DES 3 ZONES DU SITE K9 -->
                         <div style="background: rgba(15,23,42,0.9); border: 1.5px solid #0284c7; border-radius: 12px; padding: 10px 12px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
                             <div style="font-size: 11px; font-weight: 800; color: #38bdf8; margin-bottom: 8px; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center;">
-                                <span>📍 Permis Spécifique par Zone (Semaine ${weekNum}) :</span>
-                                <span style="font-size: 10px; color: #94a3b8;">3 Permis Dédiés</span>
+                                <span>${L.zonePermit}</span>
+                                <span style="font-size: 10px; color: #94a3b8;">${L.dedicatedPermits}</span>
                             </div>
                             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;">
                                 <button type="button" onclick="App.showPublicClientView('K9-W${weekNum}-UB')" style="background: ${zCurrent === 'UB' ? '#2563eb' : 'rgba(30,41,59,0.8)'}; border: 1.5px solid ${zCurrent === 'UB' ? '#60a5fa' : '#475569'}; color: #fff; padding: 10px 4px; border-radius: 8px; font-size: 11.5px; font-weight: 900; cursor: pointer; text-align: center; touch-action: manipulation; box-shadow: ${zCurrent === 'UB' ? '0 0 12px rgba(37,99,235,0.6)' : 'none'};">
@@ -244,30 +334,28 @@ const App = {
                             </div>
                         </div>
 
-                        ${powerCutNotice}
-
                         <!-- 3. HERO BANNER : VALIDITÉ SEMAINE COMPLÈTE DE LA ZONE -->
                         <div style="background: linear-gradient(135deg, #0f172a, #1e293b); border: 2px solid #10b981; border-radius: 16px; padding: 22px 18px; text-align: center; margin-bottom: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); position: relative; overflow: hidden;">
                             <div style="position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; background: rgba(16,185,129,0.15); border-radius: 50%; filter: blur(25px);"></div>
                             
                             <div style="display: inline-block; background: rgba(16,185,129,0.2); border: 1.5px solid #10b981; color: #34d399; font-size: 11px; font-weight: 900; padding: 4px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
-                                🛡️ PERMIS OFFICIEL ${p.zoneKey || zCurrent} — PROJET K9 TAFRAOUI
+                                ${L.officialPermit}
                             </div>
 
                             <div style="font-size: 24px; font-weight: 900; letter-spacing: 1px; color: #ffffff; margin: 4px 0;">
-                                ${p.title || ('PERMIS ' + p.id)}
+                                ${permitTitle}
                             </div>
                             <div style="font-size: 13px; color: #94a3b8; font-weight: 600;">
-                                N° <strong style="color: #60a5fa; font-family: monospace;">${p.id}</strong> · Semaine ${weekNum} (${validDeb} au ${validFin})
+                                ${L.permitNo} <strong style="color: #60a5fa; font-family: monospace;">${p.id}</strong> · ${L.week} ${weekNum} (${validDeb} ${L.to} ${validFin})
                             </div>
 
                             <!-- GRAND BADGE VERT : VALIDITÉ HEBDOMADAIRE STRICTE -->
                             <div style="margin-top: 14px; background: linear-gradient(135deg, #15803d, #166534); border: 2px solid #4ade80; border-radius: 12px; padding: 12px 16px; box-shadow: 0 4px 15px rgba(22,163,74,0.4);">
                                 <div style="font-size: 15px; font-weight: 900; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                                    <span>🟢</span> PERMIS AUTORISÉ & ACTIF (SEMAINE S${weekNum})
+                                    <span>🟢</span> ${L.activeBadge}
                                 </div>
                                 <div style="font-size: 11.5px; color: #bbf7d0; margin-top: 4px; font-weight: 500;">
-                                    ${p.zone || 'Zone Montage K9'} · Visa Ingénieur de Suivi M. W.P.E.E.X
+                                    ${zoneStr} · ${L.suiviVisa}
                                 </div>
                             </div>
                         </div>
@@ -276,24 +364,24 @@ const App = {
                         <div style="background: #0f172a; border: 1.5px solid #1e3a8a; border-radius: 14px; padding: 18px; margin-bottom: 18px; box-shadow: 0 6px 20px rgba(0,0,0,0.4);">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #1e293b; padding-bottom: 8px;">
                                 <div style="font-size: 14px; font-weight: 900; color: #60a5fa; display: flex; align-items: center; gap: 8px;">
-                                    <span>✍️</span> Émargements Officiels — ${p.id}
+                                    <span>✍️</span> ${L.officialSignOffs}
                                 </div>
-                                <span style="font-size: 10px; background: rgba(59,130,246,0.2); color: #93c5fd; padding: 2px 8px; border-radius: 10px; font-weight: 700;">Site K9 Stellantis</span>
+                                <span style="font-size: 10px; background: rgba(59,130,246,0.2); color: #93c5fd; padding: 2px 8px; border-radius: 10px; font-weight: 700;">${L.siteK9}</span>
                             </div>
 
                             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 14px;">
-                                ${renderSigCard('wpeex', 'Ingénieur de Suivi', p['wpeex-nom'] || 'M. W.P.E.E.X', wpeexSig)}
-                                ${renderSigCard('chef', 'Resp. Exécution', p['chef-nom'] || 'Xie Xian', chefSig)}
-                                ${renderSigCard('hse', 'Superviseur HSE', p['hse-nom'] || 'Nouri Chahrour', hseSig)}
-                                ${renderSigCard('receveur', 'Receveur Travaux', p['receveur-nom'] || 'Zhou Lin', recSig)}
+                                ${renderSigCard('wpeex', L.wpeexTitle, p['wpeex-nom'] || 'M. W.P.E.E.X', wpeexSig)}
+                                ${renderSigCard('chef', L.chefTitle, p['chef-nom'] || 'Xie Xian', chefSig)}
+                                ${renderSigCard('hse', L.hseTitle, p['hse-nom'] || 'Nouri Chahrour', hseSig)}
+                                ${renderSigCard('receveur', L.receveurTitle, p['receveur-nom'] || 'Zhou Lin', recSig)}
                             </div>
 
                             <div style="display: flex; gap: 8px; flex-wrap: wrap;">
                                 <button type="button" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}')" style="flex: 2; padding: 12px; min-height: 48px; background: linear-gradient(135deg, #2563eb, #1d4ed8); border: 1.5px solid #60a5fa; color: #fff; font-weight: 900; font-size: 13px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(37,99,235,0.4); touch-action: manipulation;">
-                                    <span>✍️</span> SIGNER AU DOIGT / STYLET SUR SITE
+                                    ${L.signSiteBtn}
                                 </button>
                                 <button type="button" onclick="if(window.SignaturePad)SignaturePad.createNewWeekPermit(${parseInt(weekNum, 10) + 1})" style="flex: 1; padding: 12px; min-height: 48px; background: #1e293b; border: 1.5px solid #475569; color: #e2e8f0; font-weight: 800; font-size: 12px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; touch-action: manipulation;">
-                                    <span>🚀</span> S${parseInt(weekNum, 10) + 1}
+                                    ${L.nextWeekBtn}
                                 </button>
                             </div>
                         </div>
@@ -301,8 +389,8 @@ const App = {
                         <!-- 5. SECTION DÉDIÉE : LES 5 PERMIS OFFICIELS DE CETTE ZONE -->
                         <div style="background: #0f172a; border: 1.5px solid #334155; border-radius: 14px; padding: 18px; margin-bottom: 18px;">
                             <div style="font-size: 14px; font-weight: 900; color: #f8fafc; border-bottom: 1px solid #1e293b; padding-bottom: 8px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center;">
-                                <span>📁 Les 5 Documents Officiels de la ${p.zoneKey || zCurrent}</span>
-                                <span style="font-size: 11px; color: #94a3b8; font-weight: 700;">Format A4 Certifié</span>
+                                <span>${L.fiveDocsTitle}</span>
+                                <span style="font-size: 11px; color: #94a3b8; font-weight: 700;">${L.formatA4}</span>
                             </div>
 
                             <div style="display: flex; flex-direction: column; gap: 10px;">
@@ -312,12 +400,12 @@ const App = {
                                     <div style="display: flex; align-items: center; gap: 10px;">
                                         <div style="background: #2563eb; color: #fff; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px;">1</div>
                                         <div>
-                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">Permis Général — ${p.zoneKey || zCurrent}</div>
-                                            <div style="font-size: 11px; color: #93c5fd;">Recto A4 + Verso Revalidations 08h00 M. W.P.E.E.X</div>
+                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">${L.doc1Title}</div>
+                                            <div style="font-size: 11px; color: #93c5fd;">${L.doc1Sub}</div>
                                         </div>
                                     </div>
                                     <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'general')" style="background: #2563eb; color: #fff; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
-                                        👁️ Ouvrir
+                                        ${L.openBtn}
                                     </button>
                                 </div>
 
@@ -326,12 +414,12 @@ const App = {
                                     <div style="display: flex; align-items: center; gap: 10px;">
                                         <div style="background: #0284c7; color: #fff; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px;">A</div>
                                         <div>
-                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">Annexe A — Travail en Hauteur</div>
-                                            <div style="font-size: 11px; color: #7dd3fc;">Nacelles Ciseaux + Manlift · Harnais certifiés</div>
+                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">${L.doc2Title}</div>
+                                            <div style="font-size: 11px; color: #7dd3fc;">${L.doc2Sub}</div>
                                         </div>
                                     </div>
                                     <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'height')" style="background: #0284c7; color: #fff; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
-                                        👁️ Ouvrir
+                                        ${L.openBtn}
                                     </button>
                                 </div>
 
@@ -340,12 +428,12 @@ const App = {
                                     <div style="display: flex; align-items: center; gap: 10px;">
                                         <div style="background: #ef4444; color: #fff; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px;">B</div>
                                         <div>
-                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">Annexe B — Travail à Chaud (Permis Feu)</div>
-                                            <div style="font-size: 11px; color: #fca5a5;">Soudage & Meulage · Extincteurs · Bâches ignifugées</div>
+                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">${L.doc3Title}</div>
+                                            <div style="font-size: 11px; color: #fca5a5;">${L.doc3Sub}</div>
                                         </div>
                                     </div>
                                     <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'hot')" style="background: #ef4444; color: #fff; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
-                                        👁️ Ouvrir
+                                        ${L.openBtn}
                                     </button>
                                 </div>
 
@@ -354,12 +442,12 @@ const App = {
                                     <div style="display: flex; align-items: center; gap: 10px;">
                                         <div style="background: #f59e0b; color: #000; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px;">C</div>
                                         <div>
-                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">Annexe C — Électrique & LOTO</div>
-                                            <div style="font-size: 11px; color: #fcd34d;">Consignation TGBT & Armoires · Cadenas LOTO-SINY</div>
+                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">${L.doc4Title}</div>
+                                            <div style="font-size: 11px; color: #fcd34d;">${L.doc4Sub}</div>
                                         </div>
                                     </div>
                                     <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'electric')" style="background: #f59e0b; color: #000; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 900; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
-                                        👁️ Ouvrir
+                                        ${L.openBtn}
                                     </button>
                                 </div>
 
@@ -368,12 +456,12 @@ const App = {
                                     <div style="display: flex; align-items: center; gap: 10px;">
                                         <div style="background: #10b981; color: #fff; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px;">QR</div>
                                         <div>
-                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">Affiche A4 Réglementaire de Zone</div>
-                                            <div style="font-size: 11px; color: #86efac;">Panneau d'entrée de zone avec QR Code géant</div>
+                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">${L.doc5Title}</div>
+                                            <div style="font-size: 11px; color: #86efac;">${L.doc5Sub}</div>
                                         </div>
                                     </div>
                                     <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'poster')" style="background: #10b981; color: #fff; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
-                                        👁️ Ouvrir
+                                        ${L.openBtn}
                                     </button>
                                 </div>
                             </div>
@@ -382,15 +470,15 @@ const App = {
                         <!-- 6. BOUTONS D'ACTION MAJEURS -->
                         <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 14px;">
                             <button type="button" onclick="App.togglePermitDetailViewer('${p.id}', 'all')" style="width: 100%; padding: 16px; background: linear-gradient(135deg, #10b981, #059669); color: #ffffff; border: 2px solid #34d399; border-radius: 12px; font-size: 15px; font-weight: 900; box-shadow: 0 4px 16px rgba(16,185,129,0.4); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; touch-action: manipulation;">
-                                <span style="font-size: 18px;">📑</span> AFFICHER LE DOSSIER COMPLET (5 PAGES A4)
+                                <span style="font-size: 18px;">📑</span> ${L.viewAllBtn}
                             </button>
 
                             <button type="button" onclick="App.printPermit('${p.id}')" style="width: 100%; padding: 14px; background: #2563eb; color: #ffffff; border: 1.5px solid #3b82f6; border-radius: 10px; font-size: 14px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; touch-action: manipulation;">
-                                🖨️ IMPRIMER / TÉLÉCHARGER CE PERMIS (A4)
+                                ${L.printBtn}
                             </button>
 
                             <button type="button" onclick="App.openSupervisorModal()" style="color: #94a3b8; background: transparent; border: 1px solid #334155; padding: 10px; font-size: 12px; border-radius: 8px; cursor: pointer; touch-action: manipulation;">
-                                🔒 Accès Superviseur (Équipe SINYLON)
+                                ${L.supervisorBtn}
                             </button>
                         </div>
                     </div>
@@ -678,7 +766,7 @@ const App = {
         document.getElementById('fast-edit-zone').value = `${permit.ouvrage || ''} — ${permit.zone || ''}`;
         document.getElementById('fast-edit-contractor').value = permit.contractor || permit.company || 'SINYLON';
         document.getElementById('fast-edit-responsible').value = permit.responsible || permit.chefNom || 'Nouri Chahrour';
-        document.getElementById('fast-edit-hse').value = permit.hseNom || permit.contact || 'Nouri Chahrour (0563765157)';
+        document.getElementById('fast-edit-hse').value = permit.hseNom || permit.contact || 'Nouri Chahrour (0562765157)';
         document.getElementById('fast-edit-valid-from').value = permit.validFrom || permit['date-main'] || '';
         document.getElementById('fast-edit-valid-until').value = permit.validUntil || permit['date_fin'] || '';
 
@@ -1061,7 +1149,7 @@ const App = {
             responsible: document.getElementById('form-chef-nom').value.trim() || 'XIE XIAN',
             chefNom: document.getElementById('form-chef-nom').value.trim() || 'XIE XIAN',
             chefEquipe: document.getElementById('form-chef-equipe').value.trim() || 'ZHOULIN',
-            hseNom: document.getElementById('form-contact').value.trim() || 'Nouri Chahrour (0563765157)',
+            hseNom: document.getElementById('form-contact').value.trim() || 'Nouri Chahrour (0562765157)',
             validFrom: document.getElementById('form-date-main').value || '2026-08-24',
             validUntil: document.getElementById('form-date-main').value || '2026-08-30',
             timeStart: document.getElementById('form-time-start').value || '07h30',
