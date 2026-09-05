@@ -882,7 +882,8 @@ const App = {
     },
 
     printZonePoster(zoneKey) {
-        const z = zoneKey || this.currentZone || 'ALL';
+        const p = Store.getPermit(this.getActivePermitId());
+        const z = (zoneKey && zoneKey !== 'ALL') ? zoneKey : (p ? p.zoneKey : (this.currentZone !== 'ALL' ? this.currentZone : 'UB'));
         if (window.PrintEngine && typeof PrintEngine.printZonePoster === 'function') {
             PrintEngine.printZonePoster(this.getActivePermitId(), z);
         } else {
@@ -1045,7 +1046,7 @@ const App = {
         } else if (this.previewPage === 'electric') {
             html = Templates.electricAnnexe(permit);
         } else if (this.previewPage === 'poster') {
-            html = Templates.renderZonePosterA4(permit, this.currentZone || 'ALL');
+            html = Templates.renderZonePosterA4(permit, (this.currentZone && this.currentZone !== 'ALL') ? this.currentZone : permit.zoneKey);
         } else {
             html = Templates.generalP1(permit);
         }

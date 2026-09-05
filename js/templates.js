@@ -1237,9 +1237,20 @@ const Templates = {
     // NOUVEAU : AFFICHE A4 OFFICIELLE D'ENTRÉE DE ZONE (UB / UAR / FUSA)
     // À COLLER SUR LES PALISSADES / ENTRÉES DE ZONE SUR CHANTIER
     // =========================================================================
-    renderZonePosterA4(permit, zoneKey = 'ALL') {
+    renderZonePosterA4(permit, zoneKey = null) {
         const p = permit || {};
-        const z = (zoneKey || 'ALL').toUpperCase();
+        
+        // Résolution stricte de la zone (UB, UAR ou FUSA)
+        let z = (zoneKey && zoneKey !== 'ALL') ? zoneKey : (p.zoneKey || '');
+        if (!z || !['UB', 'UAR', 'FUSA'].includes(z.toUpperCase())) {
+            if (p.id && p.id.includes('UAR')) z = 'UAR';
+            else if (p.id && p.id.includes('FUSA')) z = 'FUSA';
+            else if (p.id && p.id.includes('UB')) z = 'UB';
+            else if (p.zone && p.zone.includes('UAR')) z = 'UAR';
+            else if (p.zone && p.zone.includes('FUSA')) z = 'FUSA';
+            else z = 'UB';
+        }
+        z = z.toUpperCase();
 
         const zoneMeta = {
             UB: {
@@ -1271,42 +1282,34 @@ const Templates = {
                 icon: '⚡',
                 desc: 'Lignes de soudage par points, charpentes métalliques, armoires électriques et consignation LOTO.',
                 equip: 'Postes de soudure conformes, Extincteurs CO2, Cadenas LOTO, Écrans thermiques'
-            },
-            ALL: {
-                name: 'ZONES FUSA / UAR / UB (ENSEMBLE DU CHANTIER K9)',
-                nameZh: 'FUSA / UAR / UB 联合区域',
-                badgeColor: '#0f172a',
-                bgBadge: '#f1f5f9',
-                borderColor: '#000000',
-                icon: '🛡️',
-                desc: 'Installation globale des lignes de production soubassements Projet Stellantis Algeria K9 CKD0.',
-                equip: 'Ensemble des outillages industriels certifiés, nacelles homologuées, EPI conformes'
             }
         };
 
-        const activeZone = zoneMeta[z] || zoneMeta['ALL'];
-        const permitZoneId = z === 'ALL' ? p.id : `${p.id}-${z}`;
+        const activeZone = zoneMeta[z] || zoneMeta['UB'];
         const weekNum = p.week || p.week_num || 36;
+        
+        // Identifiant officiel du permis de zone
+        let permitZoneId = p.id;
+        if (!permitZoneId) {
+            permitZoneId = `K9-W${weekNum}-${z}`;
+        } else if (!permitZoneId.includes(z)) {
+            permitZoneId = `${permitZoneId}-${z}`;
+        }
+        
         const validDeb = p.validFrom || p.date_debut || '2026-08-31';
         const validFin = p.validUntil || p.date_fin || '2026-09-06';
 
         // Filtrer les tâches spécifiques à la zone
         let tasksList = [];
         if (p.tasks_fr && Array.isArray(p.tasks_fr)) {
-            if (z === 'ALL') {
-                tasksList = p.tasks_fr;
-            } else {
-                tasksList = p.tasks_fr.filter(t => t.includes(`[${z}]`));
-                if (tasksList.length === 0) tasksList = p.tasks_fr;
-            }
+            tasksList = p.tasks_fr.filter(t => t.includes(`[${z}]`));
+            if (tasksList.length === 0) tasksList = p.tasks_fr;
         } else {
             const rawDesc = p['work-desc'] || p.title || '';
             tasksList = rawDesc.split(';').map(t => t.trim()).filter(Boolean);
         }
 
-        const payload = (typeof window !== 'undefined' && window.QREngine && typeof window.QREngine.generatePayload === 'function')
-            ? window.QREngine.generatePayload(p)
-            : `https://permis-sinylon.onrender.com/?permitId=${permitZoneId}`;
+        const payload = `https://permis-sinylon.onrender.com/?permitId=${permitZoneId}`;
 
         let svgQr = '';
         const engine = typeof window !== 'undefined' ? (window.QRCodeGenerator || window.QRCode) : (typeof QRCodeGenerator !== 'undefined' ? QRCodeGenerator : null);

@@ -256,7 +256,7 @@ const PrintEngine = {
     },
 
     // Imprimer l'affiche A4 réglementaire spécifique pour une zone (UB, UAR, FUSA)
-    printZonePoster(permitId, zoneKey = 'ALL') {
+    printZonePoster(permitId, zoneKey = null) {
         const store = typeof window !== 'undefined' && window.Store ? window.Store : Store;
         const templates = typeof window !== 'undefined' && window.Templates ? window.Templates : Templates;
         const targetId = permitId || (typeof window !== 'undefined' && window.App && window.App.currentPermitId) || 'SYN-K9-KW36';
@@ -269,7 +269,7 @@ const PrintEngine = {
         const printContainer = document.getElementById('print-container');
         if (!printContainer) return;
 
-        printContainer.innerHTML = templates.renderZonePosterA4(permit, zoneKey);
+        printContainer.innerHTML = templates.renderZonePosterA4(permit, zoneKey || permit.zoneKey);
 
         setTimeout(() => {
             if (typeof window !== 'undefined' && window.require) {
