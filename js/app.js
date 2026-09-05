@@ -207,6 +207,8 @@ const App = {
                     `;
                 };
 
+                const zCurrent = p.zoneKey || (p.id.includes('UB') ? 'UB' : (p.id.includes('UAR') ? 'UAR' : (p.id.includes('FUSA') ? 'FUSA' : 'UB')));
+
                 clientView.innerHTML = `
                     <div style="max-width: 720px; margin: 0 auto; padding: 18px 14px; color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
                         
@@ -223,39 +225,58 @@ const App = {
                             </div>
                         </div>
 
+                        <!-- 2. SÉLECTEUR RAPIDE DES 3 ZONES DU SITE K9 -->
+                        <div style="background: rgba(15,23,42,0.9); border: 1.5px solid #0284c7; border-radius: 12px; padding: 10px 12px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                            <div style="font-size: 11px; font-weight: 800; color: #38bdf8; margin-bottom: 8px; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center;">
+                                <span>📍 Permis Spécifique par Zone (Semaine ${weekNum}) :</span>
+                                <span style="font-size: 10px; color: #94a3b8;">3 Permis Dédiés</span>
+                            </div>
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;">
+                                <button type="button" onclick="App.showPublicClientView('K9-W${weekNum}-UB')" style="background: ${zCurrent === 'UB' ? '#2563eb' : 'rgba(30,41,59,0.8)'}; border: 1.5px solid ${zCurrent === 'UB' ? '#60a5fa' : '#475569'}; color: #fff; padding: 10px 4px; border-radius: 8px; font-size: 11.5px; font-weight: 900; cursor: pointer; text-align: center; touch-action: manipulation; box-shadow: ${zCurrent === 'UB' ? '0 0 12px rgba(37,99,235,0.6)' : 'none'};">
+                                    🔵 ZONE UB
+                                </button>
+                                <button type="button" onclick="App.showPublicClientView('K9-W${weekNum}-UAR')" style="background: ${zCurrent === 'UAR' ? '#0284c7' : 'rgba(30,41,59,0.8)'}; border: 1.5px solid ${zCurrent === 'UAR' ? '#38bdf8' : '#475569'}; color: #fff; padding: 10px 4px; border-radius: 8px; font-size: 11.5px; font-weight: 900; cursor: pointer; text-align: center; touch-action: manipulation; box-shadow: ${zCurrent === 'UAR' ? '0 0 12px rgba(2,132,199,0.6)' : 'none'};">
+                                    🔷 ZONE UAR
+                                </button>
+                                <button type="button" onclick="App.showPublicClientView('K9-W${weekNum}-FUSA')" style="background: ${zCurrent === 'FUSA' ? '#d97706' : 'rgba(30,41,59,0.8)'}; border: 1.5px solid ${zCurrent === 'FUSA' ? '#f59e0b' : '#475569'}; color: #fff; padding: 10px 4px; border-radius: 8px; font-size: 11.5px; font-weight: 900; cursor: pointer; text-align: center; touch-action: manipulation; box-shadow: ${zCurrent === 'FUSA' ? '0 0 12px rgba(217,119,6,0.6)' : 'none'};">
+                                    🟠 ZONE FUSA
+                                </button>
+                            </div>
+                        </div>
+
                         ${powerCutNotice}
 
-                        <!-- 2. HERO BANNER : VALIDITÉ SEMAINE COMPLÈTE -->
+                        <!-- 3. HERO BANNER : VALIDITÉ SEMAINE COMPLÈTE DE LA ZONE -->
                         <div style="background: linear-gradient(135deg, #0f172a, #1e293b); border: 2px solid #10b981; border-radius: 16px; padding: 22px 18px; text-align: center; margin-bottom: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); position: relative; overflow: hidden;">
                             <div style="position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; background: rgba(16,185,129,0.15); border-radius: 50%; filter: blur(25px);"></div>
                             
                             <div style="display: inline-block; background: rgba(16,185,129,0.2); border: 1.5px solid #10b981; color: #34d399; font-size: 11px; font-weight: 900; padding: 4px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
-                                🛡️ SYSTÈME OFFICIEL DE PERMIS SÉCURISÉ — PROJET K9 TAFRAOUI
+                                🛡️ PERMIS OFFICIEL ${p.zoneKey || zCurrent} — PROJET K9 TAFRAOUI
                             </div>
 
-                            <div style="font-size: 26px; font-weight: 900; letter-spacing: 1px; color: #ffffff; margin: 4px 0;">
-                                PERMIS HEBDOMADAIRE ${p.id}
+                            <div style="font-size: 24px; font-weight: 900; letter-spacing: 1px; color: #ffffff; margin: 4px 0;">
+                                ${p.title || ('PERMIS ' + p.id)}
                             </div>
                             <div style="font-size: 13px; color: #94a3b8; font-weight: 600;">
-                                Semaine ${weekNum} · Du ${validDeb} au ${validFin} (08h00 → 17h30)
+                                N° <strong style="color: #60a5fa; font-family: monospace;">${p.id}</strong> · Semaine ${weekNum} (${validDeb} au ${validFin})
                             </div>
 
                             <!-- GRAND BADGE VERT : VALIDITÉ HEBDOMADAIRE STRICTE -->
-                            <div style="margin-top: 16px; background: linear-gradient(135deg, #15803d, #166534); border: 2px solid #4ade80; border-radius: 12px; padding: 12px 16px; box-shadow: 0 4px 15px rgba(22,163,74,0.4);">
+                            <div style="margin-top: 14px; background: linear-gradient(135deg, #15803d, #166534); border: 2px solid #4ade80; border-radius: 12px; padding: 12px 16px; box-shadow: 0 4px 15px rgba(22,163,74,0.4);">
                                 <div style="font-size: 15px; font-weight: 900; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                                    <span>🟢</span> PERMIS VALIDÉ POUR TOUTE LA SEMAINE S${weekNum}
+                                    <span>🟢</span> PERMIS AUTORISÉ & ACTIF (SEMAINE S${weekNum})
                                 </div>
                                 <div style="font-size: 11.5px; color: #bbf7d0; margin-top: 4px; font-weight: 500;">
-                                    Autorisation unique 7 jours (Lundi au Dimanche) · Contrôles machines assurés avant chaque intervention
+                                    ${p.zone || 'Zone Montage K9'} · Visa Ingénieur de Suivi M. W.P.E.E.X
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 3. MODULE SIGNATURES ÉLECTRONIQUES CHANTIER SUR SITE (4 SIGNATAIRES OFFICIELS) -->
+                        <!-- 4. MODULE SIGNATURES ÉLECTRONIQUES CHANTIER SUR SITE (4 SIGNATAIRES OFFICIELS) -->
                         <div style="background: #0f172a; border: 1.5px solid #1e3a8a; border-radius: 14px; padding: 18px; margin-bottom: 18px; box-shadow: 0 6px 20px rgba(0,0,0,0.4);">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #1e293b; padding-bottom: 8px;">
                                 <div style="font-size: 14px; font-weight: 900; color: #60a5fa; display: flex; align-items: center; gap: 8px;">
-                                    <span>✍️</span> Émargements Officiels de la Semaine
+                                    <span>✍️</span> Émargements Officiels — ${p.id}
                                 </div>
                                 <span style="font-size: 10px; background: rgba(59,130,246,0.2); color: #93c5fd; padding: 2px 8px; border-radius: 10px; font-weight: 700;">Site K9 Stellantis</span>
                             </div>
@@ -277,10 +298,10 @@ const App = {
                             </div>
                         </div>
 
-                        <!-- 4. SECTION DÉDIÉE : LES 5 PERMIS OFFICIELS SINYLON (ACCÈS PUR & IMMÉDIAT) -->
+                        <!-- 5. SECTION DÉDIÉE : LES 5 PERMIS OFFICIELS DE CETTE ZONE -->
                         <div style="background: #0f172a; border: 1.5px solid #334155; border-radius: 14px; padding: 18px; margin-bottom: 18px;">
                             <div style="font-size: 14px; font-weight: 900; color: #f8fafc; border-bottom: 1px solid #1e293b; padding-bottom: 8px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center;">
-                                <span>📁 Les 5 Documents Officiels du Permis</span>
+                                <span>📁 Les 5 Documents Officiels de la ${p.zoneKey || zCurrent}</span>
                                 <span style="font-size: 11px; color: #94a3b8; font-weight: 700;">Format A4 Certifié</span>
                             </div>
 
@@ -291,11 +312,11 @@ const App = {
                                     <div style="display: flex; align-items: center; gap: 10px;">
                                         <div style="background: #2563eb; color: #fff; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px;">1</div>
                                         <div>
-                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">Permis Général Hebdomadaire</div>
-                                            <div style="font-size: 11px; color: #93c5fd;">Montage K9 (UB / UAR / FUSA) · 59 Intervenants autorisés</div>
+                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">Permis Général — ${p.zoneKey || zCurrent}</div>
+                                            <div style="font-size: 11px; color: #93c5fd;">Recto A4 + Verso Revalidations 08h00 M. W.P.E.E.X</div>
                                         </div>
                                     </div>
-                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'general')" style="background: #2563eb; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 800; cursor: pointer; white-space: nowrap;">
+                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'general')" style="background: #2563eb; color: #fff; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
                                         👁️ Ouvrir
                                     </button>
                                 </div>
@@ -306,10 +327,10 @@ const App = {
                                         <div style="background: #0284c7; color: #fff; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px;">A</div>
                                         <div>
                                             <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">Annexe A — Travail en Hauteur</div>
-                                            <div style="font-size: 11px; color: #7dd3fc;">6 Nacelles Ciseaux + Manlift · Harnais & Ancrage certifié</div>
+                                            <div style="font-size: 11px; color: #7dd3fc;">Nacelles Ciseaux + Manlift · Harnais certifiés</div>
                                         </div>
                                     </div>
-                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'height')" style="background: #0284c7; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 800; cursor: pointer; white-space: nowrap;">
+                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'height')" style="background: #0284c7; color: #fff; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
                                         👁️ Ouvrir
                                     </button>
                                 </div>
@@ -320,10 +341,10 @@ const App = {
                                         <div style="background: #ef4444; color: #fff; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px;">B</div>
                                         <div>
                                             <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">Annexe B — Travail à Chaud (Permis Feu)</div>
-                                            <div style="font-size: 11px; color: #fca5a5;">Rayon 10m · Bâches ignifugées · Fire Watch + 30 min</div>
+                                            <div style="font-size: 11px; color: #fca5a5;">Soudage & Meulage · Extincteurs · Bâches ignifugées</div>
                                         </div>
                                     </div>
-                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'hot')" style="background: #ef4444; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 800; cursor: pointer; white-space: nowrap;">
+                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'hot')" style="background: #ef4444; color: #fff; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
                                         👁️ Ouvrir
                                     </button>
                                 </div>
@@ -334,10 +355,10 @@ const App = {
                                         <div style="background: #f59e0b; color: #000; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px;">C</div>
                                         <div>
                                             <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">Annexe C — Électrique & LOTO</div>
-                                            <div style="font-size: 11px; color: #fcd34d;">Réf: LOTO-SINY-KW${weekNum} · VAT 0V · EPI 1000V · Cadenas</div>
+                                            <div style="font-size: 11px; color: #fcd34d;">Consignation TGBT & Armoires · Cadenas LOTO-SINY</div>
                                         </div>
                                     </div>
-                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'electric')" style="background: #f59e0b; color: #000; border: none; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 900; cursor: pointer; white-space: nowrap;">
+                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'electric')" style="background: #f59e0b; color: #000; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 900; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
                                         👁️ Ouvrir
                                     </button>
                                 </div>
@@ -347,28 +368,28 @@ const App = {
                                     <div style="display: flex; align-items: center; gap: 10px;">
                                         <div style="background: #10b981; color: #fff; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px;">QR</div>
                                         <div>
-                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">Affiche Grand Format de Zone</div>
-                                            <div style="font-size: 11px; color: #86efac;">Panneau officiel d'affichage sur site avec QR Code</div>
+                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">Affiche A4 Réglementaire de Zone</div>
+                                            <div style="font-size: 11px; color: #86efac;">Panneau d'entrée de zone avec QR Code géant</div>
                                         </div>
                                     </div>
-                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'poster')" style="background: #10b981; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 800; cursor: pointer; white-space: nowrap;">
+                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'poster')" style="background: #10b981; color: #fff; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
                                         👁️ Ouvrir
                                     </button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 5. BOUTONS D'ACTION MAJEURS -->
+                        <!-- 6. BOUTONS D'ACTION MAJEURS -->
                         <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 14px;">
-                            <button type="button" onclick="App.togglePermitDetailViewer('${p.id}', 'all')" style="width: 100%; padding: 16px; background: linear-gradient(135deg, #10b981, #059669); color: #ffffff; border: 2px solid #34d399; border-radius: 12px; font-size: 15px; font-weight: 900; box-shadow: 0 4px 16px rgba(16,185,129,0.4); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                            <button type="button" onclick="App.togglePermitDetailViewer('${p.id}', 'all')" style="width: 100%; padding: 16px; background: linear-gradient(135deg, #10b981, #059669); color: #ffffff; border: 2px solid #34d399; border-radius: 12px; font-size: 15px; font-weight: 900; box-shadow: 0 4px 16px rgba(16,185,129,0.4); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; touch-action: manipulation;">
                                 <span style="font-size: 18px;">📑</span> AFFICHER LE DOSSIER COMPLET (5 PAGES A4)
                             </button>
 
-                            <button type="button" onclick="App.printPermit('${p.id}')" style="width: 100%; padding: 14px; background: #2563eb; color: #ffffff; border: 1.5px solid #3b82f6; border-radius: 10px; font-size: 14px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                                🖨️ IMPRIMER / TÉLÉCHARGER LE DOSSIER OFFICIEL
+                            <button type="button" onclick="App.printPermit('${p.id}')" style="width: 100%; padding: 14px; background: #2563eb; color: #ffffff; border: 1.5px solid #3b82f6; border-radius: 10px; font-size: 14px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; touch-action: manipulation;">
+                                🖨️ IMPRIMER / TÉLÉCHARGER CE PERMIS (A4)
                             </button>
 
-                            <button type="button" onclick="App.openSupervisorModal()" style="color: #94a3b8; background: transparent; border: 1px solid #334155; padding: 8px; font-size: 12px; border-radius: 8px; cursor: pointer;">
+                            <button type="button" onclick="App.openSupervisorModal()" style="color: #94a3b8; background: transparent; border: 1px solid #334155; padding: 10px; font-size: 12px; border-radius: 8px; cursor: pointer; touch-action: manipulation;">
                                 🔒 Accès Superviseur (Équipe SINYLON)
                             </button>
                         </div>
@@ -781,27 +802,29 @@ const App = {
             return;
         }
 
+        const z = p.zoneKey || (p.id.includes('UB') ? 'UB' : (p.id.includes('UAR') ? 'UAR' : (p.id.includes('FUSA') ? 'FUSA' : 'ALL')));
+
         let docHtml = '';
         let docTitle = 'Document Officiel';
 
         if (pageKey === 'general') {
             docHtml = Templates.generalP1(p) + '<div style="page-break-before: always; margin-top: 20px;"></div>' + Templates.generalP2(p);
-            docTitle = 'Permis Général & Revalidations (Pages 1 & 2)';
+            docTitle = `Permis Général & Revalidations (${p.id} — ${p.zone || z})`;
         } else if (pageKey === 'height') {
             docHtml = Templates.heightAnnexe(p);
-            docTitle = 'Annexe A — Travail en Hauteur (Nacelles & Manlift)';
+            docTitle = `Annexe A — Travail en Hauteur (${p.id} — ${p.zone || z})`;
         } else if (pageKey === 'hot') {
             docHtml = Templates.hotAnnexe(p);
-            docTitle = 'Annexe B — Travail à Chaud (Permis Feu & Soudure)';
+            docTitle = `Annexe B — Travail à Chaud & Soudure (${p.id} — ${p.zone || z})`;
         } else if (pageKey === 'electric') {
             docHtml = Templates.electricAnnexe(p);
-            docTitle = 'Annexe C — Consignation Électrique & LOTO';
+            docTitle = `Annexe C — Consignation Électrique & LOTO (${p.id} — ${p.zone || z})`;
         } else if (pageKey === 'poster') {
-            docHtml = Templates.renderZonePosterA4(p, this.currentZone || 'ALL');
-            docTitle = `Affiche Réglementaire A4 (${this.currentZone || 'Toutes Zones'})`;
+            docHtml = Templates.renderZonePosterA4(p, z);
+            docTitle = `Affiche Réglementaire A4 (${p.id} — ${p.zone || z})`;
         } else {
             docHtml = Templates.generalP1(p);
-            docTitle = 'Permis de Travail';
+            docTitle = `Permis de Travail (${p.id})`;
         }
 
         this._openDocViewerModal(docTitle, docHtml, p.id);
@@ -816,6 +839,7 @@ const App = {
             return;
         }
 
+        const z = p.zoneKey || (p.id.includes('UB') ? 'UB' : (p.id.includes('UAR') ? 'UAR' : (p.id.includes('FUSA') ? 'FUSA' : 'ALL')));
         const separator = '<div style="page-break-before: always; margin: 30px 0; border-top: 2px dashed #94a3b8;"></div>';
         const docHtml = `
             ${Templates.generalP1(p)}
@@ -828,10 +852,10 @@ const App = {
             ${separator}
             ${Templates.electricAnnexe(p)}
             ${separator}
-            ${Templates.renderZonePosterA4(p, this.currentZone || 'ALL')}
+            ${Templates.renderZonePosterA4(p, z)}
         `;
 
-        this._openDocViewerModal(`Dossier Complet Permis N° ${p.id} (5 Pages A4 + Affiche)`, docHtml, p.id);
+        this._openDocViewerModal(`Dossier Complet Permis N° ${p.id} (5 Pages A4 + Affiche Zone)`, docHtml, p.id);
     },
 
     _openDocViewerModal(title, contentHtml, permitId) {
@@ -840,23 +864,23 @@ const App = {
             modal = document.createElement('div');
             modal.id = 'modal-doc-viewer';
             modal.className = 'modal-backdrop';
+            modal.style.zIndex = '100000';
             modal.innerHTML = `
-                <div class="modal-window" style="max-width: 950px; width: 96%; max-height: 94vh; display: flex; flex-direction: column;">
-                    <div class="modal-header" style="background: #0f172a; border-bottom: 2px solid #3b82f6; padding: 12px 18px; display: flex; justify-content: space-between; align-items: center;">
+                <div class="modal-window" style="max-width: 960px; width: 98%; max-height: 96vh; display: flex; flex-direction: column; background: #0f172a; border: 2px solid #3b82f6; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+                    <div class="modal-header" style="background: #0f172a; border-bottom: 2px solid #3b82f6; padding: 12px 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
                         <h3 id="doc-viewer-title" style="color: #f8fafc; font-size: 15px; font-weight: 800; margin: 0; display: flex; align-items: center; gap: 8px;">
-                            <span>📄</span> <span id="doc-viewer-title-text">Document</span>
+                            <span>📄</span> <span id="doc-viewer-title-text">Document Officiel</span>
                         </h3>
                         <div style="display: flex; gap: 8px; align-items: center;">
-                            <button type="button" onclick="App.printPermit(App.currentPermitId)" style="background: #2563eb; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+                            <button type="button" onclick="App.printPermit(App.currentPermitId)" class="btn btn-primary btn-sm" style="font-weight: 800; display: inline-flex; align-items: center; gap: 4px; padding: 8px 14px; min-height: 38px;">
                                 🖨️ Imprimer A4
                             </button>
-                            <button type="button" onclick="App.closeDocViewerModal()" style="background: #334155; color: #e2e8f0; border: none; padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 800; cursor: pointer;">
+                            <button type="button" onclick="App.closeDocViewerModal()" class="btn btn-secondary btn-sm" style="font-weight: 800; padding: 8px 14px; min-height: 38px;">
                                 ✕ Fermer
                             </button>
                         </div>
                     </div>
-                    <div class="modal-body" id="doc-viewer-body" style="overflow-y: auto; padding: 20px; background: #334155; flex: 1;">
-                        <!-- Contenu du document -->
+                    <div class="modal-body" id="doc-viewer-body" style="overflow-y: auto; overflow-x: auto; padding: 16px 10px; background: #1e293b; flex: 1; -webkit-overflow-scrolling: touch; display: flex; flex-direction: column; align-items: center;">
                     </div>
                 </div>
             `;
@@ -868,11 +892,16 @@ const App = {
 
         const bodyEl = document.getElementById('doc-viewer-body');
         if (bodyEl) {
-            bodyEl.innerHTML = contentHtml;
+            bodyEl.innerHTML = `
+                <div style="width: 100%; max-width: 850px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                    ${contentHtml}
+                </div>
+            `;
         }
 
         modal.classList.add('active');
         modal.style.display = 'flex';
+        modal.style.zIndex = '100000';
     },
 
     closeDocViewerModal() {

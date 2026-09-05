@@ -1,16 +1,16 @@
 import json
 
-with open('/Users/nourine/.gemini/antigravity-ide/scratch/permis-sinylon/k9_v2_permits.json', 'r', encoding='utf-8') as f:
+with open('k9_v2_permits.json', 'r', encoding='utf-8') as f:
     permits = json.load(f)
 
 js_content = """/**
  * SINYLON - STELLANTIS | Data Store & State Management V2 (Hybrid Server Sync & Offline LocalStorage)
  * Projet : Algeria K9 CKD0 (Installation & Commissioning)
- * Synchronisation bidirectionnelle : PC modifie → Serveur enregistre → Smartphone scanne en direct
+ * Architecture 3 Zones : Zone UB, Zone UAR, Zone FUSA
  */
 
 const Store = {
-    STORAGE_KEY: "sinylon_permits_database_v9",
+    STORAGE_KEY: "sinylon_permits_database_v12",
     SETTINGS_KEY: "sinylon_app_settings_v9",
     ARCHIVE_KEY: "sinylon_permits_archive_v9",
     DEFAULT_AUTH_CODE: "SINYLON2026",
@@ -46,26 +46,55 @@ const Store = {
         }
     },
 
-    // Gestion du Code d'Autorisation
-    getAuthCode() {
+    // Gestion du Code d'Autorisation (hashé SHA-256)
+    async initAuth() {
         const settings = this.getSettings();
-        return settings.authCode || this.DEFAULT_AUTH_CODE;
+        if (settings.authCode && !settings.authHash) {
+            settings.authHash = await this.hashCode(settings.authCode.trim());
+            delete settings.authCode;
+            this.saveSettings(settings);
+        } else if (!settings.authHash) {
+            settings.authHash = await this.hashCode(this.DEFAULT_AUTH_CODE);
+            delete settings.authCode;
+            this.saveSettings(settings);
+        } else if (settings.authCode) {
+            delete settings.authCode;
+            this.saveSettings(settings);
+        }
     },
 
-    setAuthCode(newCode) {
+    async hashCode(code) {
+        if (!code) return '';
+        try {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(code.trim());
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            return Array.from(new Uint8Array(hashBuffer))
+                .map(b => b.toString(16).padStart(2, '0'))
+                .join('');
+        } catch (e) {
+            return btoa(code.trim()).split('').reverse().join('');
+        }
+    },
+
+    async verifyAuthCode(inputCode) {
+        if (!inputCode) return false;
+        const settings = this.getSettings();
+        const storedHash = settings.authHash;
+        if (!storedHash) return false;
+        const inputHash = await this.hashCode(inputCode.trim());
+        return inputHash === storedHash;
+    },
+
+    async setAuthCode(newCode) {
         if (!newCode || newCode.trim().length < 4) {
-            return { success: false, error: "Le code doit comporter au moins 4 caractères." };
+            return { success: false, error: 'Le code doit comporter au moins 4 caractères.' };
         }
         const settings = this.getSettings();
-        settings.authCode = newCode.trim();
+        settings.authHash = await this.hashCode(newCode.trim());
+        delete settings.authCode;
         this.saveSettings(settings);
         return { success: true };
-    },
-
-    verifyAuthCode(inputCode) {
-        if (!inputCode) return false;
-        const currentCode = this.getAuthCode();
-        return inputCode.trim() === currentCode.trim();
     },
 
     // =========================================================================
@@ -79,7 +108,7 @@ const Store = {
         const weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
         
         if (weekNo >= 25 && weekNo <= 53) return weekNo;
-        return 35;
+        return 36;
     },
 
     getWeekRange(weekNum) {
@@ -114,7 +143,7 @@ const Store = {
             52: "21 Dec → 27 Dec 2026",
             53: "28 Dec → 03 Jan 2027"
         };
-        return calendar[weekNum] || `Semaine ${weekNum}`;
+        return calendar[weekNum] || "Semaine active";
     },
 
     getAvailableWeeks() {
@@ -130,12 +159,30 @@ const Store = {
         const num = parseInt(weekNum, 10);
         const seen = new Set();
         const result = [];
+        
+        // Ordre prioritaire : UB, UAR, FUSA, WE
+        const preferredIds = [
+            `K9-W${num}-UB`,
+            `K9-W${num}-UAR`,
+            `K9-W${num}-FUSA`,
+            `K9-W${num}-WE`
+        ];
+
+        preferredIds.forEach(id => {
+            if (permits[id] && !seen.has(id)) {
+                seen.add(id);
+                result.push(permits[id]);
+            }
+        });
+
+        // Ajouter tout autre permis personnalisé pour cette semaine
         Object.values(permits).forEach(p => {
-            if (p && p.week === num && !p.id.startsWith("SYN-K9-KW") && !seen.has(p.id)) {
+            if (p && p.week === num && !p.id.startsWith("SYN-K9-KW") && !p.id.endsWith("-01") && !seen.has(p.id)) {
                 seen.add(p.id);
                 result.push(p);
             }
         });
+
         return result;
     },
 
@@ -143,7 +190,6 @@ const Store = {
     // SYNCHRONISATION SERVEUR & LOCALSTORAGE
     // =========================================================================
 
-    // Synchronisation en arrière-plan avec l'API serveur
     async syncWithServer() {
         if (typeof fetch === 'undefined') return;
         try {
@@ -160,7 +206,6 @@ const Store = {
         }
     },
 
-    // Obtenir un permis avec rafraîchissement temps réel
     async getPermitAsync(id) {
         if (!id) return null;
         if (typeof fetch !== 'undefined') {
@@ -204,91 +249,62 @@ const Store = {
     },
 
     getPermit(id) {
-        if (!id) return null;
         const permits = this.getAllPermits();
+        if (!permits || Object.keys(permits).length === 0) return null;
+        if (!id) return permits['K9-W36-UB'] || Object.values(permits)[0];
+        
+        // 1. Match direct
         if (permits[id]) return permits[id];
         
-        const normalized = id.trim().toUpperCase();
+        // 2. Match insensible à la casse et sans espaces
+        const clean = String(id).trim().toUpperCase();
         for (const key of Object.keys(permits)) {
-            if (key.toUpperCase() === normalized) return permits[key];
+            if (key.toUpperCase() === clean) return permits[key];
         }
-        return null;
+
+        // 3. Fallback syntaxique (ex: K9-W36-01 -> K9-W36-UB)
+        if (clean.endsWith('-01')) {
+            const ubId = clean.replace('-01', '-UB');
+            if (permits[ubId]) return permits[ubId];
+        }
+        if (clean.startsWith('SYN-K9-KW')) {
+            const wNum = clean.replace('SYN-K9-KW', '');
+            const ubId = `K9-W${wNum}-UB`;
+            if (permits[ubId]) return permits[ubId];
+        }
+
+        return Object.values(permits)[0];
     },
 
-    // Sauvegarde double : LocalStorage + Envoi immédiat à l'API Serveur
     savePermit(permit) {
-        if (!permit) return null;
+        if (!permit || !permit.id) return;
         const permits = this.getAllPermits();
-        if (!permit.id) {
-            permit.id = this.generateId();
-        }
-        
-        const now = new Date();
-        if (!permit.createdAt) permit.createdAt = now.toISOString();
-        permit.updatedAt = now.toISOString();
-
-        if (!permit.historique_modifications) permit.historique_modifications = [];
-        if (!permit.travailleurs) permit.travailleurs = [];
-        if (!permit.revalidations) permit.revalidations = [];
-
-        if (!permit.qr) permit.qr = {};
-        permit.qr.enabled = true;
-        permit.qr.url = `https://permis-sinylon.onrender.com/?permitId=${permit.id}`;
-
         permits[permit.id] = permit;
         this.saveAllPermits(permits);
 
-        // Envoi asynchrone au serveur Render pour synchronisation mondiale instantanée
         if (typeof fetch !== 'undefined') {
-            fetch(`/api/permits/${encodeURIComponent(permit.id)}`, {
+            fetch('/api/permits', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(permit)
-            }).then(r => r.json()).then(data => {
-                console.log(`📡 Permis ${permit.id} synchronisé sur le serveur :`, data);
-            }).catch(err => {
-                console.log('Enregistré en local (serveur injoignable).');
-            });
+                body: JSON.stringify(permits)
+            }).catch(() => console.log('Mode hors-ligne, données stockées localement.'));
         }
-
-        return permit;
-    },
-
-    deletePermit(id) {
-        const permits = this.getAllPermits();
-        if (permits[id]) {
-            delete permits[id];
-            this.saveAllPermits(permits);
-            return true;
-        }
-        return false;
-    },
-
-    resetCleanPermits() {
-        if (typeof localStorage !== 'undefined') {
-            localStorage.removeItem(this.STORAGE_KEY);
-        }
-        const initial = this.getSeedData();
-        this.saveAllPermits(initial);
-        return initial;
-    },
-
-    generateId(weekNum = 35) {
-        const randNum = Math.floor(10 + Math.random() * 90);
-        return `K9-W${weekNum}-${randNum}`;
     },
 
     getSeedData() {
-        return """ + json.dumps(permits, indent=2, ensure_ascii=False) + """;
+        return """ + json.dumps(permits, indent=4, ensure_ascii=False) + """;
     }
 };
 
+if (typeof window !== 'undefined') {
+    window.Store = Store;
+}
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = Store;
 }
 """
 
-with open('/Users/nourine/.gemini/antigravity-ide/scratch/permis-sinylon/js/store.js', 'w', encoding='utf-8') as f:
+with open('js/store.js', 'w', encoding='utf-8') as f:
     f.write(js_content)
 
-print("Built sync-enabled js/store.js successfully!")
+print("Generated js/store.js with 3-Zone Architecture successfully!")
