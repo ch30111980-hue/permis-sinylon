@@ -464,8 +464,15 @@ const Templates = {
     // 2. PERMIS GÉNÉRAL - PAGE 2/2 (VERSO REVALIDATIONS DU JOUR 2 AU JOUR 7)
     // Tableau avec colonnes Visa et Signature VIDES pour émargement manuscrit chaque matin à 08h00
     generalP2(permit) {
-        const dStart = permit.validFrom || permit['date-main'] || '2026-08-24';
+        const dStart = permit.validFrom || permit['date-main'] || '2026-08-31';
         const startDate = new Date(dStart);
+
+        const wpeexNom = permit['wpeex-nom'] || 'M. W.P.E.E.X';
+        const chefNom = permit['chef-nom'] || 'Xie Xian';
+        const hseNom = permit['hse-nom'] || 'Nouri Chahrour';
+
+        const sigs = permit.signatures || {};
+        const dailySigs = permit.dailySignatures || {};
 
         const dayNames = [
             { dayIndex: 2, name: 'Jour 2 (Mardi)', offset: 1 },
@@ -481,26 +488,46 @@ const Templates = {
             targetDate.setDate(startDate.getDate() + dayInfo.offset);
             const dateStr = targetDate.toISOString().split('T')[0];
 
+            const daySpecificSigs = dailySigs[dateStr] || {};
+            const wSig = daySpecificSigs.wpeex || sigs.wpeex;
+            const cSig = daySpecificSigs.chef || sigs.chef;
+            const isRowSigned = Boolean((wSig && wSig.dataUrl) || (cSig && cSig.dataUrl));
+
             return `
-                <tr style="height:26px;">
+                <tr style="height:28px;">
                     <td class="text-center bold-cell" style="font-weight:bold;font-size:8px;border:1px solid #000;padding:2px 4px;">${dayInfo.name}</td>
                     <td class="text-center" style="font-family:monospace;font-size:8px;border:1px solid #000;padding:2px 4px;">${dateStr}</td>
-                    <!-- Nom Ingénieur Suivi laissé vide pour émargement -->
-                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;"></td>
+                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;font-weight:${wSig ? 'bold' : 'normal'};">${wSig ? wpeexNom : ''}</td>
                     <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">Ingénieur Suivi</td>
-                    <!-- CASE VISA WPEEX VIDE POUR SIGNATURE MANUELLE À 08H00 -->
-                    <td class="text-center" style="border:1px solid #000;padding:2px;width:110px;">
-                        <div style="height:20px;border-bottom:1px dashed #999;margin:1px 4px;"></div>
+                    <td class="text-center" style="border:1px solid #000;padding:2px;width:115px;background:#f8fafc;">
+                        ${wSig && wSig.dataUrl ? `
+                            <div style="display:flex;align-items:center;justify-content:center;gap:4px;padding:1px 2px;">
+                                <img src="${wSig.dataUrl}" style="height:20px;max-width:70px;object-fit:contain;" alt="Visa">
+                                <span style="font-size:5.5px;color:#16a34a;font-weight:900;line-height:1.1;">✓ 08:00<br>${wSig.date || dateStr}</span>
+                            </div>
+                        ` : `
+                            <div style="height:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','wpeex','${dateStr}','${dayInfo.name}')">
+                                <span style="font-size:6.5px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:2px 6px;border-radius:3px;border:1px solid #bfdbfe;">✍️ Émarger 08h</span>
+                            </div>
+                        `}
                     </td>
-                    <!-- Nom Responsable Sinylon laissé vide pour émargement -->
-                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;"></td>
+                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;font-weight:${cSig ? 'bold' : 'normal'};">${cSig ? chefNom : ''}</td>
                     <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">Chef de Projet</td>
-                    <!-- CASE SIGNATURE SINYLON VIDE POUR SIGNATURE MANUELLE À 08H00 -->
-                    <td class="text-center" style="border:1px solid #000;padding:2px;width:110px;">
-                        <div style="height:20px;border-bottom:1px dashed #999;margin:1px 4px;"></div>
+                    <td class="text-center" style="border:1px solid #000;padding:2px;width:115px;background:#f8fafc;">
+                        ${cSig && cSig.dataUrl ? `
+                            <div style="display:flex;align-items:center;justify-content:center;gap:4px;padding:1px 2px;">
+                                <img src="${cSig.dataUrl}" style="height:20px;max-width:70px;object-fit:contain;" alt="Signature">
+                                <span style="font-size:5.5px;color:#16a34a;font-weight:900;line-height:1.1;">✓ 08:00<br>${cSig.date || dateStr}</span>
+                            </div>
+                        ` : `
+                            <div style="height:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','chef','${dateStr}','${dayInfo.name}')">
+                                <span style="font-size:6.5px;font-weight:bold;background:#f8fafc;color:#0f172a;padding:2px 6px;border-radius:3px;border:1px solid #cbd5e1;">✍️ Signer 08h</span>
+                            </div>
+                        `}
                     </td>
-                    <!-- STATUT LAISSÉ VIDE -->
-                    <td class="text-center" style="border:1px solid #000;padding:2px;font-size:7.5px;"></td>
+                    <td class="text-center" style="border:1px solid #000;padding:2px;font-size:7.5px;">
+                        ${isRowSigned ? `<span style="color:#16a34a;font-weight:900;font-size:7px;">🟢 CONFORME</span>` : `<span style="color:#94a3b8;font-size:6.5px;">En attente</span>`}
+                    </td>
                 </tr>
             `;
         });
@@ -512,6 +539,9 @@ const Templates = {
         const satDate = new Date(startDate);
         satDate.setDate(startDate.getDate() + 5);
         const satDateStr = satDate.toISOString().split('T')[0];
+
+        const friSig = (dailySigs[friDateStr] && dailySigs[friDateStr].hse) || sigs.hse;
+        const satSig = (dailySigs[satDateStr] && dailySigs[satDateStr].hse) || sigs.hse;
 
         return `
             <div class="a4-document" id="a4-doc-${permit.id}-p2">
@@ -549,10 +579,10 @@ const Templates = {
                         <tr style="background:#f8fafc;font-size:7px;">
                             <th style="border:1px solid #000;padding:2px;">Nom</th>
                             <th style="border:1px solid #000;padding:2px;">Fonction</th>
-                            <th style="border:1px solid #000;padding:2px;background:#eff6ff;color:#1e3a8a;">Visa Manuscrit </th>
+                            <th style="border:1px solid #000;padding:2px;background:#eff6ff;color:#1e3a8a;">Visa Électronique</th>
                             <th style="border:1px solid #000;padding:2px;">Nom</th>
                             <th style="border:1px solid #000;padding:2px;">Fonction</th>
-                            <th style="border:1px solid #000;padding:2px;">Signature Manuscrite </th>
+                            <th style="border:1px solid #000;padding:2px;">Signature Électronique</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -570,28 +600,44 @@ const Templates = {
                             <th style="border:1px solid #000;padding:3px;width:85px;">DATE</th>
                             <th style="border:1px solid #000;padding:3px;">SUPERVISEUR</th>
                             <th style="border:1px solid #000;padding:3px;">CONTRÔLE SÉCURITÉ </th>
-                            <th style="border:1px solid #000;padding:3px;width:150px;">VISA CAISSE</th>
+                            <th style="border:1px solid #000;padding:3px;width:160px;">VISA CAISSE ÉLECTRONIQUE</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr style="height:28px;">
                             <td class="text-center bold-cell" style="border:1px solid #000;font-weight:bold;padding:3px;">Vendredi</td>
                             <td class="text-center" style="border:1px solid #000;font-family:monospace;padding:3px;">${friDateStr}</td>
-                            <!-- SUPERVISEUR SINYLON LAISSÉ VIDE -->
-                            <td style="border:1px solid #000;padding:3px;"></td>
+                            <td style="border:1px solid #000;padding:3px;font-weight:bold;">${friSig ? hseNom : ''}</td>
                             <td style="border:1px solid #000;padding:3px;">Vérification 360°, Nacelles, Extincteurs, Balisage</td>
-                            <td style="border:1px solid #000;padding:2px;text-align:center;">
-                                <div style="height:20px;border-bottom:1px dashed #999;margin:1px 6px;"></div>
+                            <td style="border:1px solid #000;padding:2px;text-align:center;background:#f8fafc;">
+                                ${friSig && friSig.dataUrl ? `
+                                    <div style="display:flex;align-items:center;justify-content:center;gap:6px;">
+                                        <img src="${friSig.dataUrl}" style="height:20px;max-width:85px;object-fit:contain;" alt="Visa Caisse">
+                                        <span style="font-size:6px;color:#16a34a;font-weight:900;">✓ VISA OK 08H00<br>${friSig.date}</span>
+                                    </div>
+                                ` : `
+                                    <div style="height:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse','${friDateStr}','Caisse Vendredi')">
+                                        <span style="font-size:6.5px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:2px 6px;border-radius:3px;border:1px solid #bfdbfe;">✍️ Visa Caisse (08h00)</span>
+                                    </div>
+                                `}
                             </td>
                         </tr>
                         <tr style="height:28px;">
                             <td class="text-center bold-cell" style="border:1px solid #000;font-weight:bold;padding:3px;">Samedi</td>
                             <td class="text-center" style="border:1px solid #000;font-family:monospace;padding:3px;">${satDateStr}</td>
-                            <!-- SUPERVISEUR SINYLON LAISSÉ VIDE -->
-                            <td style="border:1px solid #000;padding:3px;"></td>
+                            <td style="border:1px solid #000;padding:3px;font-weight:bold;">${satSig ? hseNom : ''}</td>
                             <td style="border:1px solid #000;padding:3px;">Vérification 360°, Nacelles, Extincteurs, Balisage</td>
-                            <td style="border:1px solid #000;padding:2px;text-align:center;">
-                                <div style="height:20px;border-bottom:1px dashed #999;margin:1px 6px;"></div>
+                            <td style="border:1px solid #000;padding:2px;text-align:center;background:#f8fafc;">
+                                ${satSig && satSig.dataUrl ? `
+                                    <div style="display:flex;align-items:center;justify-content:center;gap:6px;">
+                                        <img src="${satSig.dataUrl}" style="height:20px;max-width:85px;object-fit:contain;" alt="Visa Caisse">
+                                        <span style="font-size:6px;color:#16a34a;font-weight:900;">✓ VISA OK 08H00<br>${satSig.date}</span>
+                                    </div>
+                                ` : `
+                                    <div style="height:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse','${satDateStr}','Caisse Samedi')">
+                                        <span style="font-size:6.5px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:2px 6px;border-radius:3px;border:1px solid #bfdbfe;">✍️ Visa Caisse (08h00)</span>
+                                    </div>
+                                `}
                             </td>
                         </tr>
                     </tbody>
@@ -606,9 +652,12 @@ const Templates = {
     // 3. ANNEXE A (BLEUE) — TRAVAIL EN HAUTEUR
     // REPRODUCTION EXACTE DE LA PHOTO SINYLON - STELLANTIS (Cadre Bleu, Logo SINYLON - STELLANTIS, Checklist exacte)
     heightAnnexe(permit) {
-        const chefNom = permit.responsible || permit.chefNom || 'Xie';
-        const hseNom = permit.hseNom || 'Nouri Chahrour';
-        const datePermis = permit.validFrom || permit['date-main'] || '2026-08-24';
+        const chefNom = permit.responsible || permit.chefNom || permit['chef-nom'] || 'Xie Xian';
+        const hseNom = permit.hseNom || permit['hse-nom'] || 'Nouri Chahrour';
+        const datePermis = permit.validFrom || permit['date-main'] || '2026-08-31';
+        const sigs = permit.signatures || {};
+        const chefSig = sigs.chef;
+        const hseSig = sigs.hse;
 
         return `
             <div class="a4-document annexe-height-doc" id="a4-doc-${permit.id}-height" style="border:3px solid #004080;padding:5px 8px;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;font-size:7.5px;line-height:1.2;color:#000;">
@@ -820,20 +869,40 @@ const Templates = {
                     <tr>
                         <td style="border:1px solid #004080;padding:3px 6px;height:38px;vertical-align:top;font-size:7.5px;">
                             <div>Nom : <strong>${chefNom}</strong></div>
-                            <div style="margin-top:8px;font-size:7px;color:#777;">Signature : </div>
+                            ${chefSig && chefSig.dataUrl ? `
+                                <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:2px 4px;margin-top:2px;">
+                                    <img src="${chefSig.dataUrl}" style="height:22px;max-width:95px;object-fit:contain;" alt="Signature Chef">
+                                    <span style="font-size:5.5px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${chefSig.date} ${chefSig.time}</span>
+                                </div>
+                            ` : `
+                                <div style="margin-top:4px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','chef')">
+                                    <span style="font-size:6.5px;color:#777;">En attente</span>
+                                    <span style="font-size:6.5px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:1px 5px;border-radius:2px;border:1px solid #bfdbfe;">✍️ Signer Chef</span>
+                                </div>
+                            `}
                         </td>
                         <td style="border:1px solid #004080;padding:3px 6px;height:38px;vertical-align:top;font-size:7.5px;">
                             <div>Nom : <strong>${hseNom}</strong></div>
-                            <div style="margin-top:8px;font-size:7px;color:#777;">Signature : </div>
+                            ${hseSig && hseSig.dataUrl ? `
+                                <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:2px 4px;margin-top:2px;">
+                                    <img src="${hseSig.dataUrl}" style="height:22px;max-width:95px;object-fit:contain;" alt="Signature HSE">
+                                    <span style="font-size:5.5px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${hseSig.date} ${hseSig.time}</span>
+                                </div>
+                            ` : `
+                                <div style="margin-top:4px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse')">
+                                    <span style="font-size:6.5px;color:#777;">En attente</span>
+                                    <span style="font-size:6.5px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:1px 5px;border-radius:2px;border:1px solid #bfdbfe;">✍️ Signer HSE</span>
+                                </div>
+                            `}
                         </td>
                         <td style="border:1px solid #004080;padding:3px 6px;height:38px;vertical-align:middle;font-size:7.5px;">
                             <div style="display:flex;gap:4px;align-items:center;margin-bottom:3px;">
                                 <span>Date :</span>
-                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">${datePermis}</span>
+                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">${chefSig && chefSig.date ? chefSig.date : datePermis}</span>
                             </div>
                             <div style="display:flex;gap:4px;align-items:center;">
                                 <span>Heure :</span>
-                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">08h00</span>
+                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">${chefSig && chefSig.time ? chefSig.time : '08h00'}</span>
                             </div>
                         </td>
                     </tr>
@@ -848,9 +917,12 @@ const Templates = {
     // 4. ANNEXE B (ROUGE) — TRAVAIL CHAUD
     // REPRODUCTION EXACTE DE LA PHOTO SINYLON - STELLANTIS (Cadre Rouge, Logo SINYLON - STELLANTIS, Checklist exacte)
     hotAnnexe(permit) {
-        const chefNom = permit.responsible || permit.chefNom || 'Xie';
-        const hseNom = permit.hseNom || 'Nouri Chahrour';
-        const datePermis = permit.validFrom || permit['date-main'] || '2026-08-24';
+        const chefNom = permit.responsible || permit.chefNom || permit['chef-nom'] || 'Xie Xian';
+        const hseNom = permit.hseNom || permit['hse-nom'] || 'Nouri Chahrour';
+        const datePermis = permit.validFrom || permit['date-main'] || '2026-08-31';
+        const sigs = permit.signatures || {};
+        const chefSig = sigs.chef;
+        const hseSig = sigs.hse;
 
         return `
             <div class="a4-document annexe-hot-doc" id="a4-doc-${permit.id}-hot" style="border:3px solid #cc0000;padding:5px 8px;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;font-size:7.5px;line-height:1.2;color:#000;">
@@ -999,7 +1071,16 @@ const Templates = {
                             <div style="font-weight:bold;font-size:7px;color:#991b1b;">HSE ENTREPRISE</div>
                             <div style="font-size:6.5px;">Nom (lettres majuscule) et signature:</div>
                             <div style="font-weight:bold;font-size:7.5px;">${hseNom}</div>
-                            <div style="height:14px;border-bottom:1px dashed #991b1b;"></div>
+                            ${hseSig && hseSig.dataUrl ? `
+                                <div style="display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #16a34a;border-radius:2px;padding:1px 4px;margin-top:2px;">
+                                    <img src="${hseSig.dataUrl}" style="height:18px;max-width:85px;object-fit:contain;" alt="Signature HSE">
+                                    <span style="font-size:5.5px;color:#16a34a;font-weight:bold;">✓ VALIDÉ HSE<br>${hseSig.date}</span>
+                                </div>
+                            ` : `
+                                <div style="height:16px;border-bottom:1px dashed #991b1b;cursor:pointer;display:flex;align-items:center;justify-content:flex-end;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse')">
+                                    <span style="font-size:6.5px;color:#b91c1c;font-weight:bold;background:#fff;padding:1px 4px;border-radius:2px;border:1px solid #fca5a5;">✍️ Signer HSE</span>
+                                </div>
+                            `}
                         </div>
                         <div style="font-size:6.5px;color:#991b1b;font-weight:bold;line-height:1.2;">
                             Surveillent d'incendie doit être présent durant le travail à chaud et <u>30 minutes après son achèvement</u>
@@ -1048,21 +1129,41 @@ const Templates = {
                         <td style="border:1px solid #cc0000;padding:3px 6px;height:38px;vertical-align:top;font-size:7.5px;">
                             <div style="font-size:6.5px;color:#555;">Nom (lettres majuscule) et signature :</div>
                             <div style="font-weight:700;font-size:8px;">${chefNom}</div>
-                            <div style="margin-top:8px;font-size:7px;color:#777;">Signature : </div>
+                            ${chefSig && chefSig.dataUrl ? `
+                                <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:2px 4px;margin-top:2px;">
+                                    <img src="${chefSig.dataUrl}" style="height:22px;max-width:95px;object-fit:contain;" alt="Signature Chef">
+                                    <span style="font-size:5.5px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${chefSig.date} ${chefSig.time}</span>
+                                </div>
+                            ` : `
+                                <div style="margin-top:4px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','chef')">
+                                    <span style="font-size:6.5px;color:#777;">En attente</span>
+                                    <span style="font-size:6.5px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:1px 5px;border-radius:2px;border:1px solid #bfdbfe;">✍️ Signer Chef</span>
+                                </div>
+                            `}
                         </td>
                         <td style="border:1px solid #cc0000;padding:3px 6px;height:38px;vertical-align:top;font-size:7.5px;">
                             <div style="font-size:6.5px;color:#555;">Nom (lettres majuscule) et signature :</div>
                             <div style="font-weight:700;font-size:8px;">${hseNom}</div>
-                            <div style="margin-top:8px;font-size:7px;color:#777;">Signature : </div>
+                            ${hseSig && hseSig.dataUrl ? `
+                                <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:2px 4px;margin-top:2px;">
+                                    <img src="${hseSig.dataUrl}" style="height:22px;max-width:95px;object-fit:contain;" alt="Signature HSE">
+                                    <span style="font-size:5.5px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${hseSig.date} ${hseSig.time}</span>
+                                </div>
+                            ` : `
+                                <div style="margin-top:4px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse')">
+                                    <span style="font-size:6.5px;color:#777;">En attente</span>
+                                    <span style="font-size:6.5px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:1px 5px;border-radius:2px;border:1px solid #bfdbfe;">✍️ Signer HSE</span>
+                                </div>
+                            `}
                         </td>
                         <td style="border:1px solid #cc0000;padding:3px 6px;height:38px;vertical-align:middle;font-size:7.5px;">
                             <div style="display:flex;gap:4px;align-items:center;margin-bottom:3px;">
                                 <span>Date :</span>
-                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">${datePermis}</span>
+                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">${chefSig && chefSig.date ? chefSig.date : datePermis}</span>
                             </div>
                             <div style="display:flex;gap:4px;align-items:center;">
                                 <span>Heure :</span>
-                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">08h00</span>
+                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">${chefSig && chefSig.time ? chefSig.time : '08h00'}</span>
                             </div>
                         </td>
                     </tr>
@@ -1077,9 +1178,12 @@ const Templates = {
     // 5. ANNEXE C (AMBRE / JAUNE) — TRAVAIL ÉLECTRIQUE & CONSIGNATION
     // REPRODUCTION EXACTE DU STANDARD SINYLON - STELLANTIS (Cadre Ambre, Logo SINYLON - STELLANTIS, Checklist LOTO)
     electricAnnexe(permit) {
-        const chefNom = permit.responsible || permit.chefNom || 'Xie';
-        const hseNom = permit.hseNom || 'Nouri Chahrour';
-        const datePermis = permit.validFrom || permit['date-main'] || '2026-08-24';
+        const chefNom = permit.responsible || permit.chefNom || permit['chef-nom'] || 'Xie Xian';
+        const hseNom = permit.hseNom || permit['hse-nom'] || 'Nouri Chahrour';
+        const datePermis = permit.validFrom || permit['date-main'] || '2026-08-31';
+        const sigs = permit.signatures || {};
+        const chefSig = sigs.chef;
+        const hseSig = sigs.hse;
 
         return `
             <div class="a4-document annexe-elec-doc" id="a4-doc-${permit.id}-electric" style="border:3px solid #d97706;padding:5px 8px;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;font-size:7.5px;line-height:1.2;color:#000;">
@@ -1218,21 +1322,41 @@ const Templates = {
                         <td style="border:1px solid #d97706;padding:3px 6px;height:38px;vertical-align:top;font-size:7.5px;">
                             <div style="font-size:6.5px;color:#555;">Nom (lettres majuscule) et signature :</div>
                             <div style="font-weight:700;font-size:8px;">${chefNom}</div>
-                            <div style="margin-top:8px;font-size:7px;color:#777;">Signature : </div>
+                            ${chefSig && chefSig.dataUrl ? `
+                                <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:2px 4px;margin-top:2px;">
+                                    <img src="${chefSig.dataUrl}" style="height:22px;max-width:95px;object-fit:contain;" alt="Signature Chef">
+                                    <span style="font-size:5.5px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${chefSig.date} ${chefSig.time}</span>
+                                </div>
+                            ` : `
+                                <div style="margin-top:4px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','chef')">
+                                    <span style="font-size:6.5px;color:#777;">En attente</span>
+                                    <span style="font-size:6.5px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:1px 5px;border-radius:2px;border:1px solid #bfdbfe;">✍️ Signer Chef</span>
+                                </div>
+                            `}
                         </td>
                         <td style="border:1px solid #d97706;padding:3px 6px;height:38px;vertical-align:top;font-size:7.5px;">
                             <div style="font-size:6.5px;color:#555;">Nom (lettres majuscule) et signature :</div>
                             <div style="font-weight:700;font-size:8px;">${hseNom}</div>
-                            <div style="margin-top:8px;font-size:7px;color:#777;">Signature : </div>
+                            ${hseSig && hseSig.dataUrl ? `
+                                <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:2px 4px;margin-top:2px;">
+                                    <img src="${hseSig.dataUrl}" style="height:22px;max-width:95px;object-fit:contain;" alt="Signature HSE">
+                                    <span style="font-size:5.5px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${hseSig.date} ${hseSig.time}</span>
+                                </div>
+                            ` : `
+                                <div style="margin-top:4px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse')">
+                                    <span style="font-size:6.5px;color:#777;">En attente</span>
+                                    <span style="font-size:6.5px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:1px 5px;border-radius:2px;border:1px solid #bfdbfe;">✍️ Signer HSE</span>
+                                </div>
+                            `}
                         </td>
                         <td style="border:1px solid #d97706;padding:3px 6px;height:38px;vertical-align:middle;font-size:7.5px;">
                             <div style="display:flex;gap:4px;align-items:center;margin-bottom:3px;">
                                 <span>Date :</span>
-                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">${datePermis}</span>
+                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">${chefSig && chefSig.date ? chefSig.date : datePermis}</span>
                             </div>
                             <div style="display:flex;gap:4px;align-items:center;">
                                 <span>Heure :</span>
-                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">08h00</span>
+                                <span style="border:1px solid #000;flex:1;padding:1px 3px;font-family:monospace;font-size:7.5px;">${chefSig && chefSig.time ? chefSig.time : '08h00'}</span>
                             </div>
                         </td>
                     </tr>

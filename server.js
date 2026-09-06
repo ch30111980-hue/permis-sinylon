@@ -79,6 +79,41 @@ const server = http.createServer((req, res) => {
         return;
     }
 
+    // 1b. POST /api/permits : Sauvegarde globale de tous les permis (ou lot de permis signés)
+    if ((req.method === 'POST' || req.method === 'PUT') && pathname === '/api/permits') {
+        let body = '';
+        req.on('data', chunk => { body += chunk; });
+        req.on('end', () => {
+            try {
+                const incoming = JSON.parse(body);
+                let targetMap = incoming;
+                if (incoming && incoming.permits && typeof incoming.permits === 'object') {
+                    targetMap = incoming.permits;
+                }
+                if (Array.isArray(targetMap)) {
+                    targetMap.forEach(p => {
+                        if (p && p.id) permitsDatabase[p.id] = p;
+                    });
+                } else if (typeof targetMap === 'object' && targetMap !== null) {
+                    Object.keys(targetMap).forEach(k => {
+                        permitsDatabase[k] = targetMap[k];
+                    });
+                }
+                saveDatabase();
+                console.log(`💾 Base globale /api/permits synchronisée.`);
+                res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+                res.end(JSON.stringify({ success: true, count: Object.keys(permitsDatabase).length }));
+                return;
+                res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+                res.end(JSON.stringify({ success: false, error: 'Invalid JSON payload' }));
+            } catch (err) {
+                res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+                res.end(JSON.stringify({ success: false, error: err.message }));
+            }
+        });
+        return;
+    }
+
     // 2. GET /api/permits/:id : Récupérer un permis en direct
     if (req.method === 'GET' && pathname.startsWith('/api/permits/')) {
         const permitId = decodeURIComponent(pathname.replace('/api/permits/', '')).trim();

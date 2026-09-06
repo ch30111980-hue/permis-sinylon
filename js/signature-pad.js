@@ -46,7 +46,7 @@ const SignaturePad = {
                         <span style="font-size: 22px;">✍️</span>
                         <div>
                             <div style="font-weight: 900; color: #ffffff; font-size: 15px; letter-spacing: 0.5px;">SIGNATURE ÉLECTRONIQUE SUR SITE</div>
-                            <div style="font-size: 11px; color: #93c5fd;">Sinylon Stellantis K9 · Validation Ingénieur & Responsables</div>
+                            <div id="sig-pad-sub-heading" style="font-size: 11px; color: #93c5fd;">Sinylon Stellantis K9 · Validation Ingénieur & Responsables</div>
                         </div>
                     </div>
                     <button type="button" onclick="SignaturePad.close()" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 36px; height: 36px; min-height: 36px; border-radius: 50%; font-weight: 900; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; touch-action: manipulation;">✕</button>
@@ -193,11 +193,22 @@ const SignaturePad = {
         this.canvas.addEventListener('touchcancel', stopDraw);
     },
 
-    open(permitId, signatory = 'wpeex') {
+    open(permitId, signatory = 'wpeex', targetDate = null, targetLabel = null) {
         this.init();
-        this.currentPermitId = permitId || (window.App && window.App.currentPermitId) || 'SYN-K9-KW36';
+        this.currentPermitId = permitId || (window.App && window.App.currentPermitId) || 'K9-W36-UB';
+        this.currentTargetDate = targetDate || null;
+        this.currentTargetLabel = targetLabel || null;
         this.setSignatory(signatory || 'wpeex');
         this.clearCanvas();
+
+        const subtitle = document.getElementById('sig-pad-sub-heading');
+        if (subtitle) {
+            if (targetDate) {
+                subtitle.innerHTML = `Revalidation Quotidienne : <strong style="color:#60a5fa;">${targetLabel || targetDate}</strong> · Émargement 08h00`;
+            } else {
+                subtitle.innerHTML = `Sinylon Stellantis K9 · Validation Ingénieur & Responsables`;
+            }
+        }
 
         const modal = document.getElementById('modal-signature-pad');
         if (modal) {
@@ -211,6 +222,8 @@ const SignaturePad = {
     close() {
         const modal = document.getElementById('modal-signature-pad');
         if (modal) modal.style.display = 'none';
+        this.currentTargetDate = null;
+        this.currentTargetLabel = null;
     },
 
     setSignatory(role) {
@@ -277,28 +290,66 @@ const SignaturePad = {
         if (window.Store) {
             const p = window.Store.getPermit(this.currentPermitId);
             if (p) {
-                const targetWeek = p.week || p.week_num;
+                // Détecter le numéro de semaine de façon robuste (numérique)
+                let targetWeek = 36;
+                if (p.week) targetWeek = parseInt(p.week, 10);
+                else if (p.week_num) targetWeek = parseInt(p.week_num, 10);
+                else {
+                    const m = String(p.id || '').match(/(?:W|KW)(\d+)/i);
+                    if (m) targetWeek = parseInt(m[1], 10);
+                }
+
                 const allPermits = window.Store.getAllPermits();
+                const modifiedPermits = [];
                 
-                // Appliquer la signature sur tous les permis de la même semaine
+                // Appliquer la signature sur TOUS les permis de la même semaine
                 Object.values(allPermits).forEach(perm => {
-                    if (perm.id === p.id || (targetWeek && (perm.week === targetWeek || perm.week_num === targetWeek))) {
+                    let permWeek = null;
+                    if (perm.week) permWeek = parseInt(perm.week, 10);
+                    else if (perm.week_num) permWeek = parseInt(perm.week_num, 10);
+                    else {
+                        const m2 = String(perm.id || '').match(/(?:W|KW)(\d+)/i);
+                        if (m2) permWeek = parseInt(m2[1], 10);
+                    }
+
+                    const isSameWeek = (permWeek && permWeek === targetWeek) || 
+                                       (perm.id && (perm.id.includes(`-W${targetWeek}-`) || perm.id.includes(`KW${targetWeek}`)));
+
+                    if (perm.id === p.id || isSameWeek) {
                         if (!perm.signatures) perm.signatures = {};
                         perm.signatures[this.currentSignatory] = signatureObj;
                         perm.isWeeklySigned = true;
                         perm.weeklySignDate = dateStr;
+                        perm.updatedAt = now.toISOString();
+
+                        // Si signature quotidienne de revalidation
+                        if (this.currentTargetDate) {
+                            if (!perm.dailySignatures) perm.dailySignatures = {};
+                            if (!perm.dailySignatures[this.currentTargetDate]) perm.dailySignatures[this.currentTargetDate] = {};
+                            perm.dailySignatures[this.currentTargetDate][this.currentSignatory] = signatureObj;
+                        }
+
+                        modifiedPermits.push(perm);
                     }
                 });
                 
                 window.Store.saveAllPermits(allPermits);
 
-                // Synchroniser instantanément avec le serveur Render
+                // Synchroniser instantanément avec le serveur Render (batch global + unitaire)
                 if (typeof fetch !== 'undefined') {
                     fetch('/api/permits', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(allPermits)
                     }).catch(() => {});
+
+                    modifiedPermits.forEach(up => {
+                        fetch(`/api/permits/${encodeURIComponent(up.id)}`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(up)
+                        }).catch(() => {});
+                    });
                 }
             }
         }
@@ -313,6 +364,12 @@ const SignaturePad = {
                 window.App.showPublicClientView(this.currentPermitId);
             } else if (typeof window.App.renderPreview === 'function') {
                 window.App.renderPreview();
+            }
+
+            // Rafraîchir le document ouvert dans le modal s'il est actif
+            const docViewer = document.getElementById('modal-doc-viewer');
+            if (docViewer && (docViewer.classList.contains('active') || docViewer.style.display === 'flex') && window.App._lastDocKey) {
+                window.App.showPermitSpecificPage(this.currentPermitId, window.App._lastDocKey);
             }
         }
     },

@@ -167,8 +167,12 @@ const App = {
                         nextWeekBtn: `<span>🚀</span> S${parseInt(p.week || 36, 10) + 1}`,
                         fiveDocsTitle: `📁 Les 5 Documents Officiels de la ${p.zoneKey || 'UB'}`,
                         formatA4: "Format A4 Certifié",
-                        doc1Title: `Permis Général — ${p.zoneKey || 'UB'}`,
-                        doc1Sub: "Recto A4 + Verso Revalidations 08h00 M. W.P.E.E.X",
+                        fiveDocsTitle: `📁 Les 6 Documents Officiels — ${p.zoneKey || 'UB'}`,
+                        formatA4: "Format A4 Certifié",
+                        doc1Title: `Permis Général (Recto) — ${p.zoneKey || 'UB'}`,
+                        doc1Sub: "Description des travaux, risques, EPI & habilitations",
+                        docRevalTitle: "Fiche Revalidation Quotidienne (Verso P2)",
+                        docRevalSub: "Émargement chaque matin à 08h00 (Jour 2 à 7) + Caisse Week-end",
                         doc2Title: "Annexe A — Travail en Hauteur",
                         doc2Sub: "Nacelles Ciseaux + Manlift · Harnais certifiés",
                         doc3Title: "Annexe B — Travail à Chaud (Permis Feu)",
@@ -178,7 +182,8 @@ const App = {
                         doc5Title: "Affiche A4 Réglementaire de Zone",
                         doc5Sub: "Panneau d'entrée de zone avec QR Code géant",
                         openBtn: "👁️ Ouvrir",
-                        viewAllBtn: "📑 AFFICHER LE DOSSIER COMPLET (5 PAGES A4)",
+                        dailyRevalBtn: "📅 ÉMARGER LA REVALIDATION DU JOUR (08H00)",
+                        viewAllBtn: "📑 AFFICHER LE DOSSIER COMPLET (6 PAGES A4)",
                         printBtn: "🖨️ IMPRIMER / TÉLÉCHARGER CE PERMIS (A4)",
                         supervisorBtn: "🔒 Accès Superviseur (Équipe SINYLON)"
                     },
@@ -201,10 +206,12 @@ const App = {
                         signBtn: "✍️ Sign",
                         signSiteBtn: "<span>✍️</span> SIGN WITH FINGER / STYLUS ON SITE",
                         nextWeekBtn: `<span>🚀</span> W${parseInt(p.week || 36, 10) + 1}`,
-                        fiveDocsTitle: `📁 The 5 Official Documents — ${p.zoneKey || 'UB'}`,
+                        fiveDocsTitle: `📁 The 6 Official Documents — ${p.zoneKey || 'UB'}`,
                         formatA4: "Certified A4 Format",
-                        doc1Title: `General Work Permit — ${p.zoneKey || 'UB'}`,
-                        doc1Sub: "Front A4 + Back Daily Revalidations 08:00 M. W.P.E.E.X",
+                        doc1Title: `General Work Permit (Front) — ${p.zoneKey || 'UB'}`,
+                        doc1Sub: "Work description, hazards, PPE & authorizations",
+                        docRevalTitle: "Daily Revalidation Sheet (Back P2)",
+                        docRevalSub: "Daily sign-off at 08:00 (Days 2 to 7) + Weekend Safety",
                         doc2Title: "Annex A — Work at Height",
                         doc2Sub: "Scissor Lifts + Manlift · Certified Harnesses",
                         doc3Title: "Annex B — Hot Work (Fire Permit)",
@@ -214,7 +221,8 @@ const App = {
                         doc5Title: "Zone Regulatory A4 Poster",
                         doc5Sub: "Zone Entrance Board with Giant QR Code",
                         openBtn: "👁️ Open",
-                        viewAllBtn: "📑 VIEW FULL DOSSIER (5 PAGES A4)",
+                        dailyRevalBtn: "📅 SIGN DAILY REVALIDATION (08:00)",
+                        viewAllBtn: "📑 VIEW FULL DOSSIER (6 PAGES A4)",
                         printBtn: "🖨️ PRINT / DOWNLOAD THIS PERMIT (A4)",
                         supervisorBtn: "🔒 Supervisor Access (SINYLON Team)"
                     },
@@ -237,10 +245,12 @@ const App = {
                         signBtn: "✍️ 签名",
                         signSiteBtn: "<span>✍️</span> 现场指纹/触控笔电子签名",
                         nextWeekBtn: `<span>🚀</span> 第 S${parseInt(p.week || 36, 10) + 1} 周`,
-                        fiveDocsTitle: `📁 ${p.zoneKey || 'UB'} 区域 5 份官方许可文件`,
+                        fiveDocsTitle: `📁 ${p.zoneKey || 'UB'} 区域 6 份官方许可文件`,
                         formatA4: "A4 官方认证格式",
-                        doc1Title: `通用安全作业许可证 — ${p.zoneKey || 'UB'}`,
-                        doc1Sub: "正页A4 + 背页每日08:00复核签字 M. W.P.E.E.X",
+                        doc1Title: `通用安全作业许可证 (正页) — ${p.zoneKey || 'UB'}`,
+                        doc1Sub: "工作描述、安全防护、PPE及资质授权",
+                        docRevalTitle: "每日安全复核确认表 (背页 P2)",
+                        docRevalSub: "每日 08:00 现场签到复核 (第2-7天) + 周末特别监督",
                         doc2Title: "附件 A — 高空作业许可证",
                         doc2Sub: "剪叉升降车 + 曲臂车 · 双钩安全带认证",
                         doc3Title: "附件 B — 动火作业许可证 (防火许可)",
@@ -250,7 +260,8 @@ const App = {
                         doc5Title: "施工区域 A4 安全警示公示牌",
                         doc5Sub: "车间工位入口张贴 · 带高清核验二维码",
                         openBtn: "👁️ 查看",
-                        viewAllBtn: "📑 查看完整许可档案 (5页A4)",
+                        dailyRevalBtn: "📅 每日 08:00 许可证复核签到",
+                        viewAllBtn: "📑 查看完整许可档案 (6页A4)",
                         printBtn: "🖨️ 打印 / 下载该许可证 (A4)",
                         supervisorBtn: "🔒 管理员登录 (SINYLON 团队)"
                     }
@@ -398,12 +409,17 @@ const App = {
                                 ${renderSigCard('receveur', L.receveurTitle, p['receveur-nom'] || 'Zhou Lin', recSig)}
                             </div>
 
-                            <button type="button" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}')" style="width: 100%; padding: 13px; min-height: 46px; background: rgba(30,41,59,0.8); border: 1.5px solid #475569; color: #e2e8f0; font-weight: 800; font-size: 12px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; touch-action: manipulation;">
+                            <button type="button" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}')" style="width: 100%; padding: 13px; min-height: 46px; background: rgba(30,41,59,0.8); border: 1.5px solid #475569; color: #e2e8f0; font-weight: 800; font-size: 12px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; touch-action: manipulation; margin-bottom: 8px;">
                                 <span>✍️</span> ${L.signSiteBtn}
+                            </button>
+
+                            <!-- BOUTON ACCÈS DIRECT REVALIDATION QUOTIDIENNE -->
+                            <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'reval')" style="width: 100%; padding: 12px 14px; min-height: 44px; background: linear-gradient(135deg, #0284c7, #0369a1); border: 1.5px solid #38bdf8; color: #ffffff; font-weight: 900; font-size: 12.5px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; touch-action: manipulation; box-shadow: 0 4px 14px rgba(2,132,199,0.35);">
+                                <span>📅</span> ${L.dailyRevalBtn}
                             </button>
                         </div>
 
-                        <!-- 5. SECTION DÉDIÉE : LES 5 PERMIS OFFICIELS DE CETTE ZONE -->
+                        <!-- 5. SECTION DÉDIÉE : LES 6 DOCUMENTS OFFICIELS DE CETTE ZONE -->
                         <div style="background: #0f172a; border: 1.5px solid #334155; border-radius: 14px; padding: 18px; margin-bottom: 18px;">
                             <div style="font-size: 14px; font-weight: 900; color: #f8fafc; border-bottom: 1px solid #1e293b; padding-bottom: 8px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center;">
                                 <span>${L.fiveDocsTitle}</span>
@@ -422,6 +438,20 @@ const App = {
                                         </div>
                                     </div>
                                     <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'general')" style="background: #2563eb; color: #fff; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
+                                        ${L.openBtn}
+                                    </button>
+                                </div>
+
+                                <!-- DOCUMENT 2 : FICHE REVALIDATION QUOTIDIENNE (PAGE 2) -->
+                                <div style="background: rgba(30,41,59,0.7); border: 1.5px solid #38bdf8; border-radius: 10px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div style="background: #0284c7; color: #fff; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px;">2</div>
+                                        <div>
+                                            <div style="font-weight: 800; color: #ffffff; font-size: 13.5px;">${L.docRevalTitle}</div>
+                                            <div style="font-size: 11px; color: #7dd3fc;">${L.docRevalSub}</div>
+                                        </div>
+                                    </div>
+                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'reval')" style="background: #0284c7; color: #fff; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
                                         ${L.openBtn}
                                     </button>
                                 </div>
@@ -899,9 +929,11 @@ const App = {
         }
     },
 
-    // Affiche un document spécifique (Général, Hauteur, Chaud, Élec, Affiche Zone) dans le visualiseur
+    // Affiche un document spécifique (Général, Revalidation, Hauteur, Chaud, Élec, Affiche Zone) dans le visualiseur
     showPermitSpecificPage(permitId, pageKey) {
         this.currentPermitId = permitId || this.getActivePermitId();
+        this._lastDocKey = pageKey;
+        this._lastDocPermitId = this.currentPermitId;
         const p = Store.getPermit(this.currentPermitId);
         if (!p) {
             this.showToast('Permis introuvable', 'error');
@@ -916,6 +948,9 @@ const App = {
         if (pageKey === 'general') {
             docHtml = Templates.generalP1(p) + '<div style="page-break-before: always; margin-top: 20px;"></div>' + Templates.generalP2(p);
             docTitle = `Permis Général & Revalidations (${p.id} — ${p.zone || z})`;
+        } else if (pageKey === 'reval') {
+            docHtml = Templates.generalP2(p);
+            docTitle = `Fiche de Revalidation Quotidienne (${p.id} — ${p.zone || z})`;
         } else if (pageKey === 'height') {
             docHtml = Templates.heightAnnexe(p);
             docTitle = `Annexe A — Travail en Hauteur (${p.id} — ${p.zone || z})`;
@@ -936,9 +971,11 @@ const App = {
         this._openDocViewerModal(docTitle, docHtml, p.id);
     },
 
-    // Affiche le dossier complet (les 5 documents A4)
+    // Affiche le dossier complet (les 6 documents A4)
     togglePermitDetailViewer(permitId, viewMode = 'all') {
         this.currentPermitId = permitId || this.getActivePermitId();
+        this._lastDocKey = 'all';
+        this._lastDocPermitId = this.currentPermitId;
         const p = Store.getPermit(this.currentPermitId);
         if (!p) {
             this.showToast('Permis introuvable', 'error');

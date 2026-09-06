@@ -192,8 +192,52 @@ const Store = {
             if (res.ok) {
                 const serverPermits = await res.json();
                 if (serverPermits && Object.keys(serverPermits).length > 0) {
+                    const localPermits = this.getAllPermits();
+                    let needsServerUpdate = false;
+
+                    // Fusion intelligente : Ne JAMAIS écraser une signature locale valide
+                    Object.keys(localPermits).forEach(id => {
+                        const localP = localPermits[id];
+                        const serverP = serverPermits[id];
+
+                        if (localP && localP.signatures) {
+                            if (!serverP) {
+                                serverPermits[id] = localP;
+                                needsServerUpdate = true;
+                            } else {
+                                serverP.signatures = serverP.signatures || {};
+                                Object.keys(localP.signatures).forEach(role => {
+                                    const lSig = localP.signatures[role];
+                                    const sSig = serverP.signatures[role];
+                                    if (lSig && lSig.dataUrl && (!sSig || !sSig.dataUrl)) {
+                                        serverP.signatures[role] = lSig;
+                                        serverP.isWeeklySigned = true;
+                                        serverP.weeklySignDate = localP.weeklySignDate || lSig.date;
+                                        needsServerUpdate = true;
+                                    }
+                                });
+
+                                if (localP.dailySignatures) {
+                                    serverP.dailySignatures = serverP.dailySignatures || {};
+                                    Object.keys(localP.dailySignatures).forEach(dKey => {
+                                        serverP.dailySignatures[dKey] = Object.assign({}, serverP.dailySignatures[dKey] || {}, localP.dailySignatures[dKey]);
+                                    });
+                                    needsServerUpdate = true;
+                                }
+                            }
+                        }
+                    });
+
                     this.saveAllPermits(serverPermits);
                     console.log('🔄 Données synchronisées avec le serveur Render en direct.');
+
+                    if (needsServerUpdate) {
+                        fetch('/api/permits', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(serverPermits)
+                        }).catch(() => {});
+                    }
                 }
             }
         } catch (e) {
@@ -210,6 +254,24 @@ const Store = {
                     const freshPermit = await res.json();
                     if (freshPermit && freshPermit.id) {
                         const local = this.getAllPermits();
+                        const existing = local[freshPermit.id];
+
+                        // Fusion intelligente : Préserver les signatures manuscrites locales
+                        if (existing && existing.signatures) {
+                            freshPermit.signatures = freshPermit.signatures || {};
+                            Object.keys(existing.signatures).forEach(role => {
+                                const lSig = existing.signatures[role];
+                                const sSig = freshPermit.signatures[role];
+                                if (lSig && lSig.dataUrl && (!sSig || !sSig.dataUrl)) {
+                                    freshPermit.signatures[role] = lSig;
+                                    freshPermit.isWeeklySigned = true;
+                                }
+                            });
+                        }
+                        if (existing && existing.dailySignatures) {
+                            freshPermit.dailySignatures = Object.assign({}, freshPermit.dailySignatures || {}, existing.dailySignatures);
+                        }
+
                         local[freshPermit.id] = freshPermit;
                         this.saveAllPermits(local);
                         return freshPermit;
