@@ -542,7 +542,7 @@ const Templates = {
                         <tr style="background:#f1f5f9;font-size:7.5px;">
                             <th rowspan="2" style="border:1px solid #000;padding:3px 4px;width:95px;">JOURNÉE</th>
                             <th rowspan="2" style="border:1px solid #000;padding:3px 4px;width:75px;">DATE</th>
-                            <th colspan="3" style="border:1px solid #000;padding:2px;background:#eff6ff;color:#1e3a8a;">Sinylon - Ingénieur de Suivi</th>
+                            <th colspan="3" style="border:1px solid #000;padding:2px;background:#eff6ff;color:#1e3a8a;">Ingénieur de Suivi</th>
                             <th colspan="3" style="border:1px solid #000;padding:2px;">Responsable d'exécution (SINYLON)</th>
                             <th rowspan="2" style="border:1px solid #000;padding:2px;width:70px;">STATUT</th>
                         </tr>
@@ -568,7 +568,7 @@ const Templates = {
                         <tr style="background:#f1f5f9;">
                             <th style="border:1px solid #000;padding:3px;width:80px;">JOURNÉE</th>
                             <th style="border:1px solid #000;padding:3px;width:85px;">DATE</th>
-                            <th style="border:1px solid #000;padding:3px;">SUPERVISEUR Sinylon</th>
+                            <th style="border:1px solid #000;padding:3px;">SUPERVISEUR</th>
                             <th style="border:1px solid #000;padding:3px;">CONTRÔLE SÉCURITÉ </th>
                             <th style="border:1px solid #000;padding:3px;width:150px;">VISA CAISSE</th>
                         </tr>
@@ -1446,7 +1446,7 @@ const Templates = {
                     VISAS & ÉMARGEMENTS DU PERMIS DE ZONE (VALIDITÉ SEMAINE ${weekNum})
                 </div>
                 <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:6px;">
-                    ${this.renderSigBox(p, 'wpeex', 'M. W.P.E.E.X', p['wpeex-nom'] || 'M. W.P.E.E.X', 'Ingénieur de Suivi Sinylon / Stellantis')}
+                    ${this.renderSigBox(p, 'wpeex', 'M. W.P.E.E.X', p['wpeex-nom'] || 'M. W.P.E.E.X', 'Ingénieur de Suivi / Stellantis')}
                     ${this.renderSigBox(p, 'chef', 'Xie Xian', p['chef-nom'] || 'Xie Xian', 'Responsable Exécution Sinylon')}
                     ${this.renderSigBox(p, 'hse', 'Nouri Chahrour', p['hse-nom'] || 'Nouri Chahrour', 'Superviseur HSE Sinylon')}
                 </div>

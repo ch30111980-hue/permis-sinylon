@@ -257,7 +257,7 @@ const SignaturePad = {
         const timeStr = now.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
 
         const signatoryNames = {
-            wpeex: 'M. W.P.E.E.X (Ingénieur de Suivi Sinylon / Stellantis)',
+            wpeex: 'M. W.P.E.E.X (Ingénieur de Suivi / Stellantis)',
             chef: 'Xie Xian (Responsable Exécution Sinylon)',
             hse: 'Nouri Chahrour (Superviseur HSE Sinylon)',
             receveur: 'Zhou Lin (Receveur Travaux Sinylon)'
