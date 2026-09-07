@@ -37,22 +37,47 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();
 });
 
-// IPC Handler: Print A4 Document
-ipcMain.handle('print-document', async (event, options) => {
-  if (!mainWindow) return { success: false, error: 'No active window' };
+// IPC Handler: Get Printers
+ipcMain.handle('get-printers', async () => {
+  if (!mainWindow) return [];
   try {
-    mainWindow.webContents.print({
-      silent: false,
-      printBackground: true,
-      pageSize: 'A4',
-      margins: { marginType: 'none' }
-    }, (success, failureReason) => {
-      if (!success) console.log('Print failed or cancelled:', failureReason);
-    });
-    return { success: true };
+    return await mainWindow.webContents.getPrintersAsync();
   } catch (err) {
-    return { success: false, error: err.message };
+    console.error('Failed to get printers:', err);
+    return [];
   }
+});
+
+// IPC Handler: Print A4 Document
+ipcMain.handle('print-document', async (event, options = {}) => {
+  if (!mainWindow) return { success: false, error: 'No active window' };
+  return new Promise((resolve) => {
+    try {
+      const printOptions = {
+        silent: options.silent || false,
+        printBackground: true,
+        pageSize: 'A4',
+        margins: { marginType: 'none' }
+      };
+
+      if (options.deviceName && typeof options.deviceName === 'string' && options.deviceName.trim().length > 0) {
+        printOptions.deviceName = options.deviceName.trim();
+      }
+
+      mainWindow.webContents.print(printOptions, (success, failureReason) => {
+        if (!success) {
+          console.log('Print failed or cancelled:', failureReason);
+          resolve({ success: false, reason: failureReason });
+        } else {
+          console.log('Print succeeded');
+          resolve({ success: true });
+        }
+      });
+    } catch (err) {
+      console.error('Print invocation error:', err);
+      resolve({ success: false, error: err.message });
+    }
+  });
 });
 
 // IPC Handler: Export to PDF

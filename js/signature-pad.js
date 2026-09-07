@@ -106,11 +106,14 @@ const SignaturePad = {
                 </div>
 
                 <!-- Boutons d'action -->
-                <div style="background: #090d16; padding: 12px 16px; border-top: 1.5px solid #1e293b; display: flex; gap: 10px;">
-                    <button type="button" onclick="SignaturePad.close()" style="flex: 1; padding: 12px; min-height: 46px; background: #1e293b; border: 1px solid #334155; color: #cbd5e1; font-weight: 800; font-size: 13px; border-radius: 8px; cursor: pointer; touch-action: manipulation;">
+                <div style="background: #090d16; padding: 12px 16px; border-top: 1.5px solid #1e293b; display: flex; flex-wrap: wrap; gap: 8px;">
+                    <button type="button" onclick="SignaturePad.close()" style="flex: 1; padding: 10px; min-height: 44px; background: #1e293b; border: 1px solid #334155; color: #cbd5e1; font-weight: 800; font-size: 12px; border-radius: 8px; cursor: pointer; touch-action: manipulation;">
                         Annuler
                     </button>
-                    <button type="button" onclick="SignaturePad.saveSignature()" style="flex: 2; padding: 12px; min-height: 46px; background: linear-gradient(135deg, #10b981, #059669); border: 1.5px solid #34d399; color: #ffffff; font-weight: 900; font-size: 14px; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 12px rgba(16,185,129,0.4); display: flex; align-items: center; justify-content: center; gap: 6px; touch-action: manipulation;">
+                    <button type="button" onclick="SignaturePad.markManualSigning()" style="flex: 1.3; padding: 10px; min-height: 44px; background: #1e3a8a; border: 1px solid #3b82f6; color: #bfdbfe; font-weight: 800; font-size: 12px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; touch-action: manipulation;" title="Marquer émargé manuellement sur la fiche affichée au mur">
+                        <span>📝</span> Émargé au Mur (Manuel)
+                    </button>
+                    <button type="button" onclick="SignaturePad.saveSignature()" style="flex: 1.5; padding: 10px; min-height: 44px; background: linear-gradient(135deg, #10b981, #059669); border: 1.5px solid #34d399; color: #ffffff; font-weight: 900; font-size: 13px; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 12px rgba(16,185,129,0.4); display: flex; align-items: center; justify-content: center; gap: 6px; touch-action: manipulation;">
                         <span>✅</span> Valider & Sceller
                     </button>
                 </div>
@@ -367,6 +370,122 @@ const SignaturePad = {
             }
 
             // Rafraîchir le document ouvert dans le modal s'il est actif
+            const docViewer = document.getElementById('modal-doc-viewer');
+            if (docViewer && (docViewer.classList.contains('active') || docViewer.style.display === 'flex') && window.App._lastDocKey) {
+                window.App.showPermitSpecificPage(this.currentPermitId, window.App._lastDocKey);
+            }
+        }
+    },
+
+    // Émargement Manuel sur Chantier / Affiché au Mur
+    markManualSigning() {
+        const now = new Date();
+        const dateStr = this.currentTargetDate || now.toISOString().split('T')[0];
+        const timeStr = '08:00';
+
+        const signatoryNames = {
+            wpeex: 'M. W.P.E.E.X (Ingénieur de Suivi / Stellantis)',
+            chef: 'Xie Xian (Responsable Exécution Sinylon)',
+            hse: 'Nouri Chahrour (Superviseur HSE Sinylon)',
+            receveur: 'Zhou Lin (Receveur Travaux Sinylon)'
+        };
+
+        // Créer un badge vectoriel émargement manuel propre
+        const manualCanvas = document.createElement('canvas');
+        manualCanvas.width = 180;
+        manualCanvas.height = 50;
+        const mCtx = manualCanvas.getContext('2d');
+        mCtx.fillStyle = '#f8fafc';
+        mCtx.fillRect(0, 0, 180, 50);
+        mCtx.strokeStyle = '#1e3a8a';
+        mCtx.lineWidth = 1.5;
+        mCtx.strokeRect(2, 2, 176, 46);
+        mCtx.fillStyle = '#1e3a8a';
+        mCtx.font = 'bold 11px Arial, sans-serif';
+        mCtx.textAlign = 'center';
+        mCtx.fillText('✍️ ÉMARGÉ SUR MUR', 90, 20);
+        mCtx.font = '9px monospace';
+        mCtx.fillStyle = '#15803d';
+        mCtx.fillText(`Visa Manuel Chantier 08h00`, 90, 36);
+
+        const dataUrl = manualCanvas.toDataURL('image/png');
+
+        const signatureObj = {
+            dataUrl: dataUrl,
+            isManualOnWall: true,
+            role: this.currentSignatory,
+            signatoryName: signatoryNames[this.currentSignatory] || 'Signataire Officiel',
+            date: dateStr,
+            time: timeStr,
+            timestamp: now.toISOString(),
+            hash: 'MAN-' + Math.random().toString(36).substring(2, 9).toUpperCase()
+        };
+
+        if (window.Store) {
+            const p = window.Store.getPermit(this.currentPermitId);
+            if (p) {
+                let targetWeek = 36;
+                if (p.week) targetWeek = parseInt(p.week, 10);
+                else if (p.week_num) targetWeek = parseInt(p.week_num, 10);
+                else {
+                    const m = String(p.id || '').match(/(?:W|KW)(\d+)/i);
+                    if (m) targetWeek = parseInt(m[1], 10);
+                }
+
+                const allPermits = window.Store.getAllPermits();
+                const modifiedPermits = [];
+
+                Object.values(allPermits).forEach(perm => {
+                    let permWeek = null;
+                    if (perm.week) permWeek = parseInt(perm.week, 10);
+                    else if (perm.week_num) permWeek = parseInt(perm.week_num, 10);
+                    else {
+                        const m2 = String(perm.id || '').match(/(?:W|KW)(\d+)/i);
+                        if (m2) permWeek = parseInt(m2[1], 10);
+                    }
+
+                    const isSameWeek = (permWeek && permWeek === targetWeek) || 
+                                       (perm.id && (perm.id.includes(`-W${targetWeek}-`) || perm.id.includes(`KW${targetWeek}`)));
+
+                    if (perm.id === p.id || isSameWeek) {
+                        if (!perm.signatures) perm.signatures = {};
+                        perm.signatures[this.currentSignatory] = signatureObj;
+                        perm.isWeeklySigned = true;
+                        perm.weeklySignDate = dateStr;
+                        perm.updatedAt = now.toISOString();
+
+                        if (this.currentTargetDate) {
+                            if (!perm.dailySignatures) perm.dailySignatures = {};
+                            if (!perm.dailySignatures[this.currentTargetDate]) perm.dailySignatures[this.currentTargetDate] = {};
+                            perm.dailySignatures[this.currentTargetDate][this.currentSignatory] = signatureObj;
+                        }
+
+                        modifiedPermits.push(perm);
+                    }
+                });
+
+                window.Store.saveAllPermits(allPermits);
+
+                if (typeof fetch !== 'undefined') {
+                    fetch('/api/permits', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(allPermits)
+                    }).catch(() => {});
+                }
+            }
+        }
+
+        this.close();
+
+        if (window.App) {
+            window.App.showToast(`📝 Émargement manuel sur mur enregistré pour ${signatoryNames[this.currentSignatory]} !`, 'success');
+            if (typeof window.App.showPublicClientView === 'function' && document.documentElement.classList.contains('qr-mode')) {
+                window.App.showPublicClientView(this.currentPermitId);
+            } else if (typeof window.App.renderPreview === 'function') {
+                window.App.renderPreview();
+            }
+
             const docViewer = document.getElementById('modal-doc-viewer');
             if (docViewer && (docViewer.classList.contains('active') || docViewer.style.display === 'flex') && window.App._lastDocKey) {
                 window.App.showPermitSpecificPage(this.currentPermitId, window.App._lastDocKey);

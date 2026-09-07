@@ -17,13 +17,13 @@ const App = {
 
     // Helper robuste — résout l'ID du permis actif au moment du clic (jamais null)
     getActivePermitId() {
-        if (this.currentPermitId) return this.currentPermitId;
-        const permits = Store.getPermitsByWeek(this.currentWeek || 35);
+        if (this.currentPermitId && Store.getPermit(this.currentPermitId)) return this.currentPermitId;
+        const permits = Store.getPermitsByWeek(this.currentWeek || Store.getCurrentWeekNumber());
         if (permits && permits.length > 0) {
             this.currentPermitId = permits[0].id;
             return this.currentPermitId;
         }
-        return 'K9-W35-01';
+        return `K9-W${this.currentWeek || 37}-UB`;
     },
 
     // Initialisation
@@ -46,6 +46,10 @@ const App = {
 
         // 2. Détection de la semaine courante
         this.currentWeek = Store.getCurrentWeekNumber();
+        const activeWeekPermits = Store.getPermitsByWeek(this.currentWeek);
+        if (activeWeekPermits && activeWeekPermits.length > 0) {
+            this.currentPermitId = activeWeekPermits[0].id;
+        }
 
         // 3. Gestion des paramètres de l'application & langue
         const settings = Store.getSettings();
@@ -669,12 +673,20 @@ const App = {
 
     goToCurrentWeek() {
         this.currentWeek = Store.getCurrentWeekNumber();
+        const curPermits = Store.getPermitsByWeek(this.currentWeek);
+        if (curPermits && curPermits.length > 0) {
+            this.currentPermitId = curPermits[0].id;
+        }
         this.renderDashboard();
         this.showToast(`Active week W${this.currentWeek} loaded.`, 'info');
     },
 
     goToWeek(wNum) {
         this.currentWeek = parseInt(wNum, 10);
+        const wPermits = Store.getPermitsByWeek(this.currentWeek);
+        if (wPermits && wPermits.length > 0) {
+            this.currentPermitId = wPermits[0].id;
+        }
         this.switchView('dashboard');
         this.renderDashboard();
     },
@@ -1463,6 +1475,12 @@ const App = {
         }
     },
 
+    printAllWeeklyPermitsForWall(weekNum) {
+        if (window.PrintEngine && typeof PrintEngine.printAllWeeklyPermitsForWall === 'function') {
+            PrintEngine.printAllWeeklyPermitsForWall(weekNum || this.currentWeek);
+        }
+    },
+
     printQROnly(permitId) {
         if (window.PrintEngine && typeof PrintEngine.printQROnly === 'function') {
             PrintEngine.printQROnly(permitId || this.currentPermitId);
@@ -1479,6 +1497,104 @@ const App = {
         if (window.QREngine && typeof QREngine.downloadQRPNG === 'function') {
             QREngine.downloadQRPNG(permitId || this.currentPermitId);
         }
+    },
+
+    // =========================================================================
+    // CONFIGURATION & MÉMORISATION DE L'IMPRIMANTE PAR DÉFAUT
+    // =========================================================================
+    async openPrinterSettingsModal() {
+        const modal = document.getElementById('modal-printer-settings');
+        if (modal) modal.style.display = 'flex';
+        await this.refreshPrintersList();
+    },
+
+    closePrinterSettingsModal() {
+        const modal = document.getElementById('modal-printer-settings');
+        if (modal) modal.style.display = 'none';
+    },
+
+    async refreshPrintersList() {
+        const select = document.getElementById('printer-select-dropdown');
+        const customInput = document.getElementById('printer-custom-name');
+        const statusEl = document.getElementById('printer-status-info');
+        const currentSaved = window.PrintEngine ? PrintEngine.getSelectedPrinter() : (localStorage.getItem('sinylon_selected_printer') || '');
+
+        if (customInput) customInput.value = currentSaved;
+
+        if (window.require) {
+            try {
+                const { ipcRenderer } = window.require('electron');
+                const printers = await ipcRenderer.invoke('get-printers');
+
+                if (select) {
+                    select.innerHTML = '<option value="">-- Utiliser l\'imprimante par défaut du système --</option>';
+
+                    let matched = false;
+                    printers.forEach(pr => {
+                        const opt = document.createElement('option');
+                        opt.value = pr.name;
+                        const isDef = pr.isDefault ? ' (Défaut Système)' : '';
+                        opt.textContent = `${pr.displayName || pr.name}${isDef}`;
+                        if (pr.name === currentSaved) {
+                            opt.selected = true;
+                            matched = true;
+                        }
+                        select.appendChild(opt);
+                    });
+
+                    // Si une imprimante Canon iR C3226 est présente et qu'aucune n'a été manuellement choisie
+                    if (!currentSaved) {
+                        const canon = printers.find(p => p.name.toLowerCase().includes('c3226') || p.name.toLowerCase().includes('ir'));
+                        if (canon) {
+                            select.value = canon.name;
+                            if (customInput) customInput.value = canon.name;
+                            if (window.PrintEngine) PrintEngine.setSelectedPrinter(canon.name);
+                        }
+                    }
+
+                    if (statusEl) {
+                        statusEl.innerHTML = `✅ <strong>${printers.length} imprimantes détectées</strong> sur ce Mac.<br>Actuelle sélectionnée : <strong>${currentSaved || select.value || 'Imprimante système'}</strong>`;
+                    }
+                }
+                return;
+            } catch (err) {
+                console.warn('Failed to fetch Electron printers:', err);
+            }
+        }
+
+        // Fallback sans Electron (ou si IPC inaccessible)
+        if (select) {
+            select.innerHTML = `
+                <option value="">-- Utiliser l'imprimante par défaut du système --</option>
+                <option value="Canon_iR_C3226__22_f7_87___13_" ${currentSaved.includes('C3226') ? 'selected' : ''}>Canon iR C3226 (Réseau Sinylon / Bureau)</option>
+                <option value="Canon_MF3010" ${currentSaved === 'Canon_MF3010' ? 'selected' : ''}>Canon MF3010 (USB)</option>
+                <option value="EPSON_L15160_Series" ${currentSaved.includes('EPSON') ? 'selected' : ''}>EPSON L15160 Series (A3/A4)</option>
+            `;
+            if (statusEl) {
+                statusEl.innerHTML = `ℹ️ Imprimante active mémorisée : <strong>${currentSaved || 'Non configurée (système)'}</strong>`;
+            }
+        }
+    },
+
+    onPrinterSelectChange(val) {
+        const customInput = document.getElementById('printer-custom-name');
+        if (customInput) customInput.value = val;
+    },
+
+    saveSelectedPrinter() {
+        const customInput = document.getElementById('printer-custom-name');
+        const select = document.getElementById('printer-select-dropdown');
+        const printerName = (customInput && customInput.value.trim()) || (select && select.value) || '';
+
+        if (window.PrintEngine) {
+            PrintEngine.setSelectedPrinter(printerName);
+        } else {
+            if (printerName) localStorage.setItem('sinylon_selected_printer', printerName);
+            else localStorage.removeItem('sinylon_selected_printer');
+        }
+
+        this.showToast(printerName ? `✅ Imprimante mémorisée : "${printerName}" !` : `ℹ️ Réinitialisation : Imprimante par défaut du Mac`, 'success');
+        this.closePrinterSettingsModal();
     },
 
     bindEvents() {

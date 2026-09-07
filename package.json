@@ -57,7 +57,11 @@
     },
     "files": [
       "**/*",
-      "!dist/*"
+      "!dist/*",
+      "!*.py",
+      "!*.bak",
+      "!test_preview_a4.html",
+      "!generate_test_preview.js"
     ]
   }
 }

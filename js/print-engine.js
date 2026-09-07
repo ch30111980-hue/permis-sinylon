@@ -1,9 +1,61 @@
 /**
  * SINYLON - STELLANTIS | Print & PDF Engine
  * Moteur d'impression A4 et d'exportation PDF certifié
+ * Mémorisation automatique de l'imprimante réseau / Mac
  */
 
 const PrintEngine = {
+    // Obtenir le nom de l'imprimante configurée par l'utilisateur
+    getSelectedPrinter() {
+        try {
+            return localStorage.getItem('sinylon_selected_printer') || '';
+        } catch(e) {
+            return '';
+        }
+    },
+
+    setSelectedPrinter(printerName) {
+        try {
+            if (printerName) {
+                localStorage.setItem('sinylon_selected_printer', printerName);
+            } else {
+                localStorage.removeItem('sinylon_selected_printer');
+            }
+        } catch(e) {}
+    },
+
+    // Déclencher l'impression via Electron ou navigateur
+    async executePrint(onComplete) {
+        const printContainer = document.getElementById('print-container');
+        const selectedPrinter = this.getSelectedPrinter();
+
+        if (typeof window !== 'undefined' && window.require) {
+            try {
+                const { ipcRenderer } = window.require('electron');
+                const printOpts = {
+                    deviceName: selectedPrinter || undefined,
+                    silent: false
+                };
+                const res = await ipcRenderer.invoke('print-document', printOpts);
+                if (printContainer) {
+                    setTimeout(() => { printContainer.innerHTML = ''; }, 3000);
+                }
+                if (onComplete) onComplete(res);
+                return;
+            } catch (e) {
+                console.warn('IPC Print fallback:', e);
+            }
+        }
+
+        if (typeof window !== 'undefined') {
+            window.print();
+            if (printContainer) {
+                setTimeout(() => { printContainer.innerHTML = ''; }, 3000);
+            }
+            if (onComplete) onComplete({ success: true });
+        }
+    },
+
     // Imprimer uniquement la page actuellement visualisée à l'écran (Page 1 seule, ou Annexe seule)
     printCurrentPreview() {
         const container = document.getElementById('a4-preview-render');
@@ -13,21 +65,11 @@ const PrintEngine = {
         printContainer.innerHTML = container.innerHTML;
 
         setTimeout(() => {
-            if (window.require) {
-                try {
-                    const { ipcRenderer } = window.require('electron');
-                    ipcRenderer.invoke('print-document');
-                    return;
-                } catch (e) {}
-            }
-            window.print();
-            setTimeout(() => {
-                printContainer.innerHTML = '';
-            }, 1000);
-        }, 100);
+            this.executePrint();
+        }, 120);
     },
 
-    // Imprimer un permis spécifique avec toutes ses pages et annexes (5 Pages A4)
+    // Imprimer un permis spécifique avec toutes ses pages et annexes (A4)
     printPermit(permitId) {
         const store = typeof window !== 'undefined' && window.Store ? window.Store : Store;
         const templates = typeof window !== 'undefined' && window.Templates ? window.Templates : Templates;
@@ -42,44 +84,45 @@ const PrintEngine = {
         const printContainer = document.getElementById('print-container');
         if (!printContainer) return;
 
-        // Construire l'intégralité du dossier officiel certifié (5 Pages A4)
         let htmlPages = [];
 
-        // 1. Permis Général Hebdomadaire (Page 1)
-        htmlPages.push(templates.generalP1(permit));
+        // Si c'est le permis spécial week-end
+        if (permit.type === 'weekend' || permit.id.endsWith('-WE')) {
+            const dates = typeof window !== 'undefined' && window.WeekendCaisseModule ? window.WeekendCaisseModule.getWeekendDates() : null;
+            const weekPermits = store.getPermitsByWeek(permit.week || store.getCurrentWeekNumber());
+            htmlPages.push(templates.weekendSummarySheet(dates, weekPermits));
+            htmlPages.push(templates.generalP1(permit));
+            htmlPages.push(templates.generalP2(permit));
+        } else {
+            // 1. Permis Général Hebdomadaire (Page 1/2)
+            htmlPages.push(templates.generalP1(permit));
 
-        // 2. Annexe A : Travail en Hauteur (Page 2)
-        htmlPages.push(templates.heightAnnexe(permit));
+            // 2. Revalidation Quotidienne & Effectifs Habilités (Page 2/2)
+            htmlPages.push(templates.generalP2(permit));
 
-        // 3. Annexe B : Travail à Chaud (Page 3)
-        htmlPages.push(templates.hotAnnexe(permit));
+            // 3. Annexes si dangers applicables
+            const d = permit.dangers || {};
+            if (permit.type === 'height' || d.height) {
+                htmlPages.push(templates.heightAnnexe(permit));
+            }
+            if (permit.type === 'hot' || d.hot) {
+                htmlPages.push(templates.hotAnnexe(permit));
+            }
+            if (permit.type === 'electric' || d.electric) {
+                htmlPages.push(templates.electricAnnexe(permit));
+            }
 
-        // 4. Annexe C : Travail Électrique & Consignation (Page 4)
-        htmlPages.push(templates.electricAnnexe(permit));
-
-        // 5. Affiche A4 QR Code de Zone (Page 5)
-        if (typeof this.getPosterHtml === 'function') {
-            htmlPages.push(this.getPosterHtml(permit));
+            // 4. Affiche A4 de Zone
+            if (typeof templates.renderZonePosterA4 === 'function') {
+                htmlPages.push(templates.renderZonePosterA4(permit, permit.zoneKey || 'UB'));
+            }
         }
 
         printContainer.innerHTML = htmlPages.join('');
 
-        // Déclencher l'impression instantanée
         setTimeout(() => {
-            if (typeof window !== 'undefined' && window.require) {
-                try {
-                    const { ipcRenderer } = window.require('electron');
-                    ipcRenderer.invoke('print-document');
-                    return;
-                } catch (e) {}
-            }
-            if (typeof window !== 'undefined') {
-                window.print();
-            }
-            setTimeout(() => {
-                printContainer.innerHTML = '';
-            }, 1000);
-        }, 100);
+            this.executePrint();
+        }, 120);
     },
 
     // Imprimer uniquement le QR Code en grand format pour affichage sur chantier
@@ -166,14 +209,7 @@ const PrintEngine = {
         }
 
         setTimeout(() => {
-            if (window.require) {
-                try {
-                    const { ipcRenderer } = window.require('electron');
-                    ipcRenderer.invoke('print-document');
-                    return;
-                } catch (e) {}
-            }
-            window.print();
+            this.executePrint();
         }, 150);
     },
 
@@ -182,21 +218,23 @@ const PrintEngine = {
         const printContainer = document.getElementById('print-container');
         if (!printContainer) return;
 
-        const dates = WeekendCaisseModule.getWeekendDates();
+        const dates = typeof window !== 'undefined' && window.WeekendCaisseModule ? window.WeekendCaisseModule.getWeekendDates() : null;
+        const templates = typeof window !== 'undefined' && window.Templates ? window.Templates : Templates;
+        const pcConfig = typeof window !== 'undefined' && window.WeekendCaisseModule ? window.WeekendCaisseModule.getPowerCutConfig() : null;
         let htmlPages = [];
 
-        // Page 1 : Feuille récapitulative pour Stellantis
-        htmlPages.push(Templates.weekendSummarySheet(dates, permitsList));
+        // Page 1 : Feuille récapitulative A4 pour Stellantis
+        htmlPages.push(templates.weekendSummarySheet(dates, permitsList, pcConfig));
 
-        // Pages suivantes : Chaque permis de travail avec son Recto et son Annexe
+        // Pages suivantes : Chaque permis de travail avec son Recto, Verso Revalidation, et Annexes actives
         permitsList.forEach(permit => {
-            htmlPages.push(Templates.generalP1(permit));
-            htmlPages.push(Templates.generalP2(permit));
+            htmlPages.push(templates.generalP1(permit));
+            htmlPages.push(templates.generalP2(permit));
 
             const d = permit.dangers || {};
-            if (permit.type === 'height' || d.height) htmlPages.push(Templates.heightAnnexe(permit));
-            if (permit.type === 'hot' || d.hot) htmlPages.push(Templates.hotAnnexe(permit));
-            if (permit.type === 'electric' || d.electric) htmlPages.push(Templates.electricAnnexe(permit));
+            if (permit.type === 'height' || d.height) htmlPages.push(templates.heightAnnexe(permit));
+            if (permit.type === 'hot' || d.hot) htmlPages.push(templates.hotAnnexe(permit));
+            if (permit.type === 'electric' || d.electric) htmlPages.push(templates.electricAnnexe(permit));
         });
 
         printContainer.innerHTML = htmlPages.join('');
@@ -206,15 +244,12 @@ const PrintEngine = {
             this.injectPrintQRCodes(permit);
         });
 
+        if (typeof window !== 'undefined' && window.App) {
+            window.App.showToast(`🖨️ Préparation du Dossier Week-end (${htmlPages.length} pages A4)...`, 'info');
+        }
+
         setTimeout(() => {
-            if (window.require) {
-                try {
-                    const { ipcRenderer } = window.require('electron');
-                    ipcRenderer.invoke('print-document');
-                    return;
-                } catch (e) {}
-            }
-            window.print();
+            this.executePrint();
         }, 200);
     },
 
@@ -239,7 +274,7 @@ const PrintEngine = {
             } catch (e) {}
         }
 
-        // Web fallback : déclenche le dialogue d'impression du navigateur pour Enregistrer au format PDF
+        // Web fallback
         App.showToast('Veuillez sélectionner "Enregistrer au format PDF" dans la boîte de dialogue d\'impression.', 'info');
         window.print();
     },
@@ -272,19 +307,97 @@ const PrintEngine = {
         printContainer.innerHTML = templates.renderZonePosterA4(permit, zoneKey || permit.zoneKey);
 
         setTimeout(() => {
-            if (typeof window !== 'undefined' && window.require) {
-                try {
-                    const { ipcRenderer } = window.require('electron');
-                    ipcRenderer.invoke('print-document');
-                    return;
-                } catch (e) {}
-            }
-            window.print();
-            setTimeout(() => {
-                printContainer.innerHTML = '';
-            }, 1000);
+            this.executePrint();
         }, 120);
+    },
+
+    // Imprimer tous les permis de la semaine pour affichage mural complet (Dossier Mural Propre)
+    // Structure par zone :
+    // - Pour UB, UAR, FUSA : Affiche A4 Zone (Mur) + Recto P1 + Verso P2 (Revalidations 08h00 avec émargement stylo)
+    // - Pour WE (Week-end) : Fiche récapitulative Caisse Week-end + Recto P1 + Verso P2 Revalidation
+    // Pas de doublons ni de 24 pages inutiles !
+    printAllWeeklyPermitsForWall(weekNum) {
+        const store = typeof window !== 'undefined' && window.Store ? window.Store : Store;
+        const templates = typeof window !== 'undefined' && window.Templates ? window.Templates : Templates;
+        const dates = typeof window !== 'undefined' && window.WeekendCaisseModule ? window.WeekendCaisseModule.getWeekendDates() : null;
+        const pcConfig = typeof window !== 'undefined' && window.WeekendCaisseModule ? window.WeekendCaisseModule.getPowerCutConfig() : null;
+        const targetWeek = weekNum || (typeof window !== 'undefined' && window.App && window.App.currentWeek) || store.getCurrentWeekNumber();
+        const permits = store.getPermitsByWeek(targetWeek);
+
+        if (!permits || permits.length === 0) {
+            if (typeof window !== 'undefined' && window.App) window.App.showToast(`⚠️ Aucun permis trouvé pour la Semaine ${targetWeek}`, 'warning');
+            return;
+        }
+
+        const printContainer = document.getElementById('print-container');
+        if (!printContainer) return;
+
+        let htmlPages = [];
+
+        // Séparer les permis de zones réguliers et le permis week-end
+        const zonePermits = permits.filter(p => !p.id.endsWith('-WE') && p.type !== 'weekend');
+        const weekendPermits = permits.filter(p => p.id.endsWith('-WE') || p.type === 'weekend');
+
+        // 1. Pour chaque zone de production (UB, UAR, FUSA) : AFFICHE MURALE + P1 + P2 (Revalidations prêtes à signer au stylo)
+        zonePermits.forEach(permit => {
+            // Affiche A4 d'Entrée de Zone (à coller directement sur le mur / palissade)
+            if (typeof templates.renderZonePosterA4 === 'function') {
+                htmlPages.push(templates.renderZonePosterA4(permit, permit.zoneKey || 'UB'));
+            }
+
+            // Permis officiel Recto (Page 1/2)
+            htmlPages.push(templates.generalP1(permit));
+
+            // Fiche Revalidation Quotidienne & Émargements 08h00 (Page 2/2)
+            htmlPages.push(templates.generalP2(permit));
+
+            // Uniquement les annexes spécifiques si le permis a des risques réels déclarés
+            const d = permit.dangers || {};
+            if (permit.type === 'height' || (d.height && permit.type !== 'general')) {
+                htmlPages.push(templates.heightAnnexe(permit));
+            }
+            if (permit.type === 'hot' || (d.hot && permit.type !== 'general')) {
+                htmlPages.push(templates.hotAnnexe(permit));
+            }
+            if (permit.type === 'electric' || (d.electric && permit.type !== 'general')) {
+                htmlPages.push(templates.electricAnnexe(permit));
+            }
+        });
+
+        // 2. Pour le Week-end (WE) : Feuille Récapitulative Caisse Week-end + P1 + P2 Revalidations Vendredi/Samedi
+        if (weekendPermits.length > 0) {
+            const wePermit = weekendPermits[0];
+            // Feuille Récapitulative Caisse Week-end pour Stellantis
+            htmlPages.push(templates.weekendSummarySheet(dates, permits, pcConfig));
+            // Permis Recto WE
+            htmlPages.push(templates.generalP1(wePermit));
+            // Revalidations WE
+            htmlPages.push(templates.generalP2(wePermit));
+        } else {
+            // Si pas de permis WE dédié, générer la feuille de récapitulative week-end standard
+            htmlPages.push(templates.weekendSummarySheet(dates, permits, pcConfig));
+        }
+
+        printContainer.innerHTML = htmlPages.join('');
+
+        // Injecter les QR codes
+        permits.forEach(permit => {
+            this.injectPrintQRCodes(permit);
+        });
+
+        if (typeof window !== 'undefined' && window.App) {
+            window.App.showToast(`🖨️ Dossier Mural Prêt : ${htmlPages.length} pages optimisées (Affiches + Permis + Week-end)`, 'info');
+        }
+
+        setTimeout(() => {
+            this.executePrint();
+        }, 200);
     }
 };
 
-window.PrintEngine = PrintEngine;
+if (typeof window !== 'undefined') {
+    window.PrintEngine = PrintEngine;
+}
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = PrintEngine;
+}
