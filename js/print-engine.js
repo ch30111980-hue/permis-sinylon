@@ -73,7 +73,7 @@ const PrintEngine = {
     printPermit(permitId) {
         const store = typeof window !== 'undefined' && window.Store ? window.Store : Store;
         const templates = typeof window !== 'undefined' && window.Templates ? window.Templates : Templates;
-        const targetId = permitId || (typeof window !== 'undefined' && window.App && window.App.currentPermitId) || 'SYN-K9-KW36';
+        const targetId = permitId || (typeof window !== 'undefined' && window.App && window.App.getActivePermitId ? window.App.getActivePermitId() : null) || 'K9-W37-UB';
         
         const permit = store.getPermit(targetId);
         if (!permit) {
@@ -128,7 +128,7 @@ const PrintEngine = {
     // Imprimer uniquement le QR Code en grand format pour affichage sur chantier
     printQROnly(permitId) {
         const store = typeof window !== 'undefined' && window.Store ? window.Store : Store;
-        const targetId = permitId || (typeof window !== 'undefined' && window.App && window.App.currentPermitId) || 'K9-W35-01';
+        const targetId = permitId || (typeof window !== 'undefined' && window.App && window.App.getActivePermitId ? window.App.getActivePermitId() : null) || 'K9-W37-UB';
         const permit = store.getPermit(targetId);
         if (!permit) return;
 
@@ -255,11 +255,12 @@ const PrintEngine = {
 
     // Export PDF direct
     exportPermitPDF(permitId) {
-        const permit = Store.getPermit(permitId);
+        const targetId = permitId || (typeof window !== 'undefined' && window.App && window.App.getActivePermitId ? window.App.getActivePermitId() : null) || 'K9-W37-UB';
+        const permit = Store.getPermit(targetId);
         if (!permit) return;
 
         // Préparer le conteneur
-        this.printPermit(permitId);
+        this.printPermit(targetId);
 
         if (window.require) {
             try {

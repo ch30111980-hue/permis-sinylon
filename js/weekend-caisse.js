@@ -70,32 +70,43 @@ const WeekendCaisseModule = {
         };
     },
 
-    // Récupérer tous les permis associés au week-end
-    getWeekendPermits() {
+    // Récupérer les permis associés au week-end de la semaine active
+    getWeekendPermits(targetWeek) {
+        const weekNum = targetWeek || (typeof window !== 'undefined' && window.App && window.App.currentWeek) || (typeof Store !== 'undefined' ? Store.getCurrentWeekNumber() : 37);
         const dates = this.getWeekendDates();
-        const allPermits = Store.getAllPermits();
+        const weekPermits = typeof Store !== 'undefined' ? Store.getPermitsByWeek(weekNum) : [];
         const result = {
             friday: [],
             saturday: [],
             all: []
         };
 
-        const activeKW = (window.App && App.currentPermitId) ? App.currentPermitId : 'SYN-K9-KW36';
-
-        Object.values(allPermits).forEach(p => {
-            const isExplicitWeekend = !!p.isWeekendWork;
-            const isMatchingDate = (p['date-main'] === dates.fridayIso || p['date-main'] === dates.saturdayIso);
-            const isDateInRange = (p.date_debut && p.date_fin && p.date_debut <= dates.saturdayIso && p.date_fin >= dates.fridayIso);
-            const isActivePermit = (p.id === activeKW);
-
-            if (isExplicitWeekend || isMatchingDate || isDateInRange || isActivePermit) {
-                if (p.weekendDay === 'samedi' || p['date-main'] === dates.saturdayIso) {
-                    result.saturday.push(p);
-                } else {
-                    result.friday.push(p);
-                }
-                result.all.push(p);
+        // 1. Filtrer les permis de la semaine active
+        const candidates = [];
+        weekPermits.forEach(p => {
+            if (p.isWeekendWork || p.weekend || (p.id && p.id.includes('-WE'))) {
+                candidates.push(p);
             }
+        });
+
+        // 2. Si aucun permis explicitement marqué week-end dans la semaine, chercher le permis dédié K9-W{week}-WE
+        if (candidates.length === 0 && typeof Store !== 'undefined') {
+            const wePermit = Store.getPermit(`K9-W${weekNum}-WE`);
+            if (wePermit) {
+                candidates.push(wePermit);
+            } else if (weekPermits.length > 0) {
+                candidates.push(weekPermits[0]);
+            }
+        }
+
+        // 3. Répartir entre Vendredi et Samedi
+        candidates.forEach(p => {
+            if (p.weekendDay === 'samedi' || (p['date-main'] && p['date-main'] === dates.saturdayIso)) {
+                result.saturday.push(p);
+            } else {
+                result.friday.push(p);
+            }
+            result.all.push(p);
         });
 
         // Dédupliquer la liste globale

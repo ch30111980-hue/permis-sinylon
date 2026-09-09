@@ -43,7 +43,7 @@
                 <div class="brand-subtitle" id="sidebar-app-subtitle">HSE Work Permit System (Algeria K9 CKD0)</div>
                 <div class="brand-wpeex" style="display:flex; justify-content:space-between; align-items:center;">
                     <span>Supervision : Sinylon | HSE : Nouri Chahrour</span>
-                    <span style="background:#10b981; color:#064e3b; font-weight:900; font-size:10px; padding:2px 6px; border-radius:4px;">v1.1.0</span>
+                    <span style="background:#10b981; color:#064e3b; font-weight:900; font-size:10px; padding:2px 6px; border-radius:4px;">v1.1.1</span>
                 </div>
             </div>
 
@@ -107,10 +107,10 @@
                     <button onclick="App.openPrinterSettingsModal()" class="btn btn-secondary btn-sm" title="Configurer l'imprimante active (mémoriser)">
                         🖨️ Imprimante
                     </button>
-                    <button onclick="QREngine.openMobileQRModal(App.currentPermitId)" class="btn btn-primary btn-sm">
+                    <button onclick="App.openQR()" class="btn btn-primary btn-sm">
                         📱 QR Code
                     </button>
-                    <button onclick="WeekendCaisseModule.printCompleteCaisseDossier()" class="btn btn-warning btn-sm">
+                    <button onclick="App.switchView('caisse')" class="btn btn-warning btn-sm">
                         📦 Weekend Dossier
                     </button>
                     <button onclick="App.openUrgentActionModal()" class="btn-top-urgent">
@@ -577,6 +577,35 @@
     </div>
 
     <!-- =========================================================================
+         MODAL 2B : QR CODE OFFICIEL DE ZONE (UB, UAR, FUSA, WE)
+         ========================================================================= -->
+    <div class="modal-backdrop" id="modal-zone-qr" style="z-index: 100000;">
+        <div class="modal-window" style="max-width: 480px; text-align: center; background: #0f172a; border: 2px solid #38bdf8; border-radius: 16px; padding: 22px; color: #fff; box-shadow: 0 10px 40px rgba(0,0,0,0.85);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1.5px solid #1e293b; padding-bottom: 8px;">
+                <h3 style="font-size: 18px; font-weight: 900; color: #38bdf8; margin: 0; display: flex; align-items: center; gap: 8px;" id="zone-modal-title">
+                    <span>🏭</span> QR ZONE UB
+                </h3>
+                <button type="button" onclick="QREngine.closeZoneQRModal()" class="btn btn-outline btn-sm" style="font-weight: 800; padding: 4px 10px;">✕</button>
+            </div>
+            <div style="font-size: 11.5px; color: #94a3b8; margin-bottom: 14px;" id="zone-modal-sub">STELLANTIS K9 · PERMIS ACTIFS ZONE UB</div>
+            <div id="zone-modal-canvas-box" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px; background: #fff; border-radius: 14px; margin-bottom: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.5); min-width: 250px; min-height: 250px;">
+                <canvas id="zone-modal-canvas" width="240" height="240" style="display: block; background: #ffffff; border-radius: 8px;"></canvas>
+            </div>
+            <div class="form-group" style="margin-bottom: 14px; text-align: left;">
+                <label style="font-size: 11px; color: #94a3b8; font-weight: 700; display: block; margin-bottom: 4px;">URL Souveraine Permanente :</label>
+                <div style="display: flex; gap: 6px;">
+                    <input type="text" id="zone-modal-url" class="form-control" readonly style="font-family: monospace; font-size: 11px; flex: 1; background: #0b0f19; border: 1px solid #334155; color: #38bdf8;">
+                    <button type="button" onclick="QREngine.copyZoneQRLink()" class="btn btn-secondary btn-sm" style="font-weight: 700;">📋 Copier</button>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <button type="button" id="zone-modal-print-btn" class="btn btn-warning btn-lg" style="font-weight: 800; font-size: 13px;">🏷️ Affiche A4</button>
+                <button type="button" onclick="QREngine.downloadZoneQRPNG()" class="btn btn-primary btn-lg" style="font-weight: 800; font-size: 13px;">📥 Télécharger PNG</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================================
          MODAL 3 : SCANNER / VÉRIFICATEUR DE QR CODE
          ========================================================================= -->
     <div class="modal-backdrop" id="modal-verifier">
@@ -646,16 +675,16 @@
             <div class="modal-body">
                 <p style="margin-bottom: 16px;">Instant permit presentation and certification on site :</p>
                 <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <button onclick="App.closeUrgentActionModal(); QREngine.openMobileQRModal(App.currentPermitId);" class="btn btn-primary btn-lg" style="justify-content: flex-start;">
+                    <button onclick="App.closeUrgentActionModal(); QREngine.openMobileQRModal(App.getActivePermitId());" class="btn btn-primary btn-lg" style="justify-content: flex-start;">
                         📱 1. Display QR Code & Poster
                     </button>
-                    <button onclick="App.closeUrgentActionModal(); PrintEngine.exportPermitPDF(App.currentPermitId);" class="btn btn-secondary btn-lg" style="justify-content: flex-start;">
+                    <button onclick="App.closeUrgentActionModal(); PrintEngine.exportPermitPDF(App.getActivePermitId());" class="btn btn-secondary btn-lg" style="justify-content: flex-start;">
                         💾 2. Download Instant PDF
                     </button>
-                    <button onclick="App.closeUrgentActionModal(); PrintEngine.printPermit(App.currentPermitId);" class="btn btn-warning btn-lg" style="justify-content: flex-start;">
+                    <button onclick="App.closeUrgentActionModal(); PrintEngine.printPermit(App.getActivePermitId());" class="btn btn-warning btn-lg" style="justify-content: flex-start;">
                         🖨️ 3. Print Complete A4 Permit
                     </button>
-                    <button onclick="App.closeUrgentActionModal(); PrintEngine.printQROnly(App.currentPermitId);" class="btn btn-outline btn-lg" style="justify-content: flex-start;">
+                    <button onclick="App.closeUrgentActionModal(); PrintEngine.printQROnly(App.getActivePermitId());" class="btn btn-outline btn-lg" style="justify-content: flex-start;">
                         🏷️ 4. Print QR Poster Only
                     </button>
                 </div>

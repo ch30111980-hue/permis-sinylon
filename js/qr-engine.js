@@ -43,48 +43,129 @@ const QREngine = {
         return `${baseUrl}/?zone=${encodeURIComponent(cleanZone)}`;
     },
 
-    // Ouvrir le modal QR dédié à une zone (UB, UAR, FUSA)
+    // Ouvrir le modal QR dédié à une zone (UB, UAR, FUSA, WE)
     openZoneQRModal(zoneCode) {
         const zone = String(zoneCode || 'UB').toUpperCase();
+        this.currentZoneCode = zone;
         const payload = this.generateZonePayload(zone);
         
         let modal = document.getElementById('modal-zone-qr');
         if (!modal) {
             modal = document.createElement('div');
             modal.id = 'modal-zone-qr';
-            modal.className = 'modal-overlay';
+            modal.className = 'modal-backdrop';
+            modal.style.zIndex = '100000';
             modal.innerHTML = `
-                <div class="modal-dialog" style="max-width: 440px; text-align: center; background: #0f172a; border: 2px solid #38bdf8; border-radius: 16px; padding: 24px; color: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.8);">
-                    <div style="font-size: 20px; font-weight: 900; color: #38bdf8; margin-bottom: 4px;" id="zone-modal-title">QR ZONE UB</div>
-                    <div style="font-size: 11px; color: #94a3b8; margin-bottom: 16px;" id="zone-modal-sub">STELLANTIS K9 · PERMIS ACTIFS ZONE UB</div>
-                    <div id="zone-modal-canvas-box" style="display: inline-block; padding: 12px; background: #fff; border-radius: 12px; margin-bottom: 14px;"></div>
-                    <div style="font-size: 11px; color: #cbd5e1; word-break: break-all; margin-bottom: 16px;" id="zone-modal-url"></div>
-                    <div style="display: flex; gap: 8px; justify-content: center;">
-                        <button onclick="App.printZonePosterA4('${zone}')" class="btn btn-primary btn-sm" style="font-weight: 800;">🖨️ Affiche A4 Zone</button>
-                        <button onclick="document.getElementById('modal-zone-qr').classList.remove('active')" class="btn btn-secondary btn-sm">Fermer</button>
+                <div class="modal-window" style="max-width: 480px; text-align: center; background: #0f172a; border: 2px solid #38bdf8; border-radius: 16px; padding: 22px; color: #fff; box-shadow: 0 10px 40px rgba(0,0,0,0.85);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1.5px solid #1e293b; padding-bottom: 8px;">
+                        <h3 style="font-size: 18px; font-weight: 900; color: #38bdf8; margin: 0; display: flex; align-items: center; gap: 8px;" id="zone-modal-title">
+                            <span>🏭</span> QR ZONE ${zone}
+                        </h3>
+                        <button type="button" onclick="QREngine.closeZoneQRModal()" class="btn btn-outline btn-sm" style="font-weight: 800; padding: 4px 10px;">✕</button>
+                    </div>
+                    <div style="font-size: 11.5px; color: #94a3b8; margin-bottom: 14px;" id="zone-modal-sub">STELLANTIS K9 · PERMIS ACTIFS ZONE ${zone}</div>
+                    <div id="zone-modal-canvas-box" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px; background: #fff; border-radius: 14px; margin-bottom: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.5); min-width: 250px; min-height: 250px;">
+                        <canvas id="zone-modal-canvas" width="240" height="240" style="display: block; background: #ffffff; border-radius: 8px;"></canvas>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 14px; text-align: left;">
+                        <label style="font-size: 11px; color: #94a3b8; font-weight: 700; display: block; margin-bottom: 4px;">URL Souveraine Permanente :</label>
+                        <div style="display: flex; gap: 6px;">
+                            <input type="text" id="zone-modal-url" class="form-control" readonly style="font-family: monospace; font-size: 11px; flex: 1; background: #0b0f19; border: 1px solid #334155; color: #38bdf8;">
+                            <button type="button" onclick="QREngine.copyZoneQRLink()" class="btn btn-secondary btn-sm" style="font-weight: 700;">📋 Copier</button>
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <button type="button" id="zone-modal-print-btn" class="btn btn-warning btn-lg" style="font-weight: 800; font-size: 13px;">🏷️ Affiche A4</button>
+                        <button type="button" onclick="QREngine.downloadZoneQRPNG()" class="btn btn-primary btn-lg" style="font-weight: 800; font-size: 13px;">📥 Télécharger PNG</button>
                     </div>
                 </div>
             `;
             document.body.appendChild(modal);
+            modal.onclick = (e) => { if (e.target === modal) QREngine.closeZoneQRModal(); };
         }
         
-        document.getElementById('zone-modal-title').innerText = `QR ZONE ${zone}`;
-        document.getElementById('zone-modal-sub').innerText = `STELLANTIS K9 · PERMIS ACTIFS ZONE ${zone}`;
-        document.getElementById('zone-modal-url').innerText = payload;
+        const titleEl = document.getElementById('zone-modal-title');
+        if (titleEl) titleEl.innerHTML = `<span>🏭</span> QR ZONE ${zone}`;
+        const subEl = document.getElementById('zone-modal-sub');
+        if (subEl) subEl.innerText = `STELLANTIS K9 · PERMIS ACTIFS ZONE ${zone}`;
+        const urlInput = document.getElementById('zone-modal-url');
+        if (urlInput) urlInput.value = payload;
+        
+        const printBtn = document.getElementById('zone-modal-print-btn');
+        if (printBtn) {
+            printBtn.onclick = () => {
+                QREngine.closeZoneQRModal();
+                if (window.App && typeof App.printZonePosterA4 === 'function') {
+                    App.printZonePosterA4(zone);
+                }
+            };
+        }
         
         const box = document.getElementById('zone-modal-canvas-box');
-        box.innerHTML = '';
-        const canvas = document.createElement('canvas');
-        box.appendChild(canvas);
-        
-        const engine = window.QRCodeGenerator || window.QRCode;
-        if (engine && typeof engine.drawCanvas === 'function') {
-            engine.drawCanvas(canvas, payload, { size: 240, margin: 2 });
-        } else {
-            box.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=${encodeURIComponent(payload)}" style="width:240px;height:240px;" alt="QR Zone">`;
+        if (box) {
+            box.innerHTML = '';
+            const canvas = document.createElement('canvas');
+            canvas.id = 'zone-modal-canvas';
+            canvas.width = 240;
+            canvas.height = 240;
+            canvas.style.display = 'block';
+            canvas.style.borderRadius = '8px';
+            canvas.style.background = '#ffffff';
+            box.appendChild(canvas);
+            
+            const engine = window.QRCodeGenerator || window.QRCode;
+            let drawn = false;
+            if (engine && typeof engine.drawCanvas === 'function') {
+                try {
+                    engine.drawCanvas(canvas, payload, { size: 240, margin: 2, darkColor: '#000000', lightColor: '#ffffff' });
+                    drawn = true;
+                } catch(e) {
+                    console.warn('Zone QR drawCanvas fallback:', e);
+                }
+            }
+            if (!drawn) {
+                box.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&bgcolor=255-255-255&color=0-0-0&data=${encodeURIComponent(payload)}" style="width:240px;height:240px;background:#fff;border-radius:8px;" alt="QR Zone">`;
+            }
         }
         
         modal.classList.add('active');
+        modal.style.display = 'flex';
+    },
+
+    closeZoneQRModal() {
+        const modal = document.getElementById('modal-zone-qr');
+        if (modal) {
+            modal.classList.remove('active');
+            modal.style.display = 'none';
+        }
+    },
+
+    copyZoneQRLink() {
+        const urlInput = document.getElementById('zone-modal-url');
+        if (urlInput && urlInput.value) {
+            navigator.clipboard.writeText(urlInput.value).then(() => {
+                if (window.App) App.showToast('📋 Lien QR Zone copié !', 'success');
+            }).catch(() => {
+                urlInput.select();
+                document.execCommand('copy');
+                if (window.App) App.showToast('📋 Lien copié !', 'success');
+            });
+        }
+    },
+
+    downloadZoneQRPNG() {
+        const canvas = document.getElementById('zone-modal-canvas');
+        const zone = this.currentZoneCode || 'UB';
+        if (canvas) {
+            const link = document.createElement('a');
+            link.download = `QR_ZONE_${zone}_SINYLON_STELLANTIS.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            if (window.App) App.showToast(`📥 QR Code Zone ${zone} téléchargé en PNG HD !`, 'success');
+        } else {
+            const url = this.generateZonePayload(zone);
+            window.open(`https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&data=${encodeURIComponent(url)}`, '_blank');
+        }
     },
 
     // Dessiner un QR Code sur un canvas ou dans un conteneur HTML
@@ -236,11 +317,16 @@ const QREngine = {
 
         modal.dataset.currentPermitId = permit.id;
         modal.classList.add('active');
+        modal.style.display = 'flex';
+        modal.onclick = (e) => { if (e.target === modal) QREngine.closeMobileQRModal(); };
     },
 
     closeMobileQRModal() {
         const modal = document.getElementById('modal-mobile-qr');
-        if (modal) modal.classList.remove('active');
+        if (modal) {
+            modal.classList.remove('active');
+            modal.style.display = 'none';
+        }
     },
 
     // Ouvrir directement la fiche publique dans un nouvel onglet
@@ -297,16 +383,21 @@ const QREngine = {
     openVerifierModal() {
         const modal = document.getElementById('modal-verifier');
         if (!modal) return;
-        const input = document.getElementById('verifier-url-input');
+        const input = document.getElementById('verifier-input-text') || document.getElementById('verifier-url-input');
         if (input) input.value = '';
         const resBox = document.getElementById('verifier-result-box');
         if (resBox) resBox.innerHTML = '';
         modal.classList.add('active');
+        modal.style.display = 'flex';
+        modal.onclick = (e) => { if (e.target === modal) QREngine.closeVerifierModal(); };
     },
 
     closeVerifierModal() {
         const modal = document.getElementById('modal-verifier');
-        if (modal) modal.classList.remove('active');
+        if (modal) {
+            modal.classList.remove('active');
+            modal.style.display = 'none';
+        }
     },
 
     verifyPastedCode() {

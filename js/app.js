@@ -5,8 +5,8 @@
 
 const App = {
     currentView: 'dashboard',
-    currentWeek: 36,
-    currentPermitId: 'SYN-K9-KW36',
+    currentWeek: 37,
+    currentPermitId: null,
     previewPage: 'p1',
     currentZone: 'ALL',
 
@@ -18,12 +18,13 @@ const App = {
     // Helper robuste — résout l'ID du permis actif au moment du clic (jamais null)
     getActivePermitId() {
         if (this.currentPermitId && Store.getPermit(this.currentPermitId)) return this.currentPermitId;
-        const permits = Store.getPermitsByWeek(this.currentWeek || Store.getCurrentWeekNumber());
+        const w = this.currentWeek || Store.getCurrentWeekNumber();
+        const permits = Store.getPermitsByWeek(w);
         if (permits && permits.length > 0) {
             this.currentPermitId = permits[0].id;
             return this.currentPermitId;
         }
-        return `K9-W${this.currentWeek || 37}-UB`;
+        return `K9-W${w}-UB`;
     },
 
     // Initialisation
@@ -58,6 +59,8 @@ const App = {
         const activeWeekPermits = Store.getPermitsByWeek(this.currentWeek);
         if (activeWeekPermits && activeWeekPermits.length > 0) {
             this.currentPermitId = activeWeekPermits[0].id;
+        } else {
+            this.currentPermitId = `K9-W${this.currentWeek}-UB`;
         }
 
         // 3. Gestion des paramètres de l'application & langue
@@ -1038,8 +1041,11 @@ const App = {
                     </div>
                 </div>
                 <div style="display: flex; gap: 6px;">
-                    <button onclick="WeekendCaisseModule.printCompleteCaisseDossier()" class="btn btn-warning btn-sm" style="flex: 1; justify-content: center; font-weight: 800; font-size: 11px; padding: 6px 8px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border: none; color: #fff;">
+                    <button onclick="App.switchView('caisse')" class="btn btn-warning btn-sm" style="flex: 1; justify-content: center; font-weight: 800; font-size: 11px; padding: 6px 8px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border: none; color: #fff;" title="Consulter la Caisse Week-end">
                         📦 DOSSIER WE
+                    </button>
+                    <button onclick="WeekendCaisseModule.printCompleteCaisseDossier()" class="btn btn-outline btn-sm" style="padding: 6px 8px;" title="Imprimer le Dossier Week-end A4">
+                        🖨️
                     </button>
                 </div>
             </div>
@@ -1048,12 +1054,35 @@ const App = {
 
     printZonePosterA4(zoneCode) {
         const z = String(zoneCode || 'UB').toUpperCase();
-        const p = Store.getPermit(`K9-W${this.currentWeek || 37}-${z}`) || Store.getActivePermit();
+        const weekNum = this.currentWeek || Store.getCurrentWeekNumber();
+        let p = Store.getPermit(`K9-W${weekNum}-${z}`);
+        if (!p) {
+            const list = Store.getPermitsByWeek(weekNum);
+            p = list.find(item => (item.zoneKey || item.zone || '').toUpperCase().includes(z)) || list[0];
+        }
+        if (!p) {
+            p = {
+                id: `K9-W${weekNum}-${z}`,
+                week: weekNum,
+                zoneKey: z,
+                title: `Affiche Réglementaire Zone ${z}`,
+                contractor: 'SINYLON',
+                validFrom: '2026-09-07',
+                validUntil: '2026-09-13'
+            };
+        }
         const html = Templates.renderZonePosterA4(p, z);
         const printContainer = document.getElementById('print-container');
         if (printContainer) {
             printContainer.innerHTML = html;
-            window.print();
+            this.showToast(`🖨️ Préparation Affiche A4 Zone ${z}...`, 'info');
+            setTimeout(() => {
+                if (window.PrintEngine && typeof PrintEngine.executePrint === 'function') {
+                    PrintEngine.executePrint();
+                } else {
+                    window.print();
+                }
+            }, 150);
         }
     },
 
@@ -1715,14 +1744,16 @@ const App = {
     },
 
     openQR(permitId) {
+        const id = permitId || this.getActivePermitId();
         if (window.QREngine && typeof QREngine.openMobileQRModal === 'function') {
-            QREngine.openMobileQRModal(permitId || this.currentPermitId);
+            QREngine.openMobileQRModal(id);
         }
     },
 
     printPermit(permitId) {
+        const id = permitId || this.getActivePermitId();
         if (window.PrintEngine && typeof PrintEngine.printPermit === 'function') {
-            PrintEngine.printPermit(permitId || this.currentPermitId);
+            PrintEngine.printPermit(id);
         }
     },
 
@@ -1733,8 +1764,9 @@ const App = {
     },
 
     printQROnly(permitId) {
+        const id = permitId || this.getActivePermitId();
         if (window.PrintEngine && typeof PrintEngine.printQROnly === 'function') {
-            PrintEngine.printQROnly(permitId || this.currentPermitId);
+            PrintEngine.printQROnly(id);
         }
     },
 
