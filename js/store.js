@@ -365,9 +365,9 @@ const Store = {
             "en": "Floor marking & layout positioning",
             "zh": "划线及区域定位"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Traçage au sol et repérage géométrique des zones. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Floor marking & layout positioning. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：划线及区域定位。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Traçage au sol et repérage géométrique des zones. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Floor marking & layout positioning. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：划线及区域定位。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Traçage au sol et repérage géométrique des zones"
         ],
@@ -530,9 +530,9 @@ const Store = {
             "en": "Floor marking & layout positioning",
             "zh": "划线及区域定位"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Traçage au sol et repérage géométrique des zones. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Floor marking & layout positioning. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：划线及区域定位。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Traçage au sol et repérage géométrique des zones. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Floor marking & layout positioning. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：划线及区域定位。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Traçage au sol et repérage géométrique des zones"
         ],
@@ -695,9 +695,9 @@ const Store = {
             "en": "Floor marking & layout positioning",
             "zh": "划线及区域定位"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Traçage au sol et repérage géométrique des zones. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Floor marking & layout positioning. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：划线及区域定位。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Traçage au sol et repérage géométrique des zones. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Floor marking & layout positioning. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：划线及区域定位。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Traçage au sol et repérage géométrique des zones"
         ],
@@ -961,9 +961,9 @@ const Store = {
             "en": "Floor marking & layout positioning",
             "zh": "划线及区域定位"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Traçage au sol et repérage géométrique des zones. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Floor marking & layout positioning. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：划线及区域定位。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Traçage au sol et repérage géométrique des zones. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Floor marking & layout positioning. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：划线及区域定位。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Traçage au sol et repérage géométrique des zones"
         ],
@@ -1126,9 +1126,9 @@ const Store = {
             "en": "Floor marking & layout positioning",
             "zh": "划线及区域定位"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Traçage au sol et repérage géométrique des zones. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Floor marking & layout positioning. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：划线及区域定位。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Traçage au sol et repérage géométrique des zones. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Floor marking & layout positioning. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：划线及区域定位。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Traçage au sol et repérage géométrique des zones"
         ],
@@ -1291,9 +1291,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage et érection des charpentes métalliques"
         ],
@@ -1456,9 +1456,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Montage et érection des charpentes métalliques"
         ],
@@ -1621,9 +1621,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Montage et érection des charpentes métalliques"
         ],
@@ -1887,9 +1887,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage et érection des charpentes métalliques"
         ],
@@ -2052,9 +2052,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage et érection des charpentes métalliques"
         ],
@@ -2217,9 +2217,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage et érection des charpentes métalliques"
         ],
@@ -2382,9 +2382,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Montage et érection des charpentes métalliques"
         ],
@@ -2547,9 +2547,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Montage et érection des charpentes métalliques"
         ],
@@ -2813,9 +2813,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage et érection des charpentes métalliques"
         ],
@@ -2978,9 +2978,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage et érection des charpentes métalliques"
         ],
@@ -3143,9 +3143,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage et érection des charpentes métalliques"
         ],
@@ -3308,9 +3308,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Montage et érection des charpentes métalliques"
         ],
@@ -3473,9 +3473,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Montage et érection des charpentes métalliques"
         ],
@@ -3739,9 +3739,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage et érection des charpentes métalliques"
         ],
@@ -3904,9 +3904,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage et érection des charpentes métalliques"
         ],
@@ -4069,9 +4069,9 @@ const Store = {
             "en": "Steel structure installation and erection; Station lighting installation and wiring",
             "zh": "钢结构安装; 工位照明安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques; Installation et câblage de l'éclairage des postes. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection; Station lighting installation and wiring. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装; 工位照明安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques; Installation et câblage de l'éclairage des postes. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection; Station lighting installation and wiring. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装; 工位照明安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage et érection des charpentes métalliques",
             "[UB] Installation et câblage de l'éclairage des postes"
@@ -4237,9 +4237,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Montage et érection des charpentes métalliques"
         ],
@@ -4402,9 +4402,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Montage et érection des charpentes métalliques"
         ],
@@ -4668,9 +4668,9 @@ const Store = {
             "en": "Steel structure installation and erection; Station lighting installation and wiring",
             "zh": "钢结构安装; 工位照明安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques; Installation et câblage de l'éclairage des postes. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection; Station lighting installation and wiring. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装; 工位照明安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques; Installation et câblage de l'éclairage des postes. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection; Station lighting installation and wiring. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装; 工位照明安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage et érection des charpentes métalliques",
             "[UB] Installation et câblage de l'éclairage des postes"
@@ -4836,9 +4836,9 @@ const Store = {
             "en": "Steel structure installation and erection; Station lighting installation and wiring",
             "zh": "钢结构安装; 工位照明安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques; Installation et câblage de l'éclairage des postes. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection; Station lighting installation and wiring. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装; 工位照明安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et érection des charpentes métalliques; Installation et câblage de l'éclairage des postes. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Steel structure installation and erection; Station lighting installation and wiring. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：钢结构安装; 工位照明安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage et érection des charpentes métalliques",
             "[UB] Installation et câblage de l'éclairage des postes"
@@ -5004,9 +5004,9 @@ const Store = {
             "en": "Station lighting installation and wiring; Station cooling fans installation",
             "zh": "工位照明安装; 工位风扇安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation et câblage de l'éclairage des postes; Pose et fixation des ventilateurs industriels de postes. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Station lighting installation and wiring; Station cooling fans installation. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：工位照明安装; 工位风扇安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation et câblage de l'éclairage des postes; Pose et fixation des ventilateurs industriels de postes. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Station lighting installation and wiring; Station cooling fans installation. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：工位照明安装; 工位风扇安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation et câblage de l'éclairage des postes",
             "[UB] Pose et fixation des ventilateurs industriels de postes"
@@ -5172,9 +5172,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Montage et érection des charpentes métalliques"
         ],
@@ -5337,9 +5337,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Montage et érection des charpentes métalliques"
         ],
@@ -5603,9 +5603,9 @@ const Store = {
             "en": "Station lighting installation and wiring; Station cooling fans installation",
             "zh": "工位照明安装; 工位风扇安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation et câblage de l'éclairage des postes; Pose et fixation des ventilateurs industriels de postes. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Station lighting installation and wiring; Station cooling fans installation. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：工位照明安装; 工位风扇安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation et câblage de l'éclairage des postes; Pose et fixation des ventilateurs industriels de postes. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Station lighting installation and wiring; Station cooling fans installation. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：工位照明安装; 工位风扇安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation et câblage de l'éclairage des postes",
             "[UB] Pose et fixation des ventilateurs industriels de postes"
@@ -5771,9 +5771,9 @@ const Store = {
             "en": "Station lighting installation and wiring; Station cooling fans installation",
             "zh": "工位照明安装; 工位风扇安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation et câblage de l'éclairage des postes; Pose et fixation des ventilateurs industriels de postes. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Station lighting installation and wiring; Station cooling fans installation. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：工位照明安装; 工位风扇安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation et câblage de l'éclairage des postes; Pose et fixation des ventilateurs industriels de postes. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Station lighting installation and wiring; Station cooling fans installation. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：工位照明安装; 工位风扇安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation et câblage de l'éclairage des postes",
             "[UB] Pose et fixation des ventilateurs industriels de postes"
@@ -5939,9 +5939,9 @@ const Store = {
             "en": "Station cooling fans installation; Pneumatic and cooling water piping installation",
             "zh": "工位风扇安装; 水气管道安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et fixation des ventilateurs industriels de postes; Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Station cooling fans installation; Pneumatic and cooling water piping installation. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：工位风扇安装; 水气管道安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et fixation des ventilateurs industriels de postes; Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Station cooling fans installation; Pneumatic and cooling water piping installation. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：工位风扇安装; 水气管道安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Pose et fixation des ventilateurs industriels de postes",
             "[UB] Pose et raccordement des tuyauteries eau et air comprimé"
@@ -6107,9 +6107,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Montage et érection des charpentes métalliques"
         ],
@@ -6272,9 +6272,9 @@ const Store = {
             "en": "Steel structure installation and erection",
             "zh": "钢结构安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Montage et érection des charpentes métalliques. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Steel structure installation and erection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：钢结构安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Montage et érection des charpentes métalliques. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Steel structure installation and erection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：钢结构安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Montage et érection des charpentes métalliques"
         ],
@@ -6538,9 +6538,9 @@ const Store = {
             "en": "Station cooling fans installation; Pneumatic and cooling water piping installation",
             "zh": "工位风扇安装; 水气管道安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et fixation des ventilateurs industriels de postes; Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Station cooling fans installation; Pneumatic and cooling water piping installation. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：工位风扇安装; 水气管道安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et fixation des ventilateurs industriels de postes; Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Station cooling fans installation; Pneumatic and cooling water piping installation. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：工位风扇安装; 水气管道安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Pose et fixation des ventilateurs industriels de postes",
             "[UB] Pose et raccordement des tuyauteries eau et air comprimé"
@@ -6706,9 +6706,9 @@ const Store = {
             "en": "Station cooling fans installation; Pneumatic and cooling water piping installation",
             "zh": "工位风扇安装; 水气管道安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et fixation des ventilateurs industriels de postes; Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Station cooling fans installation; Pneumatic and cooling water piping installation. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：工位风扇安装; 水气管道安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et fixation des ventilateurs industriels de postes; Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Station cooling fans installation; Pneumatic and cooling water piping installation. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：工位风扇安装; 水气管道安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Pose et fixation des ventilateurs industriels de postes",
             "[UB] Pose et raccordement des tuyauteries eau et air comprimé"
@@ -6874,9 +6874,9 @@ const Store = {
             "en": "Pneumatic and cooling water piping installation",
             "zh": "水气管道安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pneumatic and cooling water piping installation. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：水气管道安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pneumatic and cooling water piping installation. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：水气管道安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Pose et raccordement des tuyauteries eau et air comprimé"
         ],
@@ -7039,9 +7039,9 @@ const Store = {
             "en": "Pneumatic and cooling water piping installation",
             "zh": "水气管道安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Pneumatic and cooling water piping installation. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：水气管道安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Pneumatic and cooling water piping installation. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：水气管道安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Pose et raccordement des tuyauteries eau et air comprimé"
         ],
@@ -7204,9 +7204,9 @@ const Store = {
             "en": "Pneumatic and cooling water piping installation",
             "zh": "水气管道安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Pneumatic and cooling water piping installation. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：水气管道安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Pneumatic and cooling water piping installation. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：水气管道安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Pose et raccordement des tuyauteries eau et air comprimé"
         ],
@@ -7470,9 +7470,9 @@ const Store = {
             "en": "Pneumatic and cooling water piping installation",
             "zh": "水气管道安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pneumatic and cooling water piping installation. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：水气管道安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pneumatic and cooling water piping installation. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：水气管道安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Pose et raccordement des tuyauteries eau et air comprimé"
         ],
@@ -7635,9 +7635,9 @@ const Store = {
             "en": "Pneumatic and cooling water piping installation",
             "zh": "水气管道安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pneumatic and cooling water piping installation. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：水气管道安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pneumatic and cooling water piping installation. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：水气管道安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Pose et raccordement des tuyauteries eau et air comprimé"
         ],
@@ -7800,9 +7800,9 @@ const Store = {
             "en": "IG2 busbar electrical installation; Power cable pulling and IG1-IG2 connection; DEMAG KBK overhead rail and crane installation; Fixtures positioning, leveling and mechanical adjustment",
             "zh": "IG2母排安装; 电缆敷设与接线; DEMAG导轨及起重设备安装; 夹具落位及精准调平"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation des jeux de barres électriques blindées IG2; Tirage et raccordement des câbles de puissance IG1-IG2; Montage des rails et ponts suspendus DEMAG KBK; Implantation, mise à niveau et calage des gabarits (fixtures). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: IG2 busbar electrical installation; Power cable pulling and IG1-IG2 connection; DEMAG KBK overhead rail and crane installation; Fixtures positioning, leveling and mechanical adjustment. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：IG2母排安装; 电缆敷设与接线; DEMAG导轨及起重设备安装; 夹具落位及精准调平。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation des jeux de barres électriques blindées IG2; Tirage et raccordement des câbles de puissance IG1-IG2; Montage des rails et ponts suspendus DEMAG KBK; Implantation, mise à niveau et calage des gabarits (fixtures). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: IG2 busbar electrical installation; Power cable pulling and IG1-IG2 connection; DEMAG KBK overhead rail and crane installation; Fixtures positioning, leveling and mechanical adjustment. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：IG2母排安装; 电缆敷设与接线; DEMAG导轨及起重设备安装; 夹具落位及精准调平。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation des jeux de barres électriques blindées IG2",
             "[UB] Tirage et raccordement des câbles de puissance IG1-IG2",
@@ -7974,9 +7974,9 @@ const Store = {
             "en": "Pneumatic and cooling water piping installation",
             "zh": "水气管道安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Pneumatic and cooling water piping installation. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：水气管道安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Pneumatic and cooling water piping installation. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：水气管道安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Pose et raccordement des tuyauteries eau et air comprimé"
         ],
@@ -8139,9 +8139,9 @@ const Store = {
             "en": "Pneumatic and cooling water piping installation",
             "zh": "水气管道安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Pneumatic and cooling water piping installation. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：水气管道安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Pose et raccordement des tuyauteries eau et air comprimé. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Pneumatic and cooling water piping installation. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：水气管道安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Pose et raccordement des tuyauteries eau et air comprimé"
         ],
@@ -8405,9 +8405,9 @@ const Store = {
             "en": "IG2 busbar electrical installation; Power cable pulling and IG1-IG2 connection; DEMAG KBK overhead rail and crane installation; Fixtures positioning, leveling and mechanical adjustment",
             "zh": "IG2母排安装; 电缆敷设与接线; DEMAG导轨及起重设备安装; 夹具落位及精准调平"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation des jeux de barres électriques blindées IG2; Tirage et raccordement des câbles de puissance IG1-IG2; Montage des rails et ponts suspendus DEMAG KBK; Implantation, mise à niveau et calage des gabarits (fixtures). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: IG2 busbar electrical installation; Power cable pulling and IG1-IG2 connection; DEMAG KBK overhead rail and crane installation; Fixtures positioning, leveling and mechanical adjustment. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：IG2母排安装; 电缆敷设与接线; DEMAG导轨及起重设备安装; 夹具落位及精准调平。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation des jeux de barres électriques blindées IG2; Tirage et raccordement des câbles de puissance IG1-IG2; Montage des rails et ponts suspendus DEMAG KBK; Implantation, mise à niveau et calage des gabarits (fixtures). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: IG2 busbar electrical installation; Power cable pulling and IG1-IG2 connection; DEMAG KBK overhead rail and crane installation; Fixtures positioning, leveling and mechanical adjustment. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：IG2母排安装; 电缆敷设与接线; DEMAG导轨及起重设备安装; 夹具落位及精准调平。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation des jeux de barres électriques blindées IG2",
             "[UB] Tirage et raccordement des câbles de puissance IG1-IG2",
@@ -8579,9 +8579,9 @@ const Store = {
             "en": "IG2 busbar electrical installation; Power cable pulling and IG1-IG2 connection; DEMAG KBK overhead rail and crane installation; Fixtures positioning, leveling and mechanical adjustment",
             "zh": "IG2母排安装; 电缆敷设与接线; DEMAG导轨及起重设备安装; 夹具落位及精准调平"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation des jeux de barres électriques blindées IG2; Tirage et raccordement des câbles de puissance IG1-IG2; Montage des rails et ponts suspendus DEMAG KBK; Implantation, mise à niveau et calage des gabarits (fixtures). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: IG2 busbar electrical installation; Power cable pulling and IG1-IG2 connection; DEMAG KBK overhead rail and crane installation; Fixtures positioning, leveling and mechanical adjustment. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：IG2母排安装; 电缆敷设与接线; DEMAG导轨及起重设备安装; 夹具落位及精准调平。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation des jeux de barres électriques blindées IG2; Tirage et raccordement des câbles de puissance IG1-IG2; Montage des rails et ponts suspendus DEMAG KBK; Implantation, mise à niveau et calage des gabarits (fixtures). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: IG2 busbar electrical installation; Power cable pulling and IG1-IG2 connection; DEMAG KBK overhead rail and crane installation; Fixtures positioning, leveling and mechanical adjustment. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：IG2母排安装; 电缆敷设与接线; DEMAG导轨及起重设备安装; 夹具落位及精准调平。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation des jeux de barres électriques blindées IG2",
             "[UB] Tirage et raccordement des câbles de puissance IG1-IG2",
@@ -8753,9 +8753,9 @@ const Store = {
             "en": "DEMAG KBK overhead rail and crane installation; Manual welding controllers installation & setup; Torque check and anchor bolting verification",
             "zh": "DEMAG导轨及起重设备安装; 手动焊接控制器安装与调试; 地脚螺栓扭力检查"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage des rails et ponts suspendus DEMAG KBK; Installation et mise en service des coffrets contrôleurs de soudage; Contrôle et serrage au couple certifié des ancrages. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: DEMAG KBK overhead rail and crane installation; Manual welding controllers installation & setup; Torque check and anchor bolting verification. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：DEMAG导轨及起重设备安装; 手动焊接控制器安装与调试; 地脚螺栓扭力检查。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage des rails et ponts suspendus DEMAG KBK; Installation et mise en service des coffrets contrôleurs de soudage; Contrôle et serrage au couple certifié des ancrages. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: DEMAG KBK overhead rail and crane installation; Manual welding controllers installation & setup; Torque check and anchor bolting verification. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：DEMAG导轨及起重设备安装; 手动焊接控制器安装与调试; 地脚螺栓扭力检查。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage des rails et ponts suspendus DEMAG KBK",
             "[UB] Installation et mise en service des coffrets contrôleurs de soudage",
@@ -8924,9 +8924,9 @@ const Store = {
             "en": "Station cooling fans installation; Pneumatic and cooling water piping installation; Power cable pulling and IG1-IG2 connection",
             "zh": "工位风扇安装; 水气管道安装; 电缆敷设与接线"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Pose et fixation des ventilateurs industriels de postes; Pose et raccordement des tuyauteries eau et air comprimé; Tirage et raccordement des câbles de puissance IG1-IG2. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Station cooling fans installation; Pneumatic and cooling water piping installation; Power cable pulling and IG1-IG2 connection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：工位风扇安装; 水气管道安装; 电缆敷设与接线。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Pose et fixation des ventilateurs industriels de postes; Pose et raccordement des tuyauteries eau et air comprimé; Tirage et raccordement des câbles de puissance IG1-IG2. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Station cooling fans installation; Pneumatic and cooling water piping installation; Power cable pulling and IG1-IG2 connection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：工位风扇安装; 水气管道安装; 电缆敷设与接线。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Pose et fixation des ventilateurs industriels de postes",
             "[UAR] Pose et raccordement des tuyauteries eau et air comprimé",
@@ -9095,9 +9095,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly",
             "zh": "FUSA 区域 (前底盘分总成) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant)"
         ],
@@ -9361,9 +9361,9 @@ const Store = {
             "en": "DEMAG KBK overhead rail and crane installation; Manual welding controllers installation & setup; Torque check and anchor bolting verification",
             "zh": "DEMAG导轨及起重设备安装; 手动焊接控制器安装与调试; 地脚螺栓扭力检查"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage des rails et ponts suspendus DEMAG KBK; Installation et mise en service des coffrets contrôleurs de soudage; Contrôle et serrage au couple certifié des ancrages. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: DEMAG KBK overhead rail and crane installation; Manual welding controllers installation & setup; Torque check and anchor bolting verification. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：DEMAG导轨及起重设备安装; 手动焊接控制器安装与调试; 地脚螺栓扭力检查。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage des rails et ponts suspendus DEMAG KBK; Installation et mise en service des coffrets contrôleurs de soudage; Contrôle et serrage au couple certifié des ancrages. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: DEMAG KBK overhead rail and crane installation; Manual welding controllers installation & setup; Torque check and anchor bolting verification. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：DEMAG导轨及起重设备安装; 手动焊接控制器安装与调试; 地脚螺栓扭力检查。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage des rails et ponts suspendus DEMAG KBK",
             "[UB] Installation et mise en service des coffrets contrôleurs de soudage",
@@ -9532,9 +9532,9 @@ const Store = {
             "en": "DEMAG KBK overhead rail and crane installation; Manual welding controllers installation & setup; Torque check and anchor bolting verification",
             "zh": "DEMAG导轨及起重设备安装; 手动焊接控制器安装与调试; 地脚螺栓扭力检查"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage des rails et ponts suspendus DEMAG KBK; Installation et mise en service des coffrets contrôleurs de soudage; Contrôle et serrage au couple certifié des ancrages. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: DEMAG KBK overhead rail and crane installation; Manual welding controllers installation & setup; Torque check and anchor bolting verification. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：DEMAG导轨及起重设备安装; 手动焊接控制器安装与调试; 地脚螺栓扭力检查。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage des rails et ponts suspendus DEMAG KBK; Installation et mise en service des coffrets contrôleurs de soudage; Contrôle et serrage au couple certifié des ancrages. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: DEMAG KBK overhead rail and crane installation; Manual welding controllers installation & setup; Torque check and anchor bolting verification. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：DEMAG导轨及起重设备安装; 手动焊接控制器安装与调试; 地脚螺栓扭力检查。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage des rails et ponts suspendus DEMAG KBK",
             "[UB] Installation et mise en service des coffrets contrôleurs de soudage",
@@ -9703,9 +9703,9 @@ const Store = {
             "en": "Manual welding guns installation and balancing; Power on, water & pneumatic supply connection; Manual welding controllers installation & setup; Pre-buyoff checklist issues closure and fine tuning; Fixtures 3D measurement, adjustment and Black Book report; Preliminary parts clearance inspection",
             "zh": "手动焊枪安装与平衡器调节; 水气电能源接通与调试; 手动焊接控制器安装与调试; 预验收问题单整改; 夹具三坐标测量、调试及Black Book报告; 零件间隙预检查"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et équilibrage des pinces à souder manuelles; Mise sous tension, purge fluides et raccordements énergies; Installation et mise en service des coffrets contrôleurs de soudage; Levée des réserves et ajustements préalables des gabarits; Mesures tridimensionnelles, réglages précis et rapport Black Book; Contrôle géométrique préalable des jeux entre pièces. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Manual welding guns installation and balancing; Power on, water & pneumatic supply connection; Manual welding controllers installation & setup; Pre-buyoff checklist issues closure and fine tuning; Fixtures 3D measurement, adjustment and Black Book report; Preliminary parts clearance inspection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：手动焊枪安装与平衡器调节; 水气电能源接通与调试; 手动焊接控制器安装与调试; 预验收问题单整改; 夹具三坐标测量、调试及Black Book报告; 零件间隙预检查。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et équilibrage des pinces à souder manuelles; Mise sous tension, purge fluides et raccordements énergies; Installation et mise en service des coffrets contrôleurs de soudage; Levée des réserves et ajustements préalables des gabarits; Mesures tridimensionnelles, réglages précis et rapport Black Book; Contrôle géométrique préalable des jeux entre pièces. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Manual welding guns installation and balancing; Power on, water & pneumatic supply connection; Manual welding controllers installation & setup; Pre-buyoff checklist issues closure and fine tuning; Fixtures 3D measurement, adjustment and Black Book report; Preliminary parts clearance inspection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：手动焊枪安装与平衡器调节; 水气电能源接通与调试; 手动焊接控制器安装与调试; 预验收问题单整改; 夹具三坐标测量、调试及Black Book报告; 零件间隙预检查。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage et équilibrage des pinces à souder manuelles",
             "[UB] Mise sous tension, purge fluides et raccordements énergies",
@@ -9883,9 +9883,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line",
             "zh": "UAR 区域 (后底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：UAR 区域 (后底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：UAR 区域 (后底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière)"
         ],
@@ -10048,9 +10048,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly",
             "zh": "FUSA 区域 (前底盘分总成) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant)"
         ],
@@ -10314,9 +10314,9 @@ const Store = {
             "en": "Manual welding guns installation and balancing; Power on, water & pneumatic supply connection; Manual welding controllers installation & setup; Pre-buyoff checklist issues closure and fine tuning; Fixtures 3D measurement, adjustment and Black Book report; Preliminary parts clearance inspection",
             "zh": "手动焊枪安装与平衡器调节; 水气电能源接通与调试; 手动焊接控制器安装与调试; 预验收问题单整改; 夹具三坐标测量、调试及Black Book报告; 零件间隙预检查"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et équilibrage des pinces à souder manuelles; Mise sous tension, purge fluides et raccordements énergies; Installation et mise en service des coffrets contrôleurs de soudage; Levée des réserves et ajustements préalables des gabarits; Mesures tridimensionnelles, réglages précis et rapport Black Book; Contrôle géométrique préalable des jeux entre pièces. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Manual welding guns installation and balancing; Power on, water & pneumatic supply connection; Manual welding controllers installation & setup; Pre-buyoff checklist issues closure and fine tuning; Fixtures 3D measurement, adjustment and Black Book report; Preliminary parts clearance inspection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：手动焊枪安装与平衡器调节; 水气电能源接通与调试; 手动焊接控制器安装与调试; 预验收问题单整改; 夹具三坐标测量、调试及Black Book报告; 零件间隙预检查。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et équilibrage des pinces à souder manuelles; Mise sous tension, purge fluides et raccordements énergies; Installation et mise en service des coffrets contrôleurs de soudage; Levée des réserves et ajustements préalables des gabarits; Mesures tridimensionnelles, réglages précis et rapport Black Book; Contrôle géométrique préalable des jeux entre pièces. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Manual welding guns installation and balancing; Power on, water & pneumatic supply connection; Manual welding controllers installation & setup; Pre-buyoff checklist issues closure and fine tuning; Fixtures 3D measurement, adjustment and Black Book report; Preliminary parts clearance inspection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：手动焊枪安装与平衡器调节; 水气电能源接通与调试; 手动焊接控制器安装与调试; 预验收问题单整改; 夹具三坐标测量、调试及Black Book报告; 零件间隙预检查。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage et équilibrage des pinces à souder manuelles",
             "[UB] Mise sous tension, purge fluides et raccordements énergies",
@@ -10494,9 +10494,9 @@ const Store = {
             "en": "Manual welding guns installation and balancing; Power on, water & pneumatic supply connection; Manual welding controllers installation & setup; Pre-buyoff checklist issues closure and fine tuning; Fixtures 3D measurement, adjustment and Black Book report; Preliminary parts clearance inspection",
             "zh": "手动焊枪安装与平衡器调节; 水气电能源接通与调试; 手动焊接控制器安装与调试; 预验收问题单整改; 夹具三坐标测量、调试及Black Book报告; 零件间隙预检查"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et équilibrage des pinces à souder manuelles; Mise sous tension, purge fluides et raccordements énergies; Installation et mise en service des coffrets contrôleurs de soudage; Levée des réserves et ajustements préalables des gabarits; Mesures tridimensionnelles, réglages précis et rapport Black Book; Contrôle géométrique préalable des jeux entre pièces. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Manual welding guns installation and balancing; Power on, water & pneumatic supply connection; Manual welding controllers installation & setup; Pre-buyoff checklist issues closure and fine tuning; Fixtures 3D measurement, adjustment and Black Book report; Preliminary parts clearance inspection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：手动焊枪安装与平衡器调节; 水气电能源接通与调试; 手动焊接控制器安装与调试; 预验收问题单整改; 夹具三坐标测量、调试及Black Book报告; 零件间隙预检查。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Montage et équilibrage des pinces à souder manuelles; Mise sous tension, purge fluides et raccordements énergies; Installation et mise en service des coffrets contrôleurs de soudage; Levée des réserves et ajustements préalables des gabarits; Mesures tridimensionnelles, réglages précis et rapport Black Book; Contrôle géométrique préalable des jeux entre pièces. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Manual welding guns installation and balancing; Power on, water & pneumatic supply connection; Manual welding controllers installation & setup; Pre-buyoff checklist issues closure and fine tuning; Fixtures 3D measurement, adjustment and Black Book report; Preliminary parts clearance inspection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：手动焊枪安装与平衡器调节; 水气电能源接通与调试; 手动焊接控制器安装与调试; 预验收问题单整改; 夹具三坐标测量、调试及Black Book报告; 零件间隙预检查。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Montage et équilibrage des pinces à souder manuelles",
             "[UB] Mise sous tension, purge fluides et raccordements énergies",
@@ -10674,9 +10674,9 @@ const Store = {
             "en": "Manual welding controllers installation & setup; Robotic grippers installation and mechanical alignment; Pre-buyoff checklist issues closure and fine tuning; Preliminary parts clearance inspection; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials",
             "zh": "手动焊接控制器安装与调试; 机器人抓手安装与机械校准; 预验收问题单整改; 零件间隙预检查; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation et mise en service des coffrets contrôleurs de soudage; Montage mécanique et alignement des préhenseurs (grippers); Levée des réserves et ajustements préalables des gabarits; Contrôle géométrique préalable des jeux entre pièces; Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Manual welding controllers installation & setup; Robotic grippers installation and mechanical alignment; Pre-buyoff checklist issues closure and fine tuning; Preliminary parts clearance inspection; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：手动焊接控制器安装与调试; 机器人抓手安装与机械校准; 预验收问题单整改; 零件间隙预检查; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation et mise en service des coffrets contrôleurs de soudage; Montage mécanique et alignement des préhenseurs (grippers); Levée des réserves et ajustements préalables des gabarits; Contrôle géométrique préalable des jeux entre pièces; Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Manual welding controllers installation & setup; Robotic grippers installation and mechanical alignment; Pre-buyoff checklist issues closure and fine tuning; Preliminary parts clearance inspection; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：手动焊接控制器安装与调试; 机器人抓手安装与机械校准; 预验收问题单整改; 零件间隙预检查; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation et mise en service des coffrets contrôleurs de soudage",
             "[UB] Montage mécanique et alignement des préhenseurs (grippers)",
@@ -10854,9 +10854,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line",
             "zh": "UAR 区域 (后底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：UAR 区域 (后底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：UAR 区域 (后底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière)"
         ],
@@ -11019,9 +11019,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly",
             "zh": "FUSA 区域 (前底盘分总成) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant)"
         ],
@@ -11285,9 +11285,9 @@ const Store = {
             "en": "Manual welding controllers installation & setup; Robotic grippers installation and mechanical alignment; Pre-buyoff checklist issues closure and fine tuning; Preliminary parts clearance inspection; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials",
             "zh": "手动焊接控制器安装与调试; 机器人抓手安装与机械校准; 预验收问题单整改; 零件间隙预检查; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation et mise en service des coffrets contrôleurs de soudage; Montage mécanique et alignement des préhenseurs (grippers); Levée des réserves et ajustements préalables des gabarits; Contrôle géométrique préalable des jeux entre pièces; Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Manual welding controllers installation & setup; Robotic grippers installation and mechanical alignment; Pre-buyoff checklist issues closure and fine tuning; Preliminary parts clearance inspection; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：手动焊接控制器安装与调试; 机器人抓手安装与机械校准; 预验收问题单整改; 零件间隙预检查; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation et mise en service des coffrets contrôleurs de soudage; Montage mécanique et alignement des préhenseurs (grippers); Levée des réserves et ajustements préalables des gabarits; Contrôle géométrique préalable des jeux entre pièces; Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Manual welding controllers installation & setup; Robotic grippers installation and mechanical alignment; Pre-buyoff checklist issues closure and fine tuning; Preliminary parts clearance inspection; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：手动焊接控制器安装与调试; 机器人抓手安装与机械校准; 预验收问题单整改; 零件间隙预检查; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation et mise en service des coffrets contrôleurs de soudage",
             "[UB] Montage mécanique et alignement des préhenseurs (grippers)",
@@ -11465,9 +11465,9 @@ const Store = {
             "en": "Manual welding controllers installation & setup; Robotic grippers installation and mechanical alignment; Pre-buyoff checklist issues closure and fine tuning; Preliminary parts clearance inspection; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials",
             "zh": "手动焊接控制器安装与调试; 机器人抓手安装与机械校准; 预验收问题单整改; 零件间隙预检查; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation et mise en service des coffrets contrôleurs de soudage; Montage mécanique et alignement des préhenseurs (grippers); Levée des réserves et ajustements préalables des gabarits; Contrôle géométrique préalable des jeux entre pièces; Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Manual welding controllers installation & setup; Robotic grippers installation and mechanical alignment; Pre-buyoff checklist issues closure and fine tuning; Preliminary parts clearance inspection; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：手动焊接控制器安装与调试; 机器人抓手安装与机械校准; 预验收问题单整改; 零件间隙预检查; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation et mise en service des coffrets contrôleurs de soudage; Montage mécanique et alignement des préhenseurs (grippers); Levée des réserves et ajustements préalables des gabarits; Contrôle géométrique préalable des jeux entre pièces; Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Manual welding controllers installation & setup; Robotic grippers installation and mechanical alignment; Pre-buyoff checklist issues closure and fine tuning; Preliminary parts clearance inspection; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：手动焊接控制器安装与调试; 机器人抓手安装与机械校准; 预验收问题单整改; 零件间隙预检查; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation et mise en service des coffrets contrôleurs de soudage",
             "[UB] Montage mécanique et alignement des préhenseurs (grippers)",
@@ -11645,9 +11645,9 @@ const Store = {
             "en": "Gluing dispensing equipment installation; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials; First Assembly Part (First ASM) manufacturing and validation; Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification",
             "zh": "涂胶设备安装与管道连接; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装; 首件装配制作与质检验收; 安全认证及综合测试; FEE/REE安装检查清单验证"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et raccordement des équipements de dépose de colle; Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente; Réalisation et validation de la première pièce assemblée (First Assembly); Essais de sécurité, tests de conformité et certification; Vérification de conformité de l'installation FEE/REE. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Gluing dispensing equipment installation; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials; First Assembly Part (First ASM) manufacturing and validation; Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：涂胶设备安装与管道连接; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装; 首件装配制作与质检验收; 安全认证及综合测试; FEE/REE安装检查清单验证。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et raccordement des équipements de dépose de colle; Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente; Réalisation et validation de la première pièce assemblée (First Assembly); Essais de sécurité, tests de conformité et certification; Vérification de conformité de l'installation FEE/REE. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Gluing dispensing equipment installation; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials; First Assembly Part (First ASM) manufacturing and validation; Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：涂胶设备安装与管道连接; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装; 首件装配制作与质检验收; 安全认证及综合测试; FEE/REE安装检查清单验证。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Pose et raccordement des équipements de dépose de colle",
             "[UB] Ajustement géométrique des pièces sur les gabarits",
@@ -11825,9 +11825,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line",
             "zh": "UAR 区域 (后底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：UAR 区域 (后底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：UAR 区域 (后底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière)"
         ],
@@ -11990,9 +11990,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly",
             "zh": "FUSA 区域 (前底盘分总成) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant)"
         ],
@@ -12256,9 +12256,9 @@ const Store = {
             "en": "Gluing dispensing equipment installation; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials; First Assembly Part (First ASM) manufacturing and validation; Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification",
             "zh": "涂胶设备安装与管道连接; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装; 首件装配制作与质检验收; 安全认证及综合测试; FEE/REE安装检查清单验证"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et raccordement des équipements de dépose de colle; Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente; Réalisation et validation de la première pièce assemblée (First Assembly); Essais de sécurité, tests de conformité et certification; Vérification de conformité de l'installation FEE/REE. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Gluing dispensing equipment installation; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials; First Assembly Part (First ASM) manufacturing and validation; Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：涂胶设备安装与管道连接; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装; 首件装配制作与质检验收; 安全认证及综合测试; FEE/REE安装检查清单验证。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et raccordement des équipements de dépose de colle; Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente; Réalisation et validation de la première pièce assemblée (First Assembly); Essais de sécurité, tests de conformité et certification; Vérification de conformité de l'installation FEE/REE. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Gluing dispensing equipment installation; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials; First Assembly Part (First ASM) manufacturing and validation; Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：涂胶设备安装与管道连接; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装; 首件装配制作与质检验收; 安全认证及综合测试; FEE/REE安装检查清单验证。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Pose et raccordement des équipements de dépose de colle",
             "[UB] Ajustement géométrique des pièces sur les gabarits",
@@ -12436,9 +12436,9 @@ const Store = {
             "en": "Gluing dispensing equipment installation; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials; First Assembly Part (First ASM) manufacturing and validation; Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification",
             "zh": "涂胶设备安装与管道连接; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装; 首件装配制作与质检验收; 安全认证及综合测试; FEE/REE安装检查清单验证"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et raccordement des équipements de dépose de colle; Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente; Réalisation et validation de la première pièce assemblée (First Assembly); Essais de sécurité, tests de conformité et certification; Vérification de conformité de l'installation FEE/REE. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Gluing dispensing equipment installation; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials; First Assembly Part (First ASM) manufacturing and validation; Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：涂胶设备安装与管道连接; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装; 首件装配制作与质检验收; 安全认证及综合测试; FEE/REE安装检查清单验证。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Pose et raccordement des équipements de dépose de colle; Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente; Réalisation et validation de la première pièce assemblée (First Assembly); Essais de sécurité, tests de conformité et certification; Vérification de conformité de l'installation FEE/REE. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Gluing dispensing equipment installation; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials; First Assembly Part (First ASM) manufacturing and validation; Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：涂胶设备安装与管道连接; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装; 首件装配制作与质检验收; 安全认证及综合测试; FEE/REE安装检查清单验证。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Pose et raccordement des équipements de dépose de colle",
             "[UB] Ajustement géométrique des pièces sur les gabarits",
@@ -12616,9 +12616,9 @@ const Store = {
             "en": "Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification; Industrial Milestone X0 and line buyoff",
             "zh": "安全认证及综合测试; FEE/REE安装检查清单验证; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Essais de sécurité, tests de conformité et certification; Vérification de conformité de l'installation FEE/REE; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全认证及综合测试; FEE/REE安装检查清单验证; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Essais de sécurité, tests de conformité et certification; Vérification de conformité de l'installation FEE/REE; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全认证及综合测试; FEE/REE安装检查清单验证; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Essais de sécurité, tests de conformité et certification",
             "[UB] Vérification de conformité de l'installation FEE/REE",
@@ -12787,9 +12787,9 @@ const Store = {
             "en": "Manual welding controllers installation & setup; Manual welding guns installation and balancing; Power on, water & pneumatic supply connection",
             "zh": "手动焊接控制器安装与调试; 手动焊枪安装与平衡器调节; 水气电能源接通与调试"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation et mise en service des coffrets contrôleurs de soudage; Montage et équilibrage des pinces à souder manuelles; Mise sous tension, purge fluides et raccordements énergies. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Manual welding controllers installation & setup; Manual welding guns installation and balancing; Power on, water & pneumatic supply connection. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：手动焊接控制器安装与调试; 手动焊枪安装与平衡器调节; 水气电能源接通与调试。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation et mise en service des coffrets contrôleurs de soudage; Montage et équilibrage des pinces à souder manuelles; Mise sous tension, purge fluides et raccordements énergies. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Manual welding controllers installation & setup; Manual welding guns installation and balancing; Power on, water & pneumatic supply connection. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：手动焊接控制器安装与调试; 手动焊枪安装与平衡器调节; 水气电能源接通与调试。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Installation et mise en service des coffrets contrôleurs de soudage",
             "[UAR] Montage et équilibrage des pinces à souder manuelles",
@@ -12958,9 +12958,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly",
             "zh": "FUSA 区域 (前底盘分总成) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant)"
         ],
@@ -13224,9 +13224,9 @@ const Store = {
             "en": "Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification; Industrial Milestone X0 and line buyoff",
             "zh": "安全认证及综合测试; FEE/REE安装检查清单验证; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Essais de sécurité, tests de conformité et certification; Vérification de conformité de l'installation FEE/REE; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全认证及综合测试; FEE/REE安装检查清单验证; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Essais de sécurité, tests de conformité et certification; Vérification de conformité de l'installation FEE/REE; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全认证及综合测试; FEE/REE安装检查清单验证; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Essais de sécurité, tests de conformité et certification",
             "[UB] Vérification de conformité de l'installation FEE/REE",
@@ -13395,9 +13395,9 @@ const Store = {
             "en": "Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification; Industrial Milestone X0 and line buyoff",
             "zh": "安全认证及综合测试; FEE/REE安装检查清单验证; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Essais de sécurité, tests de conformité et certification; Vérification de conformité de l'installation FEE/REE; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全认证及综合测试; FEE/REE安装检查清单验证; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Essais de sécurité, tests de conformité et certification; Vérification de conformité de l'installation FEE/REE; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全认证及综合测试; FEE/REE安装检查清单验证; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Essais de sécurité, tests de conformité et certification",
             "[UB] Vérification de conformité de l'installation FEE/REE",
@@ -13566,9 +13566,9 @@ const Store = {
             "en": "FEE_REE installation compliance checklist verification; HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff",
             "zh": "FEE/REE安装检查清单验证; 安全验收与现场放行; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Vérification de conformité de l'installation FEE/REE; Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: FEE_REE installation compliance checklist verification; HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：FEE/REE安装检查清单验证; 安全验收与现场放行; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Vérification de conformité de l'installation FEE/REE; Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: FEE_REE installation compliance checklist verification; HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：FEE/REE安装检查清单验证; 安全验收与现场放行; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Vérification de conformité de l'installation FEE/REE",
             "[UB] Réception formelle de sécurité HSE et levée des barrières",
@@ -13737,9 +13737,9 @@ const Store = {
             "en": "Manual welding controllers installation & setup; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials",
             "zh": "手动焊接控制器安装与调试; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation et mise en service des coffrets contrôleurs de soudage; Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Manual welding controllers installation & setup; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：手动焊接控制器安装与调试; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation et mise en service des coffrets contrôleurs de soudage; Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Manual welding controllers installation & setup; Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：手动焊接控制器安装与调试; 零件与夹具匹配及间隙调整; 重复性验证与慢速试装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Installation et mise en service des coffrets contrôleurs de soudage",
             "[UAR] Ajustement géométrique des pièces sur les gabarits",
@@ -13908,9 +13908,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly",
             "zh": "FUSA 区域 (前底盘分总成) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant)"
         ],
@@ -14174,9 +14174,9 @@ const Store = {
             "en": "FEE_REE installation compliance checklist verification; HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff",
             "zh": "FEE/REE安装检查清单验证; 安全验收与现场放行; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Vérification de conformité de l'installation FEE/REE; Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: FEE_REE installation compliance checklist verification; HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：FEE/REE安装检查清单验证; 安全验收与现场放行; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Vérification de conformité de l'installation FEE/REE; Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: FEE_REE installation compliance checklist verification; HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：FEE/REE安装检查清单验证; 安全验收与现场放行; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Vérification de conformité de l'installation FEE/REE",
             "[UB] Réception formelle de sécurité HSE et levée des barrières",
@@ -14345,9 +14345,9 @@ const Store = {
             "en": "FEE_REE installation compliance checklist verification; HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff",
             "zh": "FEE/REE安装检查清单验证; 安全验收与现场放行; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Vérification de conformité de l'installation FEE/REE; Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: FEE_REE installation compliance checklist verification; HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：FEE/REE安装检查清单验证; 安全验收与现场放行; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Vérification de conformité de l'installation FEE/REE; Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: FEE_REE installation compliance checklist verification; HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：FEE/REE安装检查清单验证; 安全验收与现场放行; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Vérification de conformité de l'installation FEE/REE",
             "[UB] Réception formelle de sécurité HSE et levée des barrières",
@@ -14516,9 +14516,9 @@ const Store = {
             "en": "HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff",
             "zh": "安全验收与现场放行; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全验收与现场放行; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全验收与现场放行; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Réception formelle de sécurité HSE et levée des barrières",
             "[UB] Jalon Industriel X0 et conformité ligne"
@@ -14684,9 +14684,9 @@ const Store = {
             "en": "Manual welding controllers installation & setup; Robotic grippers installation and mechanical alignment; Gluing dispensing equipment installation; Safety certification and compliance validation tests",
             "zh": "手动焊接控制器安装与调试; 机器人抓手安装与机械校准; 涂胶设备安装与管道连接; 安全认证及综合测试"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation et mise en service des coffrets contrôleurs de soudage; Montage mécanique et alignement des préhenseurs (grippers); Pose et raccordement des équipements de dépose de colle; Essais de sécurité, tests de conformité et certification. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Manual welding controllers installation & setup; Robotic grippers installation and mechanical alignment; Gluing dispensing equipment installation; Safety certification and compliance validation tests. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：手动焊接控制器安装与调试; 机器人抓手安装与机械校准; 涂胶设备安装与管道连接; 安全认证及综合测试。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation et mise en service des coffrets contrôleurs de soudage; Montage mécanique et alignement des préhenseurs (grippers); Pose et raccordement des équipements de dépose de colle; Essais de sécurité, tests de conformité et certification. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Manual welding controllers installation & setup; Robotic grippers installation and mechanical alignment; Gluing dispensing equipment installation; Safety certification and compliance validation tests. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：手动焊接控制器安装与调试; 机器人抓手安装与机械校准; 涂胶设备安装与管道连接; 安全认证及综合测试。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Installation et mise en service des coffrets contrôleurs de soudage",
             "[UAR] Montage mécanique et alignement des préhenseurs (grippers)",
@@ -14858,9 +14858,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly",
             "zh": "FUSA 区域 (前底盘分总成) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant)"
         ],
@@ -15124,9 +15124,9 @@ const Store = {
             "en": "HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff",
             "zh": "安全验收与现场放行; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全验收与现场放行; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全验收与现场放行; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Réception formelle de sécurité HSE et levée des barrières",
             "[UB] Jalon Industriel X0 et conformité ligne"
@@ -15292,9 +15292,9 @@ const Store = {
             "en": "HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff",
             "zh": "安全验收与现场放行; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全验收与现场放行; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全验收与现场放行; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Réception formelle de sécurité HSE et levée des barrières",
             "[UB] Jalon Industriel X0 et conformité ligne"
@@ -15460,9 +15460,9 @@ const Store = {
             "en": "HSE Safety Acceptance and site authorization buyoff; Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff",
             "zh": "安全验收与现场放行; 操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Réception formelle de sécurité HSE et levée des barrières; Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: HSE Safety Acceptance and site authorization buyoff; Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全验收与现场放行; 操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Réception formelle de sécurité HSE et levée des barrières; Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: HSE Safety Acceptance and site authorization buyoff; Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全验收与现场放行; 操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Réception formelle de sécurité HSE et levée des barrières",
             "[UB] Formation pratique des opérateurs et techniciens de maintenance",
@@ -15634,9 +15634,9 @@ const Store = {
             "en": "Gluing dispensing equipment installation; Safety certification and compliance validation tests",
             "zh": "涂胶设备安装与管道连接; 安全认证及综合测试"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Pose et raccordement des équipements de dépose de colle; Essais de sécurité, tests de conformité et certification. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Gluing dispensing equipment installation; Safety certification and compliance validation tests. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：涂胶设备安装与管道连接; 安全认证及综合测试。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Pose et raccordement des équipements de dépose de colle; Essais de sécurité, tests de conformité et certification. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Gluing dispensing equipment installation; Safety certification and compliance validation tests. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：涂胶设备安装与管道连接; 安全认证及综合测试。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Pose et raccordement des équipements de dépose de colle",
             "[UAR] Essais de sécurité, tests de conformité et certification"
@@ -15802,9 +15802,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly",
             "zh": "FUSA 区域 (前底盘分总成) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant)"
         ],
@@ -16068,9 +16068,9 @@ const Store = {
             "en": "HSE Safety Acceptance and site authorization buyoff; Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff",
             "zh": "安全验收与现场放行; 操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Réception formelle de sécurité HSE et levée des barrières; Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: HSE Safety Acceptance and site authorization buyoff; Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全验收与现场放行; 操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Réception formelle de sécurité HSE et levée des barrières; Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: HSE Safety Acceptance and site authorization buyoff; Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全验收与现场放行; 操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Réception formelle de sécurité HSE et levée des barrières",
             "[UB] Formation pratique des opérateurs et techniciens de maintenance",
@@ -16242,9 +16242,9 @@ const Store = {
             "en": "HSE Safety Acceptance and site authorization buyoff; Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff",
             "zh": "安全验收与现场放行; 操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Réception formelle de sécurité HSE et levée des barrières; Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: HSE Safety Acceptance and site authorization buyoff; Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全验收与现场放行; 操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Réception formelle de sécurité HSE et levée des barrières; Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: HSE Safety Acceptance and site authorization buyoff; Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：安全验收与现场放行; 操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Réception formelle de sécurité HSE et levée des barrières",
             "[UB] Formation pratique des opérateurs et techniciens de maintenance",
@@ -16416,9 +16416,9 @@ const Store = {
             "en": "Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff",
             "zh": "操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Formation pratique des opérateurs et techniciens de maintenance",
             "[UB] Formation pratique des opérateurs et techniciens de maintenance",
@@ -16587,9 +16587,9 @@ const Store = {
             "en": "FEE_REE installation compliance checklist verification; HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff",
             "zh": "FEE/REE安装检查清单验证; 安全验收与现场放行; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Vérification de conformité de l'installation FEE/REE; Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: FEE_REE installation compliance checklist verification; HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：FEE/REE安装检查清单验证; 安全验收与现场放行; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Vérification de conformité de l'installation FEE/REE; Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: FEE_REE installation compliance checklist verification; HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：FEE/REE安装检查清单验证; 安全验收与现场放行; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Vérification de conformité de l'installation FEE/REE",
             "[UAR] Réception formelle de sécurité HSE et levée des barrières",
@@ -16758,9 +16758,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly",
             "zh": "FUSA 区域 (前底盘分总成) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant)"
         ],
@@ -17024,9 +17024,9 @@ const Store = {
             "en": "Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff",
             "zh": "操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Formation pratique des opérateurs et techniciens de maintenance",
             "[UB] Formation pratique des opérateurs et techniciens de maintenance",
@@ -17195,9 +17195,9 @@ const Store = {
             "en": "Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff",
             "zh": "操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Formation pratique des opérateurs et techniciens de maintenance",
             "[UB] Formation pratique des opérateurs et techniciens de maintenance",
@@ -17366,9 +17366,9 @@ const Store = {
             "en": "Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff",
             "zh": "操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Formation pratique des opérateurs et techniciens de maintenance",
             "[UB] Formation pratique des opérateurs et techniciens de maintenance",
@@ -17537,9 +17537,9 @@ const Store = {
             "en": "HSE Safety Acceptance and site authorization buyoff; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff",
             "zh": "安全验收与现场放行; 操作工与维修人员实操培训; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Réception formelle de sécurité HSE et levée des barrières; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: HSE Safety Acceptance and site authorization buyoff; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：安全验收与现场放行; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Réception formelle de sécurité HSE et levée des barrières; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: HSE Safety Acceptance and site authorization buyoff; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：安全验收与现场放行; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Réception formelle de sécurité HSE et levée des barrières",
             "[UAR] Formation pratique des opérateurs et techniciens de maintenance",
@@ -17708,9 +17708,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly",
             "zh": "FUSA 区域 (前底盘分总成) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Installation, mechanical assembly and tooling for Zone FUSA — Front Underbody Sub-Assembly. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FUSA 区域 (前底盘分总成) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Installation, montage mécanique et outillages de la Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant)"
         ],
@@ -17974,9 +17974,9 @@ const Store = {
             "en": "Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff",
             "zh": "操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Formation pratique des opérateurs et techniciens de maintenance",
             "[UB] Formation pratique des opérateurs et techniciens de maintenance",
@@ -18145,9 +18145,9 @@ const Store = {
             "en": "Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff",
             "zh": "操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Formation pratique des opérateurs et techniciens de maintenance",
             "[UB] Formation pratique des opérateurs et techniciens de maintenance",
@@ -18316,9 +18316,9 @@ const Store = {
             "en": "Pilot production start / SOP (Start of Production)",
             "zh": "试生产启动 (SOP)"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pilot production start / SOP (Start of Production). Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：试生产启动 (SOP)。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pilot production start / SOP (Start of Production). Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：试生产启动 (SOP)。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Démarrage de la production pilote / SOP (Start of Production)"
         ],
@@ -18481,9 +18481,9 @@ const Store = {
             "en": "Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff",
             "zh": "操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Formation pratique des opérateurs et techniciens de maintenance",
             "[UAR] Formation pratique des opérateurs et techniciens de maintenance",
@@ -18652,9 +18652,9 @@ const Store = {
             "en": "Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials",
             "zh": "零件与夹具匹配及间隙调整; 重复性验证与慢速试装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：零件与夹具匹配及间隙调整; 重复性验证与慢速试装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：零件与夹具匹配及间隙调整; 重复性验证与慢速试装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Ajustement géométrique des pièces sur les gabarits",
             "[FUSA] Tests de répétabilité et assemblage à cadence lente"
@@ -18921,9 +18921,9 @@ const Store = {
             "en": "Pilot production start / SOP (Start of Production)",
             "zh": "试生产启动 (SOP)"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pilot production start / SOP (Start of Production). Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：试生产启动 (SOP)。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pilot production start / SOP (Start of Production). Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：试生产启动 (SOP)。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Démarrage de la production pilote / SOP (Start of Production)"
         ],
@@ -19086,9 +19086,9 @@ const Store = {
             "en": "Pilot production start / SOP (Start of Production)",
             "zh": "试生产启动 (SOP)"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pilot production start / SOP (Start of Production). Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：试生产启动 (SOP)。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pilot production start / SOP (Start of Production). Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：试生产启动 (SOP)。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Démarrage de la production pilote / SOP (Start of Production)"
         ],
@@ -19251,9 +19251,9 @@ const Store = {
             "en": "Pilot production start / SOP (Start of Production)",
             "zh": "试生产启动 (SOP)"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pilot production start / SOP (Start of Production). Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：试生产启动 (SOP)。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pilot production start / SOP (Start of Production). Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：试生产启动 (SOP)。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Démarrage de la production pilote / SOP (Start of Production)"
         ],
@@ -19416,9 +19416,9 @@ const Store = {
             "en": "Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff",
             "zh": "操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Formation pratique des opérateurs et techniciens de maintenance",
             "[UAR] Formation pratique des opérateurs et techniciens de maintenance",
@@ -19587,9 +19587,9 @@ const Store = {
             "en": "Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials",
             "zh": "零件与夹具匹配及间隙调整; 重复性验证与慢速试装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：零件与夹具匹配及间隙调整; 重复性验证与慢速试装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Ajustement géométrique des pièces sur les gabarits; Tests de répétabilité et assemblage à cadence lente. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Parts fitting and clearance adjustment on fixtures; Repeatability tests and slow-build assembly trials. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：零件与夹具匹配及间隙调整; 重复性验证与慢速试装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Ajustement géométrique des pièces sur les gabarits",
             "[FUSA] Tests de répétabilité et assemblage à cadence lente"
@@ -19856,9 +19856,9 @@ const Store = {
             "en": "Pilot production start / SOP (Start of Production)",
             "zh": "试生产启动 (SOP)"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pilot production start / SOP (Start of Production). Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：试生产启动 (SOP)。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pilot production start / SOP (Start of Production). Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：试生产启动 (SOP)。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Démarrage de la production pilote / SOP (Start of Production)"
         ],
@@ -20021,9 +20021,9 @@ const Store = {
             "en": "Pilot production start / SOP (Start of Production)",
             "zh": "试生产启动 (SOP)"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pilot production start / SOP (Start of Production). Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：试生产启动 (SOP)。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Pilot production start / SOP (Start of Production). Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：试生产启动 (SOP)。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Démarrage de la production pilote / SOP (Start of Production)"
         ],
@@ -20186,9 +20186,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -20351,9 +20351,9 @@ const Store = {
             "en": "Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff; Pilot production start / SOP (Start of Production)",
             "zh": "操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0; 试生产启动 (SOP)"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne; Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff; Pilot production start / SOP (Start of Production). Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0; 试生产启动 (SOP)。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne; Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff; Pilot production start / SOP (Start of Production). Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0; 试生产启动 (SOP)。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Formation pratique des opérateurs et techniciens de maintenance",
             "[UAR] Formation pratique des opérateurs et techniciens de maintenance",
@@ -20525,9 +20525,9 @@ const Store = {
             "en": "Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification",
             "zh": "安全认证及综合测试; FEE/REE安装检查清单验证"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Essais de sécurité, tests de conformité et certification; Vérification de conformité de l'installation FEE/REE. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：安全认证及综合测试; FEE/REE安装检查清单验证。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Essais de sécurité, tests de conformité et certification; Vérification de conformité de l'installation FEE/REE. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Safety certification and compliance validation tests; FEE_REE installation compliance checklist verification. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：安全认证及综合测试; FEE/REE安装检查清单验证。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Essais de sécurité, tests de conformité et certification",
             "[FUSA] Vérification de conformité de l'installation FEE/REE"
@@ -20794,9 +20794,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -20959,9 +20959,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -21124,9 +21124,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -21289,9 +21289,9 @@ const Store = {
             "en": "Pilot production start / SOP (Start of Production)",
             "zh": "试生产启动 (SOP)"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Pilot production start / SOP (Start of Production). Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：试生产启动 (SOP)。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Pilot production start / SOP (Start of Production). Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：试生产启动 (SOP)。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Démarrage de la production pilote / SOP (Start of Production)"
         ],
@@ -21454,9 +21454,9 @@ const Store = {
             "en": "FEE_REE installation compliance checklist verification; HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff",
             "zh": "FEE/REE安装检查清单验证; 安全验收与现场放行; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Vérification de conformité de l'installation FEE/REE; Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: FEE_REE installation compliance checklist verification; HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FEE/REE安装检查清单验证; 安全验收与现场放行; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Vérification de conformité de l'installation FEE/REE; Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: FEE_REE installation compliance checklist verification; HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：FEE/REE安装检查清单验证; 安全验收与现场放行; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Vérification de conformité de l'installation FEE/REE",
             "[FUSA] Réception formelle de sécurité HSE et levée des barrières",
@@ -21726,9 +21726,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -21891,9 +21891,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -22056,9 +22056,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -22221,9 +22221,9 @@ const Store = {
             "en": "Pilot production start / SOP (Start of Production)",
             "zh": "试生产启动 (SOP)"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Pilot production start / SOP (Start of Production). Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：试生产启动 (SOP)。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Pilot production start / SOP (Start of Production). Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：试生产启动 (SOP)。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Démarrage de la production pilote / SOP (Start of Production)"
         ],
@@ -22386,9 +22386,9 @@ const Store = {
             "en": "HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff",
             "zh": "安全验收与现场放行; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：安全验收与现场放行; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Réception formelle de sécurité HSE et levée des barrières; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: HSE Safety Acceptance and site authorization buyoff; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：安全验收与现场放行; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Réception formelle de sécurité HSE et levée des barrières",
             "[FUSA] Jalon Industriel X0 et conformité ligne"
@@ -22655,9 +22655,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -22820,9 +22820,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -22985,9 +22985,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -23150,9 +23150,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line",
             "zh": "UAR 区域 (后底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：UAR 区域 (后底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：UAR 区域 (后底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière)"
         ],
@@ -23315,9 +23315,9 @@ const Store = {
             "en": "HSE Safety Acceptance and site authorization buyoff; Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff",
             "zh": "安全验收与现场放行; 操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Réception formelle de sécurité HSE et levée des barrières; Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: HSE Safety Acceptance and site authorization buyoff; Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：安全验收与现场放行; 操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Réception formelle de sécurité HSE et levée des barrières; Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: HSE Safety Acceptance and site authorization buyoff; Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：安全验收与现场放行; 操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Réception formelle de sécurité HSE et levée des barrières",
             "[FUSA] Formation pratique des opérateurs et techniciens de maintenance",
@@ -23590,9 +23590,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -23755,9 +23755,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -23920,9 +23920,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -24085,9 +24085,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line",
             "zh": "UAR 区域 (后底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：UAR 区域 (后底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：UAR 区域 (后底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière)"
         ],
@@ -24250,9 +24250,9 @@ const Store = {
             "en": "Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff",
             "zh": "操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Formation pratique des opérateurs et techniciens de maintenance",
             "[FUSA] Formation pratique des opérateurs et techniciens de maintenance",
@@ -24522,9 +24522,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -24687,9 +24687,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -24852,9 +24852,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -25017,9 +25017,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line",
             "zh": "UAR 区域 (后底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：UAR 区域 (后底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：UAR 区域 (后底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière)"
         ],
@@ -25182,9 +25182,9 @@ const Store = {
             "en": "Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff",
             "zh": "操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Formation pratique des opérateurs et techniciens de maintenance; Formation pratique des opérateurs et techniciens de maintenance; Jalon Industriel X0 et conformité ligne. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Line operators and maintenance team technical training; Line operators and maintenance team technical training; Industrial Milestone X0 and line buyoff. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：操作工与维修人员实操培训; 操作工与维修人员实操培训; 工业化里程碑 X0。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Formation pratique des opérateurs et techniciens de maintenance",
             "[FUSA] Formation pratique des opérateurs et techniciens de maintenance",
@@ -25454,9 +25454,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -25619,9 +25619,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -25784,9 +25784,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -25949,9 +25949,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line",
             "zh": "UAR 区域 (后底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：UAR 区域 (后底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：UAR 区域 (后底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière)"
         ],
@@ -26114,9 +26114,9 @@ const Store = {
             "en": "Pilot production start / SOP (Start of Production)",
             "zh": "试生产启动 (SOP)"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Pilot production start / SOP (Start of Production). Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：试生产启动 (SOP)。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Pilot production start / SOP (Start of Production). Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：试生产启动 (SOP)。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Démarrage de la production pilote / SOP (Start of Production)"
         ],
@@ -26380,9 +26380,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -26545,9 +26545,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -26710,9 +26710,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -26875,9 +26875,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line",
             "zh": "UAR 区域 (后底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：UAR 区域 (后底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UAR — Underbody Rear (Soubassement Arrière) : Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UAR — Underbody Rear Line: Installation, mechanical assembly and tooling for Zone UAR — Underbody Rear Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UAR 区域 (后底盘工位) 许可作业：UAR 区域 (后底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UAR] Installation, montage mécanique et outillages de la Zone UAR — Underbody Rear (Soubassement Arrière)"
         ],
@@ -27040,9 +27040,9 @@ const Store = {
             "en": "Pilot production start / SOP (Start of Production)",
             "zh": "试生产启动 (SOP)"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Pilot production start / SOP (Start of Production). Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：试生产启动 (SOP)。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone FUSA — Front Underbody Sub-Assembly (Soubassement Avant) : Démarrage de la production pilote / SOP (Start of Production). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone FUSA — Front Underbody Sub-Assembly: Pilot production start / SOP (Start of Production). Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "FUSA 区域 (前底盘分总成) 许可作业：试生产启动 (SOP)。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[FUSA] Démarrage de la production pilote / SOP (Start of Production)"
         ],
@@ -27306,9 +27306,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],
@@ -27471,9 +27471,9 @@ const Store = {
             "en": "Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line",
             "zh": "UB 区域 (中底盘工位) 机械与工装安装"
         },
-        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with CSPS safety rules.",
-        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行CSPS安全规范。",
+        "activite_detaillee_fr": "Travaux autorisés en Zone UB — Underbody (Soubassement Central) : Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central). Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+        "activite_detaillee_en": "Authorized activities in Zone UB — Underbody Main Line: Installation, mechanical assembly and tooling for Zone UB — Underbody Main Line. Strict compliance with Stellantis HSE safety rules.",
+        "activite_detaillee_zh": "UB 区域 (中底盘工位) 许可作业：UB 区域 (中底盘工位) 机械与工装安装。严格执行Stellantis HSE安全规范。",
         "tasks_fr": [
             "[UB] Installation, montage mécanique et outillages de la Zone UB — Underbody (Soubassement Central)"
         ],

@@ -133,9 +133,9 @@ for w_num in range(25, 54):
                 "en": act_en,
                 "zh": act_zh
             },
-            "activite_detaillee_fr": f"Travaux autorisés en {z_conf['name_full']} : {act_fr}. Respect strict des consignes CSPS, port des EPI et balisage de la zone.",
-            "activite_detaillee_en": f"Authorized activities in {z_conf['name_en']}: {act_en}. Strict compliance with CSPS safety rules.",
-            "activite_detaillee_zh": f"{z_conf['name_zh']} 许可作业：{act_zh}。严格执行CSPS安全规范。",
+            "activite_detaillee_fr": f"Travaux autorisés en {z_conf['name_full']} : {act_fr}. Respect strict des consignes HSE Stellantis, port des EPI et balisage de la zone.",
+            "activite_detaillee_en": f"Authorized activities in {z_conf['name_en']}: {act_en}. Strict compliance with Stellantis HSE safety rules.",
+            "activite_detaillee_zh": f"{z_conf['name_zh']} 许可作业：{act_zh}。严格执行Stellantis HSE安全规范。",
             "tasks_fr": z_tasks_fr,
             "tasks_en": z_tasks_en,
             "tasks_zh": z_tasks_zh,

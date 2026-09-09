@@ -4,7 +4,7 @@
  * - Polices optimisées (8.5px à 10px corps, 18px-20px titres) pour lisibilité immédiate sans loupe
  * - Occupation harmonieuse de 100% de la hauteur A4 (297mm) sans débordement ni grand vide
  * - Signatures électroniques et manuelles intégrées avec zones de signature confortables (min-height: 60px-70px)
- * - Page 2 complète : Revalidation quotidienne (J2-J7) + Caisse Week-end + Registre des 59 Intervenants & Contrôles CSPS
+ * - Page 2 complète : Revalidation quotidienne (J2-J7) + Caisse Week-end + Registre des 59 Intervenants & Contrôles HSE Stellantis
  * - Annexes A (Hauteur), B (Chaud), C (Élec LOTO) & Affiche Zone A4 au standard d'ingénierie KORTI
  */
 
@@ -656,9 +656,9 @@ const Templates = {
                         </tbody>
                     </table>
 
-                    <!-- SECTION 3 : NOUVEAU - RÉGISTRE DES EFFECTIFS HABILITÉS & CONTRÔLES CSPS (REMPLISSAGE PLEIN FORMAT A4) -->
+                    <!-- SECTION 3 : NOUVEAU - RÉGISTRE DES EFFECTIFS HABILITÉS & CONTRÔLES HSE STELLANTIS (REMPLISSAGE PLEIN FORMAT A4) -->
                     <div class="yellow-bar-header" style="background:#ffeb3b;border:1.2px solid #000;padding:3px 8px;font-weight:900;font-size:9px;margin-top:6px;letter-spacing:0.3px;">
-                        RÉGISTRE DES ÉQUIPES HABILITÉES &amp; CONTRÔLES PRÉALABLES CSPS (59 INTERVENANTS SINYLON)
+                        RÉGISTRE DES ÉQUIPES HABILITÉES &amp; CONTRÔLES PRÉALABLES (59 INTERVENANTS SINYLON)
                     </div>
                     <div style="border:1.2px solid #000;border-top:none;padding:6px 8px;background:#fff;display:grid;grid-template-columns:1.2fr 1fr;gap:10px;">
                         <div>
@@ -710,10 +710,10 @@ const Templates = {
                             </div>
                             <div style="border:1px solid #1e3a8a;background:#f0f7ff;padding:4px 6px;border-radius:3px;margin-top:4px;">
                                 <div style="font-size:8px;font-weight:900;color:#1e3a8a;text-align:center;">
-                                    ENGAGEMENT CSPS & VALIDATION FINALE SEMAINE
+                                    ENGAGEMENT HSE & VALIDATION FINALE SEMAINE
                                 </div>
                                 <div style="display:flex;justify-content:space-between;align-items:center;font-size:7.5px;margin-top:2px;">
-                                    <span>Visa MOEX / CSPS : <strong>CONFORME</strong></span>
+                                    <span>Visa Suivi W.P.E.E.X / HSE : <strong>CONFORME</strong></span>
                                     <span>Levée le : <strong>${new Date(startDate.getTime() + 6*86400000).toISOString().split('T')[0]}</strong></span>
                                 </div>
                             </div>
@@ -1698,7 +1698,7 @@ const Templates = {
                         <span style="font-size:11px;font-weight:800;color:#0f172a;margin-left:6px;">${d.rangeLabel || 'Vendredi & Samedi'} (08h00 → 18h00)</span>
                     </div>
                     <div style="font-size:9px;font-weight:bold;background:#fff;border:1px solid #d97706;padding:2px 8px;border-radius:3px;color:#b45309;">
-                        PRÉSENTATION DU MERCREDI AUX CSPS STELLANTIS
+                        PRÉSENTATION DU MERCREDI À STELLANTIS &amp; W.P.E.E.X
                     </div>
                 </div>
 
@@ -1805,7 +1805,7 @@ const Templates = {
                     </div>
                     <div>
                         <strong>Dossier Caisse Week-end Officiel · Algeria K9 CKD0</strong><br>
-                        Imprimé pour présentation hebdomadaire du Mercredi au CSPS Stellantis
+                        Imprimé pour présentation hebdomadaire du Mercredi à Stellantis &amp; W.P.E.E.X
                     </div>
                 </div>
                 <div style="text-align:right;">
