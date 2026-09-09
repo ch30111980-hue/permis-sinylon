@@ -1476,7 +1476,9 @@ const Templates = {
             tasksList = rawDesc.split(';').map(t => t.trim()).filter(Boolean);
         }
 
-        const payload = `https://permis-sinylon.onrender.com/?permitId=${permitZoneId}`;
+        const payload = (typeof QREngine !== 'undefined' && typeof QREngine.generateZonePayload === 'function') 
+            ? QREngine.generateZonePayload(z) 
+            : `https://permis-sinylon.onrender.com/?zone=${encodeURIComponent(z)}`;
 
         let svgQr = '';
         const engine = typeof window !== 'undefined' ? (window.QRCodeGenerator || window.QRCode) : (typeof QRCodeGenerator !== 'undefined' ? QRCodeGenerator : null);

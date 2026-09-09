@@ -36,6 +36,57 @@ const QREngine = {
         return `${baseUrl}/?permitId=${encodeURIComponent(id)}`;
     },
 
+    // Payload de zone pur (URL directe vers la vue zone sur Render)
+    generateZonePayload(zoneCode) {
+        const cleanZone = String(zoneCode || 'UB').toUpperCase().replace(/[^A-Z0-9]/g, '');
+        const baseUrl = this.getBaseURL();
+        return `${baseUrl}/?zone=${encodeURIComponent(cleanZone)}`;
+    },
+
+    // Ouvrir le modal QR dédié à une zone (UB, UAR, FUSA)
+    openZoneQRModal(zoneCode) {
+        const zone = String(zoneCode || 'UB').toUpperCase();
+        const payload = this.generateZonePayload(zone);
+        
+        let modal = document.getElementById('modal-zone-qr');
+        if (!modal) {
+            modal = document.createElement('div');
+            modal.id = 'modal-zone-qr';
+            modal.className = 'modal-overlay';
+            modal.innerHTML = `
+                <div class="modal-dialog" style="max-width: 440px; text-align: center; background: #0f172a; border: 2px solid #38bdf8; border-radius: 16px; padding: 24px; color: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.8);">
+                    <div style="font-size: 20px; font-weight: 900; color: #38bdf8; margin-bottom: 4px;" id="zone-modal-title">QR ZONE UB</div>
+                    <div style="font-size: 11px; color: #94a3b8; margin-bottom: 16px;" id="zone-modal-sub">STELLANTIS K9 · PERMIS ACTIFS ZONE UB</div>
+                    <div id="zone-modal-canvas-box" style="display: inline-block; padding: 12px; background: #fff; border-radius: 12px; margin-bottom: 14px;"></div>
+                    <div style="font-size: 11px; color: #cbd5e1; word-break: break-all; margin-bottom: 16px;" id="zone-modal-url"></div>
+                    <div style="display: flex; gap: 8px; justify-content: center;">
+                        <button onclick="App.printZonePosterA4('${zone}')" class="btn btn-primary btn-sm" style="font-weight: 800;">🖨️ Affiche A4 Zone</button>
+                        <button onclick="document.getElementById('modal-zone-qr').classList.remove('active')" class="btn btn-secondary btn-sm">Fermer</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+        
+        document.getElementById('zone-modal-title').innerText = `QR ZONE ${zone}`;
+        document.getElementById('zone-modal-sub').innerText = `STELLANTIS K9 · PERMIS ACTIFS ZONE ${zone}`;
+        document.getElementById('zone-modal-url').innerText = payload;
+        
+        const box = document.getElementById('zone-modal-canvas-box');
+        box.innerHTML = '';
+        const canvas = document.createElement('canvas');
+        box.appendChild(canvas);
+        
+        const engine = window.QRCodeGenerator || window.QRCode;
+        if (engine && typeof engine.drawCanvas === 'function') {
+            engine.drawCanvas(canvas, payload, { size: 240, margin: 2 });
+        } else {
+            box.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=${encodeURIComponent(payload)}" style="width:240px;height:240px;" alt="QR Zone">`;
+        }
+        
+        modal.classList.add('active');
+    },
+
     // Dessiner un QR Code sur un canvas ou dans un conteneur HTML
     renderToCanvas(targetElement, permit, options = {}) {
         if (!targetElement || !permit) return;

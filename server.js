@@ -128,6 +128,33 @@ const server = http.createServer((req, res) => {
         return;
     }
 
+    // 2b. GET /api/zones/:zone/permits : Récupérer tous les permis d'une zone avec dédoublonnage
+    if (req.method === 'GET' && pathname.startsWith('/api/zones/') && pathname.endsWith('/permits')) {
+        const parts = pathname.split('/');
+        const zoneKey = decodeURIComponent(parts[3] || '').trim().toUpperCase();
+        
+        const seenIds = new Set();
+        const zonePermits = [];
+        
+        Object.values(permitsDatabase).forEach(p => {
+            if (!p || !p.id) return;
+            if (seenIds.has(p.id)) return;
+            
+            const pZoneKey = (p.zoneKey || '').toUpperCase();
+            const pZone = (p.zone || '').toUpperCase();
+            const pId = (p.id || '').toUpperCase();
+            
+            if (pZoneKey === zoneKey || pZone.includes(zoneKey) || pId.includes(zoneKey)) {
+                seenIds.add(p.id);
+                zonePermits.push(p);
+            }
+        });
+        
+        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-cache' });
+        res.end(JSON.stringify(zonePermits));
+        return;
+    }
+
     // 3. POST /api/permits/:id : Mettre à jour ou créer un permis sur le serveur
     if ((req.method === 'POST' || req.method === 'PUT') && pathname.startsWith('/api/permits/')) {
         const permitId = decodeURIComponent(pathname.replace('/api/permits/', '')).trim();

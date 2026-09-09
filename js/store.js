@@ -5,7 +5,7 @@
  */
 
 const Store = {
-    STORAGE_KEY: "sinylon_permits_database_v12",
+    STORAGE_KEY: "sinylon_permits_database_v13",
     SETTINGS_KEY: "sinylon_app_settings_v9",
     ARCHIVE_KEY: "sinylon_permits_archive_v9",
     DEFAULT_AUTH_CODE: "SINYLON2026",

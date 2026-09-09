@@ -28,9 +28,18 @@ const App = {
 
     // Initialisation
     async init() {
-        // 0. Détection immédiate de scan QR direct dans l'URL (?permitId=... ou #K9-W35-01) pour éviter tout clignotement
+        // 0. Détection immédiate de scan QR direct dans l'URL (?zone=... ou ?permitId=... ou #K9-W35-01) pour éviter tout clignotement
         const urlParams = new URLSearchParams(window.location.search);
+        const queryZone = urlParams.get('zone');
         const queryPermitId = urlParams.get('permitId') || (window.location.hash ? window.location.hash.substring(1).trim() : null);
+
+        if (queryZone) {
+            this.isQRSession = true;
+            document.documentElement.classList.add('qr-mode');
+            await Store.initAuth();
+            await this.showPublicZoneView(queryZone);
+            return;
+        }
 
         if (queryPermitId) {
             this.currentPermitId = queryPermitId;
@@ -103,6 +112,123 @@ const App = {
         }
         this.switchView('dashboard');
         this.renderDashboard();
+    },
+
+    // =========================================================================
+    // VUE PUBLIQUE ZONE OPÉRATIONNELLE (SCAN SMARTPHONE ENTRÉE DE ZONE)
+    // =========================================================================
+
+    async showPublicZoneView(zoneCode) {
+        document.documentElement.classList.add('qr-mode');
+        const layout = document.querySelector('.app-layout');
+        if (layout) layout.style.display = 'none';
+        const clientView = document.getElementById('client-public-view');
+        if (!clientView) return;
+        clientView.style.display = 'block';
+
+        const z = String(zoneCode || 'UB').toUpperCase().trim();
+        const zoneMeta = {
+            UB: { name: 'ZONE UB — UNDERBODY', title: 'Soubassement Central', icon: '🏗️', color: '#2563eb', bg: '#1e3a8a' },
+            UAR: { name: 'ZONE UAR — UNDERBODY ARRIÈRE', title: 'Soubassement Arrière', icon: '🔩', color: '#0284c7', bg: '#0369a1' },
+            FUSA: { name: 'ZONE FUSA — AVANT', title: 'Sous-Assemblage Avant', icon: '⚡', color: '#d97706', bg: '#b45309' }
+        };
+        const activeMeta = zoneMeta[z] || { name: `ZONE ${z}`, title: 'Zone de Travail', icon: '📍', color: '#3b82f6', bg: '#1d4ed8' };
+
+        // 1. Tenter de récupérer les permis via l'API ciblée
+        let zonePermits = [];
+        try {
+            const resp = await fetch(`/api/zones/${encodeURIComponent(z)}/permits`);
+            if (resp.ok) {
+                zonePermits = await resp.json();
+            }
+        } catch (e) {}
+
+        // Fallback local si l'API n'a rien renvoyé
+        if (!zonePermits || zonePermits.length === 0) {
+            const all = Store.getAllPermits();
+            const seen = new Set();
+            Object.values(all).forEach(p => {
+                if (!p || !p.id) return;
+                if (seen.has(p.id)) return;
+                const pZ = (p.zoneKey || p.zone || p.id || '').toUpperCase();
+                if (pZ.includes(z)) {
+                    seen.add(p.id);
+                    zonePermits.push(p);
+                }
+            });
+        }
+
+        // Dédoublonnage strict par ID
+        const seenIds = new Set();
+        const uniquePermits = [];
+        zonePermits.forEach(p => {
+            if (p && p.id && !seenIds.has(p.id)) {
+                seenIds.add(p.id);
+                uniquePermits.push(p);
+            }
+        });
+
+        // Rendu mobile dédié
+        clientView.innerHTML = `
+            <div style="max-width: 540px; margin: 0 auto; padding: 18px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #f8fafc;">
+                <!-- EN-TÊTE CORPORATE -->
+                <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.15); margin-bottom: 16px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="background: #000; color: #fff; font-weight: 900; font-size: 13px; padding: 3px 8px; border-radius: 3px; border: 1px solid rgba(255,255,255,0.3);">SINYLON</span>
+                        <span style="background: #fff; color: #000; font-weight: 900; font-size: 13px; padding: 2px 8px; border-radius: 3px;">STELLANTIS</span>
+                    </div>
+                    <span style="font-size: 11px; font-weight: 800; color: #38bdf8; background: rgba(56,189,248,0.15); padding: 3px 8px; border-radius: 6px;">K9 TAFRAOUI</span>
+                </div>
+
+                <!-- BANDEAU DE ZONE -->
+                <div style="background: linear-gradient(135deg, ${activeMeta.bg} 0%, #0f172a 100%); border: 2px solid ${activeMeta.color}; border-radius: 14px; padding: 16px; margin-bottom: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 28px;">${activeMeta.icon}</span>
+                        <span style="font-size: 11px; font-weight: 900; background: #10b981; color: #064e3b; padding: 3px 8px; border-radius: 6px;">🟢 ZONE ACTIVE</span>
+                    </div>
+                    <div style="font-size: 20px; font-weight: 900; color: #fff; margin-top: 8px;">${activeMeta.name}</div>
+                    <div style="font-size: 12px; color: #cbd5e1; margin-top: 2px;">${activeMeta.title}</div>
+                    <div style="font-size: 12px; color: #38bdf8; font-weight: 800; margin-top: 10px;">
+                        📋 ${uniquePermits.length} Permis Actif${uniquePermits.length > 1 ? 's' : ''} Répertorié${uniquePermits.length > 1 ? 's' : ''}
+                    </div>
+                </div>
+
+                <!-- LISTE DES PERMIS DE LA ZONE -->
+                <div style="font-size: 13px; font-weight: 800; color: #94a3b8; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;">
+                    Permis autorisés pour cette zone :
+                </div>
+
+                ${uniquePermits.length === 0 ? `
+                    <div style="background: rgba(15,23,42,0.8); border: 1px dashed #64748b; border-radius: 10px; padding: 24px; text-align: center; color: #94a3b8;">
+                        Aucun permis actif enregistré pour le moment en zone ${z}.
+                    </div>
+                ` : uniquePermits.map(p => {
+                    const desc = p['work-desc'] || p.title || 'Travaux de montage et assemblage';
+                    const validUntil = p.validUntil || p.date_fin || 'Fin de semaine';
+                    return `
+                        <div onclick="App.showPublicClientView('${p.id}')" style="background: rgba(15,23,42,0.9); border: 1.5px solid rgba(56,189,248,0.3); border-radius: 12px; padding: 14px; margin-bottom: 12px; cursor: pointer; transition: transform 0.15s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div>
+                                    <div style="font-size: 15px; font-weight: 900; color: #38bdf8; font-family: monospace;">${p.id}</div>
+                                    <div style="font-size: 12px; color: #f8fafc; font-weight: 700; margin-top: 4px; line-height: 1.3;">${desc}</div>
+                                </div>
+                                <span style="font-size: 10px; font-weight: 900; background: #10b981; color: #064e3b; padding: 2px 6px; border-radius: 4px; white-space: nowrap;">🟢 VALIDE</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 11px; color: #94a3b8;">
+                                <span>📅 Valide jusqu'au : <strong style="color: #fff;">${validUntil}</strong></span>
+                                <span style="color: #38bdf8; font-weight: 800;">Consulter →</span>
+                            </div>
+                        </div>
+                    `;
+                }).join('')}
+
+                <!-- PIED DE PAGE -->
+                <div style="margin-top: 24px; text-align: center; font-size: 11px; color: #64748b;">
+                    Système de Contrôle Numérique · SINYLON - STELLANTIS K9 CKD0<br>
+                    Supervision HSE : Nouri Chahrour (0562765157)
+                </div>
+            </div>
+        `;
     },
 
     // =========================================================================
@@ -716,6 +842,9 @@ const App = {
         const elAddWeekNo = document.getElementById('dash-add-week-no');
         if (elAddWeekNo) elAddWeekNo.innerText = wNum;
 
+        // 1b. Rendu des 4 cartes opérationnelles de zones
+        this.renderZoneCards();
+
         // 2. Rendu des cartes de permis
         const container = document.getElementById('dash-permits-cards-container');
         if (!container) return;
@@ -804,6 +933,128 @@ const App = {
                 </div>
             `;
         }).join('');
+    },
+
+    // =========================================================================
+    // COUCHE OPÉRATIONNELLE : CARTES DES 4 ZONES ET ACCÈS QR CHANTIER
+    // =========================================================================
+
+    renderZoneCards() {
+        const container = document.getElementById('dash-zone-cards-container');
+        if (!container) return;
+
+        const wNum = this.currentWeek || Store.getCurrentWeekNumber();
+        const permits = Store.getPermitsByWeek(wNum);
+
+        const getZoneCount = (zKey) => {
+            return permits.filter(p => {
+                const z = (p.zoneKey || p.zone || p.id || '').toUpperCase();
+                return z.includes(zKey);
+            }).length;
+        };
+
+        const ubCount = getZoneCount('UB');
+        const uarCount = getZoneCount('UAR');
+        const fusaCount = getZoneCount('FUSA');
+        const weCount = permits.filter(p => p.weekend || p.isWeekendWork || (p.id && p.id.includes('WE'))).length;
+
+        container.innerHTML = `
+            <!-- CARTE ZONE UB -->
+            <div style="background: rgba(30,58,138,0.25); border: 1.5px solid #2563eb; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-weight: 900; color: #60a5fa; font-size: 17px; letter-spacing: 0.5px;">UB</span>
+                        <span style="font-size: 20px;">🏗️</span>
+                    </div>
+                    <div style="font-size: 11px; color: #94a3b8; font-weight: 700; margin: 4px 0;">UNDERBODY CENTRAL</div>
+                    <div style="font-size: 13px; font-weight: 800; color: #f8fafc; margin-bottom: 12px;">
+                        ${ubCount || 1} Permis · <span style="color: #10b981;">🟢 VALIDE</span>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 6px;">
+                    <button onclick="QREngine.openZoneQRModal('UB')" class="btn btn-primary btn-sm" style="flex: 1; justify-content: center; font-weight: 800; font-size: 11px; padding: 6px 8px;">
+                        📱 QR ZONE
+                    </button>
+                    <button onclick="App.printZonePosterA4('UB')" class="btn btn-outline btn-sm" style="padding: 6px 8px;" title="Imprimer Affiche A4 UB">
+                        🖨️
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARTE ZONE UAR -->
+            <div style="background: rgba(3,105,161,0.25); border: 1.5px solid #0284c7; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-weight: 900; color: #38bdf8; font-size: 17px; letter-spacing: 0.5px;">UAR</span>
+                        <span style="font-size: 20px;">🔩</span>
+                    </div>
+                    <div style="font-size: 11px; color: #94a3b8; font-weight: 700; margin: 4px 0;">UNDERBODY ARRIÈRE</div>
+                    <div style="font-size: 13px; font-weight: 800; color: #f8fafc; margin-bottom: 12px;">
+                        ${uarCount || 1} Permis · <span style="color: #10b981;">🟢 VALIDE</span>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 6px;">
+                    <button onclick="QREngine.openZoneQRModal('UAR')" class="btn btn-primary btn-sm" style="flex: 1; justify-content: center; font-weight: 800; font-size: 11px; padding: 6px 8px;">
+                        📱 QR ZONE
+                    </button>
+                    <button onclick="App.printZonePosterA4('UAR')" class="btn btn-outline btn-sm" style="padding: 6px 8px;" title="Imprimer Affiche A4 UAR">
+                        🖨️
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARTE ZONE FUSA -->
+            <div style="background: rgba(180,83,9,0.25); border: 1.5px solid #d97706; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-weight: 900; color: #fbbf24; font-size: 17px; letter-spacing: 0.5px;">FUSA</span>
+                        <span style="font-size: 20px;">⚡</span>
+                    </div>
+                    <div style="font-size: 11px; color: #94a3b8; font-weight: 700; margin: 4px 0;">SOUS-ASSEMBLAGE AVANT</div>
+                    <div style="font-size: 13px; font-weight: 800; color: #f8fafc; margin-bottom: 12px;">
+                        ${fusaCount || 1} Permis · <span style="color: #10b981;">🟢 VALIDE</span>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 6px;">
+                    <button onclick="QREngine.openZoneQRModal('FUSA')" class="btn btn-primary btn-sm" style="flex: 1; justify-content: center; font-weight: 800; font-size: 11px; padding: 6px 8px;">
+                        📱 QR ZONE
+                    </button>
+                    <button onclick="App.printZonePosterA4('FUSA')" class="btn btn-outline btn-sm" style="padding: 6px 8px;" title="Imprimer Affiche A4 FUSA">
+                        🖨️
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARTE WEEK-END -->
+            <div style="background: rgba(16,185,129,0.2); border: 1.5px solid #10b981; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-weight: 900; color: #34d399; font-size: 17px; letter-spacing: 0.5px;">WE</span>
+                        <span style="font-size: 20px;">📦</span>
+                    </div>
+                    <div style="font-size: 11px; color: #94a3b8; font-weight: 700; margin: 4px 0;">WEEK-END CHANTIER</div>
+                    <div style="font-size: 13px; font-weight: 800; color: #f8fafc; margin-bottom: 12px;">
+                        ${weCount || 1} Dossier · <span style="color: #34d399;">🟢 PRÊT</span>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 6px;">
+                    <button onclick="WeekendCaisseModule.printCompleteCaisseDossier()" class="btn btn-warning btn-sm" style="flex: 1; justify-content: center; font-weight: 800; font-size: 11px; padding: 6px 8px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border: none; color: #fff;">
+                        📦 DOSSIER WE
+                    </button>
+                </div>
+            </div>
+        `;
+    },
+
+    printZonePosterA4(zoneCode) {
+        const z = String(zoneCode || 'UB').toUpperCase();
+        const p = Store.getPermit(`K9-W${this.currentWeek || 37}-${z}`) || Store.getActivePermit();
+        const html = Templates.renderZonePosterA4(p, z);
+        const printContainer = document.getElementById('print-container');
+        if (printContainer) {
+            printContainer.innerHTML = html;
+            window.print();
+        }
     },
 
     // =========================================================================

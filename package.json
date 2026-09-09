@@ -1,6 +1,6 @@
 {
   "name": "permis-sinylon",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "SINYLON - STELLANTIS | Système Intelligent de Gestion du Cycle de Vie des Permis de Travail",
   "main": "main.js",
   "scripts": {

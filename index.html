@@ -15,7 +15,7 @@
         (function() {
             try {
                 var params = new URLSearchParams(window.location.search);
-                var isQR = params.get('permitId') || (window.location.hash && window.location.hash.length > 1);
+                var isQR = params.get('permitId') || params.get('zone') || (window.location.hash && window.location.hash.length > 1);
                 if (isQR) {
                     document.documentElement.classList.add('qr-mode');
                 }
@@ -41,7 +41,10 @@
                     <span class="badge-sinylon">STELLANTIS</span>
                 </div>
                 <div class="brand-subtitle" id="sidebar-app-subtitle">HSE Work Permit System (Algeria K9 CKD0)</div>
-                <div class="brand-wpeex">Supervision : Sinylon | HSE : Nouri Chahrour</div>
+                <div class="brand-wpeex" style="display:flex; justify-content:space-between; align-items:center;">
+                    <span>Supervision : Sinylon | HSE : Nouri Chahrour</span>
+                    <span style="background:#10b981; color:#064e3b; font-weight:900; font-size:10px; padding:2px 6px; border-radius:4px;">v1.1.0</span>
+                </div>
             </div>
 
             <div class="nav-links">
@@ -191,6 +194,16 @@
                         <span class="stat-label" style="font-size: 11px;">HSE SUPERVISOR</span>
                         <div class="stat-value" style="font-size: 16px; color: #34d399;">Nouri Chahrour</div>
                         <span class="stat-desc" style="font-size: 11px;">Tel: 0562765157</span>
+                    </div>
+                </div>
+
+                <!-- COUCHE OPÉRATIONNELLE : 4 CARTES DE ZONES (UB / UAR / FUSA / WE) -->
+                <div style="margin-bottom: 22px;">
+                    <div style="font-size: 13px; font-weight: 800; color: #38bdf8; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <span>🏭</span> <span>ZONES OPÉRATIONNELLES &amp; CONTRÔLE QR CHANTIER :</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;" id="dash-zone-cards-container">
+                        <!-- Rempli dynamiquement par App.renderZoneCards() -->
                     </div>
                 </div>
 
