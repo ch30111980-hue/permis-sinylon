@@ -545,10 +545,107 @@ const App = {
                             <button type="button" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}')" style="width: 100%; padding: 13px; min-height: 46px; background: rgba(30,41,59,0.8); border: 1.5px solid #475569; color: #e2e8f0; font-weight: 800; font-size: 12px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; touch-action: manipulation; margin-bottom: 8px;">
                                 <span>✍️</span> ${L.signSiteBtn}
                             </button>
+                        </div>
 
-                            <!-- BOUTON ACCÈS DIRECT REVALIDATION QUOTIDIENNE -->
+                        <!-- 4-BIS. MODULE TACTILE : REVALIDATION QUOTIDIENNE DU PERMIS (7 JOURS — 08H00) -->
+                        <div style="background: #0f172a; border: 2px solid #0284c7; border-radius: 14px; padding: 16px; margin-bottom: 18px; box-shadow: 0 6px 24px rgba(2,132,199,0.25);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1.5px solid #1e293b; padding-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+                                <div>
+                                    <div style="font-size: 14px; font-weight: 900; color: #38bdf8; display: flex; align-items: center; gap: 8px;">
+                                        <span>📅</span> ${currentLang === 'zh' ? '每日作业许可再验证 (早晨 08:00)' : (currentLang === 'en' ? 'Daily Revalidation Sign-off (08:00 AM)' : 'REVALIDATION QUOTIDIENNE (08H00)')}
+                                    </div>
+                                    <div style="font-size: 11px; color: #94a3b8; margin-top: 2px;">
+                                        ${currentLang === 'zh' ? '监理工程师 W.P.E.E.X 与项目经理每日现场签证' : (currentLang === 'en' ? 'Daily mandatory sign-off by W.P.E.E.X & Xie Xian' : 'Émargement obligatoire chaque matin par M. W.P.E.E.X & Xie Xian')}
+                                    </div>
+                                </div>
+                                <button type="button" onclick="App.signAllRevalidations('${p.id}')" style="background: linear-gradient(135deg, #10b981, #059669); border: 1px solid #34d399; color: #ffffff; font-size: 11px; font-weight: 900; padding: 8px 12px; min-height: 38px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 6px; touch-action: manipulation; box-shadow: 0 4px 12px rgba(16,185,129,0.35);">
+                                    <span>⚡</span> ${currentLang === 'zh' ? '一键验证全周 (08:00)' : (currentLang === 'en' ? 'Sign Full Week (08:00)' : 'Tout Valider 08h00')}
+                                </button>
+                            </div>
+
+                            <!-- Cartes journalières tactiles des 7 jours -->
+                            <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;">
+                                ${(() => {
+                                    const startD = new Date(p.validFrom || p.date_debut || p['date-main'] || '2026-09-14');
+                                    const dSigs = p.dailySignatures || {};
+                                    const wDays = [
+                                        { idx: 1, fr: 'Jour 1 (Lundi)', en: 'Day 1 (Mon)', zh: '周一 (第1天)', offset: 0 },
+                                        { idx: 2, fr: 'Jour 2 (Mardi)', en: 'Day 2 (Tue)', zh: '周二 (第2天)', offset: 1 },
+                                        { idx: 3, fr: 'Jour 3 (Mercredi)', en: 'Day 3 (Wed)', zh: '周三 (第3天)', offset: 2 },
+                                        { idx: 4, fr: 'Jour 4 (Jeudi)', en: 'Day 4 (Thu)', zh: '周四 (第4天)', offset: 3 },
+                                        { idx: 5, fr: 'Jour 5 (Vendredi)', en: 'Day 5 (Fri)', zh: '周五 (第5天)', offset: 4 },
+                                        { idx: 6, fr: 'Jour 6 (Samedi)', en: 'Day 6 (Sat)', zh: '周六 (第6天)', offset: 5 },
+                                        { idx: 7, fr: 'Jour 7 (Dimanche)', en: 'Day 7 (Sun)', zh: '周日 (第7天)', offset: 6 }
+                                    ];
+
+                                    return wDays.map(wd => {
+                                        const curD = new Date(startD);
+                                        curD.setDate(startD.getDate() + wd.offset);
+                                        const dStr = curD.toISOString().split('T')[0];
+                                        const dLabel = currentLang === 'zh' ? wd.zh : (currentLang === 'en' ? wd.en : wd.fr);
+
+                                        const dayS = dSigs[dStr] || {};
+                                        const wSig = dayS.wpeex;
+                                        const cSig = dayS.chef;
+                                        const isDone = Boolean((wSig && wSig.dataUrl) || (cSig && cSig.dataUrl));
+
+                                        return `
+                                            <div style="background: rgba(15,23,42,0.85); border: 1.5px solid ${isDone ? '#10b981' : '#334155'}; border-radius: 10px; padding: 10px 12px;">
+                                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 4px;">
+                                                    <div style="display: flex; align-items: center; gap: 6px;">
+                                                        <span style="font-weight: 900; font-size: 13px; color: #ffffff;">${dLabel}</span>
+                                                        <span style="font-family: monospace; font-size: 11px; color: #60a5fa; background: rgba(59,130,246,0.15); padding: 2px 6px; border-radius: 4px;">${dStr}</span>
+                                                    </div>
+                                                    <div style="display: flex; align-items: center; gap: 6px;">
+                                                        <span style="font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 6px; ${isDone ? 'background:#16a34a;color:#fff;' : 'background:#334155;color:#94a3b8;'}">
+                                                            ${isDone ? '✓ POINTÉ 08H00' : 'À SIGNER (08H00)'}
+                                                        </span>
+                                                        <button type="button" onclick="App.validateDayMorning('${p.id}', ${wd.idx}, '${dStr}')" style="background: rgba(16,185,129,0.2); border: 1px solid #10b981; color: #34d399; font-size: 10px; font-weight: 800; padding: 4px 8px; border-radius: 4px; cursor: pointer; touch-action: manipulation;" title="Valider ce jour à 08h00">
+                                                            ⚡ Valider
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                                                    <!-- W.P.E.E.X -->
+                                                    <div style="background: rgba(30,41,59,0.7); border: 1px solid #3b82f6; border-radius: 8px; padding: 6px 8px; text-align: center;">
+                                                        <div style="font-size: 9px; font-weight: 800; color: #93c5fd; text-transform: uppercase;">M. W.P.E.E.X (Suivi)</div>
+                                                        ${wSig && wSig.dataUrl ? `
+                                                            <div style="background: #fff; border-radius: 4px; padding: 2px; margin: 4px 0; max-height: 28px; display: flex; align-items: center; justify-content: center;">
+                                                                <img src="${wSig.dataUrl}" style="height: 24px; max-width: 100%; object-fit: contain;" alt="Visa">
+                                                            </div>
+                                                            <div style="font-size: 8px; color: #34d399; font-weight: 800;">✓ Signé 08h00</div>
+                                                        ` : `
+                                                            <button type="button" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}','wpeex','${dStr}','${dLabel}')" style="margin-top: 4px; width: 100%; background: #2563eb; color: #fff; border: none; padding: 8px 4px; min-height: 38px; border-radius: 6px; font-size: 11px; font-weight: 900; cursor: pointer; touch-action: manipulation;">
+                                                                ✍️ Visa WPEEX
+                                                            </button>
+                                                        `}
+                                                    </div>
+
+                                                    <!-- Xie Xian -->
+                                                    <div style="background: rgba(30,41,59,0.7); border: 1px solid #64748b; border-radius: 8px; padding: 6px 8px; text-align: center;">
+                                                        <div style="font-size: 9px; font-weight: 800; color: #cbd5e1; text-transform: uppercase;">Xie Xian (Chef Sinylon)</div>
+                                                        ${cSig && cSig.dataUrl ? `
+                                                            <div style="background: #fff; border-radius: 4px; padding: 2px; margin: 4px 0; max-height: 28px; display: flex; align-items: center; justify-content: center;">
+                                                                <img src="${cSig.dataUrl}" style="height: 24px; max-width: 100%; object-fit: contain;" alt="Signature">
+                                                            </div>
+                                                            <div style="font-size: 8px; color: #34d399; font-weight: 800;">✓ Signé 08h00</div>
+                                                        ` : `
+                                                            <button type="button" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}','chef','${dStr}','${dLabel}')" style="margin-top: 4px; width: 100%; background: #334155; color: #fff; border: 1px solid #475569; padding: 8px 4px; min-height: 38px; border-radius: 6px; font-size: 11px; font-weight: 900; cursor: pointer; touch-action: manipulation;">
+                                                                ✍️ Signer Xie X.
+                                                            </button>
+                                                        `}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        `;
+                                    }).join('');
+                                })()}
+                            </div>
+
+                            <!-- Bouton d'accès au document A4 Verso P2 -->
                             <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'reval')" style="width: 100%; padding: 12px 14px; min-height: 44px; background: linear-gradient(135deg, #0284c7, #0369a1); border: 1.5px solid #38bdf8; color: #ffffff; font-weight: 900; font-size: 12.5px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; touch-action: manipulation; box-shadow: 0 4px 14px rgba(2,132,199,0.35);">
-                                <span>📅</span> ${L.dailyRevalBtn}
+                                <span>📄</span> ${L.docRevalTitle} (Format A4 Officiel)
                             </button>
                         </div>
 
@@ -1635,6 +1732,52 @@ const App = {
         if (!permit) return;
 
         if (!permit.revalidations) permit.revalidations = [];
+        if (!permit.dailySignatures) permit.dailySignatures = {};
+        if (!permit.dailySignatures[dateStr]) permit.dailySignatures[dateStr] = {};
+
+        // Créer les visas par défaut pour ce jour si inexistants
+        const now = new Date();
+        const timeStr = '08:00';
+
+        const manualCanvas = document.createElement('canvas');
+        manualCanvas.width = 160;
+        manualCanvas.height = 45;
+        const mCtx = manualCanvas.getContext('2d');
+        mCtx.fillStyle = '#f8fafc';
+        mCtx.fillRect(0, 0, 160, 45);
+        mCtx.strokeStyle = '#1e3a8a';
+        mCtx.lineWidth = 1.5;
+        mCtx.strokeRect(2, 2, 156, 41);
+        mCtx.fillStyle = '#1e3a8a';
+        mCtx.font = 'bold 10px Arial, sans-serif';
+        mCtx.textAlign = 'center';
+        mCtx.fillText('✓ POINTÉ 08H00', 80, 18);
+        mCtx.font = '8.5px monospace';
+        mCtx.fillStyle = '#15803d';
+        mCtx.fillText(dateStr, 80, 32);
+        const dataUrl = manualCanvas.toDataURL('image/png');
+
+        if (!permit.dailySignatures[dateStr].wpeex) {
+            permit.dailySignatures[dateStr].wpeex = {
+                dataUrl: dataUrl,
+                role: 'wpeex',
+                signatoryName: 'M. W.P.E.E.X (Ingénieur Suivi)',
+                date: dateStr,
+                time: timeStr,
+                timestamp: now.toISOString()
+            };
+        }
+
+        if (!permit.dailySignatures[dateStr].chef) {
+            permit.dailySignatures[dateStr].chef = {
+                dataUrl: dataUrl,
+                role: 'chef',
+                signatoryName: 'Xie Xian (Chef de Projet)',
+                date: dateStr,
+                time: timeStr,
+                timestamp: now.toISOString()
+            };
+        }
 
         // Supprimer l'ancienne entrée pour ce jour si elle existe
         permit.revalidations = permit.revalidations.filter(r => r.dayIndex !== dayIndex && r.date !== dateStr);
@@ -1656,29 +1799,79 @@ const App = {
         permit.revalidations.push(newEntry);
         Store.savePermit(permit);
 
-        if (this.currentView === 'preview') {
+        const isPublicView = document.documentElement.classList.contains('qr-mode') || 
+                             (document.getElementById('client-public-view') && document.getElementById('client-public-view').style.display === 'block');
+
+        if (typeof this.showPublicClientView === 'function' && isPublicView) {
+            this.showPublicClientView(permitId);
+        } else if (this.currentView === 'preview') {
             this.renderPreview();
         } else {
             this.renderDashboard();
         }
 
-        this.showToast(`✅ Revalidation Jour ${dayIndex} (${dateStr}) signée à 08:00 par M. W.P.E.E.X & Xie Xian !`, 'success');
+        this.showToast(`✅ Revalidation Jour ${dayIndex} (${dateStr}) validée à 08:00 par M. W.P.E.E.X & Xie Xian !`, 'success');
     },
 
     signAllRevalidations(permitId) {
         const permit = Store.getPermit(permitId);
         if (!permit) return;
 
-        const dStart = permit.validFrom || permit['date-main'] || '2026-08-24';
+        const dStart = permit.validFrom || permit.date_debut || permit['date-main'] || '2026-09-14';
         const startDate = new Date(dStart);
 
         if (!permit.revalidations) permit.revalidations = [];
+        if (!permit.dailySignatures) permit.dailySignatures = {};
 
-        for (let i = 1; i <= 6; i++) {
+        const now = new Date();
+        const timeStr = '08:00';
+
+        const manualCanvas = document.createElement('canvas');
+        manualCanvas.width = 160;
+        manualCanvas.height = 45;
+        const mCtx = manualCanvas.getContext('2d');
+        mCtx.fillStyle = '#f8fafc';
+        mCtx.fillRect(0, 0, 160, 45);
+        mCtx.strokeStyle = '#1e3a8a';
+        mCtx.lineWidth = 1.5;
+        mCtx.strokeRect(2, 2, 156, 41);
+        mCtx.fillStyle = '#1e3a8a';
+        mCtx.font = 'bold 10px Arial, sans-serif';
+        mCtx.textAlign = 'center';
+        mCtx.fillText('✓ POINTÉ 08H00', 80, 18);
+        mCtx.font = '8.5px monospace';
+        mCtx.fillStyle = '#15803d';
+        mCtx.fillText('Visa Conforme', 80, 32);
+        const dataUrl = manualCanvas.toDataURL('image/png');
+
+        // Couvrir les 7 jours (du Jour 1 index 0 au Jour 7 index 6)
+        for (let i = 0; i <= 6; i++) {
             const targetDate = new Date(startDate);
             targetDate.setDate(startDate.getDate() + i);
             const dateStr = targetDate.toISOString().split('T')[0];
             const dayIndex = i + 1;
+
+            if (!permit.dailySignatures[dateStr]) permit.dailySignatures[dateStr] = {};
+            if (!permit.dailySignatures[dateStr].wpeex) {
+                permit.dailySignatures[dateStr].wpeex = {
+                    dataUrl: dataUrl,
+                    role: 'wpeex',
+                    signatoryName: 'M. W.P.E.E.X (Ingénieur Suivi)',
+                    date: dateStr,
+                    time: timeStr,
+                    timestamp: now.toISOString()
+                };
+            }
+            if (!permit.dailySignatures[dateStr].chef) {
+                permit.dailySignatures[dateStr].chef = {
+                    dataUrl: dataUrl,
+                    role: 'chef',
+                    signatoryName: 'Xie Xian (Chef de Projet)',
+                    date: dateStr,
+                    time: timeStr,
+                    timestamp: now.toISOString()
+                };
+            }
 
             permit.revalidations = permit.revalidations.filter(r => r.dayIndex !== dayIndex && r.date !== dateStr);
             permit.revalidations.push({
@@ -1692,19 +1885,24 @@ const App = {
                 wpeexEngineer: 'M. W.P.E.E.X (Ingénieur de Suivi)',
                 wpeexValidated: true,
                 execManager: 'Xie Xian (Responsable Exécution Sinylon)',
-                comments: `Revalidation matinale 08:00 (K9 CKD0 Protocol)`
+                comments: `Revalidation matinale 08:00 (Protocole Stellantis K9 CKD0)`
             });
         }
 
         Store.savePermit(permit);
 
-        if (this.currentView === 'preview') {
+        const isPublicView = document.documentElement.classList.contains('qr-mode') || 
+                             (document.getElementById('client-public-view') && document.getElementById('client-public-view').style.display === 'block');
+
+        if (typeof this.showPublicClientView === 'function' && isPublicView) {
+            this.showPublicClientView(permitId);
+        } else if (this.currentView === 'preview') {
             this.renderPreview();
         } else {
             this.renderDashboard();
         }
 
-        this.showToast(`✍️ Revalidations signées par M. W.P.E.E.X & Xie Xian pour 08:00 !`, 'success');
+        this.showToast(`✍️ Revalidations des 7 jours scellées à 08:00 par M. W.P.E.E.X & Xie Xian !`, 'success');
     },
 
     verifyPermitFromInput() {

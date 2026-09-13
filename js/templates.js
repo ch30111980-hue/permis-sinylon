@@ -469,6 +469,7 @@ const Templates = {
         const dailySigs = permit.dailySignatures || {};
 
         const dayNames = [
+            { dayIndex: 1, name: 'Jour 1 (Lundi)', offset: 0 },
             { dayIndex: 2, name: 'Jour 2 (Mardi)', offset: 1 },
             { dayIndex: 3, name: 'Jour 3 (Mercredi)', offset: 2 },
             { dayIndex: 4, name: 'Jour 4 (Jeudi)', offset: 3 },
@@ -488,42 +489,42 @@ const Templates = {
             const isRowSigned = Boolean((wSig && wSig.dataUrl) || (cSig && cSig.dataUrl));
 
             return `
-                <tr style="height:31px;">
-                    <td class="text-center bold-cell" style="font-weight:bold;font-size:8.5px;border:1px solid #000;padding:3px 6px;">${dayInfo.name}</td>
-                    <td class="text-center" style="font-family:monospace;font-size:8.5px;border:1px solid #000;padding:3px 6px;">${dateStr}</td>
-                    <td style="border:1px solid #000;padding:3px 6px;font-size:8.5px;font-weight:${wSig ? 'bold' : 'normal'};">${wSig ? wpeexNom : ''}</td>
-                    <td style="border:1px solid #000;padding:3px 6px;font-size:8.5px;">Ingénieur Suivi</td>
+                <tr style="height:26px;">
+                    <td class="text-center bold-cell" style="font-weight:bold;font-size:8px;border:1px solid #000;padding:2px 4px;">${dayInfo.name}</td>
+                    <td class="text-center" style="font-family:monospace;font-size:8px;border:1px solid #000;padding:2px 4px;">${dateStr}</td>
+                    <td style="border:1px solid #000;padding:2px 4px;font-size:8px;font-weight:${wSig ? 'bold' : 'normal'};">${wSig ? wpeexNom : ''}</td>
+                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">Ingénieur Suivi</td>
                     <td class="text-center" style="border:1px solid #000;padding:2px;width:125px;background:#f8fafc;">
                         ${wSig && wSig.dataUrl ? `
-                            <div style="display:flex;align-items:center;justify-content:center;gap:5px;padding:1px 2px;">
-                                <img src="${wSig.dataUrl}" style="height:22px;max-width:80px;object-fit:contain;" alt="Visa">
+                            <div style="display:flex;align-items:center;justify-content:center;gap:4px;padding:1px 2px;">
+                                <img src="${wSig.dataUrl}" style="height:20px;max-width:75px;object-fit:contain;" alt="Visa">
                                 <span style="font-size:6.5px;color:#16a34a;font-weight:900;line-height:1.1;">✓ 08:00<br>${wSig.date || dateStr}</span>
                             </div>
                         ` : `
-                            <div class="no-print" style="height:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','wpeex','${dateStr}','${dayInfo.name}')">
+                            <div class="no-print" style="height:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','wpeex','${dateStr}','${dayInfo.name}')">
                                 <span style="font-size:7.5px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:2px 8px;border-radius:3px;border:1px solid #bfdbfe;">✍️ Émarger 08h</span>
                             </div>
-                            <div class="print-only-manual" style="display:none;padding:1px 2px;height:24px;">
-                                <div style="border-bottom:1px dashed #000;height:16px;margin:0 4px;"></div>
-                                <div style="font-size:6px;color:#475569;text-align:center;font-weight:bold;line-height:1;">Visa / Émargement manuel</div>
+                            <div class="print-only-manual" style="display:none;padding:1px 2px;height:22px;">
+                                <div style="border-bottom:1px dashed #000;height:14px;margin:0 4px;"></div>
+                                <div style="font-size:6px;color:#475569;text-align:center;font-weight:bold;line-height:1;">Visa WPEEX (08h00)</div>
                             </div>
                         `}
                     </td>
-                    <td style="border:1px solid #000;padding:3px 6px;font-size:8.5px;font-weight:${cSig ? 'bold' : 'normal'};">${cSig ? chefNom : ''}</td>
-                    <td style="border:1px solid #000;padding:3px 6px;font-size:8.5px;">Chef de Projet</td>
+                    <td style="border:1px solid #000;padding:2px 4px;font-size:8px;font-weight:${cSig ? 'bold' : 'normal'};">${cSig ? chefNom : ''}</td>
+                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">Chef de Projet</td>
                     <td class="text-center" style="border:1px solid #000;padding:2px;width:125px;background:#f8fafc;">
                         ${cSig && cSig.dataUrl ? `
-                            <div style="display:flex;align-items:center;justify-content:center;gap:5px;padding:1px 2px;">
-                                <img src="${cSig.dataUrl}" style="height:22px;max-width:80px;object-fit:contain;" alt="Signature">
+                            <div style="display:flex;align-items:center;justify-content:center;gap:4px;padding:1px 2px;">
+                                <img src="${cSig.dataUrl}" style="height:20px;max-width:75px;object-fit:contain;" alt="Signature">
                                 <span style="font-size:6.5px;color:#16a34a;font-weight:900;line-height:1.1;">✓ 08:00<br>${cSig.date || dateStr}</span>
                             </div>
                         ` : `
-                            <div class="no-print" style="height:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','chef','${dateStr}','${dayInfo.name}')">
+                            <div class="no-print" style="height:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','chef','${dateStr}','${dayInfo.name}')">
                                 <span style="font-size:7.5px;font-weight:bold;background:#f8fafc;color:#0f172a;padding:2px 8px;border-radius:3px;border:1px solid #cbd5e1;">✍️ Signer 08h</span>
                             </div>
-                            <div class="print-only-manual" style="display:none;padding:1px 2px;height:24px;">
-                                <div style="border-bottom:1px dashed #000;height:16px;margin:0 4px;"></div>
-                                <div style="font-size:6px;color:#475569;text-align:center;font-weight:bold;line-height:1;">Signature manuelle</div>
+                            <div class="print-only-manual" style="display:none;padding:1px 2px;height:22px;">
+                                <div style="border-bottom:1px dashed #000;height:14px;margin:0 4px;"></div>
+                                <div style="font-size:6px;color:#475569;text-align:center;font-weight:bold;line-height:1;">Signature Xie X. (08h00)</div>
                             </div>
                         `}
                     </td>
@@ -566,9 +567,9 @@ const Templates = {
                         </div>
                     </div>
 
-                    <!-- SECTION 1 : REVALIDATION DU JOUR 2 AU JOUR 7 -->
+                    <!-- SECTION 1 : REVALIDATION DU JOUR 1 AU JOUR 7 -->
                     <div class="yellow-bar-header" style="background:#ffeb3b;border:1.2px solid #000;padding:3px 8px;font-weight:900;font-size:9px;margin-top:4px;display:flex;justify-content:space-between;letter-spacing:0.3px;">
-                        <span>REVALIDATION QUOTIDIENNE DU PERMIS (DU JOUR 2 AU JOUR 7 — ÉMARGEMENT SUR SITE À 08H00)</span>
+                        <span>REVALIDATION QUOTIDIENNE DU PERMIS (DU JOUR 1 AU JOUR 7 — ÉMARGEMENT SUR SITE À 08H00)</span>
                         <span style="font-size:8px;font-weight:normal;font-style:italic;">Chaque matin avant le démarrage des travaux</span>
                     </div>
                     <table class="doc-table-exact" style="width:100%;border-collapse:collapse;margin-top:2px;">

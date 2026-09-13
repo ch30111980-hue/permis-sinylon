@@ -363,7 +363,9 @@ const SignaturePad = {
             window.App.showToast(`✅ Signature de ${signatoryNames[this.currentSignatory]} scellée avec succès !`, 'success');
             
             // Rafraîchir la vue active
-            if (typeof window.App.showPublicClientView === 'function' && document.documentElement.classList.contains('qr-mode')) {
+            const isClientView = document.documentElement.classList.contains('qr-mode') || 
+                                (document.getElementById('client-public-view') && document.getElementById('client-public-view').style.display === 'block');
+            if (typeof window.App.showPublicClientView === 'function' && isClientView) {
                 window.App.showPublicClientView(this.currentPermitId);
             } else if (typeof window.App.renderPreview === 'function') {
                 window.App.renderPreview();
@@ -480,7 +482,9 @@ const SignaturePad = {
 
         if (window.App) {
             window.App.showToast(`📝 Émargement manuel sur mur enregistré pour ${signatoryNames[this.currentSignatory]} !`, 'success');
-            if (typeof window.App.showPublicClientView === 'function' && document.documentElement.classList.contains('qr-mode')) {
+            const isClientView = document.documentElement.classList.contains('qr-mode') || 
+                                (document.getElementById('client-public-view') && document.getElementById('client-public-view').style.display === 'block');
+            if (typeof window.App.showPublicClientView === 'function' && isClientView) {
                 window.App.showPublicClientView(this.currentPermitId);
             } else if (typeof window.App.renderPreview === 'function') {
                 window.App.renderPreview();
