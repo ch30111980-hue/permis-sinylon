@@ -133,7 +133,8 @@ const App = {
         const zoneMeta = {
             UB: { name: 'ZONE UB — UNDERBODY', title: 'Soubassement Central', icon: '🏗️', color: '#2563eb', bg: '#1e3a8a' },
             UAR: { name: 'ZONE UAR — UNDERBODY ARRIÈRE', title: 'Soubassement Arrière', icon: '🔩', color: '#0284c7', bg: '#0369a1' },
-            FUSA: { name: 'ZONE FUSA — AVANT', title: 'Sous-Assemblage Avant', icon: '⚡', color: '#d97706', bg: '#b45309' }
+            FUSA: { name: 'ZONE FUSA — AVANT', title: 'Sous-Assemblage Avant', icon: '⚡', color: '#d97706', bg: '#b45309' },
+            WE: { name: 'ZONE WE — WEEK-END', title: 'Caisse Week-end (Vendredi & Samedi)', icon: '📅', color: '#9333ea', bg: '#6b21a8' }
         };
         const activeMeta = zoneMeta[z] || { name: `ZONE ${z}`, title: 'Zone de Travail', icon: '📍', color: '#3b82f6', bg: '#1d4ed8' };
 
@@ -441,7 +442,7 @@ const App = {
                     `;
                 };
 
-                const zCurrent = p.zoneKey || (p.id.includes('UB') ? 'UB' : (p.id.includes('UAR') ? 'UAR' : (p.id.includes('FUSA') ? 'FUSA' : 'UB')));
+                const zCurrent = p.zoneKey || (p.id.includes('UB') ? 'UB' : (p.id.includes('UAR') ? 'UAR' : (p.id.includes('FUSA') ? 'FUSA' : (p.id.includes('WE') ? 'WE' : 'UB'))));
 
                 clientView.innerHTML = `
                     <div style="max-width: 720px; margin: 0 auto; padding: 18px 14px; color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
@@ -459,21 +460,24 @@ const App = {
                             </div>
                         </div>
 
-                        <!-- 2. SÉLECTEUR RAPIDE DES 3 ZONES DU SITE K9 -->
+                        <!-- 2. SÉLECTEUR RAPIDE DES 4 ZONES DU SITE K9 -->
                         <div style="background: rgba(15,23,42,0.9); border: 1.5px solid #0284c7; border-radius: 12px; padding: 10px 12px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
                             <div style="font-size: 11px; font-weight: 800; color: #38bdf8; margin-bottom: 8px; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center;">
                                 <span>${L.zonePermit}</span>
                                 <span style="font-size: 10px; color: #94a3b8;">${L.dedicatedPermits}</span>
                             </div>
-                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;">
-                                <button type="button" onclick="App.showPublicClientView('K9-W${weekNum}-UB')" style="background: ${zCurrent === 'UB' ? '#2563eb' : 'rgba(30,41,59,0.8)'}; border: 1.5px solid ${zCurrent === 'UB' ? '#60a5fa' : '#475569'}; color: #fff; padding: 10px 4px; border-radius: 8px; font-size: 11.5px; font-weight: 900; cursor: pointer; text-align: center; touch-action: manipulation; box-shadow: ${zCurrent === 'UB' ? '0 0 12px rgba(37,99,235,0.6)' : 'none'};">
-                                    🔵 ZONE UB
+                            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;">
+                                <button type="button" onclick="App.showPublicClientView('K9-W${weekNum}-UB')" style="background: ${zCurrent === 'UB' ? '#2563eb' : 'rgba(30,41,59,0.8)'}; border: 1.5px solid ${zCurrent === 'UB' ? '#60a5fa' : '#475569'}; color: #fff; padding: 8px 2px; border-radius: 8px; font-size: 11px; font-weight: 900; cursor: pointer; text-align: center; touch-action: manipulation; box-shadow: ${zCurrent === 'UB' ? '0 0 12px rgba(37,99,235,0.6)' : 'none'};">
+                                    🔵 UB
                                 </button>
-                                <button type="button" onclick="App.showPublicClientView('K9-W${weekNum}-UAR')" style="background: ${zCurrent === 'UAR' ? '#0284c7' : 'rgba(30,41,59,0.8)'}; border: 1.5px solid ${zCurrent === 'UAR' ? '#38bdf8' : '#475569'}; color: #fff; padding: 10px 4px; border-radius: 8px; font-size: 11.5px; font-weight: 900; cursor: pointer; text-align: center; touch-action: manipulation; box-shadow: ${zCurrent === 'UAR' ? '0 0 12px rgba(2,132,199,0.6)' : 'none'};">
-                                    🔷 ZONE UAR
+                                <button type="button" onclick="App.showPublicClientView('K9-W${weekNum}-UAR')" style="background: ${zCurrent === 'UAR' ? '#0284c7' : 'rgba(30,41,59,0.8)'}; border: 1.5px solid ${zCurrent === 'UAR' ? '#38bdf8' : '#475569'}; color: #fff; padding: 8px 2px; border-radius: 8px; font-size: 11px; font-weight: 900; cursor: pointer; text-align: center; touch-action: manipulation; box-shadow: ${zCurrent === 'UAR' ? '0 0 12px rgba(2,132,199,0.6)' : 'none'};">
+                                    🔷 UAR
                                 </button>
-                                <button type="button" onclick="App.showPublicClientView('K9-W${weekNum}-FUSA')" style="background: ${zCurrent === 'FUSA' ? '#d97706' : 'rgba(30,41,59,0.8)'}; border: 1.5px solid ${zCurrent === 'FUSA' ? '#f59e0b' : '#475569'}; color: #fff; padding: 10px 4px; border-radius: 8px; font-size: 11.5px; font-weight: 900; cursor: pointer; text-align: center; touch-action: manipulation; box-shadow: ${zCurrent === 'FUSA' ? '0 0 12px rgba(217,119,6,0.6)' : 'none'};">
-                                    🟠 ZONE FUSA
+                                <button type="button" onclick="App.showPublicClientView('K9-W${weekNum}-FUSA')" style="background: ${zCurrent === 'FUSA' ? '#d97706' : 'rgba(30,41,59,0.8)'}; border: 1.5px solid ${zCurrent === 'FUSA' ? '#f59e0b' : '#475569'}; color: #fff; padding: 8px 2px; border-radius: 8px; font-size: 11px; font-weight: 900; cursor: pointer; text-align: center; touch-action: manipulation; box-shadow: ${zCurrent === 'FUSA' ? '0 0 12px rgba(217,119,6,0.6)' : 'none'};">
+                                    🟠 FUSA
+                                </button>
+                                <button type="button" onclick="App.showPublicClientView('K9-W${weekNum}-WE')" style="background: ${zCurrent === 'WE' ? '#9333ea' : 'rgba(30,41,59,0.8)'}; border: 1.5px solid ${zCurrent === 'WE' ? '#c084fc' : '#475569'}; color: #fff; padding: 8px 2px; border-radius: 8px; font-size: 11px; font-weight: 900; cursor: pointer; text-align: center; touch-action: manipulation; box-shadow: ${zCurrent === 'WE' ? '0 0 12px rgba(147,51,234,0.6)' : 'none'};">
+                                    🟣 WE
                                 </button>
                             </div>
                         </div>
