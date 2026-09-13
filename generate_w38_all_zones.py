@@ -273,6 +273,10 @@ body {{ margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; backgr
 .doc-header-title h1 {{ font-size: 13px; font-weight: 900; margin: 0; text-transform: uppercase; }}
 .doc-header-title h2 {{ font-size: 9.5px; font-weight: 700; color: #1e3a8a; margin: 2px 0 0 0; }}
 .sec-title {{ background: #ffeb3b; color: #000; font-size: 9.5px; font-weight: 900; padding: 3px 6px; border: 1px solid #000; margin: 4px 0 2px 0; text-transform: uppercase; }}
+.sec-title-height {{ background: #004080; color: #fff; font-size: 9.5px; font-weight: 900; padding: 3px 6px; border: 1px solid #004080; margin: 4px 0 2px 0; text-transform: uppercase; }}
+.sec-title-hot {{ background: #cc0000; color: #fff; font-size: 9.5px; font-weight: 900; padding: 3px 6px; border: 1px solid #cc0000; margin: 4px 0 2px 0; text-transform: uppercase; }}
+.sec-title-elec {{ background: #d97706; color: #fff; font-size: 9.5px; font-weight: 900; padding: 3px 6px; border: 1px solid #d97706; margin: 4px 0 2px 0; text-transform: uppercase; }}
+.sec-title-workers {{ background: #0f172a; color: #fff; font-size: 9.5px; font-weight: 900; padding: 3px 6px; border: 1px solid #0f172a; margin: 4px 0 2px 0; text-transform: uppercase; }}
 .grid-table {{ width: 100%; border-collapse: collapse; font-size: 8.5px; }}
 .grid-table th, .grid-table td {{ border: 1px solid #000; padding: 3px 5px; vertical-align: middle; }}
 .grid-table th {{ background: #f1f5f9; font-weight: 800; text-align: left; }}
@@ -523,7 +527,7 @@ body {{ margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; backgr
             <div class="brand-stellantis">STELLANTIS</div>
         </div>
 
-        <div class="sec-title">1. ÉQUIPEMENTS DE TRAVAIL EN HAUTEUR AUTORISÉS</div>
+        <div class="sec-title-height">1. ÉQUIPEMENTS DE TRAVAIL EN HAUTEUR AUTORISÉS</div>
         <table class="grid-table">
             <tr>
                 <th style="width: 25%;">Équipements Déclarés :</th>
@@ -539,7 +543,7 @@ body {{ margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; backgr
             </tr>
         </table>
 
-        <div class="sec-title">2. CHECKLIST DES MESURES DE SÉCURITÉ EN HAUTEUR</div>
+        <div class="sec-title-height">2. CHECKLIST DES MESURES DE SÉCURITÉ EN HAUTEUR</div>
         <table class="grid-table">
             <tr>
                 <th style="width: 70%;">Point de Contrôle HSE Obligatoire</th>
@@ -567,7 +571,7 @@ body {{ margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; backgr
             </tr>
         </table>
 
-        <div class="sec-title">3. VISAS SPÉCIFIQUES TRAVAIL EN HAUTEUR</div>
+        <div class="sec-title-height">3. VISAS SPÉCIFIQUES TRAVAIL EN HAUTEUR</div>
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 8px;">
             <div class="sig-box">
                 <div class="sig-title">CONDUCTEUR PEMP / NACELLE</div>
@@ -606,7 +610,7 @@ body {{ margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; backgr
             <div class="brand-stellantis">STELLANTIS</div>
         </div>
 
-        <div class="sec-title">ANNEXE B : TRAVAUX À CHAUD (SOUDAGE, MEULAGE, CHALUMEAU)</div>
+        <div class="sec-title-hot">ANNEXE B : TRAVAUX À CHAUD (SOUDAGE, MEULAGE, CHALUMEAU)</div>
         <table class="grid-table">
             <tr>
                 <th style="width: 25%;">Équipements Utilisés :</th>
@@ -626,7 +630,7 @@ body {{ margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; backgr
             </tr>
         </table>
 
-        <div class="sec-title">ANNEXE C : CONSIGNATION ÉLECTRIQUE & ÉNERGIES (LOTO)</div>
+        <div class="sec-title-elec">ANNEXE C : CONSIGNATION ÉLECTRIQUE & ÉNERGIES (LOTO)</div>
         <table class="grid-table">
             <tr>
                 <th style="width: 25%;">Installation Consignée :</th>
@@ -646,7 +650,7 @@ body {{ margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; backgr
             </tr>
         </table>
 
-        <div class="sec-title">VISAS CONJOINTS CHAUD & CONSIGNATION LOTO</div>
+        <div class="sec-title-hot" style="background: linear-gradient(90deg, #cc0000, #d97706); border: 1px solid #991b1b;">VISAS CONJOINTS CHAUD & CONSIGNATION LOTO</div>
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 8px;">
             <div class="sig-box">
                 <div class="sig-title">RESPONSABLE CHAUD / SOUDAGE</div>
@@ -689,7 +693,7 @@ body {{ margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; backgr
             ℹ️ <strong>CAUSERIE HSE (TOOLBOX MEETING) TENUE CHAQUE MATIN À 08H00 :</strong> L'ensemble des 59 intervenants ont reçu les consignes de sécurité, le port des EPI complets et les consignes d'évacuation d'urgence de l'Usine Stellantis.
         </div>
 
-        <div class="sec-title">EXTRAIT DU REGISTRE DES INTERVENANTS & HABILITATIONS VÉRIFIÉES</div>
+        <div class="sec-title-workers">EXTRAIT DU REGISTRE DES INTERVENANTS & HABILITATIONS VÉRIFIÉES</div>
         <table class="grid-table" style="font-size: 7.5px;">
             <thead>
                 <tr style="background: #f1f5f9;">
@@ -1053,7 +1057,8 @@ def generate_dossier_pdf(cfg, qr_temp, output_pdf):
     t_h1 = Table(h_data1, colWidths=[130, 430])
     t_h1.setStyle(TableStyle([
         ('SPAN', (0,0), (-1,0)),
-        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#ffeb3b')),
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#004080')),
+        ('TEXTCOLOR', (0,0), (-1,0), colors.white),
         ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
         ('FONTSIZE', (0,0), (-1,0), 7.5),
         ('GRID', (0,0), (-1,-1), 1, colors.black),
@@ -1078,7 +1083,8 @@ def generate_dossier_pdf(cfg, qr_temp, output_pdf):
     t_h2 = Table(h_data2, colWidths=[420, 140])
     t_h2.setStyle(TableStyle([
         ('SPAN', (0,0), (-1,0)),
-        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#ffeb3b')),
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#004080')),
+        ('TEXTCOLOR', (0,0), (-1,0), colors.white),
         ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
         ('FONTSIZE', (0,0), (-1,0), 7.5),
         ('BACKGROUND', (0,1), (-1,1), colors.HexColor('#f1f5f9')),
@@ -1134,11 +1140,13 @@ def generate_dossier_pdf(cfg, qr_temp, output_pdf):
     t_bc = Table(bc_data, colWidths=[130, 430])
     t_bc.setStyle(TableStyle([
         ('SPAN', (0,0), (-1,0)),
-        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#ffeb3b')),
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#cc0000')),
+        ('TEXTCOLOR', (0,0), (-1,0), colors.white),
         ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
         ('FONTSIZE', (0,0), (-1,0), 7.5),
         ('SPAN', (0,5), (-1,5)),
-        ('BACKGROUND', (0,5), (-1,5), colors.HexColor('#ffeb3b')),
+        ('BACKGROUND', (0,5), (-1,5), colors.HexColor('#d97706')),
+        ('TEXTCOLOR', (0,5), (-1,5), colors.white),
         ('FONTNAME', (0,5), (-1,5), 'Helvetica-Bold'),
         ('FONTSIZE', (0,5), (-1,5), 7.5),
         ('GRID', (0,0), (-1,-1), 1, colors.black),
@@ -1196,7 +1204,8 @@ def generate_dossier_pdf(cfg, qr_temp, output_pdf):
     t_workers = Table(workers_data, colWidths=[24, 65, 140, 130, 115, 86])
     t_workers.setStyle(TableStyle([
         ('GRID', (0,0), (-1,-1), 1, colors.black),
-        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#ffeb3b')),
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#0f172a')),
+        ('TEXTCOLOR', (0,0), (-1,0), colors.white),
         ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
         ('FONTSIZE', (0,0), (-1,-1), 6.5),
         ('ALIGN', (0,0), (0,-1), 'CENTER'),

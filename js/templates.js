@@ -19,34 +19,34 @@ const Templates = {
 
         if (sig && sig.dataUrl) {
             return `
-                <div style="border:1.5px solid #16a34a;background:#fff;padding:4px 6px;font-size:8.5px;min-height:65px;display:flex;flex-direction:column;justify-content:space-between;border-radius:3px;box-shadow:0 1px 4px rgba(22,163,74,0.15);">
-                    <div style="background:#dcfce7;color:#15803d;font-weight:900;padding:2px 4px;text-align:center;border-bottom:1px solid #16a34a;font-size:8.5px;letter-spacing:0.3px;">${title}</div>
-                    <div style="font-size:8px;margin-top:1px;">Nom : <strong>${name}</strong></div>
-                    <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:2px 5px;margin:2px 0;">
-                        <img src="${sig.dataUrl}" style="height:26px;max-width:110px;object-fit:contain;" alt="Signature">
-                        <div style="font-size:6.5px;color:#16a34a;font-weight:900;text-align:right;line-height:1.1;">
-                            ✓ SIGNÉ SUR SITE<br>${sig.date} ${sig.time}
+                <div style="border:1.2px solid #16a34a;background:#fff;padding:2px 5px;font-size:8px;min-height:50px;display:flex;flex-direction:column;justify-content:space-between;border-radius:2px;box-sizing:border-box;">
+                    <div style="background:#dcfce7;color:#15803d;font-weight:900;padding:1px 3px;text-align:center;border-bottom:1px solid #16a34a;font-size:8px;letter-spacing:0.2px;">${title}</div>
+                    <div style="font-size:7.5px;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Nom : <strong>${name}</strong></div>
+                    <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:1px 4px;margin:1px 0;">
+                        <img src="${sig.dataUrl}" style="height:20px;max-width:90px;object-fit:contain;" alt="Signature">
+                        <div style="font-size:6px;color:#16a34a;font-weight:900;text-align:right;line-height:1.1;">
+                            ✓ SIGNÉ<br>${sig.date} ${sig.time}
                         </div>
                     </div>
-                    ${subtitle ? `<div style="font-size:6.5px;color:#555;line-height:1.1;">${subtitle}</div>` : ''}
+                    ${subtitle ? `<div style="font-size:6px;color:#555;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${subtitle}</div>` : ''}
                 </div>
             `;
         }
 
         // Si non encore signé
         return `
-            <div style="border:1.2px solid #000;background:#fff;padding:4px 6px;font-size:8.5px;min-height:65px;display:flex;flex-direction:column;justify-content:space-between;border-radius:2px;">
-                <div style="background:#bfdbfe;color:#1e3a8a;font-weight:bold;padding:2px 4px;text-align:center;border-bottom:1px solid #000;font-size:8.5px;">${title}</div>
-                <div style="font-size:8px;margin-top:1px;">Nom : <strong>${defaultName}</strong></div>
-                <div class="no-print" style="height:24px;border-bottom:1px dashed #999;color:#2563eb;font-size:7.5px;display:flex;align-items:flex-end;justify-content:space-between;cursor:pointer;padding-bottom:1px;" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}','${role}')">
-                    <span style="color:#777;font-size:7.5px;">Signature :</span>
-                    <span style="font-size:7.5px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:2px 6px;border-radius:2px;border:1px solid #bfdbfe;">✍️ Signer</span>
+            <div style="border:1.2px solid #000;background:#fff;padding:2px 5px;font-size:8px;min-height:50px;display:flex;flex-direction:column;justify-content:space-between;border-radius:2px;box-sizing:border-box;">
+                <div style="background:#bfdbfe;color:#1e3a8a;font-weight:bold;padding:1px 3px;text-align:center;border-bottom:1px solid #000;font-size:8px;">${title}</div>
+                <div style="font-size:7.5px;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Nom : <strong>${defaultName}</strong></div>
+                <div class="no-print" style="height:20px;border-bottom:1px dashed #999;color:#2563eb;font-size:7px;display:flex;align-items:flex-end;justify-content:space-between;cursor:pointer;padding-bottom:1px;" onclick="if(window.SignaturePad)SignaturePad.open('${p.id}','${role}')">
+                    <span style="color:#777;">Signature :</span>
+                    <span style="font-size:7px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:1px 5px;border-radius:2px;border:1px solid #bfdbfe;">✍️ Signer</span>
                 </div>
-                <div class="print-only-manual" style="display:none;height:24px;padding-top:4px;">
-                    <div style="border-bottom:1px dashed #000;height:14px;"></div>
-                    <div style="font-size:6px;color:#555;text-align:center;font-weight:bold;">Visa / Signature manuscrite</div>
+                <div class="print-only-manual" style="display:none;height:20px;padding-top:2px;">
+                    <div style="border-bottom:1px dashed #000;height:12px;"></div>
+                    <div style="font-size:5.5px;color:#555;text-align:center;font-weight:bold;">Visa / Signature manuscrite</div>
                 </div>
-                ${subtitle ? `<div style="font-size:6.5px;color:#555;line-height:1.1;">${subtitle}</div>` : ''}
+                ${subtitle ? `<div style="font-size:6px;color:#555;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${subtitle}</div>` : ''}
             </div>
         `;
     },
@@ -71,27 +71,27 @@ const Templates = {
         const engine = typeof window !== 'undefined' ? (window.QRCodeGenerator || window.QRCode) : (typeof QRCodeGenerator !== 'undefined' ? QRCodeGenerator : null);
         if (engine && typeof engine.toSVG === 'function') {
             try {
-                svgQr = engine.toSVG(payload, { size: 48, margin: 1 });
+                svgQr = engine.toSVG(payload, { size: 38, margin: 1 });
             } catch(e) {}
         }
         if (!svgQr || svgQr.length < 50) {
-            svgQr = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(payload)}" style="width:100%;height:100%;object-fit:contain;" alt="QR Code">`;
+            svgQr = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${encodeURIComponent(payload)}" style="width:100%;height:100%;object-fit:contain;" alt="QR Code">`;
         }
 
         return `
-            <div class="doc-footer-qr-verification" style="margin-top:auto;border:1.5px solid #000;padding:4px 10px;background:#f8fafc;border-radius:3px;display:flex;justify-content:space-between;align-items:center;box-sizing:border-box;">
-                <div class="qr-verify-text" style="font-size:8.5px;color:#000;line-height:1.25;flex:1;">
-                    <div style="font-weight:900;font-size:9.5px;text-transform:uppercase;color:#000;letter-spacing:0.5px;">
+            <div class="doc-footer-qr-verification" style="margin-top:auto;border:1.2px solid #000;padding:2px 8px;background:#f8fafc;border-radius:2px;display:flex;justify-content:space-between;align-items:center;box-sizing:border-box;">
+                <div class="qr-verify-text" style="font-size:7.5px;color:#000;line-height:1.2;flex:1;">
+                    <div style="font-weight:900;font-size:8px;text-transform:uppercase;color:#000;letter-spacing:0.3px;">
                         🛡️ VÉRIFICATION ÉLECTRONIQUE / DIGITAL WORK PERMIT QR VERIFICATION
                     </div>
-                    <div style="font-size:8px;color:#334155;margin-top:1px;">
+                    <div style="font-size:7px;color:#334155;margin-top:1px;">
                         Scannez ce QR Code pour vérifier en direct la validité journalière <strong>(Validité Hebdomadaire)</strong>, les visas M. W.P.E.E.X / Sinylon et les habilitations.
                     </div>
-                    <div style="font-family:monospace;font-weight:800;font-size:9.5px;color:#1e3a8a;margin-top:1px;">
+                    <div style="font-family:monospace;font-weight:800;font-size:8px;color:#1e3a8a;margin-top:1px;">
                         PERMIS N° ${permit.id} · PROJET ALGERIA K9 CKD0 · STELLANTIS
                     </div>
                 </div>
-                <div class="qr-container qr-code-box-footer" id="doc-qr-${permit.id}" title="Scan QR Code" style="width:48px;height:48px;min-width:48px;min-height:48px;background:#fff;border:1.5px solid #000;border-radius:2px;padding:1px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;">
+                <div class="qr-container qr-code-box-footer" id="doc-qr-${permit.id}" title="Scan QR Code" style="width:38px;height:38px;min-width:38px;min-height:38px;background:#fff;border:1.2px solid #000;border-radius:2px;padding:1px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;">
                     ${svgQr}
                 </div>
             </div>
@@ -113,7 +113,7 @@ const Templates = {
 
     // =========================================================================
     // 1. PERMIS GÉNÉRAL - PAGE 1/2 (RECTO)
-    // REPRODUCTION EXACTE DU STANDARD SINYLON - STELLANTIS PLEIN FORMAT A4
+    // REPRODUCTION EXACTE DU STANDARD SINYLON - STELLANTIS PLEIN FORMAT A4 STRICT
     // =========================================================================
     generalP1(permit) {
         const p = permit || {};
@@ -124,64 +124,63 @@ const Templates = {
         const isConfined = !!dangers.confined;
         const isTension = !!dangers.tension;
         const isExcav = !!dangers.excavation;
-        const isRupture = !!dangers.rupture;
+        const isRupture = !!dangers.chemical;
 
-        // Description exacte provenant de l'application / JSON
         const workDescription = p['work-desc'] || p.description || p.desc || '';
         const workDescEn = p['work-desc-en'] || '';
 
         return `
-        <div class="a4-document" style="font-family:Arial,Helvetica,sans-serif;color:#000;padding:7mm 9mm 6mm 9mm;display:flex;flex-direction:column;justify-content:space-between;box-sizing:border-box;height:297mm;max-height:297mm;overflow:hidden;position:relative;">
+        <div class="a4-document" style="font-family:Arial,Helvetica,sans-serif;color:#000;padding:4.5mm 7mm 3.5mm 7mm;display:flex;flex-direction:column;justify-content:space-between;box-sizing:border-box;height:297mm;max-height:297mm;overflow:hidden;position:relative;">
             <div>
                 <!-- EN-TÊTE : EXACT PHOTO -->
-                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;padding-bottom:3px;border-bottom:1.5px solid #000;">
-                    <div style="flex:1;text-align:center;padding-left:30px;">
-                        <div style="font-size:18.5px;font-weight:900;letter-spacing:0.2px;text-transform:none;color:#000;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:3px;padding-bottom:2px;border-bottom:1.5px solid #000;">
+                    <div style="flex:1;text-align:center;padding-left:20px;">
+                        <div style="font-size:16px;font-weight:900;letter-spacing:0.2px;text-transform:none;color:#000;line-height:1.15;">
                             Permis de Travail de Securité Générale
                         </div>
-                        <div style="font-size:9.5px;color:#333;margin-top:1px;">
+                        <div style="font-size:8.5px;color:#333;margin-top:1px;">
                             (à afficher obligatoirement sur le site de travail)
                         </div>
                     </div>
-                    <div style="display:flex;align-items:center;gap:12px;">
-                        <div style="display:flex;align-items:center;gap:6px;">
-                            <span style="background:#000;color:#fff;font-weight:900;font-size:14px;padding:3px 8px;border-radius:2px;letter-spacing:1px;">SINYLON</span>
-                            <span style="border:1.5px solid #000;color:#000;font-weight:900;font-size:14px;padding:2px 8px;border-radius:2px;background:#fff;letter-spacing:1px;">STELLANTIS</span>
+                    <div style="display:flex;align-items:center;gap:8px;">
+                        <div style="display:flex;align-items:center;gap:5px;">
+                            <span style="background:#000;color:#fff;font-weight:900;font-size:13px;padding:2px 6px;border-radius:2px;letter-spacing:0.5px;">SINYLON</span>
+                            <span style="border:1.5px solid #000;color:#000;font-weight:900;font-size:13px;padding:1px 6px;border-radius:2px;background:#fff;letter-spacing:0.5px;">STELLANTIS</span>
                         </div>
-                        <div style="border:1.5px solid #000;text-align:center;width:145px;border-radius:2px;background:#f8fafc;">
-                            <div style="font-size:8px;font-weight:800;border-bottom:1px solid #000;padding:2px 4px;background:#f1f5f9;color:#475569;">Identifiant du permis</div>
-                            <div style="font-size:13px;font-weight:900;padding:2px 4px;color:#1e3a8a;font-family:monospace;">${p.id || 'SYN-K9-KW36'}</div>
+                        <div style="border:1.5px solid #000;text-align:center;width:130px;border-radius:2px;background:#f8fafc;">
+                            <div style="font-size:7.5px;font-weight:800;border-bottom:1px solid #000;padding:1px 4px;background:#f1f5f9;color:#475569;">Identifiant du permis</div>
+                            <div style="font-size:12px;font-weight:900;padding:2px 4px;color:#1e3a8a;font-family:monospace;">${p.id || 'SYN-K9-KW36'}</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- SECTION 1 : BRÈVE DESCRIPTION DU TRAVAIL (BANDEAU JAUNE) -->
-                <div style="border:1.2px solid #000;margin-top:4px;">
-                    <div style="background:#ffeb3b;border-bottom:1.2px solid #000;padding:3px 8px;font-weight:900;font-size:9.5px;text-align:center;letter-spacing:0.3px;">
+                <div style="border:1.2px solid #000;margin-top:3px;">
+                    <div style="background:#ffeb3b;border-bottom:1.2px solid #000;padding:2px 6px;font-weight:900;font-size:8.5px;text-align:center;letter-spacing:0.3px;">
                         Bréve description du travail
                     </div>
-                    <div style="padding:6px 10px;min-height:50px;font-size:9px;line-height:1.35;color:#000;">
+                    <div style="padding:3.5px 8px;max-height:38px;overflow:hidden;font-size:8px;line-height:1.25;color:#000;">
                         <strong>${workDescription || 'Montage et assemblage structures métalliques, traçage au sol et manutention outillages.'}</strong>
-                        ${workDescEn ? `<div style="font-size:8px;color:#475569;font-style:italic;margin-top:3px;">${workDescEn}</div>` : ''}
+                        ${workDescEn ? `<div style="font-size:7.5px;color:#475569;font-style:italic;margin-top:2px;">${workDescEn}</div>` : ''}
                     </div>
                 </div>
 
                 <!-- SECTION 2 : ENDROIT DE TRAVAIL & ÉQUIPEMENTS (BANDEAUX JAUNES) -->
                 <div style="display:grid;grid-template-columns:1fr 1fr;border:1.2px solid #000;border-top:none;">
                     <div style="border-right:1.2px solid #000;">
-                        <div style="background:#ffeb3b;border-bottom:1.2px solid #000;padding:3px 8px;font-weight:900;font-size:9.5px;text-align:center;">
+                        <div style="background:#ffeb3b;border-bottom:1.2px solid #000;padding:2px 6px;font-weight:900;font-size:8.5px;text-align:center;">
                             Endroit de travail:
                         </div>
-                        <div style="padding:5px 8px;font-size:9px;min-height:44px;line-height:1.35;">
+                        <div style="padding:3px 6px;font-size:7.5px;max-height:36px;overflow:hidden;line-height:1.2;">
                             <strong>Localisation :</strong> ${p.location || p.ouvrage || 'Bâtiment Montage Stellantis — Lignes FUSA / UAR / UB'}<br>
                             <strong>Secteur :</strong> ${p.ouvrage || 'Atelier Assemblage Stellantis (Algeria K9 CKD0)'}
                         </div>
                     </div>
                     <div>
-                        <div style="background:#ffeb3b;border-bottom:1.2px solid #000;padding:3px 8px;font-weight:900;font-size:9.5px;text-align:center;">
+                        <div style="background:#ffeb3b;border-bottom:1.2px solid #000;padding:2px 6px;font-weight:900;font-size:8.5px;text-align:center;">
                             Equipment / Machinerie / Zone sur lequel s'effectue le travail
                         </div>
-                        <div style="padding:5px 8px;font-size:9px;min-height:44px;line-height:1.35;">
+                        <div style="padding:3px 6px;font-size:7.5px;max-height:36px;overflow:hidden;line-height:1.2;">
                             <strong>ZONE :</strong> <span style="font-weight:bold;color:#1e3a8a;">${p.zone || 'Zones FUSA / UAR / UB'}</span><br>
                             <strong>Équipements :</strong> Postes de soudage ARO, Pinces manuelles, Nacelles ciseaux (x6), Manlift, Palans DEMAG
                         </div>
@@ -189,21 +188,21 @@ const Templates = {
                 </div>
 
                 <!-- SECTION 3 : ENTREPRISE INTERVENANTE & CONTACTS -->
-                <div style="display:grid;grid-template-columns:1.2fr 1fr;border:1.2px solid #000;border-top:none;font-size:9px;line-height:1.35;">
-                    <div style="border-right:1.2px solid #000;padding:5px 8px;">
+                <div style="display:grid;grid-template-columns:1.2fr 1fr;border:1.2px solid #000;border-top:none;font-size:8px;line-height:1.2;">
+                    <div style="border-right:1.2px solid #000;padding:3.5px 6px;">
                         <div><strong>Entreprise Intervenante :</strong> <span style="font-weight:bold;color:#1e3a8a;">${p.company || 'SINYLON'}</span></div>
-                        <div style="color:#333;margin-top:2px;">Avant de commencer le travail, veuillez contacter:</div>
-                        <div style="margin-top:2px;"><strong>Nom :</strong> ${p['chef-nom'] || 'XIE XIAN (Chef de Projet)'}</div>
+                        <div style="color:#333;margin-top:1px;">Avant de commencer le travail, veuillez contacter:</div>
+                        <div style="margin-top:1px;"><strong>Nom :</strong> ${p['chef-nom'] || 'XIE XIAN (Chef de Projet)'}</div>
                     </div>
-                    <div style="padding:5px 8px;">
+                    <div style="padding:3.5px 6px;">
                         <div style="display:flex;justify-content:space-between;align-items:center;">
                             <span>Plan d'urgence du site attaché</span>
-                            <span style="border:1px solid #000;display:inline-flex;font-size:8px;font-weight:bold;">
-                                <span style="padding:1px 4px;">Y</span>
-                                <span style="background:#000;color:#fff;padding:1px 4px;">N</span>
+                            <span style="border:1px solid #000;display:inline-flex;font-size:7.5px;font-weight:bold;">
+                                <span style="padding:1px 3px;">Y</span>
+                                <span style="background:#000;color:#fff;padding:1px 3px;">N</span>
                             </span>
                         </div>
-                        <div style="margin-top:3px;">
+                        <div style="margin-top:2px;">
                             <strong>Ouvrage :</strong> ${p.ouvrage ? 'Stellantis K9' : 'Stellantis K9'}&nbsp;&nbsp;&nbsp;
                             <strong>ZONE :</strong> <span style="font-weight:bold;color:#1e3a8a;">${p.zone || 'FUSA/UAR/UB'}</span>&nbsp;&nbsp;&nbsp;
                             <strong>Tél. :</strong> ${p.tel || '0562765157'}
@@ -212,155 +211,155 @@ const Templates = {
                 </div>
 
                 <!-- SECTION 4 : GRANDS DANGERS (EXACT PHOTO) -->
-                <div style="border:1.2px solid #000;border-top:none;padding:4px 8px;font-size:8.5px;">
-                    <div style="font-size:8.5px;font-style:italic;margin-bottom:3px;color:#000;">
+                <div style="border:1.2px solid #000;border-top:none;padding:2.5px 6px;font-size:7.5px;line-height:1.15;">
+                    <div style="font-size:7.5px;font-style:italic;margin-bottom:2px;color:#000;">
                         si oui, la liste de vérification des grands dangers suivante doit être attachée :
                     </div>
 
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
                         <!-- Colonne gauche -->
                         <div>
-                            <div style="display:flex;justify-content:space-between;align-items:center;padding:2px 0;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
                                 <span>Travail en hauteur</span>
                                 <span>
-                                    <span style="border:1px solid #000;display:inline-flex;font-size:8px;font-weight:bold;">
-                                        <span style="${isHeight ? 'background:#000;color:#fff;' : ''}padding:1px 4px;">.Y.</span>
-                                        <span style="${!isHeight ? 'background:#000;color:#fff;' : ''}padding:1px 4px;">N</span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7.5px;font-weight:bold;">
+                                        <span style="${isHeight ? 'background:#000;color:#fff;' : ''}padding:0.5px 3px;">.Y.</span>
+                                        <span style="${!isHeight ? 'background:#000;color:#fff;' : ''}padding:0.5px 3px;">N</span>
                                     </span>
-                                    <strong style="margin-left:6px;font-size:9.5px;color:#004080;">A</strong>
+                                    <strong style="margin-left:4px;font-size:8.5px;color:#004080;">A</strong>
                                 </span>
                             </div>
-                            <div style="display:flex;justify-content:space-between;align-items:center;padding:2px 0;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
                                 <span>Travail dans un espace confiné</span>
                                 <span>
-                                    <span style="border:1px solid #000;display:inline-flex;font-size:8px;font-weight:bold;">
-                                        <span style="${isConfined ? 'background:#000;color:#fff;' : ''}padding:1px 4px;">.Y.</span>
-                                        <span style="${!isConfined ? 'background:#000;color:#fff;' : ''}padding:1px 4px;">N</span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7.5px;font-weight:bold;">
+                                        <span style="${isConfined ? 'background:#000;color:#fff;' : ''}padding:0.5px 3px;">.Y.</span>
+                                        <span style="${!isConfined ? 'background:#000;color:#fff;' : ''}padding:0.5px 3px;">N</span>
                                     </span>
-                                    <strong style="margin-left:6px;font-size:9.5px;">B</strong>
+                                    <strong style="margin-left:4px;font-size:8.5px;">B</strong>
                                 </span>
                             </div>
-                            <div style="display:flex;justify-content:space-between;align-items:center;padding:2px 0;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
                                 <span>Travail sur un système électrique</span>
                                 <span>
-                                    <span style="border:1px solid #000;display:inline-flex;font-size:8px;font-weight:bold;">
-                                        <span style="${isElec ? 'background:#000;color:#fff;' : ''}padding:1px 4px;">.Y.</span>
-                                        <span style="${!isElec ? 'background:#000;color:#fff;' : ''}padding:1px 4px;">N</span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7.5px;font-weight:bold;">
+                                        <span style="${isElec ? 'background:#000;color:#fff;' : ''}padding:0.5px 3px;">.Y.</span>
+                                        <span style="${!isElec ? 'background:#000;color:#fff;' : ''}padding:0.5px 3px;">N</span>
                                     </span>
-                                    <strong style="margin-left:6px;font-size:9.5px;color:#d97706;">C</strong>
+                                    <strong style="margin-left:4px;font-size:8.5px;color:#d97706;">C</strong>
                                 </span>
                             </div>
-                            <div style="display:flex;justify-content:space-between;align-items:center;padding:2px 0;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
                                 <span>Ouvrir un système / ligne de rupture</span>
                                 <span>
-                                    <span style="border:1px solid #000;display:inline-flex;font-size:8px;font-weight:bold;">
-                                        <span style="${isRupture ? 'background:#000;color:#fff;' : ''}padding:1px 4px;">.Y.</span>
-                                        <span style="${!isRupture ? 'background:#000;color:#fff;' : ''}padding:1px 4px;">N</span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7.5px;font-weight:bold;">
+                                        <span style="${isRupture ? 'background:#000;color:#fff;' : ''}padding:0.5px 3px;">.Y.</span>
+                                        <span style="${!isRupture ? 'background:#000;color:#fff;' : ''}padding:0.5px 3px;">N</span>
                                     </span>
-                                    <strong style="margin-left:6px;font-size:9.5px;">D</strong>
+                                    <strong style="margin-left:4px;font-size:8.5px;">D</strong>
                                 </span>
                             </div>
-                            <div style="display:flex;justify-content:space-between;align-items:center;padding:2px 0;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
                                 <span>Autre travaux dangereux spécifiés</span>
                                 <span>
-                                    <span style="border:1px solid #000;display:inline-flex;font-size:8px;font-weight:bold;">
-                                        <span style="padding:1px 4px;">.Y.</span>
-                                        <span style="background:#000;color:#fff;padding:1px 4px;">N</span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7.5px;font-weight:bold;">
+                                        <span style="padding:0.5px 3px;">.Y.</span>
+                                        <span style="background:#000;color:#fff;padding:0.5px 3px;">N</span>
                                     </span>
-                                    <strong style="margin-left:6px;font-size:9.5px;">E</strong>
+                                    <strong style="margin-left:4px;font-size:8.5px;">E</strong>
                                 </span>
                             </div>
                         </div>
 
                         <!-- Colonne droite -->
                         <div>
-                            <div style="display:flex;justify-content:space-between;align-items:center;padding:2px 0;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
                                 <span>Travail à chaud</span>
                                 <span>
-                                    <span style="border:1px solid #000;display:inline-flex;font-size:8px;font-weight:bold;">
-                                        <span style="${isHot ? 'background:#000;color:#fff;' : ''}padding:1px 4px;">Y</span>
-                                        <span style="${!isHot ? 'background:#000;color:#fff;' : ''}padding:1px 4px;">N</span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7.5px;font-weight:bold;">
+                                        <span style="${isHot ? 'background:#000;color:#fff;' : ''}padding:0.5px 3px;">Y</span>
+                                        <span style="${!isHot ? 'background:#000;color:#fff;' : ''}padding:0.5px 3px;">N</span>
                                     </span>
-                                    <strong style="margin-left:6px;font-size:9.5px;color:#cc0000;">B</strong>
+                                    <strong style="margin-left:4px;font-size:8.5px;color:#cc0000;">B</strong>
                                 </span>
                             </div>
-                            <div style="display:flex;justify-content:space-between;align-items:center;padding:2px 0;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
                                 <span>Excavation</span>
                                 <span>
-                                    <span style="border:1px solid #000;display:inline-flex;font-size:8px;font-weight:bold;">
-                                        <span style="${isExcav ? 'background:#000;color:#fff;' : ''}padding:1px 4px;">.Y.</span>
-                                        <span style="${!isExcav ? 'background:#000;color:#fff;' : ''}padding:1px 4px;">N</span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7.5px;font-weight:bold;">
+                                        <span style="${isExcav ? 'background:#000;color:#fff;' : ''}padding:0.5px 3px;">.Y.</span>
+                                        <span style="${!isExcav ? 'background:#000;color:#fff;' : ''}padding:0.5px 3px;">N</span>
                                     </span>
-                                    <strong style="margin-left:6px;font-size:9.5px;">D</strong>
+                                    <strong style="margin-left:4px;font-size:8.5px;">D</strong>
                                 </span>
                             </div>
-                            <div style="display:flex;justify-content:space-between;align-items:center;padding:2px 0;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
                                 <span>Travail sur équipement sous tension</span>
                                 <span>
-                                    <span style="border:1px solid #000;display:inline-flex;font-size:8px;font-weight:bold;">
-                                        <span style="${isTension ? 'background:#000;color:#fff;' : ''}padding:1px 4px;">.Y.</span>
-                                        <span style="${!isTension ? 'background:#000;color:#fff;' : ''}padding:1px 4px;">N</span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7.5px;font-weight:bold;">
+                                        <span style="${isTension ? 'background:#000;color:#fff;' : ''}padding:0.5px 3px;">.Y.</span>
+                                        <span style="${!isTension ? 'background:#000;color:#fff;' : ''}padding:0.5px 3px;">N</span>
                                     </span>
-                                    <strong style="margin-left:6px;font-size:9.5px;">E</strong>
+                                    <strong style="margin-left:4px;font-size:8.5px;">E</strong>
                                 </span>
                             </div>
-                            <div style="display:flex;justify-content:space-between;align-items:center;padding:2px 0;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 0;">
                                 <span>Exposition / Cond. Atmosphérique</span>
                                 <span>
-                                    <span style="border:1px solid #000;display:inline-flex;font-size:8px;font-weight:bold;">
-                                        <span style="padding:1px 4px;">.Y.</span>
-                                        <span style="background:#000;color:#fff;padding:1px 4px;">N</span>
+                                    <span style="border:1px solid #000;display:inline-flex;font-size:7.5px;font-weight:bold;">
+                                        <span style="padding:0.5px 3px;">.Y.</span>
+                                        <span style="background:#000;color:#fff;padding:0.5px 3px;">N</span>
                                     </span>
-                                    <strong style="margin-left:6px;font-size:9.5px;">F</strong>
+                                    <strong style="margin-left:4px;font-size:8.5px;">F</strong>
                                 </span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Lignes Déclaration de méthode & MOC -->
-                    <div style="border-top:1px dashed #aaa;margin-top:4px;padding-top:3px;">
-                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px;">
+                    <div style="border-top:1px dashed #aaa;margin-top:2px;padding-top:2px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1px;">
                             <span>Déclaration de méthode requise :</span>
                             <span>
-                                <span style="border:1px solid #000;display:inline-flex;font-size:8px;font-weight:bold;">
-                                    <span style="background:#000;color:#fff;padding:1px 4px;">Y</span>
-                                    <span style="padding:1px 4px;">N</span>
+                                <span style="border:1px solid #000;display:inline-flex;font-size:7.5px;font-weight:bold;">
+                                    <span style="background:#000;color:#fff;padding:0.5px 3px;">Y</span>
+                                    <span style="padding:0.5px 3px;">N</span>
                                 </span>
-                                <strong style="margin-left:6px;font-size:9px;">G</strong>
+                                <strong style="margin-left:4px;font-size:8px;">G</strong>
                             </span>
                         </div>
-                        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px;">
-                            <div style="display:flex;align-items:center;gap:8px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1px;">
+                            <div style="display:flex;align-items:center;gap:6px;">
                                 <span>Est-ce un travail couvert par MOC (Management of Change) ?</span>
-                                <span style="border:1px solid #000;display:inline-flex;font-size:8px;font-weight:bold;">
-                                    <span style="padding:1px 4px;">Y</span>
-                                    <span style="background:#000;color:#fff;padding:1px 4px;">N</span>
+                                <span style="border:1px solid #000;display:inline-flex;font-size:7.5px;font-weight:bold;">
+                                    <span style="padding:0.5px 3px;">Y</span>
+                                    <span style="background:#000;color:#fff;padding:0.5px 3px;">N</span>
                                 </span>
                             </div>
                             <div>
                                 <span>MOC Ref. Nr. / Id. :</span>
-                                <span style="border-bottom:1px solid #000;display:inline-block;width:100px;height:12px;"></span>
+                                <span style="border-bottom:1px solid #000;display:inline-block;width:90px;height:10px;"></span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- SECTION 5 : VALIDITÉ DU PERMIS ET SIGNATURES -->
-                <div style="border:1.2px solid #000;border-top:none;padding:4px 8px;">
-                    <div style="font-weight:900;font-size:9.5px;margin-bottom:3px;text-transform:uppercase;">
+                <div style="border:1.2px solid #000;border-top:none;padding:3px 6px;">
+                    <div style="font-weight:900;font-size:8.5px;margin-bottom:2px;text-transform:uppercase;">
                         Validité du permis et signatures
                     </div>
-                    <div style="display:flex;gap:18px;align-items:center;font-size:9px;margin-bottom:3px;">
-                        <div>Date du permis : <span style="border:1px solid #000;padding:2px 8px;font-weight:bold;font-family:monospace;background:#f8fafc;">${p.validFrom || p.date_debut || p['date-main'] || '2026-08-31'}</span></div>
-                        <div>Heure de début : <span style="border:1px solid #000;padding:2px 8px;font-weight:bold;font-family:monospace;background:#f8fafc;">${p['time-start'] || '08h00'}</span></div>
-                        <div>Heure de fin : <span style="border:1px solid #000;padding:2px 8px;font-weight:bold;font-family:monospace;background:#f8fafc;">${p['time-end'] || '17h30'}</span></div>
+                    <div style="display:flex;gap:14px;align-items:center;font-size:8px;margin-bottom:2px;">
+                        <div>Date du permis : <span style="border:1px solid #000;padding:1px 6px;font-weight:bold;font-family:monospace;background:#f8fafc;">${p.validFrom || p.date_debut || p['date-main'] || '2026-08-31'}</span></div>
+                        <div>Heure de début : <span style="border:1px solid #000;padding:1px 6px;font-weight:bold;font-family:monospace;background:#f8fafc;">${p['time-start'] || '08h00'}</span></div>
+                        <div>Heure de fin : <span style="border:1px solid #000;padding:1px 6px;font-weight:bold;font-family:monospace;background:#f8fafc;">${p['time-end'] || '17h30'}</span></div>
                     </div>
-                    <div style="font-size:7.5px;color:#333;line-height:1.25;margin-bottom:4px;">
+                    <div style="font-size:6.8px;color:#333;line-height:1.15;margin-bottom:3px;">
                         Ce permis de travail de sécurité générale et sa liste de vérification des grands dangers sont valides uniquement pour la période spécifiée. Toutes les signatures doivent être obtenues avant l'entame du travail. Permis obligatoirement affiché sur le lieu de travail.
                     </div>
 
                     <!-- GRILLE DES SIGNATURES OFFICIELLES SINYLON -->
-                    <div style="display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:6px;margin-bottom:4px;">
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:4px;margin-bottom:2px;">
                         ${this.renderSigBox(p, 'chef', 'Chef de Projet Sinylon', p['chef-nom'] || 'XIE XIAN', 'Autorisation officielle des travaux de la semaine')}
                         ${this.renderSigBox(p, 'hse', 'Superviseur HSE Sinylon', p['hse-nom'] || 'Nouri Chahrour', 'Conformité HSE & Mesures de sécurité 360°')}
                         ${this.renderSigBox(p, 'receveur', 'Receveur Sinylon', p['receveur-nom'] || p.chef_equipe || 'ZHOU LIN', 'Engagements d\'application stricte des consignes')}
@@ -368,79 +367,79 @@ const Templates = {
                 </div>
 
                 <!-- SECTION 6 : PERMIT HAND-BACK (EXACT PHOTO) -->
-                <div style="border:1.2px solid #000;border-top:none;padding:4px 8px;font-size:8.5px;">
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px;">
-                        <span style="font-weight:bold;font-size:9.5px;">Permit Hand-Back <span style="font-weight:normal;font-size:8px;">(renvoyer à l'émetteur du permis après signature)</span></span>
-                        <span style="font-size:7.5px;color:#444;font-style:italic;">Superviseur d'unité : veuillez cocher les cases ci-dessous</span>
+                <div style="border:1.2px solid #000;border-top:none;padding:3px 6px;font-size:7.5px;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1px;">
+                        <span style="font-weight:bold;font-size:8.5px;">Permit Hand-Back <span style="font-weight:normal;font-size:7.5px;">(renvoyer à l'émetteur du permis après signature)</span></span>
+                        <span style="font-size:7px;color:#444;font-style:italic;">Superviseur d'unité : veuillez cocher les cases ci-dessous</span>
                     </div>
 
-                    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:12px;margin-bottom:4px;">
+                    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:8px;margin-bottom:2px;">
                         <!-- État de travail -->
                         <div>
-                            <div style="font-weight:bold;margin-bottom:2px;">État du travail</div>
+                            <div style="font-weight:bold;margin-bottom:1px;">État du travail</div>
                             <div style="display:flex;justify-content:space-between;align-items:center;">
                                 <span>Achevé</span>
-                                <span style="border:1px solid #000;width:14px;height:14px;display:inline-block;"></span>
+                                <span style="border:1px solid #000;width:12px;height:12px;display:inline-block;"></span>
                             </div>
-                            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1px;">
                                 <span>Inachevé (veuillez spécifier ci-dessous)</span>
-                                <span style="border:1px solid #000;width:14px;height:14px;display:inline-block;"></span>
+                                <span style="border:1px solid #000;width:12px;height:12px;display:inline-block;"></span>
                             </div>
                         </div>
                         <!-- État de la surface -->
                         <div>
-                            <div style="font-weight:bold;margin-bottom:2px;">État de la surface / installation / équipement</div>
+                            <div style="font-weight:bold;margin-bottom:1px;">État de la surface / installation / équipement</div>
                             <div style="display:flex;justify-content:space-between;align-items:center;">
                                 <span>Prêt pour l'opération normale</span>
-                                <span style="border:1px solid #000;width:14px;height:14px;display:inline-block;"></span>
+                                <span style="border:1px solid #000;width:12px;height:12px;display:inline-block;"></span>
                             </div>
-                            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1px;">
                                 <span>Pas prêt (veuillez spécifier ci-dessous)</span>
-                                <span style="border:1px solid #000;width:14px;height:14px;display:inline-block;"></span>
+                                <span style="border:1px solid #000;width:12px;height:12px;display:inline-block;"></span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Signatures Hand-Back (EXACT PHOTO - 2 LIGNES) -->
-                    <div style="display:grid;grid-template-columns:1.2fr 1.2fr 1fr;gap:6px;margin-bottom:4px;">
-                        <div style="border:1px solid #000;background:#fff;padding:3px 5px;min-height:36px;display:flex;flex-direction:column;justify-content:space-between;">
-                            <div style="background:#bfdbfe;font-weight:bold;padding:1px 3px;text-align:center;font-size:8px;">Receveur du permis</div>
-                            <div style="font-size:7px;color:#555;">Nom (lettres en majuscule) et signature:</div>
-                            <div style="height:14px;border-bottom:1px dashed #999;font-size:7px;color:#777;">Signature :</div>
+                    <div style="display:grid;grid-template-columns:1.2fr 1.2fr 1fr;gap:4px;margin-bottom:2px;">
+                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;min-height:26px;display:flex;flex-direction:column;justify-content:space-between;">
+                            <div style="background:#bfdbfe;font-weight:bold;padding:1px 2px;text-align:center;font-size:7px;">Receveur du permis</div>
+                            <div style="font-size:6.5px;color:#555;">Nom et signature:</div>
+                            <div style="height:10px;border-bottom:1px dashed #999;font-size:6.5px;color:#777;">Signature :</div>
                         </div>
-                        <div style="border:1px solid #000;background:#fff;padding:3px 5px;min-height:36px;display:flex;flex-direction:column;justify-content:space-between;">
-                            <div style="background:#bfdbfe;font-weight:bold;padding:1px 3px;text-align:center;font-size:8px;">M. W.P.E.E.X - Ingénieur de Suivi</div>
-                            <div style="font-size:7px;color:#555;">Nom (lettres en majuscule) et signature:</div>
-                            <div style="height:14px;border-bottom:1px dashed #999;font-size:7px;color:#777;">Signature :</div>
+                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;min-height:26px;display:flex;flex-direction:column;justify-content:space-between;">
+                            <div style="background:#bfdbfe;font-weight:bold;padding:1px 2px;text-align:center;font-size:7px;">M. W.P.E.E.X - Ingénieur Suivi</div>
+                            <div style="font-size:6.5px;color:#555;">Nom et signature:</div>
+                            <div style="height:10px;border-bottom:1px dashed #999;font-size:6.5px;color:#777;">Signature :</div>
                         </div>
-                        <div style="display:flex;flex-direction:column;justify-content:center;gap:3px;font-size:8px;">
-                            <div style="display:flex;gap:4px;align-items:center;">
+                        <div style="display:flex;flex-direction:column;justify-content:center;gap:2px;font-size:7.5px;">
+                            <div style="display:flex;gap:3px;align-items:center;">
                                 <span>Date :</span>
-                                <span style="border:1px solid #000;flex:1;height:16px;"></span>
+                                <span style="border:1px solid #000;flex:1;height:13px;"></span>
                             </div>
-                            <div style="display:flex;gap:4px;align-items:center;">
+                            <div style="display:flex;gap:3px;align-items:center;">
                                 <span>Heure :</span>
-                                <span style="border:1px solid #000;flex:1;height:16px;"></span>
+                                <span style="border:1px solid #000;flex:1;height:13px;"></span>
                             </div>
                         </div>
                     </div>
 
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
-                        <div style="border:1px solid #000;background:#fff;padding:3px 5px;min-height:36px;display:flex;flex-direction:column;justify-content:space-between;">
-                            <div style="background:#bfdbfe;font-weight:bold;padding:1px 3px;text-align:center;font-size:8px;">Chef de Projet Entreprise</div>
-                            <div style="font-size:7px;color:#555;">Nom (lettres en majuscule) et signature:</div>
-                            <div style="height:14px;border-bottom:1px dashed #999;font-size:7px;color:#777;">Signature :</div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;min-height:26px;display:flex;flex-direction:column;justify-content:space-between;">
+                            <div style="background:#bfdbfe;font-weight:bold;padding:1px 2px;text-align:center;font-size:7px;">Chef de Projet Entreprise</div>
+                            <div style="font-size:6.5px;color:#555;">Nom et signature:</div>
+                            <div style="height:10px;border-bottom:1px dashed #999;font-size:6.5px;color:#777;">Signature :</div>
                         </div>
-                        <div style="border:1px solid #000;background:#fff;padding:3px 5px;min-height:36px;display:flex;flex-direction:column;justify-content:space-between;">
-                            <div style="background:#bfdbfe;font-weight:bold;padding:1px 3px;text-align:center;font-size:8px;">HSE Entreprise</div>
-                            <div style="font-size:7px;color:#555;">Nom (lettres en majuscule) et signature:</div>
-                            <div style="height:14px;border-bottom:1px dashed #999;font-size:7px;color:#777;">Signature :</div>
+                        <div style="border:1px solid #000;background:#fff;padding:2px 4px;min-height:26px;display:flex;flex-direction:column;justify-content:space-between;">
+                            <div style="background:#bfdbfe;font-weight:bold;padding:1px 2px;text-align:center;font-size:7px;">HSE Entreprise</div>
+                            <div style="font-size:6.5px;color:#555;">Nom et signature:</div>
+                            <div style="height:10px;border-bottom:1px dashed #999;font-size:6.5px;color:#777;">Signature :</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- PIED DE PAGE EXACT PHOTO : Numéro d'urgence / Mobile / Page 1/2 -->
-                <div style="display:flex;justify-content:space-between;align-items:center;font-size:9px;font-weight:bold;margin-top:4px;padding:0 6px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:8px;font-weight:bold;margin-top:2px;padding:0 4px;">
                     <div>Numéro d'urgence : <span style="font-weight:normal;">0562765157 / 14</span></div>
                     <div>Mobile : <span style="font-weight:normal;">0562765157</span></div>
                     <div>Page 1/2</div>
@@ -489,47 +488,47 @@ const Templates = {
             const isRowSigned = Boolean((wSig && wSig.dataUrl) || (cSig && cSig.dataUrl));
 
             return `
-                <tr style="height:26px;">
-                    <td class="text-center bold-cell" style="font-weight:bold;font-size:8px;border:1px solid #000;padding:2px 4px;">${dayInfo.name}</td>
-                    <td class="text-center" style="font-family:monospace;font-size:8px;border:1px solid #000;padding:2px 4px;">${dateStr}</td>
-                    <td style="border:1px solid #000;padding:2px 4px;font-size:8px;font-weight:${wSig ? 'bold' : 'normal'};">${wSig ? wpeexNom : ''}</td>
-                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">Ingénieur Suivi</td>
-                    <td class="text-center" style="border:1px solid #000;padding:2px;width:125px;background:#f8fafc;">
+                <tr style="height:22px;">
+                    <td class="text-center bold-cell" style="font-weight:bold;font-size:7.5px;border:1px solid #000;padding:1px 3px;">${dayInfo.name}</td>
+                    <td class="text-center" style="font-family:monospace;font-size:7.5px;border:1px solid #000;padding:1px 3px;">${dateStr}</td>
+                    <td style="border:1px solid #000;padding:1px 3px;font-size:7.5px;font-weight:${wSig ? 'bold' : 'normal'};">${wSig ? wpeexNom : ''}</td>
+                    <td style="border:1px solid #000;padding:1px 3px;font-size:7px;">Ingénieur Suivi</td>
+                    <td class="text-center" style="border:1px solid #000;padding:1px;width:125px;background:#f8fafc;">
                         ${wSig && wSig.dataUrl ? `
                             <div style="display:flex;align-items:center;justify-content:center;gap:4px;padding:1px 2px;">
-                                <img src="${wSig.dataUrl}" style="height:20px;max-width:75px;object-fit:contain;" alt="Visa">
-                                <span style="font-size:6.5px;color:#16a34a;font-weight:900;line-height:1.1;">✓ 08:00<br>${wSig.date || dateStr}</span>
+                                <img src="${wSig.dataUrl}" style="height:18px;max-width:70px;object-fit:contain;" alt="Visa">
+                                <span style="font-size:6px;color:#16a34a;font-weight:900;line-height:1.1;">✓ 08:00<br>${wSig.date || dateStr}</span>
                             </div>
                         ` : `
-                            <div class="no-print" style="height:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','wpeex','${dateStr}','${dayInfo.name}')">
-                                <span style="font-size:7.5px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:2px 8px;border-radius:3px;border:1px solid #bfdbfe;">✍️ Émarger 08h</span>
+                            <div class="no-print" style="height:19px;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','wpeex','${dateStr}','${dayInfo.name}')">
+                                <span style="font-size:7px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:1px 6px;border-radius:2px;border:1px solid #bfdbfe;">✍️ Émarger 08h</span>
                             </div>
-                            <div class="print-only-manual" style="display:none;padding:1px 2px;height:22px;">
-                                <div style="border-bottom:1px dashed #000;height:14px;margin:0 4px;"></div>
-                                <div style="font-size:6px;color:#475569;text-align:center;font-weight:bold;line-height:1;">Visa WPEEX (08h00)</div>
+                            <div class="print-only-manual" style="display:none;padding:1px 2px;height:19px;">
+                                <div style="border-bottom:1px dashed #000;height:12px;margin:0 4px;"></div>
+                                <div style="font-size:5.5px;color:#475569;text-align:center;font-weight:bold;line-height:1;">Visa WPEEX (08h00)</div>
                             </div>
                         `}
                     </td>
-                    <td style="border:1px solid #000;padding:2px 4px;font-size:8px;font-weight:${cSig ? 'bold' : 'normal'};">${cSig ? chefNom : ''}</td>
-                    <td style="border:1px solid #000;padding:2px 4px;font-size:7.5px;">Chef de Projet</td>
-                    <td class="text-center" style="border:1px solid #000;padding:2px;width:125px;background:#f8fafc;">
+                    <td style="border:1px solid #000;padding:1px 3px;font-size:7.5px;font-weight:${cSig ? 'bold' : 'normal'};">${cSig ? chefNom : ''}</td>
+                    <td style="border:1px solid #000;padding:1px 3px;font-size:7px;">Chef de Projet</td>
+                    <td class="text-center" style="border:1px solid #000;padding:1px;width:125px;background:#f8fafc;">
                         ${cSig && cSig.dataUrl ? `
                             <div style="display:flex;align-items:center;justify-content:center;gap:4px;padding:1px 2px;">
-                                <img src="${cSig.dataUrl}" style="height:20px;max-width:75px;object-fit:contain;" alt="Signature">
-                                <span style="font-size:6.5px;color:#16a34a;font-weight:900;line-height:1.1;">✓ 08:00<br>${cSig.date || dateStr}</span>
+                                <img src="${cSig.dataUrl}" style="height:18px;max-width:70px;object-fit:contain;" alt="Signature">
+                                <span style="font-size:6px;color:#16a34a;font-weight:900;line-height:1.1;">✓ 08:00<br>${cSig.date || dateStr}</span>
                             </div>
                         ` : `
-                            <div class="no-print" style="height:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','chef','${dateStr}','${dayInfo.name}')">
-                                <span style="font-size:7.5px;font-weight:bold;background:#f8fafc;color:#0f172a;padding:2px 8px;border-radius:3px;border:1px solid #cbd5e1;">✍️ Signer 08h</span>
+                            <div class="no-print" style="height:19px;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','chef','${dateStr}','${dayInfo.name}')">
+                                <span style="font-size:7px;font-weight:bold;background:#f8fafc;color:#0f172a;padding:1px 6px;border-radius:2px;border:1px solid #cbd5e1;">✍️ Signer 08h</span>
                             </div>
-                            <div class="print-only-manual" style="display:none;padding:1px 2px;height:22px;">
-                                <div style="border-bottom:1px dashed #000;height:14px;margin:0 4px;"></div>
-                                <div style="font-size:6px;color:#475569;text-align:center;font-weight:bold;line-height:1;">Signature Xie X. (08h00)</div>
+                            <div class="print-only-manual" style="display:none;padding:1px 2px;height:19px;">
+                                <div style="border-bottom:1px dashed #000;height:12px;margin:0 4px;"></div>
+                                <div style="font-size:5.5px;color:#475569;text-align:center;font-weight:bold;line-height:1;">Signature Xie X. (08h00)</div>
                             </div>
                         `}
                     </td>
-                    <td class="text-center" style="border:1px solid #000;padding:2px;font-size:8px;">
-                        ${isRowSigned ? `<span style="color:#16a34a;font-weight:900;font-size:7.5px;">🟢 CONFORME</span>` : `<span class="no-print" style="color:#94a3b8;font-size:7.5px;">En attente</span><span class="print-only-manual" style="display:none;font-size:6.5px;font-weight:bold;color:#000;">[  ] O.K.</span>`}
+                    <td class="text-center" style="border:1px solid #000;padding:1px;font-size:7.5px;">
+                        ${isRowSigned ? `<span style="color:#16a34a;font-weight:900;font-size:7px;">🟢 CONFORME</span>` : `<span class="no-print" style="color:#94a3b8;font-size:7px;">En attente</span><span class="print-only-manual" style="display:none;font-size:6px;font-weight:bold;color:#000;">[  ] O.K.</span>`}
                     </td>
                 </tr>
             `;
@@ -547,47 +546,47 @@ const Templates = {
         const satSig = (dailySigs[satDateStr] && dailySigs[satDateStr].hse) || sigs.hse;
 
         return `
-            <div class="a4-document" id="a4-doc-${permit.id}-p2" style="font-family:Arial,Helvetica,sans-serif;color:#000;padding:7mm 9mm 6mm 9mm;display:flex;flex-direction:column;justify-content:space-between;box-sizing:border-box;height:297mm;max-height:297mm;overflow:hidden;position:relative;">
+            <div class="a4-document" id="a4-doc-${permit.id}-p2" style="font-family:Arial,Helvetica,sans-serif;color:#000;padding:4.5mm 7mm 3.5mm 7mm;display:flex;flex-direction:column;justify-content:space-between;box-sizing:border-box;height:297mm;max-height:297mm;overflow:hidden;position:relative;">
                 <div>
                     <!-- EN-TÊTE : REVALIDATION QUOTIDIENNE -->
-                    <div class="doc-header-exact" style="display:flex;justify-content:space-between;align-items:center;border-bottom:1.5px solid #000;padding-bottom:4px;margin-bottom:4px;">
-                        <div class="doc-logo-box" style="display:flex;align-items:center;gap:6px;">
-                            <span style="background:#000;color:#fff;font-weight:900;font-size:14px;padding:3px 8px;border-radius:2px;">SINYLON</span>
-                            <span style="border:1.5px solid #000;color:#000;font-weight:900;font-size:14px;padding:2px 8px;border-radius:2px;background:#fff;">STELLANTIS</span>
+                    <div class="doc-header-exact" style="display:flex;justify-content:space-between;align-items:center;border-bottom:1.5px solid #000;padding-bottom:3px;margin-bottom:3px;">
+                        <div class="doc-logo-box" style="display:flex;align-items:center;gap:5px;">
+                            <span style="background:#000;color:#fff;font-weight:900;font-size:13px;padding:2px 6px;border-radius:2px;">SINYLON</span>
+                            <span style="border:1.5px solid #000;color:#000;font-weight:900;font-size:13px;padding:1px 6px;border-radius:2px;background:#fff;">STELLANTIS</span>
                         </div>
-                        <div class="doc-title-exact" style="font-size:16px;font-weight:900;text-align:center;flex:1;">
+                        <div class="doc-title-exact" style="font-size:15px;font-weight:900;text-align:center;flex:1;">
                             Revalidation Quotidienne du Permis de Travail<br>
-                            <span style="font-size:8.5px;font-weight:normal;color:#333;">Daily Work Permit Revalidation Sheet (Contrôle et émargement chaque matin à 08h00)</span>
+                            <span style="font-size:8px;font-weight:normal;color:#333;">Daily Work Permit Revalidation Sheet (Contrôle et émargement chaque matin à 08h00)</span>
                         </div>
                         <div class="doc-header-right-group">
-                            <div class="doc-id-box-exact" style="border:1.5px solid #000;padding:2px 10px;text-align:center;border-radius:2px;background:#f8fafc;">
-                                <strong style="font-size:8px;color:#64748b;">Permit ID</strong><br>
-                                <span style="font-size:13px;font-weight:900;color:#1e3a8a;font-family:monospace;">${permit.id}</span>
+                            <div class="doc-id-box-exact" style="border:1.5px solid #000;padding:2px 8px;text-align:center;border-radius:2px;background:#f8fafc;">
+                                <strong style="font-size:7.5px;color:#64748b;">Permit ID</strong><br>
+                                <span style="font-size:12px;font-weight:900;color:#1e3a8a;font-family:monospace;">${permit.id}</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- SECTION 1 : REVALIDATION DU JOUR 1 AU JOUR 7 -->
-                    <div class="yellow-bar-header" style="background:#ffeb3b;border:1.2px solid #000;padding:3px 8px;font-weight:900;font-size:9px;margin-top:4px;display:flex;justify-content:space-between;letter-spacing:0.3px;">
+                    <div class="yellow-bar-header" style="background:#ffeb3b;border:1.2px solid #000;padding:2px 6px;font-weight:900;font-size:8.5px;margin-top:3px;display:flex;justify-content:space-between;letter-spacing:0.3px;">
                         <span>REVALIDATION QUOTIDIENNE DU PERMIS (DU JOUR 1 AU JOUR 7 — ÉMARGEMENT SUR SITE À 08H00)</span>
-                        <span style="font-size:8px;font-weight:normal;font-style:italic;">Chaque matin avant le démarrage des travaux</span>
+                        <span style="font-size:7.5px;font-weight:normal;font-style:italic;">Chaque matin avant le démarrage des travaux</span>
                     </div>
                     <table class="doc-table-exact" style="width:100%;border-collapse:collapse;margin-top:2px;">
                         <thead>
-                            <tr style="background:#f1f5f9;font-size:8px;">
-                                <th rowspan="2" style="border:1px solid #000;padding:3px 4px;width:100px;">JOURNÉE</th>
-                                <th rowspan="2" style="border:1px solid #000;padding:3px 4px;width:80px;">DATE</th>
-                                <th colspan="3" style="border:1px solid #000;padding:2px;background:#eff6ff;color:#1e3a8a;">Ingénieur de Suivi</th>
-                                <th colspan="3" style="border:1px solid #000;padding:2px;">Responsable d'exécution (SINYLON)</th>
-                                <th rowspan="2" style="border:1px solid #000;padding:2px;width:75px;">STATUT</th>
+                            <tr style="background:#f1f5f9;font-size:7.5px;">
+                                <th rowspan="2" style="border:1px solid #000;padding:2px 3px;width:95px;">JOURNÉE</th>
+                                <th rowspan="2" style="border:1px solid #000;padding:2px 3px;width:75px;">DATE</th>
+                                <th colspan="3" style="border:1px solid #000;padding:1px;background:#eff6ff;color:#1e3a8a;">Ingénieur de Suivi</th>
+                                <th colspan="3" style="border:1px solid #000;padding:1px;">Responsable d'exécution (SINYLON)</th>
+                                <th rowspan="2" style="border:1px solid #000;padding:1px;width:70px;">STATUT</th>
                             </tr>
-                            <tr style="background:#f8fafc;font-size:7.5px;">
-                                <th style="border:1px solid #000;padding:2px;">Nom</th>
-                                <th style="border:1px solid #000;padding:2px;">Fonction</th>
-                                <th style="border:1px solid #000;padding:2px;background:#eff6ff;color:#1e3a8a;">Visa Électronique</th>
-                                <th style="border:1px solid #000;padding:2px;">Nom</th>
-                                <th style="border:1px solid #000;padding:2px;">Fonction</th>
-                                <th style="border:1px solid #000;padding:2px;">Signature Électronique</th>
+                            <tr style="background:#f8fafc;font-size:7px;">
+                                <th style="border:1px solid #000;padding:1px;">Nom</th>
+                                <th style="border:1px solid #000;padding:1px;">Fonction</th>
+                                <th style="border:1px solid #000;padding:1px;background:#eff6ff;color:#1e3a8a;">Visa Électronique</th>
+                                <th style="border:1px solid #000;padding:1px;">Nom</th>
+                                <th style="border:1px solid #000;padding:1px;">Fonction</th>
+                                <th style="border:1px solid #000;padding:1px;">Signature Électronique</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -596,60 +595,60 @@ const Templates = {
                     </table>
 
                     <!-- SECTION 2 : SUPERVISION SPÉCIALE WEEK-END -->
-                    <div class="yellow-bar-header" style="background:#ffeb3b;border:1.2px solid #000;padding:3px 8px;font-weight:900;font-size:9px;margin-top:6px;letter-spacing:0.3px;">
+                    <div class="yellow-bar-header" style="background:#ffeb3b;border:1.2px solid #000;padding:2px 6px;font-weight:900;font-size:8.5px;margin-top:4px;letter-spacing:0.3px;">
                         SUPERVISION SPÉCIALE CAISSE WEEK-END (VENDREDI / SAMEDI — 08H00)
                     </div>
-                    <table class="doc-table-exact" style="width:100%;border-collapse:collapse;margin-top:2px;font-size:8.5px;">
+                    <table class="doc-table-exact" style="width:100%;border-collapse:collapse;margin-top:2px;font-size:8px;">
                         <thead>
-                            <tr style="background:#f1f5f9;font-size:8px;">
-                                <th style="border:1px solid #000;padding:3px;width:90px;">JOURNÉE</th>
-                                <th style="border:1px solid #000;padding:3px;width:90px;">DATE</th>
-                                <th style="border:1px solid #000;padding:3px;">SUPERVISEUR HSE</th>
-                                <th style="border:1px solid #000;padding:3px;">CONTRÔLE SÉCURITÉ 360°</th>
-                                <th style="border:1px solid #000;padding:3px;width:180px;">VISA CAISSE ÉLECTRONIQUE</th>
+                            <tr style="background:#f1f5f9;font-size:7.5px;">
+                                <th style="border:1px solid #000;padding:2px;width:80px;">JOURNÉE</th>
+                                <th style="border:1px solid #000;padding:2px;width:80px;">DATE</th>
+                                <th style="border:1px solid #000;padding:2px;">SUPERVISEUR HSE</th>
+                                <th style="border:1px solid #000;padding:2px;">CONTRÔLE SÉCURITÉ 360°</th>
+                                <th style="border:1px solid #000;padding:2px;width:170px;">VISA CAISSE ÉLECTRONIQUE</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr style="height:31px;">
-                                <td class="text-center bold-cell" style="border:1px solid #000;font-weight:bold;padding:3px;">Vendredi</td>
-                                <td class="text-center" style="border:1px solid #000;font-family:monospace;padding:3px;">${friDateStr}</td>
-                                <td style="border:1px solid #000;padding:3px;font-weight:bold;">${friSig ? hseNom : 'Nouri Chahrour'}</td>
-                                <td style="border:1px solid #000;padding:3px;">Vérification 360°, Nacelles, Extincteurs, Balisage</td>
-                                <td style="border:1px solid #000;padding:2px;text-align:center;background:#f8fafc;">
+                            <tr style="height:25px;">
+                                <td class="text-center bold-cell" style="border:1px solid #000;font-weight:bold;padding:2px;">Vendredi</td>
+                                <td class="text-center" style="border:1px solid #000;font-family:monospace;padding:2px;">${friDateStr}</td>
+                                <td style="border:1px solid #000;padding:2px;font-weight:bold;">${friSig ? hseNom : 'Nouri Chahrour'}</td>
+                                <td style="border:1px solid #000;padding:2px;">Vérification 360°, Nacelles, Extincteurs, Balisage</td>
+                                <td style="border:1px solid #000;padding:1px;text-align:center;background:#f8fafc;">
                                     ${friSig && friSig.dataUrl ? `
-                                        <div style="display:flex;align-items:center;justify-content:center;gap:6px;">
-                                            <img src="${friSig.dataUrl}" style="height:22px;max-width:90px;object-fit:contain;" alt="Visa Caisse">
-                                            <span style="font-size:6.5px;color:#16a34a;font-weight:900;">✓ VISA OK 08H00<br>${friSig.date}</span>
+                                        <div style="display:flex;align-items:center;justify-content:center;gap:4px;">
+                                            <img src="${friSig.dataUrl}" style="height:18px;max-width:80px;object-fit:contain;" alt="Visa Caisse">
+                                            <span style="font-size:6px;color:#16a34a;font-weight:900;">✓ VISA OK 08H00<br>${friSig.date}</span>
                                         </div>
                                     ` : `
-                                        <div class="no-print" style="height:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse','${friDateStr}','Caisse Vendredi')">
-                                            <span style="font-size:7.5px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:2px 8px;border-radius:3px;border:1px solid #bfdbfe;">✍️ Visa Caisse (08h00)</span>
+                                        <div class="no-print" style="height:20px;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse','${friDateStr}','Caisse Vendredi')">
+                                            <span style="font-size:7px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:1px 6px;border-radius:2px;border:1px solid #bfdbfe;">✍️ Visa Caisse (08h00)</span>
                                         </div>
-                                        <div class="print-only-manual" style="display:none;padding:1px 2px;height:24px;">
-                                            <div style="border-bottom:1px dashed #000;height:16px;margin:0 10px;"></div>
-                                            <div style="font-size:6px;color:#475569;text-align:center;font-weight:bold;line-height:1;">Visa Caisse manuel HSE</div>
+                                        <div class="print-only-manual" style="display:none;padding:1px 2px;height:20px;">
+                                            <div style="border-bottom:1px dashed #000;height:12px;margin:0 8px;"></div>
+                                            <div style="font-size:5.5px;color:#475569;text-align:center;font-weight:bold;line-height:1;">Visa Caisse manuel HSE</div>
                                         </div>
                                     `}
                                 </td>
                             </tr>
-                            <tr style="height:31px;">
-                                <td class="text-center bold-cell" style="border:1px solid #000;font-weight:bold;padding:3px;">Samedi</td>
-                                <td class="text-center" style="border:1px solid #000;font-family:monospace;padding:3px;">${satDateStr}</td>
-                                <td style="border:1px solid #000;padding:3px;font-weight:bold;">${satSig ? hseNom : 'Nouri Chahrour'}</td>
-                                <td style="border:1px solid #000;padding:3px;">Vérification 360°, Nacelles, Extincteurs, Balisage</td>
-                                <td style="border:1px solid #000;padding:2px;text-align:center;background:#f8fafc;">
+                            <tr style="height:25px;">
+                                <td class="text-center bold-cell" style="border:1px solid #000;font-weight:bold;padding:2px;">Samedi</td>
+                                <td class="text-center" style="border:1px solid #000;font-family:monospace;padding:2px;">${satDateStr}</td>
+                                <td style="border:1px solid #000;padding:2px;font-weight:bold;">${satSig ? hseNom : 'Nouri Chahrour'}</td>
+                                <td style="border:1px solid #000;padding:2px;">Vérification 360°, Nacelles, Extincteurs, Balisage</td>
+                                <td style="border:1px solid #000;padding:1px;text-align:center;background:#f8fafc;">
                                     ${satSig && satSig.dataUrl ? `
-                                        <div style="display:flex;align-items:center;justify-content:center;gap:6px;">
-                                            <img src="${satSig.dataUrl}" style="height:22px;max-width:90px;object-fit:contain;" alt="Visa Caisse">
-                                            <span style="font-size:6.5px;color:#16a34a;font-weight:900;">✓ VISA OK 08H00<br>${satSig.date}</span>
+                                        <div style="display:flex;align-items:center;justify-content:center;gap:4px;">
+                                            <img src="${satSig.dataUrl}" style="height:18px;max-width:80px;object-fit:contain;" alt="Visa Caisse">
+                                            <span style="font-size:6px;color:#16a34a;font-weight:900;">✓ VISA OK 08H00<br>${satSig.date}</span>
                                         </div>
                                     ` : `
-                                        <div class="no-print" style="height:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse','${satDateStr}','Caisse Samedi')">
-                                            <span style="font-size:7.5px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:2px 8px;border-radius:3px;border:1px solid #bfdbfe;">✍️ Visa Caisse (08h00)</span>
+                                        <div class="no-print" style="height:20px;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse','${satDateStr}','Caisse Samedi')">
+                                            <span style="font-size:7px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:1px 6px;border-radius:2px;border:1px solid #bfdbfe;">✍️ Visa Caisse (08h00)</span>
                                         </div>
-                                        <div class="print-only-manual" style="display:none;padding:1px 2px;height:24px;">
-                                            <div style="border-bottom:1px dashed #000;height:16px;margin:0 10px;"></div>
-                                            <div style="font-size:6px;color:#475569;text-align:center;font-weight:bold;line-height:1;">Visa Caisse manuel HSE</div>
+                                        <div class="print-only-manual" style="display:none;padding:1px 2px;height:20px;">
+                                            <div style="border-bottom:1px dashed #000;height:12px;margin:0 8px;"></div>
+                                            <div style="font-size:5.5px;color:#475569;text-align:center;font-weight:bold;line-height:1;">Visa Caisse manuel HSE</div>
                                         </div>
                                     `}
                                 </td>
@@ -658,7 +657,7 @@ const Templates = {
                     </table>
 
                     <!-- SECTION 3 : NOUVEAU - RÉGISTRE DES EFFECTIFS HABILITÉS & CONTRÔLES HSE STELLANTIS (REMPLISSAGE PLEIN FORMAT A4) -->
-                    <div class="yellow-bar-header" style="background:#ffeb3b;border:1.2px solid #000;padding:3px 8px;font-weight:900;font-size:9px;margin-top:6px;letter-spacing:0.3px;">
+                    <div class="yellow-bar-header" style="background:#ffeb3b;border:1.2px solid #000;padding:2px 6px;font-weight:900;font-size:8.5px;margin-top:4px;letter-spacing:0.3px;">
                         RÉGISTRE DES ÉQUIPES HABILITÉES &amp; CONTRÔLES PRÉALABLES (59 INTERVENANTS SINYLON)
                     </div>
                     <div style="border:1.2px solid #000;border-top:none;padding:6px 8px;background:#fff;display:grid;grid-template-columns:1.2fr 1fr;gap:10px;">

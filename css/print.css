@@ -19,7 +19,7 @@
     min-height: 297mm;
     max-width: 210mm;
     height: 297mm;
-    padding: 7mm 9mm 6mm 9mm;
+    padding: 4.5mm 7mm 3.5mm 7mm;
     background: #ffffff !important;
     color: #000000 !important;
     box-shadow: 0 14px 40px rgba(0, 0, 0, 0.75);
@@ -375,7 +375,7 @@
     .a4-document {
         box-shadow: none !important;
         margin: 0 auto !important;
-        padding: 7mm 9mm 6mm 9mm !important;
+        padding: 4.5mm 7mm 3.5mm 7mm !important;
         width: 210mm !important;
         max-width: 210mm !important;
         min-height: 297mm !important;
