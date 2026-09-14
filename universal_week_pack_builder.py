@@ -59,7 +59,7 @@ def get_week_config(week_num):
             ],
             "badge_color": "#2563eb",
             "color_name": "Bleu Royal",
-            "dangers": {"height": True, "hot": False, "electric": False, "lifting": True}
+            "dangers": {"height": True, "hot": True, "electric": True, "lifting": True}
         },
         {
             "permit_id": f"K9-W{week_num}-UAR",
@@ -83,7 +83,7 @@ def get_week_config(week_num):
             ],
             "badge_color": "#0284c7",
             "color_name": "Bleu Cyan",
-            "dangers": {"height": True, "hot": False, "electric": False, "lifting": True}
+            "dangers": {"height": True, "hot": True, "electric": True, "lifting": True}
         },
         {
             "permit_id": f"K9-W{week_num}-FUSA",

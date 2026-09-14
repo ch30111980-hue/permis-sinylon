@@ -368,20 +368,20 @@ const PrintEngine = {
             // Fiche Revalidation Quotidienne & Émargements 08h00 (Page 2/2)
             htmlPages.push(templates.generalP2(permit));
 
-            // Uniquement les annexes spécifiques si le permis a des risques réels déclarés
+            // Annexes spécifiques de sécurité (A: Hauteur, B: Chaud, C: Électrique & LOTO)
             const d = permit.dangers || {};
-            if (permit.type === 'height' || (d.height && permit.type !== 'general')) {
+            if (permit.type === 'height' || d.height) {
                 htmlPages.push(templates.heightAnnexe(permit));
             }
-            if (permit.type === 'hot' || (d.hot && permit.type !== 'general')) {
+            if (permit.type === 'hot' || d.hot) {
                 htmlPages.push(templates.hotAnnexe(permit));
             }
-            if (permit.type === 'electric' || (d.electric && permit.type !== 'general')) {
+            if (permit.type === 'electric' || d.electric) {
                 htmlPages.push(templates.electricAnnexe(permit));
             }
         });
 
-        // 2. Pour le Week-end (WE) : Feuille Récapitulative Caisse Week-end + P1 + P2 Revalidations Vendredi/Samedi
+        // 2. Pour le Week-end (WE) : Feuille Récapitulative Caisse Week-end + P1 + P2 Revalidations + Annexes A/B/C
         if (weekendPermits.length > 0) {
             const wePermit = weekendPermits[0];
             // Feuille Récapitulative Caisse Week-end pour Stellantis
@@ -390,6 +390,11 @@ const PrintEngine = {
             htmlPages.push(templates.generalP1(wePermit));
             // Revalidations WE
             htmlPages.push(templates.generalP2(wePermit));
+            // Annexes Risques WE
+            const dWe = wePermit.dangers || {};
+            if (wePermit.type === 'height' || dWe.height) htmlPages.push(templates.heightAnnexe(wePermit));
+            if (wePermit.type === 'hot' || dWe.hot) htmlPages.push(templates.hotAnnexe(wePermit));
+            if (wePermit.type === 'electric' || dWe.electric) htmlPages.push(templates.electricAnnexe(wePermit));
         } else {
             // Si pas de permis WE dédié, générer la feuille de récapitulative week-end standard
             htmlPages.push(templates.weekendSummarySheet(dates, permits, pcConfig));

@@ -755,6 +755,10 @@ const Templates = {
     // 3. ANNEXE A (BLEUE) — TRAVAIL EN HAUTEUR (PLEIN FORMAT A4)
     // REPRODUCTION EXACTE DU STANDARD SINYLON - STELLANTIS
     // =========================================================================
+    // =========================================================================
+    // 3. ANNEXE A (BLEUE) — TRAVAIL EN HAUTEUR (PLEIN FORMAT A4 STRICT)
+    // REPRODUCTION EXACTE DU STANDARD SINYLON - STELLANTIS (ZERO VIDE / ZERO DEBORDEMENT)
+    // =========================================================================
     heightAnnexe(permit) {
         const chefNom = permit.responsible || permit.chefNom || permit['chef-nom'] || 'Xie Xian';
         const hseNom = permit.hseNom || permit['hse-nom'] || 'Nouri Chahrour';
@@ -764,13 +768,13 @@ const Templates = {
         const hseSig = sigs.hse;
 
         return `
-            <div class="a4-document annexe-height-doc" id="a4-doc-${permit.id}-height" style="border:3px solid #004080;padding:7mm 9mm 6mm 9mm;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;font-size:8.5px;line-height:1.25;color:#000;display:flex;flex-direction:column;justify-content:space-between;height:297mm;max-height:297mm;overflow:hidden;position:relative;">
-                <div>
+            <div class="a4-document annexe-height-doc" id="a4-doc-${permit.id}-height" style="border:3px solid #004080;padding:5mm 8mm 4mm 8mm;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;font-size:8.5px;line-height:1.28;color:#000;display:flex;flex-direction:column;justify-content:space-between;height:297mm;max-height:297mm;overflow:hidden;position:relative;">
+                <div style="display:flex;flex-direction:column;justify-content:space-between;flex:1;gap:4px;min-height:0;">
                     <!-- EN-TÊTE EXACT PHOTO SINYLON - STELLANTIS -->
-                    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #004080;padding-bottom:4px;margin-bottom:4px;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #004080;padding-bottom:3px;margin-bottom:2px;">
                         <div style="display:flex;align-items:center;gap:10px;">
-                            <div style="background:#000;color:#fff;font-size:24px;font-weight:900;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:3px;">A</div>
-                            <div style="font-size:19px;font-weight:900;color:#004080;letter-spacing:0.3px;">Travail en hauteur</div>
+                            <div style="background:#000;color:#fff;font-size:24px;font-weight:900;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:3px;">A</div>
+                            <div style="font-size:18px;font-weight:900;color:#004080;letter-spacing:0.3px;">Travail en hauteur</div>
                         </div>
                         <div style="display:flex;align-items:center;gap:10px;">
                             ${this.renderLogoSinylonStellantis()}
@@ -781,81 +785,81 @@ const Templates = {
                         </div>
                     </div>
 
-                    <div style="text-align:center;font-size:8.5px;font-weight:bold;margin-bottom:4px;color:#004080;">
+                    <div style="text-align:center;font-size:8.5px;font-weight:bold;margin-bottom:1px;color:#004080;">
                         Cette liste de vérification doit être toujours accompagnée par le permis de travail de sécurité générale
                     </div>
 
-                    <div style="font-style:italic;font-size:8px;margin-bottom:3px;color:#333;">
+                    <div style="font-style:italic;font-size:8px;margin-bottom:1px;color:#333;">
                         Cette question est pour vous aider avec votre évaluation des risques.<br>
                         <strong>Usage de</strong> (si "oui" continuer à la colonne de droite):
                     </div>
 
                     <!-- TABLEAU ÉQUIPEMENTS & RISQUES SECTION 1 -->
-                    <table style="width:100%;border-collapse:collapse;margin-bottom:4px;font-size:8px;">
+                    <table style="width:100%;border-collapse:collapse;margin-bottom:2px;font-size:8.5px;">
                         <tbody>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;width:34%;">Échafaudage fixe</td>
+                                <td style="border:1px solid #999;padding:3px 5px;width:34%;">Échafaudage fixe</td>
                                 <td style="border:1px solid #999;padding:1px;width:7%;text-align:center;">${this.renderCheckYN(false)}</td>
-                                <td style="border:1px solid #999;padding:2.5px 4px;width:52%;">Approuvé et cacheté par le personnel qualifié</td>
+                                <td style="border:1px solid #999;padding:3px 5px;width:52%;">Approuvé et cacheté par le personnel qualifié</td>
                                 <td style="border:1px solid #999;padding:1px;width:7%;text-align:center;">${this.renderCheckYN(false)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Échafaudage mobile</td>
+                                <td style="border:1px solid #999;padding:3px 5px;">Échafaudage mobile</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Approuvé et cacheté par le personnel qualifié</td>
+                                <td style="border:1px solid #999;padding:3px 5px;">Approuvé et cacheté par le personnel qualifié</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;" rowspan="3">Élévateur de plateforme mobile (PEMP / Nacelle)</td>
+                                <td style="border:1px solid #999;padding:3px 5px;" rowspan="3">Élévateur de plateforme mobile (PEMP / Nacelle)</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;" rowspan="3">${this.renderCheckYN(true)}</td>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">L'opérateur et le travailleur entraînés et habilités</td>
+                                <td style="border:1px solid #999;padding:3px 5px;">L'opérateur et le travailleur entraînés et habilités</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Ordre d'utilisation délivré par écrit</td>
+                                <td style="border:1px solid #999;padding:3px 5px;">Ordre d'utilisation délivré par écrit</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Port obligatoire d'équipement d'arrêt de chute (Harnais double longe)</td>
+                                <td style="border:1px solid #999;padding:3px 5px;">Port obligatoire d'équipement d'arrêt de chute (Harnais double longe)</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;" rowspan="5">Échelle</td>
+                                <td style="border:1px solid #999;padding:3px 5px;" rowspan="5">Échelle</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;" rowspan="5">${this.renderCheckYN(false)}</td>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Aucun autre équipement ne peut être utilisé</td>
+                                <td style="border:1px solid #999;padding:3px 5px;">Aucun autre équipement ne peut être utilisé</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;"><span style="border:1px solid #000;padding:1px 4px;font-weight:800;">Y</span></td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Utilisé uniquement pour des activités à court terme</td>
+                                <td style="border:1px solid #999;padding:3px 5px;">Utilisé uniquement pour des activités à court terme</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Avec un potentiel de danger minimum</td>
+                                <td style="border:1px solid #999;padding:3px 5px;">Avec un potentiel de danger minimum</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Vérifier et cacheter avant accès</td>
+                                <td style="border:1px solid #999;padding:3px 5px;">Vérifier et cacheter avant accès</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Travailleur entraîné dans l'usage sécurisé</td>
+                                <td style="border:1px solid #999;padding:3px 5px;">Travailleur entraîné dans l'usage sécurisé</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;" rowspan="2">Équipement d'arrêt de chute requis ?</td>
+                                <td style="border:1px solid #999;padding:3px 5px;" rowspan="2">Équipement d'arrêt de chute requis ?</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;" rowspan="2">${this.renderCheckYN(true)}</td>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Vérifier avant de commencer le travail</td>
+                                <td style="border:1px solid #999;padding:3px 5px;">Vérifier avant de commencer le travail</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Moyens d'attachement définis par le personnel qualifié</td>
+                                <td style="border:1px solid #999;padding:3px 5px;">Moyens d'attachement définis par le personnel qualifié</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                         </tbody>
                     </table>
 
                     <!-- SECTION 2 : TRAVAIL SUR TOIT -->
-                    <div style="border:1.2px solid #000;margin-bottom:4px;font-size:8px;">
+                    <div style="border:1.2px solid #000;margin-bottom:2px;font-size:8.5px;">
                         <div style="font-weight:bold;padding:3px 6px;border-bottom:1px solid #000;background:#f1f5f9;display:flex;justify-content:space-between;">
                             <span>Travail sur toit</span>
                             <span>${this.renderCheckYN(false)}</span>
@@ -882,38 +886,38 @@ const Templates = {
                     </div>
 
                     <!-- SECTION 3 : CHECKLIST CONSIGNES SUR LE SITE -->
-                    <table style="width:100%;border-collapse:collapse;margin-bottom:4px;font-size:8px;">
+                    <table style="width:100%;border-collapse:collapse;margin-bottom:2px;font-size:8.5px;">
                         <tbody>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;width:92%;">Endroit de travail barré pour véhicules / trafic / piétons</td>
+                                <td style="border:1px solid #999;padding:3px 6px;width:92%;">Endroit de travail barré pour véhicules / trafic / piétons</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;width:8%;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Obstacles sur ou à proximité du site (conduits de câble, câbles, tuyauteries, etc.)</td>
+                                <td style="border:1px solid #999;padding:3px 6px;">Obstacles sur ou à proximité du site (conduits de câble, câbles, tuyauteries, etc.)</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;"><span style="border:1px solid #000;padding:1px 4px;font-weight:800;">Y</span></td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Conduits d'aération, cheminées, échappements qui peuvent émettre des substances chaudes/odorantes</td>
+                                <td style="border:1px solid #999;padding:3px 6px;">Conduits d'aération, cheminées, échappements qui peuvent émettre des substances chaudes/odorantes</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Parties d'équipement de l'usine à protéger</td>
+                                <td style="border:1px solid #999;padding:3px 6px;">Parties d'équipement de l'usine à protéger</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Issue de secours d'urgence dégagée et balisée</td>
+                                <td style="border:1px solid #999;padding:3px 6px;">Issue de secours d'urgence dégagée et balisée</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Matériels / outils qui ont besoin d'être déplacés</td>
+                                <td style="border:1px solid #999;padding:3px 6px;">Matériels / outils qui ont besoin d'être déplacés</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Directives de sécurité nécessaires communiquées à l'équipe</td>
+                                <td style="border:1px solid #999;padding:3px 6px;">Directives de sécurité nécessaires communiquées à l'équipe</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">
+                                <td style="border:1px solid #999;padding:3px 6px;">
                                     Autres précautions : <span style="border-bottom:1px solid #000;display:inline-block;width:60%;height:10px;">Port obligatoire Casque anti-choc et Ligne de vie</span>
                                 </td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
@@ -922,9 +926,9 @@ const Templates = {
                     </table>
 
                     <!-- SECTION 4 : CONDITIONS AMBIANTES AU MOMENT DU PROBLÈME -->
-                    <div style="border:1.2px solid #000;padding:4px 6px;margin-bottom:4px;font-size:8px;">
-                        <div style="font-weight:bold;margin-bottom:2px;font-size:8.5px;">Conditions ambiantes au moment du travail</div>
-                        <div style="font-size:7.5px;font-style:italic;color:#555;margin-bottom:3px;">NOTE : Le permis doit être suspendu et revu si les conditions se détériorent.</div>
+                    <div style="border:1.2px solid #000;padding:4px 6px;margin-bottom:2px;font-size:8.5px;">
+                        <div style="font-weight:bold;margin-bottom:2px;font-size:9px;">Conditions ambiantes au moment du travail</div>
+                        <div style="font-size:8px;font-style:italic;color:#555;margin-bottom:3px;">NOTE : Le permis doit être suspendu et revu si les conditions se détériorent.</div>
                         
                         <div style="display:flex;align-items:center;gap:12px;margin-bottom:2px;">
                             <span style="width:130px;font-weight:700;">Visibilité générale :</span>
@@ -963,60 +967,60 @@ const Templates = {
                         </div>
                     </div>
 
-                    <!-- SECTION 5 : SIGNATURES OFFICIELLES HAUTEUR -->
-                    <table style="width:100%;border-collapse:collapse;border:2px solid #004080;margin-top:4px;">
+                    <!-- SECTION 5 : SIGNATURES OFFICIELLES HAUTEUR (SPACIEUSES ET LISIBLES) -->
+                    <table style="width:100%;border-collapse:collapse;border:2px solid #004080;margin-top:2px;">
                         <tr style="background:#dbeafe;font-size:9px;font-weight:900;text-align:center;color:#004080;">
                             <th style="border:1px solid #004080;padding:3px;width:38%;">CHEF DE PROJET (AUTORISATION)</th>
                             <th style="border:1px solid #004080;padding:3px;width:38%;">HSE ENTREPRISE (CONTRÔLE 360°)</th>
                             <th style="border:1px solid #004080;padding:3px;width:24%;">DATE / HEURE</th>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #004080;padding:4px 6px;min-height:75px;height:75px;vertical-align:top;font-size:9px;">
+                            <td style="border:1px solid #004080;padding:4px 6px;min-height:85px;height:85px;vertical-align:top;font-size:9px;">
                                 <div>Nom : <strong>${chefNom}</strong></div>
                                 ${chefSig && chefSig.dataUrl ? `
-                                    <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:2px 5px;margin-top:3px;">
-                                        <img src="${chefSig.dataUrl}" style="height:32px;max-width:110px;object-fit:contain;" alt="Signature Chef">
-                                        <span style="font-size:7px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${chefSig.date} ${chefSig.time}</span>
+                                    <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:3px 6px;margin-top:4px;">
+                                        <img src="${chefSig.dataUrl}" style="height:36px;max-width:115px;object-fit:contain;" alt="Signature Chef">
+                                        <span style="font-size:7.5px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${chefSig.date} ${chefSig.time}</span>
                                     </div>
                                 ` : `
-                                    <div style="border:1.2px dashed #004080;background:#f8fafc;height:48px;margin-top:3px;border-radius:2px;display:flex;flex-direction:column;justify-content:space-between;padding:2px 4px;">
+                                    <div style="border:1.2px dashed #004080;background:#f8fafc;height:54px;margin-top:4px;border-radius:2px;display:flex;flex-direction:column;justify-content:space-between;padding:2px 4px;">
                                         <div class="no-print" style="display:flex;justify-content:flex-end;">
-                                            <span style="font-size:7px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:1px 5px;border-radius:2px;border:1px solid #bfdbfe;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','chef')">✍️ Signer</span>
+                                            <span style="font-size:7.5px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:1px 5px;border-radius:2px;border:1px solid #bfdbfe;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','chef')">✍️ Signer</span>
                                         </div>
                                         <div style="text-align:center;">
-                                            <div style="font-size:8px;color:#004080;font-weight:bold;">Signature : ..............................................</div>
-                                            <div style="font-size:7px;color:#64748b;font-style:italic;">Visa manuscrit &amp; Cachet</div>
+                                            <div style="font-size:8.5px;color:#004080;font-weight:bold;">Signature : ..............................................</div>
+                                            <div style="font-size:7.5px;color:#64748b;font-style:italic;">Visa manuscrit &amp; Cachet</div>
                                         </div>
                                     </div>
                                 `}
                             </td>
-                            <td style="border:1px solid #004080;padding:4px 6px;min-height:75px;height:75px;vertical-align:top;font-size:9px;">
+                            <td style="border:1px solid #004080;padding:4px 6px;min-height:85px;height:85px;vertical-align:top;font-size:9px;">
                                 <div>Nom : <strong>${hseNom}</strong></div>
                                 ${hseSig && hseSig.dataUrl ? `
-                                    <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:2px 5px;margin-top:3px;">
-                                        <img src="${hseSig.dataUrl}" style="height:32px;max-width:110px;object-fit:contain;" alt="Signature HSE">
-                                        <span style="font-size:7px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${hseSig.date} ${hseSig.time}</span>
+                                    <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:3px 6px;margin-top:4px;">
+                                        <img src="${hseSig.dataUrl}" style="height:36px;max-width:115px;object-fit:contain;" alt="Signature HSE">
+                                        <span style="font-size:7.5px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${hseSig.date} ${hseSig.time}</span>
                                     </div>
                                 ` : `
-                                    <div style="border:1.2px dashed #004080;background:#f8fafc;height:48px;margin-top:3px;border-radius:2px;display:flex;flex-direction:column;justify-content:space-between;padding:2px 4px;">
+                                    <div style="border:1.2px dashed #004080;background:#f8fafc;height:54px;margin-top:4px;border-radius:2px;display:flex;flex-direction:column;justify-content:space-between;padding:2px 4px;">
                                         <div class="no-print" style="display:flex;justify-content:flex-end;">
-                                            <span style="font-size:7px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:1px 5px;border-radius:2px;border:1px solid #bfdbfe;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse')">✍️ Signer</span>
+                                            <span style="font-size:7.5px;font-weight:bold;background:#eff6ff;color:#1d4ed8;padding:1px 5px;border-radius:2px;border:1px solid #bfdbfe;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse')">✍️ Signer</span>
                                         </div>
                                         <div style="text-align:center;">
-                                            <div style="font-size:8px;color:#004080;font-weight:bold;">Signature : ..............................................</div>
-                                            <div style="font-size:7px;color:#64748b;font-style:italic;">Visa HSE &amp; Cachet</div>
+                                            <div style="font-size:8.5px;color:#004080;font-weight:bold;">Signature : ..............................................</div>
+                                            <div style="font-size:7.5px;color:#64748b;font-style:italic;">Visa HSE &amp; Cachet</div>
                                         </div>
                                     </div>
                                 `}
                             </td>
-                            <td style="border:1px solid #004080;padding:4px 6px;min-height:75px;height:75px;vertical-align:middle;font-size:9px;">
-                                <div style="display:flex;gap:6px;align-items:center;margin-bottom:4px;">
+                            <td style="border:1px solid #004080;padding:4px 6px;min-height:85px;height:85px;vertical-align:middle;font-size:9px;">
+                                <div style="display:flex;gap:6px;align-items:center;margin-bottom:6px;">
                                     <span>Date :</span>
-                                    <span style="border:1px solid #000;flex:1;padding:2px 4px;font-family:monospace;font-size:8.5px;background:#f8fafc;">${chefSig && chefSig.date ? chefSig.date : datePermis}</span>
+                                    <span style="border:1px solid #000;flex:1;padding:3px 4px;font-family:monospace;font-size:8.5px;background:#f8fafc;">${chefSig && chefSig.date ? chefSig.date : datePermis}</span>
                                 </div>
                                 <div style="display:flex;gap:6px;align-items:center;">
                                     <span>Heure :</span>
-                                    <span style="border:1px solid #000;flex:1;padding:2px 4px;font-family:monospace;font-size:8.5px;background:#f8fafc;">${chefSig && chefSig.time ? chefSig.time : '08h00'}</span>
+                                    <span style="border:1px solid #000;flex:1;padding:3px 4px;font-family:monospace;font-size:8.5px;background:#f8fafc;">${chefSig && chefSig.time ? chefSig.time : '08h00'}</span>
                                 </div>
                             </td>
                         </tr>
@@ -1030,8 +1034,8 @@ const Templates = {
     },
 
     // =========================================================================
-    // 4. ANNEXE B (ROUGE) — TRAVAIL CHAUD (PLEIN FORMAT A4)
-    // REPRODUCTION EXACTE DU STANDARD SINYLON - STELLANTIS
+    // 4. ANNEXE B (ROUGE) — TRAVAIL CHAUD (PLEIN FORMAT A4 STRICT)
+    // REPRODUCTION EXACTE DU STANDARD SINYLON - STELLANTIS (ZERO VIDE / ZERO DEBORDEMENT)
     // =========================================================================
     hotAnnexe(permit) {
         const chefNom = permit.responsible || permit.chefNom || permit['chef-nom'] || 'Xie Xian';
@@ -1042,13 +1046,13 @@ const Templates = {
         const hseSig = sigs.hse;
 
         return `
-            <div class="a4-document annexe-hot-doc" id="a4-doc-${permit.id}-hot" style="border:3px solid #cc0000;padding:7mm 9mm 6mm 9mm;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;font-size:8.5px;line-height:1.25;color:#000;display:flex;flex-direction:column;justify-content:space-between;height:297mm;max-height:297mm;overflow:hidden;position:relative;">
-                <div>
+            <div class="a4-document annexe-hot-doc" id="a4-doc-${permit.id}-hot" style="border:3px solid #cc0000;padding:5mm 8mm 4mm 8mm;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;font-size:8.5px;line-height:1.28;color:#000;display:flex;flex-direction:column;justify-content:space-between;height:297mm;max-height:297mm;overflow:hidden;position:relative;">
+                <div style="display:flex;flex-direction:column;justify-content:space-between;flex:1;gap:4px;min-height:0;">
                     <!-- EN-TÊTE EXACT PHOTO SINYLON - STELLANTIS -->
-                    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #cc0000;padding-bottom:4px;margin-bottom:4px;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #cc0000;padding-bottom:3px;margin-bottom:2px;">
                         <div style="display:flex;align-items:center;gap:10px;">
-                            <div style="background:#000;color:#fff;font-size:24px;font-weight:900;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:3px;">B</div>
-                            <div style="font-size:19px;font-weight:900;color:#cc0000;letter-spacing:0.3px;">Travail chaud</div>
+                            <div style="background:#000;color:#fff;font-size:24px;font-weight:900;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:3px;">B</div>
+                            <div style="font-size:18px;font-weight:900;color:#cc0000;letter-spacing:0.3px;">Travail chaud</div>
                         </div>
                         <div style="display:flex;align-items:center;gap:10px;">
                             ${this.renderLogoSinylonStellantis()}
@@ -1059,37 +1063,37 @@ const Templates = {
                         </div>
                     </div>
 
-                    <div style="text-align:center;font-size:8.5px;font-weight:bold;margin-bottom:4px;color:#cc0000;">
+                    <div style="text-align:center;font-size:8.5px;font-weight:bold;margin-bottom:2px;color:#cc0000;">
                         La liste de vérification doit être toujours accompagnée par le permis de travail de sécurité générale
                     </div>
 
-                    <!-- CHECKLIST TRAVAIL CHAUD AVEC CASES [.Y .N.] (EXACT PHOTO) -->
-                    <table style="width:100%;border-collapse:collapse;margin-bottom:4px;font-size:8px;">
+                    <!-- CHECKLIST TRAVAIL CHAUD AVEC CASES [.Y .N.] (EXACT PHOTO - 14 POINTS LISIBLES) -->
+                    <table style="width:100%;border-collapse:collapse;margin-bottom:2px;font-size:8.5px;">
                         <tbody>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;width:92%;">
+                                <td style="border:1px solid #999;padding:3.2px 6px;width:92%;">
                                     Tous les produits inflammables ou combustibles seront dégagés à <span style="border:1px solid #000;padding:0 4px;font-weight:bold;">10</span> m (min. 10 m)
                                 </td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;width:8%;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">
+                                <td style="border:1px solid #999;padding:3.2px 6px;">
                                     Si le déplacement n'est pas possible : produits protégés par des bâches ignifugées ou écrans thermiques
                                 </td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Tous débris, saleté, graisse ou poussière sont enlevés de la zone</td>
+                                <td style="border:1px solid #999;padding:3.2px 6px;">Tous débris, saleté, graisse ou poussière sont enlevés de la zone</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">
+                                <td style="border:1px solid #999;padding:3.2px 6px;">
                                     Environnement vérifié incluant tuyauteries, gaines, derrière cloisons pour dissimulation de combustible
                                 </td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">
+                                <td style="border:1px solid #999;padding:3.2px 6px;">
                                     Présence de structure combustible : si oui, spécifier les précautions prises (ex. arrosage, couvertures inertes) :<br>
                                     <div style="border:1px solid #cc0000;padding:2px 6px;margin-top:2px;display:flex;justify-content:space-between;background:#fef2f2;">
                                         <span>Couvrir tous les matériaux inflammables hors du rayon de projection</span>
@@ -1099,41 +1103,41 @@ const Templates = {
                                 <td style="border:1px solid #999;padding:1px;text-align:center;vertical-align:top;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Couvertures résistantes au feu / écrans équipés pour résister aux étincelles de meulage</td>
+                                <td style="border:1px solid #999;padding:3.2px 6px;">Couvertures résistantes au feu / écrans équipés pour résister aux étincelles de meulage</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Fermeture des vannes, égouts, caniveaux automatiquement ouvrables</td>
+                                <td style="border:1px solid #999;padding:3.2px 6px;">Fermeture des vannes, égouts, caniveaux automatiquement ouvrables</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Isolement sûr des conduits / convoyeurs / gaines d'aspiration évitant la propagation d'étincelles</td>
+                                <td style="border:1px solid #999;padding:3.2px 6px;">Isolement sûr des conduits / convoyeurs / gaines d'aspiration évitant la propagation d'étincelles</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Couverture étanche des trous, fentes et ouvertures de plancher</td>
+                                <td style="border:1px solid #999;padding:3.2px 6px;">Couverture étanche des trous, fentes et ouvertures de plancher</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">
+                                <td style="border:1px solid #999;padding:3.2px 6px;">
                                     Ventilation suffisante sur le lieu de travail (naturelle <span style="border:1px solid #000;padding:0 3px;font-weight:bold;">Y</span> &nbsp; mécanique <span style="border:1px solid #000;padding:0 3px;font-weight:bold;">Y</span>)
                                 </td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Appareils électriques et câbles de soudure inspectés et protégés</td>
+                                <td style="border:1px solid #999;padding:3.2px 6px;">Appareils électriques et câbles de soudure inspectés et protégés</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Tous les équipements et tuyauteries de voisinage protégés des projections</td>
+                                <td style="border:1px solid #999;padding:3.2px 6px;">Tous les équipements et tuyauteries de voisinage protégés des projections</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Balisage et panneaux d'avertissement "DANGER TRAVAUX À CHAUD" installés</td>
+                                <td style="border:1px solid #999;padding:3.2px 6px;">Balisage et panneaux d'avertissement "DANGER TRAVAUX À CHAUD" installés</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">
+                                <td style="border:1px solid #999;padding:3.2px 6px;">
                                     Surveillance gaz avant l'entame si vapeurs inflammables soupçonnées (Formulaire X requis si oui)
                                 </td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(false)}</td>
@@ -1141,17 +1145,17 @@ const Templates = {
                         </tbody>
                     </table>
 
-                    <!-- SECTION ÉQUIPEMENT DE LUTTE ANTI FEU FOURNI -->
-                    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:6px;margin-bottom:4px;border:1.5px solid #cc0000;padding:4px 6px;font-size:8px;">
+                    <!-- SECTION ÉQUIPEMENT DE LUTTE ANTI FEU FOURNI & SURVEILLANT DESIGNÉ -->
+                    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:6px;margin-bottom:2px;border:1.5px solid #cc0000;padding:6px 8px;font-size:8.5px;background:#fff;">
                         <div>
-                            <div style="font-weight:bold;margin-bottom:3px;font-size:8.5px;color:#991b1b;">Équipements de lutte anti-feu à disposition immédiate :</div>
-                            <div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;">
+                            <div style="font-weight:bold;margin-bottom:3px;font-size:9px;color:#991b1b;">Équipements de lutte anti-feu à disposition immédiate :</div>
+                            <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
                                 <span>Extincteurs :</span>
                                 <span>Eau pulvérisée <span style="border:1px solid #000;padding:0 3px;font-weight:bold;">Y</span></span>
                                 <span>Poudre ABC 6kg <span style="border:1px solid #000;padding:0 3px;font-weight:bold;background:#000;color:#fff;">Y</span></span>
                                 <span>CO₂ 5kg <span style="border:1px solid #000;padding:0 3px;font-weight:bold;background:#000;color:#fff;">Y</span></span>
                             </div>
-                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:3px;">
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
                                 <span>Couvertures anti-feu à poste <span style="border:1px solid #000;padding:0 3px;font-weight:bold;background:#000;color:#fff;">Y</span></span>
                                 <span>Balisage de sécurité <span style="border:1px solid #000;padding:0 3px;font-weight:bold;background:#000;color:#fff;">Y</span></span>
                             </div>
@@ -1160,82 +1164,82 @@ const Templates = {
                                 <span style="border:1px solid #000;padding:1px 5px;font-weight:bold;background:#000;color:#fff;">30 MINUTES MINIMUM OBLIGATOIRE</span>
                             </div>
                         </div>
-                        <div style="border-left:1px solid #cc0000;padding-left:6px;display:flex;flex-direction:column;justify-content:space-between;">
-                            <div style="border:1px solid #cc0000;background:#fee2e2;padding:3px 5px;margin-bottom:2px;">
-                                <div style="font-weight:bold;font-size:8px;color:#991b1b;">HSE ENTREPRISE (VALIDATION CHAUD)</div>
-                                <div style="font-size:7px;">Nom (lettres majuscule) et signature :</div>
-                                <div style="font-weight:bold;font-size:8px;">${hseNom}</div>
+                        <div style="border-left:1px solid #cc0000;padding-left:8px;display:flex;flex-direction:column;justify-content:space-between;">
+                            <div style="border:1px solid #cc0000;background:#fee2e2;padding:4px 6px;margin-bottom:2px;border-radius:2px;">
+                                <div style="font-weight:bold;font-size:8.5px;color:#991b1b;">HSE ENTREPRISE (VALIDATION CHAUD)</div>
+                                <div style="font-size:7.5px;">Nom (lettres majuscule) et signature :</div>
+                                <div style="font-weight:bold;font-size:8.5px;">${hseNom}</div>
                                 ${hseSig && hseSig.dataUrl ? `
-                                    <div style="display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #16a34a;border-radius:2px;padding:1px 4px;margin-top:2px;">
-                                        <img src="${hseSig.dataUrl}" style="height:20px;max-width:85px;object-fit:contain;" alt="Signature HSE">
-                                        <span style="font-size:6px;color:#16a34a;font-weight:bold;">✓ VALIDÉ HSE<br>${hseSig.date}</span>
+                                    <div style="display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #16a34a;border-radius:2px;padding:2px 5px;margin-top:3px;">
+                                        <img src="${hseSig.dataUrl}" style="height:24px;max-width:90px;object-fit:contain;" alt="Signature HSE">
+                                        <span style="font-size:7px;color:#16a34a;font-weight:bold;">✓ VALIDÉ HSE<br>${hseSig.date}</span>
                                     </div>
                                 ` : `
-                                    <div style="height:18px;border-bottom:1px dashed #991b1b;cursor:pointer;display:flex;align-items:center;justify-content:flex-end;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse')">
-                                        <span style="font-size:7px;color:#b91c1c;font-weight:bold;background:#fff;padding:1px 5px;border-radius:2px;border:1px solid #fca5a5;">✍️ Signer HSE</span>
+                                    <div style="height:24px;border-bottom:1px dashed #991b1b;cursor:pointer;display:flex;align-items:center;justify-content:flex-end;margin-top:2px;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse')">
+                                        <span style="font-size:7.5px;color:#b91c1c;font-weight:bold;background:#fff;padding:1px 5px;border-radius:2px;border:1px solid #fca5a5;">✍️ Signer HSE</span>
                                     </div>
                                 `}
                             </div>
-                            <div style="font-size:7.5px;color:#991b1b;font-weight:bold;line-height:1.2;">
+                            <div style="font-size:8px;color:#991b1b;font-weight:bold;line-height:1.25;">
                                 ⚠️ Surveillant d'incendie désigné obligatoirement présent durant le travail à chaud et 30 min après.
                             </div>
                         </div>
                     </div>
 
-                    <!-- SECTION SIGNATURES OFFICIELLES CHAUD -->
-                    <table style="width:100%;border-collapse:collapse;border:2px solid #cc0000;margin-top:4px;">
+                    <!-- SECTION SIGNATURES OFFICIELLES CHAUD (SPACIEUSES ET LISIBLES) -->
+                    <table style="width:100%;border-collapse:collapse;border:2px solid #cc0000;margin-top:2px;">
                         <tr style="background:#fee2e2;font-size:9px;font-weight:900;text-align:center;color:#991b1b;">
                             <th style="border:1px solid #cc0000;padding:3px;width:38%;">CHEF DE PROJET (AUTORISATION)</th>
                             <th style="border:1px solid #cc0000;padding:3px;width:38%;">HSE ENTREPRISE (CONTRÔLE EXTINCTEURS)</th>
                             <th style="border:1px solid #cc0000;padding:3px;width:24%;">DATE / HEURE</th>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #cc0000;padding:4px 6px;min-height:75px;height:75px;vertical-align:top;font-size:9px;">
+                            <td style="border:1px solid #cc0000;padding:4px 6px;min-height:85px;height:85px;vertical-align:top;font-size:9px;">
                                 <div>Nom : <strong>${chefNom}</strong></div>
                                 ${chefSig && chefSig.dataUrl ? `
-                                    <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:2px 5px;margin-top:3px;">
-                                        <img src="${chefSig.dataUrl}" style="height:32px;max-width:110px;object-fit:contain;" alt="Signature Chef">
-                                        <span style="font-size:7px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${chefSig.date} ${chefSig.time}</span>
+                                    <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:3px 6px;margin-top:4px;">
+                                        <img src="${chefSig.dataUrl}" style="height:36px;max-width:115px;object-fit:contain;" alt="Signature Chef">
+                                        <span style="font-size:7.5px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${chefSig.date} ${chefSig.time}</span>
                                     </div>
                                 ` : `
-                                    <div style="border:1.2px dashed #cc0000;background:#f8fafc;height:48px;margin-top:3px;border-radius:2px;display:flex;flex-direction:column;justify-content:space-between;padding:2px 4px;">
+                                    <div style="border:1.2px dashed #cc0000;background:#f8fafc;height:54px;margin-top:4px;border-radius:2px;display:flex;flex-direction:column;justify-content:space-between;padding:2px 4px;">
                                         <div class="no-print" style="display:flex;justify-content:flex-end;">
-                                            <span style="font-size:7px;font-weight:bold;background:#fee2e2;color:#b91c1c;padding:1px 5px;border-radius:2px;border:1px solid #fca5a5;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','chef')">✍️ Signer</span>
+                                            <span style="font-size:7.5px;font-weight:bold;background:#fee2e2;color:#b91c1c;padding:1px 5px;border-radius:2px;border:1px solid #fca5a5;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','chef')">✍️ Signer</span>
                                         </div>
                                         <div style="text-align:center;">
-                                            <div style="font-size:8px;color:#cc0000;font-weight:bold;">Signature : ..............................................</div>
-                                            <div style="font-size:7px;color:#64748b;font-style:italic;">Visa manuscrit &amp; Cachet</div>
+                                            <div style="font-size:8.5px;color:#cc0000;font-weight:bold;">Signature : ..............................................</div>
+                                            <div style="font-size:7.5px;color:#64748b;font-style:italic;">Visa manuscrit &amp; Cachet</div>
                                         </div>
                                     </div>
                                 `}
                             </td>
-                            <td style="border:1px solid #cc0000;padding:4px 6px;min-height:75px;height:75px;vertical-align:top;font-size:9px;">
+                            <td style="border:1px solid #cc0000;padding:4px 6px;min-height:85px;height:85px;vertical-align:top;font-size:9px;">
                                 <div>Nom : <strong>${hseNom}</strong></div>
                                 ${hseSig && hseSig.dataUrl ? `
-                                    <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:2px 5px;margin-top:3px;">
-                                        <img src="${hseSig.dataUrl}" style="height:32px;max-width:110px;object-fit:contain;" alt="Signature HSE">
-                                        <span style="font-size:7px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${hseSig.date} ${hseSig.time}</span>
+                                    <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:3px 6px;margin-top:4px;">
+                                        <img src="${hseSig.dataUrl}" style="height:36px;max-width:115px;object-fit:contain;" alt="Signature HSE">
+                                        <span style="font-size:7.5px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${hseSig.date} ${hseSig.time}</span>
                                     </div>
                                 ` : `
-                                    <div style="border:1.2px dashed #cc0000;background:#f8fafc;height:48px;margin-top:3px;border-radius:2px;display:flex;flex-direction:column;justify-content:space-between;padding:2px 4px;">
+                                    <div style="border:1.2px dashed #cc0000;background:#f8fafc;height:54px;margin-top:4px;border-radius:2px;display:flex;flex-direction:column;justify-content:space-between;padding:2px 4px;">
                                         <div class="no-print" style="display:flex;justify-content:flex-end;">
-                                            <span style="font-size:7px;font-weight:bold;background:#fee2e2;color:#b91c1c;padding:1px 5px;border-radius:2px;border:1px solid #fca5a5;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse')">✍️ Signer</span>
+                                            <span style="font-size:7.5px;font-weight:bold;background:#fee2e2;color:#b91c1c;padding:1px 5px;border-radius:2px;border:1px solid #fca5a5;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse')">✍️ Signer</span>
                                         </div>
                                         <div style="text-align:center;">
-                                            <div style="font-size:8px;color:#cc0000;font-weight:bold;">Signature : ..............................................</div>
-                                            <div style="font-size:7px;color:#64748b;font-style:italic;">Visa HSE &amp; Cachet</div>
+                                            <div style="font-size:8.5px;color:#cc0000;font-weight:bold;">Signature : ..............................................</div>
+                                            <div style="font-size:7.5px;color:#64748b;font-style:italic;">Visa HSE &amp; Cachet</div>
                                         </div>
                                     </div>
                                 `}
                             </td>
-                            <td style="border:1px solid #cc0000;padding:4px 6px;min-height:75px;height:75px;vertical-align:middle;font-size:9px;">
-                                <div style="display:flex;gap:6px;align-items:center;margin-bottom:4px;">
+                            <td style="border:1px solid #cc0000;padding:4px 6px;min-height:85px;height:85px;vertical-align:middle;font-size:9px;">
+                                <div style="display:flex;gap:6px;align-items:center;margin-bottom:6px;">
                                     <span>Date :</span>
-                                    <span style="border:1px solid #000;flex:1;padding:2px 4px;font-family:monospace;font-size:8.5px;background:#f8fafc;">${chefSig && chefSig.date ? chefSig.date : datePermis}</span>
+                                    <span style="border:1px solid #000;flex:1;padding:3px 4px;font-family:monospace;font-size:8.5px;background:#f8fafc;">${chefSig && chefSig.date ? chefSig.date : datePermis}</span>
                                 </div>
                                 <div style="display:flex;gap:6px;align-items:center;">
                                     <span>Heure :</span>
-                                    <span style="border:1px solid #000;flex:1;padding:2px 4px;font-family:monospace;font-size:8.5px;background:#f8fafc;">${chefSig && chefSig.time ? chefSig.time : '08h00'}</span>
+                                    <span style="border:1px solid #000;flex:1;padding:3px 4px;font-family:monospace;font-size:8.5px;background:#f8fafc;">${chefSig && chefSig.time ? chefSig.time : '08h00'}</span>
                                 </div>
                             </td>
                         </tr>
@@ -1250,7 +1254,7 @@ const Templates = {
 
     // =========================================================================
     // 5. ANNEXE C (AMBRE / JAUNE) — TRAVAIL ÉLECTRIQUE & CONSIGNATION
-    // REPRODUCTION EXACTE DU STANDARD SINYLON - STELLANTIS (PLEIN FORMAT A4)
+    // REPRODUCTION EXACTE DU STANDARD SINYLON - STELLANTIS (PLEIN FORMAT A4 STRICT)
     // =========================================================================
     electricAnnexe(permit) {
         const chefNom = permit.responsible || permit.chefNom || permit['chef-nom'] || 'Xie Xian';
@@ -1261,13 +1265,13 @@ const Templates = {
         const hseSig = sigs.hse;
 
         return `
-            <div class="a4-document annexe-elec-doc" id="a4-doc-${permit.id}-electric" style="border:3px solid #d97706;padding:7mm 9mm 6mm 9mm;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;font-size:8.5px;line-height:1.25;color:#000;display:flex;flex-direction:column;justify-content:space-between;height:297mm;max-height:297mm;overflow:hidden;position:relative;">
-                <div>
+            <div class="a4-document annexe-elec-doc" id="a4-doc-${permit.id}-electric" style="border:3px solid #d97706;padding:5mm 8mm 4mm 8mm;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;font-size:8.5px;line-height:1.28;color:#000;display:flex;flex-direction:column;justify-content:space-between;height:297mm;max-height:297mm;overflow:hidden;position:relative;">
+                <div style="display:flex;flex-direction:column;justify-content:space-between;flex:1;gap:4px;min-height:0;">
                     <!-- EN-TÊTE EXACT SINYLON - STELLANTIS -->
-                    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #d97706;padding-bottom:4px;margin-bottom:4px;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #d97706;padding-bottom:3px;margin-bottom:2px;">
                         <div style="display:flex;align-items:center;gap:10px;">
-                            <div style="background:#000;color:#fff;font-size:24px;font-weight:900;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:3px;">C</div>
-                            <div style="font-size:19px;font-weight:900;color:#d97706;letter-spacing:0.3px;">Travail électrique &amp; Consignation</div>
+                            <div style="background:#000;color:#fff;font-size:24px;font-weight:900;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:3px;">C</div>
+                            <div style="font-size:18px;font-weight:900;color:#d97706;letter-spacing:0.3px;">Travail électrique &amp; Consignation</div>
                         </div>
                         <div style="display:flex;align-items:center;gap:10px;">
                             ${this.renderLogoSinylonStellantis()}
@@ -1278,77 +1282,77 @@ const Templates = {
                         </div>
                     </div>
 
-                    <div style="text-align:center;font-size:8.5px;font-weight:bold;margin-bottom:4px;color:#d97706;">
+                    <div style="text-align:center;font-size:8.5px;font-weight:bold;margin-bottom:2px;color:#d97706;">
                         Cette liste de vérification doit être toujours accompagnée par le permis de travail de sécurité générale
                     </div>
 
-                    <!-- TABLEAU TYPES DE TRAVAUX ÉLECTRIQUES -->
-                    <table style="width:100%;border-collapse:collapse;margin-bottom:4px;font-size:8px;">
+                    <!-- TABLEAU TYPES DE TRAVAUX ÉLECTRIQUES (8 LIGNES CLAIRES ET AÉRÉES) -->
+                    <table style="width:100%;border-collapse:collapse;margin-bottom:2px;font-size:8.5px;">
                         <tbody>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;width:34%;">Tirage de câbles / Chemins de câbles</td>
+                                <td style="border:1px solid #999;padding:3.5px 6px;width:34%;">Tirage de câbles / Chemins de câbles</td>
                                 <td style="border:1px solid #999;padding:1px;width:7%;text-align:center;">${this.renderCheckYN(true)}</td>
-                                <td style="border:1px solid #999;padding:2.5px 4px;width:52%;">Câbles hors tension et protégés mécaniquement</td>
+                                <td style="border:1px solid #999;padding:3.5px 6px;width:52%;">Câbles hors tension et protégés mécaniquement</td>
                                 <td style="border:1px solid #999;padding:1px;width:7%;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Raccordement armoire électrique BT</td>
+                                <td style="border:1px solid #999;padding:3.5px 6px;">Raccordement armoire électrique BT</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Consignation LOTO effectuée et cadenas posés</td>
+                                <td style="border:1px solid #999;padding:3.5px 6px;">Consignation LOTO effectuée et cadenas posés</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;" rowspan="3">Intervention moteur / variateur</td>
+                                <td style="border:1px solid #999;padding:3.5px 6px;" rowspan="3">Intervention moteur / variateur</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;" rowspan="3">${this.renderCheckYN(true)}</td>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Vérification d'Absence de Tension (VAT 0V certifiée)</td>
+                                <td style="border:1px solid #999;padding:3.5px 6px;">Vérification d'Absence de Tension (VAT 0V certifiée)</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Habilitations électriques des intervenants vérifiées</td>
+                                <td style="border:1px solid #999;padding:3.5px 6px;">Habilitations électriques des intervenants vérifiées (BR/BC/B2V)</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Port d'EPI isolants (Gants 1000V, écran facial anti-arc)</td>
+                                <td style="border:1px solid #999;padding:3.5px 6px;">Port d'EPI isolants (Gants 1000V, écran facial anti-arc, chaussures isolantes)</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;" rowspan="3">Mise à la terre et court-circuit (MALT/CC)</td>
+                                <td style="border:1px solid #999;padding:3.5px 6px;" rowspan="3">Mise à la terre et court-circuit (MALT/CC)</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;" rowspan="3">${this.renderCheckYN(true)}</td>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Dispositif MALT raccordé avant intervention</td>
+                                <td style="border:1px solid #999;padding:3.5px 6px;">Dispositif MALT raccordé avant toute intervention</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;"><span style="border:1px solid #000;padding:1px 4px;font-weight:800;">Y</span></td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Outillage à main isolé 1000V certifié EN 60900</td>
+                                <td style="border:1px solid #999;padding:3.5px 6px;">Outillage à main isolé 1000V certifié EN 60900</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 4px;">Balisage de sécurité autour des cellules sous tension</td>
+                                <td style="border:1px solid #999;padding:3.5px 6px;">Balisage de sécurité et écran isolant autour des cellules sous tension</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <!-- SECTION MESURES DE CONSIGNATION LOTO -->
-                    <div style="border:1.5px solid #d97706;margin-bottom:4px;font-size:8px;">
+                    <!-- SECTION MESURES DE CONSIGNATION LOTO (PROCÉDURE COMPLÈTE) -->
+                    <div style="border:1.5px solid #d97706;margin-bottom:2px;font-size:8.5px;background:#fff;">
                         <div style="font-weight:bold;padding:3px 6px;background:#fef3c7;border-bottom:1px solid #d97706;display:flex;justify-content:space-between;color:#92400e;">
                             <span>Procédure de Consignation et Déconsignation (LOTO - Lockout / Tagout)</span>
                             <span>${this.renderCheckYN(true)}</span>
                         </div>
                         <table style="width:100%;border-collapse:collapse;">
                             <tr>
-                                <td style="border:1px solid #999;padding:3px 5px;width:40%;">Séparation de la source d'énergie (Disjoncteur / Sectionneur ouvert)</td>
+                                <td style="border:1px solid #999;padding:3.5px 6px;width:40%;">1. Séparation de la source d'énergie (Disjoncteur / Sectionneur ouvert)</td>
                                 <td style="border:1px solid #999;padding:1px;width:7%;text-align:center;">${this.renderCheckYN(true)}</td>
-                                <td style="border:1px solid #999;padding:3px 5px;width:46%;">Condamnation mécanique par cadenas individuel</td>
+                                <td style="border:1px solid #999;padding:3.5px 6px;width:46%;">2. Condamnation mécanique par cadenas individuel rouge</td>
+                                <td style="border:1px solid #999;padding:1px;width:7%;text-align:center;">${this.renderCheckYN(true)}</td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #999;padding:3.5px 6px;">3. Pose de la pancarte d'interdiction de manœuvre (Tagout)</td>
+                                <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                                <td style="border:1px solid #999;padding:3.5px 6px;">4. Vérification de décharge condensateurs &amp; V.A.T. 0V</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:3px 5px;">Pose de la pancarte d'interdiction de manœuvre (Tagout)</td>
-                                <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
-                                <td style="border:1px solid #999;padding:3px 5px;">Vérification de décharge des condensateurs</td>
-                                <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="4" style="border:1px solid #999;padding:3px 6px;background:#fffbeb;">
+                                <td colspan="4" style="border:1px solid #999;padding:3.5px 6px;background:#fffbeb;">
                                     Chargé de Consignation Sinylon / M. W.P.E.E.X : <strong>Nouri Chahrour / Xie Xian</strong> — N° Cadenas : <span style="border-bottom:1px solid #000;display:inline-block;width:35%;height:12px;font-weight:bold;">LOTO-SINY-01</span>
                                 </td>
                             </tr>
@@ -1356,85 +1360,89 @@ const Templates = {
                     </div>
 
                     <!-- SECTION CHECKLIST DE SÉCURITÉ CHANTIER ÉLECTRIQUE -->
-                    <table style="width:100%;border-collapse:collapse;margin-bottom:4px;font-size:8px;">
+                    <table style="width:100%;border-collapse:collapse;margin-bottom:2px;font-size:8.5px;">
                         <tbody>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;width:92%;">Zone de tirage de câbles balisée avec ruban de signalisation et panneaux danger</td>
+                                <td style="border:1px solid #999;padding:3.2px 6px;width:92%;">Zone de tirage de câbles balisée avec ruban de signalisation et panneaux danger</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;width:8%;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Présence d'un surveillant électricien habilité pendant les manœuvres</td>
+                                <td style="border:1px solid #999;padding:3.2px 6px;">Présence d'un surveillant électricien habilité pendant toute la durée des manœuvres</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Éclairage de chantier 24V ou autonome protégé IP55</td>
+                                <td style="border:1px solid #999;padding:3.2px 6px;">Éclairage de chantier 24V ou autonome protégé IP55</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Extincteur CO₂ approprié pour feu électrique présent à proximité immédiate</td>
+                                <td style="border:1px solid #999;padding:3.2px 6px;">Extincteur CO₂ approprié pour feu électrique présent à proximité immédiate</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;"><span style="border:1px solid #000;padding:1px 4px;font-weight:800;">Y</span></td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid #999;padding:2.5px 5px;">Procédure d'urgence et coupure générale d'urgence localisée</td>
+                                <td style="border:1px solid #999;padding:3.2px 6px;">Procédure d'urgence et coupure générale d'urgence localisée et signalée</td>
+                                <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #999;padding:3.2px 6px;">Remise sous tension conditionnée au repli complet de l'outillage et évacuation</td>
                                 <td style="border:1px solid #999;padding:1px;text-align:center;">${this.renderCheckYN(true)}</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <!-- SECTION SIGNATURES OFFICIELLES ÉLECTRIQUE -->
-                    <table style="width:100%;border-collapse:collapse;border:2px solid #d97706;margin-top:4px;">
+                    <!-- SECTION SIGNATURES OFFICIELLES ÉLECTRIQUE (SPACIEUSES ET LISIBLES) -->
+                    <table style="width:100%;border-collapse:collapse;border:2px solid #d97706;margin-top:2px;">
                         <tr style="background:#fef3c7;font-size:9px;font-weight:900;text-align:center;color:#b45309;">
                             <th style="border:1px solid #d97706;padding:3px;width:38%;">CHEF DE PROJET (AUTORISATION)</th>
                             <th style="border:1px solid #d97706;padding:3px;width:38%;">HSE / CHARGÉ CONSIGNATION</th>
                             <th style="border:1px solid #d97706;padding:3px;width:24%;">DATE / HEURE</th>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #d97706;padding:4px 6px;min-height:75px;height:75px;vertical-align:top;font-size:9px;">
+                            <td style="border:1px solid #d97706;padding:4px 6px;min-height:85px;height:85px;vertical-align:top;font-size:9px;">
                                 <div>Nom : <strong>${chefNom}</strong></div>
                                 ${chefSig && chefSig.dataUrl ? `
-                                    <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:2px 5px;margin-top:3px;">
-                                        <img src="${chefSig.dataUrl}" style="height:32px;max-width:110px;object-fit:contain;" alt="Signature Chef">
-                                        <span style="font-size:7px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${chefSig.date} ${chefSig.time}</span>
+                                    <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:3px 6px;margin-top:4px;">
+                                        <img src="${chefSig.dataUrl}" style="height:36px;max-width:115px;object-fit:contain;" alt="Signature Chef">
+                                        <span style="font-size:7.5px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${chefSig.date} ${chefSig.time}</span>
                                     </div>
                                 ` : `
-                                    <div style="border:1.2px dashed #d97706;background:#f8fafc;height:48px;margin-top:3px;border-radius:2px;display:flex;flex-direction:column;justify-content:space-between;padding:2px 4px;">
+                                    <div style="border:1.2px dashed #d97706;background:#f8fafc;height:54px;margin-top:4px;border-radius:2px;display:flex;flex-direction:column;justify-content:space-between;padding:2px 4px;">
                                         <div class="no-print" style="display:flex;justify-content:flex-end;">
-                                            <span style="font-size:7px;font-weight:bold;background:#fef3c7;color:#b45309;padding:1px 5px;border-radius:2px;border:1px solid #fde68a;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','chef')">✍️ Signer</span>
+                                            <span style="font-size:7.5px;font-weight:bold;background:#fef3c7;color:#b45309;padding:1px 5px;border-radius:2px;border:1px solid #fde68a;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','chef')">✍️ Signer</span>
                                         </div>
                                         <div style="text-align:center;">
-                                            <div style="font-size:8px;color:#d97706;font-weight:bold;">Signature : ..............................................</div>
-                                            <div style="font-size:7px;color:#64748b;font-style:italic;">Visa manuscrit &amp; Cachet</div>
+                                            <div style="font-size:8.5px;color:#d97706;font-weight:bold;">Signature : ..............................................</div>
+                                            <div style="font-size:7.5px;color:#64748b;font-style:italic;">Visa manuscrit &amp; Cachet</div>
                                         </div>
                                     </div>
                                 `}
                             </td>
-                            <td style="border:1px solid #d97706;padding:4px 6px;min-height:75px;height:75px;vertical-align:top;font-size:9px;">
+                            <td style="border:1px solid #d97706;padding:4px 6px;min-height:85px;height:85px;vertical-align:top;font-size:9px;">
                                 <div>Nom : <strong>${hseNom}</strong></div>
                                 ${hseSig && hseSig.dataUrl ? `
-                                    <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:2px 5px;margin-top:3px;">
-                                        <img src="${hseSig.dataUrl}" style="height:32px;max-width:110px;object-fit:contain;" alt="Signature HSE">
-                                        <span style="font-size:7px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${hseSig.date} ${hseSig.time}</span>
+                                    <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:2px;padding:3px 6px;margin-top:4px;">
+                                        <img src="${hseSig.dataUrl}" style="height:36px;max-width:115px;object-fit:contain;" alt="Signature HSE">
+                                        <span style="font-size:7.5px;color:#16a34a;font-weight:900;text-align:right;">✓ SIGNÉ SUR SITE<br>${hseSig.date} ${hseSig.time}</span>
                                     </div>
                                 ` : `
-                                    <div style="border:1.2px dashed #d97706;background:#f8fafc;height:48px;margin-top:3px;border-radius:2px;display:flex;flex-direction:column;justify-content:space-between;padding:2px 4px;">
+                                    <div style="border:1.2px dashed #d97706;background:#f8fafc;height:54px;margin-top:4px;border-radius:2px;display:flex;flex-direction:column;justify-content:space-between;padding:2px 4px;">
                                         <div class="no-print" style="display:flex;justify-content:flex-end;">
-                                            <span style="font-size:7px;font-weight:bold;background:#fef3c7;color:#b45309;padding:1px 5px;border-radius:2px;border:1px solid #fde68a;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse')">✍️ Signer</span>
+                                            <span style="font-size:7.5px;font-weight:bold;background:#fef3c7;color:#b45309;padding:1px 5px;border-radius:2px;border:1px solid #fde68a;cursor:pointer;" onclick="if(window.SignaturePad)SignaturePad.open('${permit.id}','hse')">✍️ Signer</span>
                                         </div>
                                         <div style="text-align:center;">
-                                            <div style="font-size:8px;color:#d97706;font-weight:bold;">Signature : ..............................................</div>
-                                            <div style="font-size:7px;color:#64748b;font-style:italic;">Visa HSE &amp; Cachet</div>
+                                            <div style="font-size:8.5px;color:#d97706;font-weight:bold;">Signature : ..............................................</div>
+                                            <div style="font-size:7.5px;color:#64748b;font-style:italic;">Visa HSE &amp; Cachet</div>
                                         </div>
                                     </div>
                                 `}
                             </td>
-                            <td style="border:1px solid #d97706;padding:4px 6px;min-height:75px;height:75px;vertical-align:middle;font-size:9px;">
-                                <div style="display:flex;gap:6px;align-items:center;margin-bottom:4px;">
+                            <td style="border:1px solid #d97706;padding:4px 6px;min-height:85px;height:85px;vertical-align:middle;font-size:9px;">
+                                <div style="display:flex;gap:6px;align-items:center;margin-bottom:6px;">
                                     <span>Date :</span>
-                                    <span style="border:1px solid #000;flex:1;padding:2px 4px;font-family:monospace;font-size:8.5px;background:#f8fafc;">${chefSig && chefSig.date ? chefSig.date : datePermis}</span>
+                                    <span style="border:1px solid #000;flex:1;padding:3px 4px;font-family:monospace;font-size:8.5px;background:#f8fafc;">${chefSig && chefSig.date ? chefSig.date : datePermis}</span>
                                 </div>
                                 <div style="display:flex;gap:6px;align-items:center;">
                                     <span>Heure :</span>
-                                    <span style="border:1px solid #000;flex:1;padding:2px 4px;font-family:monospace;font-size:8.5px;background:#f8fafc;">${chefSig && chefSig.time ? chefSig.time : '08h00'}</span>
+                                    <span style="border:1px solid #000;flex:1;padding:3px 4px;font-family:monospace;font-size:8.5px;background:#f8fafc;">${chefSig && chefSig.time ? chefSig.time : '08h00'}</span>
                                 </div>
                             </td>
                         </tr>
