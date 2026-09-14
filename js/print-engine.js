@@ -105,6 +105,10 @@ const PrintEngine = {
             htmlPages.push(templates.weekendSummarySheet(dates, weekPermits));
             htmlPages.push(templates.generalP1(permit));
             htmlPages.push(templates.generalP2(permit));
+            const d = permit.dangers || {};
+            if (permit.type === 'height' || d.height) htmlPages.push(templates.heightAnnexe(permit));
+            if (permit.type === 'hot' || d.hot) htmlPages.push(templates.hotAnnexe(permit));
+            if (permit.type === 'electric' || d.electric) htmlPages.push(templates.electricAnnexe(permit));
         } else {
             // 1. Permis Général Hebdomadaire (Page 1/2)
             htmlPages.push(templates.generalP1(permit));
