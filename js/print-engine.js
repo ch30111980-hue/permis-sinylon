@@ -81,11 +81,53 @@ const PrintEngine = {
         }, 120);
     },
 
+    // Imprimer un document spécifique (Annexe A, Annexe B, Annexe C, Revalidation, Affiche)
+    printSpecificAnnexe(permitId, annexeKey) {
+        const store = typeof window !== 'undefined' && window.Store ? window.Store : Store;
+        const templates = typeof window !== 'undefined' && window.Templates ? window.Templates : Templates;
+        const targetId = permitId || (typeof window !== 'undefined' && window.App && window.App.getActivePermitId ? window.App.getActivePermitId() : null) || 'K9-W38-UB';
+        
+        const permit = store.getPermit(targetId);
+        if (!permit) {
+            if (typeof window !== 'undefined' && window.App) window.App.showToast('⚠️ Permis introuvable', 'error');
+            return;
+        }
+
+        const printContainer = document.getElementById('print-container');
+        if (!printContainer) return;
+
+        let html = '';
+        const z = permit.zoneKey || (permit.id.includes('UB') ? 'UB' : (permit.id.includes('UAR') ? 'UAR' : (permit.id.includes('FUSA') ? 'FUSA' : 'ALL')));
+
+        if (annexeKey === 'height') {
+            html = templates.heightAnnexe(permit);
+        } else if (annexeKey === 'hot') {
+            html = templates.hotAnnexe(permit);
+        } else if (annexeKey === 'electric') {
+            html = templates.electricAnnexe(permit);
+        } else if (annexeKey === 'reval') {
+            html = templates.generalP2(permit);
+        } else if (annexeKey === 'poster') {
+            html = templates.renderZonePosterA4(permit, z);
+        } else if (annexeKey === 'general') {
+            html = templates.generalP1(permit) + '<div style="page-break-before: always;"></div>' + templates.generalP2(permit);
+        } else {
+            html = templates.generalP1(permit);
+        }
+
+        printContainer.innerHTML = html;
+        this.injectPrintQRCodes(permit);
+
+        setTimeout(() => {
+            this.executePrint();
+        }, 120);
+    },
+
     // Imprimer un permis spécifique avec toutes ses pages et annexes (A4)
     printPermit(permitId) {
         const store = typeof window !== 'undefined' && window.Store ? window.Store : Store;
         const templates = typeof window !== 'undefined' && window.Templates ? window.Templates : Templates;
-        const targetId = permitId || (typeof window !== 'undefined' && window.App && window.App.getActivePermitId ? window.App.getActivePermitId() : null) || 'K9-W37-UB';
+        const targetId = permitId || (typeof window !== 'undefined' && window.App && window.App.getActivePermitId ? window.App.getActivePermitId() : null) || 'K9-W38-UB';
         
         const permit = store.getPermit(targetId);
         if (!permit) {
@@ -105,10 +147,9 @@ const PrintEngine = {
             htmlPages.push(templates.weekendSummarySheet(dates, weekPermits));
             htmlPages.push(templates.generalP1(permit));
             htmlPages.push(templates.generalP2(permit));
-            const d = permit.dangers || {};
-            if (permit.type === 'height' || d.height) htmlPages.push(templates.heightAnnexe(permit));
-            if (permit.type === 'hot' || d.hot) htmlPages.push(templates.hotAnnexe(permit));
-            if (permit.type === 'electric' || d.electric) htmlPages.push(templates.electricAnnexe(permit));
+            htmlPages.push(templates.heightAnnexe(permit));
+            htmlPages.push(templates.hotAnnexe(permit));
+            htmlPages.push(templates.electricAnnexe(permit));
         } else {
             // 1. Permis Général Hebdomadaire (Page 1/2)
             htmlPages.push(templates.generalP1(permit));
@@ -116,17 +157,10 @@ const PrintEngine = {
             // 2. Revalidation Quotidienne & Effectifs Habilités (Page 2/2)
             htmlPages.push(templates.generalP2(permit));
 
-            // 3. Annexes si dangers applicables
-            const d = permit.dangers || {};
-            if (permit.type === 'height' || d.height) {
-                htmlPages.push(templates.heightAnnexe(permit));
-            }
-            if (permit.type === 'hot' || d.hot) {
-                htmlPages.push(templates.hotAnnexe(permit));
-            }
-            if (permit.type === 'electric' || d.electric) {
-                htmlPages.push(templates.electricAnnexe(permit));
-            }
+            // 3. Les 3 Annexes A4 Pleine Page Systématiques (Hauteur, Chaud, Électrique)
+            htmlPages.push(templates.heightAnnexe(permit));
+            htmlPages.push(templates.hotAnnexe(permit));
+            htmlPages.push(templates.electricAnnexe(permit));
 
             // 4. Affiche A4 de Zone
             if (typeof templates.renderZonePosterA4 === 'function') {
@@ -135,6 +169,7 @@ const PrintEngine = {
         }
 
         printContainer.innerHTML = htmlPages.join('');
+        this.injectPrintQRCodes(permit);
 
         setTimeout(() => {
             this.executePrint();
@@ -247,10 +282,9 @@ const PrintEngine = {
             htmlPages.push(templates.generalP1(permit));
             htmlPages.push(templates.generalP2(permit));
 
-            const d = permit.dangers || {};
-            if (permit.type === 'height' || d.height) htmlPages.push(templates.heightAnnexe(permit));
-            if (permit.type === 'hot' || d.hot) htmlPages.push(templates.hotAnnexe(permit));
-            if (permit.type === 'electric' || d.electric) htmlPages.push(templates.electricAnnexe(permit));
+            htmlPages.push(templates.heightAnnexe(permit));
+            htmlPages.push(templates.hotAnnexe(permit));
+            htmlPages.push(templates.electricAnnexe(permit));
         });
 
         printContainer.innerHTML = htmlPages.join('');

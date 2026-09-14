@@ -5,7 +5,7 @@
  */
 
 const Store = {
-    STORAGE_KEY: "sinylon_permits_database_v13",
+    STORAGE_KEY: "sinylon_permits_database_v14",
     SETTINGS_KEY: "sinylon_app_settings_v9",
     ARCHIVE_KEY: "sinylon_permits_archive_v9",
     DEFAULT_AUTH_CODE: "SINYLON2026",
@@ -283,20 +283,57 @@ const Store = {
     },
 
     getAllPermits() {
+        let permits = null;
         const raw = typeof localStorage !== 'undefined' ? localStorage.getItem(this.STORAGE_KEY) : null;
         if (!raw) {
-            const initial = this.getSeedData();
-            if (typeof localStorage !== 'undefined') this.saveAllPermits(initial);
-            return initial;
+            permits = this.getSeedData();
+            // Récupérer signatures de v13 si présentes
+            if (typeof localStorage !== 'undefined') {
+                const oldRaw = localStorage.getItem('sinylon_permits_database_v13') || localStorage.getItem('sinylon_permits_database_v12');
+                if (oldRaw) {
+                    try {
+                        const oldPermits = JSON.parse(oldRaw);
+                        Object.keys(oldPermits).forEach(id => {
+                            if (permits[id] && oldPermits[id] && oldPermits[id].signatures) {
+                                permits[id].signatures = Object.assign({}, permits[id].signatures, oldPermits[id].signatures);
+                                if (oldPermits[id].dailySignatures) {
+                                    permits[id].dailySignatures = Object.assign({}, permits[id].dailySignatures, oldPermits[id].dailySignatures);
+                                }
+                            }
+                        });
+                    } catch(e) {}
+                }
+            }
+        } else {
+            try {
+                permits = JSON.parse(raw);
+            } catch (e) {
+                console.error("Error parsing stored permits, resetting seed:", e);
+                permits = this.getSeedData();
+            }
         }
-        try {
-            return JSON.parse(raw);
-        } catch (e) {
-            console.error("Error parsing stored permits, resetting seed:", e);
-            const initial = this.getSeedData();
-            if (typeof localStorage !== 'undefined') this.saveAllPermits(initial);
-            return initial;
+
+        // RÈGLE ABSOLUE : Garantir que tous les permis UB, UAR, FUSA et WE activent Hauteur, Chaud et Électrique
+        if (permits) {
+            let updated = false;
+            Object.values(permits).forEach(p => {
+                if (p) {
+                    p.dangers = p.dangers || {};
+                    if (!p.dangers.height || !p.dangers.hot || !p.dangers.electric) {
+                        p.dangers.height = true;
+                        p.dangers.hot = true;
+                        p.dangers.electric = true;
+                        p.dangers.lifting = true;
+                        updated = true;
+                    }
+                }
+            });
+            if (updated && typeof localStorage !== 'undefined') {
+                this.saveAllPermits(permits);
+            }
         }
+
+        return permits || this.getSeedData();
     },
 
     saveAllPermits(permits) {
@@ -9752,8 +9789,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -10363,8 +10400,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -10543,8 +10580,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -10723,8 +10760,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -11334,8 +11371,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -11514,8 +11551,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -11694,8 +11731,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -12305,8 +12342,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -12485,8 +12522,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -14727,8 +14764,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -15503,8 +15540,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -16111,8 +16148,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -16285,8 +16322,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -20394,8 +20431,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -27625,9 +27662,4 @@ const Store = {
     }
 };
 
-if (typeof window !== 'undefined') {
-    window.Store = Store;
-}
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = Store;
-}
+window.Store = Store;

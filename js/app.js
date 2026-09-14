@@ -671,9 +671,14 @@ const App = {
                                             <div style="font-size: 11px; color: #93c5fd;">${L.doc1Sub}</div>
                                         </div>
                                     </div>
-                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'general')" style="background: #2563eb; color: #fff; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
-                                        ${L.openBtn}
-                                    </button>
+                                    <div style="display: flex; gap: 6px; align-items: center;">
+                                        <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'general')" style="background: #2563eb; color: #fff; border: none; padding: 8px 12px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
+                                            ${L.openBtn}
+                                        </button>
+                                        <button type="button" onclick="App.printSpecificAnnexe('${p.id}', 'general')" style="background: rgba(37,99,235,0.25); color: #93c5fd; border: 1px solid #3b82f6; padding: 8px 11px; min-height: 38px; border-radius: 6px; font-size: 13px; font-weight: 900; cursor: pointer; white-space: nowrap; touch-action: manipulation;" title="Imprimer Permis Général A4">
+                                            🖨️
+                                        </button>
+                                    </div>
                                 </div>
 
                                 <!-- DOCUMENT 2 : FICHE REVALIDATION QUOTIDIENNE (PAGE 2) -->
@@ -685,9 +690,14 @@ const App = {
                                             <div style="font-size: 11px; color: #7dd3fc;">${L.docRevalSub}</div>
                                         </div>
                                     </div>
-                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'reval')" style="background: #0284c7; color: #fff; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
-                                        ${L.openBtn}
-                                    </button>
+                                    <div style="display: flex; gap: 6px; align-items: center;">
+                                        <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'reval')" style="background: #0284c7; color: #fff; border: none; padding: 8px 12px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
+                                            ${L.openBtn}
+                                        </button>
+                                        <button type="button" onclick="App.printSpecificAnnexe('${p.id}', 'reval')" style="background: rgba(2,132,199,0.25); color: #7dd3fc; border: 1px solid #38bdf8; padding: 8px 11px; min-height: 38px; border-radius: 6px; font-size: 13px; font-weight: 900; cursor: pointer; white-space: nowrap; touch-action: manipulation;" title="Imprimer Revalidations A4">
+                                            🖨️
+                                        </button>
+                                    </div>
                                 </div>
 
                                 <!-- DOCUMENT 2 : ANNEXE A HAUTEUR -->
@@ -699,9 +709,14 @@ const App = {
                                             <div style="font-size: 11px; color: #7dd3fc;">${L.doc2Sub}</div>
                                         </div>
                                     </div>
-                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'height')" style="background: #0284c7; color: #fff; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
-                                        ${L.openBtn}
-                                    </button>
+                                    <div style="display: flex; gap: 6px; align-items: center;">
+                                        <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'height')" style="background: #0284c7; color: #fff; border: none; padding: 8px 12px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
+                                            ${L.openBtn}
+                                        </button>
+                                        <button type="button" onclick="App.printSpecificAnnexe('${p.id}', 'height')" style="background: rgba(2,132,199,0.25); color: #7dd3fc; border: 1px solid #0284c7; padding: 8px 11px; min-height: 38px; border-radius: 6px; font-size: 13px; font-weight: 900; cursor: pointer; white-space: nowrap; touch-action: manipulation;" title="Imprimer Annexe A Hauteur A4">
+                                            🖨️
+                                        </button>
+                                    </div>
                                 </div>
 
                                 <!-- DOCUMENT 3 : ANNEXE B CHAUD -->
@@ -713,9 +728,14 @@ const App = {
                                             <div style="font-size: 11px; color: #fca5a5;">${L.doc3Sub}</div>
                                         </div>
                                     </div>
-                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'hot')" style="background: #ef4444; color: #fff; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
-                                        ${L.openBtn}
-                                    </button>
+                                    <div style="display: flex; gap: 6px; align-items: center;">
+                                        <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'hot')" style="background: #ef4444; color: #fff; border: none; padding: 8px 12px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
+                                            ${L.openBtn}
+                                        </button>
+                                        <button type="button" onclick="App.printSpecificAnnexe('${p.id}', 'hot')" style="background: rgba(239,68,68,0.25); color: #fca5a5; border: 1px solid #ef4444; padding: 8px 11px; min-height: 38px; border-radius: 6px; font-size: 13px; font-weight: 900; cursor: pointer; white-space: nowrap; touch-action: manipulation;" title="Imprimer Annexe B Chaud A4">
+                                            🖨️
+                                        </button>
+                                    </div>
                                 </div>
 
                                 <!-- DOCUMENT 4 : ANNEXE C LOTO -->
@@ -727,9 +747,14 @@ const App = {
                                             <div style="font-size: 11px; color: #fcd34d;">${L.doc4Sub}</div>
                                         </div>
                                     </div>
-                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'electric')" style="background: #f59e0b; color: #000; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 900; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
-                                        ${L.openBtn}
-                                    </button>
+                                    <div style="display: flex; gap: 6px; align-items: center;">
+                                        <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'electric')" style="background: #f59e0b; color: #000; border: none; padding: 8px 12px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 900; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
+                                            ${L.openBtn}
+                                        </button>
+                                        <button type="button" onclick="App.printSpecificAnnexe('${p.id}', 'electric')" style="background: rgba(245,158,11,0.25); color: #fcd34d; border: 1px solid #f59e0b; padding: 8px 11px; min-height: 38px; border-radius: 6px; font-size: 13px; font-weight: 900; cursor: pointer; white-space: nowrap; touch-action: manipulation;" title="Imprimer Annexe C Électrique A4">
+                                            🖨️
+                                        </button>
+                                    </div>
                                 </div>
 
                                 <!-- DOCUMENT 5 : AFFICHE DE ZONE QR -->
@@ -741,9 +766,14 @@ const App = {
                                             <div style="font-size: 11px; color: #86efac;">${L.doc5Sub}</div>
                                         </div>
                                     </div>
-                                    <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'poster')" style="background: #10b981; color: #fff; border: none; padding: 8px 14px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
-                                        ${L.openBtn}
-                                    </button>
+                                    <div style="display: flex; gap: 6px; align-items: center;">
+                                        <button type="button" onclick="App.showPermitSpecificPage('${p.id}', 'poster')" style="background: #10b981; color: #fff; border: none; padding: 8px 12px; min-height: 38px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; touch-action: manipulation;">
+                                            ${L.openBtn}
+                                        </button>
+                                        <button type="button" onclick="App.printSpecificAnnexe('${p.id}', 'poster')" style="background: rgba(16,185,129,0.25); color: #86efac; border: 1px solid #10b981; padding: 8px 11px; min-height: 38px; border-radius: 6px; font-size: 13px; font-weight: 900; cursor: pointer; white-space: nowrap; touch-action: manipulation;" title="Imprimer Affiche QR A4">
+                                            🖨️
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1971,6 +2001,13 @@ const App = {
         const id = permitId || this.getActivePermitId();
         if (window.PrintEngine && typeof PrintEngine.printPermit === 'function') {
             PrintEngine.printPermit(id);
+        }
+    },
+
+    printSpecificAnnexe(permitId, annexeKey) {
+        const id = permitId || this.getActivePermitId();
+        if (window.PrintEngine && typeof PrintEngine.printSpecificAnnexe === 'function') {
+            PrintEngine.printSpecificAnnexe(id, annexeKey);
         }
     },
 
