@@ -56,6 +56,18 @@ const PrintEngine = {
         }
     },
 
+    // Imprimer directement un fragment HTML (ex: document visualisé dans le modal)
+    printHtmlContent(html) {
+        const printContainer = document.getElementById('print-container');
+        if (!printContainer) return;
+
+        printContainer.innerHTML = html;
+
+        setTimeout(() => {
+            this.executePrint();
+        }, 120);
+    },
+
     // Imprimer uniquement la page actuellement visualisée à l'écran (Page 1 seule, ou Annexe seule)
     printCurrentPreview() {
         const container = document.getElementById('a4-preview-render');

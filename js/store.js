@@ -12656,8 +12656,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -13264,8 +13264,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,
@@ -13435,8 +13435,8 @@ const Store = {
         "weekend": false,
         "dangers": {
             "height": true,
-            "hot": false,
-            "electric": false,
+            "hot": true,
+            "electric": true,
             "confined": false,
             "lifting": true,
             "tension": true,

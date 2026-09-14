@@ -1408,8 +1408,8 @@ const App = {
                             <span>📄</span> <span id="doc-viewer-title-text">Document Officiel</span>
                         </h3>
                         <div style="display: flex; gap: 8px; align-items: center;">
-                            <button type="button" onclick="App.printPermit(App.currentPermitId)" class="btn btn-primary btn-sm" style="font-weight: 800; display: inline-flex; align-items: center; gap: 4px; padding: 8px 14px; min-height: 38px;">
-                                🖨️ Imprimer A4
+                            <button type="button" onclick="App.printFromModalViewer()" class="btn btn-primary btn-sm" style="font-weight: 800; display: inline-flex; align-items: center; gap: 4px; padding: 8px 14px; min-height: 38px;">
+                                🖨️ Imprimer ce Document A4
                             </button>
                             <button type="button" onclick="App.closeDocViewerModal()" class="btn btn-secondary btn-sm" style="font-weight: 800; padding: 8px 14px; min-height: 38px;">
                                 ✕ Fermer
@@ -1448,6 +1448,21 @@ const App = {
         if (modal) {
             modal.classList.remove('active');
             modal.style.display = 'none';
+        }
+    },
+
+    printFromModalViewer() {
+        const bodyEl = document.getElementById('doc-viewer-body');
+        if (!bodyEl) return;
+        const html = bodyEl.innerHTML;
+        if (window.PrintEngine && typeof PrintEngine.printHtmlContent === 'function') {
+            PrintEngine.printHtmlContent(html);
+        } else {
+            const printContainer = document.getElementById('print-container');
+            if (printContainer) {
+                printContainer.innerHTML = html;
+                setTimeout(() => { window.print(); }, 120);
+            }
         }
     },
 
